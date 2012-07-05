@@ -31,27 +31,7 @@ Configuring
 -----------
 
 I look to see all the most important information right in front of me, so my ideal IRC client looks something like this:
-
----------------------------------------------------
-|         Title here                              |
-|_________________________________________________|
-|         User list                               |
-|_________________________________________________|
-|        Private message                          |
-|_________________________________________________|
-|                                                 |
-|    Chat window here                             |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|||||||||||||||||||||||||||||||||||||||||||||||||||
-|  Type cool stuff here                           |
----------------------------------------------------
+![preferred setup](screenshots/irssi-current.jpg)
 
 Unconfigured, irssi looks like this:
 
