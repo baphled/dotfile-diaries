@@ -32,7 +32,7 @@ Configuring
 
 I look to see all the most important information right in front of me, so my ideal IRC client looks something like this:
 
-![preferred setup](https://github.com/baphled/dev-diaries/raw/master/screenshots/irssi-current.pngscreenshots/irssi-current.jpg)
+![preferred setup](https://github.com/baphled/dev-diaries/raw/master/screenshots/irssi-current.png)
 
 Unconfigured, irssi looks like this:
 
