@@ -88,7 +88,7 @@ We'll need to do some tmux hackery to pull this off
 
 The older versions of nicklist require us to use screen/tmux and do some
 hackery, I'm not a fan, thankfully I stumbled across this
-[http://github.com/ConX/nicklist.pl](nicklist.pl). This isn't ideal, we have
+[nicklist.pl](http://github.com/ConX/nicklist.pl). This isn't ideal, we have
 the user list at the top but it's much better than hoping that the screens open
 and things fire off at the right time.
 
@@ -120,9 +120,9 @@ We'll leave this for now and come back to tweaking our settings later.
 
 Resources
 ---------
-[http://selcouth.com/irssi.php](basic irssi guide)
-[http://michael-prokop.at/stg/irc_workshop.txt](irssi cheatsheet)
-[http://www.mindfuzz.net/?p=301](GIVE ME A BETTER TITLE)
-[http://www.irssi.org/themes](IRSSI Themes)
-[http://irssi.org/beginner/](Lazy mans guide)
-[http://pc-addicts.com/forum/viewthread.php?thread_id=538&pid=2282#post_2282](PC Addicts custom irssi setup)
+[basic irssi guide](http://selcouth.com/irssi.php)
+[irssi cheatsheet](http://michael-prokop.at/stg/irc_workshop.txt)
+[GIVE ME A BETTER TITLE]( http://www.mindfuzz.net/?p=301 )
+[IRSSI Themes](http://www.irssi.org/themes)
+[Lazy mans guide](http://irssi.org/beginner/)
+[PC Addicts custom irssi setup](http://pc-addicts.com/forum/viewthread.php?thread_id=538&pid=2282#post_2282)

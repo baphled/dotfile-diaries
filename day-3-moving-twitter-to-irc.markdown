@@ -5,8 +5,8 @@ So for today, I'd like to stop using twitter and move it my console. I love
 Twitter but GUIs are hella slow and I'd like a lot more control over what I can
 see when and how it's displayed.
 
-For this we'll user [http://github.com/zigdon/twirssi/issues](twirssi),
-recommended to me by [http://twitter.com/23me](@23me), who I used to spend a lot
+For this we'll user [twirssi](http://github.com/zigdon/twirssi/issues),
+recommended to me by [@23me](http://twitter.com/23me), who I used to spend a lot
 of time chatting on IRC with in my misspent youth.
 
 

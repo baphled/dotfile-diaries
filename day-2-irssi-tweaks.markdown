@@ -12,7 +12,7 @@ I'd also like to setup vim-mode for irssi
 vim-mode
 --------
 
-Doing this is quite easy, we'll use [http://raw.github.com/shabble/irssi-scripts/master/vim-mode/vim_mode.pl](vim-mode.pl). Once install we'll need to run the following in irssi.
+Doing this is quite easy, we'll use [vim-mode.pl](http://raw.github.com/shabble/irssi-scripts/master/vim-mode/vim_mode.pl). Once install we'll need to run the following in irssi.
 
     /statusbar window add vim_mode
     /statusbar window add vim_windows
@@ -31,7 +31,7 @@ I'll use bjurl.pl to highlight links and give me the ability to open and copy
 them.
 
 I used this version of
-[http://raw.github.com/sukima/bjurl/master/bjurl.pl](bjurl). I'll copy it to
+[bjurl](http://raw.github.com/sukima/bjurl/master/bjurl.pl). I'll copy it to
 the usual place (`~/.irssi/scripts/autorun`) we can than run the script and we
 have a nicely highlighted URL's :D
 
@@ -62,5 +62,5 @@ Next we'll work out how to display who is online and how to chat to others.
 Resources
 ---------
 
-[http://pthree.org/2008/03/04/static-windows-in-irssi/](static windows)
+[static windows](http://pthree.org/2008/03/04/static-windows-in-irssi/)
 

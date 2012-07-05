@@ -12,10 +12,10 @@ setup so that we can take advantage of some of the key bindings I've gotten
 used to.
 
 We'll get that from
-[http://raw.github.com/shabble/irssi-scripts/master/vim-mode/vim_mode.pl](here).
+[here](http://raw.github.com/shabble/irssi-scripts/master/vim-mode/vim_mode.pl).
 We'll also grab uberprompt which vim-mode depends on for some extra
-[http://raw.github.com/shabble/irssi-scripts/master/prompt_info/uberprompt.pl](vim
-like) functionality.
+[vim like](http://raw.github.com/shabble/irssi-scripts/master/prompt_info/uberprompt.pl)
+functionality.
 
 Once downloaded and added to your autorun directory we're pretty much good to
 go. Run the following:

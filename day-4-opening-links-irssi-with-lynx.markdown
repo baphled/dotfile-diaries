@@ -10,7 +10,7 @@ Again the goal here is to move more of my work flow into my terminal which will
 allow me to deal with content when I choose.
 
 First off we need to actually be able to easily see links and open them,
-we'll use [http://github.com/sukima/bjurl/blob/master/bjurl.pl]( bjurl ) for this.
+we'll use [bjurl](http://github.com/sukima/bjurl/blob/master/bjurl.pl) for this.
 
 As with most plugins this is as simple as downloading the script and
 adding it to your irssi script directory.
