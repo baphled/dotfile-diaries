@@ -58,7 +58,7 @@ Unconfigured, irssi looks like this:
 
 Which kinda sucks!, where's a list of who is online?
 
-First things first, [http://quadpoint.org/articles/irssi/](is a good place to start).
+First things first, [is a good place to start](http://quadpoint.org/articles/irssi/).
 
 I'll use some tips from there to get myself started.
 
@@ -120,9 +120,9 @@ We'll leave this for now and come back to tweaking our settings later.
 
 Resources
 ---------
-[basic irssi guide](http://selcouth.com/irssi.php)
-[irssi cheatsheet](http://michael-prokop.at/stg/irc_workshop.txt)
-[GIVE ME A BETTER TITLE]( http://www.mindfuzz.net/?p=301 )
-[IRSSI Themes](http://www.irssi.org/themes)
-[Lazy mans guide](http://irssi.org/beginner/)
-[PC Addicts custom irssi setup](http://pc-addicts.com/forum/viewthread.php?thread_id=538&pid=2282#post_2282)
+  * [basic irssi guide](http://selcouth.com/irssi.php)
+  * [irssi cheatsheet](http://michael-prokop.at/stg/irc_workshop.txt)
+  * [GIVE ME A BETTER TITLE]( http://www.mindfuzz.net/?p=301 )
+  * [IRSSI Themes](http://www.irssi.org/themes)
+  * [Lazy mans guide](http://irssi.org/beginner/)
+  * [PC Addicts custom irssi setup](http://pc-addicts.com/forum/viewthread.php?thread_id=538&pid=2282#post_2282)
