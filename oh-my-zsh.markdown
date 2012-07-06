@@ -7,3 +7,8 @@ appears to be as easy as adding `set -o vi` in your `~/.zshrc` file.
 I'm sure there are more things that you can do to get all of vi niceness
 but doing this alone gives up the basics, which we can build upon as we
 tweak our setup.
+
+
+Resources
+---------
+[Using vi key bindings](http://www.techrepublic.com/blog/opensource/using-vi-key-bindings-in-bash-and-zsh/193)
