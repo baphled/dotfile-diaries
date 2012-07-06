@@ -25,6 +25,17 @@ Customisations
 use Vundle for package management
 Separate bindings into different files dependant on their function
 
+Common commands
+---------------
+
+These are a few vi commands I use quie a lot, as in "I should alias"
+
+    :Git ci --amend
+    :Git rebase --continue
+    :bd
+    <C-W> n +
+    <C-W> n -
+
 TODO
 ----
 
