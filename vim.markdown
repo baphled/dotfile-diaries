@@ -40,6 +40,9 @@ TODO
 ----
 
   * Work out how to stop surround from badding special chars ({,( and friends) with spaces
+  * Make sure the shell is setup for zsh
+  * Tweak settings to make writing markdown a little nicer
+  * Add filetype `*.md` as `*.markdown`
 
 Tips
 ----
