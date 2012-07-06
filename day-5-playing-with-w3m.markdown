@@ -5,7 +5,7 @@ So we've got Lynx setup to work with irssi, after doing so I found out
 that w3m can deal with tabs and images. Admittedly I'm not particularly
 a fan of tabs, mainly as I tend to build up quite a collection of these
 and never really go back to them, but I'll give it a whirl and see what
-thte pros and cons of it as opposed to lynx.
+the pros and cons of it as opposed to lynx.
 
 As always I used brew `brew install w3m` to get things rolling.
 
@@ -54,6 +54,26 @@ lynx for w3m.
 We'll run with this for the moment as see how it fairs.
 
 ![new setup](https://github.com/baphled/dotfile-diaries/raw/master/screenshots/w3m-default.png)
+
+Before we commit this to version control, we'll make some tweaks to the
+config file to make it less specific to a Mac.
+
+Below is a snippet from my config that I should change, when on a different
+box, I probably won't have brew installed and I prefer to have all my settings
+controlled locally so we wont need the references to the skeleton configs.
+
+    urimethodmap ~/.w3m/urimethodmap, /usr/local/Cellar/w3m/0.5.3/etc/w3m/urimethodmap
+    mailcap ~/.w3m/mailcap, /usr/local/Cellar/w3m/0.5.3/etc/w3m/mailcap
+    mime_types ~/.mime.types, /usr/local/Cellar/w3m/0.5.3/etc/mime.types 
+
+It now looks like this:
+
+    urimethodmap ~/.w3m/urimethodmap
+    mailcap ~/.w3m/mailcap
+    mime_types ~/.mime.types
+
+So now we're pretty much ready to play around with it for a while and take
+notes of things that I'd like to change.
 
 Resources
 =========
