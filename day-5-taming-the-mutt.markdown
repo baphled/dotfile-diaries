@@ -11,6 +11,9 @@ folders dependant on the source of the email.
 This was pretty configurable so I'd like to get some of this back into
 my current setup so that I don't get email overload :)
 
+Setting things up
+-----------------
+
 Resources
 ---------
 
