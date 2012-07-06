@@ -17,3 +17,7 @@ in as dotirssi.
   * pushed the changes
   * added the project to my dotfiles using braid
     * This will change some point in this process
+  * Copy my twirssi auth files to '~/dotirssi/scripts'
+
+Once the above was done I was able to have my irssi settings up version
+control :)
