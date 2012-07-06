@@ -25,6 +25,9 @@ HOW DO I CHANGE THE BINDING?
 
 I also couldn't see URL's at all.
 
+I guess the first step is to work out how to customise w3m so that we
+can get those colours sorted and give it some vim love.
+
 Ok, so changing the settings is quite easy to get to, simply press `o`
 whilst having w3m open and the settings page will be displayed. We
 simple need to scroll down to 'Colour Settings' and specify the colours we desire.
@@ -32,9 +35,16 @@ simple need to scroll down to 'Colour Settings' and specify the colours we desir
 Viewing links it's just as easy as interacting with any other link so
 that's cool :)
 
-I guess the first step is to work out how to customise w3m so that we
-can get those colours sorted and give it some vim love.
+The only things that niggles me is not being able to set up leader key 
 
+The most important once for the moment are to page up and down quickly
+as the default mappings are quite a stretch.
+
+Add the below to the keymap file within ~/.w3m gives me the ability to
+do exactly this :)
+
+    keymap  F     NEXT_PAGE
+    keymap  B     PREV_PAGE
 
 Resources
 =========
