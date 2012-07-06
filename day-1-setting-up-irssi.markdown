@@ -44,29 +44,31 @@ First things first, [is a good place to start](http://quadpoint.org/articles/irs
 
 I'll use some tips from there to get myself started.
 
-We need to create a scripts directory for scripts we want to autoload.
+twirssi - twitter for irc
+nicklist - displays a list of users
 
-I use freenode quite a bit, so lets add that to my default.
-`/server add -network freenode irc.freenode.net`
+Defaults
+--------
+
+Now it's time to tweak our settings so that we can navigate freely and don't
+have to decypher what is being said per room. I'm used to having a window per
+channel and being alerted when someone makes a comment. For this I'd like to
+create a window every time I join a new channel and remove the window once I
+have left one. To do this we'll need aliases.
+
+    /SET autocreate_windows ON`
+    /SERVER ADD -auto -network freenode irc.freenode.net
+    /save
+    /exit
 
 This will save us from having to add the FQDN and refer to it as an alias, freenode in this case.
 
-
-REFER TO HILIGHT AND SPLITTING WINDOWS
-
-
-Highlight a nick
-`/hilight nick`
-
-twirssi - twitter for irc
-nicklist - displays a list of users
+Now when you restart irssi you will be automatically connected to freenode :)
 
 nicklist.pl
 -----------
 
 So to get the user list we'll need nicklist with some tweaks.
-
-We'll need to do some tmux hackery to pull this off
 
 The older versions of nicklist require us to use screen/tmux and do some
 hackery, I'm not a fan, thankfully I stumbled across this
@@ -81,27 +83,25 @@ idea of fun.
 This will do for the moment but as part of my weekend of hacking I hope to
 tweak this script to get the layout I want.
 
-Aliases
--------
+We will need to create a scripts directory for scripts we want to autoload.
 
-Now it's time to tweak our settings so that we can navigate freely and don't
-have to decypher what is being said per room. I'm used to having a window per
-channel and being alerted when someone makes a comment. For this I'd like to
-create a window every time I join a new channel and remove the window once I
-have left one. To do this we'll need aliases.
+    /WINDOW NEW
+    /WINDOW NAME hilight
+    /WINDOW MOVE up
+    /WINDOW SIZE 10
+    /WINDOW stick
+    /layout save
 
-    /SET autocreate_windows ON`
-    /SERVER ADD -auto -network freenode irc.freenode.net
-    /save
-    /exit
+This will create a new window called 'hilight' which will be displayed at the top be sticking 10 lines high, which means that it will stay in position regardless of changing channel windows.
 
-Now when you restart irssi you will be automatically connected to freenode :)
+Finally we make sure that our nick is highlighted with `/hilight nick`
 
 
 We'll leave this for now and come back to tweaking our settings later.
 
 Resources
 ---------
+
   * [basic irssi guide](http://selcouth.com/irssi.php)
   * [irssi cheatsheet](http://michael-prokop.at/stg/irc_workshop.txt)
   * [GIVE ME A BETTER TITLE]( http://www.mindfuzz.net/?p=301 )
