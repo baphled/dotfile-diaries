@@ -26,5 +26,6 @@ Separate bindings into different files dependant on their function
 Tips
 ----
 
-dvf char - delete up to char
-df char - delete up to and including the char
+`dvf char` - delete up to char
+`df char` - delete up to and including the char
+`:windo e` - Refresh all window
