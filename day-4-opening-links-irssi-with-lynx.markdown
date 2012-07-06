@@ -39,6 +39,9 @@ but lets take small steps and see where this path leads up :)
 For later
 ---------
 
-It would be cool if we could name our window accordingly and not have to
-deal with the many windows issue I have with chrome and many other browser at
+It would be cool if we could name our window accordingly and not have to deal
+with the many windows issue I have with chrome and many other browser at
 present. This only leads to a sluggish computer and "Tab overload"
+
+I also need bjurl to be a bit smarter in identifying links, it's hard to track
+links once 20 have been displayed, at present it's quite useless.
