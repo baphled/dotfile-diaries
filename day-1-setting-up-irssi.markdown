@@ -36,25 +36,7 @@ I look to see all the most important information right in front of me, so my ide
 
 Unconfigured, irssi looks like this:
 
----------------------------------------------------
-|         Title here                              |
-|_________________________________________________|
-|    Chat window here                             |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|||||||||||||||||||||||||||||||||||||||||||||||||||
-|  Type cool stuff here                           |
----------------------------------------------------
+![default setup](https://github.com/baphled/dotfile-diaries/raw/master/screenshots/irssi-default.png)
 
 Which kinda sucks!, where's a list of who is online?
 
