@@ -41,12 +41,20 @@ The most important once for the moment are to page up and down quickly
 as the default mappings are quite a stretch.
 
 Add the below to the keymap file within ~/.w3m gives me the ability to
-do exactly this :)
+do exactly this.
 
     keymap  F     NEXT_PAGE
     keymap  B     PREV_PAGE
+
+Now that w3m is setup a for navigating a little easier, I'll swap out
+lynx for w3m.
+
+    /set browse_command tmux send-keys -t interwepts 'w3m $1' C-m
+
+We'll run with this for the moment as see how it fairs.
 
 Resources
 =========
 
 [w3m](http://w3m.sourceforge.net/)
+[keymapi example](http://fts.ifac.cnr.it/cgi-bin/dwww/usr/share/doc/w3m/examples/keymap.default)
