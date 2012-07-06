@@ -40,3 +40,34 @@ We'll want to save these changes
 Again there is heaps of documentation on vim-mode which I haven't played around
 with, I'll leave this for now and move on to adding some more niceness to
 irssi.
+
+At present these are the mappings that I've setup to get started with
+
+    map <C-H> <BS>
+    map <Leader> ,
+    map <Leader>p :bprev
+    map <Leader>n :bnext
+ 
+ I remapped the leader key to the `'` as this is what I have setup in my vim. I
+ also setup `:bprev `and `:bnext` so that I can easily move around to the next
+ and previous windwos within irssi.
+
+ It would be nice to create a binding for specifying a window to navigate to
+ but I'll leave this for another time.
+
+ I could also setup bindings for navigating between split windows by adding the below mappings to  `vim_moderc`
+
+    map <leader>,k <C-w>k
+    map <leader>,j <C-w>j
+    map <leader>,h <C-w>h
+    map <leader>,l <C-w>l
+
+We'll also want to add bingins for navigating. Irssi uses <ESC> # to navigate
+to a given window, as we have vim-mode setup <ESC> is used to change vim modes
+so we'll need to remap these so that they would with the new setup.
+
+    MAPPING TO BE ADDED LATER
+
+Making `<esc>` has been remapped we should be able to easily move around
+windows without having to rely on our newly created `<leader>p` and `<leader>n`
+keys.
