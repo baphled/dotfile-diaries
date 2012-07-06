@@ -36,8 +36,8 @@ way we don't have to clutter the current session.
 This and a few other things will be the next step for improving this work flow
 but lets take small steps and see where this path leads up :)
 
-For later
----------
+TODO
+----
 
 It would be cool if we could name our window accordingly and not have to deal
 with the many windows issue I have with chrome and many other browser at
