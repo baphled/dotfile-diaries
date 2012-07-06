@@ -5,7 +5,8 @@ A list of tools that are needed for the my ideal workbench
 
   * irssi
   * mutt
-  * lynx
+  * w3m
   * zsh
   * ruby
   * rvm
+  * perl
