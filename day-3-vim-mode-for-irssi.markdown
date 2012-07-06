@@ -1,11 +1,12 @@
 Setting up vim-mode
 ===================
 
-Now where would we be if we didn't have a favourite text editors key settings
-available in irssi, that'd be heaven right, we'll it's pretty damn easy to get
-this going and to add your own mappings, which is wicked, though it'd be even
-better if we could just pull in our mappings from vim itself but that's for
-another day.
+Now, where would we be if we didn't have a favourite text editors key settings
+available in irssi.
+
+That'd be heaven right, we'll it's pretty damn easy to get this going and to
+add your own mappings, which is wicked, though it'd be even better if we could
+just pull in our mappings from vim itself but that's for another day.
 
 For now we'll just setup vim-mode for irssi, which is easy as hell, and get it
 setup so that we can take advantage of some of the key bindings I've gotten
@@ -35,6 +36,7 @@ For the lazy, like me, here's what I've done so far to get started.
 
 We'll want to save these changes
 
+    /layout save
     /save
 
 Again there is heaps of documentation on vim-mode which I haven't played around
