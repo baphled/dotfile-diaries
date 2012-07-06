@@ -53,6 +53,8 @@ lynx for w3m.
 
 We'll run with this for the moment as see how it fairs.
 
+![new setup](https://github.com/baphled/dotfile-diaries/raw/master/screenshots/w3m-default.png)
+
 Resources
 =========
 
