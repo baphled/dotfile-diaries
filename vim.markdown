@@ -25,6 +25,11 @@ Customisations
 use Vundle for package management
 Separate bindings into different files dependant on their function
 
+TODO
+----
+
+  * Work out how to stop surround from badding special chars ({,( and friends) with spaces
+
 Tips
 ----
 
