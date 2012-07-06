@@ -57,7 +57,8 @@ At present these are the mappings that I've setup to get started with
  It would be nice to create a binding for specifying a window to navigate to
  but I'll leave this for another time.
 
- I could also setup bindings for navigating between split windows by adding the below mappings to  `vim_moderc`
+ I could also setup bindings for navigating between split windows by adding the
+ below mappings to  `vim_moderc`
 
     map <C-h> <C-w>h
     map <C-j> <C-w>j
