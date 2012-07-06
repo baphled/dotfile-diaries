@@ -59,10 +59,10 @@ At present these are the mappings that I've setup to get started with
 
  I could also setup bindings for navigating between split windows by adding the below mappings to  `vim_moderc`
 
-    map <leader>,k <C-w>k
-    map <leader>,j <C-w>j
-    map <leader>,h <C-w>h
-    map <leader>,l <C-w>l
+    map <C-h> <C-w>h
+    map <C-j> <C-w>j
+    map <C-k> <C-w>k
+    map <C-l> <C-w>l
 
 We'll also want to add bingins for navigating. Irssi uses <ESC> # to navigate
 to a given window, as we have vim-mode setup <ESC> is used to change vim modes
