@@ -51,10 +51,29 @@ And make sure I also had the following in my config too:
 Mutt is now setup, well enough to start playing around, I'll work on
 integrating this into my workflow as time goes on.
 
+The final things is to move this into it's own repository for now, as I
+will be restarting my dotfiles from scratch once I have all these pieces
+setup.
+
+I did what I usually do, created a git repo and moved my `.muttrc` file
+to `~/.mutt/muttrc` and then renamed the directory to dotmutt. 
+
+Once this was done I went through the motion of pushing the setting to a
+new repository.
+
+I then used braid
+
+    braid add git://github.com/baphled/muttfiles.git dotmutt 
+    ln -s dotmutt .mutt
+    ln -s .mutt/muttrc .muttrc
+
+Then everything was setup as it where :)
+
 TODO
 ====
 
   * Improve the way I'm handling my email credentials
+  * Oder emails depends on top and where they come from
 
 Resources
 ---------
