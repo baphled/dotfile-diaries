@@ -73,7 +73,8 @@ TODO
 ====
 
   * Improve the way I'm handling my email credentials
-  * Oder emails depends on top and where they come from
+  * Setup email alerts via the terminal
+  * Create screengrabs as I did with irssi
 
 Resources
 ---------
