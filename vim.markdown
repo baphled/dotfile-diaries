@@ -55,6 +55,7 @@ TODO
   * Find a plugin for making markup with markdown more productive
     * Creating titles can be cumbersome
     * Building lists can be painful
+  * mapping for toggling line numbers
 
 Tips
 ----
