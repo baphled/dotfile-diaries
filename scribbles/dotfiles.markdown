@@ -1,9 +1,0 @@
- Dotfiles
-=========
-
-Various notes on things to improve the way I handle my dotfiles.
-
-  * Should move irssi settings and config into a separate repository
-  * Dev Diary should be it's own projects/repository
-  * Improve the way I'm handling my credentials
-    * Need to be able to run a script which sets my config
