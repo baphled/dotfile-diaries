@@ -1,50 +1,8 @@
-This Book
-=========
+== Dotfile Diaries
 
-This book is written using using the git-scribe toolchain, which can be found at:
+A day by day diary of my meanderings with my dotfiles.
 
-http://github.com/schacon/git-scribe
+The idea here is to document the changes I make to my dotfiles on a
+daily basis to help me tweak my productivity whilst working in the
+terminal.
 
-Instructions on how to install the tool and use it for things like editing this book,
-submitting errata and providing translations can be found at that site.
-
-== The first chapter
-
-This is where the first chapter of the book might go.  Each chapter
-will be under a seperate heading like that.  Images can be embedded
-in the book like this:
-
-image::image/octocat_professor.png[description]
-
-=== Subsection one
-
-You can even do subsections of each chapter.
-
-==== Sub-sub section
-
-And sub-sub-sections of each chapter.
-
-You can also do tips and warning boxes and such like this:
-
-TIP: Tip.
-
-IMPORTANT: This is important.
-
-WARNING: This is a warning.
-
-CAUTION: Tread lightly.
-
-If you need to embed source code, you can do so from external files
-like this:
-
-[c]
-source~~~~
-include::include/hello.c[]
-source~~~~
-
-=== Source Code Highlighting
-
-Or you can put the code directly in the file, like this.
-
-[source,python]
-if n < 0: print 'Hello World!'
