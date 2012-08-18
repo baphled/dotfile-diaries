@@ -1,14 +1,27 @@
+GIT
+  remote: git://github.com/schacon/git-scribe.git
+  revision: 605d4c83966f68da2b6f7593f30c10806258e3bb
+  specs:
+    git-scribe (0.1.1)
+      grit
+      liquid
+      nokogiri
+
 GEM
   remote: http://rubygems.org/
   specs:
-    git-scribe (0.1.1)
-      liquid
-      nokogiri
-    liquid (2.3.0)
+    diff-lcs (1.1.3)
+    grit (2.5.0)
+      diff-lcs (~> 1.1)
+      mime-types (~> 1.15)
+      posix-spawn (~> 0.3.6)
+    liquid (2.4.1)
+    mime-types (1.19)
     nokogiri (1.5.5)
+    posix-spawn (0.3.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  git-scribe
+  git-scribe!
