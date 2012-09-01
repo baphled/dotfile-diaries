@@ -2107,17 +2107,19 @@ too much about that as I tend to use zsh more than anything else.</simpara>
 and let <literal>.zlogin</literal> do the rest of the work.</simpara>
 </section>
 </section>
-<section id="_dressing_down_vim_2">
-<title>Dressing down Vim</title>
-<screen>duration: 6 weeks
-location: everywhere
+<section id="_learn_my_tools_2">
+<title>Learn my tools</title>
+<simpara>Will need to decide on plugins to learn</simpara>
+<screen>duration: 1 week per plugin
+start:    week 15
+plugin list:
+  * surround
+  * text objects
+  * macros
+  * gundo
 notes:
 
-  * pain experienced
-  * what was missed
-  * what did I learn (daily log)
-  * use `:map` in Vim to learn new mappings
-  * use vimtutor</screen>
+  * this could be done after the intial 6 weeks</screen>
 </section>
 <section id="_day_16">
 <title>Day 16</title>
@@ -2644,20 +2646,6 @@ within a git repository, in this case my vim plugins, and will use this as a
 basis to review each plugin one by one.</simpara>
 </section>
 </section>
-<section id="_learn_my_tools_2">
-<title>Learn my tools</title>
-<simpara>Will need to decide on plugins to learn</simpara>
-<screen>duration: 1 week per plugin
-start:    week 15
-plugin list:
-  * surround
-  * text objects
-  * macros
-  * gundo
-notes:
-
-  * this could be done after the intial 6 weeks</screen>
-</section>
 <section id="_day_22">
 <title>Day 22</title>
 <simpara>Today I&#8217;ll strip my fork and eat dog food. I&#8217;ll need a clean Vim setup if I&#8217;m
@@ -2666,24 +2654,21 @@ need to branch off my dotfiles and start with the bare basics.</simpara>
 <simpara>I&#8217;ll need to work out what qualifies as the bare basics as some plugins
 (generally those for improve syntax highlighting) I&#8217;d like from the jump off
 but I guess I should document why I decided to add them from the very start.</simpara>
+</section>
+<section id="_dressing_down_vim_2">
+<title>Dressing down Vim</title>
+<screen>duration: 6 weeks
+location: everywhere
+notes:
+
+  * pain experienced
+  * what was missed
+  * what did I learn (daily log)
+  * use `:map` in Vim to learn new mappings
+  * use vimtutor</screen>
 <note><simpara>I can use my current Vim setup to workout which typographically based
 plugins I&#8217;ll be using and write a basic explanation as to why they are useful and
 why I can&#8217;t live without them.</simpara></note>
-</section>
-<section id="_day_23">
-<title>Day 23</title>
-<simpara>Today&#8217;s a doing day, I need to pull in all my customised setup repositories
-into my dotfiles, I&#8217;ll start by setting up Vim from scratch and add some basic
-mappings that help things along.</simpara>
-</section>
-<section id="_day_24">
-<title>Day 24</title>
-<simpara>So I have a nice shiny Vim setup, today will be the day that I go back to grass
-roots Vim and pick up some new skills along the way.</simpara>
-<simpara>I idea here is that I improve the way I use Vim in general and get more
-intimate with the basics of Vim, so when it comes to tweaking it with plugins,
-I have a better understanding of what plugins are good and what plugins are
-bad.</simpara>
 </section>
 <section id="_day_25">
 <title>Day 25</title>
