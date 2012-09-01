@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 12</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="dotfile diaries"/><link rel="up" href="index.html" title="dotfile diaries"/><link rel="prev" href="ar01s16.html" title="Day 11"/><link rel="next" href="ar01s18.html" title="Day 13"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 12</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s16.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s18.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_12"/>Day 12</h2></div></div></div><p>There are a couple of small things that need to be adressed before I introduce
+my other email accounts. As it stands I have filtered mail but there is no easy
+way of getting to my filtered inbox without some hassle. I need to setup a way
+to let mutt automatically know which mailboxes I have without having to
+constantly update my muttrc file.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_update_mailbox_list"/>Update mailbox list</h3></div></div></div><p>I had problems trying to get mutt to list all my mail boxes internally
+due to my bash noobishness but I did find a way to do it
+semi-automatically. I’d like to improve on this process so that I can
+make it a lot easier to be able to keep my inbox list up to date whilst
+keeping mutt open.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_the_idea"/>The idea</h4></div></div></div><p>So it was pretty easy to create a script that lists all the files in my
+mail directory and returns them as a list of arguments. I then loop over
+each mailbox and echo out the format needed for mutt to recognise it as
+a mailbox.</p><p>Once I have the desired string I then send it to a mutt config file in a
+format mutt can recognise.</p><pre class="literallayout">mailboxes =inbox =foodie =gaming</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_bringing_it_to_life"/>Bringing it to life</h4></div></div></div><p>This did actually take some time to work out the simplist way of
+actually getting a list of mailboxes without having to update my muttrc
+everytime one was discovered.</p><p>I knew the best way to do this via the command line but I wasn’t
+completely sure how. I first start off by getting a list of inboxes and
+piping the results to xargs so that I could loop over each of them but
+this caused a broken pipe error when ran as a subcommand in my muttrc.
+After a while of hacking a few concepts I remember how useful sed is in
+these situations. I ended up with the below code snippet which actually
+did what I wanted for the time being.</p><pre class="literallayout">mailboxes `ls -r ~/Mail | xargs | sed 's/ / =/g' | sed 's/inbox/=inbox/'`</pre><p><b>Hack alert. </b>[NOTE]:
+I’m aware that this could be improved, ideally I want to prepend a <span class="emphasis"><em>=</em></span>
+to the first word instead of relying on the fact the inbox will always
+be the first work back.</p><p>The above comand basically lists all the files in the <code class="literal">~/Mail</code> directory
+and adds them to a list and finally appends <span class="emphasis"><em>=</em></span> to each inbox. This way
+I don’t have to worry about new inboxes being created and having to keep
+track of them. I sinply have to create a new procmail recipe and let
+mutt work out where the new inboxes are stored :)</p><p>Now that I have a semi decent mutt setup I’d like to setup multiple SMTP
+servers. It’d be cool if mutt could be configured so that I could send a reply
+and the correct SMTP server is used, along with the right response header.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_adding_multiple_smtp_accounts"/>Adding multiple SMTP accounts</h3></div></div></div><p>So I have my personal email accounts setup, so now I can read all my emails and
+filter them pretty easily. The only thing missing here is being able to respond
+to emails with the correct email address.</p><p>So the problem at the moment is that all emails I send are set to my username
+and machines hostname (<a class="ulink" href="mailto:my.username@my.machines.name.com" target="_top">my.username@my.machines.name.com</a>), which is obviously
+what I want, I need to update mutt so that it can tell which email address to
+use as the sender.</p><p>This requires quite a bit of setup so I’ll hold of on doing the actual setup
+and work out what I actually need to do to all me to choose which account to
+send emails.</p><p>The first thing I’ll need to do is make sure that the <span class="emphasis"><em>From</em></span> field in my email
+responses are not that of the local machine. This should actually be the email
+address that the email was sent to.</p><p>I’m not quite sure how to do this yet so I’ll put a fork in it for the moment
+so that I can focus on getting the rest of my setup functional.</p></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s16.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s18.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 11 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 13</td></tr></table></div></body></html>

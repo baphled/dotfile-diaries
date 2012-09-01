@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="master.css" type="text/css" />
+    <title>Day 17</title>
+  </head>
+
+  <body>
+    <div class="nav" id="navheader">
+    <table width="100%">
+      <tr><td width="33%" align="left">
+        
+         <a href="day_16.html">Prev</a><br/>
+         Day 16
+        
+      </td><td width="33%" align="center">
+        
+         <a href="index.html">Home</a><br/>
+         <strong>dotfile diaries</strong>
+        
+      </td><td width="33%" align="right">
+        
+          <a href="day_18.html">Next</a><br/>
+          Day 18
+        
+      </td></tr>
+    </table>
+    </div>
+
+    <hr/>
+
+    <div class="content">
+      <div class="section" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a id="_day_17"></a>Day 17</h2></div></div></div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_tweaking_my_test_function"></a>Tweaking my test function</h3></div></div></div>
+<p>So I have a few custom bindings to run work out what kind of test I am
+running and run it with the right tool.</p>
+<p>This has proved quite useful in the past allowing me to run <code class="literal">&lt;leader&gt;t</code>
+to run the current or last run test file. The other binding is set to
+<code class="literal">&lt;leader&gt;T</code> which runs the closest test to the current line number.</p>
+<p>These have served me well up to today when I had some performance
+testing to do and testunit was the only tool setup for the project I was
+working on.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Find link to Gary’s dotfiles.</p>
+</div>
+<p>My bindings were originally stolen from "Gary Bernhardt’s dotfiles" and
+was tweaked by myself to include cucumber. Now it’s time to fix the
+issue with testunit.</p>
+<p>To run my unit tests I will need the following command:</p>
+<pre class="literallayout">exec ":!bundle exec ruby -I\"lib:test\" " . a:filename "</pre>
+<p>This runs my unit test in the correct environemnt. There is one issue
+with this. The firstly the other tool we can simple run the test we are
+interested with by appending <span class="emphasis"><em>:1</em></span> where <span class="emphasis"><em>1</em></span> is the line number. The
+issue with doing this with my unittests is that it is not the expected
+command and will error out.</p>
+<pre class="literallayout">:!bundle exec ruby -I"lib:test" test/performance/browsing_test.rb:9
+ruby: No such file or directory -- test/performance/browsing_test.rb:9
+(LoadError)</pre>
+<pre class="literallayout">shell returned 1</pre>
+<pre class="literallayout">Press ENTER or type command to continue</pre>
+<p>this isn’t what I want in this case and it would be cool o actually get
+this to work properly as it is a large part of my typical development
+workflow.</p>
+<p>To do this I will need to be able to capture the method name relating to
+the unit test file. To do this I will need to capture the number and get
+the contents of the first and last 5 lines on either side of the line
+number received. What ever the closest method name is we’ll use to run a
+single unit test.</p>
+<p>I’ll focus on this another day once I have improve my VIML.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_todo_10"></a>TODO</h4></div></div></div>
+<div class="itemizedlist"><ul type="disc"><li>
+Talk about my development workflow
+</li></ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_resources_12"></a>Resources</h4></div></div></div>
+<div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="http://flavio.castelli.name/2010/05/28/rails_execute_single_test/" target="_top">executing test unit rails</a>
+</li></ul></div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_tweaking_my_vim_fu"></a>Tweaking my vim-fu</h3></div></div></div>
+<p>I’ve been playing around with text objects for a few days whilst
+tweaking my settings and would like to extend this functionality with a
+couple of plugins. Firstly I want <span class="emphasis"><em>matchit</em></span> so that I can extend the
+matching capabilities of vim.</p>
+<pre class="literallayout">git submodule add git://github.com/tmhedberg/matchit.git bundle/matchit</pre>
+<p>Now I have the plugin I need to set it up to work in my vim.</p>
+<pre class="literallayout">:let loaded_matchit = 1</pre>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Write about the basic motions</p>
+</div>
+<p>Now it’s loaded I have a few nice little motions to move around blocks,
+this is all cool but I use Ruby quite a bit and that isn’t supported
+out of the box. So I will need to add <span class="emphasis"><em>vim-ruby</em></span> to introduce the same
+functionality to ruby.</p>
+<pre class="literallayout">git submodule add git://github.com/vim-ruby/vim-ruby.git bundle/vim-ruby</pre>
+<p>This give me a few more motions, this time focusing on moving around
+ruby code.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+]m - start of next method definition
+</li>
+<li>
+[m - start of previous definition
+</li>
+<li>
+]] - start of next module or class
+</li>
+<li>
+][ - end of next module or class
+</li>
+<li>
+[[ - end of module or class
+</li>
+<li>
+[] - end of module or class
+</li>
+</ul></div>
+<p>There are a few more motions that are added to my vim setting but those
+are well documented in <code class="literal">:help vim-ruby</code></p>
+<p>The following text blocks are also added to the toolset.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+am - a method
+</li>
+<li>
+im - inner method
+</li>
+<li>
+aM - a class
+</li>
+<li>
+iM  - inner class
+</li>
+</ul></div>
+<p><span class="emphasis"><em>vim-ruby</em></span> doesn’t just provide a few more text objects and motions but
+it also includes omni completion and syntax recognition. I’ll deal with
+omni-completion another day but I would like to get syntax recognition
+setup and ready for playing around with.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_giving_my_syntax_some_sugar"></a>Giving my syntax some sugar</h3></div></div></div>
+<p>Now I want to get tweak my ruby syntax recognition some more so this
+seems like the idea time to do so.</p>
+<p>Enable highlighted operators</p>
+<pre class="literallayout">:let ruby_operators = 1</pre>
+<p>I want to be alerted when there are space errors, these don’t actually
+cause errors but it would be nice to be able to easily see them.</p>
+<pre class="literallayout">:let ruby_space_errors = 1</pre>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Write about motions and text objects</p>
+</div>
+</div>
+</div>
+
+    </div>
+
+    <hr/>
+
+    <div class="nav" id="navfooter">
+    <table width="100%">
+      <tr><td width="33%" align="left">
+        
+         <a href="day_16.html">Prev</a><br/>
+         Day 16
+        
+      </td><td width="33%" align="center">
+        
+         <a href="index.html">Home</a><br/>
+         dotfile diaries
+        
+      </td><td width="33%" align="right">
+        
+          <a href="day_18.html">Next</a><br/>
+          Day 18
+        
+      </td></tr>
+    </table>
+    </div>
+  </body>
+</html>

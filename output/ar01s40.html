@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Upgrading wet ware</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="dotfile diaries"/><link rel="up" href="index.html" title="dotfile diaries"/><link rel="prev" href="ar01s39.html" title="Garbled notes"/><link rel="next" href="ar01s41.html" title="Work flows"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Upgrading wet ware</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s39.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s41.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_upgrading_wet_ware"/>Upgrading wet ware</h2></div></div></div><p>Various notes and goals on what I want to achieve whilst writing this diary.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_sharping_those_tools"/>Sharping those tools</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_how_to_improve_our_productivity"/>How to improve our productivity?</h4></div></div></div><p>We should ideally be learning new things, that we don’t currently know, to
+improve the way we solve and look at problems.</p><p>One of the best ways to do this is to actively learn something new every day.</p><p>For us, we’ll learn a new Vim trick and learn more about the linux tools that
+we have available to us and which can help improve the way we do our work day
+to day.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_what_we_do"/>What we do?</h4></div></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_read_a_man_page_a_day"/>Read a man page a day</h4></div></div></div><p>This can be quite hard to achieve, I’ve attempted this in the past, we’ll make
+this interesting. We’ll create a simple script that will bring up a random man
+page when ever you type <code class="literal">manit</code>.</p><p>We could also get this automatically by calling the script via a tmuxinator
+config file.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_learn_to_use_a_new_tool"/>Learn to use a new tool</h4></div></div></div><p>There are a hell of a lot of cool utilities that come out of the box with any
+Linux based machine, we should look into these and see how we can make use of
+these for our day to day work.</p><p>Some utils we should look at:
+  sed
+  ack
+  grep
+  xargs</p><p>Solve an on going personal problem
+  * Ideally this should be small changes, so we see the effect and benefit</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_hone_our_new_skills"/>Hone our new skills</h4></div></div></div><p>We’ll need to get our newly found knowledge stored to muscle memory, so we’ll
+need to practice what we have learnt over the week. Doing so will help us on
+the way to improving the way we work and improve our skillset.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_things_i_want_to_learn"/>Things I want to learn</h3></div></div></div><p>I need to improve the understanding of Bash and make more use of the Linux
+utility commands (ack, sed, xargs) Improve my productivity with Vim.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_move_most_of_my_workflow_to_the_console"/>Move most of my workflow to the console.</h4></div></div></div><p>Pretty much most of my work can be done via the terminal. To help reduce
+context swtiching, I’d prefer to have a setup that allows to to stick to the
+terminal and alert me when information (emails, tweets, etc) is coming in</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_procmail_recipe_workflow"/>Procmail recipe workflow</h3></div></div></div><p>Getting recipes just right can be interesting and in the past I
+literally had to play it by ear. On this time round I wanted to be a bit
+more smarter about it. I had a little search online and came up with
+<a class="ulink" href="http://pm-doc.sourceforge.net/doc/#what_is_dry_run_testing" target="_top">this</a> which
+helped quite a lot. It gave my inspiration to refine this into a
+workflow so that I could easily test recipes whilst not having to wait
+for an email to actually come through.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Add link to <code class="literal">~/bin/procmail_recipe_test</code>. Located at GH#e452d09</p></div><p>I wrapped the Procmail dryrun command as shown above to easily run the
+script.</p><p>Procmail logs are located at <code class="literal">~/logs/procmail-dryrun.log</code> so I ran <code class="literal">tail
+-f ~/logs/procmail.log</code> in a split pane so that I could see what was
+coming in.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Ideally this should be part of the script that I just built.</p></div><p>Doing this gave me that ability to see how a the sample email was being
+filter, if at all.</p><p>Now the last peice of the puzzle was to easily create test emails
+without having to do them by hand. This again was pretty simple as mutt
+was already setup to use vim as its editor.</p><p>Pressing <code class="literal">e</code> in mutt opened an email in vim which meant that in Normal
+mode I was apply to give the following command to save the sample email:</p><pre class="literallayout">:w ~/emailtest.txt</pre><p>Now that the sample email was save I am free to run
+<code class="literal">~/bin/procmail_recipe_test</code> and see how the email is processed.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Add screenshot of the split panes to demostrate the workflow</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_remapping_my_fingers"/>Remapping my fingers</h3></div></div></div><p>One of the most interesting things I have picked up whilst getting back to a
+console centric workflow is that a lot depends on where my fingers sit on the
+keyboard. Over time I learnt to touch type in my own way and after a time I
+still find myself looking at the keyboard to find a random key or having to
+stretch my fingers more than a typical toucher typer would.</p><p>I see the value in typing in traditional way but I never got round to leanring
+properly as I’ve had "othering" to do.</p><p>[NOTE]: Need a way of actually relearning where my fingers should be.</p><p>I maywell try to attempt this gradually and intergrate it into my daily
+entries. It’s going to take some dicipline but I think it shouldn’t take much
+effort to remap my fingers to centre around the homekeys more naturally.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_nix_stuff"/>*nix Stuff</h3></div></div></div><p>Here is where I’m going store the various titbit that I’ve learnt over the
+years. I am assuming by the vagueness of this notion it will start of as a grap
+bag of notes and gradually split off to different sections.</p><div class="itemizedlist"><ul type="disc"><li>
+<code class="literal">map -k .</code> - list all of the man pages on the system
+</li><li>
+<code class="literal">man $(/bin/ls /bin | awk '{ cmd[i++] = $0 } END { srand( ); print cmd[int(rand()*length(cmd))]; }')'</code> - display a random manpage
+</li></ul></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s39.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s41.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Garbled notes </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Work flows</td></tr></table></div></body></html>

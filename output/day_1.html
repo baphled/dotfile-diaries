@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="master.css" type="text/css" />
+    <title>Day 1</title>
+  </head>
+
+  <body>
+    <div class="nav" id="navheader">
+    <table width="100%">
+      <tr><td width="33%" align="left">
+        
+         <a href="enhancing_my_workflow.html">Prev</a><br/>
+         Enhancing my workflow
+        
+      </td><td width="33%" align="center">
+        
+         <a href="index.html">Home</a><br/>
+         <strong>dotfile diaries</strong>
+        
+      </td><td width="33%" align="right">
+        
+          <a href="day_2.html">Next</a><br/>
+          Day 2
+        
+      </td></tr>
+    </table>
+    </div>
+
+    <hr/>
+
+    <div class="content">
+      <div class="section" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a id="_day_1"></a>Day 1</h2></div></div></div>
+<p>So this is the first day of an on going process devised by myself to help
+improve and tweak my existing work flow.</p>
+<p>For years I’ve been used to living in the console and staying away from GUI
+type tools to do my day to day work</p>
+<p>So the idea is to move back to my console and improve my work flow by tweaking
+and getting to know my console tools better.</p>
+<p>In this blog I’ll start with something simple, as the days progress I create a
+blog describing what I’ve learnt today and how it improves my day to day
+work flow.</p>
+<p>Today is an easy day, I’ll start with setting up irssi, a command line
+interface for IRC.</p>
+<p>What I want here is my old setup tweaked to make it easy to change channels and
+see is in a room.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_setting_up_irssi"></a>Setting up irssi</h3></div></div></div>
+<p>I’m using a Mac and use brew. So it is as easy as running <code class="literal">brew install irssi</code>.</p>
+<p>Job done!</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_configuring"></a>Configuring</h4></div></div></div>
+<p>I like to see all the most important information right in front of me, so my
+ideal IRC client looks something like this:</p>
+<p><span class="inlinemediaobject"><img src="https://github.com/baphled/dotfile-diaries/raw/master/screenshots/irssi-current.png" alt="preferred setup"></span></p>
+<p>Unconfigured, irssi looks like this:</p>
+<p><span class="inlinemediaobject"><img src="https://github.com/baphled/dotfile-diaries/raw/master/screenshots/irssi-default.png" alt="default setup"></span></p>
+<p>Which kinda sucks!, where’s a list of who is online?</p>
+<p>First things first, <a class="ulink" href="http://quadpoint.org/articles/irssi/" target="_top">is a good place to start</a>.</p>
+<p>I’ll use some tips from there to get myself started.</p>
+<p>twirssi - twitter for irc
+nicklist - displays a list of users</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_defaults"></a>Defaults</h4></div></div></div>
+<p>Now it’s time to tweak our settings so that we can navigate freely and don’t
+have to decypher what is being said per room. I’m used to having a window per
+channel and being alerted when someone makes a comment. For this I’d like to
+create a window every time I join a new channel and remove the window once I
+have left one. To do this we’ll need aliases.</p>
+<pre class="literallayout">/SET autocreate_windows ON`
+/SERVER ADD -auto -network freenode irc.freenode.net
+/save
+/exit</pre>
+<p>This will save us from having to add the FQDN and refer to it as an alias,
+freenode in this case.</p>
+<p>Now when you restart irssi you will be automatically connected to freenode :)</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_listing_channel_users"></a>Listing channel users</h4></div></div></div>
+<p>So to get the user list we’ll need nicklist with some tweaks.</p>
+<p>The older versions of nicklist require us to use screen/tmux and do some
+hackery, I’m not a fan, thankfully I stumbled across this
+<a class="ulink" href="http://github.com/ConX/nicklist.pl" target="_top">nicklist.pl</a>. This isn’t ideal, we have
+the user list at the top but it’s much better than hoping that the screens open
+and things fire off at the right time.</p>
+<p>That a soon after finding the sweet spot, the original version of the script
+decided to kill the cat command you had to run to get the user list, not my
+idea of fun.</p>
+<p>This will do for the moment but as part of my weekend of hacking I hope to
+tweak this script to get the layout I want.</p>
+<p>We will need to create a scripts directory for scripts we want to autoload.</p>
+<pre class="literallayout">/WINDOW NEW
+/WINDOW NAME hilight
+/WINDOW MOVE up
+/WINDOW SIZE 10
+/WINDOW stick
+/layout save</pre>
+<p>This will create a new window called <span class="emphasis"><em>hilight</em></span> which will be displayed at the
+top be sticking 10 lines high, which means that it will stay in position
+regardless of changing channel windows.</p>
+<p>Finally we make sure that our nick is highlighted with <code class="literal">/hilight nick</code></p>
+<p>We’ll leave this for now and come back to tweaking our settings later.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_resources"></a>Resources</h4></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<a class="ulink" href="http://selcouth.com/irssi.php" target="_top">basic irssi guide</a>
+</li>
+<li>
+<a class="ulink" href="http://michael-prokop.at/stg/irc_workshop.txt" target="_top">irssi cheatsheet</a>
+</li>
+<li>
+<a class="ulink" href="http://www.mindfuzz.net/?p=301" target="_top">GIVE ME A BETTER TITLE</a>
+</li>
+<li>
+<a class="ulink" href="http://www.irssi.org/themes" target="_top">IRSSI Themes</a>
+</li>
+<li>
+<a class="ulink" href="http://irssi.org/beginner/" target="_top">Lazy mans guide</a>
+</li>
+<li>
+<a class="ulink" href="http://pc-addicts.com/forum/viewthread.php?thread_id=538&amp;pid=2282#post_2282" target="_top">PC Addicts custom irssi setup</a>
+</li>
+</ul></div>
+</div>
+</div>
+</div>
+
+    </div>
+
+    <hr/>
+
+    <div class="nav" id="navfooter">
+    <table width="100%">
+      <tr><td width="33%" align="left">
+        
+         <a href="enhancing_my_workflow.html">Prev</a><br/>
+         Enhancing my workflow
+        
+      </td><td width="33%" align="center">
+        
+         <a href="index.html">Home</a><br/>
+         dotfile diaries
+        
+      </td><td width="33%" align="right">
+        
+          <a href="day_2.html">Next</a><br/>
+          Day 2
+        
+      </td></tr>
+    </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,3889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+
+<article lang="en">
+<articleinfo>
+    <title>dotfile diaries</title>
+</articleinfo>
+<section id="_goal">
+<title>Goal</title>
+<simpara>The goal of this diary is to track the journey of improving my unix-fu and
+work flow.</simpara>
+<simpara>I&#8217;ve come to love my current setup (tmux, oh-my-zsh, Vim, RVM and bundle).
+Setting up my environment may well get more complex so I&#8217;ll setup a script that
+will check whether these tools are available and install them if they are not.</simpara>
+<simpara>Vim and oh-my-zsh are easy, I already have separate repositories for these. I&#8217;m
+going to be opinionated for the moment an focus on installing the other tools
+via brew and apt. I&#8217;ll check the OS and use the correct install recipe
+accordingly.</simpara>
+<simpara>I&#8217;ll start off with a very basic workbench and build it up to the point where
+it it optimal for my personal use and configurable enough for others to do the
+same too.</simpara>
+</section>
+<section id="_the_journey">
+<title>The journey</title>
+<section id="_enhancing_my_workflow">
+<title>Enhancing my workflow</title>
+<simpara>This will be a delve into moving my internet use workflows back into the
+console. I find it cumbersome to keep tabbing back and forth and trying to keep
+a mental note of how many times I need to tab to get where I want. In the
+terminal this can be manage alot easier and at least allow me to set things up
+more like how I prefer things to be.</simpara>
+<sidebar>
+<literallayout class="monospaced">duration: 2 weeks
+start:    day 0
+notes:
+  * Setting up irssi
+  * Customise irssi to my liking
+  * Get the basic of mutt setup
+  * Find and customise a command line browser</literallayout>
+</sidebar>
+<section id="_refine_my_workflow">
+<title>Refine my workflow</title>
+<simpara>I already have my dotfiles under version control but I would like to clean
+these up and find a way to make them a little bit more maintainable. Primarily
+I want to move away from using braid and my forked version of my dotfiles.</simpara>
+<simpara>This will lead me towards improving my vim settings and skills.</simpara>
+<simpara>For this I will setup my dotfiles from scratch and show the pros and cons of my
+setup and how I like to have things laid out.</simpara>
+<screen>duration: 8 days
+start:    1 week
+notes:
+  * start my dotfiles from scratch
+  * define local files to hide
+  * setup tmux and tmuxinator
+  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</screen>
+</section>
+<section id="_housekeeping_tools">
+<title>Housekeeping tools</title>
+<simpara>This will focus on building tools to help me maintain and keep my toolsets up
+to date.</simpara>
+<screen>duration: 4 weeks
+start:    week 3
+notes:
+  * manage personal credentials
+  * notifications and alerts via tmux
+  * create script to check for my dotfile dependancies
+    * Should download them if they are not found</screen>
+</section>
+<section id="_dressing_down_vim">
+<title>Dressing down Vim</title>
+<screen>duration: 6 weeks
+start:    week 7
+location: everywhere
+notes:
+
+  * pain experienced
+  * what was missed
+  * what did I learn (daily log)
+  * use `:map` in Vim to learn new mappings
+  * use vimtutor</screen>
+</section>
+<section id="_learn_my_tools">
+<title>Learn my tools</title>
+<simpara>Will need to decide on plugins to learn</simpara>
+<screen>duration: 1 week per plugin
+start:    week 15
+plugin list:
+  * surround
+  * text objects
+  * macros
+  * gundo
+notes:
+
+  * this could be done after the intial 6 weeks</screen>
+</section>
+</section>
+</section>
+<section id="_dependancies">
+<title>Dependancies</title>
+<section id="_tools_of_the_trade">
+<title>Tools of the trade</title>
+<simpara>A list of tools that are needed for the my ideal workbench</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+zsh
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+irssi
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+perl
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+mutt
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+w3m
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+rvm
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ruby
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+git-scribe
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ack
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+newsbeuter
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section id="_enhancing_my_workflow_2">
+<title>Enhancing my workflow</title>
+<simpara>This will be a delve into move the my internet related information back into
+the console. I find it cumbersome to keep tabbing back and forth and trying to
+keep a mental note of how many times I need to tab to get where I want. In the
+terminal this can be manage a lot easier and at least allow me to set things up
+more like how I prefer things to be.</simpara>
+<sidebar>
+<literallayout class="monospaced">duration: 2 weeks
+notes:
+  * Setting up irssi
+  * Customise irssi to my liking
+  * Get the basic of mutt setup
+  * Find and customise a command line browser
+  * Setup authoring tools
+  * Setup tmux and tmuxinator</literallayout>
+</sidebar>
+</section>
+<section id="_day_1">
+<title>Day 1</title>
+<simpara>So this is the first day of an on going process devised by myself to help
+improve and tweak my existing work flow.</simpara>
+<simpara>For years I&#8217;ve been used to living in the console and staying away from GUI
+type tools to do my day to day work</simpara>
+<simpara>So the idea is to move back to my console and improve my work flow by tweaking
+and getting to know my console tools better.</simpara>
+<simpara>In this blog I&#8217;ll start with something simple, as the days progress I create a
+blog describing what I&#8217;ve learnt today and how it improves my day to day
+work flow.</simpara>
+<simpara>Today is an easy day, I&#8217;ll start with setting up irssi, a command line
+interface for IRC.</simpara>
+<simpara>What I want here is my old setup tweaked to make it easy to change channels and
+see is in a room.</simpara>
+<section id="_setting_up_irssi">
+<title>Setting up irssi</title>
+<simpara>I&#8217;m using a Mac and use brew. So it is as easy as running <literal>brew install irssi</literal>.</simpara>
+<simpara>Job done!</simpara>
+<section id="_configuring">
+<title>Configuring</title>
+<simpara>I like to see all the most important information right in front of me, so my
+ideal IRC client looks something like this:</simpara>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="https://github.com/baphled/dotfile-diaries/raw/master/screenshots/irssi-current.png"/>
+  </imageobject>
+  <textobject><phrase>preferred setup</phrase></textobject>
+</inlinemediaobject></simpara>
+<simpara>Unconfigured, irssi looks like this:</simpara>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="https://github.com/baphled/dotfile-diaries/raw/master/screenshots/irssi-default.png"/>
+  </imageobject>
+  <textobject><phrase>default setup</phrase></textobject>
+</inlinemediaobject></simpara>
+<simpara>Which kinda sucks!, where&#8217;s a list of who is online?</simpara>
+<simpara>First things first, <ulink url="http://quadpoint.org/articles/irssi/">is a good place to start</ulink>.</simpara>
+<simpara>I&#8217;ll use some tips from there to get myself started.</simpara>
+<simpara>twirssi - twitter for irc
+nicklist - displays a list of users</simpara>
+</section>
+<section id="_defaults">
+<title>Defaults</title>
+<simpara>Now it&#8217;s time to tweak our settings so that we can navigate freely and don&#8217;t
+have to decypher what is being said per room. I&#8217;m used to having a window per
+channel and being alerted when someone makes a comment. For this I&#8217;d like to
+create a window every time I join a new channel and remove the window once I
+have left one. To do this we&#8217;ll need aliases.</simpara>
+<literallayout class="monospaced">/SET autocreate_windows ON`
+/SERVER ADD -auto -network freenode irc.freenode.net
+/save
+/exit</literallayout>
+<simpara>This will save us from having to add the FQDN and refer to it as an alias,
+freenode in this case.</simpara>
+<simpara>Now when you restart irssi you will be automatically connected to freenode :)</simpara>
+</section>
+<section id="_listing_channel_users">
+<title>Listing channel users</title>
+<simpara>So to get the user list we&#8217;ll need nicklist with some tweaks.</simpara>
+<simpara>The older versions of nicklist require us to use screen/tmux and do some
+hackery, I&#8217;m not a fan, thankfully I stumbled across this
+<ulink url="http://github.com/ConX/nicklist.pl">nicklist.pl</ulink>. This isn&#8217;t ideal, we have
+the user list at the top but it&#8217;s much better than hoping that the screens open
+and things fire off at the right time.</simpara>
+<simpara>That a soon after finding the sweet spot, the original version of the script
+decided to kill the cat command you had to run to get the user list, not my
+idea of fun.</simpara>
+<simpara>This will do for the moment but as part of my weekend of hacking I hope to
+tweak this script to get the layout I want.</simpara>
+<simpara>We will need to create a scripts directory for scripts we want to autoload.</simpara>
+<literallayout class="monospaced">/WINDOW NEW
+/WINDOW NAME hilight
+/WINDOW MOVE up
+/WINDOW SIZE 10
+/WINDOW stick
+/layout save</literallayout>
+<simpara>This will create a new window called <emphasis>hilight</emphasis> which will be displayed at the
+top be sticking 10 lines high, which means that it will stay in position
+regardless of changing channel windows.</simpara>
+<simpara>Finally we make sure that our nick is highlighted with <literal>/hilight nick</literal></simpara>
+<simpara>We&#8217;ll leave this for now and come back to tweaking our settings later.</simpara>
+</section>
+<section id="_resources">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://selcouth.com/irssi.php">basic irssi guide</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://michael-prokop.at/stg/irc_workshop.txt">irssi cheatsheet</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www.mindfuzz.net/?p=301">GIVE ME A BETTER TITLE</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www.irssi.org/themes">IRSSI Themes</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://irssi.org/beginner/">Lazy mans guide</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://pc-addicts.com/forum/viewthread.php?thread_id=538&amp;pid=2282#post_2282">PC Addicts custom irssi setup</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+</section>
+<section id="_day_2">
+<title>Day 2</title>
+<simpara>So I&#8217;ve in the previous posts I&#8217;ve setup irssi and setup twirssi so that I can
+keep up to date with my tweets without having to deal with a GUI.</simpara>
+<simpara>Now I want to tweak my settings so that I can open links easily and have a few
+more channels setup in hidden windows.</simpara>
+<simpara>I&#8217;d also like to setup vim-mode for irssi</simpara>
+<simpara>Today I&#8217;ll be tweaking Irssi so that I can interact with my Instant
+Messager and twitter accounts.</simpara>
+<section id="_grabbing_links">
+<title>Grabbing links</title>
+<simpara>I want to a way to handle links, their everywhere and their useful, to do this
+I&#8217;ll use bjurl.pl to highlight links and give me the ability to open and copy
+them.</simpara>
+<simpara>I used this version of
+<ulink url="http://raw.github.com/sukima/bjurl/master/bjurl.pl">bjurl</ulink>. I&#8217;ll copy it to
+the usual place (<literal>~/.irssi/scripts/autorun</literal>) we can than run the script and we
+have a nicely highlighted URL&#8217;s :D</simpara>
+<simpara>To open files we&#8217;ll need to do some more configuration, as I&#8217;m on a mac, I&#8217;ll
+download Lynx and get it to open in a new tmux window. We&#8217;ll setup our browser as lynx as it&#8217;s a command line browser.</simpara>
+</section>
+<section id="_adding_our_im_to_irssi">
+<title>Adding our IM to irssi</title>
+<simpara>So we&#8217;ve done quite a bit with our irc client in ways of centralising communicaions, wouldn&#8217;t it be cool if we could get our IM&#8217;s to play nicely too? Well it seems that it isn&#8217;t much of a problem.</simpara>
+<simpara>We&#8217;ll download bitlbee and create a new window for it in our irssi client.</simpara>
+<simpara>First, the download:</simpara>
+<literallayout class="monospaced">brew install bitlbee</literallayout>
+<simpara>Now we can connect to one of the bitlbee servers and get things setup.</simpara>
+<literallayout class="monospaced">/win new hidden
+/win name bitlbee
+/server im.uk.bitlbee.org 6667</literallayout>
+<simpara>This should automatically join you to the "&amp;bitlbee" channel, this is where
+you&#8217;ll be able to setup your account and send messages :)</simpara>
+<simpara>Once connected you&#8217;ll need to register and set a password</simpara>
+<literallayout class="monospaced">/register &lt;username&gt;
+/OPER</literallayout>
+<simpara>Once you have entered these commands you will be prompted to enter your password</simpara>
+<simpara>All set? good, now we can start adding accounts</simpara>
+<literallayout class="monospaced">account add jabber &lt;your gmail email address&gt;
+/OPER</literallayout>
+<simpara>Now you can enter your IM&#8217;s password. Rince and repeat until you have added all your accounts.</simpara>
+<simpara>Finally call <literal>account on</literal> bitlbee will connect you to all of your accounts :)</simpara>
+<simpara>All accounts successfully connected to will be stored so the next time you connect to bitlbee all you need to do is run the following commands</simpara>
+<literallayout class="monospaced">/identify &lt;username&gt;
+/OPER</literallayout>
+<simpara>Once you enter your password you can then call <literal>account on</literal> and log into all IM&#8217;s</simpara>
+<simpara>Simples :D</simpara>
+<section id="_resources_2">
+<title>Resources</title>
+<simpara><ulink url="http://pthree.org/2008/03/04/static-windows-in-irssi/">static windows</ulink></simpara>
+</section>
+</section>
+</section>
+<section id="_day_3">
+<title>Day 3</title>
+<simpara>So for today, I&#8217;d like to stop using twitter and move it my console. I love
+Twitter but GUI&#8217;s are exceptionally slow and I&#8217;d like a lot more control over
+what I can see when and how it&#8217;s displayed.</simpara>
+<section id="_setting_up_twitter_in_my_console">
+<title>Setting up twitter in my console</title>
+<simpara>For this we&#8217;ll use <ulink url="http://github.com/zigdon/twirssi/issues">twirssi</ulink>,
+recommended to me by <ulink url="http://twitter.com/23me">@23me</ulink>, who I used to spend a lot
+of time chatting on IRC with in my misspent youth.</simpara>
+<section id="_the_setup">
+<title>The setup</title>
+<simpara>So the first step is to download and setup the script and take it from there.</simpara>
+<simpara>We&#8217;ll need to add the Net::Twitter from CPAN:</simpara>
+<literallayout class="monospaced">sudo perl -MCPAN -e 'install Net::Twitter'
+sudo perl -MCPAN -e 'install JSON::Any'</literallayout>
+<simpara>We&#8217;ll also need to run the script and pass our username:</simpara>
+<literallayout class="monospaced">/win new hidden
+/win name twitter
+/script load twirssi.pl
+/twitter_login username
+/twirssi_oauth &lt;username&gt;@Twitter &lt;pin&gt;</literallayout>
+<simpara>This will create a new hidden window call it twitter and load the script and
+finally set the username. You will then be asked to authorise the application
+by visiting the displayed link, once this is done, you should then be ready to
+use twitter via irssi :)</simpara>
+<literallayout class="monospaced">/layout save
+/save</literallayout>
+<simpara>Now you settings are saved we can happily close irssi knowing that our setup
+will still persist :D</simpara>
+<simpara>For further customisation, checkout <ulink url="http://twirssi.com/?using">twirssi&#8217;s user guide</ulink></simpara>
+</section>
+</section>
+<section id="_setting_up_vim_mode">
+<title>Setting up vim-mode</title>
+<simpara>Now, where would we be if we didn&#8217;t have a favourite text editors key settings
+available in irssi.</simpara>
+<simpara>That&#8217;d be heaven right, we&#8217;ll it&#8217;s pretty damn easy to get this going and to
+add your own mappings, which is wicked, though it&#8217;d be even better if we could
+just pull in our mappings from vim itself but that&#8217;s for another day.</simpara>
+<simpara>For now we&#8217;ll just setup vim-mode for irssi, which is easy as hell, and get it
+setup so that we can take advantage of some of the key bindings I&#8217;ve gotten
+used to.</simpara>
+<simpara>We&#8217;ll get that from
+<ulink url="http://raw.github.com/shabble/irssi-scripts/master/vim-mode/vim_mode.pl">here</ulink>.
+We&#8217;ll also grab uberprompt which vim-mode depends on for some extra
+<ulink url="http://raw.github.com/shabble/irssi-scripts/master/prompt_info/uberprompt.pl">vim
+like</ulink> functionality.</simpara>
+<simpara>Once downloaded and added to your autorun directory we&#8217;re pretty much good to
+go. Run the following:</simpara>
+<literallayout class="monospaced">/run vim_mode</literallayout>
+<simpara>Then we should be good to go :)</simpara>
+<simpara>The source file has heaps of information, much of which I&#8217;ve not had the chance
+to read through properly yet, on how to get started and set things up just how
+like. So take look at that and determine what is the best for you :)</simpara>
+<simpara>For the lazy, like me, here&#8217;s what I&#8217;ve done so far to get started.</simpara>
+<literallayout class="monospaced">/statusbar window add vim_mode
+/statusbar window add vim_windows</literallayout>
+<simpara>We&#8217;ll want to save these changes</simpara>
+<literallayout class="monospaced">/layout save
+/save</literallayout>
+<simpara>This will help you to know when you are in Insert or Command mode.</simpara>
+<simpara>There&#8217;s heaps of documentation on vim-mode via the source file, so delve in and
+start hacking. Admittedly I&#8217;d love it if it took my vim settings but hell, it&#8217;s
+not too much hassle to setup mapping for the most important things :)</simpara>
+<simpara>At present these are the mappings that I&#8217;ve setup to get started with</simpara>
+<literallayout class="monospaced">map &lt;C-H&gt; &lt;BS&gt;
+map &lt;Leader&gt; ,
+map &lt;Leader&gt;p :bprev
+map &lt;Leader&gt;n :bnext</literallayout>
+<simpara>I remapped the leader key to the <literal>'</literal> as this is what I have setup in my vim. I
+also setup <literal>:bprev `and `:bnext</literal> so that I can easily move around to the next
+and previous windwos within irssi.</simpara>
+<simpara>It would be nice to create a binding for specifying a window to navigate to
+but I&#8217;ll leave this for another time.</simpara>
+<simpara>I could also setup bindings for navigating between split windows by adding the
+below mappings to  <literal>vim_moderc</literal></simpara>
+<literallayout class="monospaced">map &lt;C-h&gt; &lt;C-w&gt;h
+map &lt;C-j&gt; &lt;C-w&gt;j
+map &lt;C-k&gt; &lt;C-w&gt;k
+map &lt;C-l&gt; &lt;C-w&gt;l</literallayout>
+<simpara>We&#8217;ll also want to add bingins for navigating. Irssi uses &lt;ESC&gt; # to navigate
+to a given window, as we have vim-mode setup &lt;ESC&gt; is used to change vim modes
+so we&#8217;ll need to remap these so that they would with the new setup.</simpara>
+<literallayout class="monospaced">MAPPING TO BE ADDED LATER</literallayout>
+<simpara>Making <literal>&lt;esc&gt;</literal> has been remapped we should be able to easily move around
+windows without having to rely on our newly created <literal>&lt;leader&gt;p</literal> and <literal>&lt;leader&gt;n</literal>
+keys.</simpara>
+</section>
+</section>
+<section id="_day_4">
+<title>Day 4</title>
+<simpara>So I&#8217;ve done quite a bit to get irssi setup and working as I want it.
+The last things I want to do is lose my settings or messing something
+up, as I have done a number of times already.</simpara>
+<section id="_keeping_my_settings_under_version_control">
+<title>Keeping my settings under version control</title>
+<simpara>So the easy fix for this is to create a repository and pull the config
+in as dotirssi.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+There`s not much to this really.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+I copy the .irssi directory to dotirssi.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+I then initialised git for version control.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Created a new repository on github
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ignored files with the pattern <literal>scripts/twirssi.*</literal>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Commited all the files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+pushed the changes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+added the project to my dotfiles using braid
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+This will change some point in this process
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Copy my twirssi auth files to <literal>~/dotirssi/scripts</literal>
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Once the above was done I was able to have my irssi settings up version
+control :)</simpara>
+</section>
+<section id="_opening_links_irssi_with_lynx">
+<title>Opening links irssi with lynx</title>
+<simpara>Yet another day of tweaking my irssi rig, today I want to get Lynx to open in a
+new tmux window when I select a link. I&#8217;ll use tmux to do this as it&#8217;s what
+it&#8217;s good at and I&#8217;ll get bjurl to call tmux when ever I select a link for
+viewing.</simpara>
+<simpara>Again the goal here is to move more of my work flow into my terminal which will
+allow me to deal with content when I choose.</simpara>
+<simpara>First off we need to actually be able to easily see links and open them,
+we&#8217;ll use <ulink url="http://github.com/sukima/bjurl/blob/master/bjurl.pl">bjurl</ulink> for this.</simpara>
+<simpara>As with most plugins this is as simple as downloading the script and
+adding it to your irssi script directory.</simpara>
+<simpara>If your already running irssi run <literal>/run bjurl</literal>.</simpara>
+<simpara>As I&#8217;m using a mac, I needed to to set the <literal>browse_command</literal> settings to
+open links just how I want it to.</simpara>
+<simpara>First we need a new tmux window to start lynx in.</simpara>
+<literallayout class="monospaced">tmux new-window -t workbench -s interwepts</literallayout>
+<simpara>We&#8217;ll need tell bjurl to behave as we want:</simpara>
+<literallayout class="monospaced">/set browse_command tmux send-keys -t interwepts 'lynx $1' C-m</literallayout>
+<simpara>And that&#8217;s pretty much it for now, we can now load links within our current session :)</simpara>
+<simpara>It would be cool if we had a separate session strictly for browsing, that
+way we don&#8217;t have to clutter the current session.</simpara>
+<simpara>This and a few other things will be the next step for improving this work flow
+but lets take small steps and see where this path leads up :)</simpara>
+<section id="_todo">
+<title>TODO</title>
+<simpara>It would be cool if we could name our window accordingly and not have to deal
+with the many windows issue I have with chrome and many other browser at
+present. This only leads to a sluggish computer and "Tab overload"</simpara>
+<simpara>I also need bjurl to be a bit smarter in identifying links, it&#8217;s hard to track
+links once 20 have been displayed, at present it&#8217;s quite useless.</simpara>
+</section>
+</section>
+</section>
+<section id="_day_5">
+<title>Day 5</title>
+<simpara>So we&#8217;ve got Lynx setup to work with irssi, after doing so I found out
+that w3m can deal with tabs and images. Admittedly I&#8217;m not particularly
+a fan of tabs, mainly as I tend to build up quite a collection of these
+and never really go back to them, but I&#8217;ll give it a whirl and see what
+the pros and cons of it as opposed to lynx.</simpara>
+<section id="_playing_with_w3m">
+<title>Playing with w3m</title>
+<simpara>As always I used brew <literal>brew install w3m</literal> to get things rolling.</simpara>
+<simpara>So this is what w3m looks like out of the box.</simpara>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="https://github.com/baphled/dotfile-diaries/raw/master/screenshots/w3m-default.png"/>
+  </imageobject>
+  <textobject><phrase>default setup</phrase></textobject>
+</inlinemediaobject></simpara>
+<simpara>Off the bat the colours are all wrong, trying to red blue text is near
+impossible when using a black background, so that had to be changed.</simpara>
+<simpara>The other issue was that though I still had my vim keys I could not use
+<literal>&lt;C-B&gt;</literal> and <literal>&lt;C-F&gt;</literal> to move around, which is annoying, that&#8217;ll have to be
+changed too.</simpara>
+<note><simpara>how do i change the binding?</simpara></note>
+<simpara><ulink url="http://w3m.sourceforge.net/MANUAL">manual</ulink></simpara>
+<simpara>I also couldn&#8217;t see URL&#8217;s at all.</simpara>
+<simpara>I guess the first step is to work out how to customise w3m so that we
+can get those colours sorted and give it some vim love.</simpara>
+<simpara>Ok, so changing the settings is quite easy to get to, simply press <literal>o</literal>
+whilst having w3m open and the settings page will be displayed. We
+simple need to scroll down to <emphasis>Colour Settings</emphasis> and specify the colours we desire.</simpara>
+<simpara>Viewing links it&#8217;s just as easy as interacting with any other link so
+that&#8217;s cool :)</simpara>
+<simpara>The only things that niggles me is not being able to set up leader key</simpara>
+<simpara>The most important once for the moment are to page up and down quickly
+as the default mappings are quite a stretch.</simpara>
+<simpara>Add the below to the keymap file within <literal>~/.w3m</literal> gives me the ability to
+do exactly this.</simpara>
+<literallayout class="monospaced">keymap  F     NEXT_PAGE
+keymap  B     PREV_PAGE</literallayout>
+<simpara>Now that w3m is setup a for navigating a little easier, I&#8217;ll swap out
+lynx for w3m.</simpara>
+<literallayout class="monospaced">/set browse_command tmux send-keys -t interwepts 'w3m $1' C-m</literallayout>
+<simpara>We&#8217;ll run with this for the moment as see how it fairs.</simpara>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="https://github.com/baphled/dotfile-diaries/raw/master/screenshots/w3m-current.png"/>
+  </imageobject>
+  <textobject><phrase>new setup</phrase></textobject>
+</inlinemediaobject></simpara>
+<simpara>Before we commit this to version control, we&#8217;ll make some tweaks to the
+config file to make it less specific to a Mac.</simpara>
+<simpara>Below is a snippet from my config that I should change, when on a different
+box, I probably won&#8217;t have brew installed and I prefer to have all my settings
+controlled locally so we wont need the references to the skeleton configs.</simpara>
+<literallayout class="monospaced">urimethodmap ~/.w3m/urimethodmap, /usr/local/Cellar/w3m/0.5.3/etc/w3m/urimethodmap
+mailcap ~/.w3m/mailcap, /usr/local/Cellar/w3m/0.5.3/etc/w3m/mailcap
+mime_types ~/.mime.types, /usr/local/Cellar/w3m/0.5.3/etc/mime.types</literallayout>
+<simpara>It now looks like this:</simpara>
+<literallayout class="monospaced">urimethodmap ~/.w3m/urimethodmap
+mailcap ~/.w3m/mailcap
+mime_types ~/.mime.types</literallayout>
+<simpara>So now we&#8217;re pretty much ready to play around with it for a while and take
+notes of things that I&#8217;d like to change.</simpara>
+<section id="_todo_2">
+<title>TODO</title>
+<itemizedlist>
+<listitem>
+<simpara>
+How to send a link of what I&#8217;ve read to Twitter
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+How to share a link with Google+
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_resources_3">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://w3m.sourceforge.net/">w3m</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://fts.ifac.cnr.it/cgi-bin/dwww/usr/share/doc/w3m/examples/keymap.default">keymaping example</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section id="_taming_the_mutt">
+<title>Taming the mutt</title>
+<simpara>I&#8217;d like to use mutt for dealing with my email, AppleMail is cool but
+it&#8217;s way too much for my liking and I&#8217;d prefer it if I could organise my
+emails without having to fiddle with sub folders manually.</simpara>
+<simpara>I my old config this was done by using procmail to create/send emails to
+folders dependant on the source of the email.</simpara>
+<simpara>This was pretty configurable so I&#8217;d like to get some of this back into
+my current setup so that I don&#8217;t get email overload :)</simpara>
+<section id="_setting_things_up">
+<title>Setting things up</title>
+<simpara>I had a better setup a while back but after rummaging around for ancient backups I decided to start from scratch.</simpara>
+<simpara>Again, I&#8217;ll be using brew to get mutt installed <literal>brew install mutt</literal></simpara>
+<simpara>You&#8217;ll need to run the following commands:</simpara>
+<literallayout class="monospaced">mkdir -p ~/.mutt/cache/headers
+mkdir ~/.mutt/cache/bodies
+touch ~/.mutt/certificates</literallayout>
+<simpara>Next I needed to create a <literal>.muttrc</literal> file, to setup my GMail account. I
+used this example
+<ulink url="http://github.com/baphled/dotmutt/raw/master/muttrc">here</ulink> to get things
+started.</simpara>
+<simpara>I had to make a few tweaks to get things just right. Firstly the order
+of the emails were newest at the bottom which is kind of annoying, I&#8217;d
+like to see my newest emails first, so this needs to be sorted.</simpara>
+<simpara>We&#8217;ll hold out on that for the moment and customise the look of mutts, I
+stumbled upon
+<ulink url="https://raw.github.com/l0stman/muttrc/master/mutt-colors-solarized-dark-256.muttrc">this</ulink>
+theme that works pretty well for the moment so I&#8217;ll go with that for now.</simpara>
+<simpara>Now back to the matter at hand, how to get the sort order setup so that
+my newest emails are displayed first.</simpara>
+<simpara>So I had to go into my muttrc file and make this changes</simpara>
+<literallayout class="monospaced">set sort_aux = 'reverse-date'</literallayout>
+<simpara>And make sure I also had the following in my config too:</simpara>
+<literallayout class="monospaced">set sort = 'threads'</literallayout>
+<simpara>Mutt is now setup, well enough to start playing around, I&#8217;ll work on
+integrating this into my workflow as time goes on.</simpara>
+<simpara>The final things is to move this into it&#8217;s own repository for now, as I
+will be restarting my dotfiles from scratch once I have all these pieces
+setup.</simpara>
+<simpara>I did what I usually do, created a git repo and moved my <literal>.muttrc</literal> file
+to <literal>~/.mutt/muttrc</literal> and then renamed the directory to dotmutt.</simpara>
+<simpara>Once this was done I went through the motion of pushing the setting to a
+new repository.</simpara>
+<simpara>I then used braid</simpara>
+<literallayout class="monospaced">braid add git://github.com/baphled/muttfiles.git dotmutt
+ln -s dotmutt .mutt
+ln -s .mutt/muttrc .muttrc</literallayout>
+<simpara>Then everything was setup as it where :)</simpara>
+</section>
+<section id="_todo_3">
+<title>TODO</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Improve the way I&#8217;m handling my email credentials
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Setup email alerts via the terminal
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Create screengrabs as I did with irssi
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_resources_4">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://mutt.blackfish.org.uk/">My first mutt</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www.mutt.org/doc/manual/manual-2.html">mutt manual</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://lifehacker.com/5574557/how-to-use-the-fast-and-powerful-mutt-email-client-with-gmail">GMail example for UK users</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+</section>
+<section id="_day_6">
+<title>Day 6</title>
+<simpara>I&#8217;ve been writing quite a bit recently and have wanted to play around with
+git-scribe for authoring my diary and possibly writing projects in the future.</simpara>
+<simpara>Today I&#8217;ll be setting up git-scribe and updating my diary so that I can
+generate content in various formats. Initially I&#8217;ll only publish this content
+as HTML but then move on to PDF and epub later once I&#8217;ve ironed out the kinks.</simpara>
+<section id="_setting_up_git_scribe">
+<title>Setting up git-scribe</title>
+<simpara>It&#8217;s not directly related but I love to write and I&#8217;d like my setup to
+allow me to easily write new material and publish them in various formats.</simpara>
+<simpara>I&#8217;ve been watching git-scribe for some time and thought this would be a
+perfect time to bring it into my current workflow.</simpara>
+<simpara>I&#8217;ll setup git-scribe as it allows me to write my entries in AsciiDoc
+format and compile it into a number of formats (html, pdf, mobi, etc).</simpara>
+<simpara>As this is the case we&#8217;ll have a play with this setup and possibly use
+it for publishing other material.</simpara>
+<simpara>There&#8217;s not much to this really the project has great
+<ulink url="https://github.com/spf13/asciidoc-vim">documentation</ulink></simpara>
+<simpara>Once installed I started initialised the new book.</simpara>
+<literallayout class="monospaced">git scribe init</literallayout>
+<simpara>Once this was done I had the basic setup needed to move my diary. git-scribe
+uses AsciiDoc to format content so I needed to convert the old markdown. That
+wasn&#8217;t so much trouble as there isn&#8217;t much different in the markup. I created a
+couple of vim macros and went through the pages and updated them accordingly.
+The main changes needed were related to the titles of each entry.</simpara>
+<simpara>Once the files where moved into the <emphasis>book</emphasis> directory and the format of the
+content was setup it was easy to generate the site with one command <literal>git scribe
+gen site</literal>. In the <emphasis>output</emphasis> directory was the generated diary nicely formatted
+and indexed.</simpara>
+<section id="_todo_4">
+<title>TODO</title>
+<itemizedlist>
+<listitem>
+<simpara>
+It would be nice to automatically resize images so that they are not too
+    large or too small.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+create a script that generates my diary into HTML
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+the output will be another repository
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_resources_5">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://powerman.name/doc/asciidoc">asciidoc cheatsheet</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="https://github.com/spf13/asciidoc-vim">ascii-vim</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+</section>
+<section id="_day_7">
+<title>Day 7</title>
+<simpara>So I have a decent setup for browsing, communicating and writing.</simpara>
+<simpara>Now I want to be able to fire off all of my tools in separate windows so that I
+can easily manage them and keep my work flow contained.</simpara>
+<section id="_setting_up_tmux">
+<title>Setting up tmux</title>
+<simpara>I already have tmux installed at present, though there will be a point when I
+start my dotfiles anew and will properly document the process.</simpara>
+<simpara>For now I want to focus on how to automatically spawn a tmux session along with
+the default windows I use on a day to day basic.</simpara>
+<simpara>I&#8217;m using tmux along with tmuxinator to help manage my setting.</simpara>
+<simpara>Installing tmux is done simply by call <literal>brew install tmux</literal> once this has been installed we are ready to play with tmux. As I mentioned I&#8217;m using tmuxinator which is a ruby gem so we&#8217;ll add that to our Gemfile:</simpara>
+<literallayout class="monospaced">gem 'tmuxinator'</literallayout>
+<simpara>Running <literal>bundle install</literal> will install tmuxinator and then we are good to go.</simpara>
+<simpara>Tmuxinator stores it&#8217;s configuration settings in the <literal>~/.tmuxinator</literal> directory
+but we can create a new setup my running <literal>mux create workbench</literal>. I&#8217;ve already
+done this so I just ran <literal>mux open workbench</literal> to open the file in vim.</simpara>
+<section id="_the_layout">
+<title>The layout</title>
+<simpara>What I want here is a single session that setups up my perfect setup, allowing
+me to make the most of my terminal.</simpara>
+<simpara>For this I&#8217;d like the following windows:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Workbench
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>I&#8217;m often scawling notes of some kind so having a window to allow me to work
+with vim. So I want a window (Workbench) where I can interact with files via
+vim and have access to the console. This is where most of my actually work is
+done.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+IRC
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>I still want to be able to communicate with others and get topical information
+so I will want to use the irssi setup I&#8217;ve setup to allow me to keep my
+communications centralised.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Spyhole
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Tmux allows you to capture terminal output, I&#8217;d like to have a window that
+tails the log file and display any captured content. With tmux&#8217;s copy and paste
+functionality will can easily pull out captured content and use it in other
+places.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Email
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>I still need my emails so having a window for that that I can quickly jump to
+when I feel to would be idea, Mutt is pretty lightweight and I&#8217;m sure I can set
+it up so automatically check for new emails, though procmail.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Control Centre
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>I like to know if there are any changes that to my dotfiles master branch,
+ideally this should be a panel in a window, for now this is be another stand
+alone window that periodically calls <literal>git wtf</literal> to check for changes.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Toybox
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>I like o have a ruby repl that I can play around with and test out ideas. I&#8217;ve
+been playing around with pry a bit recently so I&#8217;d like to have a window open
+that allows me to test out ideas before I hack away at a solution.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Interwepts
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>As we have irssi setup to open a browser, we setup this window so that irssi
+can open w3m for us.</simpara>
+</section>
+<section id="_the_setup_2">
+<title>The setup</title>
+<simpara>Now I know what I want in regards of session setup, lets open up my workbench
+config file and make this set up, all we need to do is update of config and
+fire up the new session.</simpara>
+</section>
+<section id="_my_config">
+<title>My config</title>
+<literallayout class="monospaced">project_name: workbench
+project_root: ~/
+rvm: 1.9.2-head@workbench
+pre: cd ~/ &amp;&amp; bundle
+tabs:
+  - Workbench:
+      layout: b147,208x73,0,0[208x62,0,0,208x10,0,63{104x10,0,63,103x10,105,63}]
+      panes:
+        - vim
+        - #empty, will just run plain zsh
+  - Interwepts: w3m http://google.com
+  - IRC: irssi
+  - Email: mutt
+  - Spyhole: tail -f ~/workbench.log
+  - "Dotfile Diaries": vi ~/Documents/Diary
+  - 'Control centre': git wft
+  - Toybox: be pry</literallayout>
+<simpara>Now with this setup, we can simple run <literal>mux workbench</literal> and tmuxinator will
+handle the rest, creating and setting up each of my desired windows along with their separate tasks :)</simpara>
+<simpara>I won&#8217;t go into detail about my mappings and my config, as it can be
+<ulink url="https://github.com/baphled/dotfiles/blob/master/.tmux.conf">here</ulink>, and I&#8217;d like
+to leave a broader explaination when I starting tinkering with <literal>~/tmux.conf</literal>.</simpara>
+</section>
+<section id="_todo_5">
+<title>TODO</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Make sure that my workbench gemset is created
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Open w3m with a better default
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+</section>
+<section id="_refine_my_workflow_2">
+<title>Refine my workflow</title>
+<simpara>I already have my dotfiles under version control but I would like to clean
+these up and find a way to make them a little bit more maintainable. Primarily
+I want to move away from using braid and my forked version of my dotfiles.</simpara>
+<simpara>This will lead me towards improving my vim settings and skills.</simpara>
+<simpara>For this I will setup my dotfiles from scratch and show the pros and cons of my
+setup and how I like to have things laid out.</simpara>
+<screen>duration: 8 days
+notes:
+  * start my dotfiles from scratch
+  * define local files to hide
+  * setup tmux and tmuxinator
+  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</screen>
+</section>
+<section id="_day_8">
+<title>Day 8</title>
+<simpara>Today I&#8217;d like to start sketching out how my dotfiles should be setup and
+maintained. I&#8217;ll also come up with some ideas as to what my dotfiles will
+include and how to maintain the core dependencies of them.</simpara>
+<simpara>As some of the setup may change from box to box I shouldn&#8217;t have to throw
+everything into once basket, my dotfiles, I&#8217;d like to build some scripts that
+handle the dependencies of the setup and makes it easy for me to continue to
+tweak it whilst allowing it to be setup on any box with ease.</simpara>
+<section id="_dotfile_blueprints">
+<title>Dotfile blueprints</title>
+<simpara>So this is where the plan starts to come together.</simpara>
+<simpara>My dotfiles should be a collection of settings and utilities that help me with
+my day to day work. As time has gone on I&#8217;ve learnt what I like and what I
+don&#8217;t and have always like the idea of having one group setting that can go
+anywhere. Back in the day my setup was stored on my personal CVS repository,
+these days its github.</simpara>
+<simpara>NOTE:
+This link will need to be changed when we start the new version or clean up the
+current.</simpara>
+<simpara>I already have my dotfiles <ulink url="https://github.com/baphled/dotfiles">here</ulink>.</simpara>
+<simpara>So there are a few thins I&#8217;ll need my dotfiles to have, as follows:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+I must be able to push changes to any of my dotfiles without adding them to
+    my actual dotfiles, at present I&#8217;m having to do a lot of copy and pasting
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+It must be easy to update dependancies
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Must be under version control
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Should have a collection of custom scripts for things I do a lot of
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+This is start off by being a bunch of git scripts
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Alert me if my dotfiles or their dependancies are out of date
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+I&#8217;ll start on doing this just for my other dotfiles (dotmutt, dotirssi, etc)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Create a script to install my dependancies
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+This will start of by focussing on installing things via brew
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Should automatically check for new gems that my dotfiles rely on
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Must include the applications that my dotfiles rely on
+</simpara>
+</listitem>
+</itemizedlist>
+<section id="_the_basics">
+<title>The basics</title>
+<simpara>Let&#8217;s start from the top, I want the following:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Vim
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Tmux
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ZSH
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Regardless of what I&#8217;m aiming to do I&#8217;ll need all of these to make my workflow
+as productive as possible.</simpara>
+<simpara>I&#8217;ll need to branch my current repository so that I can start a fresh, once
+this is done, the next thing to do will be to add the dependancies. I may look
+into using puppet or chef for this but if that is the case then I will want to
+make sure that my dotfiles knows how to do a <literal>bundle install</literal>.</simpara>
+<simpara>So I guess the first thing will be to install rvm and get that setup so I can
+setup ruby.</simpara>
+<simpara>I should also document this process so that I can turn it into a script which
+makes sure that I have the correct version of ruby and have run bundle.</simpara>
+<simpara>So for zsh I&#8217;ll want to use <ulink url="https://github.com/baphled/oh-my-zsh"> oh-my-zsh </ulink>. I&#8217;ll use my own forked version, which
+includes my custom theme, and will add it to my newly created dotfiles.</simpara>
+<simpara>The main issue at the moment is that if I have made changes to my dotfiles or
+any of their sub repositories I&#8217;d like the commit to got to the right
+repository and not just be added to my dotfiles.</simpara>
+<simpara>I&#8217;m not sure how easy it is to achieve this but this would be the ideal
+situation for how I work. It very rare that I know the correct config or
+commands or changes for the at matter from the get go and have to spend a
+little time tinkering on my local setup before I can commit to anything. So
+having to keep track of these changes and copy them to the specific repository
+is a pain and error prone.</simpara>
+</section>
+<section id="_resources_6">
+<title>Resources</title>
+<simpara><ulink url="http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating">git submodules</ulink>
+<ulink url="http://stackoverflow.com/questions/8372625/git-how-to-push-submodule-to-a-remote-repository">git how to push to a remote repository</ulink></simpara>
+</section>
+</section>
+</section>
+<section id="_day_9">
+<title>Day 9</title>
+<simpara>Today I&#8217;ll be looking at what I have at the moment, in terms of my dotfiles
+setup, and what I need to deal to improve it and make it easier to maintain.</simpara>
+<section id="_starting_a_new">
+<title>Starting a new</title>
+<simpara>So the first thing I&#8217;ll need to do is stripped down my repository so that
+I can start a new.</simpara>
+<simpara>WARNING:
+This can be somewhat hazardious if you rely on having all of your
+downloads in your home directory as the following command will remove
+everything from your repository and working directory</simpara>
+<simpara>This will be used to stripped down my dotvim repository and help me
+start from scratch whilst keeping my master branch intacted.</simpara>
+<literallayout class="monospaced">git symbolic-ref HEAD refs/heads/stripped
+rm .git/index
+git clean -fdx</literallayout>
+<simpara>This took some time and basically removed everything in my home
+directory, which I didn&#8217;t really think about prior to running the
+command. So going back was not really an option.</simpara>
+<simpara>Once the command had finished all my personal setting were removed and I
+recieved a bunch of errors relating to RVM not being found. This was
+because my zsh settings rely on RVM for prompt information.</simpara>
+<simpara>So the first thing I want to do is change into bash and get RVM back up
+and running.</simpara>
+</section>
+<section id="_installing_rvm">
+<title>Installing RVM</title>
+<simpara>So the first thing i&#8217;ll need is RVM. This will be needed by my zsh
+prompt and for the dependancies for my workflow.</simpara>
+<simpara>I like to have the latest version of Ruby so I can keep up with what&#8217;s
+new in the latest releases.</simpara>
+<literallayout class="monospaced">curl -L https://get.rvm.io | bash -s stable --ruby</literallayout>
+<simpara>This will install the latest version of RVM and Ruby, so I am well on my
+way to getting Ruby setup on my system.</simpara>
+<simpara>Once rvm and the latest version of Ruby installed I wanted to change my
+setup so that the gems installed as part of my dotfiles are now
+installed in global, so that they are available everywhere.</simpara>
+<simpara>To do this I needed to make sure I was in the global gemset which was
+done by using the following command.</simpara>
+<literallayout class="monospaced">rvm gemset use global</literallayout>
+<simpara>Now that I am using the correct gemset, I need to make sure that I run
+bundle to make sure that everything is in place.</simpara>
+<literallayout class="monospaced">bundle</literallayout>
+<simpara>Once this is complete I have all my gems and rvm setup and ready to go.</simpara>
+<section id="_resources_7">
+<title>Resources</title>
+<simpara><ulink url="https://rvm.io/rvm/install">RVM</ulink></simpara>
+</section>
+</section>
+<section id="_removing_braid">
+<title>Removing Braid</title>
+<simpara>Braid can be a pain and I&#8217;d rather have more control over my external
+repositories to achieve this I will look into using git submodules. But
+first I will need to remove the external repositories and get rid of
+braid.</simpara>
+<simpara>I had the following gems installed before I started this process:</simpara>
+<literallayout class="monospaced">braid
+git-scribe
+tmuxinator
+pry</literallayout>
+<simpara>I no longer want to use braid, so I will firstly remove all the external
+repositories</simpara>
+<simpara>I also have the following external repositories:</simpara>
+<literallayout class="monospaced">oh-my-zsh
+dotirssi
+muttfiles
+dotvim</literallayout>
+<warning><simpara>Removing these files cause a lot of things to break.</simpara></warning>
+<simpara>To make sure that I don&#8217;t break anything I can&#8217;t fix imediately, and to
+keep my previous setup, I&#8217;ll need to create a new branch</simpara>
+<literallayout class="monospaced">gco -b remove_braid</literallayout>
+<note><simpara>The above command uses an aliases via oh-my-zsh</simpara></note>
+<simpara>We&#8217;ll start off by removing these via braid as follows:</simpara>
+<literallayout class="monospaced">braid remove oh-my-zsh
+braid remove dotirssi
+braid remove dotmutt
+braid remove dotvim</literallayout>
+<simpara>So the most important repository for me is oh-my-zsh it&#8217;s pretty much
+invaluable and it would be an idea to get this setup as soon as possible.</simpara>
+<literallayout class="monospaced">git submodule add git@github.com:baphled/oh-my-zsh.git oh-my-zsh
+git submodule init
+git submodule update</literallayout>
+<simpara>Now I have my zsh setup as a submodule I can make changes to the repository and
+push them directory to the right repository :)</simpara>
+<simpara>The next thing is to do the same for my other repositories</simpara>
+<literallayout class="monospaced">git submodule add git@github.com:baphled/dotvim.git dotvim
+git submodule add git@github.com:baphled/muttfiles.git dotmutt
+git submodule add git@github.com:baphled/dotirssi.git dotirssi</literallayout>
+<simpara>Now any changes made to my external repositories intermally or externally can
+now be easily tracked :)</simpara>
+<simpara>The last step in the journey is to remove braid from my Gemfile as it is no
+longer needed directly by the repository. That is as easy as removing the line
+<literal>gem "braid"</literal> and running <literal>bundle</literal> again.</simpara>
+<simpara>Now we have a cleaner repository and less worry in regards to how my other
+repositories are updated and managed.</simpara>
+<simpara>So now that I am using git&#8217;s submodules to manage my external repositories I
+can now make local changes and update the correct repository without polutting
+my dotfiles with changes that are not directly related to them.</simpara>
+</section>
+</section>
+<section id="_day_10">
+<title>Day 10</title>
+<simpara>In my old muttrc file I had procmail getting my mails and storing them in
+separate folders so that I can work out what was what and how important it was.
+I&#8217;ve long since had this setup and I&#8217;ve pretty much forgotten how it was all
+setup.</simpara>
+<simpara>Today is the day I start getting this setup back, this only be the start I want
+to be able to view all my email account via mutt and drop the UI all together.
+I look into email filtering and gradually improve my mutt as I go along.</simpara>
+<section id="_improving_mutt">
+<title>Improving mutt</title>
+<simpara>So I have my GMail account setup but that&#8217;s not enough. I want to include all
+my personal email accounts and maintain them.</simpara>
+<simpara>This will include processing my mail and sending/creating subdirectories based
+on a single emails content.</simpara>
+<section id="_ingredients">
+<title>Ingredients</title>
+<itemizedlist>
+<listitem>
+<simpara>
+procmail
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+mutt
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fetchmail
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+msmtp
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Procmail and fetchmail are installed on Macs by default so that saves me a
+step, so I guess the next things is to create some mail recipes.</simpara>
+<simpara>So I&#8217;ll have to run the following to get the ball rolling:</simpara>
+<literallayout class="monospaced">brew install msmtp</literallayout>
+<simpara>I then had to add the following to my <literal>.zshrc</literal></simpara>
+<literallayout class="monospaced">MAIL=/home/baphled/mail/inbox &amp;&amp; export MAIL</literallayout>
+<simpara>Then  in my home directory I ran:</simpara>
+<literallayout class="monospaced">touch .fetchmailrc
+chmod 700 .fetchmailrc</literallayout>
+<simpara>I then needed to poll my main email account
+  poll mail.my-email-account.net with proto POP3
+    user <emphasis>EMAILADDRESS</emphasis> keep
+    mda <emphasis>/usr/bin/procmail -d %T</emphasis></simpara>
+<simpara>I put my credentials in my <literal>.netrc</literal> file as follows:</simpara>
+<literallayout class="monospaced">machine mail.my-email-accoun.net
+login my-username
+password my-password</literallayout>
+<note><simpara>Make sure that <literal>.netrc</literal> is added to <literal>.gitignore</literal></simpara></note>
+<simpara>I had to make sure that I had setup my email details properply and to do this I
+had to do the following:</simpara>
+<literallayout class="monospaced">fetchmail</literallayout>
+<simpara>Once everything was setup properly fetchmail did it&#8217;s things and retrieved my
+email. This is the bare minimum I need to make sure that I have procmail
+working so that I can store my email in the right directories.</simpara>
+<simpara>I need to then create the mail directory <literal>~/Mail</literal> which is where all my mail
+will end up.</simpara>
+</section>
+<section id="_recipes">
+<title>Recipes</title>
+<simpara>So now I need to sort my emails into separate files so that I can deal with
+them easily.</simpara>
+<simpara>For this I&#8217;ll be using procmail and its' recipes to determine where emails
+should.</simpara>
+<note><simpara>Add my basic recipes here</simpara></note>
+<simpara>I&#8217;d also like to make fetchmail get my latest mail via mutt and not via a
+background process, this is quite easy with the follwoing macro:</simpara>
+<literallayout class="monospaced">macro generic G \
+  &lt;shell-escape&gt;'fetchmail'&lt;enter&gt; \
+  'Run fetchmail'</literallayout>
+<note><simpara>Need to document how to setup mail directories</simpara></note>
+<simpara>Now I need to be able to move around my filtered directories easily. To do this
+I can add a couple of macros to allow me to do just this.</simpara>
+</section>
+<section id="_managing_multiple_directories">
+<title>Managing multiple directories</title>
+<note><simpara>Add macros for selecting mail directories</simpara></note>
+<simpara>I&#8217;d also like to have a split screen so that I can see both the email I&#8217;m
+reading as well as the list of emails in mail directory I am currently in.</simpara>
+</section>
+<section id="_todo_6">
+<title>TODO</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Create generic recipes for project messages and the like
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Setup vim like bindings
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Move all email related config files into one repository
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Setup multiple accounts
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Each account should have its own default directory
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_resources_8">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://mutt.blackfish.org.uk/filtering/">mail filtering</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www.ii.com/internet/robots/procmail/qs/">procmail quickstart</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://linux.ucla.edu/lugwiki/resources:linux:mutt-and-procmail">mutt and procmail</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://zach.in.tu-clausthal.de/mutt/muttrc">Gabriel Zachmann&#8217;s .muttrc</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://nongeekshandbook.blogspot.co.uk/2009/02/mutt-email-client-that-sucks-less.html">mutt email client that sucks less</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://easierbuntu.blogspot.co.uk/2011/09/managing-your-email-with-fetchmail.html">manage your email with fetchmail</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www.elho.net/mutt/maildir/">Setup mail directories</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+</section>
+<section id="_day_11">
+<title>Day 11</title>
+<simpara>So my email is being retrieve, manually, so now I&#8217;d like to focus on getting
+this setup to be retrieved automatically and work out some procmail recipes so
+that I my email is nicely organised for me.</simpara>
+<section id="_organising_my_email">
+<title>Organising my email</title>
+<simpara>So like most I get quite a lot of email, varying in importance and
+relevance dependant on time. I&#8217;d like to get my old setup back in place
+with a few tweaks. Things are pretty much configured so that my email
+will be sent to the correct file but I need to improve on these recipes
+so that I don&#8217;t have to keep going back and forth over a long period of
+time constantly tweaking it.</simpara>
+<simpara>There are a few groups I know I&#8217;ll need and as time goes by I will have
+to add the odd new recipe but for now I&#8217;ll focus on my personal email
+and how to get that under some order.</simpara>
+<note><simpara>Link to my first procmailrc</simpara></note>
+<simpara>As with others I get quite a lot from various services, these can be
+filtered more as time goes on but for now I&#8217;d like a dumping ground
+<literal>social</literal> which will store all the unmatched emails that may slip through
+procmails net.</simpara>
+<simpara>I also like to not see email regarding jobs/roles I&#8217;m not interested in.
+Emails that have a given type of subject or come from know offenders
+(crappy recruitment consultants) should be sent to <literal>/dev/null</literal> so that I
+don&#8217;t have to bother with them. This may need some tweaking but I think
+testing my recipes by dry running it against my main email address
+should help to get this refined relatively quickly</simpara>
+<simpara>I also need a new directory to be created for any discussion groups I
+have joined. The idea here is that these will be caught by procmail and
+the name of the file will be created based on this. This way I don&#8217;t
+have to meddle with procmailrc too much and keeps things nice a clean.</simpara>
+<section id="_mailing_lists">
+<title>Mailing lists</title>
+<simpara>First things was to create a dummy email.</simpara>
+<literallayout class="monospaced">From info@meetup.com  Wed Jul 18 00:00:20 2012
+From: John Doe &lt;info@meetup.com&gt;
+Sender: foobar-announce@meetup.com
+To: FooBar-announce@meetup.com
+Subject: [FooBar] FB Meetup group closing down
+Mailing-List: list FreelanceFriday-list@meetup.com; contact postmaster@meetup.com
+List-Id: &lt;FooBar-list.meetup.com&gt;
+List-Unsubscribe: &lt;mailto: support@meetup.com&gt;</literallayout>
+<literallayout class="monospaced">BODY OF MESSAGE SEPARATED BY EMPTY LINE
+txt txt txt txt txt txt txt txt txt txt</literallayout>
+<note><simpara>Stolen from: <ulink url="http://bethesignal.org/dotfiles/procmailrc.html">http://bethesignal.org/dotfiles/procmailrc.html</ulink></simpara></note>
+<simpara>To do a dry run on my recipes I used the following command:</simpara>
+<literallayout class="monospaced">procmail VERBOSE=on DEFAULT=/dev/null   \
+  LOGFILE=~/test.log                    \
+    ~/.procmailrc &lt; ~/emailtest.txt</literallayout>
+<simpara>So the first thing I need to do is setup my social related email file.</simpara>
+<screen>  :0
+  * ^((List-Id|X-(Mailing-)?List):(.*[&lt;]\/[^&gt;]*))
+  {
+      LISTID=$MATCH
+
+      :0:
+      * LISTID ?? ^\/[^@\.]*
+      $MATCH
+
+  }</screen>
+<simpara>From time to time I find myself on a MAJADOMO mail server so I&#8217;ll add
+this in to preempt these occasions.</simpara>
+<screen>  # MAJORDOMO - Automagically handle Majordomo lists
+  :0
+  * ^Sender: owner-[^@]+@[^@\+]+
+  * ^Sender: owner-\/[^@\+]+
+  {
+      :0:
+      $MATCH
+  }</screen>
+<simpara>After doing a dry run the following directory was automatically added to
+my Mail directory.</simpara>
+<literallayout class="monospaced">λ l Mail
+total 3187
+-rw-------   1 baphled  staff      3187 19 Jul 20:24 FooBar-list</literallayout>
+<simpara>Now the problem here is that mutt does not recognise the directory and I
+will have to still manually add each one as I notice them into my mutt
+file.</simpara>
+<simpara>There is a way around this I could make mutt smarter and work out which
+directories are inboxes and which are not.</simpara>
+<note><simpara>Wrote a script that can easily list the inboxes. Need to automate</simpara></note>
+</section>
+<section id="_filtering_linkedin_discussion_groups">
+<title>Filtering LinkedIn Discussion groups</title>
+<simpara>Now I&#8217;m on a few LinkedIn mailing lists and they don&#8217;t adear to the
+above rules so I will need to create a generic rule that sends all
+LinkedIn originating emails to the appropriate discussion group.</simpara>
+<simpara>Getting the regexp just right wasn&#8217;t easy but I finally manage to get it
+to work with a little help from the shell.</simpara>
+<simpara>I took the same route as I did earlier, copied a same email to the
+emailtest.txt file, after a while I came up with the following.</simpara>
+<literallayout class="monospaced">:0: # Change this so that it sorts by the digest group$
+* ^(From):(\/.*).*\&lt;group-digests@linkedin.com\&gt;$
+`echo $MATCH | awk '{$NF=`}1' | sed 's/ //g'`$''`</literallayout>
+<simpara>The most cryptic is the following line:</simpara>
+<literallayout class="monospaced">`echo $MATCH | awk '{$NF=`}1' | sed 's/ //g'`$''`</literallayout>
+<simpara>Basically I echo the matched address out to the shell which then returns
+everything but the last column, in this case it&#8217;s the email address. It
+then removes all spaces and we have our directory.</simpara>
+</section>
+<section id="_filter_pr_crap">
+<title>Filter PR crap</title>
+<simpara>I&#8217;m still getting quite a bit of email dumped into my main inbox. I want
+to fix this so that I don&#8217;t have to waid through heaps of PR related
+stuff I&#8217;m not really interested in.</simpara>
+<simpara>This will be my dumping ground for emails I&#8217;m not likely to really read.</simpara>
+<note><simpara>Improve the readability of the next few paragraphs.</simpara></note>
+<simpara>Anything that has <emphasis>offers</emphasis> in the email address are the first to go.
+GoDady use this account a bit so they&#8217;ll be the first ones to go. Then
+next work would be <emphasis>campaign</emphasis> this wreaks of PR type stuff I&#8217;m not
+really interested in. Another keyword would be <emphasis>discount</emphasis> if you you
+have this in your email address I more than like never see your email ;)</simpara>
+<simpara>It seems that people actually use a <emphasis>marketing</emphasis> account so again this
+will be put in the same inbox as others above.</simpara>
+<simpara>Below is a list of nasty PR words I&#8217;d like to throw into this inbox:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+offers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+campaign
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+discount
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+marketing
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+sale
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+sell
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_3rd_party_services">
+<title>3rd party services</title>
+<simpara>There are a few services I use to maintain my sites and code. I want to
+be able a basic recipe that stores all the account summary related
+emails in one place so that they aren&#8217;t stored in my inbox.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+newrelic
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+godaddy
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+heroku
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+code school
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+peepcode
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+railscast
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+destroy all software
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+pragprog
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_inept_recruitment_filter">
+<title>Inept Recruitment filter</title>
+<simpara>I really don&#8217;t like having my email account filled with numerous emails
+from recruitment agents regarding roles I will never consider. This list
+will start to become overwheling if I just make a list of agencies that
+are reknowned for not doing a good job. So I will start off by composing
+a list of keywords that will help me solve this problem.</simpara>
+<simpara>So the list goes as follows:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+PHP
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Drup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Perl
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+VB
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+.Net
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Javascript
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_social">
+<title>Social</title>
+<simpara>This will be where all my social gumph goes, mainly things like facebook
+and random LinkedIn stuff etc.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+facebook in general
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+LinkedIn stuff not caught earlier
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>For the curious
+<ulink url="https://raw.github.com/baphled/dotfiles/e92354e25054921e562b1b038a53d35042da16cb/.procmailrc">here</ulink>
+is a list of my basic recipes that I ended ip settling with for the time
+being.</simpara>
+</section>
+<section id="_todo_7">
+<title>TODO</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Filter emails via my address book
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+lower case To and From results
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Improve my 3rd party filter
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HTML based emails can be a pain in mutt so I&#8217;d be cool if I can view
+    these without having to sift throught HTML.
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_resources_9">
+<title>Resources</title>
+<simpara><ulink url="http://pm-doc.sourceforge.net/doc/#what_is_dry_run_testing">dry run testing</ulink></simpara>
+</section>
+</section>
+<section id="_rebasing_my_master_branch">
+<title>Rebasing my master branch</title>
+<simpara>So it&#8217;s been a while since I&#8217;ve rebased my changes to the master branch.
+I&#8217;m relatively happy with the removal of <emphasis>braid</emphasis> so I think it&#8217;s time to
+merge my latest changes into my master branch.</simpara>
+<simpara>So the first issue I had was that I had problems checking out the master
+branch because of the changes to the external repositiories. So I had to
+issue the following command:</simpara>
+<literallayout class="monospaced">git co -f master</literallayout>
+<simpara>This allow me to checkout the master branch and disregard the previous
+warnings.</simpara>
+<note><simpara>Doing this can be a time soak.</simpara></note>
+<simpara>I could them do the following to merge my braidless branch into master.</simpara>
+<literallayout class="monospaced">gup braidless</literallayout>
+<simpara>After this gladly there were no merge conflicts but all of my external
+repositiories were deleted.</simpara>
+<simpara>I basically had to go into each of the external repositiories and
+checkout all off the deleted files. This took some time but once it was
+comeplete the master branch was happily merged.</simpara>
+<section id="_notes">
+<title>Notes</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Master brach before change GH#0e15429
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Master branch after change GH#e92354e
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+</section>
+<section id="_day_12">
+<title>Day 12</title>
+<simpara>There are a couple of small things that need to be adressed before I introduce
+my other email accounts. As it stands I have filtered mail but there is no easy
+way of getting to my filtered inbox without some hassle. I need to setup a way
+to let mutt automatically know which mailboxes I have without having to
+constantly update my muttrc file.</simpara>
+<section id="_update_mailbox_list">
+<title>Update mailbox list</title>
+<simpara>I had problems trying to get mutt to list all my mail boxes internally
+due to my bash noobishness but I did find a way to do it
+semi-automatically. I&#8217;d like to improve on this process so that I can
+make it a lot easier to be able to keep my inbox list up to date whilst
+keeping mutt open.</simpara>
+<section id="_the_idea">
+<title>The idea</title>
+<simpara>So it was pretty easy to create a script that lists all the files in my
+mail directory and returns them as a list of arguments. I then loop over
+each mailbox and echo out the format needed for mutt to recognise it as
+a mailbox.</simpara>
+<simpara>Once I have the desired string I then send it to a mutt config file in a
+format mutt can recognise.</simpara>
+<literallayout class="monospaced">mailboxes =inbox =foodie =gaming</literallayout>
+</section>
+<section id="_bringing_it_to_life">
+<title>Bringing it to life</title>
+<simpara>This did actually take some time to work out the simplist way of
+actually getting a list of mailboxes without having to update my muttrc
+everytime one was discovered.</simpara>
+<simpara>I knew the best way to do this via the command line but I wasn&#8217;t
+completely sure how. I first start off by getting a list of inboxes and
+piping the results to xargs so that I could loop over each of them but
+this caused a broken pipe error when ran as a subcommand in my muttrc.
+After a while of hacking a few concepts I remember how useful sed is in
+these situations. I ended up with the below code snippet which actually
+did what I wanted for the time being.</simpara>
+<literallayout class="monospaced">mailboxes `ls -r ~/Mail | xargs | sed 's/ / =/g' | sed 's/inbox/=inbox/'`</literallayout>
+<formalpara><title>Hack alert</title><para>[NOTE]:
+I&#8217;m aware that this could be improved, ideally I want to prepend a <emphasis>=</emphasis>
+to the first word instead of relying on the fact the inbox will always
+be the first work back.</para></formalpara>
+<simpara>The above comand basically lists all the files in the <literal>~/Mail</literal> directory
+and adds them to a list and finally appends <emphasis>=</emphasis> to each inbox. This way
+I don&#8217;t have to worry about new inboxes being created and having to keep
+track of them. I sinply have to create a new procmail recipe and let
+mutt work out where the new inboxes are stored :)</simpara>
+<simpara>Now that I have a semi decent mutt setup I&#8217;d like to setup multiple SMTP
+servers. It&#8217;d be cool if mutt could be configured so that I could send a reply
+and the correct SMTP server is used, along with the right response header.</simpara>
+</section>
+</section>
+<section id="_adding_multiple_smtp_accounts">
+<title>Adding multiple SMTP accounts</title>
+<simpara>So I have my personal email accounts setup, so now I can read all my emails and
+filter them pretty easily. The only thing missing here is being able to respond
+to emails with the correct email address.</simpara>
+<simpara>So the problem at the moment is that all emails I send are set to my username
+and machines hostname (<ulink url="mailto:my.username@my.machines.name.com">my.username@my.machines.name.com</ulink>), which is obviously
+what I want, I need to update mutt so that it can tell which email address to
+use as the sender.</simpara>
+<simpara>This requires quite a bit of setup so I&#8217;ll hold of on doing the actual setup
+and work out what I actually need to do to all me to choose which account to
+send emails.</simpara>
+<simpara>The first thing I&#8217;ll need to do is make sure that the <emphasis>From</emphasis> field in my email
+responses are not that of the local machine. This should actually be the email
+address that the email was sent to.</simpara>
+<simpara>I&#8217;m not quite sure how to do this yet so I&#8217;ll put a fork in it for the moment
+so that I can focus on getting the rest of my setup functional.</simpara>
+</section>
+</section>
+<section id="_day_13">
+<title>Day 13</title>
+<simpara>I&#8217;d like to organise my RSS feeds into mutt or an alternative news reader so
+that I can easily keep up with current tech. Today I&#8217;ll dedicate some time into
+getting this setup.</simpara>
+<section id="_getting_a_feed_reader">
+<title>Getting a feed reader</title>
+<simpara>So the next step along this journey is to setup a news reader. I&#8217;ve looked at a
+few that I used to use in the past.</simpara>
+<simpara>I stumbled on <ulink url="https://github.com/posativ/homebrew-newsbeuter">newsbeuter</ulink> which
+is a cli with a mutt feel. Ideal for me as I&#8217;m an avid mutt user.</simpara>
+<simpara>Unfortunately brew can&#8217;t find newsbeuter by it&#8217;s self so I needed to tell it
+where it is and then install it on my system.</simpara>
+<literallayout class="monospaced">brew tap posativ/homebrew-newsbeuter</literallayout>
+<simpara>This installs the brew formula needed to install newsbeuter. Once this was complete all I had to do is run:</simpara>
+<literallayout class="monospaced">brew install newsbeuter</literallayout>
+<simpara>Again I had to wait, this time for newsbeuter to install, and then I was ready
+to play with newsbeuter.</simpara>
+<simpara>I use GoogleReader for all my RSS feeds so I needed the following in my
+<literal>~/.newsbeuter/config</literal> file.</simpara>
+<literallayout class="monospaced">urls-source "googlereader"
+googlereader-login "your-googlereader-account"</literallayout>
+<simpara>I also wanted to be able to share and star articles so I also added the following mappings</simpara>
+<literallayout class="monospaced">googlereader-flag-share "a"
+googlereader-flag-star "b"</literallayout>
+<note><simpara>Need a way to not have to disclose my google user id.</simpara></note>
+<simpara>Once I started <literal>newsbeuter</literal> I had an empty list of feeds that I have subscribed
+to in the past. The only thing left for me to do was to press <emphasis>R</emphasis> and wait for
+all of my feeds to update :)</simpara>
+<simpara>Navigating through feeds is similar to vi but I&#8217;d like to actually have the
+basic bindings in place so that I don&#8217;t have to keep changing context.</simpara>
+<simpara>It would also be cool if I could tweak the layout so that it looked more like
+my mutt setup. I&#8217;m not sure on how easy this but I&#8217;ll look into this and see
+how easy it is to achieve.</simpara>
+<simpara>It&#8217;s important to be able to view links easily, I&#8217;ll continue to use w3m as my
+browser of choice as it is already configured and working pretty well.
+newsbeuter also has podcast support :) so I can keep up to date with my
+podcasts without having to rely on itunes.</simpara>
+<simpara>In my <literal>~/.newsbeuter/config</literal> file I added the following:</simpara>
+<literallayout class="monospaced">browser w3m</literallayout>
+<simpara>Now that is setup I can easily open links by proving the number associated to
+the link of interest.</simpara>
+<section id="_todo_8">
+<title>TODO</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Find out how to delete a feed
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+How to add odps files along with GoogleReader
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Only display unread blogs articles
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_resources_10">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://newsbeuter.org/doc/newsbeuter.html#_google_reader_support">GoogleReader support</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www.newsbeuter.org/doc">newsbeuter</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section id="_adding_a_newsreader_my_workbench">
+<title>Adding a newsreader my workbench</title>
+<simpara>So the final step in add a newsreader to my workbench is actually attaching a
+window to my workbench so that I can easily view my news feed at my own
+leisure.</simpara>
+<simpara>The first thing to do is add a new window to my workbench config</simpara>
+<literallayout class="monospaced">"Newsfeed": newsbeuter</literallayout>
+<note><simpara>Add link to my updated workbench config.</simpara></note>
+<simpara>I then kill my session and restart it again and I now have a separate session
+to view my newsfeed.</simpara>
+<simpara>I&#8217;ve added this just after my IRC Window so that I have all my communicated
+centric windows all together.</simpara>
+<section id="_todo_9">
+<title>TODO</title>
+<itemizedlist>
+<listitem>
+<simpara>
+How do you add and remove feeds
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+How can I download podcasts
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+How to customise key bindings to be more like vim
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Tweet articles I&#8217;ve read
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+May be able to use ifft for this
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Talk more about my config
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_resources_11">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://writtenandread.net/newsbeuter/">newsbeuter and podcasts</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://writtenandread.net/files/newsbeuter/config">newsbeuter config</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+</section>
+<section id="_day_14">
+<title>Day 14</title>
+<simpara>Braid is causing me hassle and as part of cleaning up my dotvim files I want to
+replace braid with git submodule. This will be part of the cleanup needed for
+dotvim files in preparation of me improving my vim skills.</simpara>
+<section id="_removing_vims_braid">
+<title>Removing VIMs braid</title>
+<simpara>So I&#8217;ve been using braid to manage my vim plugins but I&#8217;d prefer if I used git
+directly as I am with my dotfiles. The first thing to do is keep a list of all
+of the plugins that I have, I&#8217;ll need this so that I can keep the plugins I am
+currently using.</simpara>
+<simpara>I&#8217;ll be using the following command to add each plugin as a git module:</simpara>
+<literallayout class="monospaced">git submodule add git://github.com/username/project.git plugin/path</literallayout>
+<simpara>All but one of the plugins live in the <literal>bundle</literal> direction the only exception is
+vim-pathogen with lives in the parent directory of my dotvim repository. So the
+command I need should output the following formats</simpara>
+<literallayout class="monospaced">git://github.com/mileszs/ack.vim.git ack.vim.git
+git://github.com/spf13/asciidoc-vim.git asciidoc-vim.git
+git://github.com/ayang/AutoComplPop.git AutoComplPop.git
+git://github.com/kien/ctrlp.vim.git ctrlp.vim.git
+git://github.com/tpope/vim-cucumber.git vim-cucumber.git
+git://github.com/Raimondi/delimitMate.git delimitMate.git
+git://github.com/tpope/vim-endwise.git vim-endwise.git
+git://github.com/tpope/vim-fugitive.git vim-fugitive.git
+git://github.com/claco/jasmine.vim.git jasmine.vim.git
+git://github.com/leshill/vim-json.git vim-json.git
+git://github.com/scrooloose/nerdcommenter.git nerdcommenter.git
+git://github.com/tpope/vim-pastie.git vim-pastie.git
+git://github.com/tpope/vim-rails.git vim-rails.git
+git://github.com/msanders/snipmate.vim.git snipmate.vim.git
+git://github.com/tpope/vim-surround.git vim-surround.git
+git://github.com/scrooloose/syntastic.git syntastic.git
+git://github.com/tpope/vim-unimpaired.git vim-unimpaired.git
+git://github.com/smerrill/vagrant-vim.git vagrant-vim.git
+git://github.com/tpope/vim-abolish vim-abolish
+git://github.com/tpope/vim-bundler.git vim-bundler.git
+git://github.com/kchmck/vim-coffee-script.git vim-coffee-script.git
+git://github.com/rson/vim-conque.git vim-conque.git
+git://github.com/mattn/gist-vim.git gist-vim.git
+git://github.com/austintaylor/vim-indentobject vim-indentobject
+git://github.com/Lokaltog/vim-powerline.git vim-powerline.git
+git://github.com/rodjek/vim-puppet.git vim-puppet.git
+git://github.com/tpope/vim-ragtag vim-ragtag
+git://github.com/tpope/vim-rake vim-rake
+git://github.com/bronson/vim-ruby-block-conv.git vim-ruby-block-conv.git
+git://github.com/ecomba/vim-ruby-refactoring.git vim-ruby-refactoring.git
+git://github.com/hallison/vim-ruby-sinatra vim-ruby-sinatra
+git://github.com/csexton/rvm.vim.git rvm.vim.git
+git://github.com/kaichen/vim-snipmate-ruby-snippets.git vim-snipmate-ruby-snippets.git
+git://github.com/godlygeek/tabular.git tabular.git
+git://github.com/nelstrom/vim-textobj-rubyblock vim-textobj-rubyblock
+git://github.com/kana/vim-textobj-user vim-textobj-user
+git://github.com/jimenezrick/vimerl.git vimerl.git
+git://github.com/vitaly/vim-vividchalk.git vim-vividchalk.git
+git://github.com/mattn/webapi-vim.git webapi-vim.git
+git://github.com/tpope/vim-pathogen.git vim-pathogen.git</literallayout>
+<simpara>This is enough to work with for the moment, I can easily do set this up so that
+I don&#8217;t have to manually add each plugin using git submodule. I need the
+following format to successfully add each plugin using git.</simpara>
+<literallayout class="monospaced">git submodule add git://github.com/username/project.git plugin/path</literallayout>
+<simpara>Running the following command gives me the output I want:</simpara>
+<literallayout class="monospaced">cat .braids | grep 'url' | sed 's/url://' | awk -F/ '{print $0, $5}' &gt; ~/vim-plugins.txt</literallayout>
+<simpara>Now that I have a list of repos that I will want to add as submodules. With a
+little vim trickery I can whip and basic bash script to automatically add my
+plugins.</simpara>
+<literallayout class="monospaced">vi ~/vim-plugins.txt</literallayout>
+<simpara>I normal mode I type the following:
+  V38j
+  :'&lt;,'&gt;normal f i bundle/
+  :%s/bundle\ //bundle\//g</simpara>
+<simpara>This will prefix bundle/ to all lines, but the last, to the 2 column.
+vim-pathogen is saved to the parent directory.</simpara>
+<literallayout class="monospaced">:'&lt;,'&gt;normal I git submodule add</literallayout>
+<simpara>Now I have the necessary list and location for all my plugins. I&#8217;d like to
+reverse the list to make sure that pathogen gets install first.</simpara>
+<literallayout class="monospaced">awk '{x[NR] = $0} END { while ( NR &gt; 0 ) print x[NR--] }' vim-plugins.txt &gt; plugins.txt &amp;&amp; vim-plugins.txt</literallayout>
+<simpara>This will use awk to reverse my plugin list as I wanted. Now it&#8217;s time to
+remove all the plugins via braid. Then I can then add my plugins again using
+git&#8217;s submodules.</simpara>
+<literallayout class="monospaced">cat .braids | grep ': $' | sed 's/://' &gt; ~/plugins.txt | for plugin in `xargs`; do; rm -rf $plugin; done</literallayout>
+<simpara>The above command creates the output needed to remove all of my plugins that
+were installed via braid.</simpara>
+<simpara>Finally I just have to execute the script I created that will add all my
+plugins using <literal>git submodule</literal>.</simpara>
+<simpara>Once this was done all I had to do is comit my changes and pull them in and I
+have no more need for braid anymore.</simpara>
+</section>
+<section id="_reinstalling_my_dotvim_plugins">
+<title>Reinstalling my dotvim plugins</title>
+<simpara>Now I have a list of the plugins I had from when I was using braid. Now I&#8217;ll
+use this list to reinstall my plugins and get my dotfiles up to date.</simpara>
+<simpara>Here&#8217;s a list of all my plugins that I currently have installed.</simpara>
+<literallayout class="monospaced">ack.vim
+asciidoc-vim
+autocomplpop
+ctrlp
+cucumber
+delimitMate
+endwise
+fugitive
+jasmine
+json
+nerdcommenter
+pastie
+rails
+snipmate
+surround
+syntastic
+unimpaired
+vagrant
+vim-abolish
+vim-bundler
+vim-coffee-script
+vim-conque
+vim-gist
+vim-indentobject
+vim-powerline
+vim-puppet
+vim-ragtag
+vim-rake
+vim-ruby-block-conv
+vim-ruby-refactoring
+vim-ruby-sinatra
+vim-rvm
+vim-snipmate-ruby-snippets
+vim-tabular
+vim-textobj-rubyblock
+vim-textobj-user
+vimerl
+vividchalk
+webapi-vim
+vim-pathogen</literallayout>
+<simpara>Later on I will focus on these plugins and learn and use them better. Ideally I should
+have a clean slate to improve my vi foo. For the moment though I will just add
+them using git submodule and deal with stripping them down later.</simpara>
+</section>
+</section>
+<section id="_housekeeping_tools_2">
+<title>Housekeeping tools</title>
+<literallayout class="monospaced">duration: 4 weeks
+notes:
+  * manage personal credentials
+  * notifications and alerts via tmux
+  * define local files to hide
+  * create script to check for my dotfile dependancies
+    * Should download them if they are not found</literallayout>
+</section>
+<section id="_day_15">
+<title>Day 15</title>
+<simpara>So I now have a news reader so the only thing left to setup are my podcasts.
+I&#8217;ve been using itunes of late and would like to move away from that and see
+what newsbeuter has to offer in the way of helping me to keep up with podcasts.</simpara>
+<section id="_managing_my_podcasts">
+<title>Managing my podcasts</title>
+<simpara>Now is the time that I move my podcasts from iTunes back to the console, where
+they belong. I&#8217;ve already installed newsbeuter so I can use that to track the
+podcasts I listen to and handling queuing and downloading them.</simpara>
+<simpara>This is pretty simple really, first off I needed to add a podcasts to my feed
+list. I then checkout any new items via newsbeuter which picked up the podcast
+and listed it as expected. The next step is to queue up the latest podcast and
+listen to it via podbeuter. Pressing <literal>e</literal> enqueues the podcast which will add
+the podcast to the queue for downloading. Opening <literal>podbeuter</literal> showed me the
+podcast in the queue allowing me to press <literal>a</literal> to start the download.</simpara>
+<simpara>Here&#8217;s the changes I needed to get podbeuter to download and listen to my
+podcasts.</simpara>
+<literallayout class="monospaced">download-path       ~/Downloads
+max-downloads       2
+player              afplay</literallayout>
+<simpara>Pressing <literal>p</literal> inside podbeuter actually plays the selected audio file and then
+we&#8217;re away. Podcast management from the command line :).</simpara>
+<section id="_adding_podbeuter_to_my_workflow">
+<title>Adding podbeuter to my workflow</title>
+<simpara>As this has been described in previous entries this part is straight forward
+and only requires a reference to my <literal>~/tmuxinator/workbench.yml</literal> file. I simply
+add a new <emphasis>Podcast</emphasis> window next to my <emphasis>Newsfeed</emphasis> window. Keeping all my
+communications close together.</simpara>
+</section>
+</section>
+<section id="_splitting_my_workbench">
+<title>Splitting my workbench</title>
+<simpara>My workbench is starting to get cluttered now and it is becoming increasingly
+clear that I have two types of workflow living in the same session. Ideally I&#8217;d
+like to have my commucation based workflows in a single session whilst my
+workbench and hacking session is in another.</simpara>
+<simpara>this is pretty easy, the only thing I raelly need to think about is how these
+two sessions will be started.</simpara>
+<simpara>Firstly I remove the  communications related sessions into a new tmux configure
+file as follows:</simpara>
+<literallayout class="monospaced">project_name: comms
+project_root: ~/
+rvm: 1.9.2-head@global
+pre: cd ~/ &amp;&amp; bundle
+tabs:
+  - Interwepts: w3m http://google.com
+  - IRC: irssi
+  - "Newsfeed": newsbeuter
+  - "Podcasts": podbeuter
+  - Email: mutt
+  - Spyhole: tail -f ~/comms.log
+  - "Dotfile Diaries": cd ~/Documents/Diary &amp;&amp; vi book/book.asc
+  - Top: top</literallayout>
+<simpara>This leaves me with the following <emphasis>workbench</emphasis> setup:</simpara>
+<literallayout class="monospaced">project_name: workbench
+project_root: ~/
+rvm: 1.9.2-head@global
+pre: cd ~/ &amp;&amp; bundle
+tabs:
+  - Workbench: vim
+  - Spyhole: tail -f ~/workbench.log
+  - Toybox: be pry
+  - 'Control centre': git wtf</literallayout>
+<simpara>I now have two separate sessions to deal with my main two workflows further
+helping me to keep my workflows focussed and without switching context too
+much. Now I need to make sure that I can load these two sessions easily whilst
+keeping their session location in guessable positions.</simpara>
+<simpara>All I need to do is add the following to my <literal>.zlogin</literal> file:</simpara>
+<literallayout class="monospaced">mux comms &amp;&amp; mux workbench</literallayout>
+<simpara>This will automatically start both sessions as soon as I start a zsh session.
+This could be moved to <literal>.profile</literal> if needed but for the moment I won&#8217;t worry
+too much about that as I tend to use zsh more than anything else.</simpara>
+<simpara>Once this is done I make sure that I only start iTerm with a default session
+and let <literal>.zlogin</literal> do the rest of the work.</simpara>
+</section>
+</section>
+<section id="_dressing_down_vim_2">
+<title>Dressing down Vim</title>
+<screen>duration: 6 weeks
+location: everywhere
+notes:
+
+  * pain experienced
+  * what was missed
+  * what did I learn (daily log)
+  * use `:map` in Vim to learn new mappings
+  * use vimtutor</screen>
+</section>
+<section id="_day_16">
+<title>Day 16</title>
+<simpara>The first thing I&#8217;m going to need to do is delete my old repository and create
+a new one with the same name. This will bork my <literal>dotfile</literal> repository submodule
+but I can easily fix that by either updating the reference manually or removing
+and reinstall the plugin via the command line.</simpara>
+<simpara>Before I do this I want to move some of my settings around so that they can be
+easily added or left out if I desire. My aim here is to make it easier to
+choose the vim setup I prefer.</simpara>
+<simpara>My initial setup will be a bare bones version of Vim with little to none
+plugins added. As I gain more proficiency I will gradually add plugins to my
+workflow to help enhance the keystokes I have already learnt. The first of
+these will focus on text objects and then I will focus on movements and making
+project wide changes.</simpara>
+<simpara>I will stick with plugins that enhance the mime types available to me and help
+with some basic formatting. Once I have this under my belt I will start to
+delve into VIML and creating my own plugins and tweaks.</simpara>
+<simpara>Whilst doing all this I will be picking up a Practical Vim tip a day to help me
+productivity. These will generally be separate entries and will go over what
+I&#8217;ve learnt and how the new skill could be used to improve how I work.</simpara>
+<section id="_cleaning_up_my_vim_settings">
+<title>Cleaning up my vim settings</title>
+<simpara>So I&#8217;ve customised my vim settings quite a bit based on
+<ulink url="https://github.com/astrails/dotvim">astrails dotvim</ulink> repository. My changes have
+diverged quite abit and I&#8217;d rather break them from the branch and start a
+fresh. This will lead the way for me stripping down my settings and finding
+ways to easily get used to using vim without all the bells and whistles.</simpara>
+<simpara>The first thing I need to do is detach from the origination repository and make
+sure that my changes are kept in place. Once this is done I can then create a
+config setting to not use and plugins and use a base set of configuration
+settings so that I can start to improve my basic Vim skills.</simpara>
+<simpara>I had to go to github and delete the repository. Once deleted I created a new
+repository with the same name and push the repository</simpara>
+<literallayout class="monospaced">git push</literallayout>
+<simpara>I now have a repository that is not forked to astrails. I still need to let my
+dotfiles know that the repository is update and has changed so I need to do the
+following</simpara>
+<literallayout class="monospaced">gup</literallayout>
+<simpara>This detached the head of the repository, which is easy enough to fix, as long
+as there are no local changes.</simpara>
+<literallayout class="monospaced">g co master</literallayout>
+<simpara>Now that the repository is up to date all I need to do is update my <literal>dotfiles</literal>
+to reflect the changes to the detached repository.</simpara>
+<literallayout class="monospaced">cd ~
+ga dotvim
+g ci -m 'Update my dotvim files'</literallayout>
+<simpara>Now the repository is up to date and my dotfiles know of the change I&#8217;ve just
+made.</simpara>
+<simpara>Finally I push the change to my dotfiles and everything is all set.</simpara>
+</section>
+</section>
+<section id="_day_17">
+<title>Day 17</title>
+<section id="_tweaking_my_test_function">
+<title>Tweaking my test function</title>
+<simpara>So I have a few custom bindings to run work out what kind of test I am
+running and run it with the right tool.</simpara>
+<simpara>This has proved quite useful in the past allowing me to run <literal>&lt;leader&gt;t</literal>
+to run the current or last run test file. The other binding is set to
+<literal>&lt;leader&gt;T</literal> which runs the closest test to the current line number.</simpara>
+<simpara>These have served me well up to today when I had some performance
+testing to do and testunit was the only tool setup for the project I was
+working on.</simpara>
+<note><simpara>Find link to Gary&#8217;s dotfiles.</simpara></note>
+<simpara>My bindings were originally stolen from "Gary Bernhardt&#8217;s dotfiles" and
+was tweaked by myself to include cucumber. Now it&#8217;s time to fix the
+issue with testunit.</simpara>
+<simpara>To run my unit tests I will need the following command:</simpara>
+<literallayout class="monospaced">exec ":!bundle exec ruby -I\"lib:test\" " . a:filename "</literallayout>
+<simpara>This runs my unit test in the correct environemnt. There is one issue
+with this. The firstly the other tool we can simple run the test we are
+interested with by appending <emphasis>:1</emphasis> where <emphasis>1</emphasis> is the line number. The
+issue with doing this with my unittests is that it is not the expected
+command and will error out.</simpara>
+<literallayout class="monospaced">:!bundle exec ruby -I"lib:test" test/performance/browsing_test.rb:9
+ruby: No such file or directory -- test/performance/browsing_test.rb:9
+(LoadError)</literallayout>
+<literallayout class="monospaced">shell returned 1</literallayout>
+<literallayout class="monospaced">Press ENTER or type command to continue</literallayout>
+<simpara>this isn&#8217;t what I want in this case and it would be cool o actually get
+this to work properly as it is a large part of my typical development
+workflow.</simpara>
+<simpara>To do this I will need to be able to capture the method name relating to
+the unit test file. To do this I will need to capture the number and get
+the contents of the first and last 5 lines on either side of the line
+number received. What ever the closest method name is we&#8217;ll use to run a
+single unit test.</simpara>
+<simpara>I&#8217;ll focus on this another day once I have improve my VIML.</simpara>
+<section id="_todo_10">
+<title>TODO</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Talk about my development workflow
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_resources_12">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://flavio.castelli.name/2010/05/28/rails_execute_single_test/">executing test unit rails</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section id="_tweaking_my_vim_fu">
+<title>Tweaking my vim-fu</title>
+<simpara>I&#8217;ve been playing around with text objects for a few days whilst
+tweaking my settings and would like to extend this functionality with a
+couple of plugins. Firstly I want <emphasis>matchit</emphasis> so that I can extend the
+matching capabilities of vim.</simpara>
+<literallayout class="monospaced">git submodule add git://github.com/tmhedberg/matchit.git bundle/matchit</literallayout>
+<simpara>Now I have the plugin I need to set it up to work in my vim.</simpara>
+<literallayout class="monospaced">:let loaded_matchit = 1</literallayout>
+<note><simpara>Write about the basic motions</simpara></note>
+<simpara>Now it&#8217;s loaded I have a few nice little motions to move around blocks,
+this is all cool but I use Ruby quite a bit and that isn&#8217;t supported
+out of the box. So I will need to add <emphasis>vim-ruby</emphasis> to introduce the same
+functionality to ruby.</simpara>
+<literallayout class="monospaced">git submodule add git://github.com/vim-ruby/vim-ruby.git bundle/vim-ruby</literallayout>
+<simpara>This give me a few more motions, this time focusing on moving around
+ruby code.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+]m - start of next method definition
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+[m - start of previous definition
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+]] - start of next module or class
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+][ - end of next module or class
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+[[ - end of module or class
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+[] - end of module or class
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>There are a few more motions that are added to my vim setting but those
+are well documented in <literal>:help vim-ruby</literal></simpara>
+<simpara>The following text blocks are also added to the toolset.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+am - a method
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+im - inner method
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+aM - a class
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+iM  - inner class
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><emphasis>vim-ruby</emphasis> doesn&#8217;t just provide a few more text objects and motions but
+it also includes omni completion and syntax recognition. I&#8217;ll deal with
+omni-completion another day but I would like to get syntax recognition
+setup and ready for playing around with.</simpara>
+</section>
+<section id="_giving_my_syntax_some_sugar">
+<title>Giving my syntax some sugar</title>
+<simpara>Now I want to get tweak my ruby syntax recognition some more so this
+seems like the idea time to do so.</simpara>
+<simpara>Enable highlighted operators</simpara>
+<literallayout class="monospaced">:let ruby_operators = 1</literallayout>
+<simpara>I want to be alerted when there are space errors, these don&#8217;t actually
+cause errors but it would be nice to be able to easily see them.</simpara>
+<literallayout class="monospaced">:let ruby_space_errors = 1</literallayout>
+<note><simpara>Write about motions and text objects</simpara></note>
+</section>
+</section>
+<section id="_day_18">
+<title>Day 18</title>
+<simpara>I&#8217;ve used netrw for a while but I tend to use it quite sloppily, I&#8217;d like to
+spend some time tweaking it so that it works better for my needs.
+Today I&#8217;d like to play around with vim-ractoring. I&#8217;d also like to have my
+ctags back so that I can look up methods and objects easily.</simpara>
+<section id="_setting_up_vim_refactoring">
+<title>Setting up vim-refactoring</title>
+<simpara>So I&#8217;ve seens some of the mapping for vim-refactoring and it seems like
+something I&#8217;d like to play around with.</simpara>
+<simpara>Firstly I&#8217;ll start by adding <emphasis>vim-refactoring</emphasis> to dotfiles.</simpara>
+<literallayout class="monospaced">git submodule add git://github.com/ecomba/vim-ruby-refactoring.git bundle/vim-ruby-refactoring</literallayout>
+<simpara>With this installed I was ready to use it. There are a few mappings I want to
+focus on and then I&#8217;ll make a note of those mappings I&#8217;d like ot learn at a
+later stage.</simpara>
+<simpara><emphasis>vim-refactoring</emphasis> has some lengthly mapping but they turn out to be quite useful too.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>&lt;leader&gt;rit</literal> - Replaces a temporary variable with a direct method or call
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;leader&gt;rcpc</literal> - Refactor Convert Post Conditional
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;leader&gt;rec</literal> - Refactor Extract Constant
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;leader&gt;rel</literal> - Refactor Extract Let
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;leader&gt;relv</literal> - Refactor Extract Local Variable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;leader&gt;rrlv</literal> - Refactor Rename Local Variable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;leader&gt;rriv</literal> - Refactor Rename Instance Variable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;leader&gt;rem</literal> - Refactor Extract Method
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>I&#8217;ll spend the next few weeks commiting these to my muscle memory.
+==== Resources</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://justinram.wordpress.com/2010/12/30/vim-ruby-refactoring-series/">vim-ruby-refactoring blog</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_adding_ctags">
+<title>Adding ctags</title>
+<simpara>First off i&#8217;ll need to install ctags.</simpara>
+<literallayout class="monospaced">brew install ctags</literallayout>
+<simpara>Now ctags needs to know where the methods and classes live so i&#8217;ll need a way
+to get file locations easily. I found the following snip from
+<ulink url="http://andrewradev.com/2011/06/08/vim-and-ctags/">here</ulink> so I&#8217;ll copy and paste
+the following snippet into my ~/bin/generate-rails-gem-tags</simpara>
+<note><simpara>I&#8217;d prefer the script to be stored within my dotvim but I&#8217;ll deal with that later.</simpara></note>
+<screen>  #! /usr/bin/env ruby
+
+  # Generate all tags for all gems included by bundler in gems.tags
+  #
+  # Basically does the same as "bundle show gemname", except for all gems.
+  # Interestingly enough, "bundle show" without any arguments falls back to
+  # "bundle list", otherwise the whole thing could have been a bash one-liner.
+  require 'bundler'
+
+  paths = Bundler.load.specs.map(&amp;:full_gem_path)
+
+  system("ctags -R -f gems.tags #{paths.join(' ')}")</screen>
+<simpara>I have to make sure that this is executable.</simpara>
+<literallayout class="monospaced">chmod u+x ~/bin/generate-rails-gem-tags</literallayout>
+<simpara>This will index all the gems I&#8217;ve installed via bundle. I&#8217;ll also need to add
+the projects files to the index.</simpara>
+<literallayout class="monospaced">ctags -R .</literallayout>
+<simpara>It would be nice if this was done automatically when I cd into a project
+directory or could be handled with tmux when I start a new project session. For
+the moment I&#8217;ll just bind this command to a mapping something like:</simpara>
+<literallayout class="monospaced">noremap &lt;leader&gt;ct :!ctags -R .&lt;CR&gt;</literallayout>
+<simpara>To keep my tags up to date I&#8217;ll se <emphasis>autotag</emphasis> which depends on python but allows
+me to keep my tags up to date and removes tags that are no longer needed.</simpara>
+<literallayout class="monospaced">git submodule add git://github.com/vim-scripts/AutoTag.git bundle/auto-tag</literallayout>
+<simpara>So now I have the basics setup I need to work out how to navigate through the
+tags easily without looking where I originally was.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>&lt;C-]&gt;</literal> - Go to the first found definition
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;C-t&gt;</literal> - Jump back to where you started
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>:tselect</literal> - List all the found definitions
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Trying to move around tags can be quite a strain so I&#8217;ll add some custom
+mappings to navigate through them easily.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>]t</literal> - next tag
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>[t</literal> - previous tag
+</simpara>
+<literallayout class="monospaced">noremap ]t :tnext&lt;CR&gt;
+noremap [t :tprev&lt;CR&gt;</literallayout>
+</listitem>
+</itemizedlist>
+<section id="_resources_13">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://andrewradev.com/2011/06/08/vim-and-ctags/">vim and ctags</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+</section>
+<section id="_day_19">
+<title>Day 19</title>
+<simpara>Today I&#8217;m going to work on my navigation and manipulation of files and content.</simpara>
+<section id="_tweaking_nerdtree">
+<title>Tweaking Nerdtree</title>
+<simpara>So I&#8217;ve played with Nerdtree in the past but dropped it to make sure of
+Netrw. I&#8217;ve done this for a number of weeks but I still prefer Nerdtree
+so I&#8217;ll be reinstalling it and updating my settings.</simpara>
+<literallayout class="monospaced">git submodule add git://github.com/scrooloose/nerdtree.git bundle/nerdtree</literallayout>
+<simpara>I also add the following so that NERDTree is loaded automatically if no
+files are opened when starting vim.</simpara>
+<literallayout class="monospaced">autocmd vimenter * if !argc() | NERDTree | endif</literallayout>
+<simpara>That&#8217;s it, it couldn&#8217;t be easier. All that is left is to map NERDTree to a
+binding so that it is easy to call.</simpara>
+<literallayout class="monospaced">:noremap &lt;C-p&gt; :NERDTreeToggle&lt;CR&gt;</literallayout>
+<simpara>I&#8217;ll also need to cancel out <emphasis>Ctrl-P</emphasis> default binding so that they don&#8217;t clash.</simpara>
+<literallayout class="monospaced">let g:ctrlp_map = '&lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;'</literallayout>
+<simpara>As Ctrl-P uses &lt;C-p&gt; as a default mapping I just change this so that it it uses
+double &lt;leader&gt; leaving Nerdtree to freely use &lt;C-p&gt;.</simpara>
+</section>
+<section id="_being_unimpaired">
+<title>Being unimpaired</title>
+<simpara>Now I have my ctags setup and I&#8217;m nearly complete with setting up my essentials
+for my day to day work, I will finially install <emphasis>unimpaired</emphasis>.</simpara>
+<literallayout class="monospaced">git submodule add git://github.com/tpope/vim-unimpaired.git bundle/vim-unimpaired</literallayout>
+<simpara>I forgot to add this when I removed bundle and a couple of my custom bindings
+relay on the plugin to help move lines around.</simpara>
+<simpara>Now I have to do some tweaking to custom bindings so that they work without my
+cursor keys as those have been disabled in Insert and Visual model.</simpara>
+<simpara>Originally I had the following mappings for moving files up and down. This
+functionality emulated textmates line mnaipulation functionality and allowed me
+to easily move selections of lines around easily without poluting my paste
+buffer.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>&lt;C-Up&gt;</literal> - Move a line up
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;C-Down&gt;</literal> - Move a line down
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>These are set for both Normal and Visual mode so that I can move single and
+multiple lines easily.</simpara>
+<simpara>I still don&#8217;t want to encourage the use of my cursor keys so I will remap these
+to the following:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>&lt;C-K&gt;</literal> - Move a line up
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;C-J&gt;</literal> - Move a line down
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Now instead of having to use &lt;Up&gt; and &lt;Down&gt; I can use J and K as I do with
+most of my other vim motions.</simpara>
+</section>
+</section>
+<section id="_day_20">
+<title>Day 20</title>
+<simpara>Today I&#8217;ll carry on from where I left off yesterday.</simpara>
+<section id="_carry_on_where_i_left_off">
+<title>Carry on where I left off</title>
+<simpara>It&#8217;s been annoying me for a while but I have dealt with the pain up until now.
+When I close a buffer and revisit it I&#8217;d like to have the cursor placed exactly
+where I left it when I closed the file. For some reason this functionality
+doesn&#8217;t come out of the box but it does tell you how to do it.</simpara>
+<literallayout class="monospaced">augroup vimrcEx
+  autocmd BufReadPost *
+    \ if line("'\"") &gt; 0 &amp;&amp; line("'\"") &lt;= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+augroup vimrcEx</literallayout>
+<simpara>Now when I close a file and open it again the cursor will be positioned where
+it was when I closed it.</simpara>
+</section>
+<section id="_removing_some_pain">
+<title>Removing some pain</title>
+<simpara>I&#8217;ve been missing my snippets for a while now, I have snipmate installed
+but I have limited snippets installed and setup.</simpara>
+<simpara>To resolve this I&#8217;ll install <emphasis>snipmate-snippets</emphasis> to start with. Once I
+have had a play with those I will later create my own for snippets that
+I feel is missing.</simpara>
+<simpara>I&#8217;m actually going to fork this project so that I can keep my custom
+snippets all in one place. That and I don&#8217;t want/need all the other
+snippets that come with the original version.</simpara>
+<simpara>The version I chose was relatively new and included snippets for
+jasmine and a range of ruby snippets, which was a plus.</simpara>
+<literallayout class="monospaced">http://github.com/honza/snipmate-snippets</literallayout>
+<simpara>Once forked I added my custom fork.</simpara>
+<literallayout class="monospaced">git submodule add git://github.com/baphled/snipmate-snippets.git bundle snipmate-snippets</literallayout>
+<simpara>I will need to remove <emphasis>vim-snipmate-ruby-snippets</emphasis></simpara>
+<simpara>I need to remove the instance from <emphasis>.gitmodules</emphasis></simpara>
+<note><simpara>Add lines I had to remove in my .gitmodules file</simpara></note>
+<literallayout class="monospaced">rm -rf ../.git/modules/dotvim/modules/bundle/vim-snipmate-ruby-snippets</literallayout>
+<literallayout class="monospaced">g ci -m 'update snippets'</literallayout>
+<simpara>Updates my dotvims and includes the new snippets plugin.</simpara>
+<simpara>I&#8217;d like to build up on these and strip them down for my own needs. This will
+more than likely include writing my own where there are missing shortcuts I&#8217;d
+like.</simpara>
+<simpara>I also need to learn the snippets that are present. The only way to actually do
+this is to actually use them. The best type of snippet are the ones that just
+rolls off of your fingers. So I expect there to be snippets for <emphasis>def</emphasis>, <emphasis>class</emphasis>,
+<emphasis>desc</emphasis>, etc. As I also do quite a bit of writing in Vim I&#8217;d like to make sure I
+know that AsciiDoc and Markdown snippets.</simpara>
+<simpara>At the moment my forked version doesn&#8217;t have any snippets for AsciiDoc so I
+will have to search for some and merge them into my version and updated my
+submodules.</simpara>
+<simpara>It seems that I am getting warnings about snippets already being defined. I
+need to look into this to see how I can supress the messages and stop them from
+happening all together.</simpara>
+</section>
+<section id="_tweaking_snipmate">
+<title>Tweaking snipmate</title>
+<simpara>So the current version of snipmate I already contains some snippets which are
+causing me to see warnings. This can be resolved by changing the repository
+I pull from with a version of snipmate that doesn&#8217;t include any snippets.</simpara>
+<simpara>I&#8217;ll omit removing the actual module as it has been documented already and jump
+straight into adding the new repository.</simpara>
+<literallayout class="monospaced">git submodule add git://github.com/garbas/vim-snipmate.git bundle/vim-snipmate</literallayout>
+<literallayout class="monospaced">git submodule add git://github.com/MarcWeber/vim-addon-mw-utils.git bundle/vim-addon-mw-utils</literallayout>
+<simpara>Now we have no warnings and we have a nice base to start adding custom snippets
+the only issue is when I &lt;TAB&gt; I get an error stating I need tlib to be
+installed. That&#8217;s a bit of of red herring as we actually need tlib-vim.</simpara>
+<literallayout class="monospaced">git submodule add git://github.com/tomtom/tlib_vim.git bundle/tlib-vim</literallayout>
+<note><simpara>Add some of the shortcuts here.</simpara></note>
+</section>
+<section id="_improving_buffer_navigation">
+<title>Improving buffer navigation</title>
+<simpara>So I&#8217;d like to be able to navigatie and maintain my buffers in a cleaner
+manner, I&#8217;ve seen bufexplorer but never had a chance to play around with it.
+This is the time to get it setup and working to see how it fairs with my
+current setup.</simpara>
+<literallayout class="monospaced">git submodule add git://github.com/c9s/bufexplorer.git bundle/bufexplorer</literallayout>
+<simpara>Finally I just need to map BufExplorer to a custom mapping to make things a
+little easier.</simpara>
+<literallayout class="monospaced">noremap &lt;leader&gt;. :BufExplorer&lt;CR&gt;</literallayout>
+<simpara>And that&#8217;s all there is to it. I can now view my buffers using <literal>&lt;leader&gt;.</literal> and
+manage the buffers easier with a few shortcut keys.</simpara>
+</section>
+<section id="_resources_14">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://cisight.com/solving-snipmate-vim-error-snippet-c-is-already-defined/">vim error snippet c is already defined</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section id="_day_21">
+<title>Day 21</title>
+<simpara>I use Vim for a number of my editing needs. Ranging from writing this diary to
+formatting documentation and coding. I&#8217;d like to organise these work flows into
+different settings allowing me to easily switch between the various work flows
+with relative ease.</simpara>
+<section id="_getting_an_itinerary">
+<title>Getting an itinerary</title>
+<simpara>So I&#8217;ve spent some time gathering some plugins to help tweak my workflow. Now
+is the time I take stock of what I have and determine what can stay, what
+should go and what do I need to learn more.</simpara>
+<simpara>There won&#8217;t be any technical stuff done here, well not really, as the main
+focus is to get an idea of what I really need and what do I need to learn to
+improve my vimfu.</simpara>
+<simpara>I&#8217;ve hacked together a basic little script that will output names of submodules
+within a git repository, in this case my vim plugins, and will use this as a
+basis to review each plugin one by one.</simpara>
+</section>
+</section>
+<section id="_learn_my_tools_2">
+<title>Learn my tools</title>
+<simpara>Will need to decide on plugins to learn</simpara>
+<screen>duration: 1 week per plugin
+start:    week 15
+plugin list:
+  * surround
+  * text objects
+  * macros
+  * gundo
+notes:
+
+  * this could be done after the intial 6 weeks</screen>
+</section>
+<section id="_day_22">
+<title>Day 22</title>
+<simpara>Today I&#8217;ll strip my fork and eat dog food. I&#8217;ll need a clean Vim setup if I&#8217;m
+going to go back to grass roots Vim, so in order to do this successfully, I
+need to branch off my dotfiles and start with the bare basics.</simpara>
+<simpara>I&#8217;ll need to work out what qualifies as the bare basics as some plugins
+(generally those for improve syntax highlighting) I&#8217;d like from the jump off
+but I guess I should document why I decided to add them from the very start.</simpara>
+<note><simpara>I can use my current Vim setup to workout which typographically based
+plugins I&#8217;ll be using and write a basic explanation as to why they are useful and
+why I can&#8217;t live without them.</simpara></note>
+</section>
+<section id="_day_23">
+<title>Day 23</title>
+<simpara>Today&#8217;s a doing day, I need to pull in all my customised setup repositories
+into my dotfiles, I&#8217;ll start by setting up Vim from scratch and add some basic
+mappings that help things along.</simpara>
+</section>
+<section id="_day_24">
+<title>Day 24</title>
+<simpara>So I have a nice shiny Vim setup, today will be the day that I go back to grass
+roots Vim and pick up some new skills along the way.</simpara>
+<simpara>I idea here is that I improve the way I use Vim in general and get more
+intimate with the basics of Vim, so when it comes to tweaking it with plugins,
+I have a better understanding of what plugins are good and what plugins are
+bad.</simpara>
+</section>
+<section id="_day_25">
+<title>Day 25</title>
+<simpara>As it stands at present I&#8217;ve forked my version from
+<ulink url="https://github.com/astrails/dotvim">here</ulink>.</simpara>
+<simpara>Which was cool to start off with but I&#8217;ve had to make a heap of changes and to
+be honest I&#8217;d rather start from scratch and setup my own Vim rig. I&#8217;d like the
+coming next 6 weeks to focus on storing the grass roots functionality of Vim
+into muscle memory. I&#8217;ll be referring to
+<ulink url="http://pragprog.com/book/dnvim/practical-vim">Practical Vim</ulink> a lot which has been
+a great source of knowledge for me in the past year.</simpara>
+</section>
+<section id="_day_34">
+<title>Day 34</title>
+<note><simpara>Turn this section into a workflow based entry</simpara></note>
+<simpara>I used to keep up to date with my daily TV shows via bittorrent of late is has
+become something of a challenge as I have had less and less time to actually
+take the time to keep up to date and track what is currently out.</simpara>
+<simpara>I&#8217;d like to find a usable bit torrent client that will help me do this and help
+me to be notified of new TV episodes coming out.</simpara>
+</section>
+<section id="_day_35">
+<title>Day 35</title>
+<simpara>I&#8217;ve setup w3m but I haven&#8217;t really had time to experiment with it. I know it
+can open images and it can apparently open tabs but I have never played with
+the former. It would be cool to work out how this happens so I can tell tmux to
+open a new tab with a link when ever I feel. This way if I have a link copied
+and can quickly trigger a tmux mapping and get it open a new tab in the
+<emphasis>Interwepts</emphasis> window :)</simpara>
+<simpara>I have IRC setup but I still need to tweak it somewhat so that I can use it
+more as I used to. One of the primary uses of IRC for me is using XDCC. On my
+old windows machine I used to have a script that allowed me to gather a list of
+interesting files to download and queue them up accordingly. It allowed me to
+only download a certain amount of files at a time and move them to a completed
+directory once each one had finished downloading. I&#8217;d like to replicate this in
+irssi so that I don&#8217;t have to spend time finding content of interest and simply
+choose what I want and forget about it.</simpara>
+<simpara>I&#8217;ve been using bjurl and twirssi for a little bit now but I still don&#8217;t know
+how to use it as productively as I know my GUI tools. Today and tomorrow will
+be focused on getting to know these tool better and spending some time getting
+the to work just as I would like to use them.</simpara>
+<simpara>bjurl should be easy to tweak, I want to be able to keep track of as many URL&#8217;s
+as possible without having to reset it or be quick enough to select a link to
+view. I should simply be able to select one from what I see and not have to
+deal with anything else.</simpara>
+</section>
+<section id="_day_36">
+<title>Day 36</title>
+<simpara>Today is that day I start hacking on some scripts and start to get used to some
+of the tools I&#8217;ve neglected to use over the years. My main focus will be to
+improve he way I use sed and awk and improve my bash script so that I can
+quickly hack some workflow scripts together to help tweak my productivity
+further.</simpara>
+</section>
+<section id="_day_37">
+<title>Day 37</title>
+</section>
+<section id="_day_38">
+<title>Day 38</title>
+<simpara>Today I&#8217;ll work on getting to know twirssi a little bit more. These are the
+most important things I want to get to know so that I can become more
+productive with the tool and be able to track conversations I&#8217;ve had and what
+other people are saying to each other.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+How do I view conversations
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_garbled_notes">
+<title>Garbled notes</title>
+<simpara>This is a dumping ground for various notes I&#8217;ve taken in regards to improving
+my workflow.</simpara>
+<simpara>There&#8217;s no real structure to these and they are used purely to help me to
+remember things that I&#8217;d like to address at some point or content that I have
+not found a home for yet.</simpara>
+<section id="_development_changes">
+<title>Development changes</title>
+<simpara>Would be nice if we could be automagically told when we need to run
+bundle or something critical to the system has changed. Could use hash
+tags for this.</simpara>
+<simpara>Should not be able to push unless the tests are passing
+  * This could be a dick, would be an idea to allow for this to be relaxed or easily passed</simpara>
+<simpara>Convert TODO/FIXME into a backlog
+  * Collects all notes
+  * lists them in a backlog file
+  * Tmux alert when new commits have been made</simpara>
+</section>
+<section id="_dotfiles">
+<title>Dotfiles</title>
+<simpara>Various notes on things to improve the way I handle my dotfiles.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Should move irssi settings and config into a separate repository
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Dev Diary should be it&#8217;s own projects/repository
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Improve the way I&#8217;m handling my credentials
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Need to be able to run a script which sets my config
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Add link to old braid setup GH #313889b
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Improve the way I ignore files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Use <literal>.git/info/exclude</literal> to hide local files
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_irssi">
+<title>Irssi</title>
+<simpara>Getting irssi to open up links in w3m as a new tab is pretty easy. Especially
+with the aid of tmux. We&#8217;ll need to add the following snippet to irssi:
+    /set browse_command "tmux send-keys -t Interwepts <emphasis>T U %u</emphasis> C-m &amp;"</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Make navigating to a window easier
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Comment on how to automatically send commands to a IRC channel
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+This is done for the bitlbee window to automatically login
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Mappings
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Open url in new tab
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+This will be used im irssi by bjurl
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Automatically sign into twitter
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Automatically sign in to bitlbee
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_twirssi">
+<title>Twirssi</title>
+<simpara>Things I need to work out and improve on relating to twirssi</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+How do I read a conversation in twitter
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_customising_oh_my_zsh">
+<title>Customising oh-my-zsh</title>
+<simpara>Firstly I love VIM, so I want my key bindings whilst using zsh, this
+appears to be as easy as adding <literal>set -o vi</literal> in your <literal>~/.zshrc</literal> file.</simpara>
+<simpara>I&#8217;m sure there are more things that you can do to get all of vi niceness
+but doing this alone gives up the basics, which we can build upon as we
+tweak our setup.</simpara>
+<section id="_todo_11">
+<title>TODO</title>
+<itemizedlist>
+<listitem>
+<simpara>
+look into pulling in my vi key bindings into zsh for general use
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Make searching my history nicer
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_tips">
+<title>Tips</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Renaming multiple files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Add the following to your .zshrc file:
+</simpara>
+<literallayout class="monospaced">autoload -U zmv
+alias mmv='noglob zmv -W'</literallayout>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_to_document">
+<title>To Document</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Tell me whether I&#8217;m in INSERT mode or not via my status bar
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_resources_15">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://www.techrepublic.com/blog/opensource/using-vi-key-bindings-in-bash-and-zsh/193">Using vi key bindings</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://zshwiki.org/home/examples/zlewidgets">vi keys show mode</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://www.mfasold.net/blog/2008/11/moving-or-renaming-multiple-files/">renaming multiple files</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section id="_tmux">
+<title>Tmux</title>
+<section id="_todo_12">
+<title>TODO</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Setup copy and paste bindings to emulate vim
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+notify me of various changes to applications
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+email and messages to me come to mind as good starts
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Would like to improve the mappings for jumping between sessions and window
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+This is becoming a bit of a pain
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+New panels/windows should automatically cd into the project directory
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section id="_vim">
+<title>Vim</title>
+<simpara>I&#8217;ve used Vim for a while but I&#8217;ve also been getting way to used to having a
+heap of bundles. I want to start out with a stripped down version of vim and
+document my journey from working with an out of the box setup to finding the
+learning some of the element I have neglected to learn up until now.</simpara>
+<section id="_customisations">
+<title>Customisations</title>
+<simpara>use Vundle for package management
+Separate bindings into different files dependant on their function</simpara>
+</section>
+<section id="_common_commands">
+<title>Common commands</title>
+<simpara>These are a few vi commands I use quie a lot, as in "I should alias"</simpara>
+<literallayout class="monospaced">:Git ci --amend         # I'm forever amending commits</literallayout>
+<literallayout class="monospaced">:Git rebase --continue  # Normally used after I merge conflicts</literallayout>
+<literallayout class="monospaced">:bd                     # To destroy a buffer</literallayout>
+<literallayout class="monospaced">&lt;C-W&gt; n +               # Increase my window height</literallayout>
+<literallayout class="monospaced">&lt;C-W&gt; n -               # Decrease my window height</literallayout>
+<literallayout class="monospaced">:git scribe gen site    # Generate my diary</literallayout>
+<literallayout class="monospaced">:git scribe gen all     # Generate my diary in all versions</literallayout>
+</section>
+<section id="_macros">
+<title>Macros</title>
+<simpara>Set current line to soft tabs</simpara>
+<literallayout class="monospaced"># Reset tabs to soft tabs
+:set et
+V =</literallayout>
+<simpara>Convert n number of lines into a list</simpara>
+<literallayout class="monospaced"># Turn a number of sentences into bullet points
+V: normal I  *</literallayout>
+<simpara>Search and replace over multiple files</simpara>
+<literallayout class="monospaced">:argdo %s/2007/2008/g</literallayout>
+</section>
+<section id="_todo_13">
+<title>TODO</title>
+<itemizedlist>
+<listitem>
+<simpara>
+create workflow vim scripts
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Work out how to stop surround from padding special chars ({,( and friends) with spaces
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Make sure the shell is setup for zsh
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Tweak settings to make writing markdown a little nicer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Able to open links and preview markdown via w3m
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Add filetype <literal>*.md</literal> as <literal>*.markdown</literal>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Find a plugin for making markup with markdown more productive
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Creating titles can be cumbersome
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Building lists can be painful
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+mapping for toggling line numbers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Jump to last last line I was on when I open a file
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+script to clean out vim history
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+start with duplicates
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+toggle line numbering
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Format tables easily
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Using Align
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Limit word wrap dependant on mime type
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+I tend to prefer different limits dependant on what I am working on
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Save files when I changed tmux pain or window
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Would be cool if I could do this with iTerm also so that vim saves when I tab to another application.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Restart previous session
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Will help me to jump back into where I jumped off without having to manually remember what was open and where
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_things_to_map">
+<title>Things to map</title>
+<itemizedlist>
+<listitem>
+<simpara>
+gup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+git wtf
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+git-scribe gen
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_things_to_learn">
+<title>Things to learn</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Explore plugin, how do I use this better
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+motions <literal>:help motion.txt</literal>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+autocmd
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_tips_2">
+<title>Tips</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>dvf char</literal> - delete up to char
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>df char</literal> - delete up to and including the char
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>:windo e</literal> - Refresh all window
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_customisations_2">
+<title>Customisations</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>:hi Search ctermbg=red</literal> - Change the colour of search highlights
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_resources_16">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://robots.thoughtbot.com/post/159806050/thoughtbot-is-filled-with-vim-and-vigor">thoughtbot vim and vigor</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://ilker.de/specific-vim-settings-per-project.html">vim setting per project</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://dailyvim.tumblr.com/">Daily vim</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://nvie.com/posts/how-i-boosted-my-vim/">how I boosted my vim</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section id="_plugin_list">
+<title>Plugin list</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-pathogen <ulink url="http://github.com/tpope/vim-pathogen">http://github.com/tpope/vim-pathogen</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+jasmine.vim <ulink url="http://github.com/claco/jasmine.vim">http://github.com/claco/jasmine.vim</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+webapi-vim <ulink url="http://github.com/mattn/webapi-vim">http://github.com/mattn/webapi-vim</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vimerl <ulink url="http://github.com/jimenezrick/vimerl">http://github.com/jimenezrick/vimerl</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-textobj-user <ulink url="http://github.com/kana/vim-textobj-user">http://github.com/kana/vim-textobj-user</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-textobj-rubyblock <ulink url="http://github.com/nelstrom/vim-textobj-rubyblock">http://github.com/nelstrom/vim-textobj-rubyblock</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ruby-sinatra <ulink url="http://github.com/hallison/vim-ruby-sinatra">http://github.com/hallison/vim-ruby-sinatra</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ruby-refactoring <ulink url="http://github.com/ecomba/vim-ruby-refactoring">http://github.com/ecomba/vim-ruby-refactoring</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ruby-block-conv <ulink url="http://github.com/bronson/vim-ruby-block-conv">http://github.com/bronson/vim-ruby-block-conv</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-rake <ulink url="http://github.com/tpope/vim-rake">http://github.com/tpope/vim-rake</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ragtag <ulink url="http://github.com/tpope/vim-ragtag">http://github.com/tpope/vim-ragtag</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-puppet <ulink url="http://github.com/rodjek/vim-puppet">http://github.com/rodjek/vim-puppet</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-powerline <ulink url="http://github.com/Lokaltog/vim-powerline">http://github.com/Lokaltog/vim-powerline</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-indentobject <ulink url="http://github.com/austintaylor/vim-indentobject">http://github.com/austintaylor/vim-indentobject</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-coffee-script <ulink url="http://github.com/kchmck/vim-coffee-script">http://github.com/kchmck/vim-coffee-script</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-bundler <ulink url="http://github.com/tpope/vim-bundler">http://github.com/tpope/vim-bundler</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-abolish <ulink url="http://github.com/tpope/vim-abolish">http://github.com/tpope/vim-abolish</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+syntastic <ulink url="http://github.com/scrooloose/syntastic">http://github.com/scrooloose/syntastic</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-surround <ulink url="http://github.com/tpope/vim-surround">http://github.com/tpope/vim-surround</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-rails <ulink url="http://github.com/tpope/vim-rails">http://github.com/tpope/vim-rails</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-pastie <ulink url="http://github.com/tpope/vim-pastie">http://github.com/tpope/vim-pastie</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+nerdcommenter <ulink url="http://github.com/scrooloose/nerdcommenter">http://github.com/scrooloose/nerdcommenter</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-json <ulink url="http://github.com/leshill/vim-json">http://github.com/leshill/vim-json</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+jasmine.vim <ulink url="http://github.com/claco/jasmine.vim">http://github.com/claco/jasmine.vim</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-fugitive <ulink url="http://github.com/tpope/vim-fugitive">http://github.com/tpope/vim-fugitive</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-endwise <ulink url="http://github.com/tpope/vim-endwise">http://github.com/tpope/vim-endwise</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+delimitMate <ulink url="http://github.com/Raimondi/delimitMate">http://github.com/Raimondi/delimitMate</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-cucumber <ulink url="http://github.com/tpope/vim-cucumber">http://github.com/tpope/vim-cucumber</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ctrlp.vim <ulink url="http://github.com/kien/ctrlp.vim">http://github.com/kien/ctrlp.vim</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+AutoComplPop <ulink url="http://github.com/ayang/AutoComplPop">http://github.com/ayang/AutoComplPop</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+asciidoc-vim <ulink url="http://github.com/spf13/asciidoc-vim">http://github.com/spf13/asciidoc-vim</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ack.vim <ulink url="http://github.com/mileszs/ack.vim">http://github.com/mileszs/ack.vim</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Align <ulink url="http://github.com/alanstevens/Align">http://github.com/alanstevens/Align</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-vividchalk <ulink url="http://github.com/tpope/vim-vividchalk">http://github.com/tpope/vim-vividchalk</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+csv.vim <ulink url="http://github.com/chrisbra/csv.vim">http://github.com/chrisbra/csv.vim</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-repeat <ulink url="http://github.com/tpope/vim-repeat">http://github.com/tpope/vim-repeat</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vimwiki <ulink url="http://github.com/vim-scripts/vimwiki">http://github.com/vim-scripts/vimwiki</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ruby <ulink url="http://github.com/vim-ruby/vim-ruby">http://github.com/vim-ruby/vim-ruby</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+matchit <ulink url="http://github.com/tmhedberg/matchit">http://github.com/tmhedberg/matchit</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+AutoTag <ulink url="http://github.com/vim-scripts/AutoTag">http://github.com/vim-scripts/AutoTag</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+nerdtree <ulink url="http://github.com/scrooloose/nerdtree">http://github.com/scrooloose/nerdtree</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-unimpaired <ulink url="http://github.com/tpope/vim-unimpaired">http://github.com/tpope/vim-unimpaired</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+snipmate-snippets <ulink url="http://github.com/baphled/snipmate-snippets">http://github.com/baphled/snipmate-snippets</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bufexplorer <ulink url="http://github.com/c9s/bufexplorer">http://github.com/c9s/bufexplorer</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-snipmate <ulink url="http://github.com/garbas/vim-snipmate">http://github.com/garbas/vim-snipmate</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-addon-mw-utils <ulink url="http://github.com/MarcWeber/vim-addon-mw-utils">http://github.com/MarcWeber/vim-addon-mw-utils</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+tlib_vim <ulink url="http://github.com/tomtom/tlib_vim">http://github.com/tomtom/tlib_vim</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_mac_console_fu">
+<title>Mac console fu</title>
+<simpara>Having the Control key where it is as default can be quite a strain on
+the fingers and I very rarely use the CAPLOCK key. So it&#8217;s a good idea
+to remap these keys so that I don&#8217;t stress may fingers unnecessarily.</simpara>
+<simpara>Firstly I need to select <emphasis>Keyboard</emphasis> from <emphasis>System Preferences</emphasis>.</simpara>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="image/mac-default_key_mapping.png"/>
+  </imageobject>
+  <textobject><phrase>default key bindings</phrase></textobject>
+</inlinemediaobject></simpara>
+<simpara>This is pretty easy to do on a mac. I needed to go to System settings
+and click on <emphasis>Modifier keys</emphasis></simpara>
+<simpara>I needed to change my modifier keys as follows.</simpara>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="image/mac-keys_remapped.png"/>
+  </imageobject>
+  <textobject><phrase>default key bindings</phrase></textobject>
+</inlinemediaobject></simpara>
+<simpara>Once I save the change, my CAPLOCK and Control keys are remapped.</simpara>
+</section>
+</section>
+<section id="_upgrading_wet_ware">
+<title>Upgrading wet ware</title>
+<simpara>Various notes and goals on what I want to achieve whilst writing this diary.</simpara>
+<section id="_sharping_those_tools">
+<title>Sharping those tools</title>
+<section id="_how_to_improve_our_productivity">
+<title>How to improve our productivity?</title>
+<simpara>We should ideally be learning new things, that we don&#8217;t currently know, to
+improve the way we solve and look at problems.</simpara>
+<simpara>One of the best ways to do this is to actively learn something new every day.</simpara>
+<simpara>For us, we&#8217;ll learn a new Vim trick and learn more about the linux tools that
+we have available to us and which can help improve the way we do our work day
+to day.</simpara>
+</section>
+<section id="_what_we_do">
+<title>What we do?</title>
+</section>
+<section id="_read_a_man_page_a_day">
+<title>Read a man page a day</title>
+<simpara>This can be quite hard to achieve, I&#8217;ve attempted this in the past, we&#8217;ll make
+this interesting. We&#8217;ll create a simple script that will bring up a random man
+page when ever you type <literal>manit</literal>.</simpara>
+<simpara>We could also get this automatically by calling the script via a tmuxinator
+config file.</simpara>
+</section>
+<section id="_learn_to_use_a_new_tool">
+<title>Learn to use a new tool</title>
+<simpara>There are a hell of a lot of cool utilities that come out of the box with any
+Linux based machine, we should look into these and see how we can make use of
+these for our day to day work.</simpara>
+<simpara>Some utils we should look at:
+  sed
+  ack
+  grep
+  xargs</simpara>
+<simpara>Solve an on going personal problem
+  * Ideally this should be small changes, so we see the effect and benefit</simpara>
+</section>
+<section id="_hone_our_new_skills">
+<title>Hone our new skills</title>
+<simpara>We&#8217;ll need to get our newly found knowledge stored to muscle memory, so we&#8217;ll
+need to practice what we have learnt over the week. Doing so will help us on
+the way to improving the way we work and improve our skillset.</simpara>
+</section>
+</section>
+<section id="_things_i_want_to_learn">
+<title>Things I want to learn</title>
+<simpara>I need to improve the understanding of Bash and make more use of the Linux
+utility commands (ack, sed, xargs) Improve my productivity with Vim.</simpara>
+<section id="_move_most_of_my_workflow_to_the_console">
+<title>Move most of my workflow to the console.</title>
+<simpara>Pretty much most of my work can be done via the terminal. To help reduce
+context swtiching, I&#8217;d prefer to have a setup that allows to to stick to the
+terminal and alert me when information (emails, tweets, etc) is coming in</simpara>
+</section>
+</section>
+<section id="_procmail_recipe_workflow">
+<title>Procmail recipe workflow</title>
+<simpara>Getting recipes just right can be interesting and in the past I
+literally had to play it by ear. On this time round I wanted to be a bit
+more smarter about it. I had a little search online and came up with
+<ulink url="http://pm-doc.sourceforge.net/doc/#what_is_dry_run_testing">this</ulink> which
+helped quite a lot. It gave my inspiration to refine this into a
+workflow so that I could easily test recipes whilst not having to wait
+for an email to actually come through.</simpara>
+<note><simpara>Add link to <literal>~/bin/procmail_recipe_test</literal>. Located at GH#e452d09</simpara></note>
+<simpara>I wrapped the Procmail dryrun command as shown above to easily run the
+script.</simpara>
+<simpara>Procmail logs are located at <literal>~/logs/procmail-dryrun.log</literal> so I ran <literal>tail
+-f ~/logs/procmail.log</literal> in a split pane so that I could see what was
+coming in.</simpara>
+<note><simpara>Ideally this should be part of the script that I just built.</simpara></note>
+<simpara>Doing this gave me that ability to see how a the sample email was being
+filter, if at all.</simpara>
+<simpara>Now the last peice of the puzzle was to easily create test emails
+without having to do them by hand. This again was pretty simple as mutt
+was already setup to use vim as its editor.</simpara>
+<simpara>Pressing <literal>e</literal> in mutt opened an email in vim which meant that in Normal
+mode I was apply to give the following command to save the sample email:</simpara>
+<literallayout class="monospaced">:w ~/emailtest.txt</literallayout>
+<simpara>Now that the sample email was save I am free to run
+<literal>~/bin/procmail_recipe_test</literal> and see how the email is processed.</simpara>
+<note><simpara>Add screenshot of the split panes to demostrate the workflow</simpara></note>
+</section>
+<section id="_remapping_my_fingers">
+<title>Remapping my fingers</title>
+<simpara>One of the most interesting things I have picked up whilst getting back to a
+console centric workflow is that a lot depends on where my fingers sit on the
+keyboard. Over time I learnt to touch type in my own way and after a time I
+still find myself looking at the keyboard to find a random key or having to
+stretch my fingers more than a typical toucher typer would.</simpara>
+<simpara>I see the value in typing in traditional way but I never got round to leanring
+properly as I&#8217;ve had "othering" to do.</simpara>
+<simpara>[NOTE]: Need a way of actually relearning where my fingers should be.</simpara>
+<simpara>I maywell try to attempt this gradually and intergrate it into my daily
+entries. It&#8217;s going to take some dicipline but I think it shouldn&#8217;t take much
+effort to remap my fingers to centre around the homekeys more naturally.</simpara>
+</section>
+<section id="_nix_stuff">
+<title>*nix Stuff</title>
+<simpara>Here is where I&#8217;m going store the various titbit that I&#8217;ve learnt over the
+years. I am assuming by the vagueness of this notion it will start of as a grap
+bag of notes and gradually split off to different sections.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>map -k .</literal> - list all of the man pages on the system
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>man $(/bin/ls /bin | awk '{ cmd[i++] = $0 } END { srand( ); print cmd[int(rand()*length(cmd))]; }')'</literal> - display a random manpage
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section id="_work_flows">
+<title>Work flows</title>
+<simpara>I have a number of work flows I&#8217;d like to tweak and improve on. Here I&#8217;ll take
+notes and track my thoughts and ideas.</simpara>
+<section id="_information_desk">
+<title>Information Desk</title>
+<simpara>This is a session that centers around gathering information quickly from
+various sources.</simpara>
+<simpara>Whether it&#8217;s a lazy web tweet or a question on an irc channel or
+personal note on evernote. This session will handle all of this and make
+it easier to find and handling information.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+mutt
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+irssi
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+console twitter client (twirssi)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+newsbeuter
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>We need to be able to easily search various information sources for a given
+answer, we should be able to be specific or ask the question openly.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+My gems should be installed in the global gemset so that all my sessions
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_authoring_scripts">
+<title>Authoring scripts</title>
+<simpara>Various scripts I&#8217;d like to help improve my authoring workflow</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Get a list of files and append them to a give file as includes
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_existing_projects">
+<title>Existing projects</title>
+<simpara>I&#8217;m often cloning a range of projects and have a few recipes that I use to set
+these up. To help me improve this workflow and finally automate I will outline
+the process and get it automated.</simpara>
+<simpara>I typically have a number of windows open that I use to get my work done. First
+and foremost I always have <emphasis>vim</emphasis> open and typically set to the first window. I
+then have a browser open to the given languages API, this is usually via a
+browser.</simpara>
+<simpara>If the given language has a REPL then I&#8217;ll have this open in another window for
+me to easily play around with concepts whilst ironing out a solution.</simpara>
+<simpara>I&#8217;ll start off with the most used, which would be rails and ruby projects. I&#8217;ll
+create base configs for theses workflows and then create a wrapper script that
+allows me to clone a project and then copy the config to the correct place and
+finally start the session by call tmuxinator.</simpara>
+</section>
+<section id="_ruby_projects">
+<title>Ruby projects</title>
+<simpara>So the first project workflow i&#8217;ll capture is ruby projects there are a couple
+of ingredients to this recipe which go as follows:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+vim
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+pry running the applications environemnt
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+the version of ruby
+</simpara>
+<literallayout class="monospaced">project_name: PROJECT_NAME
+project_root: PROJECT_PATH
+rvm: RUBY_VERSION@PROJECT_NAME
+pre: cd PROJECT_PATH &amp;&amp; bundle &amp;&amp; gup
+tabs:
+  - Workbench:
+      layout: b147,208x73,0,0[208x62,0,0,208x10,0,63{104x10,0,63,103x10,105,63}]
+      panes:
+        - vim
+        - #empty, will just run plain zsh
+  - Server: rackup
+  - "Ruby Docs": w3m http://http://www.ruby-doc.org/core-RUBY_VERSION/
+  - Spyhole: tail -f ~/workbench.log
+  - "Project Summary": g wtf
+  - Toybox: pry</literallayout>
+</listitem>
+</itemizedlist>
+<note><simpara>Add a basic breakdown of what the config file actually does.</simpara></note>
+<simpara>So I&#8217;ll need a script that takes the following arguements:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+project name
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+project path
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ruby version
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>The first thing to do is create a new directory, this will be where all my tmux
+workflow templates will be stored. I then copied the above code into a file
+called <emphasis>ruby-project.yml</emphasis> which will be used to create my ruby based sesssion.</simpara>
+<simpara>I then hacked together a script called <emphasis>setup_project</emphasis> as a ruby script to
+basically do all the leg work for me.</simpara>
+<simpara>The script basically takes a git repo and clones the repository. It then try to
+work out what version of ruby is needed and creates a new gemset. Once this is
+complete I manipulate the skeletion yaml file and copies it into my tmuxinator
+directory. Now I&#8217;m ready to call the session and get to working.</simpara>
+<simpara>The complete script can be found here, it basically does what I outlined above
+and will be the basis of the other workflows that I decide to focus on.</simpara>
+<simpara>The only I came across was the an issue with not being able to load pry with a
+projects config. I&#8217;ll look into this as a side issue and create a new issue to
+address the changes.</simpara>
+<simpara>Next, I&#8217;ll do the same for rails projects.</simpara>
+<section id="_todo_14">
+<title>TODO</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Get pry to load my ruby projects
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+make sure pry is available regardless of the gemset and ruby version
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_resources_17">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="https://gist.github.com/1297510">customise pry</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+<note><simpara>Move the next 2 paragraphs to the workflows section</simpara></note>
+<simpara>This script will be very basic to start of with and I will build it up as I
+work through my various workflows.</simpara>
+<simpara>Initially I only want it to make a few changes, as outlined earlier, then once
+it is working for the basic workflows I&#8217;ll gradually improve the script to
+handle all my workflow needs.</simpara>
+</section>
+</section>
+</section>
+<section id="_resources_18">
+<title>Resources</title>
+<simpara>Cool stuff I&#8217;ve picked up on my search</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://box.matto.nl/hjkl.html">Use the hidden powers of the w3m textmode webbrowser</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="https://raw.github.com/schacon/gs-manual/master/book/book.asc">git-scribe workflows</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://technology.mattrude.com/2010/10/git-creating-an-unattached-branch-with-no-history/">git: unattached branch</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="https://github.com/linsong/dailyconfig">dotfile repository with a few nice settings</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_tips_and_tricks">
+<title>Tips and tricks</title>
+<section id="_scripting">
+<title>Scripting</title>
+<simpara>Here&#8217;s a bunch of tips and tricks I&#8217;ve picked up over time to help me
+with my day to day work.</simpara>
+<section id="_tips_3">
+<title>Tips</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>ps aux | grep a-process | awk '{print $2}' | xargs kill -9</literal> - Find a list of processes and kill them
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>find . |grep '01_'|xargs rm</literal> - find all files beginning with 01_ and delete them
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+</section>
+<section id="_wish_list">
+<title>Wish list</title>
+<simpara>Some things I&#8217;d like to help tweak my productivity</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+vim mappings for zsh or the terminal in general
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Make copy and pasting via tmux nicer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+twirssi
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+People I follow should be in a different colour
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+People that follow me should be in a different colour
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Setup vim to allow me to preview markdown and asciidoc content
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Setup a virtual box for pair-programming
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Create script to check with links within content is broken or not
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Output hilight to a file
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Look into outputting this to a shared window?
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</article>

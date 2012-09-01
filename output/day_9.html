@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="master.css" type="text/css" />
+    <title>Day 9</title>
+  </head>
+
+  <body>
+    <div class="nav" id="navheader">
+    <table width="100%">
+      <tr><td width="33%" align="left">
+        
+         <a href="day_8.html">Prev</a><br/>
+         Day 8
+        
+      </td><td width="33%" align="center">
+        
+         <a href="index.html">Home</a><br/>
+         <strong>dotfile diaries</strong>
+        
+      </td><td width="33%" align="right">
+        
+          <a href="day_10.html">Next</a><br/>
+          Day 10
+        
+      </td></tr>
+    </table>
+    </div>
+
+    <hr/>
+
+    <div class="content">
+      <div class="section" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a id="_day_9"></a>Day 9</h2></div></div></div>
+<p>Today I’ll be looking at what I have at the moment, in terms of my dotfiles
+setup, and what I need to deal to improve it and make it easier to maintain.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_starting_a_new"></a>Starting a new</h3></div></div></div>
+<p>So the first thing I’ll need to do is stripped down my repository so that
+I can start a new.</p>
+<p>WARNING:
+This can be somewhat hazardious if you rely on having all of your
+downloads in your home directory as the following command will remove
+everything from your repository and working directory</p>
+<p>This will be used to stripped down my dotvim repository and help me
+start from scratch whilst keeping my master branch intacted.</p>
+<pre class="literallayout">git symbolic-ref HEAD refs/heads/stripped
+rm .git/index
+git clean -fdx</pre>
+<p>This took some time and basically removed everything in my home
+directory, which I didn’t really think about prior to running the
+command. So going back was not really an option.</p>
+<p>Once the command had finished all my personal setting were removed and I
+recieved a bunch of errors relating to RVM not being found. This was
+because my zsh settings rely on RVM for prompt information.</p>
+<p>So the first thing I want to do is change into bash and get RVM back up
+and running.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_installing_rvm"></a>Installing RVM</h3></div></div></div>
+<p>So the first thing i’ll need is RVM. This will be needed by my zsh
+prompt and for the dependancies for my workflow.</p>
+<p>I like to have the latest version of Ruby so I can keep up with what’s
+new in the latest releases.</p>
+<pre class="literallayout">curl -L https://get.rvm.io | bash -s stable --ruby</pre>
+<p>This will install the latest version of RVM and Ruby, so I am well on my
+way to getting Ruby setup on my system.</p>
+<p>Once rvm and the latest version of Ruby installed I wanted to change my
+setup so that the gems installed as part of my dotfiles are now
+installed in global, so that they are available everywhere.</p>
+<p>To do this I needed to make sure I was in the global gemset which was
+done by using the following command.</p>
+<pre class="literallayout">rvm gemset use global</pre>
+<p>Now that I am using the correct gemset, I need to make sure that I run
+bundle to make sure that everything is in place.</p>
+<pre class="literallayout">bundle</pre>
+<p>Once this is complete I have all my gems and rvm setup and ready to go.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_resources_7"></a>Resources</h4></div></div></div>
+<p><a class="ulink" href="https://rvm.io/rvm/install" target="_top">RVM</a></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_removing_braid"></a>Removing Braid</h3></div></div></div>
+<p>Braid can be a pain and I’d rather have more control over my external
+repositories to achieve this I will look into using git submodules. But
+first I will need to remove the external repositories and get rid of
+braid.</p>
+<p>I had the following gems installed before I started this process:</p>
+<pre class="literallayout">braid
+git-scribe
+tmuxinator
+pry</pre>
+<p>I no longer want to use braid, so I will firstly remove all the external
+repositories</p>
+<p>I also have the following external repositories:</p>
+<pre class="literallayout">oh-my-zsh
+dotirssi
+muttfiles
+dotvim</pre>
+<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Warning</h3>
+<p>Removing these files cause a lot of things to break.</p>
+</div>
+<p>To make sure that I don’t break anything I can’t fix imediately, and to
+keep my previous setup, I’ll need to create a new branch</p>
+<pre class="literallayout">gco -b remove_braid</pre>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>The above command uses an aliases via oh-my-zsh</p>
+</div>
+<p>We’ll start off by removing these via braid as follows:</p>
+<pre class="literallayout">braid remove oh-my-zsh
+braid remove dotirssi
+braid remove dotmutt
+braid remove dotvim</pre>
+<p>So the most important repository for me is oh-my-zsh it’s pretty much
+invaluable and it would be an idea to get this setup as soon as possible.</p>
+<pre class="literallayout">git submodule add git@github.com:baphled/oh-my-zsh.git oh-my-zsh
+git submodule init
+git submodule update</pre>
+<p>Now I have my zsh setup as a submodule I can make changes to the repository and
+push them directory to the right repository :)</p>
+<p>The next thing is to do the same for my other repositories</p>
+<pre class="literallayout">git submodule add git@github.com:baphled/dotvim.git dotvim
+git submodule add git@github.com:baphled/muttfiles.git dotmutt
+git submodule add git@github.com:baphled/dotirssi.git dotirssi</pre>
+<p>Now any changes made to my external repositories intermally or externally can
+now be easily tracked :)</p>
+<p>The last step in the journey is to remove braid from my Gemfile as it is no
+longer needed directly by the repository. That is as easy as removing the line
+<code class="literal">gem "braid"</code> and running <code class="literal">bundle</code> again.</p>
+<p>Now we have a cleaner repository and less worry in regards to how my other
+repositories are updated and managed.</p>
+<p>So now that I am using git’s submodules to manage my external repositories I
+can now make local changes and update the correct repository without polutting
+my dotfiles with changes that are not directly related to them.</p>
+</div>
+</div>
+
+    </div>
+
+    <hr/>
+
+    <div class="nav" id="navfooter">
+    <table width="100%">
+      <tr><td width="33%" align="left">
+        
+         <a href="day_8.html">Prev</a><br/>
+         Day 8
+        
+      </td><td width="33%" align="center">
+        
+         <a href="index.html">Home</a><br/>
+         dotfile diaries
+        
+      </td><td width="33%" align="right">
+        
+          <a href="day_10.html">Next</a><br/>
+          Day 10
+        
+      </td></tr>
+    </table>
+    </div>
+  </body>
+</html>

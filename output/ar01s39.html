@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Garbled notes</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="dotfile diaries"/><link rel="up" href="index.html" title="dotfile diaries"/><link rel="prev" href="ar01s38.html" title="Day 38"/><link rel="next" href="ar01s40.html" title="Upgrading wet ware"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Garbled notes</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s38.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s40.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_garbled_notes"/>Garbled notes</h2></div></div></div><p>This is a dumping ground for various notes I’ve taken in regards to improving
+my workflow.</p><p>There’s no real structure to these and they are used purely to help me to
+remember things that I’d like to address at some point or content that I have
+not found a home for yet.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_development_changes"/>Development changes</h3></div></div></div><p>Would be nice if we could be automagically told when we need to run
+bundle or something critical to the system has changed. Could use hash
+tags for this.</p><p>Should not be able to push unless the tests are passing
+  * This could be a dick, would be an idea to allow for this to be relaxed or easily passed</p><p>Convert TODO/FIXME into a backlog
+  * Collects all notes
+  * lists them in a backlog file
+  * Tmux alert when new commits have been made</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_dotfiles"/>Dotfiles</h3></div></div></div><p>Various notes on things to improve the way I handle my dotfiles.</p><div class="itemizedlist"><ul type="disc"><li>
+Should move irssi settings and config into a separate repository
+</li><li>
+Dev Diary should be it’s own projects/repository
+</li><li>
+Improve the way I’m handling my credentials
+</li><li>
+Need to be able to run a script which sets my config
+</li><li>
+Add link to old braid setup GH #313889b
+</li><li>
+Improve the way I ignore files
+</li><li>
+Use <code class="literal">.git/info/exclude</code> to hide local files
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_irssi"/>Irssi</h3></div></div></div><p>Getting irssi to open up links in w3m as a new tab is pretty easy. Especially
+with the aid of tmux. We’ll need to add the following snippet to irssi:
+    /set browse_command "tmux send-keys -t Interwepts <span class="emphasis"><em>T U %u</em></span> C-m &amp;"</p><div class="itemizedlist"><ul type="disc"><li>
+Make navigating to a window easier
+</li><li>
+Comment on how to automatically send commands to a IRC channel
+</li><li>
+This is done for the bitlbee window to automatically login
+</li><li>
+Mappings
+</li><li>
+Open url in new tab
+</li><li>
+This will be used im irssi by bjurl
+</li><li>
+Automatically sign into twitter
+</li><li>
+Automatically sign in to bitlbee
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_twirssi"/>Twirssi</h3></div></div></div><p>Things I need to work out and improve on relating to twirssi</p><div class="itemizedlist"><ul type="disc"><li>
+How do I read a conversation in twitter
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_customising_oh_my_zsh"/>Customising oh-my-zsh</h3></div></div></div><p>Firstly I love VIM, so I want my key bindings whilst using zsh, this
+appears to be as easy as adding <code class="literal">set -o vi</code> in your <code class="literal">~/.zshrc</code> file.</p><p>I’m sure there are more things that you can do to get all of vi niceness
+but doing this alone gives up the basics, which we can build upon as we
+tweak our setup.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo_11"/>TODO</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+look into pulling in my vi key bindings into zsh for general use
+</li><li>
+Make searching my history nicer
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_tips"/>Tips</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+Renaming multiple files
+</li><li><p>
+Add the following to your .zshrc file:
+</p><pre class="literallayout">autoload -U zmv
+alias mmv='noglob zmv -W'</pre></li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_to_document"/>To Document</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+Tell me whether I’m in INSERT mode or not via my status bar
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_resources_15"/>Resources</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="http://www.techrepublic.com/blog/opensource/using-vi-key-bindings-in-bash-and-zsh/193" target="_top">Using vi key bindings</a>
+</li><li>
+<a class="ulink" href="http://zshwiki.org/home/examples/zlewidgets" target="_top">vi keys show mode</a>
+</li><li>
+<a class="ulink" href="http://www.mfasold.net/blog/2008/11/moving-or-renaming-multiple-files/" target="_top">renaming multiple files</a>
+</li></ul></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_tmux"/>Tmux</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo_12"/>TODO</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+Setup copy and paste bindings to emulate vim
+</li><li>
+notify me of various changes to applications
+</li><li>
+email and messages to me come to mind as good starts
+</li><li>
+Would like to improve the mappings for jumping between sessions and window
+</li><li>
+This is becoming a bit of a pain
+</li><li>
+New panels/windows should automatically cd into the project directory
+</li></ul></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_vim"/>Vim</h3></div></div></div><p>I’ve used Vim for a while but I’ve also been getting way to used to having a
+heap of bundles. I want to start out with a stripped down version of vim and
+document my journey from working with an out of the box setup to finding the
+learning some of the element I have neglected to learn up until now.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_customisations"/>Customisations</h4></div></div></div><p>use Vundle for package management
+Separate bindings into different files dependant on their function</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_common_commands"/>Common commands</h4></div></div></div><p>These are a few vi commands I use quie a lot, as in "I should alias"</p><pre class="literallayout">:Git ci --amend         # I'm forever amending commits</pre><pre class="literallayout">:Git rebase --continue  # Normally used after I merge conflicts</pre><pre class="literallayout">:bd                     # To destroy a buffer</pre><pre class="literallayout">&lt;C-W&gt; n +               # Increase my window height</pre><pre class="literallayout">&lt;C-W&gt; n -               # Decrease my window height</pre><pre class="literallayout">:git scribe gen site    # Generate my diary</pre><pre class="literallayout">:git scribe gen all     # Generate my diary in all versions</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_macros"/>Macros</h4></div></div></div><p>Set current line to soft tabs</p><pre class="literallayout"># Reset tabs to soft tabs
+:set et
+V =</pre><p>Convert n number of lines into a list</p><pre class="literallayout"># Turn a number of sentences into bullet points
+V: normal I  *</pre><p>Search and replace over multiple files</p><pre class="literallayout">:argdo %s/2007/2008/g</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo_13"/>TODO</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+create workflow vim scripts
+</li><li>
+Work out how to stop surround from padding special chars ({,( and friends) with spaces
+</li><li>
+Make sure the shell is setup for zsh
+</li><li>
+Tweak settings to make writing markdown a little nicer
+</li><li>
+Able to open links and preview markdown via w3m
+</li><li>
+Add filetype <code class="literal">*.md</code> as <code class="literal">*.markdown</code>
+</li><li>
+Find a plugin for making markup with markdown more productive
+</li><li>
+Creating titles can be cumbersome
+</li><li>
+Building lists can be painful
+</li><li>
+mapping for toggling line numbers
+</li><li>
+Jump to last last line I was on when I open a file
+</li><li>
+script to clean out vim history
+</li><li>
+start with duplicates
+</li><li>
+toggle line numbering
+</li><li>
+Format tables easily
+</li><li>
+Using Align
+</li><li>
+Limit word wrap dependant on mime type
+</li><li>
+I tend to prefer different limits dependant on what I am working on
+</li><li>
+Save files when I changed tmux pain or window
+</li><li>
+Would be cool if I could do this with iTerm also so that vim saves when I tab to another application.
+</li><li>
+Restart previous session
+</li><li>
+Will help me to jump back into where I jumped off without having to manually remember what was open and where
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_things_to_map"/>Things to map</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+gup
+</li><li>
+git wtf
+</li><li>
+git-scribe gen
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_things_to_learn"/>Things to learn</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+Explore plugin, how do I use this better
+</li><li>
+motions <code class="literal">:help motion.txt</code>
+</li><li>
+autocmd
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_tips_2"/>Tips</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+<code class="literal">dvf char</code> - delete up to char
+</li><li>
+<code class="literal">df char</code> - delete up to and including the char
+</li><li>
+<code class="literal">:windo e</code> - Refresh all window
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_customisations_2"/>Customisations</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+<code class="literal">:hi Search ctermbg=red</code> - Change the colour of search highlights
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_resources_16"/>Resources</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="http://robots.thoughtbot.com/post/159806050/thoughtbot-is-filled-with-vim-and-vigor" target="_top">thoughtbot vim and vigor</a>
+</li><li>
+<a class="ulink" href="http://ilker.de/specific-vim-settings-per-project.html" target="_top">vim setting per project</a>
+</li><li>
+<a class="ulink" href="http://dailyvim.tumblr.com/" target="_top">Daily vim</a>
+</li><li>
+<a class="ulink" href="http://nvie.com/posts/how-i-boosted-my-vim/" target="_top">how I boosted my vim</a>
+</li></ul></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_plugin_list"/>Plugin list</h3></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+vim-pathogen <a class="ulink" href="http://github.com/tpope/vim-pathogen" target="_top">http://github.com/tpope/vim-pathogen</a>
+</li><li>
+jasmine.vim <a class="ulink" href="http://github.com/claco/jasmine.vim" target="_top">http://github.com/claco/jasmine.vim</a>
+</li><li>
+webapi-vim <a class="ulink" href="http://github.com/mattn/webapi-vim" target="_top">http://github.com/mattn/webapi-vim</a>
+</li><li>
+vimerl <a class="ulink" href="http://github.com/jimenezrick/vimerl" target="_top">http://github.com/jimenezrick/vimerl</a>
+</li><li>
+vim-textobj-user <a class="ulink" href="http://github.com/kana/vim-textobj-user" target="_top">http://github.com/kana/vim-textobj-user</a>
+</li><li>
+vim-textobj-rubyblock <a class="ulink" href="http://github.com/nelstrom/vim-textobj-rubyblock" target="_top">http://github.com/nelstrom/vim-textobj-rubyblock</a>
+</li><li>
+vim-ruby-sinatra <a class="ulink" href="http://github.com/hallison/vim-ruby-sinatra" target="_top">http://github.com/hallison/vim-ruby-sinatra</a>
+</li><li>
+vim-ruby-refactoring <a class="ulink" href="http://github.com/ecomba/vim-ruby-refactoring" target="_top">http://github.com/ecomba/vim-ruby-refactoring</a>
+</li><li>
+vim-ruby-block-conv <a class="ulink" href="http://github.com/bronson/vim-ruby-block-conv" target="_top">http://github.com/bronson/vim-ruby-block-conv</a>
+</li><li>
+vim-rake <a class="ulink" href="http://github.com/tpope/vim-rake" target="_top">http://github.com/tpope/vim-rake</a>
+</li><li>
+vim-ragtag <a class="ulink" href="http://github.com/tpope/vim-ragtag" target="_top">http://github.com/tpope/vim-ragtag</a>
+</li><li>
+vim-puppet <a class="ulink" href="http://github.com/rodjek/vim-puppet" target="_top">http://github.com/rodjek/vim-puppet</a>
+</li><li>
+vim-powerline <a class="ulink" href="http://github.com/Lokaltog/vim-powerline" target="_top">http://github.com/Lokaltog/vim-powerline</a>
+</li><li>
+vim-indentobject <a class="ulink" href="http://github.com/austintaylor/vim-indentobject" target="_top">http://github.com/austintaylor/vim-indentobject</a>
+</li><li>
+vim-coffee-script <a class="ulink" href="http://github.com/kchmck/vim-coffee-script" target="_top">http://github.com/kchmck/vim-coffee-script</a>
+</li><li>
+vim-bundler <a class="ulink" href="http://github.com/tpope/vim-bundler" target="_top">http://github.com/tpope/vim-bundler</a>
+</li><li>
+vim-abolish <a class="ulink" href="http://github.com/tpope/vim-abolish" target="_top">http://github.com/tpope/vim-abolish</a>
+</li><li>
+syntastic <a class="ulink" href="http://github.com/scrooloose/syntastic" target="_top">http://github.com/scrooloose/syntastic</a>
+</li><li>
+vim-surround <a class="ulink" href="http://github.com/tpope/vim-surround" target="_top">http://github.com/tpope/vim-surround</a>
+</li><li>
+vim-rails <a class="ulink" href="http://github.com/tpope/vim-rails" target="_top">http://github.com/tpope/vim-rails</a>
+</li><li>
+vim-pastie <a class="ulink" href="http://github.com/tpope/vim-pastie" target="_top">http://github.com/tpope/vim-pastie</a>
+</li><li>
+nerdcommenter <a class="ulink" href="http://github.com/scrooloose/nerdcommenter" target="_top">http://github.com/scrooloose/nerdcommenter</a>
+</li><li>
+vim-json <a class="ulink" href="http://github.com/leshill/vim-json" target="_top">http://github.com/leshill/vim-json</a>
+</li><li>
+jasmine.vim <a class="ulink" href="http://github.com/claco/jasmine.vim" target="_top">http://github.com/claco/jasmine.vim</a>
+</li><li>
+vim-fugitive <a class="ulink" href="http://github.com/tpope/vim-fugitive" target="_top">http://github.com/tpope/vim-fugitive</a>
+</li><li>
+vim-endwise <a class="ulink" href="http://github.com/tpope/vim-endwise" target="_top">http://github.com/tpope/vim-endwise</a>
+</li><li>
+delimitMate <a class="ulink" href="http://github.com/Raimondi/delimitMate" target="_top">http://github.com/Raimondi/delimitMate</a>
+</li><li>
+vim-cucumber <a class="ulink" href="http://github.com/tpope/vim-cucumber" target="_top">http://github.com/tpope/vim-cucumber</a>
+</li><li>
+ctrlp.vim <a class="ulink" href="http://github.com/kien/ctrlp.vim" target="_top">http://github.com/kien/ctrlp.vim</a>
+</li><li>
+AutoComplPop <a class="ulink" href="http://github.com/ayang/AutoComplPop" target="_top">http://github.com/ayang/AutoComplPop</a>
+</li><li>
+asciidoc-vim <a class="ulink" href="http://github.com/spf13/asciidoc-vim" target="_top">http://github.com/spf13/asciidoc-vim</a>
+</li><li>
+ack.vim <a class="ulink" href="http://github.com/mileszs/ack.vim" target="_top">http://github.com/mileszs/ack.vim</a>
+</li><li>
+Align <a class="ulink" href="http://github.com/alanstevens/Align" target="_top">http://github.com/alanstevens/Align</a>
+</li><li>
+vim-vividchalk <a class="ulink" href="http://github.com/tpope/vim-vividchalk" target="_top">http://github.com/tpope/vim-vividchalk</a>
+</li><li>
+csv.vim <a class="ulink" href="http://github.com/chrisbra/csv.vim" target="_top">http://github.com/chrisbra/csv.vim</a>
+</li><li>
+vim-repeat <a class="ulink" href="http://github.com/tpope/vim-repeat" target="_top">http://github.com/tpope/vim-repeat</a>
+</li><li>
+vimwiki <a class="ulink" href="http://github.com/vim-scripts/vimwiki" target="_top">http://github.com/vim-scripts/vimwiki</a>
+</li><li>
+vim-ruby <a class="ulink" href="http://github.com/vim-ruby/vim-ruby" target="_top">http://github.com/vim-ruby/vim-ruby</a>
+</li><li>
+matchit <a class="ulink" href="http://github.com/tmhedberg/matchit" target="_top">http://github.com/tmhedberg/matchit</a>
+</li><li>
+AutoTag <a class="ulink" href="http://github.com/vim-scripts/AutoTag" target="_top">http://github.com/vim-scripts/AutoTag</a>
+</li><li>
+nerdtree <a class="ulink" href="http://github.com/scrooloose/nerdtree" target="_top">http://github.com/scrooloose/nerdtree</a>
+</li><li>
+vim-unimpaired <a class="ulink" href="http://github.com/tpope/vim-unimpaired" target="_top">http://github.com/tpope/vim-unimpaired</a>
+</li><li>
+snipmate-snippets <a class="ulink" href="http://github.com/baphled/snipmate-snippets" target="_top">http://github.com/baphled/snipmate-snippets</a>
+</li><li>
+bufexplorer <a class="ulink" href="http://github.com/c9s/bufexplorer" target="_top">http://github.com/c9s/bufexplorer</a>
+</li><li>
+vim-snipmate <a class="ulink" href="http://github.com/garbas/vim-snipmate" target="_top">http://github.com/garbas/vim-snipmate</a>
+</li><li>
+vim-addon-mw-utils <a class="ulink" href="http://github.com/MarcWeber/vim-addon-mw-utils" target="_top">http://github.com/MarcWeber/vim-addon-mw-utils</a>
+</li><li>
+tlib_vim <a class="ulink" href="http://github.com/tomtom/tlib_vim" target="_top">http://github.com/tomtom/tlib_vim</a>
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_mac_console_fu"/>Mac console fu</h3></div></div></div><p>Having the Control key where it is as default can be quite a strain on
+the fingers and I very rarely use the CAPLOCK key. So it’s a good idea
+to remap these keys so that I don’t stress may fingers unnecessarily.</p><p>Firstly I need to select <span class="emphasis"><em>Keyboard</em></span> from <span class="emphasis"><em>System Preferences</em></span>.</p><p><span class="inlinemediaobject"><img src="image/mac-default_key_mapping.png" alt="default key bindings"/></span></p><p>This is pretty easy to do on a mac. I needed to go to System settings
+and click on <span class="emphasis"><em>Modifier keys</em></span></p><p>I needed to change my modifier keys as follows.</p><p><span class="inlinemediaobject"><img src="image/mac-keys_remapped.png" alt="default key bindings"/></span></p><p>Once I save the change, my CAPLOCK and Control keys are remapped.</p></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s38.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s40.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 38 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Upgrading wet ware</td></tr></table></div></body></html>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 11</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="dotfile diaries"/><link rel="up" href="index.html" title="dotfile diaries"/><link rel="prev" href="ar01s15.html" title="Day 10"/><link rel="next" href="ar01s17.html" title="Day 12"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 11</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s15.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s17.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_11"/>Day 11</h2></div></div></div><p>So my email is being retrieve, manually, so now I’d like to focus on getting
+this setup to be retrieved automatically and work out some procmail recipes so
+that I my email is nicely organised for me.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_organising_my_email"/>Organising my email</h3></div></div></div><p>So like most I get quite a lot of email, varying in importance and
+relevance dependant on time. I’d like to get my old setup back in place
+with a few tweaks. Things are pretty much configured so that my email
+will be sent to the correct file but I need to improve on these recipes
+so that I don’t have to keep going back and forth over a long period of
+time constantly tweaking it.</p><p>There are a few groups I know I’ll need and as time goes by I will have
+to add the odd new recipe but for now I’ll focus on my personal email
+and how to get that under some order.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Link to my first procmailrc</p></div><p>As with others I get quite a lot from various services, these can be
+filtered more as time goes on but for now I’d like a dumping ground
+<code class="literal">social</code> which will store all the unmatched emails that may slip through
+procmails net.</p><p>I also like to not see email regarding jobs/roles I’m not interested in.
+Emails that have a given type of subject or come from know offenders
+(crappy recruitment consultants) should be sent to <code class="literal">/dev/null</code> so that I
+don’t have to bother with them. This may need some tweaking but I think
+testing my recipes by dry running it against my main email address
+should help to get this refined relatively quickly</p><p>I also need a new directory to be created for any discussion groups I
+have joined. The idea here is that these will be caught by procmail and
+the name of the file will be created based on this. This way I don’t
+have to meddle with procmailrc too much and keeps things nice a clean.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_mailing_lists"/>Mailing lists</h4></div></div></div><p>First things was to create a dummy email.</p><pre class="literallayout">From info@meetup.com  Wed Jul 18 00:00:20 2012
+From: John Doe &lt;info@meetup.com&gt;
+Sender: foobar-announce@meetup.com
+To: FooBar-announce@meetup.com
+Subject: [FooBar] FB Meetup group closing down
+Mailing-List: list FreelanceFriday-list@meetup.com; contact postmaster@meetup.com
+List-Id: &lt;FooBar-list.meetup.com&gt;
+List-Unsubscribe: &lt;mailto: support@meetup.com&gt;</pre><pre class="literallayout">BODY OF MESSAGE SEPARATED BY EMPTY LINE
+txt txt txt txt txt txt txt txt txt txt</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Stolen from: <a class="ulink" href="http://bethesignal.org/dotfiles/procmailrc.html" target="_top">http://bethesignal.org/dotfiles/procmailrc.html</a></p></div><p>To do a dry run on my recipes I used the following command:</p><pre class="literallayout">procmail VERBOSE=on DEFAULT=/dev/null   \
+  LOGFILE=~/test.log                    \
+    ~/.procmailrc &lt; ~/emailtest.txt</pre><p>So the first thing I need to do is setup my social related email file.</p><pre class="screen">  :0
+  * ^((List-Id|X-(Mailing-)?List):(.*[&lt;]\/[^&gt;]*))
+  {
+      LISTID=$MATCH
+
+      :0:
+      * LISTID ?? ^\/[^@\.]*
+      $MATCH
+
+  }</pre><p>From time to time I find myself on a MAJADOMO mail server so I’ll add
+this in to preempt these occasions.</p><pre class="screen">  # MAJORDOMO - Automagically handle Majordomo lists
+  :0
+  * ^Sender: owner-[^@]+@[^@\+]+
+  * ^Sender: owner-\/[^@\+]+
+  {
+      :0:
+      $MATCH
+  }</pre><p>After doing a dry run the following directory was automatically added to
+my Mail directory.</p><pre class="literallayout">λ l Mail
+total 3187
+-rw-------   1 baphled  staff      3187 19 Jul 20:24 FooBar-list</pre><p>Now the problem here is that mutt does not recognise the directory and I
+will have to still manually add each one as I notice them into my mutt
+file.</p><p>There is a way around this I could make mutt smarter and work out which
+directories are inboxes and which are not.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Wrote a script that can easily list the inboxes. Need to automate</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_filtering_linkedin_discussion_groups"/>Filtering LinkedIn Discussion groups</h4></div></div></div><p>Now I’m on a few LinkedIn mailing lists and they don’t adear to the
+above rules so I will need to create a generic rule that sends all
+LinkedIn originating emails to the appropriate discussion group.</p><p>Getting the regexp just right wasn’t easy but I finally manage to get it
+to work with a little help from the shell.</p><p>I took the same route as I did earlier, copied a same email to the
+emailtest.txt file, after a while I came up with the following.</p><pre class="literallayout">:0: # Change this so that it sorts by the digest group$
+* ^(From):(\/.*).*\&lt;group-digests@linkedin.com\&gt;$
+`echo $MATCH | awk '{$NF=`}1' | sed 's/ //g'`$''`</pre><p>The most cryptic is the following line:</p><pre class="literallayout">`echo $MATCH | awk '{$NF=`}1' | sed 's/ //g'`$''`</pre><p>Basically I echo the matched address out to the shell which then returns
+everything but the last column, in this case it’s the email address. It
+then removes all spaces and we have our directory.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_filter_pr_crap"/>Filter PR crap</h4></div></div></div><p>I’m still getting quite a bit of email dumped into my main inbox. I want
+to fix this so that I don’t have to waid through heaps of PR related
+stuff I’m not really interested in.</p><p>This will be my dumping ground for emails I’m not likely to really read.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Improve the readability of the next few paragraphs.</p></div><p>Anything that has <span class="emphasis"><em>offers</em></span> in the email address are the first to go.
+GoDady use this account a bit so they’ll be the first ones to go. Then
+next work would be <span class="emphasis"><em>campaign</em></span> this wreaks of PR type stuff I’m not
+really interested in. Another keyword would be <span class="emphasis"><em>discount</em></span> if you you
+have this in your email address I more than like never see your email ;)</p><p>It seems that people actually use a <span class="emphasis"><em>marketing</em></span> account so again this
+will be put in the same inbox as others above.</p><p>Below is a list of nasty PR words I’d like to throw into this inbox:</p><div class="itemizedlist"><ul type="disc"><li>
+offers
+</li><li>
+campaign
+</li><li>
+discount
+</li><li>
+marketing
+</li><li>
+sale
+</li><li>
+sell
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_3rd_party_services"/>3rd party services</h4></div></div></div><p>There are a few services I use to maintain my sites and code. I want to
+be able a basic recipe that stores all the account summary related
+emails in one place so that they aren’t stored in my inbox.</p><div class="itemizedlist"><ul type="disc"><li>
+newrelic
+</li><li>
+godaddy
+</li><li>
+heroku
+</li><li>
+code school
+</li><li>
+peepcode
+</li><li>
+railscast
+</li><li>
+destroy all software
+</li><li>
+pragprog
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_inept_recruitment_filter"/>Inept Recruitment filter</h4></div></div></div><p>I really don’t like having my email account filled with numerous emails
+from recruitment agents regarding roles I will never consider. This list
+will start to become overwheling if I just make a list of agencies that
+are reknowned for not doing a good job. So I will start off by composing
+a list of keywords that will help me solve this problem.</p><p>So the list goes as follows:</p><div class="itemizedlist"><ul type="disc"><li>
+PHP
+</li><li>
+Drup
+</li><li>
+Perl
+</li><li>
+VB
+</li><li>
+.Net
+</li><li>
+Javascript
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_social"/>Social</h4></div></div></div><p>This will be where all my social gumph goes, mainly things like facebook
+and random LinkedIn stuff etc.</p><div class="itemizedlist"><ul type="disc"><li>
+facebook in general
+</li><li>
+LinkedIn stuff not caught earlier
+</li></ul></div><p>For the curious
+<a class="ulink" href="https://raw.github.com/baphled/dotfiles/e92354e25054921e562b1b038a53d35042da16cb/.procmailrc" target="_top">here</a>
+is a list of my basic recipes that I ended ip settling with for the time
+being.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo_7"/>TODO</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+Filter emails via my address book
+</li><li>
+lower case To and From results
+</li><li>
+Improve my 3rd party filter
+</li><li>
+HTML based emails can be a pain in mutt so I’d be cool if I can view
+    these without having to sift throught HTML.
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_resources_9"/>Resources</h4></div></div></div><p><a class="ulink" href="http://pm-doc.sourceforge.net/doc/#what_is_dry_run_testing" target="_top">dry run testing</a></p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_rebasing_my_master_branch"/>Rebasing my master branch</h3></div></div></div><p>So it’s been a while since I’ve rebased my changes to the master branch.
+I’m relatively happy with the removal of <span class="emphasis"><em>braid</em></span> so I think it’s time to
+merge my latest changes into my master branch.</p><p>So the first issue I had was that I had problems checking out the master
+branch because of the changes to the external repositiories. So I had to
+issue the following command:</p><pre class="literallayout">git co -f master</pre><p>This allow me to checkout the master branch and disregard the previous
+warnings.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Doing this can be a time soak.</p></div><p>I could them do the following to merge my braidless branch into master.</p><pre class="literallayout">gup braidless</pre><p>After this gladly there were no merge conflicts but all of my external
+repositiories were deleted.</p><p>I basically had to go into each of the external repositiories and
+checkout all off the deleted files. This took some time but once it was
+comeplete the master branch was happily merged.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_notes"/>Notes</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+Master brach before change GH#0e15429
+</li><li>
+Master branch after change GH#e92354e
+</li></ul></div></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s15.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s17.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 10 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 12</td></tr></table></div></body></html>

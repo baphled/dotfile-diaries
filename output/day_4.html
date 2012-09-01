@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="master.css" type="text/css" />
+    <title>Day 4</title>
+  </head>
+
+  <body>
+    <div class="nav" id="navheader">
+    <table width="100%">
+      <tr><td width="33%" align="left">
+        
+         <a href="day_3.html">Prev</a><br/>
+         Day 3
+        
+      </td><td width="33%" align="center">
+        
+         <a href="index.html">Home</a><br/>
+         <strong>dotfile diaries</strong>
+        
+      </td><td width="33%" align="right">
+        
+          <a href="day_5.html">Next</a><br/>
+          Day 5
+        
+      </td></tr>
+    </table>
+    </div>
+
+    <hr/>
+
+    <div class="content">
+      <div class="section" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a id="_day_4"></a>Day 4</h2></div></div></div>
+<p>So I’ve done quite a bit to get irssi setup and working as I want it.
+The last things I want to do is lose my settings or messing something
+up, as I have done a number of times already.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_keeping_my_settings_under_version_control"></a>Keeping my settings under version control</h3></div></div></div>
+<p>So the easy fix for this is to create a repository and pull the config
+in as dotirssi.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+There`s not much to this really.
+</li>
+<li>
+I copy the .irssi directory to dotirssi.
+</li>
+<li>
+I then initialised git for version control.
+</li>
+<li>
+Created a new repository on github
+</li>
+<li>
+ignored files with the pattern <code class="literal">scripts/twirssi.*</code>
+</li>
+<li>
+Commited all the files
+</li>
+<li>
+pushed the changes
+</li>
+<li>
+added the project to my dotfiles using braid
+</li>
+<li>
+This will change some point in this process
+</li>
+<li>
+Copy my twirssi auth files to <code class="literal">~/dotirssi/scripts</code>
+</li>
+</ul></div>
+<p>Once the above was done I was able to have my irssi settings up version
+control :)</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_opening_links_irssi_with_lynx"></a>Opening links irssi with lynx</h3></div></div></div>
+<p>Yet another day of tweaking my irssi rig, today I want to get Lynx to open in a
+new tmux window when I select a link. I’ll use tmux to do this as it’s what
+it’s good at and I’ll get bjurl to call tmux when ever I select a link for
+viewing.</p>
+<p>Again the goal here is to move more of my work flow into my terminal which will
+allow me to deal with content when I choose.</p>
+<p>First off we need to actually be able to easily see links and open them,
+we’ll use <a class="ulink" href="http://github.com/sukima/bjurl/blob/master/bjurl.pl" target="_top">bjurl</a> for this.</p>
+<p>As with most plugins this is as simple as downloading the script and
+adding it to your irssi script directory.</p>
+<p>If your already running irssi run <code class="literal">/run bjurl</code>.</p>
+<p>As I’m using a mac, I needed to to set the <code class="literal">browse_command</code> settings to
+open links just how I want it to.</p>
+<p>First we need a new tmux window to start lynx in.</p>
+<pre class="literallayout">tmux new-window -t workbench -s interwepts</pre>
+<p>We’ll need tell bjurl to behave as we want:</p>
+<pre class="literallayout">/set browse_command tmux send-keys -t interwepts 'lynx $1' C-m</pre>
+<p>And that’s pretty much it for now, we can now load links within our current session :)</p>
+<p>It would be cool if we had a separate session strictly for browsing, that
+way we don’t have to clutter the current session.</p>
+<p>This and a few other things will be the next step for improving this work flow
+but lets take small steps and see where this path leads up :)</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_todo"></a>TODO</h4></div></div></div>
+<p>It would be cool if we could name our window accordingly and not have to deal
+with the many windows issue I have with chrome and many other browser at
+present. This only leads to a sluggish computer and "Tab overload"</p>
+<p>I also need bjurl to be a bit smarter in identifying links, it’s hard to track
+links once 20 have been displayed, at present it’s quite useless.</p>
+</div>
+</div>
+</div>
+
+    </div>
+
+    <hr/>
+
+    <div class="nav" id="navfooter">
+    <table width="100%">
+      <tr><td width="33%" align="left">
+        
+         <a href="day_3.html">Prev</a><br/>
+         Day 3
+        
+      </td><td width="33%" align="center">
+        
+         <a href="index.html">Home</a><br/>
+         dotfile diaries
+        
+      </td><td width="33%" align="right">
+        
+          <a href="day_5.html">Next</a><br/>
+          Day 5
+        
+      </td></tr>
+    </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Work flows</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="dotfile diaries"/><link rel="up" href="index.html" title="dotfile diaries"/><link rel="prev" href="ar01s40.html" title="Upgrading wet ware"/><link rel="next" href="ar01s42.html" title="Resources"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Work flows</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s40.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s42.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_work_flows"/>Work flows</h2></div></div></div><p>I have a number of work flows I’d like to tweak and improve on. Here I’ll take
+notes and track my thoughts and ideas.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_information_desk"/>Information Desk</h3></div></div></div><p>This is a session that centers around gathering information quickly from
+various sources.</p><p>Whether it’s a lazy web tweet or a question on an irc channel or
+personal note on evernote. This session will handle all of this and make
+it easier to find and handling information.</p><div class="itemizedlist"><ul type="disc"><li>
+mutt
+</li><li>
+irssi
+</li><li>
+console twitter client (twirssi)
+</li><li>
+newsbeuter
+</li></ul></div><p>We need to be able to easily search various information sources for a given
+answer, we should be able to be specific or ask the question openly.</p><div class="itemizedlist"><ul type="disc"><li>
+My gems should be installed in the global gemset so that all my sessions
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_authoring_scripts"/>Authoring scripts</h3></div></div></div><p>Various scripts I’d like to help improve my authoring workflow</p><div class="itemizedlist"><ul type="disc"><li>
+Get a list of files and append them to a give file as includes
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_existing_projects"/>Existing projects</h3></div></div></div><p>I’m often cloning a range of projects and have a few recipes that I use to set
+these up. To help me improve this workflow and finally automate I will outline
+the process and get it automated.</p><p>I typically have a number of windows open that I use to get my work done. First
+and foremost I always have <span class="emphasis"><em>vim</em></span> open and typically set to the first window. I
+then have a browser open to the given languages API, this is usually via a
+browser.</p><p>If the given language has a REPL then I’ll have this open in another window for
+me to easily play around with concepts whilst ironing out a solution.</p><p>I’ll start off with the most used, which would be rails and ruby projects. I’ll
+create base configs for theses workflows and then create a wrapper script that
+allows me to clone a project and then copy the config to the correct place and
+finally start the session by call tmuxinator.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_ruby_projects"/>Ruby projects</h3></div></div></div><p>So the first project workflow i’ll capture is ruby projects there are a couple
+of ingredients to this recipe which go as follows:</p><div class="itemizedlist"><ul type="disc"><li>
+vim
+</li><li>
+pry running the applications environemnt
+</li><li><p>
+the version of ruby
+</p><pre class="literallayout">project_name: PROJECT_NAME
+project_root: PROJECT_PATH
+rvm: RUBY_VERSION@PROJECT_NAME
+pre: cd PROJECT_PATH &amp;&amp; bundle &amp;&amp; gup
+tabs:
+  - Workbench:
+      layout: b147,208x73,0,0[208x62,0,0,208x10,0,63{104x10,0,63,103x10,105,63}]
+      panes:
+        - vim
+        - #empty, will just run plain zsh
+  - Server: rackup
+  - "Ruby Docs": w3m http://http://www.ruby-doc.org/core-RUBY_VERSION/
+  - Spyhole: tail -f ~/workbench.log
+  - "Project Summary": g wtf
+  - Toybox: pry</pre></li></ul></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Add a basic breakdown of what the config file actually does.</p></div><p>So I’ll need a script that takes the following arguements:</p><div class="itemizedlist"><ul type="disc"><li>
+project name
+</li><li>
+project path
+</li><li>
+ruby version
+</li></ul></div><p>The first thing to do is create a new directory, this will be where all my tmux
+workflow templates will be stored. I then copied the above code into a file
+called <span class="emphasis"><em>ruby-project.yml</em></span> which will be used to create my ruby based sesssion.</p><p>I then hacked together a script called <span class="emphasis"><em>setup_project</em></span> as a ruby script to
+basically do all the leg work for me.</p><p>The script basically takes a git repo and clones the repository. It then try to
+work out what version of ruby is needed and creates a new gemset. Once this is
+complete I manipulate the skeletion yaml file and copies it into my tmuxinator
+directory. Now I’m ready to call the session and get to working.</p><p>The complete script can be found here, it basically does what I outlined above
+and will be the basis of the other workflows that I decide to focus on.</p><p>The only I came across was the an issue with not being able to load pry with a
+projects config. I’ll look into this as a side issue and create a new issue to
+address the changes.</p><p>Next, I’ll do the same for rails projects.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo_14"/>TODO</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+Get pry to load my ruby projects
+</li><li>
+make sure pry is available regardless of the gemset and ruby version
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_resources_17"/>Resources</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="https://gist.github.com/1297510" target="_top">customise pry</a>
+</li></ul></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Move the next 2 paragraphs to the workflows section</p></div><p>This script will be very basic to start of with and I will build it up as I
+work through my various workflows.</p><p>Initially I only want it to make a few changes, as outlined earlier, then once
+it is working for the basic workflows I’ll gradually improve the script to
+handle all my workflow needs.</p></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s40.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s42.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Upgrading wet ware </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Resources</td></tr></table></div></body></html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 6</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="dotfile diaries"/><link rel="up" href="index.html" title="dotfile diaries"/><link rel="prev" href="ar01s09.html" title="Day 5"/><link rel="next" href="ar01s11.html" title="Day 7"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 6</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s09.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s11.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_6"/>Day 6</h2></div></div></div><p>I’ve been writing quite a bit recently and have wanted to play around with
+git-scribe for authoring my diary and possibly writing projects in the future.</p><p>Today I’ll be setting up git-scribe and updating my diary so that I can
+generate content in various formats. Initially I’ll only publish this content
+as HTML but then move on to PDF and epub later once I’ve ironed out the kinks.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_setting_up_git_scribe"/>Setting up git-scribe</h3></div></div></div><p>It’s not directly related but I love to write and I’d like my setup to
+allow me to easily write new material and publish them in various formats.</p><p>I’ve been watching git-scribe for some time and thought this would be a
+perfect time to bring it into my current workflow.</p><p>I’ll setup git-scribe as it allows me to write my entries in AsciiDoc
+format and compile it into a number of formats (html, pdf, mobi, etc).</p><p>As this is the case we’ll have a play with this setup and possibly use
+it for publishing other material.</p><p>There’s not much to this really the project has great
+<a class="ulink" href="https://github.com/spf13/asciidoc-vim" target="_top">documentation</a></p><p>Once installed I started initialised the new book.</p><pre class="literallayout">git scribe init</pre><p>Once this was done I had the basic setup needed to move my diary. git-scribe
+uses AsciiDoc to format content so I needed to convert the old markdown. That
+wasn’t so much trouble as there isn’t much different in the markup. I created a
+couple of vim macros and went through the pages and updated them accordingly.
+The main changes needed were related to the titles of each entry.</p><p>Once the files where moved into the <span class="emphasis"><em>book</em></span> directory and the format of the
+content was setup it was easy to generate the site with one command <code class="literal">git scribe
+gen site</code>. In the <span class="emphasis"><em>output</em></span> directory was the generated diary nicely formatted
+and indexed.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo_4"/>TODO</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+It would be nice to automatically resize images so that they are not too
+    large or too small.
+</li><li>
+create a script that generates my diary into HTML
+</li><li>
+the output will be another repository
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_resources_5"/>Resources</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="http://powerman.name/doc/asciidoc" target="_top">asciidoc cheatsheet</a>
+</li><li>
+<a class="ulink" href="https://github.com/spf13/asciidoc-vim" target="_top">ascii-vim</a>
+</li></ul></div></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s09.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s11.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 5 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 7</td></tr></table></div></body></html>
