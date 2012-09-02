@@ -94,44 +94,44 @@
 <content src="book.html#_day_14"/>
 </navPoint>
 <navPoint class="chapter" id="chapter_20" playOrder="21">
-<navLabel><text>Housekeeping tools</text></navLabel>
-<content src="book.html#_housekeeping_tools_2"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_21" playOrder="22">
 <navLabel><text>Day 15</text></navLabel>
 <content src="book.html#_day_15"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_22" playOrder="23">
-<navLabel><text>Learn my tools</text></navLabel>
-<content src="book.html#_learn_my_tools_2"/>
+<navPoint class="chapter" id="chapter_21" playOrder="22">
+<navLabel><text>Housekeeping tools</text></navLabel>
+<content src="book.html#_housekeeping_tools_2"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_23" playOrder="24">
+<navPoint class="chapter" id="chapter_22" playOrder="23">
 <navLabel><text>Day 16</text></navLabel>
 <content src="book.html#_day_16"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_24" playOrder="25">
+<navPoint class="chapter" id="chapter_23" playOrder="24">
 <navLabel><text>Day 17</text></navLabel>
 <content src="book.html#_day_17"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_25" playOrder="26">
+<navPoint class="chapter" id="chapter_24" playOrder="25">
 <navLabel><text>Day 18</text></navLabel>
 <content src="book.html#_day_18"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_26" playOrder="27">
+<navPoint class="chapter" id="chapter_25" playOrder="26">
 <navLabel><text>Day 19</text></navLabel>
 <content src="book.html#_day_19"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_27" playOrder="28">
+<navPoint class="chapter" id="chapter_26" playOrder="27">
 <navLabel><text>Day 20</text></navLabel>
 <content src="book.html#_day_20"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_28" playOrder="29">
+<navPoint class="chapter" id="chapter_27" playOrder="28">
 <navLabel><text>Day 21</text></navLabel>
 <content src="book.html#_day_21"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_29" playOrder="30">
+<navPoint class="chapter" id="chapter_28" playOrder="29">
 <navLabel><text>Day 22</text></navLabel>
 <content src="book.html#_day_22"/>
+</navPoint>
+<navPoint class="chapter" id="chapter_29" playOrder="30">
+<navLabel><text>Learn my tools</text></navLabel>
+<content src="book.html#_learn_my_tools_2"/>
 </navPoint>
 <navPoint class="chapter" id="chapter_30" playOrder="31">
 <navLabel><text>Dressing down Vim</text></navLabel>

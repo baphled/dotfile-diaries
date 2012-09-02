@@ -5,7 +5,7 @@
 
 <article lang="en">
 <articleinfo>
-    <title>dotfile diaries</title>
+    <title>Dotfile Diaries</title>
 </articleinfo>
 <section id="_goal">
 <title>Goal</title>
@@ -2020,16 +2020,6 @@ have a clean slate to improve my vi foo. For the moment though I will just add
 them using git submodule and deal with stripping them down later.</simpara>
 </section>
 </section>
-<section id="_housekeeping_tools_2">
-<title>Housekeeping tools</title>
-<literallayout class="monospaced">duration: 4 weeks
-notes:
-  * manage personal credentials
-  * notifications and alerts via tmux
-  * define local files to hide
-  * create script to check for my dotfile dependancies
-    * Should download them if they are not found</literallayout>
-</section>
 <section id="_day_15">
 <title>Day 15</title>
 <simpara>So I now have a news reader so the only thing left to setup are my podcasts.
@@ -2107,19 +2097,15 @@ too much about that as I tend to use zsh more than anything else.</simpara>
 and let <literal>.zlogin</literal> do the rest of the work.</simpara>
 </section>
 </section>
-<section id="_learn_my_tools_2">
-<title>Learn my tools</title>
-<simpara>Will need to decide on plugins to learn</simpara>
-<screen>duration: 1 week per plugin
-start:    week 15
-plugin list:
-  * surround
-  * text objects
-  * macros
-  * gundo
+<section id="_housekeeping_tools_2">
+<title>Housekeeping tools</title>
+<literallayout class="monospaced">duration: 4 weeks
 notes:
-
-  * this could be done after the intial 6 weeks</screen>
+  * manage personal credentials
+  * notifications and alerts via tmux
+  * define local files to hide
+  * create script to check for my dotfile dependancies
+    * Should download them if they are not found</literallayout>
 </section>
 <section id="_day_16">
 <title>Day 16</title>
@@ -2654,6 +2640,20 @@ need to branch off my dotfiles and start with the bare basics.</simpara>
 <simpara>I&#8217;ll need to work out what qualifies as the bare basics as some plugins
 (generally those for improve syntax highlighting) I&#8217;d like from the jump off
 but I guess I should document why I decided to add them from the very start.</simpara>
+</section>
+<section id="_learn_my_tools_2">
+<title>Learn my tools</title>
+<simpara>Will need to decide on plugins to learn</simpara>
+<screen>duration: 1 week per plugin
+start:    week 15
+plugin list:
+  * surround
+  * text objects
+  * macros
+  * gundo
+notes:
+
+  * this could be done after the intial 6 weeks</screen>
 </section>
 <section id="_dressing_down_vim_2">
 <title>Dressing down Vim</title>
