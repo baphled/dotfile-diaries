@@ -1,26 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 19</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="dotfile diaries"/><link rel="up" href="index.html" title="dotfile diaries"/><link rel="prev" href="ar01s25.html" title="Day 18"/><link rel="next" href="ar01s27.html" title="Day 20"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 19</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s25.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s27.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_19"/>Day 19</h2></div></div></div><p>Today I’m going to work on my navigation and manipulation of files and content.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_tweaking_nerdtree"/>Tweaking Nerdtree</h3></div></div></div><p>So I’ve played with Nerdtree in the past but dropped it to make sure of
-Netrw. I’ve done this for a number of weeks but I still prefer Nerdtree
-so I’ll be reinstalling it and updating my settings.</p><pre class="literallayout">git submodule add git://github.com/scrooloose/nerdtree.git bundle/nerdtree</pre><p>I also add the following so that NERDTree is loaded automatically if no
-files are opened when starting vim.</p><pre class="literallayout">autocmd vimenter * if !argc() | NERDTree | endif</pre><p>That’s it, it couldn’t be easier. All that is left is to map NERDTree to a
-binding so that it is easy to call.</p><pre class="literallayout">:noremap &lt;C-p&gt; :NERDTreeToggle&lt;CR&gt;</pre><p>I’ll also need to cancel out <span class="emphasis"><em>Ctrl-P</em></span> default binding so that they don’t clash.</p><pre class="literallayout">let g:ctrlp_map = '&lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;'</pre><p>As Ctrl-P uses &lt;C-p&gt; as a default mapping I just change this so that it it uses
-double &lt;leader&gt; leaving Nerdtree to freely use &lt;C-p&gt;.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_being_unimpaired"/>Being unimpaired</h3></div></div></div><p>Now I have my ctags setup and I’m nearly complete with setting up my essentials
-for my day to day work, I will finially install <span class="emphasis"><em>unimpaired</em></span>.</p><pre class="literallayout">git submodule add git://github.com/tpope/vim-unimpaired.git bundle/vim-unimpaired</pre><p>I forgot to add this when I removed bundle and a couple of my custom bindings
-relay on the plugin to help move lines around.</p><p>Now I have to do some tweaking to custom bindings so that they work without my
-cursor keys as those have been disabled in Insert and Visual model.</p><p>Originally I had the following mappings for moving files up and down. This
-functionality emulated textmates line mnaipulation functionality and allowed me
-to easily move selections of lines around easily without poluting my paste
-buffer.</p><div class="itemizedlist"><ul type="disc"><li>
-<code class="literal">&lt;C-Up&gt;</code> - Move a line up
-</li><li>
-<code class="literal">&lt;C-Down&gt;</code> - Move a line down
-</li></ul></div><p>These are set for both Normal and Visual mode so that I can move single and
-multiple lines easily.</p><p>I still don’t want to encourage the use of my cursor keys so I will remap these
-to the following:</p><div class="itemizedlist"><ul type="disc"><li>
-<code class="literal">&lt;C-K&gt;</code> - Move a line up
-</li><li>
-<code class="literal">&lt;C-J&gt;</code> - Move a line down
-</li></ul></div><p>Now instead of having to use &lt;Up&gt; and &lt;Down&gt; I can use J and K as I do with
-most of my other vim motions.</p></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s25.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s27.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 18 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 20</td></tr></table></div></body></html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 20</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s25.html" title="Day 19"/><link rel="next" href="ar01s27.html" title="Day 21"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 20</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s25.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s27.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_20"/>Day 20</h2></div></div></div><p>Today I’ll carry on from where I left off yesterday.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_carry_on_where_i_left_off"/>Carry on where I left off</h3></div></div></div><p>It’s been annoying me for a while but I have dealt with the pain up until now.
+When I close a buffer and revisit it I’d like to have the cursor placed exactly
+where I left it when I closed the file. For some reason this functionality
+doesn’t come out of the box but it does tell you how to do it.</p><pre class="literallayout">augroup vimrcEx
+  autocmd BufReadPost *
+    \ if line("'\"") &gt; 0 &amp;&amp; line("'\"") &lt;= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+augroup vimrcEx</pre><p>Now when I close a file and open it again the cursor will be positioned where
+it was when I closed it.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_removing_some_pain"/>Removing some pain</h3></div></div></div><p>I’ve been missing my snippets for a while now, I have snipmate installed
+but I have limited snippets installed and setup.</p><p>To resolve this I’ll install <span class="emphasis"><em>snipmate-snippets</em></span> to start with. Once I
+have had a play with those I will later create my own for snippets that
+I feel is missing.</p><p>I’m actually going to fork this project so that I can keep my custom
+snippets all in one place. That and I don’t want/need all the other
+snippets that come with the original version.</p><p>The version I chose was relatively new and included snippets for
+jasmine and a range of ruby snippets, which was a plus.</p><pre class="literallayout">http://github.com/honza/snipmate-snippets</pre><p>Once forked I added my custom fork.</p><pre class="literallayout">git submodule add git://github.com/baphled/snipmate-snippets.git bundle snipmate-snippets</pre><p>I will need to remove <span class="emphasis"><em>vim-snipmate-ruby-snippets</em></span></p><p>I need to remove the instance from <span class="emphasis"><em>.gitmodules</em></span></p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Add lines I had to remove in my .gitmodules file</p></div><pre class="literallayout">rm -rf ../.git/modules/dotvim/modules/bundle/vim-snipmate-ruby-snippets</pre><pre class="literallayout">g ci -m 'update snippets'</pre><p>Updates my dotvims and includes the new snippets plugin.</p><p>I’d like to build up on these and strip them down for my own needs. This will
+more than likely include writing my own where there are missing shortcuts I’d
+like.</p><p>I also need to learn the snippets that are present. The only way to actually do
+this is to actually use them. The best type of snippet are the ones that just
+rolls off of your fingers. So I expect there to be snippets for <span class="emphasis"><em>def</em></span>, <span class="emphasis"><em>class</em></span>,
+<span class="emphasis"><em>desc</em></span>, etc. As I also do quite a bit of writing in Vim I’d like to make sure I
+know that AsciiDoc and Markdown snippets.</p><p>At the moment my forked version doesn’t have any snippets for AsciiDoc so I
+will have to search for some and merge them into my version and updated my
+submodules.</p><p>It seems that I am getting warnings about snippets already being defined. I
+need to look into this to see how I can supress the messages and stop them from
+happening all together.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_tweaking_snipmate"/>Tweaking snipmate</h3></div></div></div><p>So the current version of snipmate I already contains some snippets which are
+causing me to see warnings. This can be resolved by changing the repository
+I pull from with a version of snipmate that doesn’t include any snippets.</p><p>I’ll omit removing the actual module as it has been documented already and jump
+straight into adding the new repository.</p><pre class="literallayout">git submodule add git://github.com/garbas/vim-snipmate.git bundle/vim-snipmate</pre><pre class="literallayout">git submodule add git://github.com/MarcWeber/vim-addon-mw-utils.git bundle/vim-addon-mw-utils</pre><p>Now we have no warnings and we have a nice base to start adding custom snippets
+the only issue is when I &lt;TAB&gt; I get an error stating I need tlib to be
+installed. That’s a bit of of red herring as we actually need tlib-vim.</p><pre class="literallayout">git submodule add git://github.com/tomtom/tlib_vim.git bundle/tlib-vim</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Add some of the shortcuts here.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_improving_buffer_navigation"/>Improving buffer navigation</h3></div></div></div><p>So I’d like to be able to navigatie and maintain my buffers in a cleaner
+manner, I’ve seen bufexplorer but never had a chance to play around with it.
+This is the time to get it setup and working to see how it fairs with my
+current setup.</p><pre class="literallayout">git submodule add git://github.com/c9s/bufexplorer.git bundle/bufexplorer</pre><p>Finally I just need to map BufExplorer to a custom mapping to make things a
+little easier.</p><pre class="literallayout">noremap &lt;leader&gt;. :BufExplorer&lt;CR&gt;</pre><p>And that’s all there is to it. I can now view my buffers using <code class="literal">&lt;leader&gt;.</code> and
+manage the buffers easier with a few shortcut keys.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_resources_14"/>Resources</h3></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="http://cisight.com/solving-snipmate-vim-error-snippet-c-is-already-defined/" target="_top">vim error snippet c is already defined</a>
+</li></ul></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s25.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s27.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 19 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 21</td></tr></table></div></body></html>
