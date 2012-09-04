@@ -3373,6 +3373,123 @@ improve my vimfu.</p></div>
 <div class="paragraph"><p>I&#8217;ve hacked together a basic little script that will output names of submodules
 within a git repository, in this case my vim plugins, and will use this as a
 basis to review each plugin one by one.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>#! /bin/bash
+#
+# Basic script to list all submodules with a project.
+#
+# This is useful when need to work out what dependancies a project has
+#
+# Usage: module_list project/path
+
+PROJECT_ROOT_DIRECTORY="$1"
+if [[ $# == 0 ]]; then
+  # set the default value
+  MODULE_DIRECTORY=".gitmodules"
+else
+  MODULE_DIRECTORY="${PROJECT_ROOT_DIRECTORY}/.gitmodules"
+fi
+
+function strip_postfix {
+  sed 's/\.git//g'
+}
+
+# Get the module name from the url string
+#
+# Github URL have a consistent structure, for now, so we'll use that.
+#
+# git://github.com/username/project
+#
+function module_name {
+  string=$1
+  echo $string | sed 's/[a-z]*:\/\/github.com\/[a-zA-Z0-9-]*\///' | strip_postfix
+}
+
+function repository_path {
+  string=$1
+  echo $string | sed 's/git:/http:/' | strip_postfix
+}
+
+function repositories {
+  cat ${MODULE_DIRECTORY}| grep 'url' | sed 's/url = //g'
+}
+
+function output_module_info {
+  repository=$1
+  module_name ${repository};
+  repository_path ${repository};
+  echo ${repository};
+}
+
+function read_modules {
+  for repo in `repositories`; do
+    echo `output_module_info ${repo}`
+  done
+}
+
+function main {
+  read_modules;
+}
+
+main;</tt></pre>
+</div></div>
+<div class="paragraph"><p>I now have a nice list of plugins that I have stored locally.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>jasmine.vim http://github.com/claco/jasmine.vim http://github.com/claco/jasmine.vim.git
+vim-pathogen http://github.com/tpope/vim-pathogen git://github.com/tpope/vim-pathogen.git
+webapi-vim http://github.com/mattn/webapi-vim git://github.com/mattn/webapi-vim.git
+vimerl http://github.com/jimenezrick/vimerl git://github.com/jimenezrick/vimerl.git
+vim-textobj-user http://github.com/kana/vim-textobj-user git://github.com/kana/vim-textobj-user
+vim-textobj-rubyblock http://github.com/nelstrom/vim-textobj-rubyblock git://github.com/nelstrom/vim-textobj-rubyblock
+vim-ruby-sinatra http://github.com/hallison/vim-ruby-sinatra git://github.com/hallison/vim-ruby-sinatra
+vim-ruby-refactoring http://github.com/ecomba/vim-ruby-refactoring git://github.com/ecomba/vim-ruby-refactoring.git
+vim-ruby-block-conv http://github.com/bronson/vim-ruby-block-conv git://github.com/bronson/vim-ruby-block-conv.git
+vim-rake http://github.com/tpope/vim-rake git://github.com/tpope/vim-rake
+vim-ragtag http://github.com/tpope/vim-ragtag git://github.com/tpope/vim-ragtag
+vim-puppet http://github.com/rodjek/vim-puppet git://github.com/rodjek/vim-puppet.git
+vim-powerline http://github.com/Lokaltog/vim-powerline git://github.com/Lokaltog/vim-powerline.git
+vim-indentobject http://github.com/austintaylor/vim-indentobject git://github.com/austintaylor/vim-indentobject
+vim-coffee-script http://github.com/kchmck/vim-coffee-script git://github.com/kchmck/vim-coffee-script.git
+vim-bundler http://github.com/tpope/vim-bundler git://github.com/tpope/vim-bundler.git
+vim-abolish http://github.com/tpope/vim-abolish git://github.com/tpope/vim-abolish
+syntastic http://github.com/scrooloose/syntastic git://github.com/scrooloose/syntastic.git
+vim-surround http://github.com/tpope/vim-surround git://github.com/tpope/vim-surround.git
+vim-rails http://github.com/tpope/vim-rails git://github.com/tpope/vim-rails.git
+vim-pastie http://github.com/tpope/vim-pastie git://github.com/tpope/vim-pastie.git
+nerdcommenter http://github.com/scrooloose/nerdcommenter git://github.com/scrooloose/nerdcommenter.git
+vim-json http://github.com/leshill/vim-json git://github.com/leshill/vim-json.git
+jasmine.vim http://github.com/claco/jasmine.vim git://github.com/claco/jasmine.vim.git
+vim-fugitive http://github.com/tpope/vim-fugitive git://github.com/tpope/vim-fugitive.git
+vim-endwise http://github.com/tpope/vim-endwise git://github.com/tpope/vim-endwise.git
+delimitMate http://github.com/Raimondi/delimitMate git://github.com/Raimondi/delimitMate.git
+vim-cucumber http://github.com/tpope/vim-cucumber git://github.com/tpope/vim-cucumber.git
+ctrlp.vim http://github.com/kien/ctrlp.vim git://github.com/kien/ctrlp.vim.git
+AutoComplPop http://github.com/ayang/AutoComplPop git://github.com/ayang/AutoComplPop.git
+asciidoc-vim http://github.com/spf13/asciidoc-vim git://github.com/spf13/asciidoc-vim.git
+ack.vim http://github.com/mileszs/ack.vim git://github.com/mileszs/ack.vim.git
+Align http://github.com/alanstevens/Align git://github.com/alanstevens/Align.git
+vim-vividchalk http://github.com/tpope/vim-vividchalk git://github.com/tpope/vim-vividchalk.git
+csv.vim http://github.com/chrisbra/csv.vim git://github.com/chrisbra/csv.vim.git
+vim-repeat http://github.com/tpope/vim-repeat git://github.com/tpope/vim-repeat.git
+vimwiki http://github.com/vim-scripts/vimwiki git://github.com/vim-scripts/vimwiki.git
+vim-ruby http://github.com/vim-ruby/vim-ruby git://github.com/vim-ruby/vim-ruby.git
+matchit http://github.com/tmhedberg/matchit git://github.com/tmhedberg/matchit.git
+AutoTag http://github.com/vim-scripts/AutoTag git://github.com/vim-scripts/AutoTag.git
+nerdtree http://github.com/scrooloose/nerdtree git://github.com/scrooloose/nerdtree.git
+vim-unimpaired http://github.com/tpope/vim-unimpaired git://github.com/tpope/vim-unimpaired.git
+snipmate-snippets http://github.com/baphled/snipmate-snippets git://github.com/baphled/snipmate-snippets.git
+bufexplorer http://github.com/c9s/bufexplorer git://github.com/c9s/bufexplorer.git
+vim-snipmate http://github.com/garbas/vim-snipmate git://github.com/garbas/vim-snipmate.git
+vim-addon-mw-utils http://github.com/MarcWeber/vim-addon-mw-utils git://github.com/MarcWeber/vim-addon-mw-utils.git
+tlib_vim http://github.com/tomtom/tlib_vim git://github.com/tomtom/tlib_vim.git</tt></pre>
+</div></div>
+<div class="paragraph"><p>Now I have the list of plugins I&#8217;m using I can starting organising them
+into the order in which I&#8217;ll gradually learn them.</p></div>
+<div class="paragraph"><p>The progression will be tracked for the next few weeks until I have a
+decent understanding of them each and have at least burnt the basics of
+each into muscle memory.</p></div>
 </div>
 </div>
 </div>
@@ -4740,7 +4857,7 @@ Look into outputting this to a shared window?
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2012-09-01 22:28:33 BST
+Last updated 2012-09-04 22:16:27 BST
 </div>
 </div>
 </body>
