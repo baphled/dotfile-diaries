@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="master.css" type="text/css" />
-    <title>Day 21</title>
+    <title>Plugins to learn</title>
   </head>
 
   <body>
@@ -11,8 +11,8 @@
     <table width="100%">
       <tr><td width="33%" align="left">
         
-         <a href="learn_my_tools.html">Prev</a><br/>
-         Learn my tools
+         <a href="day_21.html">Prev</a><br/>
+         Day 21
         
       </td><td width="33%" align="center">
         
@@ -33,105 +33,19 @@
     <div class="content">
       <div class="section" lang="en">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
-<a id="_day_21"></a>Day 21</h2></div></div></div>
-<p>I use Vim for a number of my editing needs. Ranging from writing this diary to
-formatting documentation and coding. I’d like to organise these work flows into
-different settings allowing me to easily switch between the various work flows
-with relative ease.</p>
-<div class="section" lang="en">
-<div class="titlepage"><div><div><h3 class="title">
-<a id="_getting_an_itinerary"></a>Getting an itinerary</h3></div></div></div>
-<p>So I’ve spent some time gathering some plugins to help tweak my workflow. Now
-is the time I take stock of what I have and determine what can stay, what
-should go and what do I need to learn more.</p>
-<p>There won’t be any technical stuff done here, well not really, as the main
-focus is to get an idea of what I really need and what do I need to learn to
-improve my vimfu.</p>
-<p>I’ve hacked together a basic little script that will output names of submodules
-within a git repository, in this case my vim plugins, and will use this as a
-basis to review each plugin one by one.</p>
-<pre class="screen">#! /bin/bash
-#
-# Basic script to list all submodules with a project.
-#
-# This is useful when need to work out what dependancies a project has
-#
-# Usage: module_list project/path
-
-PROJECT_ROOT_DIRECTORY="$1"
-if [[ $# == 0 ]]; then
-  # set the default value
-  MODULE_DIRECTORY=".gitmodules"
-else
-  MODULE_DIRECTORY="${PROJECT_ROOT_DIRECTORY}/.gitmodules"
-fi
-
-function strip_postfix {
-  sed 's/\.git//g'
-}
-
-# Get the module name from the url string
-#
-# Github URL have a consistent structure, for now, so we'll use that.
-#
-# git://github.com/username/project
-#
-function module_name {
-  string=$1
-  echo $string | sed 's/[a-z]*:\/\/github.com\/[a-zA-Z0-9-]*\///' | strip_postfix
-}
-
-function repository_path {
-  string=$1
-  echo $string | sed 's/git:/http:/' | strip_postfix
-}
-
-function repositories {
-  cat ${MODULE_DIRECTORY}| grep 'url' | sed 's/url = //g'
-}
-
-function output_module_info {
-  repository=$1
-  module_name ${repository};
-  repository_path ${repository};
-  echo ${repository};
-}
-
-function read_modules {
-  for repo in `repositories`; do
-    echo `output_module_info ${repo}`
-  done
-}
-
-function main {
-  read_modules;
-}
-
-main;</pre>
-<p>I now have a nice list of plugins that I have stored locally.</p>
-<p>Now I have the list of plugins I’m using I can starting organising them
-into the order in which I’ll gradually learn them.</p>
-<p>The progression will be tracked for the next few weeks until I have a
-decent understanding of them each and have at least burnt the basics of
-each into muscle memory.</p>
-</div>
-<div class="section" lang="en">
-<div class="titlepage"><div><div><h3 class="title">
-<a id="_plugins_to_learn"></a>Plugins to learn</h3></div></div></div>
+<a id="_plugins_to_learn"></a>Plugins to learn</h2></div></div></div>
 <p>So after the little bit of hacking to get a list of plugins, I know have a
 organised list of plugins that I’d like to investigate further.</p>
-<p>I’ll go through each of them individually and then document the basic
-functionality I’d like to adopt.</p>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_package_management"></a>Package management</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_package_management"></a>Package management</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc"><li>
 vim-pathogen <a class="ulink" href="http://github.com/tpope/vim-pathogen" target="_top">http://github.com/tpope/vim-pathogen</a> git://github.com/tpope/vim-pathogen.git
 </li></ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_note_taking"></a>Note taking</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_note_taking"></a>Note taking</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
 gist-vim <a class="ulink" href="http://github.com/mattn/gist-vim" target="_top">http://github.com/mattn/gist-vim</a> git://github.com/mattn/gist-vim.git
@@ -142,8 +56,8 @@ vim-pastie <a class="ulink" href="http://github.com/tpope/vim-pastie" target="_t
 </ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_programming_related"></a>Programming related</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_programming_related"></a>Programming related</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
 AutoTag <a class="ulink" href="http://github.com/vim-scripts/AutoTag" target="_top">http://github.com/vim-scripts/AutoTag</a> git://github.com/vim-scripts/AutoTag.git
@@ -154,8 +68,8 @@ syntastic <a class="ulink" href="http://github.com/scrooloose/syntastic" target=
 </ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_documentation"></a>Documentation</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_documentation"></a>Documentation</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
 nerdcommenter <a class="ulink" href="http://github.com/scrooloose/nerdcommenter" target="_top">http://github.com/scrooloose/nerdcommenter</a> git://github.com/scrooloose/nerdcommenter.git
@@ -169,8 +83,8 @@ vimwiki <a class="ulink" href="http://github.com/vim-scripts/vimwiki" target="_t
 </ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_frontend"></a>Frontend</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_frontend"></a>Frontend</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
 jasmine.vim <a class="ulink" href="http://github.com/claco/jasmine.vim" target="_top">http://github.com/claco/jasmine.vim</a> git://github.com/claco/jasmine.vim.git
@@ -187,8 +101,8 @@ jasmine.vim <a class="ulink" href="http://github.com/claco/jasmine.vim" target="
 </ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_ruby"></a>Ruby</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_ruby"></a>Ruby</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
 vim-ruby-sinatra <a class="ulink" href="http://github.com/hallison/vim-ruby-sinatra" target="_top">http://github.com/hallison/vim-ruby-sinatra</a> git://github.com/hallison/vim-ruby-sinatra
@@ -217,29 +131,29 @@ delimitMate <a class="ulink" href="http://github.com/Raimondi/delimitMate" targe
 </ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_erlang"></a>Erlang</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_erlang"></a>Erlang</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc"><li>
 vimerl <a class="ulink" href="http://github.com/jimenezrick/vimerl" target="_top">http://github.com/jimenezrick/vimerl</a> git://github.com/jimenezrick/vimerl.git
 </li></ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_database"></a>Database</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_database"></a>Database</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc"><li>
 csv.vim <a class="ulink" href="http://github.com/chrisbra/csv.vim" target="_top">http://github.com/chrisbra/csv.vim</a> git://github.com/chrisbra/csv.vim.git
 </li></ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_integration"></a>Integration</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_integration"></a>Integration</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc"><li>
 vim-cucumber <a class="ulink" href="http://github.com/tpope/vim-cucumber" target="_top">http://github.com/tpope/vim-cucumber</a> git://github.com/tpope/vim-cucumber.git
 </li></ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_devops"></a>Devops</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_devops"></a>Devops</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
 vim-puppet <a class="ulink" href="http://github.com/rodjek/vim-puppet" target="_top">http://github.com/rodjek/vim-puppet</a> git://github.com/rodjek/vim-puppet.git
@@ -250,8 +164,8 @@ vim-fugitive <a class="ulink" href="http://github.com/tpope/vim-fugitive" target
 </ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_text_objects"></a>Text objects</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_text_objects"></a>Text objects</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
 vim-textobj-user <a class="ulink" href="http://github.com/kana/vim-textobj-user" target="_top">http://github.com/kana/vim-textobj-user</a> git://github.com/kana/vim-textobj-user
@@ -274,8 +188,8 @@ vim-abolish <a class="ulink" href="http://github.com/tpope/vim-abolish" target="
 </ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_motions"></a>Motions</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_motions"></a>Motions</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
 vim-unimpaired <a class="ulink" href="http://github.com/tpope/vim-unimpaired" target="_top">http://github.com/tpope/vim-unimpaired</a> git://github.com/tpope/vim-unimpaired.git
@@ -286,8 +200,8 @@ matchit <a class="ulink" href="http://github.com/tmhedberg/matchit" target="_top
 </ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_text_manipulation"></a>Text manipulation</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_text_manipulation"></a>Text manipulation</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
 vim-surround <a class="ulink" href="http://github.com/tpope/vim-surround" target="_top">http://github.com/tpope/vim-surround</a> git://github.com/tpope/vim-surround.git
@@ -307,8 +221,8 @@ snipmate-snippets <a class="ulink" href="http://github.com/baphled/snipmate-snip
 </ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_visual_enhancements"></a>Visual enhancements</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_visual_enhancements"></a>Visual enhancements</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
 vim-powerline <a class="ulink" href="http://github.com/Lokaltog/vim-powerline" target="_top">http://github.com/Lokaltog/vim-powerline</a> git://github.com/Lokaltog/vim-powerline.git
@@ -319,8 +233,8 @@ vim-vividchalk <a class="ulink" href="http://github.com/tpope/vim-vividchalk" ta
 </ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_file_management"></a>File management</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_file_management"></a>File management</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
 ctrlp.vim <a class="ulink" href="http://github.com/kien/ctrlp.vim" target="_top">http://github.com/kien/ctrlp.vim</a> git://github.com/kien/ctrlp.vim.git
@@ -331,8 +245,8 @@ nerdtree <a class="ulink" href="http://github.com/scrooloose/nerdtree" target="_
 </ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_general_enhancements"></a>General enhancements</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_general_enhancements"></a>General enhancements</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
 bufexplorer <a class="ulink" href="http://github.com/c9s/bufexplorer" target="_top">http://github.com/c9s/bufexplorer</a> git://github.com/c9s/bufexplorer.git
@@ -346,8 +260,8 @@ AutoComplPop <a class="ulink" href="http://github.com/ayang/AutoComplPop" target
 </ul></div>
 </div>
 <div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
-<a id="_dependancies_2"></a>Dependancies</h4></div></div></div>
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_dependancies_2"></a>Dependancies</h3></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
 webapi-vim <a class="ulink" href="http://github.com/mattn/webapi-vim" target="_top">http://github.com/mattn/webapi-vim</a> git://github.com/mattn/webapi-vim.git
@@ -359,8 +273,6 @@ vim-addon-mw-utils <a class="ulink" href="http://github.com/MarcWeber/vim-addon-
 tlib_vim <a class="ulink" href="http://github.com/tomtom/tlib_vim" target="_top">http://github.com/tomtom/tlib_vim</a> git://github.com/tomtom/tlib_vim.git
 </li>
 </ul></div>
-<p></p>
-</div>
 </div>
 </div>
 
@@ -372,8 +284,8 @@ tlib_vim <a class="ulink" href="http://github.com/tomtom/tlib_vim" target="_top"
     <table width="100%">
       <tr><td width="33%" align="left">
         
-         <a href="learn_my_tools.html">Prev</a><br/>
-         Learn my tools
+         <a href="day_21.html">Prev</a><br/>
+         Day 21
         
       </td><td width="33%" align="center">
         

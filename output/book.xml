@@ -7,6 +7,7 @@
 <articleinfo>
     <title>Dotfile Diaries</title>
 </articleinfo>
+<simpara><?asciidoc-pagebreak?></simpara>
 <section id="_goal">
 <title>Goal</title>
 <simpara>The goal of this diary is to track the journey of improving my unix-fu and
@@ -21,6 +22,7 @@ accordingly.</simpara>
 <simpara>I&#8217;ll start off with a very basic workbench and build it up to the point where
 it it optimal for my personal use and configurable enough for others to do the
 same too.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_the_journey">
 <title>The journey</title>
@@ -94,6 +96,7 @@ plugin list:
 notes:
 
   * this could be done after the intial 6 weeks</screen>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 </section>
@@ -164,6 +167,7 @@ newsbeuter
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_enhancing_my_workflow_2">
@@ -183,6 +187,7 @@ notes:
   * Setup authoring tools
   * Setup tmux and tmuxinator</literallayout>
 </sidebar>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_1">
 <title>Day 1</title>
@@ -301,6 +306,7 @@ regardless of changing channel windows.</simpara>
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 </section>
@@ -354,6 +360,7 @@ you&#8217;ll be able to setup your account and send messages :)</simpara>
 <section id="_resources_2">
 <title>Resources</title>
 <simpara><ulink url="http://pthree.org/2008/03/04/static-windows-in-irssi/">static windows</ulink></simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 </section>
@@ -445,6 +452,7 @@ so we&#8217;ll need to remap these so that they would with the new setup.</simpa
 <simpara>Making <literal>&lt;esc&gt;</literal> has been remapped we should be able to easily move around
 windows without having to rely on our newly created <literal>&lt;leader&gt;p</literal> and <literal>&lt;leader&gt;n</literal>
 keys.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_day_4">
@@ -542,6 +550,7 @@ with the many windows issue I have with chrome and many other browser at
 present. This only leads to a sluggish computer and "Tab overload"</simpara>
 <simpara>I also need bjurl to be a bit smarter in identifying links, it&#8217;s hard to track
 links once 20 have been displayed, at present it&#8217;s quite useless.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 </section>
@@ -727,6 +736,7 @@ Create screengrabs as I did with irssi
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 </section>
@@ -795,6 +805,7 @@ the output will be another repository
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 </section>
@@ -938,6 +949,7 @@ Open w3m with a better default
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 </section>
@@ -955,6 +967,7 @@ notes:
   * define local files to hide
   * setup tmux and tmuxinator
   * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</screen>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_8">
 <title>Day 8</title>
@@ -1082,6 +1095,7 @@ is a pain and error prone.</simpara>
 <title>Resources</title>
 <simpara><ulink url="http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating">git submodules</ulink>
 <ulink url="http://stackoverflow.com/questions/8372625/git-how-to-push-submodule-to-a-remote-repository">git how to push to a remote repository</ulink></simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 </section>
@@ -1184,6 +1198,7 @@ repositories are updated and managed.</simpara>
 <simpara>So now that I am using git&#8217;s submodules to manage my external repositories I
 can now make local changes and update the correct repository without polutting
 my dotfiles with changes that are not directly related to them.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_day_10">
@@ -1343,6 +1358,7 @@ Each account should have its own default directory
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 </section>
@@ -1668,6 +1684,7 @@ Master branch after change GH#e92354e
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 </section>
@@ -1739,6 +1756,7 @@ responses are not that of the local machine. This should actually be the email
 address that the email was sent to.</simpara>
 <simpara>I&#8217;m not quite sure how to do this yet so I&#8217;ll put a fork in it for the moment
 so that I can focus on getting the rest of my setup functional.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_day_13">
@@ -1880,6 +1898,7 @@ Talk more about my config
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 </section>
@@ -2018,6 +2037,7 @@ vim-pathogen</literallayout>
 <simpara>Later on I will focus on these plugins and learn and use them better. Ideally I should
 have a clean slate to improve my vi foo. For the moment though I will just add
 them using git submodule and deal with stripping them down later.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_day_15">
@@ -2106,6 +2126,7 @@ notes:
   * define local files to hide
   * create script to check for my dotfile dependancies
     * Should download them if they are not found</literallayout>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_16">
 <title>Day 16</title>
@@ -2156,6 +2177,7 @@ g ci -m 'Update my dotvim files'</literallayout>
 <simpara>Now the repository is up to date and my dotfiles know of the change I&#8217;ve just
 made.</simpara>
 <simpara>Finally I push the change to my dotfiles and everything is all set.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_day_17">
@@ -2305,6 +2327,7 @@ seems like the idea time to do so.</simpara>
 cause errors but it would be nice to be able to easily see them.</simpara>
 <literallayout class="monospaced">:let ruby_space_errors = 1</literallayout>
 <note><simpara>Write about motions and text objects</simpara></note>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_day_18">
@@ -2452,6 +2475,7 @@ noremap [t :tprev&lt;CR&gt;</literallayout>
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 </section>
@@ -2518,6 +2542,7 @@ to the following:</simpara>
 </itemizedlist>
 <simpara>Now instead of having to use &lt;Up&gt; and &lt;Down&gt; I can use J and K as I do with
 most of my other vim motions.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_day_20">
@@ -2611,7 +2636,24 @@ manage the buffers easier with a few shortcut keys.</simpara>
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
+</section>
+<section id="_learn_my_tools_2">
+<title>Learn my tools</title>
+<simpara>[NOTE]: Write introduction</simpara>
+<simpara>Will need to decide on plugins to learn</simpara>
+<screen>duration: 1 week per plugin
+start:    week 15
+plugin list:
+  * surround
+  * text objects
+  * macros
+  * gundo
+notes:
+
+  * this could be done after the intial 6 weeks</screen>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_21">
 <title>Day 21</title>
@@ -2689,82 +2731,431 @@ function main {
 
 main;</screen>
 <simpara>I now have a nice list of plugins that I have stored locally.</simpara>
-<screen>jasmine.vim http://github.com/claco/jasmine.vim http://github.com/claco/jasmine.vim.git
-vim-pathogen http://github.com/tpope/vim-pathogen git://github.com/tpope/vim-pathogen.git
-webapi-vim http://github.com/mattn/webapi-vim git://github.com/mattn/webapi-vim.git
-vimerl http://github.com/jimenezrick/vimerl git://github.com/jimenezrick/vimerl.git
-vim-textobj-user http://github.com/kana/vim-textobj-user git://github.com/kana/vim-textobj-user
-vim-textobj-rubyblock http://github.com/nelstrom/vim-textobj-rubyblock git://github.com/nelstrom/vim-textobj-rubyblock
-vim-ruby-sinatra http://github.com/hallison/vim-ruby-sinatra git://github.com/hallison/vim-ruby-sinatra
-vim-ruby-refactoring http://github.com/ecomba/vim-ruby-refactoring git://github.com/ecomba/vim-ruby-refactoring.git
-vim-ruby-block-conv http://github.com/bronson/vim-ruby-block-conv git://github.com/bronson/vim-ruby-block-conv.git
-vim-rake http://github.com/tpope/vim-rake git://github.com/tpope/vim-rake
-vim-ragtag http://github.com/tpope/vim-ragtag git://github.com/tpope/vim-ragtag
-vim-puppet http://github.com/rodjek/vim-puppet git://github.com/rodjek/vim-puppet.git
-vim-powerline http://github.com/Lokaltog/vim-powerline git://github.com/Lokaltog/vim-powerline.git
-vim-indentobject http://github.com/austintaylor/vim-indentobject git://github.com/austintaylor/vim-indentobject
-vim-coffee-script http://github.com/kchmck/vim-coffee-script git://github.com/kchmck/vim-coffee-script.git
-vim-bundler http://github.com/tpope/vim-bundler git://github.com/tpope/vim-bundler.git
-vim-abolish http://github.com/tpope/vim-abolish git://github.com/tpope/vim-abolish
-syntastic http://github.com/scrooloose/syntastic git://github.com/scrooloose/syntastic.git
-vim-surround http://github.com/tpope/vim-surround git://github.com/tpope/vim-surround.git
-vim-rails http://github.com/tpope/vim-rails git://github.com/tpope/vim-rails.git
-vim-pastie http://github.com/tpope/vim-pastie git://github.com/tpope/vim-pastie.git
-nerdcommenter http://github.com/scrooloose/nerdcommenter git://github.com/scrooloose/nerdcommenter.git
-vim-json http://github.com/leshill/vim-json git://github.com/leshill/vim-json.git
-jasmine.vim http://github.com/claco/jasmine.vim git://github.com/claco/jasmine.vim.git
-vim-fugitive http://github.com/tpope/vim-fugitive git://github.com/tpope/vim-fugitive.git
-vim-endwise http://github.com/tpope/vim-endwise git://github.com/tpope/vim-endwise.git
-delimitMate http://github.com/Raimondi/delimitMate git://github.com/Raimondi/delimitMate.git
-vim-cucumber http://github.com/tpope/vim-cucumber git://github.com/tpope/vim-cucumber.git
-ctrlp.vim http://github.com/kien/ctrlp.vim git://github.com/kien/ctrlp.vim.git
-AutoComplPop http://github.com/ayang/AutoComplPop git://github.com/ayang/AutoComplPop.git
-asciidoc-vim http://github.com/spf13/asciidoc-vim git://github.com/spf13/asciidoc-vim.git
-ack.vim http://github.com/mileszs/ack.vim git://github.com/mileszs/ack.vim.git
-Align http://github.com/alanstevens/Align git://github.com/alanstevens/Align.git
-vim-vividchalk http://github.com/tpope/vim-vividchalk git://github.com/tpope/vim-vividchalk.git
-csv.vim http://github.com/chrisbra/csv.vim git://github.com/chrisbra/csv.vim.git
-vim-repeat http://github.com/tpope/vim-repeat git://github.com/tpope/vim-repeat.git
-vimwiki http://github.com/vim-scripts/vimwiki git://github.com/vim-scripts/vimwiki.git
-vim-ruby http://github.com/vim-ruby/vim-ruby git://github.com/vim-ruby/vim-ruby.git
-matchit http://github.com/tmhedberg/matchit git://github.com/tmhedberg/matchit.git
-AutoTag http://github.com/vim-scripts/AutoTag git://github.com/vim-scripts/AutoTag.git
-nerdtree http://github.com/scrooloose/nerdtree git://github.com/scrooloose/nerdtree.git
-vim-unimpaired http://github.com/tpope/vim-unimpaired git://github.com/tpope/vim-unimpaired.git
-snipmate-snippets http://github.com/baphled/snipmate-snippets git://github.com/baphled/snipmate-snippets.git
-bufexplorer http://github.com/c9s/bufexplorer git://github.com/c9s/bufexplorer.git
-vim-snipmate http://github.com/garbas/vim-snipmate git://github.com/garbas/vim-snipmate.git
-vim-addon-mw-utils http://github.com/MarcWeber/vim-addon-mw-utils git://github.com/MarcWeber/vim-addon-mw-utils.git
-tlib_vim http://github.com/tomtom/tlib_vim git://github.com/tomtom/tlib_vim.git</screen>
 <simpara>Now I have the list of plugins I&#8217;m using I can starting organising them
 into the order in which I&#8217;ll gradually learn them.</simpara>
 <simpara>The progression will be tracked for the next few weeks until I have a
 decent understanding of them each and have at least burnt the basics of
 each into muscle memory.</simpara>
 </section>
+<section id="_plugins_to_learn">
+<title>Plugins to learn</title>
+<simpara>So after the little bit of hacking to get a list of plugins, I know have a
+organised list of plugins that I&#8217;d like to investigate further.</simpara>
+<simpara>I&#8217;ll go through each of them individually and then document the basic
+functionality I&#8217;d like to adopt.</simpara>
+<section id="_package_management">
+<title>Package management</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-pathogen <ulink url="http://github.com/tpope/vim-pathogen">http://github.com/tpope/vim-pathogen</ulink> git://github.com/tpope/vim-pathogen.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_note_taking">
+<title>Note taking</title>
+<itemizedlist>
+<listitem>
+<simpara>
+gist-vim <ulink url="http://github.com/mattn/gist-vim">http://github.com/mattn/gist-vim</ulink> git://github.com/mattn/gist-vim.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-pastie <ulink url="http://github.com/tpope/vim-pastie">http://github.com/tpope/vim-pastie</ulink> git://github.com/tpope/vim-pastie.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_programming_related">
+<title>Programming related</title>
+<itemizedlist>
+<listitem>
+<simpara>
+AutoTag <ulink url="http://github.com/vim-scripts/AutoTag">http://github.com/vim-scripts/AutoTag</ulink> git://github.com/vim-scripts/AutoTag.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+syntastic <ulink url="http://github.com/scrooloose/syntastic">http://github.com/scrooloose/syntastic</ulink> git://github.com/scrooloose/syntastic.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_documentation">
+<title>Documentation</title>
+<itemizedlist>
+<listitem>
+<simpara>
+nerdcommenter <ulink url="http://github.com/scrooloose/nerdcommenter">http://github.com/scrooloose/nerdcommenter</ulink> git://github.com/scrooloose/nerdcommenter.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+asciidoc-vim <ulink url="http://github.com/spf13/asciidoc-vim">http://github.com/spf13/asciidoc-vim</ulink> git://github.com/spf13/asciidoc-vim.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vimwiki <ulink url="http://github.com/vim-scripts/vimwiki">http://github.com/vim-scripts/vimwiki</ulink> git://github.com/vim-scripts/vimwiki.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_frontend">
+<title>Frontend</title>
+<itemizedlist>
+<listitem>
+<simpara>
+jasmine.vim <ulink url="http://github.com/claco/jasmine.vim">http://github.com/claco/jasmine.vim</ulink> git://github.com/claco/jasmine.vim.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-coffee-script <ulink url="http://github.com/kchmck/vim-coffee-script">http://github.com/kchmck/vim-coffee-script</ulink> git://github.com/kchmck/vim-coffee-script.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-json <ulink url="http://github.com/leshill/vim-json">http://github.com/leshill/vim-json</ulink> git://github.com/leshill/vim-json.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+jasmine.vim <ulink url="http://github.com/claco/jasmine.vim">http://github.com/claco/jasmine.vim</ulink> git://github.com/claco/jasmine.vim.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_ruby">
+<title>Ruby</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-ruby-sinatra <ulink url="http://github.com/hallison/vim-ruby-sinatra">http://github.com/hallison/vim-ruby-sinatra</ulink> git://github.com/hallison/vim-ruby-sinatra
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ruby-refactoring <ulink url="http://github.com/ecomba/vim-ruby-refactoring">http://github.com/ecomba/vim-ruby-refactoring</ulink> git://github.com/ecomba/vim-ruby-refactoring.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-rake <ulink url="http://github.com/tpope/vim-rake">http://github.com/tpope/vim-rake</ulink> git://github.com/tpope/vim-rake
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-rails <ulink url="http://github.com/tpope/vim-rails">http://github.com/tpope/vim-rails</ulink> git://github.com/tpope/vim-rails.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ruby <ulink url="http://github.com/vim-ruby/vim-ruby">http://github.com/vim-ruby/vim-ruby</ulink> git://github.com/vim-ruby/vim-ruby.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-bundler <ulink url="http://github.com/tpope/vim-bundler">http://github.com/tpope/vim-bundler</ulink> git://github.com/tpope/vim-bundler.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-endwise <ulink url="http://github.com/tpope/vim-endwise">http://github.com/tpope/vim-endwise</ulink> git://github.com/tpope/vim-endwise.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+delimitMate <ulink url="http://github.com/Raimondi/delimitMate">http://github.com/Raimondi/delimitMate</ulink> git://github.com/Raimondi/delimitMate.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_erlang">
+<title>Erlang</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vimerl <ulink url="http://github.com/jimenezrick/vimerl">http://github.com/jimenezrick/vimerl</ulink> git://github.com/jimenezrick/vimerl.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_database">
+<title>Database</title>
+<itemizedlist>
+<listitem>
+<simpara>
+csv.vim <ulink url="http://github.com/chrisbra/csv.vim">http://github.com/chrisbra/csv.vim</ulink> git://github.com/chrisbra/csv.vim.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_integration">
+<title>Integration</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-cucumber <ulink url="http://github.com/tpope/vim-cucumber">http://github.com/tpope/vim-cucumber</ulink> git://github.com/tpope/vim-cucumber.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_devops">
+<title>Devops</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-puppet <ulink url="http://github.com/rodjek/vim-puppet">http://github.com/rodjek/vim-puppet</ulink> git://github.com/rodjek/vim-puppet.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-fugitive <ulink url="http://github.com/tpope/vim-fugitive">http://github.com/tpope/vim-fugitive</ulink> git://github.com/tpope/vim-fugitive.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_text_objects">
+<title>Text objects</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-textobj-user <ulink url="http://github.com/kana/vim-textobj-user">http://github.com/kana/vim-textobj-user</ulink> git://github.com/kana/vim-textobj-user
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ruby-block-conv <ulink url="http://github.com/bronson/vim-ruby-block-conv">http://github.com/bronson/vim-ruby-block-conv</ulink> git://github.com/bronson/vim-ruby-block-conv.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-textobj-rubyblock <ulink url="http://github.com/nelstrom/vim-textobj-rubyblock">http://github.com/nelstrom/vim-textobj-rubyblock</ulink> git://github.com/nelstrom/vim-textobj-rubyblock
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-indentobject <ulink url="http://github.com/austintaylor/vim-indentobject">http://github.com/austintaylor/vim-indentobject</ulink> git://github.com/austintaylor/vim-indentobject
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ragtag <ulink url="http://github.com/tpope/vim-ragtag">http://github.com/tpope/vim-ragtag</ulink> git://github.com/tpope/vim-ragtag
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-abolish <ulink url="http://github.com/tpope/vim-abolish">http://github.com/tpope/vim-abolish</ulink> git://github.com/tpope/vim-abolish
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_motions">
+<title>Motions</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-unimpaired <ulink url="http://github.com/tpope/vim-unimpaired">http://github.com/tpope/vim-unimpaired</ulink> git://github.com/tpope/vim-unimpaired.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+matchit <ulink url="http://github.com/tmhedberg/matchit">http://github.com/tmhedberg/matchit</ulink> git://github.com/tmhedberg/matchit.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_text_manipulation">
+<title>Text manipulation</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-surround <ulink url="http://github.com/tpope/vim-surround">http://github.com/tpope/vim-surround</ulink> git://github.com/tpope/vim-surround.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ack.vim <ulink url="http://github.com/mileszs/ack.vim">http://github.com/mileszs/ack.vim</ulink> git://github.com/mileszs/ack.vim.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Align <ulink url="http://github.com/alanstevens/Align">http://github.com/alanstevens/Align</ulink> git://github.com/alanstevens/Align.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-snipmate <ulink url="http://github.com/garbas/vim-snipmate">http://github.com/garbas/vim-snipmate</ulink> git://github.com/garbas/vim-snipmate.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+snipmate-snippets <ulink url="http://github.com/baphled/snipmate-snippets">http://github.com/baphled/snipmate-snippets</ulink> git://github.com/baphled/snipmate-snippets.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_visual_enhancements">
+<title>Visual enhancements</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-powerline <ulink url="http://github.com/Lokaltog/vim-powerline">http://github.com/Lokaltog/vim-powerline</ulink> git://github.com/Lokaltog/vim-powerline.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-vividchalk <ulink url="http://github.com/tpope/vim-vividchalk">http://github.com/tpope/vim-vividchalk</ulink> git://github.com/tpope/vim-vividchalk.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_file_management">
+<title>File management</title>
+<itemizedlist>
+<listitem>
+<simpara>
+ctrlp.vim <ulink url="http://github.com/kien/ctrlp.vim">http://github.com/kien/ctrlp.vim</ulink> git://github.com/kien/ctrlp.vim.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+nerdtree <ulink url="http://github.com/scrooloose/nerdtree">http://github.com/scrooloose/nerdtree</ulink> git://github.com/scrooloose/nerdtree.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_general_enhancements">
+<title>General enhancements</title>
+<itemizedlist>
+<listitem>
+<simpara>
+bufexplorer <ulink url="http://github.com/c9s/bufexplorer">http://github.com/c9s/bufexplorer</ulink> git://github.com/c9s/bufexplorer.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-repeat <ulink url="http://github.com/tpope/vim-repeat">http://github.com/tpope/vim-repeat</ulink> git://github.com/tpope/vim-repeat.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+AutoComplPop <ulink url="http://github.com/ayang/AutoComplPop">http://github.com/ayang/AutoComplPop</ulink> git://github.com/ayang/AutoComplPop.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_dependancies_2">
+<title>Dependancies</title>
+<itemizedlist>
+<listitem>
+<simpara>
+webapi-vim <ulink url="http://github.com/mattn/webapi-vim">http://github.com/mattn/webapi-vim</ulink> git://github.com/mattn/webapi-vim.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-addon-mw-utils <ulink url="http://github.com/MarcWeber/vim-addon-mw-utils">http://github.com/MarcWeber/vim-addon-mw-utils</ulink> git://github.com/MarcWeber/vim-addon-mw-utils.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+tlib_vim <ulink url="http://github.com/tomtom/tlib_vim">http://github.com/tomtom/tlib_vim</ulink> git://github.com/tomtom/tlib_vim.git
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
 </section>
 <section id="_day_22">
 <title>Day 22</title>
-<simpara>Today I&#8217;ll strip my fork and eat dog food. I&#8217;ll need a clean Vim setup if I&#8217;m
-going to go back to grass roots Vim, so in order to do this successfully, I
-need to branch off my dotfiles and start with the bare basics.</simpara>
-<simpara>I&#8217;ll need to work out what qualifies as the bare basics as some plugins
-(generally those for improve syntax highlighting) I&#8217;d like from the jump off
-but I guess I should document why I decided to add them from the very start.</simpara>
+<section id="_install_gist_vim">
+<title>Install gist-vim</title>
+<simpara>As I don&#8217;t have this installed for some reason and I&#8217;m due to starting
+reviewing my vim packages, I thought I&#8217;d start with gist-vim. I tend to need to
+post gists quickly and I usually end up using vim to write these notes and
+snippets.</simpara>
+<simpara>The only problem with this is that I have to go find the file and then copy and
+paste the contents via the website. That&#8217;s kinda slow and annoying. I&#8217;ve used
+gist-vim in the past so it&#8217;s time to get that setup and running so that I can
+send my gists easier.</simpara>
+<simpara>Same as usual I start by install the plugin:</simpara>
+<literallayout class="monospaced">git submodule add git://github.com/mattn/gist-vim.git bundle/gist-vim</literallayout>
+<simpara>I also need <literal>webapi-vim</literal> which deal with the API calls to github. As I don&#8217;t
+need to install it, as it&#8217;s already installed I&#8217;ll gloss over how it was
+installed as it is just a case of adding the plugin and forgetting about it.</simpara>
+<simpara>My <literal>plugin.vim</literal> doesn&#8217;t have any settings for <literal>gist-vim</literal> so I&#8217;ll add them now
+and then go over the basic commands I&#8217;ll need to play around with gist via vim.</simpara>
+<simpara>I want to be able to copy snippets from a gist:
+  let g:gist_clip_command = <emphasis>pbcopy</emphasis></simpara>
+<simpara>I also want to try to detect the file type gists should be when uploading them:
+  let g:gist_detect_filetype = 1</simpara>
+<simpara>The default command is <literal>:Gist</literal> and <literal>:'&lt;,'&gt;Gist</literal> with the following flags for
+the various options:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>-p</literal> - a private gist
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>-P</literal> - a public gist
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>-m</literal> - save a gist with all the buffers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>-e</literal> - edit the gist in the current buffer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>-d</literal> - delete a gist
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>-l</literal> - list my gists
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>-l username</literal> - list a users gists
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>I could map a few of these commands but I&#8217;ll hold off on that for the moment
+and just get accustomed to calling it manually.</simpara>
 </section>
-<section id="_learn_my_tools_2">
-<title>Learn my tools</title>
-<simpara>Will need to decide on plugins to learn</simpara>
-<screen>duration: 1 week per plugin
-start:    week 15
-plugin list:
-  * surround
-  * text objects
-  * macros
-  * gundo
-notes:
-
-  * this could be done after the intial 6 weeks</screen>
+<section id="_reviewing_vim_pastie">
+<title>Reviewing vim-pastie</title>
+<literallayout class="monospaced">Name:   gist-vim
+Source: http://github.com/mattn/gist-vim
+Repo:   git://github.com/mattn/gist-vim.git</literallayout>
+<simpara>I&#8217;ve had this installed pretty much from day one and never really used it. I
+guess I typically store my notes in gists or evernotes. The latter I have not
+got a plugin for, this will go on the <emphasis>to get</emphasis> list.</simpara>
+<simpara>Pastie basically does the same as gist-vim put post the content of a buffer(s)
+to pastie. As I don&#8217;t have any need for this functionality I&#8217;ll remove it from
+my dotvim.</simpara>
+<literallayout class="monospaced">vi .gitmodules
+/ pastie&lt;CR&gt;
+d2j
+:wq</literallayout>
+<simpara>This will open <literal>.gitmodules</literal> in vim find the word <emphasis>pastie</emphasis> and delete that line
+and the 2 below it. Finally we save the changes and quit the file.</simpara>
+<simpara>Next I needed to remove the plugin manually with <literal>git rm bundle/vim-pastie</literal></simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
 </section>
 <section id="_dressing_down_vim_2">
 <title>Dressing down Vim</title>
@@ -2780,6 +3171,7 @@ notes:
 <note><simpara>I can use my current Vim setup to workout which typographically based
 plugins I&#8217;ll be using and write a basic explanation as to why they are useful and
 why I can&#8217;t live without them.</simpara></note>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_25">
 <title>Day 25</title>
@@ -2791,6 +3183,7 @@ coming next 6 weeks to focus on storing the grass roots functionality of Vim
 into muscle memory. I&#8217;ll be referring to
 <ulink url="http://pragprog.com/book/dnvim/practical-vim">Practical Vim</ulink> a lot which has been
 a great source of knowledge for me in the past year.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_34">
 <title>Day 34</title>
@@ -2800,6 +3193,7 @@ become something of a challenge as I have had less and less time to actually
 take the time to keep up to date and track what is currently out.</simpara>
 <simpara>I&#8217;d like to find a usable bit torrent client that will help me do this and help
 me to be notified of new TV episodes coming out.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_35">
 <title>Day 35</title>
@@ -2825,6 +3219,7 @@ the to work just as I would like to use them.</simpara>
 as possible without having to reset it or be quick enough to select a link to
 view. I should simply be able to select one from what I see and not have to
 deal with anything else.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_36">
 <title>Day 36</title>
@@ -2833,9 +3228,11 @@ of the tools I&#8217;ve neglected to use over the years. My main focus will be t
 improve he way I use sed and awk and improve my bash script so that I can
 quickly hack some workflow scripts together to help tweak my productivity
 further.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_37">
 <title>Day 37</title>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_38">
 <title>Day 38</title>
@@ -2850,6 +3247,7 @@ How do I view conversations
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_garbled_notes">
 <title>Garbled notes</title>
@@ -2869,6 +3267,7 @@ tags for this.</simpara>
   * Collects all notes
   * lists them in a backlog file
   * Tmux alert when new commits have been made</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_dotfiles">
 <title>Dotfiles</title>
@@ -2910,6 +3309,7 @@ Use <literal>.git/info/exclude</literal> to hide local files
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_irssi">
 <title>Irssi</title>
@@ -2958,6 +3358,7 @@ Automatically sign in to bitlbee
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_twirssi">
 <title>Twirssi</title>
@@ -2969,6 +3370,7 @@ How do I read a conversation in twitter
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_customising_oh_my_zsh">
 <title>Customising oh-my-zsh</title>
@@ -3038,6 +3440,7 @@ Tell me whether I&#8217;m in INSERT mode or not via my status bar
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_tmux">
@@ -3076,6 +3479,7 @@ New panels/windows should automatically cd into the project directory
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_vim">
@@ -3225,6 +3629,11 @@ Restart previous session
 Will help me to jump back into where I jumped off without having to manually remember what was open and where
 </simpara>
 </listitem>
+<listitem>
+<simpara>
+Set wordwrap dependant on the filetype
+</simpara>
+</listitem>
 </itemizedlist>
 </section>
 <section id="_things_to_map">
@@ -3321,6 +3730,7 @@ autocmd
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_plugin_list">
@@ -3562,6 +3972,7 @@ tlib_vim <ulink url="http://github.com/tomtom/tlib_vim">http://github.com/tomtom
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_mac_console_fu">
 <title>Mac console fu</title>
@@ -3585,11 +3996,13 @@ and click on <emphasis>Modifier keys</emphasis></simpara>
   <textobject><phrase>default key bindings</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>Once I save the change, my CAPLOCK and Control keys are remapped.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_upgrading_wet_ware">
 <title>Upgrading wet ware</title>
 <simpara>Various notes and goals on what I want to achieve whilst writing this diary.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 <section id="_sharping_those_tools">
 <title>Sharping those tools</title>
 <section id="_how_to_improve_our_productivity">
@@ -3630,6 +4043,7 @@ these for our day to day work.</simpara>
 <simpara>We&#8217;ll need to get our newly found knowledge stored to muscle memory, so we&#8217;ll
 need to practice what we have learnt over the week. Doing so will help us on
 the way to improving the way we work and improve our skillset.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_things_i_want_to_learn">
@@ -3641,6 +4055,7 @@ utility commands (ack, sed, xargs) Improve my productivity with Vim.</simpara>
 <simpara>Pretty much most of my work can be done via the terminal. To help reduce
 context swtiching, I&#8217;d prefer to have a setup that allows to to stick to the
 terminal and alert me when information (emails, tweets, etc) is coming in</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_procmail_recipe_workflow">
@@ -3670,6 +4085,7 @@ mode I was apply to give the following command to save the sample email:</simpar
 <simpara>Now that the sample email was save I am free to run
 <literal>~/bin/procmail_recipe_test</literal> and see how the email is processed.</simpara>
 <note><simpara>Add screenshot of the split panes to demostrate the workflow</simpara></note>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_remapping_my_fingers">
 <title>Remapping my fingers</title>
@@ -3684,6 +4100,7 @@ properly as I&#8217;ve had "othering" to do.</simpara>
 <simpara>I maywell try to attempt this gradually and intergrate it into my daily
 entries. It&#8217;s going to take some dicipline but I think it shouldn&#8217;t take much
 effort to remap my fingers to centre around the homekeys more naturally.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_nix_stuff">
 <title>*nix Stuff</title>
@@ -3702,12 +4119,14 @@ bag of notes and gradually split off to different sections.</simpara>
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_work_flows">
 <title>Work flows</title>
 <simpara>I have a number of work flows I&#8217;d like to tweak and improve on. Here I&#8217;ll take
 notes and track my thoughts and ideas.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 <section id="_information_desk">
 <title>Information Desk</title>
 <simpara>This is a session that centers around gathering information quickly from
@@ -3746,6 +4165,7 @@ My gems should be installed in the global gemset so that all my sessions
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_authoring_scripts">
 <title>Authoring scripts</title>
@@ -3757,6 +4177,7 @@ Get a list of files and append them to a give file as includes
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_existing_projects">
 <title>Existing projects</title>
@@ -3773,6 +4194,7 @@ me to easily play around with concepts whilst ironing out a solution.</simpara>
 create base configs for theses workflows and then create a wrapper script that
 allows me to clone a project and then copy the config to the correct place and
 finally start the session by call tmuxinator.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_ruby_projects">
 <title>Ruby projects</title>
@@ -3874,6 +4296,7 @@ work through my various workflows.</simpara>
 <simpara>Initially I only want it to make a few changes, as outlined earlier, then once
 it is working for the basic workflows I&#8217;ll gradually improve the script to
 handle all my workflow needs.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 </section>
@@ -3902,6 +4325,7 @@ handle all my workflow needs.</simpara>
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_tips_and_tricks">
 <title>Tips and tricks</title>
@@ -3923,6 +4347,7 @@ with my day to day work.</simpara>
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 </section>

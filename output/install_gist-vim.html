@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="master.css" type="text/css" />
-    <title>Day 22</title>
+    <title>Install gist-vim</title>
   </head>
 
   <body>
@@ -11,8 +11,8 @@
     <table width="100%">
       <tr><td width="33%" align="left">
         
-         <a href="day_21.html">Prev</a><br/>
-         Day 21
+         <a href="day_22.html">Prev</a><br/>
+         Day 22
         
       </td><td width="33%" align="center">
         
@@ -21,8 +21,8 @@
         
       </td><td width="33%" align="right">
         
-          <a href="dressing_down_vim.html">Next</a><br/>
-          Dressing down Vim
+          <a href="learn_my_tools.html">Next</a><br/>
+          Learn my tools
         
       </td></tr>
     </table>
@@ -33,10 +33,7 @@
     <div class="content">
       <div class="section" lang="en">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
-<a id="_day_22"></a>Day 22</h2></div></div></div>
-<div class="section" lang="en">
-<div class="titlepage"><div><div><h3 class="title">
-<a id="_install_gist_vim"></a>Install gist-vim</h3></div></div></div>
+<a id="_install_gist_vim"></a>Install gist-vim</h2></div></div></div>
 <p>As I don’t have this installed for some reason and I’m due to starting
 reviewing my vim packages, I thought I’d start with gist-vim. I tend to need to
 post gists quickly and I usually end up using vim to write these notes and
@@ -82,11 +79,8 @@ the various options:</p>
 </li>
 </ul></div>
 <p>I could map a few of these commands but I’ll hold off on that for the moment
-and just get accustomed to calling it manually.</p>
-</div>
-<div class="section" lang="en">
-<div class="titlepage"><div><div><h3 class="title">
-<a id="_reviewing_vim_pastie"></a>Reviewing vim-pastie</h3></div></div></div>
+and just get accustomed to calling it manually.
+=== Reviewing vim-pastie</p>
 <pre class="literallayout">Name:   gist-vim
 Source: http://github.com/mattn/gist-vim
 Repo:   git://github.com/mattn/gist-vim.git</pre>
@@ -94,17 +88,7 @@ Repo:   git://github.com/mattn/gist-vim.git</pre>
 guess I typically store my notes in gists or evernotes. The latter I have not
 got a plugin for, this will go on the <span class="emphasis"><em>to get</em></span> list.</p>
 <p>Pastie basically does the same as gist-vim put post the content of a buffer(s)
-to pastie. As I don’t have any need for this functionality I’ll remove it from
-my dotvim.</p>
-<pre class="literallayout">vi .gitmodules
-/ pastie&lt;CR&gt;
-d2j
-:wq</pre>
-<p>This will open <code class="literal">.gitmodules</code> in vim find the word <span class="emphasis"><em>pastie</em></span> and delete that line
-and the 2 below it. Finally we save the changes and quit the file.</p>
-<p>Next I needed to remove the plugin manually with <code class="literal">git rm bundle/vim-pastie</code></p>
-<p></p>
-</div>
+to pastie.</p>
 </div>
 
     </div>
@@ -115,8 +99,8 @@ and the 2 below it. Finally we save the changes and quit the file.</p>
     <table width="100%">
       <tr><td width="33%" align="left">
         
-         <a href="day_21.html">Prev</a><br/>
-         Day 21
+         <a href="day_22.html">Prev</a><br/>
+         Day 22
         
       </td><td width="33%" align="center">
         
@@ -125,8 +109,8 @@ and the 2 below it. Finally we save the changes and quit the file.</p>
         
       </td><td width="33%" align="right">
         
-          <a href="dressing_down_vim.html">Next</a><br/>
-          Dressing down Vim
+          <a href="learn_my_tools.html">Next</a><br/>
+          Learn my tools
         
       </td></tr>
     </table>

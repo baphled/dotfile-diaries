@@ -122,16 +122,16 @@
 <content src="book.html#_day_20"/>
 </navPoint>
 <navPoint class="chapter" id="chapter_27" playOrder="28">
+<navLabel><text>Learn my tools</text></navLabel>
+<content src="book.html#_learn_my_tools_2"/>
+</navPoint>
+<navPoint class="chapter" id="chapter_28" playOrder="29">
 <navLabel><text>Day 21</text></navLabel>
 <content src="book.html#_day_21"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_28" playOrder="29">
+<navPoint class="chapter" id="chapter_29" playOrder="30">
 <navLabel><text>Day 22</text></navLabel>
 <content src="book.html#_day_22"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_29" playOrder="30">
-<navLabel><text>Learn my tools</text></navLabel>
-<content src="book.html#_learn_my_tools_2"/>
 </navPoint>
 <navPoint class="chapter" id="chapter_30" playOrder="31">
 <navLabel><text>Dressing down Vim</text></navLabel>
