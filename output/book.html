@@ -3928,6 +3928,162 @@ and the 2 below it. Finally we save the changes and quit the file.</p></div>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_day_23">Day 23</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>So today I&#8217;ll be looking at <em>Autotag</em> and <em>syntastic</em> which are the programming
+related plugins that I use when working in Vim. I&#8217;ll also be looking at my
+documentation plugins which include the following plugings:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+nerdcommenter
+</p>
+</li>
+<li>
+<p>
+asciidoc-vim
+</p>
+</li>
+<li>
+<p>
+vimwiki
+</p>
+</li>
+</ul></div>
+<div style="page-break-after:always"></div>
+<div class="sect2">
+<h3 id="_what_is_autotag">What is Autotag</h3>
+<div class="paragraph"><p>This has been breifly touch on when adding my
+<a href="day_18.html#_adding_ctags">ctags</a> though I haven&#8217;t really spoken about
+what it actually does and what it&#8217;s benefits are.</p></div>
+<div class="paragraph"><p>Firstly, the first issue with updating ctags is that when running <tt>ctags -a</tt>
+you&#8217;d only update the current tags list whilst not removing tags that are no
+longer needed.</p></div>
+<div class="paragraph"><p>Autotag updates the ctags for a project everytime a file is saved. This is
+needed so that my ctags don&#8217;t become stale and include definitions that are no
+longer present in the project I am currently working on. Meaning that when
+pressing <tt>&lt;C-]&gt;</tt> I only get results that are relevent to the project and don&#8217;t
+have to sift through a load of useless results.</p></div>
+<div class="paragraph"><p>Autotag requires <em>Python</em> support so it is important to have support for this
+in my <em>Vim</em>. Thankfully if my Vim doesn&#8217;t support <em>Python</em> then it doesn&#8217;t not
+fail horribly. These saves me from having to clear my tags manually and just
+focus on the task at hand, writing code.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_syntastic">Syntastic</h3>
+<div class="paragraph"><p>I use this to help me find syntax errors easily, it doesn&#8217;t do this on the fly
+but I save often enough for that not to be a problem. All that is needed is for
+a file to be saved and if any errors are found the quickbox buffer will open up
+allowing for me to go over each change and deal with them appropriately.
+Syntastic comes with a host of syntax checker and the basic to allow for me to
+easily add more checkers dependent on the filetype I am dealing with.</p></div>
+<div class="paragraph"><p>It uses the built in Vim commands for navigation or errors <tt>:lnext</tt> and
+<tt>:lprev</tt>. As I&#8217;m using unimpaired I have alternative mappings for these as follows:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>[l</tt> - <tt>:lnext</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>l]</tt> - <tt>:lprevious</tt>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Other mime type related plugins also add their own checkers so I have pretty
+much all the checkers I need for the moment. The following languages are
+included out of the box. The following is just a few that are maintained that I am interest in:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+yaml
+</p>
+</li>
+<li>
+<p>
+jslint
+</p>
+</li>
+<li>
+<p>
+jshint (gillesruppert)
+</p>
+</li>
+<li>
+<p>
+sass
+</p>
+</li>
+<li>
+<p>
+html (darcyparker)
+</p>
+</li>
+<li>
+<p>
+coffee (darcyparker)
+</p>
+</li>
+<li>
+<p>
+xml
+</p>
+</li>
+<li>
+<p>
+xslt
+</p>
+</li>
+<li>
+<p>
+less (irrationalfab)
+</p>
+</li>
+<li>
+<p>
+puppet (frimik)
+</p>
+</li>
+<li>
+<p>
+ruby
+</p>
+</li>
+<li>
+<p>
+scss
+</p>
+</li>
+<li>
+<p>
+json
+</p>
+</li>
+<li>
+<p>
+cucumber
+</p>
+</li>
+<li>
+<p>
+css
+</p>
+</li>
+<li>
+<p>
+erlang
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>There is a range of other checkers that can be found
+<a href="https://github.com/scrooloose/syntastic/tree/master/syntax_checkers">here</a>.</p></div>
+<div class="paragraph"><p>I tend not to use a host of these but at least I know they are there if they
+are ever needed.</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_dressing_down_vim_2">Dressing down Vim</h2>
 <div class="sectionbody">
 <div class="listingblock">
@@ -5295,7 +5451,7 @@ Look into outputting this to a shared window?
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2012-09-05 23:36:45 BST
+Last updated 2012-09-06 14:52:11 BST
 </div>
 </div>
 </body>

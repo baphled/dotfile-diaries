@@ -134,54 +134,58 @@
 <content src="book.html#_day_22"/>
 </navPoint>
 <navPoint class="chapter" id="chapter_30" playOrder="31">
+<navLabel><text>Day 23</text></navLabel>
+<content src="book.html#_day_23"/>
+</navPoint>
+<navPoint class="chapter" id="chapter_31" playOrder="32">
 <navLabel><text>Dressing down Vim</text></navLabel>
 <content src="book.html#_dressing_down_vim_2"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_31" playOrder="32">
+<navPoint class="chapter" id="chapter_32" playOrder="33">
 <navLabel><text>Day 25</text></navLabel>
 <content src="book.html#_day_25"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_32" playOrder="33">
+<navPoint class="chapter" id="chapter_33" playOrder="34">
 <navLabel><text>Day 34</text></navLabel>
 <content src="book.html#_day_34"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_33" playOrder="34">
+<navPoint class="chapter" id="chapter_34" playOrder="35">
 <navLabel><text>Day 35</text></navLabel>
 <content src="book.html#_day_35"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_34" playOrder="35">
+<navPoint class="chapter" id="chapter_35" playOrder="36">
 <navLabel><text>Day 36</text></navLabel>
 <content src="book.html#_day_36"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_35" playOrder="36">
+<navPoint class="chapter" id="chapter_36" playOrder="37">
 <navLabel><text>Day 37</text></navLabel>
 <content src="book.html#_day_37"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_36" playOrder="37">
+<navPoint class="chapter" id="chapter_37" playOrder="38">
 <navLabel><text>Day 38</text></navLabel>
 <content src="book.html#_day_38"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_37" playOrder="38">
+<navPoint class="chapter" id="chapter_38" playOrder="39">
 <navLabel><text>Garbled notes</text></navLabel>
 <content src="book.html#_garbled_notes"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_38" playOrder="39">
+<navPoint class="chapter" id="chapter_39" playOrder="40">
 <navLabel><text>Upgrading wet ware</text></navLabel>
 <content src="book.html#_upgrading_wet_ware"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_39" playOrder="40">
+<navPoint class="chapter" id="chapter_40" playOrder="41">
 <navLabel><text>Work flows</text></navLabel>
 <content src="book.html#_work_flows"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_40" playOrder="41">
+<navPoint class="chapter" id="chapter_41" playOrder="42">
 <navLabel><text>Resources</text></navLabel>
 <content src="book.html#_resources_18"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_41" playOrder="42">
+<navPoint class="chapter" id="chapter_42" playOrder="43">
 <navLabel><text>Tips and tricks</text></navLabel>
 <content src="book.html#_tips_and_tricks"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_42" playOrder="43">
+<navPoint class="chapter" id="chapter_43" playOrder="44">
 <navLabel><text>Wish list</text></navLabel>
 <content src="book.html#_wish_list"/>
 </navPoint>

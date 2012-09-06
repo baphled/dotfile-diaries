@@ -3157,6 +3157,160 @@ and the 2 below it. Finally we save the changes and quit the file.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
+<section id="_day_23">
+<title>Day 23</title>
+<simpara>So today I&#8217;ll be looking at <emphasis>Autotag</emphasis> and <emphasis>syntastic</emphasis> which are the programming
+related plugins that I use when working in Vim. I&#8217;ll also be looking at my
+documentation plugins which include the following plugings:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+nerdcommenter
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+asciidoc-vim
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vimwiki
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+<section id="_what_is_autotag">
+<title>What is Autotag</title>
+<simpara>This has been breifly touch on when adding my
+<ulink url="day_18.html#_adding_ctags">ctags</ulink> though I haven&#8217;t really spoken about
+what it actually does and what it&#8217;s benefits are.</simpara>
+<simpara>Firstly, the first issue with updating ctags is that when running <literal>ctags -a</literal>
+you&#8217;d only update the current tags list whilst not removing tags that are no
+longer needed.</simpara>
+<simpara>Autotag updates the ctags for a project everytime a file is saved. This is
+needed so that my ctags don&#8217;t become stale and include definitions that are no
+longer present in the project I am currently working on. Meaning that when
+pressing <literal>&lt;C-]&gt;</literal> I only get results that are relevent to the project and don&#8217;t
+have to sift through a load of useless results.</simpara>
+<simpara>Autotag requires <emphasis>Python</emphasis> support so it is important to have support for this
+in my <emphasis>Vim</emphasis>. Thankfully if my Vim doesn&#8217;t support <emphasis>Python</emphasis> then it doesn&#8217;t not
+fail horribly. These saves me from having to clear my tags manually and just
+focus on the task at hand, writing code.</simpara>
+</section>
+<section id="_syntastic">
+<title>Syntastic</title>
+<simpara>I use this to help me find syntax errors easily, it doesn&#8217;t do this on the fly
+but I save often enough for that not to be a problem. All that is needed is for
+a file to be saved and if any errors are found the quickbox buffer will open up
+allowing for me to go over each change and deal with them appropriately.
+Syntastic comes with a host of syntax checker and the basic to allow for me to
+easily add more checkers dependent on the filetype I am dealing with.</simpara>
+<simpara>It uses the built in Vim commands for navigation or errors <literal>:lnext</literal> and
+<literal>:lprev</literal>. As I&#8217;m using unimpaired I have alternative mappings for these as follows:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>[l</literal> - <literal>:lnext</literal>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>l]</literal> - <literal>:lprevious</literal>
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Other mime type related plugins also add their own checkers so I have pretty
+much all the checkers I need for the moment. The following languages are
+included out of the box. The following is just a few that are maintained that I am interest in:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+yaml
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+jslint
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+jshint (gillesruppert)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+sass
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+html (darcyparker)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+coffee (darcyparker)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+xml
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+xslt
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+less (irrationalfab)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+puppet (frimik)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ruby
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+scss
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+json
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cucumber
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+css
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+erlang
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>There is a range of other checkers that can be found
+<ulink url="https://github.com/scrooloose/syntastic/tree/master/syntax_checkers">here</ulink>.</simpara>
+<simpara>I tend not to use a host of these but at least I know they are there if they
+are ever needed.</simpara>
+</section>
+</section>
 <section id="_dressing_down_vim_2">
 <title>Dressing down Vim</title>
 <screen>duration: 6 weeks
