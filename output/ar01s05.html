@@ -1,47 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 1</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s04.html" title="Enhancing my workflow"/><link rel="next" href="ar01s06.html" title="Day 2"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 1</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s04.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s06.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_1"/>Day 1</h2></div></div></div><p>So this is the first day of an on going process devised by myself to help
-improve and tweak my existing work flow.</p><p>For years I’ve been used to living in the console and staying away from GUI
-type tools to do my day to day work</p><p>So the idea is to move back to my console and improve my work flow by tweaking
-and getting to know my console tools better.</p><p>In this blog I’ll start with something simple, as the days progress I create a
-blog describing what I’ve learnt today and how it improves my day to day
-work flow.</p><p>Today is an easy day, I’ll start with setting up irssi, a command line
-interface for IRC.</p><p>What I want here is my old setup tweaked to make it easy to change channels and
-see is in a room.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_setting_up_irssi"/>Setting up irssi</h3></div></div></div><p>I’m using a Mac and use brew. So it is as easy as running <code class="literal">brew install irssi</code>.</p><p>Job done!</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_configuring"/>Configuring</h4></div></div></div><p>I like to see all the most important information right in front of me, so my
-ideal IRC client looks something like this:</p><p><span class="inlinemediaobject"><img src="https://github.com/baphled/dotfile-diaries/raw/master/screenshots/irssi-current.png" alt="preferred setup"/></span></p><p>Unconfigured, irssi looks like this:</p><p><span class="inlinemediaobject"><img src="https://github.com/baphled/dotfile-diaries/raw/master/screenshots/irssi-default.png" alt="default setup"/></span></p><p>Which kinda sucks!, where’s a list of who is online?</p><p>First things first, <a class="ulink" href="http://quadpoint.org/articles/irssi/" target="_top">is a good place to start</a>.</p><p>I’ll use some tips from there to get myself started.</p><p>twirssi - twitter for irc
-nicklist - displays a list of users</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_defaults"/>Defaults</h4></div></div></div><p>Now it’s time to tweak our settings so that we can navigate freely and don’t
-have to decypher what is being said per room. I’m used to having a window per
-channel and being alerted when someone makes a comment. For this I’d like to
-create a window every time I join a new channel and remove the window once I
-have left one. To do this we’ll need aliases.</p><pre class="literallayout">/SET autocreate_windows ON`
-/SERVER ADD -auto -network freenode irc.freenode.net
-/save
-/exit</pre><p>This will save us from having to add the FQDN and refer to it as an alias,
-freenode in this case.</p><p>Now when you restart irssi you will be automatically connected to freenode :)</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_listing_channel_users"/>Listing channel users</h4></div></div></div><p>So to get the user list we’ll need nicklist with some tweaks.</p><p>The older versions of nicklist require us to use screen/tmux and do some
-hackery, I’m not a fan, thankfully I stumbled across this
-<a class="ulink" href="http://github.com/ConX/nicklist.pl" target="_top">nicklist.pl</a>. This isn’t ideal, we have
-the user list at the top but it’s much better than hoping that the screens open
-and things fire off at the right time.</p><p>That a soon after finding the sweet spot, the original version of the script
-decided to kill the cat command you had to run to get the user list, not my
-idea of fun.</p><p>This will do for the moment but as part of my weekend of hacking I hope to
-tweak this script to get the layout I want.</p><p>We will need to create a scripts directory for scripts we want to autoload.</p><pre class="literallayout">/WINDOW NEW
-/WINDOW NAME hilight
-/WINDOW MOVE up
-/WINDOW SIZE 10
-/WINDOW stick
-/layout save</pre><p>This will create a new window called <span class="emphasis"><em>hilight</em></span> which will be displayed at the
-top be sticking 10 lines high, which means that it will stay in position
-regardless of changing channel windows.</p><p>Finally we make sure that our nick is highlighted with <code class="literal">/hilight nick</code></p><p>We’ll leave this for now and come back to tweaking our settings later.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_resources"/>Resources</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
-<a class="ulink" href="http://selcouth.com/irssi.php" target="_top">basic irssi guide</a>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 4</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s04.html" title="Day 3"/><link rel="next" href="ar01s06.html" title="Day 5"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 4</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s04.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s06.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_4"/>Day 4</h2></div></div></div><p>So I’ve done quite a bit to get irssi setup and working as I want it.
+The last things I want to do is lose my settings or messing something
+up, as I have done a number of times already.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_keeping_my_settings_under_version_control"/>Keeping my settings under version control</h3></div></div></div><p>So the easy fix for this is to create a repository and pull the config
+in as dotirssi.</p><div class="itemizedlist"><ul type="disc"><li>
+There`s not much to this really.
 </li><li>
-<a class="ulink" href="http://michael-prokop.at/stg/irc_workshop.txt" target="_top">irssi cheatsheet</a>
+I copy the .irssi directory to dotirssi.
 </li><li>
-<a class="ulink" href="http://www.mindfuzz.net/?p=301" target="_top">GIVE ME A BETTER TITLE</a>
+I then initialised git for version control.
 </li><li>
-<a class="ulink" href="http://www.irssi.org/themes" target="_top">IRSSI Themes</a>
+Created a new repository on github
 </li><li>
-<a class="ulink" href="http://irssi.org/beginner/" target="_top">Lazy mans guide</a>
+ignored files with the pattern <code class="literal">scripts/twirssi.*</code>
 </li><li>
-<a class="ulink" href="http://pc-addicts.com/forum/viewthread.php?thread_id=538&amp;pid=2282#post_2282" target="_top">PC Addicts custom irssi setup</a>
-</li></ul></div><p/></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s04.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s06.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Enhancing my workflow </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 2</td></tr></table></div></body></html>
+Commited all the files
+</li><li>
+pushed the changes
+</li><li>
+added the project to my dotfiles using braid
+</li><li>
+This will change some point in this process
+</li><li>
+Copy my twirssi auth files to <code class="literal">~/dotirssi/scripts</code>
+</li></ul></div><p>Once the above was done I was able to have my irssi settings up version
+control :)</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_opening_links_irssi_with_lynx"/>Opening links irssi with lynx</h3></div></div></div><p>Yet another day of tweaking my irssi rig, today I want to get Lynx to open in a
+new tmux window when I select a link. I’ll use tmux to do this as it’s what
+it’s good at and I’ll get bjurl to call tmux when ever I select a link for
+viewing.</p><p>Again the goal here is to move more of my work flow into my terminal which will
+allow me to deal with content when I choose.</p><p>First off we need to actually be able to easily see links and open them,
+we’ll use <a class="ulink" href="http://github.com/sukima/bjurl/blob/master/bjurl.pl" target="_top">bjurl</a> for this.</p><p>As with most plugins this is as simple as downloading the script and
+adding it to your irssi script directory.</p><p>If your already running irssi run <code class="literal">/run bjurl</code>.</p><p>As I’m using a mac, I needed to to set the <code class="literal">browse_command</code> settings to
+open links just how I want it to.</p><p>First we need a new tmux window to start lynx in.</p><pre class="literallayout">tmux new-window -t workbench -s interwepts</pre><p>We’ll need tell bjurl to behave as we want:</p><pre class="literallayout">/set browse_command tmux send-keys -t interwepts 'lynx $1' C-m</pre><p>And that’s pretty much it for now, we can now load links within our current session :)</p><p>It would be cool if we had a separate session strictly for browsing, that
+way we don’t have to clutter the current session.</p><p>This and a few other things will be the next step for improving this work flow
+but lets take small steps and see where this path leads up :)</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo"/>TODO</h4></div></div></div><p>It would be cool if we could name our window accordingly and not have to deal
+with the many windows issue I have with chrome and many other browser at
+present. This only leads to a sluggish computer and "Tab overload"</p><p>I also need bjurl to be a bit smarter in identifying links, it’s hard to track
+links once 20 have been displayed, at present it’s quite useless.</p><p/></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s04.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s06.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 3 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 5</td></tr></table></div></body></html>

@@ -6,6 +6,184 @@
 <meta name="generator" content="AsciiDoc 8.6.7" />
 <title>Dotfile Diaries</title>
 <style type="text/css">
+/* ---------------------------------------------------------------------------
+   Bare AsciiDoc styles
+   Ryan Tomayko <r@tomayko.com>
+--------------------------------------------------------------------------- */
+
+body {
+  font-family:verdana,helvetica,arial,sans-serif;
+  font-size:81.25%;   /* 13px */
+  line-height:1.538;  /* 20px */
+  margin:40px auto 50px auto;
+  max-width:53.8461538462em; /* 790px */
+  color:#333;
+}
+
+em {
+  font-style:italic;
+}
+
+strong {
+  font-weight:bold;
+  color:#000;
+}
+
+tt {
+  font-family:consolas, 'lucida console', 'bitstream vera sans mono',
+             'courier new', monospace;
+  color:#000;
+  font-size: 8px;
+}
+
+p, ul, ol, dl {
+  margin:10px 0
+}
+
+dl {
+  margin-left:40px
+}
+
+dt {
+  font-weight:normal;
+  color:#000;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family:'lucida grande',georgia,verdana,helvetica,arial,sans-serif;
+  font-weight:normal;
+  color:#000;
+}
+
+h1 {
+  font-size:40px;
+  line-height:1.428;
+  margin:20px 0;
+}
+
+h2 {
+  font-size:30px;
+  line-height:1.36363636; /* repeating, of course */
+  margin:60px 0 20px 0;
+}
+
+h2 + .sectionbody {}
+
+h3 {
+  font-size:24px;
+  line-height:1.1;
+  margin:30px 0 10px 0;
+}
+
+h4 {
+  font-size:18px;
+  line-height:1.1;
+  margin:20px 0 5px 0;
+}
+
+h5 {
+  font-size:13px;
+  font-style:italic;
+  line-height:1.1;
+}
+
+#header {
+  text-align:center;
+  margin-bottom:30px;
+}
+
+#header h1 { margin-bottom:0 }
+
+.title, .sidebar-title {
+  font-weight:normal;
+  color:#000;
+  margin-bottom:0;
+}
+
+.admonitionblock .title {
+  font-weight:bold;
+}
+
+.admonitionblock {
+  margin:30px 0px;
+  color:#555;
+}
+
+.admonitionblock td.icon {
+  width:30px;
+  padding-right:20px;
+  padding-left:20px;
+  text-transform:uppercase;
+  font-weight:bold;
+  color:#888;
+}
+
+.listingblock {
+  margin: 13px 0;
+}
+
+.listingblock .content {
+  border:1px solid silver;
+  background:#eee;
+  padding:5px;
+}
+
+.listingblock .content pre {
+  margin:0;
+}
+
+.literalblock .content {
+  margin-left:40px;
+}
+
+.verseblock .content {
+  white-space:pre
+}
+
+.sidebarblock .sidebar-content {
+  border:1px solid silver;
+  background:#FFFFEE;
+  padding:0 10px;
+  color:#222;
+  font-size:smaller;
+  line-height:1.5;
+}
+
+.sidebar-title {
+  margin:10px 0;
+  font-weight:bold;
+  color:#442;
+}
+
+.quoteblock-content {
+  font-style:italic;
+  color:#444;
+  margin-left:40px;
+}
+
+.quoteblock-content .attribution {
+  font-style:normal;
+  text-align:right;
+  color:#000;
+}
+
+.exampleblock-content *:first-child { margin-top:0 }
+.exampleblock-content {
+  border-left:2px solid silver;
+  padding-left:8px;
+}
+
+#footer {
+  font-size:11px;
+  margin-top:40px;
+  border-top:1px solid silver;
+  color:#555;
+}
+
+#author {
+  color:#000;
+  text-transform:uppercase
+}
 </style>
 <script type="text/javascript">
 /*<![CDATA[*/
@@ -210,11 +388,13 @@ asciidoc.install();
 <div id="preamble">
 <div class="sectionbody">
 <div style="page-break-after:always"></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_goal">Goal</h2>
-<div class="sectionbody">
+<div class="paragraph"><p>(c) 2012 Yomi Colledge</p></div>
+<div class="paragraph"><p>All rights reseved</p></div>
+<div class="paragraph"><p>No part of this publication may be reproduced, stored in a retrieval
+system, or transmitted, in any form, or by any means, electronic,
+mechanical, photocopying, recording, or otherwise, without the prior
+consent of the publisher.</p></div>
+<div style="page-break-after:always"></div>
 <div class="paragraph"><p>The goal of this diary is to track the journey of improving my unix-fu and
 work flow.</p></div>
 <div class="paragraph"><p>I&#8217;ve come to love my current setup (tmux, oh-my-zsh, Vim, RVM and bundle).
@@ -228,176 +408,12 @@ accordingly.</p></div>
 it it optimal for my personal use and configurable enough for others to do the
 same too.</p></div>
 <div style="page-break-after:always"></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_the_journey">The journey</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_enhancing_my_workflow">Enhancing my workflow</h3>
-<div class="paragraph"><p>This will be a delve into moving my internet use workflows back into the
-console. I find it cumbersome to keep tabbing back and forth and trying to keep
-a mental note of how many times I need to tab to get where I want. In the
-terminal this can be manage alot easier and at least allow me to set things up
-more like how I prefer things to be.</p></div>
-<div class="sidebarblock">
-<div class="content">
-<div class="literalblock">
-<div class="content">
-<pre><tt>duration: 2 weeks
-start:    day 0
-notes:
-  * Setting up irssi
-  * Customise irssi to my liking
-  * Get the basic of mutt setup
-  * Find and customise a command line browser</tt></pre>
-</div></div>
-</div></div>
-<div class="sect3">
-<h4 id="_refine_my_workflow">Refine my workflow</h4>
-<div class="paragraph"><p>I already have my dotfiles under version control but I would like to clean
-these up and find a way to make them a little bit more maintainable. Primarily
-I want to move away from using braid and my forked version of my dotfiles.</p></div>
-<div class="paragraph"><p>This will lead me towards improving my vim settings and skills.</p></div>
-<div class="paragraph"><p>For this I will setup my dotfiles from scratch and show the pros and cons of my
-setup and how I like to have things laid out.</p></div>
-<div class="listingblock">
-<div class="content">
-<pre><tt>duration: 8 days
-start:    1 week
-notes:
-  * start my dotfiles from scratch
-  * define local files to hide
-  * setup tmux and tmuxinator
-  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</tt></pre>
-</div></div>
-</div>
-<div class="sect3">
-<h4 id="_housekeeping_tools">Housekeeping tools</h4>
-<div class="paragraph"><p>This will focus on building tools to help me maintain and keep my toolsets up
-to date.</p></div>
-<div class="listingblock">
-<div class="content">
-<pre><tt>duration: 4 weeks
-start:    week 3
-notes:
-  * manage personal credentials
-  * notifications and alerts via tmux
-  * create script to check for my dotfile dependancies
-    * Should download them if they are not found</tt></pre>
-</div></div>
-</div>
-<div class="sect3">
-<h4 id="_dressing_down_vim">Dressing down Vim</h4>
-<div class="listingblock">
-<div class="content">
-<pre><tt>duration: 6 weeks
-start:    week 7
-location: everywhere
-notes:
-
-  * pain experienced
-  * what was missed
-  * what did I learn (daily log)
-  * use `:map` in Vim to learn new mappings
-  * use vimtutor</tt></pre>
-</div></div>
-</div>
-<div class="sect3">
-<h4 id="_learn_my_tools">Learn my tools</h4>
-<div class="paragraph"><p>Will need to decide on plugins to learn</p></div>
-<div class="listingblock">
-<div class="content">
-<pre><tt>duration: 1 week per plugin
-start:    week 15
-plugin list:
-  * surround
-  * text objects
-  * macros
-  * gundo
-notes:
-
-  * this could be done after the intial 6 weeks</tt></pre>
-</div></div>
+<div class="paragraph"><p>TO BE WRITTEN</p></div>
 <div style="page-break-after:always"></div>
 </div>
 </div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_dependancies">Dependancies</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_tools_of_the_trade">Tools of the trade</h3>
-<div class="paragraph"><p>A list of tools that are needed for the my ideal workbench</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-zsh
-</p>
-</li>
-<li>
-<p>
-irssi
-</p>
-</li>
-<li>
-<p>
-perl
-</p>
-</li>
-<li>
-<p>
-mutt
-</p>
-</li>
-<li>
-<p>
-w3m
-</p>
-</li>
-<li>
-<p>
-rvm
-</p>
-</li>
-<li>
-<p>
-ruby
-</p>
-</li>
-<li>
-<p>
-git
-</p>
-</li>
-<li>
-<p>
-git-scribe
-</p>
-</li>
-<li>
-<p>
-vim
-</p>
-</li>
-<li>
-<p>
-ack
-</p>
-</li>
-<li>
-<p>
-newsbeuter
-</p>
-</li>
-</ul></div>
-<div style="page-break-after:always"></div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_enhancing_my_workflow_2">Enhancing my workflow</h2>
+<h2 id="_enhancing_my_workflow">Enhancing my workflow</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>This will be a delve into move the my internet related information back into
 the console. I find it cumbersome to keep tabbing back and forth and trying to
@@ -1142,7 +1158,9 @@ start my dotfiles anew and will properly document the process.</p></div>
 <div class="paragraph"><p>For now I want to focus on how to automatically spawn a tmux session along with
 the default windows I use on a day to day basic.</p></div>
 <div class="paragraph"><p>I&#8217;m using tmux along with tmuxinator to help manage my setting.</p></div>
-<div class="paragraph"><p>Installing tmux is done simply by call <tt>brew install tmux</tt> once this has been installed we are ready to play with tmux. As I mentioned I&#8217;m using tmuxinator which is a ruby gem so we&#8217;ll add that to our Gemfile:</p></div>
+<div class="paragraph"><p>Installing tmux is done simply by call <tt>brew install tmux</tt> once this has
+been installed we are ready to play with tmux. As I mentioned I&#8217;m using
+tmuxinator which is a ruby gem so we&#8217;ll add that to our Gemfile:</p></div>
 <div class="literalblock">
 <div class="content">
 <pre><tt>gem 'tmuxinator'</tt></pre>
@@ -1236,25 +1254,25 @@ fire up the new session.</p></div>
 </div>
 <div class="sect3">
 <h4 id="_my_config">My config</h4>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre><tt>project_name: workbench
-project_root: ~/
-rvm: 1.9.2-head@workbench
-pre: cd ~/ &amp;&amp; bundle
-tabs:
-  - Workbench:
-      layout: b147,208x73,0,0[208x62,0,0,208x10,0,63{104x10,0,63,103x10,105,63}]
-      panes:
-        - vim
-        - #empty, will just run plain zsh
-  - Interwepts: w3m http://google.com
-  - IRC: irssi
-  - Email: mutt
-  - Spyhole: tail -f ~/workbench.log
-  - "Dotfile Diaries": vi ~/Documents/Diary
-  - 'Control centre': git wft
-  - Toybox: be pry</tt></pre>
+<pre><tt>  project_name: workbench
+  project_root: ~/
+  rvm: 1.9.2-head@workbench
+  pre: cd ~/ &amp;&amp; bundle
+  tabs:
+    - Workbench:
+        layout: b147,208x73,0,0[208x62,0,0,208x10,0,63{104x10,0,63,103x10,105,63}]
+        panes:
+          - vim
+          - #empty, will just run plain zsh
+    - Interwepts: w3m http://google.com
+    - IRC: irssi
+    - Email: mutt
+    - Spyhole: tail -f ~/workbench.log
+    - "Dotfile Diaries": vi ~/Documents/Diary
+    - 'Control centre': git wft
+    - Toybox: pry</tt></pre>
 </div></div>
 <div class="paragraph"><p>Now with this setup, we can simple run <tt>mux workbench</tt> and tmuxinator will
 handle the rest, creating and setting up each of my desired windows along with their separate tasks :)</p></div>
@@ -1282,7 +1300,7 @@ Open w3m with a better default
 </div>
 </div>
 <div class="sect1">
-<h2 id="_refine_my_workflow_2">Refine my workflow</h2>
+<h2 id="_refine_my_workflow">Refine my workflow</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>I already have my dotfiles under version control but I would like to clean
 these up and find a way to make them a little bit more maintainable. Primarily
@@ -1290,7 +1308,9 @@ I want to move away from using braid and my forked version of my dotfiles.</p></
 <div class="paragraph"><p>This will lead me towards improving my vim settings and skills.</p></div>
 <div class="paragraph"><p>For this I will setup my dotfiles from scratch and show the pros and cons of my
 setup and how I like to have things laid out.</p></div>
-<div class="listingblock">
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
 <div class="content">
 <pre><tt>duration: 8 days
 notes:
@@ -1298,6 +1318,7 @@ notes:
   * define local files to hide
   * setup tmux and tmuxinator
   * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</tt></pre>
+</div></div>
 </div></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -2699,8 +2720,10 @@ and let <tt>.zlogin</tt> do the rest of the work.</p></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_housekeeping_tools_2">Housekeeping tools</h2>
+<h2 id="_housekeeping_tools">Housekeeping tools</h2>
 <div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
 <div class="literalblock">
 <div class="content">
 <pre><tt>duration: 4 weeks
@@ -2710,6 +2733,7 @@ notes:
   * define local files to hide
   * create script to check for my dotfile dependancies
     * Should download them if they are not found</tt></pre>
+</div></div>
 </div></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -3386,11 +3410,20 @@ manage the buffers easier with a few shortcut keys.</p></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_learn_my_tools_2">Learn my tools</h2>
+<h2 id="_learn_my_tools">Learn my tools</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>[NOTE]: Write introduction</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Write introduction</td>
+</tr></table>
+</div>
 <div class="paragraph"><p>Will need to decide on plugins to learn</p></div>
-<div class="listingblock">
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
 <div class="content">
 <pre><tt>duration: 1 week per plugin
 start:    week 15
@@ -3400,8 +3433,8 @@ plugin list:
   * macros
   * gundo
 notes:
-
   * this could be done after the intial 6 weeks</tt></pre>
+</div></div>
 </div></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -3804,7 +3837,7 @@ AutoComplPop <a href="http://github.com/ayang/AutoComplPop">http://github.com/ay
 </ul></div>
 </div>
 <div class="sect3">
-<h4 id="_dependancies_2">Dependancies</h4>
+<h4 id="_dependancies">Dependancies</h4>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -4085,19 +4118,21 @@ are ever needed.</p></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_dressing_down_vim_2">Dressing down Vim</h2>
+<h2 id="_dressing_down_vim">Dressing down Vim</h2>
 <div class="sectionbody">
-<div class="listingblock">
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
 <div class="content">
 <pre><tt>duration: 6 weeks
 location: everywhere
 notes:
-
   * pain experienced
   * what was missed
   * what did I learn (daily log)
   * use `:map` in Vim to learn new mappings
   * use vimtutor</tt></pre>
+</div></div>
 </div></div>
 <div class="openblock">
 <div class="content">
@@ -4211,13 +4246,118 @@ How do I view conversations
 </div>
 </div>
 <div class="sect1">
-<h2 id="_garbled_notes">Garbled notes</h2>
+<h2 id="appendix">Appendix A: Appendix</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_the_journey">The journey</h3>
+</div>
+<div class="sect2">
+<h3 id="_enhancing_my_workflow_2">Enhancing my workflow</h3>
+<div class="paragraph"><p>This will be a delve into moving my internet use workflows back into the
+console. I find it cumbersome to keep tabbing back and forth and trying to keep
+a mental note of how many times I need to tab to get where I want. In the
+terminal this can be manage alot easier and at least allow me to set things up
+more like how I prefer things to be.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>duration: 2 weeks
+start:    day 0
+notes:
+  * Setting up irssi
+  * Customise irssi to my liking
+  * Get the basic of mutt setup
+  * Find and customise a command line browser</tt></pre>
+</div></div>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="_refine_my_workflow_2">Refine my workflow</h3>
+<div class="paragraph"><p>I already have my dotfiles under version control but I would like to clean
+these up and find a way to make them a little bit more maintainable. Primarily
+I want to move away from using braid and my forked version of my dotfiles.</p></div>
+<div class="paragraph"><p>This will lead me towards improving my vim settings and skills.</p></div>
+<div class="paragraph"><p>For this I will setup my dotfiles from scratch and show the pros and cons of my
+setup and how I like to have things laid out.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>duration: 8 days
+start:    1 week
+notes:
+  * start my dotfiles from scratch
+  * define local files to hide
+  * setup tmux and tmuxinator
+  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</tt></pre>
+</div></div>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="_housekeeping_tools_2">Housekeeping tools</h3>
+<div class="paragraph"><p>This will focus on building tools to help me maintain and keep my toolsets up
+to date.</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>duration: 4 weeks
+start:    week 3
+notes:
+  * manage personal credentials
+  * notifications and alerts via tmux
+  * create script to check for my dotfile dependancies
+    * Should download them if they are not found</tt></pre>
+</div></div>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="_dressing_down_vim_2">Dressing down Vim</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>duration: 6 weeks
+start:    week 7
+location: everywhere
+notes:
+  * pain experienced
+  * what was missed
+  * what did I learn (daily log)
+  * use `:map` in Vim to learn new mappings
+  * use vimtutor</tt></pre>
+</div></div>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="_learn_my_tools_2">Learn my tools</h3>
+<div class="paragraph"><p>Will need to decide on plugins to learn</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>duration: 1 week per plugin
+start:    week 15
+plugin list:
+  * surround
+  * text objects
+  * macros
+  * gundo
+notes:
+  * this could be done after the intial 6 weeks</tt></pre>
+</div></div>
+</div></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect2">
+<h3 id="_garbled_notes">Garbled notes</h3>
 <div class="paragraph"><p>This is a dumping ground for various notes I&#8217;ve taken in regards to improving
 my workflow.</p></div>
 <div class="paragraph"><p>There&#8217;s no real structure to these and they are used purely to help me to
 remember things that I&#8217;d like to address at some point or content that I have
 not found a home for yet.</p></div>
+</div>
 <div class="sect2">
 <h3 id="_development_changes">Development changes</h3>
 <div class="paragraph"><p>Would be nice if we could be automagically told when we need to run
@@ -4269,11 +4409,13 @@ Dev Diary should be it&#8217;s own projects/repository
 <p>
 Improve the way I&#8217;m handling my credentials
 </p>
-</li>
+<div class="ulist"><ul>
 <li>
 <p>
 Need to be able to run a script which sets my config
 </p>
+</li>
+</ul></div>
 </li>
 <li>
 <p>
@@ -4284,11 +4426,13 @@ Add link to old braid setup GH #313889b
 <p>
 Improve the way I ignore files
 </p>
-</li>
+<div class="ulist"><ul>
 <li>
 <p>
 Use <tt>.git/info/exclude</tt> to hide local files
 </p>
+</li>
+</ul></div>
 </li>
 </ul></div>
 <div style="page-break-after:always"></div>
@@ -4308,26 +4452,30 @@ Make navigating to a window easier
 <p>
 Comment on how to automatically send commands to a IRC channel
 </p>
-</li>
+<div class="ulist"><ul>
 <li>
 <p>
 This is done for the bitlbee window to automatically login
 </p>
 </li>
+</ul></div>
+</li>
 <li>
 <p>
 Mappings
 </p>
-</li>
+<div class="ulist"><ul>
 <li>
 <p>
 Open url in new tab
 </p>
-</li>
+<div class="ulist"><ul>
 <li>
 <p>
 This will be used im irssi by bjurl
 </p>
+</li>
+</ul></div>
 </li>
 <li>
 <p>
@@ -4338,6 +4486,8 @@ Automatically sign into twitter
 <p>
 Automatically sign in to bitlbee
 </p>
+</li>
+</ul></div>
 </li>
 </ul></div>
 <div style="page-break-after:always"></div>
@@ -4383,7 +4533,7 @@ Make searching my history nicer
 <p>
 Renaming multiple files
 </p>
-</li>
+<div class="ulist"><ul>
 <li>
 <p>
 Add the following to your .zshrc file:
@@ -4393,6 +4543,8 @@ Add the following to your .zshrc file:
 <pre><tt>autoload -U zmv
 alias mmv='noglob zmv -W'</tt></pre>
 </div></div>
+</li>
+</ul></div>
 </li>
 </ul></div>
 </div>
@@ -4442,21 +4594,25 @@ Setup copy and paste bindings to emulate vim
 <p>
 notify me of various changes to applications
 </p>
-</li>
+<div class="ulist"><ul>
 <li>
 <p>
 email and messages to me come to mind as good starts
 </p>
 </li>
+</ul></div>
+</li>
 <li>
 <p>
 Would like to improve the mappings for jumping between sessions and window
 </p>
-</li>
+<div class="ulist"><ul>
 <li>
 <p>
 This is becoming a bit of a pain
 </p>
+</li>
+</ul></div>
 </li>
 <li>
 <p>
@@ -4568,7 +4724,7 @@ Add filetype <tt>*.md</tt> as <tt>*.markdown</tt>
 <p>
 Find a plugin for making markup with markdown more productive
 </p>
-</li>
+<div class="ulist"><ul>
 <li>
 <p>
 Creating titles can be cumbersome
@@ -4578,6 +4734,8 @@ Creating titles can be cumbersome
 <p>
 Building lists can be painful
 </p>
+</li>
+</ul></div>
 </li>
 <li>
 <p>
@@ -4593,11 +4751,13 @@ Jump to last last line I was on when I open a file
 <p>
 script to clean out vim history
 </p>
-</li>
+<div class="ulist"><ul>
 <li>
 <p>
 start with duplicates
 </p>
+</li>
+</ul></div>
 </li>
 <li>
 <p>
@@ -4608,41 +4768,49 @@ toggle line numbering
 <p>
 Format tables easily
 </p>
-</li>
+<div class="ulist"><ul>
 <li>
 <p>
 Using Align
 </p>
 </li>
+</ul></div>
+</li>
 <li>
 <p>
 Limit word wrap dependant on mime type
 </p>
-</li>
+<div class="ulist"><ul>
 <li>
 <p>
 I tend to prefer different limits dependant on what I am working on
 </p>
 </li>
+</ul></div>
+</li>
 <li>
 <p>
 Save files when I changed tmux pain or window
 </p>
-</li>
+<div class="ulist"><ul>
 <li>
 <p>
 Would be cool if I could do this with iTerm also so that vim saves when I tab to another application.
 </p>
 </li>
+</ul></div>
+</li>
 <li>
 <p>
 Restart previous session
 </p>
-</li>
+<div class="ulist"><ul>
 <li>
 <p>
 Will help me to jump back into where I jumped off without having to manually remember what was open and where
 </p>
+</li>
+</ul></div>
 </li>
 <li>
 <p>
@@ -5007,13 +5175,11 @@ and click on <em>Modifier keys</em></p></div>
 <div class="paragraph"><p>Once I save the change, my CAPLOCK and Control keys are remapped.</p></div>
 <div style="page-break-after:always"></div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_upgrading_wet_ware">Upgrading wet ware</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_upgrading_wet_ware">Upgrading wet ware</h3>
 <div class="paragraph"><p>Various notes and goals on what I want to achieve whilst writing this diary.</p></div>
 <div style="page-break-after:always"></div>
+</div>
 <div class="sect2">
 <h3 id="_sharping_those_tools">Sharping those tools</h3>
 <div class="sect3">
@@ -5156,14 +5322,12 @@ bag of notes and gradually split off to different sections.</p></div>
 </ul></div>
 <div style="page-break-after:always"></div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_work_flows">Work flows</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_work_flows">Work flows</h3>
 <div class="paragraph"><p>I have a number of work flows I&#8217;d like to tweak and improve on. Here I&#8217;ll take
 notes and track my thoughts and ideas.</p></div>
 <div style="page-break-after:always"></div>
+</div>
 <div class="sect2">
 <h3 id="_information_desk">Information Desk</h3>
 <div class="paragraph"><p>This is a session that centers around gathering information quickly from
@@ -5353,40 +5517,137 @@ handle all my workflow needs.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_resources_18">Resources</h2>
-<div class="sectionbody">
-<div class="paragraph"><p>Cool stuff I&#8217;ve picked up on my search</p></div>
+<div class="sect2">
+<h3 id="_tools_of_the_trade">Tools of the trade</h3>
+<div class="paragraph"><p>A list of tools that are needed for the my ideal workbench</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<a href="http://box.matto.nl/hjkl.html">Use the hidden powers of the w3m textmode webbrowser</a>
+zsh
 </p>
 </li>
 <li>
 <p>
-<a href="https://raw.github.com/schacon/gs-manual/master/book/book.asc">git-scribe workflows</a>
+irssi
 </p>
 </li>
 <li>
 <p>
-<a href="http://technology.mattrude.com/2010/10/git-creating-an-unattached-branch-with-no-history/">git: unattached branch</a>
+perl
 </p>
 </li>
 <li>
 <p>
-<a href="https://github.com/linsong/dailyconfig">dotfile repository with a few nice settings</a>
+mutt
+</p>
+</li>
+<li>
+<p>
+w3m
+</p>
+</li>
+<li>
+<p>
+rvm
+</p>
+</li>
+<li>
+<p>
+ruby
+</p>
+</li>
+<li>
+<p>
+git
+</p>
+</li>
+<li>
+<p>
+git-scribe
+</p>
+</li>
+<li>
+<p>
+vim
+</p>
+</li>
+<li>
+<p>
+ack
+</p>
+</li>
+<li>
+<p>
+newsbeuter
 </p>
 </li>
 </ul></div>
 <div style="page-break-after:always"></div>
+<div class="paragraph"><p>Some things I&#8217;d like to help tweak my productivity</p></div>
 </div>
+<div class="sect2">
+<h3 id="_wiish_list">Wiish list</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+vim mappings for zsh or the terminal in general
+</p>
+</li>
+<li>
+<p>
+Make copy and pasting via tmux nicer
+</p>
+</li>
+<li>
+<p>
+twirssi
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+People I follow should be in a different colour
+</p>
+</li>
+<li>
+<p>
+People that follow me should be in a different colour
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Setup vim to allow me to preview markdown and asciidoc content
+</p>
+</li>
+<li>
+<p>
+Setup a virtual box for pair-programming
+</p>
+</li>
+<li>
+<p>
+Create script to check with links within content is broken or not
+</p>
+</li>
+<li>
+<p>
+Output hilight to a file
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Look into outputting this to a shared window?
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+<div style="page-break-after:always"></div>
 </div>
-<div class="sect1">
-<h2 id="_tips_and_tricks">Tips and tricks</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_tips_and_tricks">Tips and tricks</h3>
+</div>
 <div class="sect2">
 <h3 id="_scripting">Scripting</h3>
 <div class="paragraph"><p>Here&#8217;s a bunch of tips and tricks I&#8217;ve picked up over time to help me
@@ -5411,58 +5672,28 @@ with my day to day work.</p></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_wish_list">Wish list</h2>
+<h2 id="resources">Resources</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Some things I&#8217;d like to help tweak my productivity</p></div>
+<div class="paragraph"><p>Cool stuff I&#8217;ve picked up on my search</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-vim mappings for zsh or the terminal in general
+<a href="http://box.matto.nl/hjkl.html">Use the hidden powers of the w3m textmode webbrowser</a>
 </p>
 </li>
 <li>
 <p>
-Make copy and pasting via tmux nicer
+<a href="https://raw.github.com/schacon/gs-manual/master/book/book.asc">git-scribe workflows</a>
 </p>
 </li>
 <li>
 <p>
-twirssi
+<a href="http://technology.mattrude.com/2010/10/git-creating-an-unattached-branch-with-no-history/">git: unattached branch</a>
 </p>
 </li>
 <li>
 <p>
-People I follow should be in a different colour
-</p>
-</li>
-<li>
-<p>
-People that follow me should be in a different colour
-</p>
-</li>
-<li>
-<p>
-Setup vim to allow me to preview markdown and asciidoc content
-</p>
-</li>
-<li>
-<p>
-Setup a virtual box for pair-programming
-</p>
-</li>
-<li>
-<p>
-Create script to check with links within content is broken or not
-</p>
-</li>
-<li>
-<p>
-Output hilight to a file
-</p>
-</li>
-<li>
-<p>
-Look into outputting this to a shared window?
+<a href="https://github.com/linsong/dailyconfig">dotfile repository with a few nice settings</a>
 </p>
 </li>
 </ul></div>
@@ -5472,7 +5703,7 @@ Look into outputting this to a shared window?
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2012-09-06 15:39:48 BST
+Last updated 2012-09-07 01:24:33 BST
 </div>
 </div>
 </body>

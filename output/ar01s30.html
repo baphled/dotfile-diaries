@@ -1,69 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 23</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s29.html" title="Day 22"/><link rel="next" href="ar01s31.html" title="Dressing down Vim"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 23</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s29.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s31.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_23"/>Day 23</h2></div></div></div><p>So today I’ll be looking at <span class="emphasis"><em>Autotag</em></span> and <span class="emphasis"><em>syntastic</em></span> which are the programming
-related plugins that I use when working in Vim. I’ll also be looking at my
-documentation plugins which include the following plugings:</p><div class="itemizedlist"><ul type="disc"><li>
-nerdcommenter
-</li><li>
-asciidoc-vim
-</li><li>
-vimwiki
-</li></ul></div><p/><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_what_is_autotag"/>What is Autotag</h3></div></div></div><p>This has been breifly touch on when adding my
-<a class="ulink" href="day_18.html#_adding_ctags" target="_top">ctags</a> though I haven’t really spoken about
-what it actually does and what it’s benefits are.</p><p>Firstly, the first issue with updating ctags is that when running <code class="literal">ctags -a</code>
-you’d only update the current tags list whilst not removing tags that are no
-longer needed.</p><p>Autotag updates the ctags for a project everytime a file is saved. This is
-needed so that my ctags don’t become stale and include definitions that are no
-longer present in the project I am currently working on. Meaning that when
-pressing <code class="literal">&lt;C-]&gt;</code> I only get results that are relevent to the project and don’t
-have to sift through a load of useless results.</p><p>Autotag requires <span class="emphasis"><em>Python</em></span> support so it is important to have support for this
-in my <span class="emphasis"><em>Vim</em></span>. Thankfully if my Vim doesn’t support <span class="emphasis"><em>Python</em></span> then it doesn’t not
-fail horribly. These saves me from having to clear my tags manually and just
-focus on the task at hand, writing code.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_syntastic"/>Syntastic</h3></div></div></div><p>I use this to help me find syntax errors easily, it doesn’t do this on the fly
-but I save often enough for that not to be a problem. All that is needed is for
-a file to be saved and if any errors are found the quickbox buffer will open up
-allowing for me to go over each change and deal with them appropriately.
-Syntastic comes with a host of syntax checker and the basic to allow for me to
-easily add more checkers dependent on the filetype I am dealing with.</p><p>It uses the built in Vim commands for navigation or errors <code class="literal">:lnext</code> and
-<code class="literal">:lprev</code>. As I’m using unimpaired I have alternative mappings for these as follows:</p><div class="itemizedlist"><ul type="disc"><li>
-<code class="literal">[l</code> - <code class="literal">:lnext</code>
-</li><li>
-<code class="literal">l]</code> - <code class="literal">:lprevious</code>
-</li></ul></div><p>Other mime type related plugins also add their own checkers so I have pretty
-much all the checkers I need for the moment. The following languages are
-included out of the box. The following is just a few that are maintained that I am interest in:</p><div class="itemizedlist"><ul type="disc"><li>
-yaml
-</li><li>
-jslint
-</li><li>
-jshint (gillesruppert)
-</li><li>
-sass
-</li><li>
-html (darcyparker)
-</li><li>
-coffee (darcyparker)
-</li><li>
-xml
-</li><li>
-xslt
-</li><li>
-less (irrationalfab)
-</li><li>
-puppet (frimik)
-</li><li>
-ruby
-</li><li>
-scss
-</li><li>
-json
-</li><li>
-cucumber
-</li><li>
-css
-</li><li>
-erlang
-</li></ul></div><p>There is a range of other checkers that can be found
-<a class="ulink" href="https://github.com/scrooloose/syntastic/tree/master/syntax_checkers" target="_top">here</a>.</p><p>I tend not to use a host of these but at least I know they are there if they
-are ever needed.</p><p/></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s29.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s31.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 22 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Dressing down Vim</td></tr></table></div></body></html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 34</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s29.html" title="Day 25"/><link rel="next" href="ar01s31.html" title="Day 35"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 34</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s29.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s31.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_34"/>Day 34</h2></div></div></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Turn this section into a workflow based entry</p></div><p>I used to keep up to date with my daily TV shows via bittorrent of late is has
+become something of a challenge as I have had less and less time to actually
+take the time to keep up to date and track what is currently out.</p><p>I’d like to find a usable bit torrent client that will help me do this and help
+me to be notified of new TV episodes coming out.</p><p/></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s29.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s31.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 25 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 35</td></tr></table></div></body></html>

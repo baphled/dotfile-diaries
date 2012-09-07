@@ -8,8 +8,13 @@
     <title>Dotfile Diaries</title>
 </articleinfo>
 <simpara><?asciidoc-pagebreak?></simpara>
-<section id="_goal">
-<title>Goal</title>
+<simpara>(c) 2012 Yomi Colledge</simpara>
+<simpara>All rights reseved</simpara>
+<simpara>No part of this publication may be reproduced, stored in a retrieval
+system, or transmitted, in any form, or by any means, electronic,
+mechanical, photocopying, recording, or otherwise, without the prior
+consent of the publisher.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 <simpara>The goal of this diary is to track the journey of improving my unix-fu and
 work flow.</simpara>
 <simpara>I&#8217;ve come to love my current setup (tmux, oh-my-zsh, Vim, RVM and bundle).
@@ -23,154 +28,9 @@ accordingly.</simpara>
 it it optimal for my personal use and configurable enough for others to do the
 same too.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
-</section>
-<section id="_the_journey">
-<title>The journey</title>
+<simpara>TO BE WRITTEN</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 <section id="_enhancing_my_workflow">
-<title>Enhancing my workflow</title>
-<simpara>This will be a delve into moving my internet use workflows back into the
-console. I find it cumbersome to keep tabbing back and forth and trying to keep
-a mental note of how many times I need to tab to get where I want. In the
-terminal this can be manage alot easier and at least allow me to set things up
-more like how I prefer things to be.</simpara>
-<sidebar>
-<literallayout class="monospaced">duration: 2 weeks
-start:    day 0
-notes:
-  * Setting up irssi
-  * Customise irssi to my liking
-  * Get the basic of mutt setup
-  * Find and customise a command line browser</literallayout>
-</sidebar>
-<section id="_refine_my_workflow">
-<title>Refine my workflow</title>
-<simpara>I already have my dotfiles under version control but I would like to clean
-these up and find a way to make them a little bit more maintainable. Primarily
-I want to move away from using braid and my forked version of my dotfiles.</simpara>
-<simpara>This will lead me towards improving my vim settings and skills.</simpara>
-<simpara>For this I will setup my dotfiles from scratch and show the pros and cons of my
-setup and how I like to have things laid out.</simpara>
-<screen>duration: 8 days
-start:    1 week
-notes:
-  * start my dotfiles from scratch
-  * define local files to hide
-  * setup tmux and tmuxinator
-  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</screen>
-</section>
-<section id="_housekeeping_tools">
-<title>Housekeeping tools</title>
-<simpara>This will focus on building tools to help me maintain and keep my toolsets up
-to date.</simpara>
-<screen>duration: 4 weeks
-start:    week 3
-notes:
-  * manage personal credentials
-  * notifications and alerts via tmux
-  * create script to check for my dotfile dependancies
-    * Should download them if they are not found</screen>
-</section>
-<section id="_dressing_down_vim">
-<title>Dressing down Vim</title>
-<screen>duration: 6 weeks
-start:    week 7
-location: everywhere
-notes:
-
-  * pain experienced
-  * what was missed
-  * what did I learn (daily log)
-  * use `:map` in Vim to learn new mappings
-  * use vimtutor</screen>
-</section>
-<section id="_learn_my_tools">
-<title>Learn my tools</title>
-<simpara>Will need to decide on plugins to learn</simpara>
-<screen>duration: 1 week per plugin
-start:    week 15
-plugin list:
-  * surround
-  * text objects
-  * macros
-  * gundo
-notes:
-
-  * this could be done after the intial 6 weeks</screen>
-<simpara><?asciidoc-pagebreak?></simpara>
-</section>
-</section>
-</section>
-<section id="_dependancies">
-<title>Dependancies</title>
-<section id="_tools_of_the_trade">
-<title>Tools of the trade</title>
-<simpara>A list of tools that are needed for the my ideal workbench</simpara>
-<itemizedlist>
-<listitem>
-<simpara>
-zsh
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-irssi
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-perl
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-mutt
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-w3m
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-rvm
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-ruby
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-git
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-git-scribe
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-vim
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-ack
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-newsbeuter
-</simpara>
-</listitem>
-</itemizedlist>
-<simpara><?asciidoc-pagebreak?></simpara>
-</section>
-</section>
-<section id="_enhancing_my_workflow_2">
 <title>Enhancing my workflow</title>
 <simpara>This will be a delve into move the my internet related information back into
 the console. I find it cumbersome to keep tabbing back and forth and trying to
@@ -821,7 +681,9 @@ start my dotfiles anew and will properly document the process.</simpara>
 <simpara>For now I want to focus on how to automatically spawn a tmux session along with
 the default windows I use on a day to day basic.</simpara>
 <simpara>I&#8217;m using tmux along with tmuxinator to help manage my setting.</simpara>
-<simpara>Installing tmux is done simply by call <literal>brew install tmux</literal> once this has been installed we are ready to play with tmux. As I mentioned I&#8217;m using tmuxinator which is a ruby gem so we&#8217;ll add that to our Gemfile:</simpara>
+<simpara>Installing tmux is done simply by call <literal>brew install tmux</literal> once this has
+been installed we are ready to play with tmux. As I mentioned I&#8217;m using
+tmuxinator which is a ruby gem so we&#8217;ll add that to our Gemfile:</simpara>
 <literallayout class="monospaced">gem 'tmuxinator'</literallayout>
 <simpara>Running <literal>bundle install</literal> will install tmuxinator and then we are good to go.</simpara>
 <simpara>Tmuxinator stores it&#8217;s configuration settings in the <literal>~/.tmuxinator</literal> directory
@@ -912,23 +774,23 @@ fire up the new session.</simpara>
 </section>
 <section id="_my_config">
 <title>My config</title>
-<literallayout class="monospaced">project_name: workbench
-project_root: ~/
-rvm: 1.9.2-head@workbench
-pre: cd ~/ &amp;&amp; bundle
-tabs:
-  - Workbench:
-      layout: b147,208x73,0,0[208x62,0,0,208x10,0,63{104x10,0,63,103x10,105,63}]
-      panes:
-        - vim
-        - #empty, will just run plain zsh
-  - Interwepts: w3m http://google.com
-  - IRC: irssi
-  - Email: mutt
-  - Spyhole: tail -f ~/workbench.log
-  - "Dotfile Diaries": vi ~/Documents/Diary
-  - 'Control centre': git wft
-  - Toybox: be pry</literallayout>
+<screen>  project_name: workbench
+  project_root: ~/
+  rvm: 1.9.2-head@workbench
+  pre: cd ~/ &amp;&amp; bundle
+  tabs:
+    - Workbench:
+        layout: b147,208x73,0,0[208x62,0,0,208x10,0,63{104x10,0,63,103x10,105,63}]
+        panes:
+          - vim
+          - #empty, will just run plain zsh
+    - Interwepts: w3m http://google.com
+    - IRC: irssi
+    - Email: mutt
+    - Spyhole: tail -f ~/workbench.log
+    - "Dotfile Diaries": vi ~/Documents/Diary
+    - 'Control centre': git wft
+    - Toybox: pry</screen>
 <simpara>Now with this setup, we can simple run <literal>mux workbench</literal> and tmuxinator will
 handle the rest, creating and setting up each of my desired windows along with their separate tasks :)</simpara>
 <simpara>I won&#8217;t go into detail about my mappings and my config, as it can be
@@ -953,7 +815,7 @@ Open w3m with a better default
 </section>
 </section>
 </section>
-<section id="_refine_my_workflow_2">
+<section id="_refine_my_workflow">
 <title>Refine my workflow</title>
 <simpara>I already have my dotfiles under version control but I would like to clean
 these up and find a way to make them a little bit more maintainable. Primarily
@@ -961,12 +823,14 @@ I want to move away from using braid and my forked version of my dotfiles.</simp
 <simpara>This will lead me towards improving my vim settings and skills.</simpara>
 <simpara>For this I will setup my dotfiles from scratch and show the pros and cons of my
 setup and how I like to have things laid out.</simpara>
-<screen>duration: 8 days
+<sidebar>
+<literallayout class="monospaced">duration: 8 days
 notes:
   * start my dotfiles from scratch
   * define local files to hide
   * setup tmux and tmuxinator
-  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</screen>
+  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</literallayout>
+</sidebar>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_8">
@@ -2117,8 +1981,9 @@ too much about that as I tend to use zsh more than anything else.</simpara>
 and let <literal>.zlogin</literal> do the rest of the work.</simpara>
 </section>
 </section>
-<section id="_housekeeping_tools_2">
+<section id="_housekeeping_tools">
 <title>Housekeeping tools</title>
+<sidebar>
 <literallayout class="monospaced">duration: 4 weeks
 notes:
   * manage personal credentials
@@ -2126,6 +1991,7 @@ notes:
   * define local files to hide
   * create script to check for my dotfile dependancies
     * Should download them if they are not found</literallayout>
+</sidebar>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_16">
@@ -2639,11 +2505,12 @@ manage the buffers easier with a few shortcut keys.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
-<section id="_learn_my_tools_2">
+<section id="_learn_my_tools">
 <title>Learn my tools</title>
-<simpara>[NOTE]: Write introduction</simpara>
+<note><simpara>Write introduction</simpara></note>
 <simpara>Will need to decide on plugins to learn</simpara>
-<screen>duration: 1 week per plugin
+<sidebar>
+<literallayout class="monospaced">duration: 1 week per plugin
 start:    week 15
 plugin list:
   * surround
@@ -2651,8 +2518,8 @@ plugin list:
   * macros
   * gundo
 notes:
-
-  * this could be done after the intial 6 weeks</screen>
+  * this could be done after the intial 6 weeks</literallayout>
+</sidebar>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_21">
@@ -3048,7 +2915,7 @@ AutoComplPop <ulink url="http://github.com/ayang/AutoComplPop">http://github.com
 </listitem>
 </itemizedlist>
 </section>
-<section id="_dependancies_2">
+<section id="_dependancies">
 <title>Dependancies</title>
 <itemizedlist>
 <listitem>
@@ -3312,17 +3179,18 @@ are ever needed.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
-<section id="_dressing_down_vim_2">
+<section id="_dressing_down_vim">
 <title>Dressing down Vim</title>
-<screen>duration: 6 weeks
+<sidebar>
+<literallayout class="monospaced">duration: 6 weeks
 location: everywhere
 notes:
-
   * pain experienced
   * what was missed
   * what did I learn (daily log)
   * use `:map` in Vim to learn new mappings
-  * use vimtutor</screen>
+  * use vimtutor</literallayout>
+</sidebar>
 <note><simpara>I can use my current Vim setup to workout which typographically based
 plugins I&#8217;ll be using and write a basic explanation as to why they are useful and
 why I can&#8217;t live without them.</simpara></note>
@@ -3404,6 +3272,90 @@ How do I view conversations
 </itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
+<appendix id="appendix">
+<title>Appendix</title>
+<section id="_the_journey">
+<title>The journey</title>
+</section>
+<section id="_enhancing_my_workflow_2">
+<title>Enhancing my workflow</title>
+<simpara>This will be a delve into moving my internet use workflows back into the
+console. I find it cumbersome to keep tabbing back and forth and trying to keep
+a mental note of how many times I need to tab to get where I want. In the
+terminal this can be manage alot easier and at least allow me to set things up
+more like how I prefer things to be.</simpara>
+<sidebar>
+<literallayout class="monospaced">duration: 2 weeks
+start:    day 0
+notes:
+  * Setting up irssi
+  * Customise irssi to my liking
+  * Get the basic of mutt setup
+  * Find and customise a command line browser</literallayout>
+</sidebar>
+</section>
+<section id="_refine_my_workflow_2">
+<title>Refine my workflow</title>
+<simpara>I already have my dotfiles under version control but I would like to clean
+these up and find a way to make them a little bit more maintainable. Primarily
+I want to move away from using braid and my forked version of my dotfiles.</simpara>
+<simpara>This will lead me towards improving my vim settings and skills.</simpara>
+<simpara>For this I will setup my dotfiles from scratch and show the pros and cons of my
+setup and how I like to have things laid out.</simpara>
+<sidebar>
+<literallayout class="monospaced">duration: 8 days
+start:    1 week
+notes:
+  * start my dotfiles from scratch
+  * define local files to hide
+  * setup tmux and tmuxinator
+  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</literallayout>
+</sidebar>
+</section>
+<section id="_housekeeping_tools_2">
+<title>Housekeeping tools</title>
+<simpara>This will focus on building tools to help me maintain and keep my toolsets up
+to date.</simpara>
+<sidebar>
+<literallayout class="monospaced">duration: 4 weeks
+start:    week 3
+notes:
+  * manage personal credentials
+  * notifications and alerts via tmux
+  * create script to check for my dotfile dependancies
+    * Should download them if they are not found</literallayout>
+</sidebar>
+</section>
+<section id="_dressing_down_vim_2">
+<title>Dressing down Vim</title>
+<sidebar>
+<literallayout class="monospaced">duration: 6 weeks
+start:    week 7
+location: everywhere
+notes:
+  * pain experienced
+  * what was missed
+  * what did I learn (daily log)
+  * use `:map` in Vim to learn new mappings
+  * use vimtutor</literallayout>
+</sidebar>
+</section>
+<section id="_learn_my_tools_2">
+<title>Learn my tools</title>
+<simpara>Will need to decide on plugins to learn</simpara>
+<sidebar>
+<literallayout class="monospaced">duration: 1 week per plugin
+start:    week 15
+plugin list:
+  * surround
+  * text objects
+  * macros
+  * gundo
+notes:
+  * this could be done after the intial 6 weeks</literallayout>
+</sidebar>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
 <section id="_garbled_notes">
 <title>Garbled notes</title>
 <simpara>This is a dumping ground for various notes I&#8217;ve taken in regards to improving
@@ -3411,6 +3363,7 @@ my workflow.</simpara>
 <simpara>There&#8217;s no real structure to these and they are used purely to help me to
 remember things that I&#8217;d like to address at some point or content that I have
 not found a home for yet.</simpara>
+</section>
 <section id="_development_changes">
 <title>Development changes</title>
 <simpara>Would be nice if we could be automagically told when we need to run
@@ -3462,11 +3415,13 @@ Dev Diary should be it&#8217;s own projects/repository
 <simpara>
 Improve the way I&#8217;m handling my credentials
 </simpara>
-</listitem>
+<itemizedlist>
 <listitem>
 <simpara>
 Need to be able to run a script which sets my config
 </simpara>
+</listitem>
+</itemizedlist>
 </listitem>
 <listitem>
 <simpara>
@@ -3477,11 +3432,13 @@ Add link to old braid setup GH #313889b
 <simpara>
 Improve the way I ignore files
 </simpara>
-</listitem>
+<itemizedlist>
 <listitem>
 <simpara>
 Use <literal>.git/info/exclude</literal> to hide local files
 </simpara>
+</listitem>
+</itemizedlist>
 </listitem>
 </itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
@@ -3501,26 +3458,30 @@ Make navigating to a window easier
 <simpara>
 Comment on how to automatically send commands to a IRC channel
 </simpara>
-</listitem>
+<itemizedlist>
 <listitem>
 <simpara>
 This is done for the bitlbee window to automatically login
 </simpara>
 </listitem>
+</itemizedlist>
+</listitem>
 <listitem>
 <simpara>
 Mappings
 </simpara>
-</listitem>
+<itemizedlist>
 <listitem>
 <simpara>
 Open url in new tab
 </simpara>
-</listitem>
+<itemizedlist>
 <listitem>
 <simpara>
 This will be used im irssi by bjurl
 </simpara>
+</listitem>
+</itemizedlist>
 </listitem>
 <listitem>
 <simpara>
@@ -3531,6 +3492,8 @@ Automatically sign into twitter
 <simpara>
 Automatically sign in to bitlbee
 </simpara>
+</listitem>
+</itemizedlist>
 </listitem>
 </itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
@@ -3576,13 +3539,15 @@ Make searching my history nicer
 <simpara>
 Renaming multiple files
 </simpara>
-</listitem>
+<itemizedlist>
 <listitem>
 <simpara>
 Add the following to your .zshrc file:
 </simpara>
 <literallayout class="monospaced">autoload -U zmv
 alias mmv='noglob zmv -W'</literallayout>
+</listitem>
+</itemizedlist>
 </listitem>
 </itemizedlist>
 </section>
@@ -3632,21 +3597,25 @@ Setup copy and paste bindings to emulate vim
 <simpara>
 notify me of various changes to applications
 </simpara>
-</listitem>
+<itemizedlist>
 <listitem>
 <simpara>
 email and messages to me come to mind as good starts
 </simpara>
 </listitem>
+</itemizedlist>
+</listitem>
 <listitem>
 <simpara>
 Would like to improve the mappings for jumping between sessions and window
 </simpara>
-</listitem>
+<itemizedlist>
 <listitem>
 <simpara>
 This is becoming a bit of a pain
 </simpara>
+</listitem>
+</itemizedlist>
 </listitem>
 <listitem>
 <simpara>
@@ -3728,7 +3697,7 @@ Add filetype <literal>*.md</literal> as <literal>*.markdown</literal>
 <simpara>
 Find a plugin for making markup with markdown more productive
 </simpara>
-</listitem>
+<itemizedlist>
 <listitem>
 <simpara>
 Creating titles can be cumbersome
@@ -3738,6 +3707,8 @@ Creating titles can be cumbersome
 <simpara>
 Building lists can be painful
 </simpara>
+</listitem>
+</itemizedlist>
 </listitem>
 <listitem>
 <simpara>
@@ -3753,11 +3724,13 @@ Jump to last last line I was on when I open a file
 <simpara>
 script to clean out vim history
 </simpara>
-</listitem>
+<itemizedlist>
 <listitem>
 <simpara>
 start with duplicates
 </simpara>
+</listitem>
+</itemizedlist>
 </listitem>
 <listitem>
 <simpara>
@@ -3768,41 +3741,49 @@ toggle line numbering
 <simpara>
 Format tables easily
 </simpara>
-</listitem>
+<itemizedlist>
 <listitem>
 <simpara>
 Using Align
 </simpara>
 </listitem>
+</itemizedlist>
+</listitem>
 <listitem>
 <simpara>
 Limit word wrap dependant on mime type
 </simpara>
-</listitem>
+<itemizedlist>
 <listitem>
 <simpara>
 I tend to prefer different limits dependant on what I am working on
 </simpara>
 </listitem>
+</itemizedlist>
+</listitem>
 <listitem>
 <simpara>
 Save files when I changed tmux pain or window
 </simpara>
-</listitem>
+<itemizedlist>
 <listitem>
 <simpara>
 Would be cool if I could do this with iTerm also so that vim saves when I tab to another application.
 </simpara>
 </listitem>
+</itemizedlist>
+</listitem>
 <listitem>
 <simpara>
 Restart previous session
 </simpara>
-</listitem>
+<itemizedlist>
 <listitem>
 <simpara>
 Will help me to jump back into where I jumped off without having to manually remember what was open and where
 </simpara>
+</listitem>
+</itemizedlist>
 </listitem>
 <listitem>
 <simpara>
@@ -4173,11 +4154,11 @@ and click on <emphasis>Modifier keys</emphasis></simpara>
 <simpara>Once I save the change, my CAPLOCK and Control keys are remapped.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-</section>
 <section id="_upgrading_wet_ware">
 <title>Upgrading wet ware</title>
 <simpara>Various notes and goals on what I want to achieve whilst writing this diary.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
+</section>
 <section id="_sharping_those_tools">
 <title>Sharping those tools</title>
 <section id="_how_to_improve_our_productivity">
@@ -4296,12 +4277,12 @@ bag of notes and gradually split off to different sections.</simpara>
 </itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-</section>
 <section id="_work_flows">
 <title>Work flows</title>
 <simpara>I have a number of work flows I&#8217;d like to tweak and improve on. Here I&#8217;ll take
 notes and track my thoughts and ideas.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
+</section>
 <section id="_information_desk">
 <title>Information Desk</title>
 <simpara>This is a session that centers around gathering information quickly from
@@ -4474,8 +4455,160 @@ handle all my workflow needs.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
+<section id="_tools_of_the_trade">
+<title>Tools of the trade</title>
+<simpara>A list of tools that are needed for the my ideal workbench</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+zsh
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+irssi
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+perl
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+mutt
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+w3m
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+rvm
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ruby
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+git-scribe
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ack
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+newsbeuter
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+<simpara>Some things I&#8217;d like to help tweak my productivity</simpara>
 </section>
-<section id="_resources_18">
+<section id="_wiish_list">
+<title>Wiish list</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim mappings for zsh or the terminal in general
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Make copy and pasting via tmux nicer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+twirssi
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+People I follow should be in a different colour
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+People that follow me should be in a different colour
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Setup vim to allow me to preview markdown and asciidoc content
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Setup a virtual box for pair-programming
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Create script to check with links within content is broken or not
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Output hilight to a file
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Look into outputting this to a shared window?
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_tips_and_tricks">
+<title>Tips and tricks</title>
+</section>
+<section id="_scripting">
+<title>Scripting</title>
+<simpara>Here&#8217;s a bunch of tips and tricks I&#8217;ve picked up over time to help me
+with my day to day work.</simpara>
+<section id="_tips_3">
+<title>Tips</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>ps aux | grep a-process | awk '{print $2}' | xargs kill -9</literal> - Find a list of processes and kill them
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>find . |grep '01_'|xargs rm</literal> - find all files beginning with 01_ and delete them
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+</appendix>
+<bibliography id="resources">
 <title>Resources</title>
 <simpara>Cool stuff I&#8217;ve picked up on my search</simpara>
 <itemizedlist>
@@ -4500,86 +4633,5 @@ handle all my workflow needs.</simpara>
 </simpara>
 </listitem>
 </itemizedlist>
-<simpara><?asciidoc-pagebreak?></simpara>
-</section>
-<section id="_tips_and_tricks">
-<title>Tips and tricks</title>
-<section id="_scripting">
-<title>Scripting</title>
-<simpara>Here&#8217;s a bunch of tips and tricks I&#8217;ve picked up over time to help me
-with my day to day work.</simpara>
-<section id="_tips_3">
-<title>Tips</title>
-<itemizedlist>
-<listitem>
-<simpara>
-<literal>ps aux | grep a-process | awk '{print $2}' | xargs kill -9</literal> - Find a list of processes and kill them
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-<literal>find . |grep '01_'|xargs rm</literal> - find all files beginning with 01_ and delete them
-</simpara>
-</listitem>
-</itemizedlist>
-<simpara><?asciidoc-pagebreak?></simpara>
-</section>
-</section>
-</section>
-<section id="_wish_list">
-<title>Wish list</title>
-<simpara>Some things I&#8217;d like to help tweak my productivity</simpara>
-<itemizedlist>
-<listitem>
-<simpara>
-vim mappings for zsh or the terminal in general
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-Make copy and pasting via tmux nicer
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-twirssi
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-People I follow should be in a different colour
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-People that follow me should be in a different colour
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-Setup vim to allow me to preview markdown and asciidoc content
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-Setup a virtual box for pair-programming
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-Create script to check with links within content is broken or not
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-Output hilight to a file
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-Look into outputting this to a shared window?
-</simpara>
-</listitem>
-</itemizedlist>
-</section>
+</bibliography>
 </article>

@@ -1,40 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 4</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s07.html" title="Day 3"/><link rel="next" href="ar01s09.html" title="Day 5"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 4</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s07.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s09.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_4"/>Day 4</h2></div></div></div><p>So I’ve done quite a bit to get irssi setup and working as I want it.
-The last things I want to do is lose my settings or messing something
-up, as I have done a number of times already.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_keeping_my_settings_under_version_control"/>Keeping my settings under version control</h3></div></div></div><p>So the easy fix for this is to create a repository and pull the config
-in as dotirssi.</p><div class="itemizedlist"><ul type="disc"><li>
-There`s not much to this really.
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 7</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s07.html" title="Day 6"/><link rel="next" href="ar01s09.html" title="Refine my workflow"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 7</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s07.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s09.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_7"/>Day 7</h2></div></div></div><p>So I have a decent setup for browsing, communicating and writing.</p><p>Now I want to be able to fire off all of my tools in separate windows so that I
+can easily manage them and keep my work flow contained.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_setting_up_tmux"/>Setting up tmux</h3></div></div></div><p>I already have tmux installed at present, though there will be a point when I
+start my dotfiles anew and will properly document the process.</p><p>For now I want to focus on how to automatically spawn a tmux session along with
+the default windows I use on a day to day basic.</p><p>I’m using tmux along with tmuxinator to help manage my setting.</p><p>Installing tmux is done simply by call <code class="literal">brew install tmux</code> once this has
+been installed we are ready to play with tmux. As I mentioned I’m using
+tmuxinator which is a ruby gem so we’ll add that to our Gemfile:</p><pre class="literallayout">gem 'tmuxinator'</pre><p>Running <code class="literal">bundle install</code> will install tmuxinator and then we are good to go.</p><p>Tmuxinator stores it’s configuration settings in the <code class="literal">~/.tmuxinator</code> directory
+but we can create a new setup my running <code class="literal">mux create workbench</code>. I’ve already
+done this so I just ran <code class="literal">mux open workbench</code> to open the file in vim.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_the_layout"/>The layout</h4></div></div></div><p>What I want here is a single session that setups up my perfect setup, allowing
+me to make the most of my terminal.</p><p>For this I’d like the following windows:</p><div class="itemizedlist"><ul type="disc"><li>
+Workbench
+</li></ul></div><p>I’m often scawling notes of some kind so having a window to allow me to work
+with vim. So I want a window (Workbench) where I can interact with files via
+vim and have access to the console. This is where most of my actually work is
+done.</p><div class="itemizedlist"><ul type="disc"><li>
+IRC
+</li></ul></div><p>I still want to be able to communicate with others and get topical information
+so I will want to use the irssi setup I’ve setup to allow me to keep my
+communications centralised.</p><div class="itemizedlist"><ul type="disc"><li>
+Spyhole
+</li></ul></div><p>Tmux allows you to capture terminal output, I’d like to have a window that
+tails the log file and display any captured content. With tmux’s copy and paste
+functionality will can easily pull out captured content and use it in other
+places.</p><div class="itemizedlist"><ul type="disc"><li>
+Email
+</li></ul></div><p>I still need my emails so having a window for that that I can quickly jump to
+when I feel to would be idea, Mutt is pretty lightweight and I’m sure I can set
+it up so automatically check for new emails, though procmail.</p><div class="itemizedlist"><ul type="disc"><li>
+Control Centre
+</li></ul></div><p>I like to know if there are any changes that to my dotfiles master branch,
+ideally this should be a panel in a window, for now this is be another stand
+alone window that periodically calls <code class="literal">git wtf</code> to check for changes.</p><div class="itemizedlist"><ul type="disc"><li>
+Toybox
+</li></ul></div><p>I like o have a ruby repl that I can play around with and test out ideas. I’ve
+been playing around with pry a bit recently so I’d like to have a window open
+that allows me to test out ideas before I hack away at a solution.</p><div class="itemizedlist"><ul type="disc"><li>
+Interwepts
+</li></ul></div><p>As we have irssi setup to open a browser, we setup this window so that irssi
+can open w3m for us.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_the_setup_2"/>The setup</h4></div></div></div><p>Now I know what I want in regards of session setup, lets open up my workbench
+config file and make this set up, all we need to do is update of config and
+fire up the new session.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_my_config"/>My config</h4></div></div></div><pre class="screen">  project_name: workbench
+  project_root: ~/
+  rvm: 1.9.2-head@workbench
+  pre: cd ~/ &amp;&amp; bundle
+  tabs:
+    - Workbench:
+        layout: b147,208x73,0,0[208x62,0,0,208x10,0,63{104x10,0,63,103x10,105,63}]
+        panes:
+          - vim
+          - #empty, will just run plain zsh
+    - Interwepts: w3m http://google.com
+    - IRC: irssi
+    - Email: mutt
+    - Spyhole: tail -f ~/workbench.log
+    - "Dotfile Diaries": vi ~/Documents/Diary
+    - 'Control centre': git wft
+    - Toybox: pry</pre><p>Now with this setup, we can simple run <code class="literal">mux workbench</code> and tmuxinator will
+handle the rest, creating and setting up each of my desired windows along with their separate tasks :)</p><p>I won’t go into detail about my mappings and my config, as it can be
+<a class="ulink" href="https://github.com/baphled/dotfiles/blob/master/.tmux.conf" target="_top">here</a>, and I’d like
+to leave a broader explaination when I starting tinkering with <code class="literal">~/tmux.conf</code>.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo_5"/>TODO</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+Make sure that my workbench gemset is created
 </li><li>
-I copy the .irssi directory to dotirssi.
-</li><li>
-I then initialised git for version control.
-</li><li>
-Created a new repository on github
-</li><li>
-ignored files with the pattern <code class="literal">scripts/twirssi.*</code>
-</li><li>
-Commited all the files
-</li><li>
-pushed the changes
-</li><li>
-added the project to my dotfiles using braid
-</li><li>
-This will change some point in this process
-</li><li>
-Copy my twirssi auth files to <code class="literal">~/dotirssi/scripts</code>
-</li></ul></div><p>Once the above was done I was able to have my irssi settings up version
-control :)</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_opening_links_irssi_with_lynx"/>Opening links irssi with lynx</h3></div></div></div><p>Yet another day of tweaking my irssi rig, today I want to get Lynx to open in a
-new tmux window when I select a link. I’ll use tmux to do this as it’s what
-it’s good at and I’ll get bjurl to call tmux when ever I select a link for
-viewing.</p><p>Again the goal here is to move more of my work flow into my terminal which will
-allow me to deal with content when I choose.</p><p>First off we need to actually be able to easily see links and open them,
-we’ll use <a class="ulink" href="http://github.com/sukima/bjurl/blob/master/bjurl.pl" target="_top">bjurl</a> for this.</p><p>As with most plugins this is as simple as downloading the script and
-adding it to your irssi script directory.</p><p>If your already running irssi run <code class="literal">/run bjurl</code>.</p><p>As I’m using a mac, I needed to to set the <code class="literal">browse_command</code> settings to
-open links just how I want it to.</p><p>First we need a new tmux window to start lynx in.</p><pre class="literallayout">tmux new-window -t workbench -s interwepts</pre><p>We’ll need tell bjurl to behave as we want:</p><pre class="literallayout">/set browse_command tmux send-keys -t interwepts 'lynx $1' C-m</pre><p>And that’s pretty much it for now, we can now load links within our current session :)</p><p>It would be cool if we had a separate session strictly for browsing, that
-way we don’t have to clutter the current session.</p><p>This and a few other things will be the next step for improving this work flow
-but lets take small steps and see where this path leads up :)</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo"/>TODO</h4></div></div></div><p>It would be cool if we could name our window accordingly and not have to deal
-with the many windows issue I have with chrome and many other browser at
-present. This only leads to a sluggish computer and "Tab overload"</p><p>I also need bjurl to be a bit smarter in identifying links, it’s hard to track
-links once 20 have been displayed, at present it’s quite useless.</p><p/></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s07.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s09.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 3 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 5</td></tr></table></div></body></html>
+Open w3m with a better default
+</li></ul></div><p/></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s07.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s09.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 6 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Refine my workflow</td></tr></table></div></body></html>

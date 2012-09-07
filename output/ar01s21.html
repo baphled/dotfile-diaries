@@ -1,10 +1,62 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Housekeeping tools</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s20.html" title="Day 15"/><link rel="next" href="ar01s22.html" title="Day 16"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Housekeeping tools</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s20.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s22.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_housekeeping_tools_2"/>Housekeeping tools</h2></div></div></div><pre class="literallayout">duration: 4 weeks
-notes:
-  * manage personal credentials
-  * notifications and alerts via tmux
-  * define local files to hide
-  * create script to check for my dotfile dependancies
-    * Should download them if they are not found</pre><p/></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s20.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s22.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 15 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 16</td></tr></table></div></body></html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 18</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s20.html" title="Day 17"/><link rel="next" href="ar01s22.html" title="Day 19"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 18</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s20.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s22.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_18"/>Day 18</h2></div></div></div><p>I’ve used netrw for a while but I tend to use it quite sloppily, I’d like to
+spend some time tweaking it so that it works better for my needs.
+Today I’d like to play around with vim-ractoring. I’d also like to have my
+ctags back so that I can look up methods and objects easily.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_setting_up_vim_refactoring"/>Setting up vim-refactoring</h3></div></div></div><p>So I’ve seens some of the mapping for vim-refactoring and it seems like
+something I’d like to play around with.</p><p>Firstly I’ll start by adding <span class="emphasis"><em>vim-refactoring</em></span> to dotfiles.</p><pre class="literallayout">git submodule add git://github.com/ecomba/vim-ruby-refactoring.git bundle/vim-ruby-refactoring</pre><p>With this installed I was ready to use it. There are a few mappings I want to
+focus on and then I’ll make a note of those mappings I’d like ot learn at a
+later stage.</p><p><span class="emphasis"><em>vim-refactoring</em></span> has some lengthly mapping but they turn out to be quite useful too.</p><div class="itemizedlist"><ul type="disc"><li>
+<code class="literal">&lt;leader&gt;rit</code> - Replaces a temporary variable with a direct method or call
+</li><li>
+<code class="literal">&lt;leader&gt;rcpc</code> - Refactor Convert Post Conditional
+</li><li>
+<code class="literal">&lt;leader&gt;rec</code> - Refactor Extract Constant
+</li><li>
+<code class="literal">&lt;leader&gt;rel</code> - Refactor Extract Let
+</li><li>
+<code class="literal">&lt;leader&gt;relv</code> - Refactor Extract Local Variable
+</li><li>
+<code class="literal">&lt;leader&gt;rrlv</code> - Refactor Rename Local Variable
+</li><li>
+<code class="literal">&lt;leader&gt;rriv</code> - Refactor Rename Instance Variable
+</li><li>
+<code class="literal">&lt;leader&gt;rem</code> - Refactor Extract Method
+</li></ul></div><p>I’ll spend the next few weeks commiting these to my muscle memory.
+==== Resources</p><div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="http://justinram.wordpress.com/2010/12/30/vim-ruby-refactoring-series/" target="_top">vim-ruby-refactoring blog</a>
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_adding_ctags"/>Adding ctags</h3></div></div></div><p>First off i’ll need to install ctags.</p><pre class="literallayout">brew install ctags</pre><p>Now ctags needs to know where the methods and classes live so i’ll need a way
+to get file locations easily. I found the following snip from
+<a class="ulink" href="http://andrewradev.com/2011/06/08/vim-and-ctags/" target="_top">here</a> so I’ll copy and paste
+the following snippet into my ~/bin/generate-rails-gem-tags</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>I’d prefer the script to be stored within my dotvim but I’ll deal with that later.</p></div><pre class="screen">  #! /usr/bin/env ruby
+
+  # Generate all tags for all gems included by bundler in gems.tags
+  #
+  # Basically does the same as "bundle show gemname", except for all gems.
+  # Interestingly enough, "bundle show" without any arguments falls back to
+  # "bundle list", otherwise the whole thing could have been a bash one-liner.
+  require 'bundler'
+
+  paths = Bundler.load.specs.map(&amp;:full_gem_path)
+
+  system("ctags -R -f gems.tags #{paths.join(' ')}")</pre><p>I have to make sure that this is executable.</p><pre class="literallayout">chmod u+x ~/bin/generate-rails-gem-tags</pre><p>This will index all the gems I’ve installed via bundle. I’ll also need to add
+the projects files to the index.</p><pre class="literallayout">ctags -R .</pre><p>It would be nice if this was done automatically when I cd into a project
+directory or could be handled with tmux when I start a new project session. For
+the moment I’ll just bind this command to a mapping something like:</p><pre class="literallayout">noremap &lt;leader&gt;ct :!ctags -R .&lt;CR&gt;</pre><p>To keep my tags up to date I’ll se <span class="emphasis"><em>autotag</em></span> which depends on python but allows
+me to keep my tags up to date and removes tags that are no longer needed.</p><pre class="literallayout">git submodule add git://github.com/vim-scripts/AutoTag.git bundle/auto-tag</pre><p>So now I have the basics setup I need to work out how to navigate through the
+tags easily without looking where I originally was.</p><div class="itemizedlist"><ul type="disc"><li>
+<code class="literal">&lt;C-]&gt;</code> - Go to the first found definition
+</li><li>
+<code class="literal">&lt;C-t&gt;</code> - Jump back to where you started
+</li><li>
+<code class="literal">:tselect</code> - List all the found definitions
+</li></ul></div><p>Trying to move around tags can be quite a strain so I’ll add some custom
+mappings to navigate through them easily.</p><div class="itemizedlist"><ul type="disc"><li>
+<code class="literal">]t</code> - next tag
+</li><li><p>
+<code class="literal">[t</code> - previous tag
+</p><pre class="literallayout">noremap ]t :tnext&lt;CR&gt;
+noremap [t :tprev&lt;CR&gt;</pre></li></ul></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_resources_13"/>Resources</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="http://andrewradev.com/2011/06/08/vim-and-ctags/" target="_top">vim and ctags</a>
+</li></ul></div><p/></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s20.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s22.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 17 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 19</td></tr></table></div></body></html>

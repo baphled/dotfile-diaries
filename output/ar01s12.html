@@ -1,12 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Refine my workflow</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s11.html" title="Day 7"/><link rel="next" href="ar01s13.html" title="Day 8"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Refine my workflow</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s11.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s13.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_refine_my_workflow_2"/>Refine my workflow</h2></div></div></div><p>I already have my dotfiles under version control but I would like to clean
-these up and find a way to make them a little bit more maintainable. Primarily
-I want to move away from using braid and my forked version of my dotfiles.</p><p>This will lead me towards improving my vim settings and skills.</p><p>For this I will setup my dotfiles from scratch and show the pros and cons of my
-setup and how I like to have things laid out.</p><pre class="screen">duration: 8 days
-notes:
-  * start my dotfiles from scratch
-  * define local files to hide
-  * setup tmux and tmuxinator
-  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</pre><p/></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s11.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s13.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 7 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 8</td></tr></table></div></body></html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 10</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s11.html" title="Day 9"/><link rel="next" href="ar01s13.html" title="Day 11"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 10</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s11.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s13.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_10"/>Day 10</h2></div></div></div><p>In my old muttrc file I had procmail getting my mails and storing them in
+separate folders so that I can work out what was what and how important it was.
+I’ve long since had this setup and I’ve pretty much forgotten how it was all
+setup.</p><p>Today is the day I start getting this setup back, this only be the start I want
+to be able to view all my email account via mutt and drop the UI all together.
+I look into email filtering and gradually improve my mutt as I go along.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_improving_mutt"/>Improving mutt</h3></div></div></div><p>So I have my GMail account setup but that’s not enough. I want to include all
+my personal email accounts and maintain them.</p><p>This will include processing my mail and sending/creating subdirectories based
+on a single emails content.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_ingredients"/>Ingredients</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+procmail
+</li><li>
+mutt
+</li><li>
+fetchmail
+</li><li>
+msmtp
+</li></ul></div><p>Procmail and fetchmail are installed on Macs by default so that saves me a
+step, so I guess the next things is to create some mail recipes.</p><p>So I’ll have to run the following to get the ball rolling:</p><pre class="literallayout">brew install msmtp</pre><p>I then had to add the following to my <code class="literal">.zshrc</code></p><pre class="literallayout">MAIL=/home/baphled/mail/inbox &amp;&amp; export MAIL</pre><p>Then  in my home directory I ran:</p><pre class="literallayout">touch .fetchmailrc
+chmod 700 .fetchmailrc</pre><p>I then needed to poll my main email account
+  poll mail.my-email-account.net with proto POP3
+    user <span class="emphasis"><em>EMAILADDRESS</em></span> keep
+    mda <span class="emphasis"><em>/usr/bin/procmail -d %T</em></span></p><p>I put my credentials in my <code class="literal">.netrc</code> file as follows:</p><pre class="literallayout">machine mail.my-email-accoun.net
+login my-username
+password my-password</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Make sure that <code class="literal">.netrc</code> is added to <code class="literal">.gitignore</code></p></div><p>I had to make sure that I had setup my email details properply and to do this I
+had to do the following:</p><pre class="literallayout">fetchmail</pre><p>Once everything was setup properly fetchmail did it’s things and retrieved my
+email. This is the bare minimum I need to make sure that I have procmail
+working so that I can store my email in the right directories.</p><p>I need to then create the mail directory <code class="literal">~/Mail</code> which is where all my mail
+will end up.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_recipes"/>Recipes</h4></div></div></div><p>So now I need to sort my emails into separate files so that I can deal with
+them easily.</p><p>For this I’ll be using procmail and its' recipes to determine where emails
+should.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Add my basic recipes here</p></div><p>I’d also like to make fetchmail get my latest mail via mutt and not via a
+background process, this is quite easy with the follwoing macro:</p><pre class="literallayout">macro generic G \
+  &lt;shell-escape&gt;'fetchmail'&lt;enter&gt; \
+  'Run fetchmail'</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Need to document how to setup mail directories</p></div><p>Now I need to be able to move around my filtered directories easily. To do this
+I can add a couple of macros to allow me to do just this.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_managing_multiple_directories"/>Managing multiple directories</h4></div></div></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Add macros for selecting mail directories</p></div><p>I’d also like to have a split screen so that I can see both the email I’m
+reading as well as the list of emails in mail directory I am currently in.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo_6"/>TODO</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+Create generic recipes for project messages and the like
+</li><li>
+Setup vim like bindings
+</li><li>
+Move all email related config files into one repository
+</li><li>
+Setup multiple accounts
+</li><li>
+Each account should have its own default directory
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_resources_8"/>Resources</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="http://mutt.blackfish.org.uk/filtering/" target="_top">mail filtering</a>
+</li><li>
+<a class="ulink" href="http://www.ii.com/internet/robots/procmail/qs/" target="_top">procmail quickstart</a>
+</li><li>
+<a class="ulink" href="http://linux.ucla.edu/lugwiki/resources:linux:mutt-and-procmail" target="_top">mutt and procmail</a>
+</li><li>
+<a class="ulink" href="http://zach.in.tu-clausthal.de/mutt/muttrc" target="_top">Gabriel Zachmann’s .muttrc</a>
+</li><li>
+<a class="ulink" href="http://nongeekshandbook.blogspot.co.uk/2009/02/mutt-email-client-that-sucks-less.html" target="_top">mutt email client that sucks less</a>
+</li><li>
+<a class="ulink" href="http://easierbuntu.blogspot.co.uk/2011/09/managing-your-email-with-fetchmail.html" target="_top">manage your email with fetchmail</a>
+</li><li>
+<a class="ulink" href="http://www.elho.net/mutt/maildir/" target="_top">Setup mail directories</a>
+</li></ul></div><p/></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s11.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s13.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 9 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 11</td></tr></table></div></body></html>

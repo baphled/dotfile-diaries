@@ -45,7 +45,9 @@ start my dotfiles anew and will properly document the process.</p>
 <p>For now I want to focus on how to automatically spawn a tmux session along with
 the default windows I use on a day to day basic.</p>
 <p>I’m using tmux along with tmuxinator to help manage my setting.</p>
-<p>Installing tmux is done simply by call <code class="literal">brew install tmux</code> once this has been installed we are ready to play with tmux. As I mentioned I’m using tmuxinator which is a ruby gem so we’ll add that to our Gemfile:</p>
+<p>Installing tmux is done simply by call <code class="literal">brew install tmux</code> once this has
+been installed we are ready to play with tmux. As I mentioned I’m using
+tmuxinator which is a ruby gem so we’ll add that to our Gemfile:</p>
 <pre class="literallayout">gem 'tmuxinator'</pre>
 <p>Running <code class="literal">bundle install</code> will install tmuxinator and then we are good to go.</p>
 <p>Tmuxinator stores it’s configuration settings in the <code class="literal">~/.tmuxinator</code> directory
@@ -111,23 +113,23 @@ fire up the new session.</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a id="_my_config"></a>My config</h4></div></div></div>
-<pre class="literallayout">project_name: workbench
-project_root: ~/
-rvm: 1.9.2-head@workbench
-pre: cd ~/ &amp;&amp; bundle
-tabs:
-  - Workbench:
-      layout: b147,208x73,0,0[208x62,0,0,208x10,0,63{104x10,0,63,103x10,105,63}]
-      panes:
-        - vim
-        - #empty, will just run plain zsh
-  - Interwepts: w3m http://google.com
-  - IRC: irssi
-  - Email: mutt
-  - Spyhole: tail -f ~/workbench.log
-  - "Dotfile Diaries": vi ~/Documents/Diary
-  - 'Control centre': git wft
-  - Toybox: be pry</pre>
+<pre class="screen">  project_name: workbench
+  project_root: ~/
+  rvm: 1.9.2-head@workbench
+  pre: cd ~/ &amp;&amp; bundle
+  tabs:
+    - Workbench:
+        layout: b147,208x73,0,0[208x62,0,0,208x10,0,63{104x10,0,63,103x10,105,63}]
+        panes:
+          - vim
+          - #empty, will just run plain zsh
+    - Interwepts: w3m http://google.com
+    - IRC: irssi
+    - Email: mutt
+    - Spyhole: tail -f ~/workbench.log
+    - "Dotfile Diaries": vi ~/Documents/Diary
+    - 'Control centre': git wft
+    - Toybox: pry</pre>
 <p>Now with this setup, we can simple run <code class="literal">mux workbench</code> and tmuxinator will
 handle the rest, creating and setting up each of my desired windows along with their separate tasks :)</p>
 <p>I won’t go into detail about my mappings and my config, as it can be

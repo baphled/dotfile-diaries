@@ -1,26 +1,171 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 19</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s24.html" title="Day 18"/><link rel="next" href="ar01s26.html" title="Day 20"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 19</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s24.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s26.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_19"/>Day 19</h2></div></div></div><p>Today I’m going to work on my navigation and manipulation of files and content.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_tweaking_nerdtree"/>Tweaking Nerdtree</h3></div></div></div><p>So I’ve played with Nerdtree in the past but dropped it to make sure of
-Netrw. I’ve done this for a number of weeks but I still prefer Nerdtree
-so I’ll be reinstalling it and updating my settings.</p><pre class="literallayout">git submodule add git://github.com/scrooloose/nerdtree.git bundle/nerdtree</pre><p>I also add the following so that NERDTree is loaded automatically if no
-files are opened when starting vim.</p><pre class="literallayout">autocmd vimenter * if !argc() | NERDTree | endif</pre><p>That’s it, it couldn’t be easier. All that is left is to map NERDTree to a
-binding so that it is easy to call.</p><pre class="literallayout">:noremap &lt;C-p&gt; :NERDTreeToggle&lt;CR&gt;</pre><p>I’ll also need to cancel out <span class="emphasis"><em>Ctrl-P</em></span> default binding so that they don’t clash.</p><pre class="literallayout">let g:ctrlp_map = '&lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;'</pre><p>As Ctrl-P uses &lt;C-p&gt; as a default mapping I just change this so that it it uses
-double &lt;leader&gt; leaving Nerdtree to freely use &lt;C-p&gt;.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_being_unimpaired"/>Being unimpaired</h3></div></div></div><p>Now I have my ctags setup and I’m nearly complete with setting up my essentials
-for my day to day work, I will finially install <span class="emphasis"><em>unimpaired</em></span>.</p><pre class="literallayout">git submodule add git://github.com/tpope/vim-unimpaired.git bundle/vim-unimpaired</pre><p>I forgot to add this when I removed bundle and a couple of my custom bindings
-relay on the plugin to help move lines around.</p><p>Now I have to do some tweaking to custom bindings so that they work without my
-cursor keys as those have been disabled in Insert and Visual model.</p><p>Originally I had the following mappings for moving files up and down. This
-functionality emulated textmates line mnaipulation functionality and allowed me
-to easily move selections of lines around easily without poluting my paste
-buffer.</p><div class="itemizedlist"><ul type="disc"><li>
-<code class="literal">&lt;C-Up&gt;</code> - Move a line up
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 21</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s24.html" title="Learn my tools"/><link rel="next" href="ar01s26.html" title="Day 22"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 21</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s24.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s26.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_21"/>Day 21</h2></div></div></div><p>I use Vim for a number of my editing needs. Ranging from writing this diary to
+formatting documentation and coding. I’d like to organise these work flows into
+different settings allowing me to easily switch between the various work flows
+with relative ease.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_getting_an_itinerary"/>Getting an itinerary</h3></div></div></div><p>So I’ve spent some time gathering some plugins to help tweak my workflow. Now
+is the time I take stock of what I have and determine what can stay, what
+should go and what do I need to learn more.</p><p>There won’t be any technical stuff done here, well not really, as the main
+focus is to get an idea of what I really need and what do I need to learn to
+improve my vimfu.</p><p>I’ve hacked together a basic little script that will output names of submodules
+within a git repository, in this case my vim plugins, and will use this as a
+basis to review each plugin one by one.</p><pre class="screen">#! /bin/bash
+#
+# Basic script to list all submodules with a project.
+#
+# This is useful when need to work out what dependancies a project has
+#
+# Usage: module_list project/path
+
+PROJECT_ROOT_DIRECTORY="$1"
+if [[ $# == 0 ]]; then
+  # set the default value
+  MODULE_DIRECTORY=".gitmodules"
+else
+  MODULE_DIRECTORY="${PROJECT_ROOT_DIRECTORY}/.gitmodules"
+fi
+
+function strip_postfix {
+  sed 's/\.git//g'
+}
+
+# Get the module name from the url string
+#
+# Github URL have a consistent structure, for now, so we'll use that.
+#
+# git://github.com/username/project
+#
+function module_name {
+  string=$1
+  echo $string | sed 's/[a-z]*:\/\/github.com\/[a-zA-Z0-9-]*\///' | strip_postfix
+}
+
+function repository_path {
+  string=$1
+  echo $string | sed 's/git:/http:/' | strip_postfix
+}
+
+function repositories {
+  cat ${MODULE_DIRECTORY}| grep 'url' | sed 's/url = //g'
+}
+
+function output_module_info {
+  repository=$1
+  module_name ${repository};
+  repository_path ${repository};
+  echo ${repository};
+}
+
+function read_modules {
+  for repo in `repositories`; do
+    echo `output_module_info ${repo}`
+  done
+}
+
+function main {
+  read_modules;
+}
+
+main;</pre><p>I now have a nice list of plugins that I have stored locally.</p><p>Now I have the list of plugins I’m using I can starting organising them
+into the order in which I’ll gradually learn them.</p><p>The progression will be tracked for the next few weeks until I have a
+decent understanding of them each and have at least burnt the basics of
+each into muscle memory.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_plugins_to_learn"/>Plugins to learn</h3></div></div></div><p>So after the little bit of hacking to get a list of plugins, I know have a
+organised list of plugins that I’d like to investigate further.</p><p>I’ll go through each of them individually and then document the basic
+functionality I’d like to adopt.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_package_management"/>Package management</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+vim-pathogen <a class="ulink" href="http://github.com/tpope/vim-pathogen" target="_top">http://github.com/tpope/vim-pathogen</a> git://github.com/tpope/vim-pathogen.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_note_taking"/>Note taking</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+gist-vim <a class="ulink" href="http://github.com/mattn/gist-vim" target="_top">http://github.com/mattn/gist-vim</a> git://github.com/mattn/gist-vim.git
 </li><li>
-<code class="literal">&lt;C-Down&gt;</code> - Move a line down
-</li></ul></div><p>These are set for both Normal and Visual mode so that I can move single and
-multiple lines easily.</p><p>I still don’t want to encourage the use of my cursor keys so I will remap these
-to the following:</p><div class="itemizedlist"><ul type="disc"><li>
-<code class="literal">&lt;C-K&gt;</code> - Move a line up
+vim-pastie <a class="ulink" href="http://github.com/tpope/vim-pastie" target="_top">http://github.com/tpope/vim-pastie</a> git://github.com/tpope/vim-pastie.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_programming_related"/>Programming related</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+AutoTag <a class="ulink" href="http://github.com/vim-scripts/AutoTag" target="_top">http://github.com/vim-scripts/AutoTag</a> git://github.com/vim-scripts/AutoTag.git
 </li><li>
-<code class="literal">&lt;C-J&gt;</code> - Move a line down
-</li></ul></div><p>Now instead of having to use &lt;Up&gt; and &lt;Down&gt; I can use J and K as I do with
-most of my other vim motions.</p><p/></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s24.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s26.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 18 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 20</td></tr></table></div></body></html>
+syntastic <a class="ulink" href="http://github.com/scrooloose/syntastic" target="_top">http://github.com/scrooloose/syntastic</a> git://github.com/scrooloose/syntastic.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_documentation"/>Documentation</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+nerdcommenter <a class="ulink" href="http://github.com/scrooloose/nerdcommenter" target="_top">http://github.com/scrooloose/nerdcommenter</a> git://github.com/scrooloose/nerdcommenter.git
+</li><li>
+asciidoc-vim <a class="ulink" href="http://github.com/spf13/asciidoc-vim" target="_top">http://github.com/spf13/asciidoc-vim</a> git://github.com/spf13/asciidoc-vim.git
+</li><li>
+vimwiki <a class="ulink" href="http://github.com/vim-scripts/vimwiki" target="_top">http://github.com/vim-scripts/vimwiki</a> git://github.com/vim-scripts/vimwiki.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_frontend"/>Frontend</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+jasmine.vim <a class="ulink" href="http://github.com/claco/jasmine.vim" target="_top">http://github.com/claco/jasmine.vim</a> git://github.com/claco/jasmine.vim.git
+</li><li>
+vim-coffee-script <a class="ulink" href="http://github.com/kchmck/vim-coffee-script" target="_top">http://github.com/kchmck/vim-coffee-script</a> git://github.com/kchmck/vim-coffee-script.git
+</li><li>
+vim-json <a class="ulink" href="http://github.com/leshill/vim-json" target="_top">http://github.com/leshill/vim-json</a> git://github.com/leshill/vim-json.git
+</li><li>
+jasmine.vim <a class="ulink" href="http://github.com/claco/jasmine.vim" target="_top">http://github.com/claco/jasmine.vim</a> git://github.com/claco/jasmine.vim.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_ruby"/>Ruby</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+vim-ruby-sinatra <a class="ulink" href="http://github.com/hallison/vim-ruby-sinatra" target="_top">http://github.com/hallison/vim-ruby-sinatra</a> git://github.com/hallison/vim-ruby-sinatra
+</li><li>
+vim-ruby-refactoring <a class="ulink" href="http://github.com/ecomba/vim-ruby-refactoring" target="_top">http://github.com/ecomba/vim-ruby-refactoring</a> git://github.com/ecomba/vim-ruby-refactoring.git
+</li><li>
+vim-rake <a class="ulink" href="http://github.com/tpope/vim-rake" target="_top">http://github.com/tpope/vim-rake</a> git://github.com/tpope/vim-rake
+</li><li>
+vim-rails <a class="ulink" href="http://github.com/tpope/vim-rails" target="_top">http://github.com/tpope/vim-rails</a> git://github.com/tpope/vim-rails.git
+</li><li>
+vim-ruby <a class="ulink" href="http://github.com/vim-ruby/vim-ruby" target="_top">http://github.com/vim-ruby/vim-ruby</a> git://github.com/vim-ruby/vim-ruby.git
+</li><li>
+vim-bundler <a class="ulink" href="http://github.com/tpope/vim-bundler" target="_top">http://github.com/tpope/vim-bundler</a> git://github.com/tpope/vim-bundler.git
+</li><li>
+vim-endwise <a class="ulink" href="http://github.com/tpope/vim-endwise" target="_top">http://github.com/tpope/vim-endwise</a> git://github.com/tpope/vim-endwise.git
+</li><li>
+delimitMate <a class="ulink" href="http://github.com/Raimondi/delimitMate" target="_top">http://github.com/Raimondi/delimitMate</a> git://github.com/Raimondi/delimitMate.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_erlang"/>Erlang</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+vimerl <a class="ulink" href="http://github.com/jimenezrick/vimerl" target="_top">http://github.com/jimenezrick/vimerl</a> git://github.com/jimenezrick/vimerl.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_database"/>Database</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+csv.vim <a class="ulink" href="http://github.com/chrisbra/csv.vim" target="_top">http://github.com/chrisbra/csv.vim</a> git://github.com/chrisbra/csv.vim.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_integration"/>Integration</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+vim-cucumber <a class="ulink" href="http://github.com/tpope/vim-cucumber" target="_top">http://github.com/tpope/vim-cucumber</a> git://github.com/tpope/vim-cucumber.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_devops"/>Devops</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+vim-puppet <a class="ulink" href="http://github.com/rodjek/vim-puppet" target="_top">http://github.com/rodjek/vim-puppet</a> git://github.com/rodjek/vim-puppet.git
+</li><li>
+vim-fugitive <a class="ulink" href="http://github.com/tpope/vim-fugitive" target="_top">http://github.com/tpope/vim-fugitive</a> git://github.com/tpope/vim-fugitive.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_text_objects"/>Text objects</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+vim-textobj-user <a class="ulink" href="http://github.com/kana/vim-textobj-user" target="_top">http://github.com/kana/vim-textobj-user</a> git://github.com/kana/vim-textobj-user
+</li><li>
+vim-ruby-block-conv <a class="ulink" href="http://github.com/bronson/vim-ruby-block-conv" target="_top">http://github.com/bronson/vim-ruby-block-conv</a> git://github.com/bronson/vim-ruby-block-conv.git
+</li><li>
+vim-textobj-rubyblock <a class="ulink" href="http://github.com/nelstrom/vim-textobj-rubyblock" target="_top">http://github.com/nelstrom/vim-textobj-rubyblock</a> git://github.com/nelstrom/vim-textobj-rubyblock
+</li><li>
+vim-indentobject <a class="ulink" href="http://github.com/austintaylor/vim-indentobject" target="_top">http://github.com/austintaylor/vim-indentobject</a> git://github.com/austintaylor/vim-indentobject
+</li><li>
+vim-ragtag <a class="ulink" href="http://github.com/tpope/vim-ragtag" target="_top">http://github.com/tpope/vim-ragtag</a> git://github.com/tpope/vim-ragtag
+</li><li>
+vim-abolish <a class="ulink" href="http://github.com/tpope/vim-abolish" target="_top">http://github.com/tpope/vim-abolish</a> git://github.com/tpope/vim-abolish
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_motions"/>Motions</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+vim-unimpaired <a class="ulink" href="http://github.com/tpope/vim-unimpaired" target="_top">http://github.com/tpope/vim-unimpaired</a> git://github.com/tpope/vim-unimpaired.git
+</li><li>
+matchit <a class="ulink" href="http://github.com/tmhedberg/matchit" target="_top">http://github.com/tmhedberg/matchit</a> git://github.com/tmhedberg/matchit.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_text_manipulation"/>Text manipulation</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+vim-surround <a class="ulink" href="http://github.com/tpope/vim-surround" target="_top">http://github.com/tpope/vim-surround</a> git://github.com/tpope/vim-surround.git
+</li><li>
+ack.vim <a class="ulink" href="http://github.com/mileszs/ack.vim" target="_top">http://github.com/mileszs/ack.vim</a> git://github.com/mileszs/ack.vim.git
+</li><li>
+Align <a class="ulink" href="http://github.com/alanstevens/Align" target="_top">http://github.com/alanstevens/Align</a> git://github.com/alanstevens/Align.git
+</li><li>
+vim-snipmate <a class="ulink" href="http://github.com/garbas/vim-snipmate" target="_top">http://github.com/garbas/vim-snipmate</a> git://github.com/garbas/vim-snipmate.git
+</li><li>
+snipmate-snippets <a class="ulink" href="http://github.com/baphled/snipmate-snippets" target="_top">http://github.com/baphled/snipmate-snippets</a> git://github.com/baphled/snipmate-snippets.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_visual_enhancements"/>Visual enhancements</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+vim-powerline <a class="ulink" href="http://github.com/Lokaltog/vim-powerline" target="_top">http://github.com/Lokaltog/vim-powerline</a> git://github.com/Lokaltog/vim-powerline.git
+</li><li>
+vim-vividchalk <a class="ulink" href="http://github.com/tpope/vim-vividchalk" target="_top">http://github.com/tpope/vim-vividchalk</a> git://github.com/tpope/vim-vividchalk.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_file_management"/>File management</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+ctrlp.vim <a class="ulink" href="http://github.com/kien/ctrlp.vim" target="_top">http://github.com/kien/ctrlp.vim</a> git://github.com/kien/ctrlp.vim.git
+</li><li>
+nerdtree <a class="ulink" href="http://github.com/scrooloose/nerdtree" target="_top">http://github.com/scrooloose/nerdtree</a> git://github.com/scrooloose/nerdtree.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_general_enhancements"/>General enhancements</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+bufexplorer <a class="ulink" href="http://github.com/c9s/bufexplorer" target="_top">http://github.com/c9s/bufexplorer</a> git://github.com/c9s/bufexplorer.git
+</li><li>
+vim-repeat <a class="ulink" href="http://github.com/tpope/vim-repeat" target="_top">http://github.com/tpope/vim-repeat</a> git://github.com/tpope/vim-repeat.git
+</li><li>
+AutoComplPop <a class="ulink" href="http://github.com/ayang/AutoComplPop" target="_top">http://github.com/ayang/AutoComplPop</a> git://github.com/ayang/AutoComplPop.git
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_dependancies"/>Dependancies</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+webapi-vim <a class="ulink" href="http://github.com/mattn/webapi-vim" target="_top">http://github.com/mattn/webapi-vim</a> git://github.com/mattn/webapi-vim.git
+</li><li>
+vim-addon-mw-utils <a class="ulink" href="http://github.com/MarcWeber/vim-addon-mw-utils" target="_top">http://github.com/MarcWeber/vim-addon-mw-utils</a> git://github.com/MarcWeber/vim-addon-mw-utils.git
+</li><li>
+tlib_vim <a class="ulink" href="http://github.com/tomtom/tlib_vim" target="_top">http://github.com/tomtom/tlib_vim</a> git://github.com/tomtom/tlib_vim.git
+</li></ul></div><p/></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s24.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s26.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Learn my tools </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 22</td></tr></table></div></body></html>

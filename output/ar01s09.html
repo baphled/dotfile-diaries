@@ -1,69 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 5</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s08.html" title="Day 4"/><link rel="next" href="ar01s10.html" title="Day 6"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 5</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s08.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s10.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_5"/>Day 5</h2></div></div></div><p>So we’ve got Lynx setup to work with irssi, after doing so I found out
-that w3m can deal with tabs and images. Admittedly I’m not particularly
-a fan of tabs, mainly as I tend to build up quite a collection of these
-and never really go back to them, but I’ll give it a whirl and see what
-the pros and cons of it as opposed to lynx.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_playing_with_w3m"/>Playing with w3m</h3></div></div></div><p>As always I used brew <code class="literal">brew install w3m</code> to get things rolling.</p><p>So this is what w3m looks like out of the box.</p><p><span class="inlinemediaobject"><img src="https://github.com/baphled/dotfile-diaries/raw/master/screenshots/w3m-default.png" alt="default setup"/></span></p><p>Off the bat the colours are all wrong, trying to red blue text is near
-impossible when using a black background, so that had to be changed.</p><p>The other issue was that though I still had my vim keys I could not use
-<code class="literal">&lt;C-B&gt;</code> and <code class="literal">&lt;C-F&gt;</code> to move around, which is annoying, that’ll have to be
-changed too.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>how do i change the binding?</p></div><p><a class="ulink" href="http://w3m.sourceforge.net/MANUAL" target="_top">manual</a></p><p>I also couldn’t see URL’s at all.</p><p>I guess the first step is to work out how to customise w3m so that we
-can get those colours sorted and give it some vim love.</p><p>Ok, so changing the settings is quite easy to get to, simply press <code class="literal">o</code>
-whilst having w3m open and the settings page will be displayed. We
-simple need to scroll down to <span class="emphasis"><em>Colour Settings</em></span> and specify the colours we desire.</p><p>Viewing links it’s just as easy as interacting with any other link so
-that’s cool :)</p><p>The only things that niggles me is not being able to set up leader key</p><p>The most important once for the moment are to page up and down quickly
-as the default mappings are quite a stretch.</p><p>Add the below to the keymap file within <code class="literal">~/.w3m</code> gives me the ability to
-do exactly this.</p><pre class="literallayout">keymap  F     NEXT_PAGE
-keymap  B     PREV_PAGE</pre><p>Now that w3m is setup a for navigating a little easier, I’ll swap out
-lynx for w3m.</p><pre class="literallayout">/set browse_command tmux send-keys -t interwepts 'w3m $1' C-m</pre><p>We’ll run with this for the moment as see how it fairs.</p><p><span class="inlinemediaobject"><img src="https://github.com/baphled/dotfile-diaries/raw/master/screenshots/w3m-current.png" alt="new setup"/></span></p><p>Before we commit this to version control, we’ll make some tweaks to the
-config file to make it less specific to a Mac.</p><p>Below is a snippet from my config that I should change, when on a different
-box, I probably won’t have brew installed and I prefer to have all my settings
-controlled locally so we wont need the references to the skeleton configs.</p><pre class="literallayout">urimethodmap ~/.w3m/urimethodmap, /usr/local/Cellar/w3m/0.5.3/etc/w3m/urimethodmap
-mailcap ~/.w3m/mailcap, /usr/local/Cellar/w3m/0.5.3/etc/w3m/mailcap
-mime_types ~/.mime.types, /usr/local/Cellar/w3m/0.5.3/etc/mime.types</pre><p>It now looks like this:</p><pre class="literallayout">urimethodmap ~/.w3m/urimethodmap
-mailcap ~/.w3m/mailcap
-mime_types ~/.mime.types</pre><p>So now we’re pretty much ready to play around with it for a while and take
-notes of things that I’d like to change.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo_2"/>TODO</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
-How to send a link of what I’ve read to Twitter
-</li><li>
-How to share a link with Google+
-</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_resources_3"/>Resources</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
-<a class="ulink" href="http://w3m.sourceforge.net/" target="_top">w3m</a>
-</li><li>
-<a class="ulink" href="http://fts.ifac.cnr.it/cgi-bin/dwww/usr/share/doc/w3m/examples/keymap.default" target="_top">keymaping example</a>
-</li></ul></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_taming_the_mutt"/>Taming the mutt</h3></div></div></div><p>I’d like to use mutt for dealing with my email, AppleMail is cool but
-it’s way too much for my liking and I’d prefer it if I could organise my
-emails without having to fiddle with sub folders manually.</p><p>I my old config this was done by using procmail to create/send emails to
-folders dependant on the source of the email.</p><p>This was pretty configurable so I’d like to get some of this back into
-my current setup so that I don’t get email overload :)</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_setting_things_up"/>Setting things up</h4></div></div></div><p>I had a better setup a while back but after rummaging around for ancient backups I decided to start from scratch.</p><p>Again, I’ll be using brew to get mutt installed <code class="literal">brew install mutt</code></p><p>You’ll need to run the following commands:</p><pre class="literallayout">mkdir -p ~/.mutt/cache/headers
-mkdir ~/.mutt/cache/bodies
-touch ~/.mutt/certificates</pre><p>Next I needed to create a <code class="literal">.muttrc</code> file, to setup my GMail account. I
-used this example
-<a class="ulink" href="http://github.com/baphled/dotmutt/raw/master/muttrc" target="_top">here</a> to get things
-started.</p><p>I had to make a few tweaks to get things just right. Firstly the order
-of the emails were newest at the bottom which is kind of annoying, I’d
-like to see my newest emails first, so this needs to be sorted.</p><p>We’ll hold out on that for the moment and customise the look of mutts, I
-stumbled upon
-<a class="ulink" href="https://raw.github.com/l0stman/muttrc/master/mutt-colors-solarized-dark-256.muttrc" target="_top">this</a>
-theme that works pretty well for the moment so I’ll go with that for now.</p><p>Now back to the matter at hand, how to get the sort order setup so that
-my newest emails are displayed first.</p><p>So I had to go into my muttrc file and make this changes</p><pre class="literallayout">set sort_aux = 'reverse-date'</pre><p>And make sure I also had the following in my config too:</p><pre class="literallayout">set sort = 'threads'</pre><p>Mutt is now setup, well enough to start playing around, I’ll work on
-integrating this into my workflow as time goes on.</p><p>The final things is to move this into it’s own repository for now, as I
-will be restarting my dotfiles from scratch once I have all these pieces
-setup.</p><p>I did what I usually do, created a git repo and moved my <code class="literal">.muttrc</code> file
-to <code class="literal">~/.mutt/muttrc</code> and then renamed the directory to dotmutt.</p><p>Once this was done I went through the motion of pushing the setting to a
-new repository.</p><p>I then used braid</p><pre class="literallayout">braid add git://github.com/baphled/muttfiles.git dotmutt
-ln -s dotmutt .mutt
-ln -s .mutt/muttrc .muttrc</pre><p>Then everything was setup as it where :)</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo_3"/>TODO</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
-Improve the way I’m handling my email credentials
-</li><li>
-Setup email alerts via the terminal
-</li><li>
-Create screengrabs as I did with irssi
-</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_resources_4"/>Resources</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
-<a class="ulink" href="http://mutt.blackfish.org.uk/" target="_top">My first mutt</a>
-</li><li>
-<a class="ulink" href="http://www.mutt.org/doc/manual/manual-2.html" target="_top">mutt manual</a>
-</li><li>
-<a class="ulink" href="http://lifehacker.com/5574557/how-to-use-the-fast-and-powerful-mutt-email-client-with-gmail" target="_top">GMail example for UK users</a>
-</li></ul></div><p/></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s08.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s10.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 4 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 6</td></tr></table></div></body></html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Refine my workflow</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s08.html" title="Day 7"/><link rel="next" href="ar01s10.html" title="Day 8"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Refine my workflow</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s08.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s10.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_refine_my_workflow"/>Refine my workflow</h2></div></div></div><p>I already have my dotfiles under version control but I would like to clean
+these up and find a way to make them a little bit more maintainable. Primarily
+I want to move away from using braid and my forked version of my dotfiles.</p><p>This will lead me towards improving my vim settings and skills.</p><p>For this I will setup my dotfiles from scratch and show the pros and cons of my
+setup and how I like to have things laid out.</p><div class="sidebar"><p class="title"><b/></p><pre class="literallayout">duration: 8 days
+notes:
+  * start my dotfiles from scratch
+  * define local files to hide
+  * setup tmux and tmuxinator
+  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</pre></div><p/></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s08.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s10.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 7 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 8</td></tr></table></div></body></html>

@@ -1,106 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 14</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s18.html" title="Day 13"/><link rel="next" href="ar01s20.html" title="Day 15"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 14</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s18.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s20.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_14"/>Day 14</h2></div></div></div><p>Braid is causing me hassle and as part of cleaning up my dotvim files I want to
-replace braid with git submodule. This will be part of the cleanup needed for
-dotvim files in preparation of me improving my vim skills.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_removing_vims_braid"/>Removing VIMs braid</h3></div></div></div><p>So I’ve been using braid to manage my vim plugins but I’d prefer if I used git
-directly as I am with my dotfiles. The first thing to do is keep a list of all
-of the plugins that I have, I’ll need this so that I can keep the plugins I am
-currently using.</p><p>I’ll be using the following command to add each plugin as a git module:</p><pre class="literallayout">git submodule add git://github.com/username/project.git plugin/path</pre><p>All but one of the plugins live in the <code class="literal">bundle</code> direction the only exception is
-vim-pathogen with lives in the parent directory of my dotvim repository. So the
-command I need should output the following formats</p><pre class="literallayout">git://github.com/mileszs/ack.vim.git ack.vim.git
-git://github.com/spf13/asciidoc-vim.git asciidoc-vim.git
-git://github.com/ayang/AutoComplPop.git AutoComplPop.git
-git://github.com/kien/ctrlp.vim.git ctrlp.vim.git
-git://github.com/tpope/vim-cucumber.git vim-cucumber.git
-git://github.com/Raimondi/delimitMate.git delimitMate.git
-git://github.com/tpope/vim-endwise.git vim-endwise.git
-git://github.com/tpope/vim-fugitive.git vim-fugitive.git
-git://github.com/claco/jasmine.vim.git jasmine.vim.git
-git://github.com/leshill/vim-json.git vim-json.git
-git://github.com/scrooloose/nerdcommenter.git nerdcommenter.git
-git://github.com/tpope/vim-pastie.git vim-pastie.git
-git://github.com/tpope/vim-rails.git vim-rails.git
-git://github.com/msanders/snipmate.vim.git snipmate.vim.git
-git://github.com/tpope/vim-surround.git vim-surround.git
-git://github.com/scrooloose/syntastic.git syntastic.git
-git://github.com/tpope/vim-unimpaired.git vim-unimpaired.git
-git://github.com/smerrill/vagrant-vim.git vagrant-vim.git
-git://github.com/tpope/vim-abolish vim-abolish
-git://github.com/tpope/vim-bundler.git vim-bundler.git
-git://github.com/kchmck/vim-coffee-script.git vim-coffee-script.git
-git://github.com/rson/vim-conque.git vim-conque.git
-git://github.com/mattn/gist-vim.git gist-vim.git
-git://github.com/austintaylor/vim-indentobject vim-indentobject
-git://github.com/Lokaltog/vim-powerline.git vim-powerline.git
-git://github.com/rodjek/vim-puppet.git vim-puppet.git
-git://github.com/tpope/vim-ragtag vim-ragtag
-git://github.com/tpope/vim-rake vim-rake
-git://github.com/bronson/vim-ruby-block-conv.git vim-ruby-block-conv.git
-git://github.com/ecomba/vim-ruby-refactoring.git vim-ruby-refactoring.git
-git://github.com/hallison/vim-ruby-sinatra vim-ruby-sinatra
-git://github.com/csexton/rvm.vim.git rvm.vim.git
-git://github.com/kaichen/vim-snipmate-ruby-snippets.git vim-snipmate-ruby-snippets.git
-git://github.com/godlygeek/tabular.git tabular.git
-git://github.com/nelstrom/vim-textobj-rubyblock vim-textobj-rubyblock
-git://github.com/kana/vim-textobj-user vim-textobj-user
-git://github.com/jimenezrick/vimerl.git vimerl.git
-git://github.com/vitaly/vim-vividchalk.git vim-vividchalk.git
-git://github.com/mattn/webapi-vim.git webapi-vim.git
-git://github.com/tpope/vim-pathogen.git vim-pathogen.git</pre><p>This is enough to work with for the moment, I can easily do set this up so that
-I don’t have to manually add each plugin using git submodule. I need the
-following format to successfully add each plugin using git.</p><pre class="literallayout">git submodule add git://github.com/username/project.git plugin/path</pre><p>Running the following command gives me the output I want:</p><pre class="literallayout">cat .braids | grep 'url' | sed 's/url://' | awk -F/ '{print $0, $5}' &gt; ~/vim-plugins.txt</pre><p>Now that I have a list of repos that I will want to add as submodules. With a
-little vim trickery I can whip and basic bash script to automatically add my
-plugins.</p><pre class="literallayout">vi ~/vim-plugins.txt</pre><p>I normal mode I type the following:
-  V38j
-  :'&lt;,'&gt;normal f i bundle/
-  :%s/bundle\ //bundle\//g</p><p>This will prefix bundle/ to all lines, but the last, to the 2 column.
-vim-pathogen is saved to the parent directory.</p><pre class="literallayout">:'&lt;,'&gt;normal I git submodule add</pre><p>Now I have the necessary list and location for all my plugins. I’d like to
-reverse the list to make sure that pathogen gets install first.</p><pre class="literallayout">awk '{x[NR] = $0} END { while ( NR &gt; 0 ) print x[NR--] }' vim-plugins.txt &gt; plugins.txt &amp;&amp; vim-plugins.txt</pre><p>This will use awk to reverse my plugin list as I wanted. Now it’s time to
-remove all the plugins via braid. Then I can then add my plugins again using
-git’s submodules.</p><pre class="literallayout">cat .braids | grep ': $' | sed 's/://' &gt; ~/plugins.txt | for plugin in `xargs`; do; rm -rf $plugin; done</pre><p>The above command creates the output needed to remove all of my plugins that
-were installed via braid.</p><p>Finally I just have to execute the script I created that will add all my
-plugins using <code class="literal">git submodule</code>.</p><p>Once this was done all I had to do is comit my changes and pull them in and I
-have no more need for braid anymore.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_reinstalling_my_dotvim_plugins"/>Reinstalling my dotvim plugins</h3></div></div></div><p>Now I have a list of the plugins I had from when I was using braid. Now I’ll
-use this list to reinstall my plugins and get my dotfiles up to date.</p><p>Here’s a list of all my plugins that I currently have installed.</p><pre class="literallayout">ack.vim
-asciidoc-vim
-autocomplpop
-ctrlp
-cucumber
-delimitMate
-endwise
-fugitive
-jasmine
-json
-nerdcommenter
-pastie
-rails
-snipmate
-surround
-syntastic
-unimpaired
-vagrant
-vim-abolish
-vim-bundler
-vim-coffee-script
-vim-conque
-vim-gist
-vim-indentobject
-vim-powerline
-vim-puppet
-vim-ragtag
-vim-rake
-vim-ruby-block-conv
-vim-ruby-refactoring
-vim-ruby-sinatra
-vim-rvm
-vim-snipmate-ruby-snippets
-vim-tabular
-vim-textobj-rubyblock
-vim-textobj-user
-vimerl
-vividchalk
-webapi-vim
-vim-pathogen</pre><p>Later on I will focus on these plugins and learn and use them better. Ideally I should
-have a clean slate to improve my vi foo. For the moment though I will just add
-them using git submodule and deal with stripping them down later.</p><p/></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s18.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s20.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 13 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 15</td></tr></table></div></body></html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 16</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s18.html" title="Housekeeping tools"/><link rel="next" href="ar01s20.html" title="Day 17"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 16</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s18.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s20.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_16"/>Day 16</h2></div></div></div><p>The first thing I’m going to need to do is delete my old repository and create
+a new one with the same name. This will bork my <code class="literal">dotfile</code> repository submodule
+but I can easily fix that by either updating the reference manually or removing
+and reinstall the plugin via the command line.</p><p>Before I do this I want to move some of my settings around so that they can be
+easily added or left out if I desire. My aim here is to make it easier to
+choose the vim setup I prefer.</p><p>My initial setup will be a bare bones version of Vim with little to none
+plugins added. As I gain more proficiency I will gradually add plugins to my
+workflow to help enhance the keystokes I have already learnt. The first of
+these will focus on text objects and then I will focus on movements and making
+project wide changes.</p><p>I will stick with plugins that enhance the mime types available to me and help
+with some basic formatting. Once I have this under my belt I will start to
+delve into VIML and creating my own plugins and tweaks.</p><p>Whilst doing all this I will be picking up a Practical Vim tip a day to help me
+productivity. These will generally be separate entries and will go over what
+I’ve learnt and how the new skill could be used to improve how I work.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_cleaning_up_my_vim_settings"/>Cleaning up my vim settings</h3></div></div></div><p>So I’ve customised my vim settings quite a bit based on
+<a class="ulink" href="https://github.com/astrails/dotvim" target="_top">astrails dotvim</a> repository. My changes have
+diverged quite abit and I’d rather break them from the branch and start a
+fresh. This will lead the way for me stripping down my settings and finding
+ways to easily get used to using vim without all the bells and whistles.</p><p>The first thing I need to do is detach from the origination repository and make
+sure that my changes are kept in place. Once this is done I can then create a
+config setting to not use and plugins and use a base set of configuration
+settings so that I can start to improve my basic Vim skills.</p><p>I had to go to github and delete the repository. Once deleted I created a new
+repository with the same name and push the repository</p><pre class="literallayout">git push</pre><p>I now have a repository that is not forked to astrails. I still need to let my
+dotfiles know that the repository is update and has changed so I need to do the
+following</p><pre class="literallayout">gup</pre><p>This detached the head of the repository, which is easy enough to fix, as long
+as there are no local changes.</p><pre class="literallayout">g co master</pre><p>Now that the repository is up to date all I need to do is update my <code class="literal">dotfiles</code>
+to reflect the changes to the detached repository.</p><pre class="literallayout">cd ~
+ga dotvim
+g ci -m 'Update my dotvim files'</pre><p>Now the repository is up to date and my dotfiles know of the change I’ve just
+made.</p><p>Finally I push the change to my dotfiles and everything is all set.</p><p/></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s18.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s20.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Housekeeping tools </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 17</td></tr></table></div></body></html>
