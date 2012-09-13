@@ -1,6 +1,0 @@
-<mediaobject role="cover">
-  <imageobject>
-    <imagedata fileref="{{cover_image}}" format="JPG"/>
-  </imageobject>
-  <textobject><phrase>{{title}}</phrase></textobject>
-</mediaobject>

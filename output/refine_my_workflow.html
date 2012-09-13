@@ -11,8 +11,8 @@
     <table width="100%">
       <tr><td width="33%" align="left">
         
-         <a href="day_7.html">Prev</a><br/>
-         Day 7
+         <a href="title.html">Prev</a><br/>
+         Enhancing my workflow
         
       </td><td width="33%" align="center">
         
@@ -21,8 +21,8 @@
         
       </td><td width="33%" align="right">
         
-          <a href="day_8.html">Next</a><br/>
-          Day 8
+          <a href="learn_my_tools.html">Next</a><br/>
+          Learn my tools
         
       </td></tr>
     </table>
@@ -50,6 +50,1106 @@ notes:
   * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</pre>
 </div>
 <p></p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_8"></a>Day 8</h3></div></div></div>
+<p>Today I’d like to start sketching out how my dotfiles should be setup and
+maintained. I’ll also come up with some ideas as to what my dotfiles will
+include and how to maintain the core dependencies of them.</p>
+<p>As some of the setup may change from box to box I shouldn’t have to throw
+everything into once basket, my dotfiles, I’d like to build some scripts that
+handle the dependencies of the setup and makes it easy for me to continue to
+tweak it whilst allowing it to be setup on any box with ease.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_dotfile_blueprints"></a>Dotfile blueprints</h4></div></div></div>
+<p>So this is where the plan starts to come together.</p>
+<p>My dotfiles should be a collection of settings and utilities that help me with
+my day to day work. As time has gone on I’ve learnt what I like and what I
+don’t and have always like the idea of having one group setting that can go
+anywhere. Back in the day my setup was stored on my personal CVS repository,
+these days its github.</p>
+<p>NOTE:
+This link will need to be changed when we start the new version or clean up the
+current.</p>
+<p>I already have my dotfiles <a class="ulink" href="https://github.com/baphled/dotfiles" target="_top">here</a>.</p>
+<p>So there are a few thins I’ll need my dotfiles to have, as follows:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+I must be able to push changes to any of my dotfiles without adding them to
+    my actual dotfiles, at present I’m having to do a lot of copy and pasting
+</li>
+<li>
+It must be easy to update dependancies
+</li>
+<li>
+Must be under version control
+</li>
+<li>
+Should have a collection of custom scripts for things I do a lot of
+</li>
+<li>
+This is start off by being a bunch of git scripts
+</li>
+<li>
+Alert me if my dotfiles or their dependancies are out of date
+</li>
+<li>
+I’ll start on doing this just for my other dotfiles (dotmutt, dotirssi, etc)
+</li>
+<li>
+Create a script to install my dependancies
+</li>
+<li>
+This will start of by focussing on installing things via brew
+</li>
+<li>
+Should automatically check for new gems that my dotfiles rely on
+</li>
+<li>
+Must include the applications that my dotfiles rely on
+</li>
+</ul></div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_the_basics"></a>The basics</h5></div></div></div>
+<p>Let’s start from the top, I want the following:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+Vim
+</li>
+<li>
+Tmux
+</li>
+<li>
+ZSH
+</li>
+</ul></div>
+<p>Regardless of what I’m aiming to do I’ll need all of these to make my workflow
+as productive as possible.</p>
+<p>I’ll need to branch my current repository so that I can start a fresh, once
+this is done, the next thing to do will be to add the dependancies. I may look
+into using puppet or chef for this but if that is the case then I will want to
+make sure that my dotfiles knows how to do a <code class="literal">bundle install</code>.</p>
+<p>So I guess the first thing will be to install rvm and get that setup so I can
+setup ruby.</p>
+<p>I should also document this process so that I can turn it into a script which
+makes sure that I have the correct version of ruby and have run bundle.</p>
+<p>So for zsh I’ll want to use <a class="ulink" href="https://github.com/baphled/oh-my-zsh" target="_top"> oh-my-zsh </a>. I’ll use my own forked version, which
+includes my custom theme, and will add it to my newly created dotfiles.</p>
+<p>The main issue at the moment is that if I have made changes to my dotfiles or
+any of their sub repositories I’d like the commit to got to the right
+repository and not just be added to my dotfiles.</p>
+<p>I’m not sure how easy it is to achieve this but this would be the ideal
+situation for how I work. It very rare that I know the correct config or
+commands or changes for the at matter from the get go and have to spend a
+little time tinkering on my local setup before I can commit to anything. So
+having to keep track of these changes and copy them to the specific repository
+is a pain and error prone.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_resources_6"></a>Resources</h5></div></div></div>
+<p><a class="ulink" href="http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating" target="_top">git submodules</a>
+<a class="ulink" href="http://stackoverflow.com/questions/8372625/git-how-to-push-submodule-to-a-remote-repository" target="_top">git how to push to a remote repository</a></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_9"></a>Day 9</h3></div></div></div>
+<p>Today I’ll be looking at what I have at the moment, in terms of my dotfiles
+setup, and what I need to deal to improve it and make it easier to maintain.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_starting_a_new"></a>Starting a new</h4></div></div></div>
+<p>So the first thing I’ll need to do is stripped down my repository so that
+I can start a new.</p>
+<p>WARNING:
+This can be somewhat hazardious if you rely on having all of your
+downloads in your home directory as the following command will remove
+everything from your repository and working directory</p>
+<p>This will be used to stripped down my dotvim repository and help me
+start from scratch whilst keeping my master branch intacted.</p>
+<pre class="literallayout">git symbolic-ref HEAD refs/heads/stripped
+rm .git/index
+git clean -fdx</pre>
+<p>This took some time and basically removed everything in my home
+directory, which I didn’t really think about prior to running the
+command. So going back was not really an option.</p>
+<p>Once the command had finished all my personal setting were removed and I
+recieved a bunch of errors relating to RVM not being found. This was
+because my zsh settings rely on RVM for prompt information.</p>
+<p>So the first thing I want to do is change into bash and get RVM back up
+and running.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_installing_rvm"></a>Installing RVM</h4></div></div></div>
+<p>So the first thing i’ll need is RVM. This will be needed by my zsh
+prompt and for the dependancies for my workflow.</p>
+<p>I like to have the latest version of Ruby so I can keep up with what’s
+new in the latest releases.</p>
+<pre class="literallayout">curl -L https://get.rvm.io | bash -s stable --ruby</pre>
+<p>This will install the latest version of RVM and Ruby, so I am well on my
+way to getting Ruby setup on my system.</p>
+<p>Once rvm and the latest version of Ruby installed I wanted to change my
+setup so that the gems installed as part of my dotfiles are now
+installed in global, so that they are available everywhere.</p>
+<p>To do this I needed to make sure I was in the global gemset which was
+done by using the following command.</p>
+<pre class="literallayout">rvm gemset use global</pre>
+<p>Now that I am using the correct gemset, I need to make sure that I run
+bundle to make sure that everything is in place.</p>
+<pre class="literallayout">bundle</pre>
+<p>Once this is complete I have all my gems and rvm setup and ready to go.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_resources_7"></a>Resources</h5></div></div></div>
+<p><a class="ulink" href="https://rvm.io/rvm/install" target="_top">RVM</a></p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_removing_braid"></a>Removing Braid</h4></div></div></div>
+<p>Braid can be a pain and I’d rather have more control over my external
+repositories to achieve this I will look into using git submodules. But
+first I will need to remove the external repositories and get rid of
+braid.</p>
+<p>I had the following gems installed before I started this process:</p>
+<pre class="literallayout">braid
+git-scribe
+tmuxinator
+pry</pre>
+<p>I no longer want to use braid, so I will firstly remove all the external
+repositories</p>
+<p>I also have the following external repositories:</p>
+<pre class="literallayout">oh-my-zsh
+dotirssi
+muttfiles
+dotvim</pre>
+<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Warning</h3>
+<p>Removing these files cause a lot of things to break.</p>
+</div>
+<p>To make sure that I don’t break anything I can’t fix imediately, and to
+keep my previous setup, I’ll need to create a new branch</p>
+<pre class="literallayout">gco -b remove_braid</pre>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>The above command uses an aliases via oh-my-zsh</p>
+</div>
+<p>We’ll start off by removing these via braid as follows:</p>
+<pre class="literallayout">braid remove oh-my-zsh
+braid remove dotirssi
+braid remove dotmutt
+braid remove dotvim</pre>
+<p>So the most important repository for me is oh-my-zsh it’s pretty much
+invaluable and it would be an idea to get this setup as soon as possible.</p>
+<pre class="literallayout">git submodule add git@github.com:baphled/oh-my-zsh.git oh-my-zsh
+git submodule init
+git submodule update</pre>
+<p>Now I have my zsh setup as a submodule I can make changes to the repository and
+push them directory to the right repository :)</p>
+<p>The next thing is to do the same for my other repositories</p>
+<pre class="literallayout">git submodule add git@github.com:baphled/dotvim.git dotvim
+git submodule add git@github.com:baphled/muttfiles.git dotmutt
+git submodule add git@github.com:baphled/dotirssi.git dotirssi</pre>
+<p>Now any changes made to my external repositories intermally or externally can
+now be easily tracked :)</p>
+<p>The last step in the journey is to remove braid from my Gemfile as it is no
+longer needed directly by the repository. That is as easy as removing the line
+<code class="literal">gem "braid"</code> and running <code class="literal">bundle</code> again.</p>
+<p>Now we have a cleaner repository and less worry in regards to how my other
+repositories are updated and managed.</p>
+<p>So now that I am using git’s submodules to manage my external repositories I
+can now make local changes and update the correct repository without polutting
+my dotfiles with changes that are not directly related to them.</p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_10"></a>Day 10</h3></div></div></div>
+<p>In my old muttrc file I had procmail getting my mails and storing them in
+separate folders so that I can work out what was what and how important it was.
+I’ve long since had this setup and I’ve pretty much forgotten how it was all
+setup.</p>
+<p>Today is the day I start getting this setup back, this only be the start I want
+to be able to view all my email account via mutt and drop the UI all together.
+I look into email filtering and gradually improve my mutt as I go along.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_improving_mutt"></a>Improving mutt</h4></div></div></div>
+<p>So I have my GMail account setup but that’s not enough. I want to include all
+my personal email accounts and maintain them.</p>
+<p>This will include processing my mail and sending/creating subdirectories based
+on a single emails content.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_ingredients"></a>Ingredients</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+procmail
+</li>
+<li>
+mutt
+</li>
+<li>
+fetchmail
+</li>
+<li>
+msmtp
+</li>
+</ul></div>
+<p>Procmail and fetchmail are installed on Macs by default so that saves me a
+step, so I guess the next things is to create some mail recipes.</p>
+<p>So I’ll have to run the following to get the ball rolling:</p>
+<pre class="literallayout">brew install msmtp</pre>
+<p>I then had to add the following to my <code class="literal">.zshrc</code></p>
+<pre class="literallayout">MAIL=/home/baphled/mail/inbox &amp;&amp; export MAIL</pre>
+<p>Then  in my home directory I ran:</p>
+<pre class="literallayout">touch .fetchmailrc
+chmod 700 .fetchmailrc</pre>
+<p>I then needed to poll my main email account
+  poll mail.my-email-account.net with proto POP3
+    user <span class="emphasis"><em>EMAILADDRESS</em></span> keep
+    mda <span class="emphasis"><em>/usr/bin/procmail -d %T</em></span></p>
+<p>I put my credentials in my <code class="literal">.netrc</code> file as follows:</p>
+<pre class="literallayout">machine mail.my-email-accoun.net
+login my-username
+password my-password</pre>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Make sure that <code class="literal">.netrc</code> is added to <code class="literal">.gitignore</code></p>
+</div>
+<p>I had to make sure that I had setup my email details properply and to do this I
+had to do the following:</p>
+<pre class="literallayout">fetchmail</pre>
+<p>Once everything was setup properly fetchmail did it’s things and retrieved my
+email. This is the bare minimum I need to make sure that I have procmail
+working so that I can store my email in the right directories.</p>
+<p>I need to then create the mail directory <code class="literal">~/Mail</code> which is where all my mail
+will end up.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_recipes"></a>Recipes</h5></div></div></div>
+<p>So now I need to sort my emails into separate files so that I can deal with
+them easily.</p>
+<p>For this I’ll be using procmail and its' recipes to determine where emails
+should.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Add my basic recipes here</p>
+</div>
+<p>I’d also like to make fetchmail get my latest mail via mutt and not via a
+background process, this is quite easy with the follwoing macro:</p>
+<pre class="literallayout">macro generic G \
+  &lt;shell-escape&gt;'fetchmail'&lt;enter&gt; \
+  'Run fetchmail'</pre>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Need to document how to setup mail directories</p>
+</div>
+<p>Now I need to be able to move around my filtered directories easily. To do this
+I can add a couple of macros to allow me to do just this.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_managing_multiple_directories"></a>Managing multiple directories</h5></div></div></div>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Add macros for selecting mail directories</p>
+</div>
+<p>I’d also like to have a split screen so that I can see both the email I’m
+reading as well as the list of emails in mail directory I am currently in.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_todo_6"></a>TODO</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+Create generic recipes for project messages and the like
+</li>
+<li>
+Setup vim like bindings
+</li>
+<li>
+Move all email related config files into one repository
+</li>
+<li>
+Setup multiple accounts
+</li>
+<li>
+Each account should have its own default directory
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_resources_8"></a>Resources</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<a class="ulink" href="http://mutt.blackfish.org.uk/filtering/" target="_top">mail filtering</a>
+</li>
+<li>
+<a class="ulink" href="http://www.ii.com/internet/robots/procmail/qs/" target="_top">procmail quickstart</a>
+</li>
+<li>
+<a class="ulink" href="http://linux.ucla.edu/lugwiki/resources:linux:mutt-and-procmail" target="_top">mutt and procmail</a>
+</li>
+<li>
+<a class="ulink" href="http://zach.in.tu-clausthal.de/mutt/muttrc" target="_top">Gabriel Zachmann’s .muttrc</a>
+</li>
+<li>
+<a class="ulink" href="http://nongeekshandbook.blogspot.co.uk/2009/02/mutt-email-client-that-sucks-less.html" target="_top">mutt email client that sucks less</a>
+</li>
+<li>
+<a class="ulink" href="http://easierbuntu.blogspot.co.uk/2011/09/managing-your-email-with-fetchmail.html" target="_top">manage your email with fetchmail</a>
+</li>
+<li>
+<a class="ulink" href="http://www.elho.net/mutt/maildir/" target="_top">Setup mail directories</a>
+</li>
+</ul></div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_11"></a>Day 11</h3></div></div></div>
+<p>So my email is being retrieve, manually, so now I’d like to focus on getting
+this setup to be retrieved automatically and work out some procmail recipes so
+that I my email is nicely organised for me.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_organising_my_email"></a>Organising my email</h4></div></div></div>
+<p>So like most I get quite a lot of email, varying in importance and
+relevance dependant on time. I’d like to get my old setup back in place
+with a few tweaks. Things are pretty much configured so that my email
+will be sent to the correct file but I need to improve on these recipes
+so that I don’t have to keep going back and forth over a long period of
+time constantly tweaking it.</p>
+<p>There are a few groups I know I’ll need and as time goes by I will have
+to add the odd new recipe but for now I’ll focus on my personal email
+and how to get that under some order.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Link to my first procmailrc</p>
+</div>
+<p>As with others I get quite a lot from various services, these can be
+filtered more as time goes on but for now I’d like a dumping ground
+<code class="literal">social</code> which will store all the unmatched emails that may slip through
+procmails net.</p>
+<p>I also like to not see email regarding jobs/roles I’m not interested in.
+Emails that have a given type of subject or come from know offenders
+(crappy recruitment consultants) should be sent to <code class="literal">/dev/null</code> so that I
+don’t have to bother with them. This may need some tweaking but I think
+testing my recipes by dry running it against my main email address
+should help to get this refined relatively quickly</p>
+<p>I also need a new directory to be created for any discussion groups I
+have joined. The idea here is that these will be caught by procmail and
+the name of the file will be created based on this. This way I don’t
+have to meddle with procmailrc too much and keeps things nice a clean.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_mailing_lists"></a>Mailing lists</h5></div></div></div>
+<p>First things was to create a dummy email.</p>
+<pre class="literallayout">From info@meetup.com  Wed Jul 18 00:00:20 2012
+From: John Doe &lt;info@meetup.com&gt;
+Sender: foobar-announce@meetup.com
+To: FooBar-announce@meetup.com
+Subject: [FooBar] FB Meetup group closing down
+Mailing-List: list FreelanceFriday-list@meetup.com; contact postmaster@meetup.com
+List-Id: &lt;FooBar-list.meetup.com&gt;
+List-Unsubscribe: &lt;mailto: support@meetup.com&gt;</pre>
+<pre class="literallayout">BODY OF MESSAGE SEPARATED BY EMPTY LINE
+txt txt txt txt txt txt txt txt txt txt</pre>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Stolen from: <a class="ulink" href="http://bethesignal.org/dotfiles/procmailrc.html" target="_top">http://bethesignal.org/dotfiles/procmailrc.html</a></p>
+</div>
+<p>To do a dry run on my recipes I used the following command:</p>
+<pre class="literallayout">procmail VERBOSE=on DEFAULT=/dev/null   \
+  LOGFILE=~/test.log                    \
+    ~/.procmailrc &lt; ~/emailtest.txt</pre>
+<p>So the first thing I need to do is setup my social related email file.</p>
+<pre class="screen">  :0
+  * ^((List-Id|X-(Mailing-)?List):(.*[&lt;]\/[^&gt;]*))
+  {
+      LISTID=$MATCH
+
+      :0:
+      * LISTID ?? ^\/[^@\.]*
+      $MATCH
+
+  }</pre>
+<p>From time to time I find myself on a MAJADOMO mail server so I’ll add
+this in to preempt these occasions.</p>
+<pre class="screen">  # MAJORDOMO - Automagically handle Majordomo lists
+  :0
+  * ^Sender: owner-[^@]+@[^@\+]+
+  * ^Sender: owner-\/[^@\+]+
+  {
+      :0:
+      $MATCH
+  }</pre>
+<p>After doing a dry run the following directory was automatically added to
+my Mail directory.</p>
+<pre class="literallayout">λ l Mail
+total 3187
+-rw-------   1 baphled  staff      3187 19 Jul 20:24 FooBar-list</pre>
+<p>Now the problem here is that mutt does not recognise the directory and I
+will have to still manually add each one as I notice them into my mutt
+file.</p>
+<p>There is a way around this I could make mutt smarter and work out which
+directories are inboxes and which are not.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Wrote a script that can easily list the inboxes. Need to automate</p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_filtering_linkedin_discussion_groups"></a>Filtering LinkedIn Discussion groups</h5></div></div></div>
+<p>Now I’m on a few LinkedIn mailing lists and they don’t adear to the
+above rules so I will need to create a generic rule that sends all
+LinkedIn originating emails to the appropriate discussion group.</p>
+<p>Getting the regexp just right wasn’t easy but I finally manage to get it
+to work with a little help from the shell.</p>
+<p>I took the same route as I did earlier, copied a same email to the
+emailtest.txt file, after a while I came up with the following.</p>
+<pre class="literallayout">:0: # Change this so that it sorts by the digest group$
+* ^(From):(\/.*).*\&lt;group-digests@linkedin.com\&gt;$
+`echo $MATCH | awk '{$NF=`}1' | sed 's/ //g'`$''`</pre>
+<p>The most cryptic is the following line:</p>
+<pre class="literallayout">`echo $MATCH | awk '{$NF=`}1' | sed 's/ //g'`$''`</pre>
+<p>Basically I echo the matched address out to the shell which then returns
+everything but the last column, in this case it’s the email address. It
+then removes all spaces and we have our directory.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_filter_pr_crap"></a>Filter PR crap</h5></div></div></div>
+<p>I’m still getting quite a bit of email dumped into my main inbox. I want
+to fix this so that I don’t have to waid through heaps of PR related
+stuff I’m not really interested in.</p>
+<p>This will be my dumping ground for emails I’m not likely to really read.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Improve the readability of the next few paragraphs.</p>
+</div>
+<p>Anything that has <span class="emphasis"><em>offers</em></span> in the email address are the first to go.
+GoDady use this account a bit so they’ll be the first ones to go. Then
+next work would be <span class="emphasis"><em>campaign</em></span> this wreaks of PR type stuff I’m not
+really interested in. Another keyword would be <span class="emphasis"><em>discount</em></span> if you you
+have this in your email address I more than like never see your email ;)</p>
+<p>It seems that people actually use a <span class="emphasis"><em>marketing</em></span> account so again this
+will be put in the same inbox as others above.</p>
+<p>Below is a list of nasty PR words I’d like to throw into this inbox:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+offers
+</li>
+<li>
+campaign
+</li>
+<li>
+discount
+</li>
+<li>
+marketing
+</li>
+<li>
+sale
+</li>
+<li>
+sell
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_3rd_party_services"></a>3rd party services</h5></div></div></div>
+<p>There are a few services I use to maintain my sites and code. I want to
+be able a basic recipe that stores all the account summary related
+emails in one place so that they aren’t stored in my inbox.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+newrelic
+</li>
+<li>
+godaddy
+</li>
+<li>
+heroku
+</li>
+<li>
+code school
+</li>
+<li>
+peepcode
+</li>
+<li>
+railscast
+</li>
+<li>
+destroy all software
+</li>
+<li>
+pragprog
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_inept_recruitment_filter"></a>Inept Recruitment filter</h5></div></div></div>
+<p>I really don’t like having my email account filled with numerous emails
+from recruitment agents regarding roles I will never consider. This list
+will start to become overwheling if I just make a list of agencies that
+are reknowned for not doing a good job. So I will start off by composing
+a list of keywords that will help me solve this problem.</p>
+<p>So the list goes as follows:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+PHP
+</li>
+<li>
+Drup
+</li>
+<li>
+Perl
+</li>
+<li>
+VB
+</li>
+<li>
+.Net
+</li>
+<li>
+Javascript
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_social"></a>Social</h5></div></div></div>
+<p>This will be where all my social gumph goes, mainly things like facebook
+and random LinkedIn stuff etc.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+facebook in general
+</li>
+<li>
+LinkedIn stuff not caught earlier
+</li>
+</ul></div>
+<p>For the curious
+<a class="ulink" href="https://raw.github.com/baphled/dotfiles/e92354e25054921e562b1b038a53d35042da16cb/.procmailrc" target="_top">here</a>
+is a list of my basic recipes that I ended ip settling with for the time
+being.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_todo_7"></a>TODO</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+Filter emails via my address book
+</li>
+<li>
+lower case To and From results
+</li>
+<li>
+Improve my 3rd party filter
+</li>
+<li>
+HTML based emails can be a pain in mutt so I’d be cool if I can view
+    these without having to sift throught HTML.
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_resources_9"></a>Resources</h5></div></div></div>
+<p><a class="ulink" href="http://pm-doc.sourceforge.net/doc/#what_is_dry_run_testing" target="_top">dry run testing</a></p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_rebasing_my_master_branch"></a>Rebasing my master branch</h4></div></div></div>
+<p>So it’s been a while since I’ve rebased my changes to the master branch.
+I’m relatively happy with the removal of <span class="emphasis"><em>braid</em></span> so I think it’s time to
+merge my latest changes into my master branch.</p>
+<p>So the first issue I had was that I had problems checking out the master
+branch because of the changes to the external repositiories. So I had to
+issue the following command:</p>
+<pre class="literallayout">git co -f master</pre>
+<p>This allow me to checkout the master branch and disregard the previous
+warnings.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Doing this can be a time soak.</p>
+</div>
+<p>I could them do the following to merge my braidless branch into master.</p>
+<pre class="literallayout">gup braidless</pre>
+<p>After this gladly there were no merge conflicts but all of my external
+repositiories were deleted.</p>
+<p>I basically had to go into each of the external repositiories and
+checkout all off the deleted files. This took some time but once it was
+comeplete the master branch was happily merged.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_notes"></a>Notes</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+Master brach before change GH#0e15429
+</li>
+<li>
+Master branch after change GH#e92354e
+</li>
+</ul></div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_12"></a>Day 12</h3></div></div></div>
+<p>There are a couple of small things that need to be adressed before I introduce
+my other email accounts. As it stands I have filtered mail but there is no easy
+way of getting to my filtered inbox without some hassle. I need to setup a way
+to let mutt automatically know which mailboxes I have without having to
+constantly update my muttrc file.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_update_mailbox_list"></a>Update mailbox list</h4></div></div></div>
+<p>I had problems trying to get mutt to list all my mail boxes internally
+due to my bash noobishness but I did find a way to do it
+semi-automatically. I’d like to improve on this process so that I can
+make it a lot easier to be able to keep my inbox list up to date whilst
+keeping mutt open.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_the_idea"></a>The idea</h5></div></div></div>
+<p>So it was pretty easy to create a script that lists all the files in my
+mail directory and returns them as a list of arguments. I then loop over
+each mailbox and echo out the format needed for mutt to recognise it as
+a mailbox.</p>
+<p>Once I have the desired string I then send it to a mutt config file in a
+format mutt can recognise.</p>
+<pre class="literallayout">mailboxes =inbox =foodie =gaming</pre>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_bringing_it_to_life"></a>Bringing it to life</h5></div></div></div>
+<p>This did actually take some time to work out the simplist way of
+actually getting a list of mailboxes without having to update my muttrc
+everytime one was discovered.</p>
+<p>I knew the best way to do this via the command line but I wasn’t
+completely sure how. I first start off by getting a list of inboxes and
+piping the results to xargs so that I could loop over each of them but
+this caused a broken pipe error when ran as a subcommand in my muttrc.
+After a while of hacking a few concepts I remember how useful sed is in
+these situations. I ended up with the below code snippet which actually
+did what I wanted for the time being.</p>
+<pre class="literallayout">mailboxes `ls -r ~/Mail | xargs | sed 's/ / =/g' | sed 's/inbox/=inbox/'`</pre>
+<p><b>Hack alert. </b>[NOTE]:
+I’m aware that this could be improved, ideally I want to prepend a <span class="emphasis"><em>=</em></span>
+to the first word instead of relying on the fact the inbox will always
+be the first work back.</p>
+<p>The above comand basically lists all the files in the <code class="literal">~/Mail</code> directory
+and adds them to a list and finally appends <span class="emphasis"><em>=</em></span> to each inbox. This way
+I don’t have to worry about new inboxes being created and having to keep
+track of them. I sinply have to create a new procmail recipe and let
+mutt work out where the new inboxes are stored :)</p>
+<p></p>
+<p>Now that I have a semi decent mutt setup I’d like to setup multiple SMTP
+servers. It’d be cool if mutt could be configured so that I could send a reply
+and the correct SMTP server is used, along with the right response header.</p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_adding_multiple_smtp_accounts"></a>Adding multiple SMTP accounts</h4></div></div></div>
+<p>So I have my personal email accounts setup, so now I can read all my emails and
+filter them pretty easily. The only thing missing here is being able to respond
+to emails with the correct email address.</p>
+<p>So the problem at the moment is that all emails I send are set to my username
+and machines hostname (<a class="ulink" href="mailto:my.username@my.machines.name.com" target="_top">my.username@my.machines.name.com</a>), which is obviously
+what I want, I need to update mutt so that it can tell which email address to
+use as the sender.</p>
+<p>This requires quite a bit of setup so I’ll hold of on doing the actual setup
+and work out what I actually need to do to all me to choose which account to
+send emails.</p>
+<p>The first thing I’ll need to do is make sure that the <span class="emphasis"><em>From</em></span> field in my email
+responses are not that of the local machine. This should actually be the email
+address that the email was sent to.</p>
+<p>I’m not quite sure how to do this yet so I’ll put a fork in it for the moment
+so that I can focus on getting the rest of my setup functional.</p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_13"></a>Day 13</h3></div></div></div>
+<p>I’d like to organise my RSS feeds into mutt or an alternative news reader so
+that I can easily keep up with current tech. Today I’ll dedicate some time into
+getting this setup.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_getting_a_feed_reader"></a>Getting a feed reader</h4></div></div></div>
+<p>So the next step along this journey is to setup a news reader. I’ve looked at a
+few that I used to use in the past.</p>
+<p>I stumbled on <a class="ulink" href="https://github.com/posativ/homebrew-newsbeuter" target="_top">newsbeuter</a> which
+is a cli with a mutt feel. Ideal for me as I’m an avid mutt user.</p>
+<p>Unfortunately brew can’t find newsbeuter by it’s self so I needed to tell it
+where it is and then install it on my system.</p>
+<pre class="literallayout">brew tap posativ/homebrew-newsbeuter</pre>
+<p>This installs the brew formula needed to install newsbeuter. Once this was complete all I had to do is run:</p>
+<pre class="literallayout">brew install newsbeuter</pre>
+<p>Again I had to wait, this time for newsbeuter to install, and then I was ready
+to play with newsbeuter.</p>
+<p>I use GoogleReader for all my RSS feeds so I needed the following in my
+<code class="literal">~/.newsbeuter/config</code> file.</p>
+<pre class="literallayout">urls-source "googlereader"
+googlereader-login "your-googlereader-account"</pre>
+<p>I also wanted to be able to share and star articles so I also added the following mappings</p>
+<pre class="literallayout">googlereader-flag-share "a"
+googlereader-flag-star "b"</pre>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Need a way to not have to disclose my google user id.</p>
+</div>
+<p>Once I started <code class="literal">newsbeuter</code> I had an empty list of feeds that I have subscribed
+to in the past. The only thing left for me to do was to press <span class="emphasis"><em>R</em></span> and wait for
+all of my feeds to update :)</p>
+<p>Navigating through feeds is similar to vi but I’d like to actually have the
+basic bindings in place so that I don’t have to keep changing context.</p>
+<p>It would also be cool if I could tweak the layout so that it looked more like
+my mutt setup. I’m not sure on how easy this but I’ll look into this and see
+how easy it is to achieve.</p>
+<p>It’s important to be able to view links easily, I’ll continue to use w3m as my
+browser of choice as it is already configured and working pretty well.
+newsbeuter also has podcast support :) so I can keep up to date with my
+podcasts without having to rely on itunes.</p>
+<p>In my <code class="literal">~/.newsbeuter/config</code> file I added the following:</p>
+<pre class="literallayout">browser w3m</pre>
+<p>Now that is setup I can easily open links by proving the number associated to
+the link of interest.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_todo_8"></a>TODO</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+Find out how to delete a feed
+</li>
+<li>
+How to add odps files along with GoogleReader
+</li>
+<li>
+Only display unread blogs articles
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_resources_10"></a>Resources</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<a class="ulink" href="http://newsbeuter.org/doc/newsbeuter.html#_google_reader_support" target="_top">GoogleReader support</a>
+</li>
+<li>
+<a class="ulink" href="http://www.newsbeuter.org/doc" target="_top">newsbeuter</a>
+</li>
+</ul></div>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_adding_a_newsreader_my_workbench"></a>Adding a newsreader my workbench</h4></div></div></div>
+<p>So the final step in add a newsreader to my workbench is actually attaching a
+window to my workbench so that I can easily view my news feed at my own
+leisure.</p>
+<p>The first thing to do is add a new window to my workbench config</p>
+<pre class="literallayout">"Newsfeed": newsbeuter</pre>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Add link to my updated workbench config.</p>
+</div>
+<p>I then kill my session and restart it again and I now have a separate session
+to view my newsfeed.</p>
+<p>I’ve added this just after my IRC Window so that I have all my communicated
+centric windows all together.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_todo_9"></a>TODO</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+How do you add and remove feeds
+</li>
+<li>
+How can I download podcasts
+</li>
+<li>
+How to customise key bindings to be more like vim
+</li>
+<li>
+Tweet articles I’ve read
+</li>
+<li>
+May be able to use ifft for this
+</li>
+<li>
+Talk more about my config
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_resources_11"></a>Resources</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<a class="ulink" href="http://writtenandread.net/newsbeuter/" target="_top">newsbeuter and podcasts</a>
+</li>
+<li>
+<a class="ulink" href="http://writtenandread.net/files/newsbeuter/config" target="_top">newsbeuter config</a>
+</li>
+</ul></div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_14"></a>Day 14</h3></div></div></div>
+<p>Braid is causing me hassle and as part of cleaning up my dotvim files I want to
+replace braid with git submodule. This will be part of the cleanup needed for
+dotvim files in preparation of me improving my vim skills.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_removing_vims_braid"></a>Removing VIMs braid</h4></div></div></div>
+<p>So I’ve been using braid to manage my vim plugins but I’d prefer if I used git
+directly as I am with my dotfiles. The first thing to do is keep a list of all
+of the plugins that I have, I’ll need this so that I can keep the plugins I am
+currently using.</p>
+<p>I’ll be using the following command to add each plugin as a git module:</p>
+<pre class="literallayout">git submodule add git://github.com/username/project.git plugin/path</pre>
+<p>All but one of the plugins live in the <code class="literal">bundle</code> direction the only exception is
+vim-pathogen with lives in the parent directory of my dotvim repository. So the
+command I need should output the following formats</p>
+<pre class="literallayout">git://github.com/mileszs/ack.vim.git ack.vim.git
+git://github.com/spf13/asciidoc-vim.git asciidoc-vim.git
+git://github.com/ayang/AutoComplPop.git AutoComplPop.git
+git://github.com/kien/ctrlp.vim.git ctrlp.vim.git
+git://github.com/tpope/vim-cucumber.git vim-cucumber.git
+git://github.com/Raimondi/delimitMate.git delimitMate.git
+git://github.com/tpope/vim-endwise.git vim-endwise.git
+git://github.com/tpope/vim-fugitive.git vim-fugitive.git
+git://github.com/claco/jasmine.vim.git jasmine.vim.git
+git://github.com/leshill/vim-json.git vim-json.git
+git://github.com/scrooloose/nerdcommenter.git nerdcommenter.git
+git://github.com/tpope/vim-pastie.git vim-pastie.git
+git://github.com/tpope/vim-rails.git vim-rails.git
+git://github.com/msanders/snipmate.vim.git snipmate.vim.git
+git://github.com/tpope/vim-surround.git vim-surround.git
+git://github.com/scrooloose/syntastic.git syntastic.git
+git://github.com/tpope/vim-unimpaired.git vim-unimpaired.git
+git://github.com/smerrill/vagrant-vim.git vagrant-vim.git
+git://github.com/tpope/vim-abolish vim-abolish
+git://github.com/tpope/vim-bundler.git vim-bundler.git
+git://github.com/kchmck/vim-coffee-script.git vim-coffee-script.git
+git://github.com/rson/vim-conque.git vim-conque.git
+git://github.com/mattn/gist-vim.git gist-vim.git
+git://github.com/austintaylor/vim-indentobject vim-indentobject
+git://github.com/Lokaltog/vim-powerline.git vim-powerline.git
+git://github.com/rodjek/vim-puppet.git vim-puppet.git
+git://github.com/tpope/vim-ragtag vim-ragtag
+git://github.com/tpope/vim-rake vim-rake
+git://github.com/bronson/vim-ruby-block-conv.git vim-ruby-block-conv.git
+git://github.com/ecomba/vim-ruby-refactoring.git vim-ruby-refactoring.git
+git://github.com/hallison/vim-ruby-sinatra vim-ruby-sinatra
+git://github.com/csexton/rvm.vim.git rvm.vim.git
+git://github.com/kaichen/vim-snipmate-ruby-snippets.git vim-snipmate-ruby-snippets.git
+git://github.com/godlygeek/tabular.git tabular.git
+git://github.com/nelstrom/vim-textobj-rubyblock vim-textobj-rubyblock
+git://github.com/kana/vim-textobj-user vim-textobj-user
+git://github.com/jimenezrick/vimerl.git vimerl.git
+git://github.com/vitaly/vim-vividchalk.git vim-vividchalk.git
+git://github.com/mattn/webapi-vim.git webapi-vim.git
+git://github.com/tpope/vim-pathogen.git vim-pathogen.git</pre>
+<p>This is enough to work with for the moment, I can easily do set this up so that
+I don’t have to manually add each plugin using git submodule. I need the
+following format to successfully add each plugin using git.</p>
+<pre class="literallayout">git submodule add git://github.com/username/project.git plugin/path</pre>
+<p>Running the following command gives me the output I want:</p>
+<pre class="literallayout">cat .braids | grep 'url' | sed 's/url://' | awk -F/ '{print $0, $5}' &gt; ~/vim-plugins.txt</pre>
+<p>Now that I have a list of repos that I will want to add as submodules. With a
+little vim trickery I can whip and basic bash script to automatically add my
+plugins.</p>
+<pre class="literallayout">vi ~/vim-plugins.txt</pre>
+<p>I normal mode I type the following:
+  V38j
+  :'&lt;,'&gt;normal f i bundle/
+  :%s/bundle\ //bundle\//g</p>
+<p>This will prefix bundle/ to all lines, but the last, to the 2 column.
+vim-pathogen is saved to the parent directory.</p>
+<pre class="literallayout">:'&lt;,'&gt;normal I git submodule add</pre>
+<p>Now I have the necessary list and location for all my plugins. I’d like to
+reverse the list to make sure that pathogen gets install first.</p>
+<pre class="literallayout">awk '{x[NR] = $0} END { while ( NR &gt; 0 ) print x[NR--] }' vim-plugins.txt &gt; plugins.txt &amp;&amp; vim-plugins.txt</pre>
+<p>This will use awk to reverse my plugin list as I wanted. Now it’s time to
+remove all the plugins via braid. Then I can then add my plugins again using
+git’s submodules.</p>
+<pre class="literallayout">cat .braids | grep ': $' | sed 's/://' &gt; ~/plugins.txt | for plugin in `xargs`; do; rm -rf $plugin; done</pre>
+<p>The above command creates the output needed to remove all of my plugins that
+were installed via braid.</p>
+<p>Finally I just have to execute the script I created that will add all my
+plugins using <code class="literal">git submodule</code>.</p>
+<p>Once this was done all I had to do is comit my changes and pull them in and I
+have no more need for braid anymore.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_reinstalling_my_dotvim_plugins"></a>Reinstalling my dotvim plugins</h4></div></div></div>
+<p>Now I have a list of the plugins I had from when I was using braid. Now I’ll
+use this list to reinstall my plugins and get my dotfiles up to date.</p>
+<p>Here’s a list of all my plugins that I currently have installed.</p>
+<pre class="literallayout">ack.vim
+asciidoc-vim
+autocomplpop
+ctrlp
+cucumber
+delimitMate
+endwise
+fugitive
+jasmine
+json
+nerdcommenter
+pastie
+rails
+snipmate
+surround
+syntastic
+unimpaired
+vagrant
+vim-abolish
+vim-bundler
+vim-coffee-script
+vim-conque
+vim-gist
+vim-indentobject
+vim-powerline
+vim-puppet
+vim-ragtag
+vim-rake
+vim-ruby-block-conv
+vim-ruby-refactoring
+vim-ruby-sinatra
+vim-rvm
+vim-snipmate-ruby-snippets
+vim-tabular
+vim-textobj-rubyblock
+vim-textobj-user
+vimerl
+vividchalk
+webapi-vim
+vim-pathogen</pre>
+<p>Later on I will focus on these plugins and learn and use them better. Ideally I should
+have a clean slate to improve my vi foo. For the moment though I will just add
+them using git submodule and deal with stripping them down later.</p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_15"></a>Day 15</h3></div></div></div>
+<p>So I now have a news reader so the only thing left to setup are my podcasts.
+I’ve been using itunes of late and would like to move away from that and see
+what newsbeuter has to offer in the way of helping me to keep up with podcasts.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_managing_my_podcasts"></a>Managing my podcasts</h4></div></div></div>
+<p>Now is the time that I move my podcasts from iTunes back to the console, where
+they belong. I’ve already installed newsbeuter so I can use that to track the
+podcasts I listen to and handling queuing and downloading them.</p>
+<p>This is pretty simple really, first off I needed to add a podcasts to my feed
+list. I then checkout any new items via newsbeuter which picked up the podcast
+and listed it as expected. The next step is to queue up the latest podcast and
+listen to it via podbeuter. Pressing <code class="literal">e</code> enqueues the podcast which will add
+the podcast to the queue for downloading. Opening <code class="literal">podbeuter</code> showed me the
+podcast in the queue allowing me to press <code class="literal">a</code> to start the download.</p>
+<p>Here’s the changes I needed to get podbeuter to download and listen to my
+podcasts.</p>
+<pre class="literallayout">download-path       ~/Downloads
+max-downloads       2
+player              afplay</pre>
+<p>Pressing <code class="literal">p</code> inside podbeuter actually plays the selected audio file and then
+we’re away. Podcast management from the command line :).</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_adding_podbeuter_to_my_workflow"></a>Adding podbeuter to my workflow</h5></div></div></div>
+<p>As this has been described in previous entries this part is straight forward
+and only requires a reference to my <code class="literal">~/tmuxinator/workbench.yml</code> file. I simply
+add a new <span class="emphasis"><em>Podcast</em></span> window next to my <span class="emphasis"><em>Newsfeed</em></span> window. Keeping all my
+communications close together.</p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_splitting_my_workbench"></a>Splitting my workbench</h4></div></div></div>
+<p>My workbench is starting to get cluttered now and it is becoming increasingly
+clear that I have two types of workflow living in the same session. Ideally I’d
+like to have my commucation based workflows in a single session whilst my
+workbench and hacking session is in another.</p>
+<p>this is pretty easy, the only thing I raelly need to think about is how these
+two sessions will be started.</p>
+<p>Firstly I remove the  communications related sessions into a new tmux configure
+file as follows:</p>
+<pre class="literallayout">project_name: comms
+project_root: ~/
+rvm: 1.9.2-head@global
+pre: cd ~/ &amp;&amp; bundle
+tabs:
+  - Interwepts: w3m http://google.com
+  - IRC: irssi
+  - "Newsfeed": newsbeuter
+  - "Podcasts": podbeuter
+  - Email: mutt
+  - Spyhole: tail -f ~/comms.log
+  - "Dotfile Diaries": cd ~/Documents/Diary &amp;&amp; vi book/book.asc
+  - Top: top</pre>
+<p>This leaves me with the following <span class="emphasis"><em>workbench</em></span> setup:</p>
+<pre class="literallayout">project_name: workbench
+project_root: ~/
+rvm: 1.9.2-head@global
+pre: cd ~/ &amp;&amp; bundle
+tabs:
+  - Workbench: vim
+  - Spyhole: tail -f ~/workbench.log
+  - Toybox: be pry
+  - 'Control centre': git wtf</pre>
+<p>I now have two separate sessions to deal with my main two workflows further
+helping me to keep my workflows focussed and without switching context too
+much. Now I need to make sure that I can load these two sessions easily whilst
+keeping their session location in guessable positions.</p>
+<p>All I need to do is add the following to my <code class="literal">.zlogin</code> file:</p>
+<pre class="literallayout">mux comms &amp;&amp; mux workbench</pre>
+<p>This will automatically start both sessions as soon as I start a zsh session.
+This could be moved to <code class="literal">.profile</code> if needed but for the moment I won’t worry
+too much about that as I tend to use zsh more than anything else.</p>
+<p>Once this is done I make sure that I only start iTerm with a default session
+and let <code class="literal">.zlogin</code> do the rest of the work.</p>
+<p></p>
+</div>
+</div>
 </div>
 
     </div>
@@ -60,8 +1160,8 @@ notes:
     <table width="100%">
       <tr><td width="33%" align="left">
         
-         <a href="day_7.html">Prev</a><br/>
-         Day 7
+         <a href="title.html">Prev</a><br/>
+         Enhancing my workflow
         
       </td><td width="33%" align="center">
         
@@ -70,8 +1170,8 @@ notes:
         
       </td><td width="33%" align="right">
         
-          <a href="day_8.html">Next</a><br/>
-          Day 8
+          <a href="learn_my_tools.html">Next</a><br/>
+          Learn my tools
         
       </td></tr>
     </table>

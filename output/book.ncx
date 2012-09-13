@@ -22,142 +22,26 @@
 <content src="book.html#_enhancing_my_workflow"/>
 </navPoint>
 <navPoint class="chapter" id="chapter_2" playOrder="3">
-<navLabel><text>Day 1</text></navLabel>
-<content src="book.html#_day_1"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_3" playOrder="4">
-<navLabel><text>Day 2</text></navLabel>
-<content src="book.html#_day_2"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_4" playOrder="5">
-<navLabel><text>Day 3</text></navLabel>
-<content src="book.html#_day_3"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_5" playOrder="6">
-<navLabel><text>Day 4</text></navLabel>
-<content src="book.html#_day_4"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_6" playOrder="7">
-<navLabel><text>Day 5</text></navLabel>
-<content src="book.html#_day_5"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_7" playOrder="8">
-<navLabel><text>Day 6</text></navLabel>
-<content src="book.html#_day_6"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_8" playOrder="9">
-<navLabel><text>Day 7</text></navLabel>
-<content src="book.html#_day_7"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_9" playOrder="10">
 <navLabel><text>Refine my workflow</text></navLabel>
 <content src="book.html#_refine_my_workflow"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_10" playOrder="11">
-<navLabel><text>Day 8</text></navLabel>
-<content src="book.html#_day_8"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_11" playOrder="12">
-<navLabel><text>Day 9</text></navLabel>
-<content src="book.html#_day_9"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_12" playOrder="13">
-<navLabel><text>Day 10</text></navLabel>
-<content src="book.html#_day_10"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_13" playOrder="14">
-<navLabel><text>Day 11</text></navLabel>
-<content src="book.html#_day_11"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_14" playOrder="15">
-<navLabel><text>Day 12</text></navLabel>
-<content src="book.html#_day_12"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_15" playOrder="16">
-<navLabel><text>Day 13</text></navLabel>
-<content src="book.html#_day_13"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_16" playOrder="17">
-<navLabel><text>Day 14</text></navLabel>
-<content src="book.html#_day_14"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_17" playOrder="18">
-<navLabel><text>Day 15</text></navLabel>
-<content src="book.html#_day_15"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_18" playOrder="19">
-<navLabel><text>Housekeeping tools</text></navLabel>
-<content src="book.html#_housekeeping_tools"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_19" playOrder="20">
-<navLabel><text>Day 16</text></navLabel>
-<content src="book.html#_day_16"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_20" playOrder="21">
-<navLabel><text>Day 17</text></navLabel>
-<content src="book.html#_day_17"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_21" playOrder="22">
-<navLabel><text>Day 18</text></navLabel>
-<content src="book.html#_day_18"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_22" playOrder="23">
-<navLabel><text>Day 19</text></navLabel>
-<content src="book.html#_day_19"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_23" playOrder="24">
-<navLabel><text>Day 20</text></navLabel>
-<content src="book.html#_day_20"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_24" playOrder="25">
+<navPoint class="chapter" id="chapter_3" playOrder="4">
 <navLabel><text>Learn my tools</text></navLabel>
 <content src="book.html#_learn_my_tools"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_25" playOrder="26">
-<navLabel><text>Day 21</text></navLabel>
-<content src="book.html#_day_21"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_26" playOrder="27">
-<navLabel><text>Day 22</text></navLabel>
-<content src="book.html#_day_22"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_27" playOrder="28">
-<navLabel><text>Day 23</text></navLabel>
-<content src="book.html#_day_23"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_28" playOrder="29">
+<navPoint class="chapter" id="chapter_4" playOrder="5">
 <navLabel><text>Dressing down Vim</text></navLabel>
 <content src="book.html#_dressing_down_vim"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_29" playOrder="30">
-<navLabel><text>Day 25</text></navLabel>
-<content src="book.html#_day_25"/>
+<navPoint class="chapter" id="chapter_5" playOrder="6">
+<navLabel><text>Housekeeping tools</text></navLabel>
+<content src="book.html#_housekeeping_tools"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_30" playOrder="31">
-<navLabel><text>Day 34</text></navLabel>
-<content src="book.html#_day_34"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_31" playOrder="32">
-<navLabel><text>Day 35</text></navLabel>
-<content src="book.html#_day_35"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_32" playOrder="33">
-<navLabel><text>Day 36</text></navLabel>
-<content src="book.html#_day_36"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_33" playOrder="34">
-<navLabel><text>Day 37</text></navLabel>
-<content src="book.html#_day_37"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_34" playOrder="35">
-<navLabel><text>Day 38</text></navLabel>
-<content src="book.html#_day_38"/>
-</navPoint>
-<navPoint class="chapter" id="chapter_35" playOrder="36">
+<navPoint class="chapter" id="chapter_6" playOrder="7">
 <navLabel><text>Appendix A: Appendix</text></navLabel>
 <content src="book.html#appendix"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_36" playOrder="37">
+<navPoint class="chapter" id="chapter_7" playOrder="8">
 <navLabel><text>Resources</text></navLabel>
 <content src="book.html#resources"/>
 </navPoint>

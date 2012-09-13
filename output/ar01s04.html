@@ -1,48 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Day 3</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s03.html" title="Day 2"/><link rel="next" href="ar01s05.html" title="Day 4"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Day 3</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s03.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s05.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_day_3"/>Day 3</h2></div></div></div><p>So for today, I’d like to stop using twitter and move it my console. I love
-Twitter but GUI’s are exceptionally slow and I’d like a lot more control over
-what I can see when and how it’s displayed.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_setting_up_twitter_in_my_console"/>Setting up twitter in my console</h3></div></div></div><p>For this we’ll use <a class="ulink" href="http://github.com/zigdon/twirssi/issues" target="_top">twirssi</a>,
-recommended to me by <a class="ulink" href="http://twitter.com/23me" target="_top">@23me</a>, who I used to spend a lot
-of time chatting on IRC with in my misspent youth.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_the_setup"/>The setup</h4></div></div></div><p>So the first step is to download and setup the script and take it from there.</p><p>We’ll need to add the Net::Twitter from CPAN:</p><pre class="literallayout">sudo perl -MCPAN -e 'install Net::Twitter'
-sudo perl -MCPAN -e 'install JSON::Any'</pre><p>We’ll also need to run the script and pass our username:</p><pre class="literallayout">/win new hidden
-/win name twitter
-/script load twirssi.pl
-/twitter_login username
-/twirssi_oauth &lt;username&gt;@Twitter &lt;pin&gt;</pre><p>This will create a new hidden window call it twitter and load the script and
-finally set the username. You will then be asked to authorise the application
-by visiting the displayed link, once this is done, you should then be ready to
-use twitter via irssi :)</p><pre class="literallayout">/layout save
-/save</pre><p>Now you settings are saved we can happily close irssi knowing that our setup
-will still persist :D</p><p>For further customisation, checkout <a class="ulink" href="http://twirssi.com/?using" target="_top">twirssi’s user guide</a></p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_setting_up_vim_mode"/>Setting up vim-mode</h3></div></div></div><p>Now, where would we be if we didn’t have a favourite text editors key settings
-available in irssi.</p><p>That’d be heaven right, we’ll it’s pretty damn easy to get this going and to
-add your own mappings, which is wicked, though it’d be even better if we could
-just pull in our mappings from vim itself but that’s for another day.</p><p>For now we’ll just setup vim-mode for irssi, which is easy as hell, and get it
-setup so that we can take advantage of some of the key bindings I’ve gotten
-used to.</p><p>We’ll get that from
-<a class="ulink" href="http://raw.github.com/shabble/irssi-scripts/master/vim-mode/vim_mode.pl" target="_top">here</a>.
-We’ll also grab uberprompt which vim-mode depends on for some extra
-<a class="ulink" href="http://raw.github.com/shabble/irssi-scripts/master/prompt_info/uberprompt.pl" target="_top">vim
-like</a> functionality.</p><p>Once downloaded and added to your autorun directory we’re pretty much good to
-go. Run the following:</p><pre class="literallayout">/run vim_mode</pre><p>Then we should be good to go :)</p><p>The source file has heaps of information, much of which I’ve not had the chance
-to read through properly yet, on how to get started and set things up just how
-like. So take look at that and determine what is the best for you :)</p><p>For the lazy, like me, here’s what I’ve done so far to get started.</p><pre class="literallayout">/statusbar window add vim_mode
-/statusbar window add vim_windows</pre><p>We’ll want to save these changes</p><pre class="literallayout">/layout save
-/save</pre><p>This will help you to know when you are in Insert or Command mode.</p><p>There’s heaps of documentation on vim-mode via the source file, so delve in and
-start hacking. Admittedly I’d love it if it took my vim settings but hell, it’s
-not too much hassle to setup mapping for the most important things :)</p><p>At present these are the mappings that I’ve setup to get started with</p><pre class="literallayout">map &lt;C-H&gt; &lt;BS&gt;
-map &lt;Leader&gt; ,
-map &lt;Leader&gt;p :bprev
-map &lt;Leader&gt;n :bnext</pre><p>I remapped the leader key to the <code class="literal">'</code> as this is what I have setup in my vim. I
-also setup <code class="literal">:bprev `and `:bnext</code> so that I can easily move around to the next
-and previous windwos within irssi.</p><p>It would be nice to create a binding for specifying a window to navigate to
-but I’ll leave this for another time.</p><p>I could also setup bindings for navigating between split windows by adding the
-below mappings to  <code class="literal">vim_moderc</code></p><pre class="literallayout">map &lt;C-h&gt; &lt;C-w&gt;h
-map &lt;C-j&gt; &lt;C-w&gt;j
-map &lt;C-k&gt; &lt;C-w&gt;k
-map &lt;C-l&gt; &lt;C-w&gt;l</pre><p>We’ll also want to add bingins for navigating. Irssi uses &lt;ESC&gt; # to navigate
-to a given window, as we have vim-mode setup &lt;ESC&gt; is used to change vim modes
-so we’ll need to remap these so that they would with the new setup.</p><pre class="literallayout">MAPPING TO BE ADDED LATER</pre><p>Making <code class="literal">&lt;esc&gt;</code> has been remapped we should be able to easily move around
-windows without having to rely on our newly created <code class="literal">&lt;leader&gt;p</code> and <code class="literal">&lt;leader&gt;n</code>
-keys.</p><p/></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s03.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s05.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Day 2 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Day 4</td></tr></table></div></body></html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Dressing down Vim</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s03.html" title="Learn my tools"/><link rel="next" href="ar01s05.html" title="Housekeeping tools"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Dressing down Vim</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s03.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s05.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_dressing_down_vim"/>Dressing down Vim</h2></div></div></div><div class="sidebar"><p class="title"><b/></p><pre class="literallayout">duration: 6 weeks
+location: everywhere
+notes:
+  * pain experienced
+  * what was missed
+  * what did I learn (daily log)
+  * use `:map` in Vim to learn new mappings
+  * use vimtutor</pre></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>I can use my current Vim setup to workout which typographically based
+plugins I’ll be using and write a basic explanation as to why they are useful and
+why I can’t live without them.</p></div><p/><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_25"/>Day 25</h3></div></div></div><p>As it stands at present I’ve forked my version from
+<a class="ulink" href="https://github.com/astrails/dotvim" target="_top">here</a>.</p><p>Which was cool to start off with but I’ve had to make a heap of changes and to
+be honest I’d rather start from scratch and setup my own Vim rig. I’d like the
+coming next 6 weeks to focus on storing the grass roots functionality of Vim
+into muscle memory. I’ll be referring to
+<a class="ulink" href="http://pragprog.com/book/dnvim/practical-vim" target="_top">Practical Vim</a> a lot which has been
+a great source of knowledge for me in the past year.</p><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_34"/>Day 34</h3></div></div></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Turn this section into a workflow based entry</p></div><p>I used to keep up to date with my daily TV shows via bittorrent of late is has
+become something of a challenge as I have had less and less time to actually
+take the time to keep up to date and track what is currently out.</p><p>I’d like to find a usable bit torrent client that will help me do this and help
+me to be notified of new TV episodes coming out.</p><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_35"/>Day 35</h3></div></div></div><p>I’ve setup w3m but I haven’t really had time to experiment with it. I know it
+can open images and it can apparently open tabs but I have never played with
+the former. It would be cool to work out how this happens so I can tell tmux to
+open a new tab with a link when ever I feel. This way if I have a link copied
+and can quickly trigger a tmux mapping and get it open a new tab in the
+<span class="emphasis"><em>Interwepts</em></span> window :)</p><p>I have IRC setup but I still need to tweak it somewhat so that I can use it
+more as I used to. One of the primary uses of IRC for me is using XDCC. On my
+old windows machine I used to have a script that allowed me to gather a list of
+interesting files to download and queue them up accordingly. It allowed me to
+only download a certain amount of files at a time and move them to a completed
+directory once each one had finished downloading. I’d like to replicate this in
+irssi so that I don’t have to spend time finding content of interest and simply
+choose what I want and forget about it.</p><p>I’ve been using bjurl and twirssi for a little bit now but I still don’t know
+how to use it as productively as I know my GUI tools. Today and tomorrow will
+be focused on getting to know these tool better and spending some time getting
+the to work just as I would like to use them.</p><p>bjurl should be easy to tweak, I want to be able to keep track of as many URL’s
+as possible without having to reset it or be quick enough to select a link to
+view. I should simply be able to select one from what I see and not have to
+deal with anything else.</p><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_36"/>Day 36</h3></div></div></div><p>Today is that day I start hacking on some scripts and start to get used to some
+of the tools I’ve neglected to use over the years. My main focus will be to
+improve he way I use sed and awk and improve my bash script so that I can
+quickly hack some workflow scripts together to help tweak my productivity
+further.</p><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_37"/>Day 37</h3></div></div></div><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_38"/>Day 38</h3></div></div></div><p>Today I’ll work on getting to know twirssi a little bit more. These are the
+most important things I want to get to know so that I can become more
+productive with the tool and be able to track conversations I’ve had and what
+other people are saying to each other.</p><div class="itemizedlist"><ul type="disc"><li>
+How do I view conversations
+</li></ul></div><p/></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s03.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s05.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Learn my tools </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Housekeeping tools</td></tr></table></div></body></html>

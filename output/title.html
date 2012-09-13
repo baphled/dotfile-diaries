@@ -21,8 +21,8 @@
         
       </td><td width="33%" align="right">
         
-          <a href="day_1.html">Next</a><br/>
-          Day 1
+          <a href="refine_my_workflow.html">Next</a><br/>
+          Refine my workflow
         
       </td></tr>
     </table>
@@ -79,6 +79,701 @@ notes:
   * Setup tmux and tmuxinator</pre>
 </div>
 <p></p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_1"></a>Day 1</h3></div></div></div>
+<p>So this is the first day of an on going process devised by myself to help
+improve and tweak my existing work flow.</p>
+<p>For years I’ve been used to living in the console and staying away from GUI
+type tools to do my day to day work</p>
+<p>So the idea is to move back to my console and improve my work flow by tweaking
+and getting to know my console tools better.</p>
+<p>In this blog I’ll start with something simple, as the days progress I create a
+blog describing what I’ve learnt today and how it improves my day to day
+work flow.</p>
+<p>Today is an easy day, I’ll start with setting up irssi, a command line
+interface for IRC.</p>
+<p>What I want here is my old setup tweaked to make it easy to change channels and
+see is in a room.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_setting_up_irssi"></a>Setting up irssi</h4></div></div></div>
+<p>I’m using a Mac and use brew. So it is as easy as running <code class="literal">brew install irssi</code>.</p>
+<p>Job done!</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_configuring"></a>Configuring</h5></div></div></div>
+<p>I like to see all the most important information right in front of me, so my
+ideal IRC client looks something like this:</p>
+<p><span class="inlinemediaobject"><img src="images/irssi-current.png" width="500" alt="preferred setup"></span></p>
+<p>Unconfigured, irssi looks like this:</p>
+<p><span class="inlinemediaobject"><img src="images/irssi-default.png" width="500" alt="default setup"></span></p>
+<p>Which kinda sucks!, where’s a list of who is online?</p>
+<p>First things first, <a class="ulink" href="http://quadpoint.org/articles/irssi/" target="_top">is a good place to start</a>.</p>
+<p>I’ll use some tips from there to get myself started.</p>
+<p>twirssi - twitter for irc
+nicklist - displays a list of users</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_defaults"></a>Defaults</h5></div></div></div>
+<p>Now it’s time to tweak our settings so that we can navigate freely and don’t
+have to decypher what is being said per room. I’m used to having a window per
+channel and being alerted when someone makes a comment. For this I’d like to
+create a window every time I join a new channel and remove the window once I
+have left one. To do this we’ll need aliases.</p>
+<pre class="literallayout">/SET autocreate_windows ON`
+/SERVER ADD -auto -network freenode irc.freenode.net
+/save
+/exit</pre>
+<p>This will save us from having to add the FQDN and refer to it as an alias,
+freenode in this case.</p>
+<p>Now when you restart irssi you will be automatically connected to freenode :)</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_listing_channel_users"></a>Listing channel users</h5></div></div></div>
+<p>So to get the user list we’ll need nicklist with some tweaks.</p>
+<p>The older versions of nicklist require us to use screen/tmux and do some
+hackery, I’m not a fan, thankfully I stumbled across this
+<a class="ulink" href="http://github.com/ConX/nicklist.pl" target="_top">nicklist.pl</a>. This isn’t ideal, we have
+the user list at the top but it’s much better than hoping that the screens open
+and things fire off at the right time.</p>
+<p>That a soon after finding the sweet spot, the original version of the script
+decided to kill the cat command you had to run to get the user list, not my
+idea of fun.</p>
+<p>This will do for the moment but as part of my weekend of hacking I hope to
+tweak this script to get the layout I want.</p>
+<p>We will need to create a scripts directory for scripts we want to autoload.</p>
+<pre class="literallayout">/WINDOW NEW
+/WINDOW NAME hilight
+/WINDOW MOVE up
+/WINDOW SIZE 10
+/WINDOW stick
+/layout save</pre>
+<p>This will create a new window called <span class="emphasis"><em>hilight</em></span> which will be displayed at the
+top be sticking 10 lines high, which means that it will stay in position
+regardless of changing channel windows.</p>
+<p>Finally we make sure that our nick is highlighted with <code class="literal">/hilight nick</code></p>
+<p>We’ll leave this for now and come back to tweaking our settings later.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_resources"></a>Resources</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<a class="ulink" href="http://selcouth.com/irssi.php" target="_top">basic irssi guide</a>
+</li>
+<li>
+<a class="ulink" href="http://michael-prokop.at/stg/irc_workshop.txt" target="_top">irssi cheatsheet</a>
+</li>
+<li>
+<a class="ulink" href="http://www.mindfuzz.net/?p=301" target="_top">GIVE ME A BETTER TITLE</a>
+</li>
+<li>
+<a class="ulink" href="http://www.irssi.org/themes" target="_top">IRSSI Themes</a>
+</li>
+<li>
+<a class="ulink" href="http://irssi.org/beginner/" target="_top">Lazy mans guide</a>
+</li>
+<li>
+<a class="ulink" href="http://pc-addicts.com/forum/viewthread.php?thread_id=538&amp;pid=2282#post_2282" target="_top">PC Addicts custom irssi setup</a>
+</li>
+</ul></div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_2"></a>Day 2</h3></div></div></div>
+<p>So I’ve in the previous posts I’ve setup irssi and setup twirssi so that I can
+keep up to date with my tweets without having to deal with a GUI.</p>
+<p>Now I want to tweak my settings so that I can open links easily and have a few
+more channels setup in hidden windows.</p>
+<p>I’d also like to setup vim-mode for irssi</p>
+<p>Today I’ll be tweaking Irssi so that I can interact with my Instant
+Messager and twitter accounts.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_grabbing_links"></a>Grabbing links</h4></div></div></div>
+<p>I want to a way to handle links, their everywhere and their useful, to do this
+I’ll use bjurl.pl to highlight links and give me the ability to open and copy
+them.</p>
+<p>I used this version of
+<a class="ulink" href="http://raw.github.com/sukima/bjurl/master/bjurl.pl" target="_top">bjurl</a>. I’ll copy it to
+the usual place (<code class="literal">~/.irssi/scripts/autorun</code>) we can than run the script and we
+have a nicely highlighted URL’s :D</p>
+<p>To open files we’ll need to do some more configuration, as I’m on a mac, I’ll
+download Lynx and get it to open in a new tmux window. We’ll setup our browser as lynx as it’s a command line browser.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_adding_our_im_to_irssi"></a>Adding our IM to irssi</h4></div></div></div>
+<p>So we’ve done quite a bit with our irc client in ways of centralising communicaions, wouldn’t it be cool if we could get our IM’s to play nicely too? Well it seems that it isn’t much of a problem.</p>
+<p>We’ll download bitlbee and create a new window for it in our irssi client.</p>
+<p>First, the download:</p>
+<pre class="literallayout">brew install bitlbee</pre>
+<p>Now we can connect to one of the bitlbee servers and get things setup.</p>
+<pre class="literallayout">/win new hidden
+/win name bitlbee
+/server im.uk.bitlbee.org 6667</pre>
+<p>This should automatically join you to the "&amp;bitlbee" channel, this is where
+you’ll be able to setup your account and send messages :)</p>
+<p>Once connected you’ll need to register and set a password</p>
+<pre class="literallayout">/register &lt;username&gt;
+/OPER</pre>
+<p>Once you have entered these commands you will be prompted to enter your password</p>
+<p>All set? good, now we can start adding accounts</p>
+<pre class="literallayout">account add jabber &lt;your gmail email address&gt;
+/OPER</pre>
+<p>Now you can enter your IM’s password. Rince and repeat until you have added all your accounts.</p>
+<p>Finally call <code class="literal">account on</code> bitlbee will connect you to all of your accounts :)</p>
+<p>All accounts successfully connected to will be stored so the next time you connect to bitlbee all you need to do is run the following commands</p>
+<pre class="literallayout">/identify &lt;username&gt;
+/OPER</pre>
+<p>Once you enter your password you can then call <code class="literal">account on</code> and log into all IM’s</p>
+<p>Simples :D</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_resources_2"></a>Resources</h5></div></div></div>
+<p><a class="ulink" href="http://pthree.org/2008/03/04/static-windows-in-irssi/" target="_top">static windows</a></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_3"></a>Day 3</h3></div></div></div>
+<p>So for today, I’d like to stop using twitter and move it my console. I love
+Twitter but GUI’s are exceptionally slow and I’d like a lot more control over
+what I can see when and how it’s displayed.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_setting_up_twitter_in_my_console"></a>Setting up twitter in my console</h4></div></div></div>
+<p>For this we’ll use <a class="ulink" href="http://github.com/zigdon/twirssi/issues" target="_top">twirssi</a>,
+recommended to me by <a class="ulink" href="http://twitter.com/23me" target="_top">@23me</a>, who I used to spend a lot
+of time chatting on IRC with in my misspent youth.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_the_setup"></a>The setup</h5></div></div></div>
+<p>So the first step is to download and setup the script and take it from there.</p>
+<p>We’ll need to add the Net::Twitter from CPAN:</p>
+<pre class="literallayout">sudo perl -MCPAN -e 'install Net::Twitter'
+sudo perl -MCPAN -e 'install JSON::Any'</pre>
+<p>We’ll also need to run the script and pass our username:</p>
+<pre class="literallayout">/win new hidden
+/win name twitter
+/script load twirssi.pl
+/twitter_login username
+/twirssi_oauth &lt;username&gt;@Twitter &lt;pin&gt;</pre>
+<p>This will create a new hidden window call it twitter and load the script and
+finally set the username. You will then be asked to authorise the application
+by visiting the displayed link, once this is done, you should then be ready to
+use twitter via irssi :)</p>
+<pre class="literallayout">/layout save
+/save</pre>
+<p>Now you settings are saved we can happily close irssi knowing that our setup
+will still persist :D</p>
+<p>For further customisation, checkout <a class="ulink" href="http://twirssi.com/?using" target="_top">twirssi’s user guide</a></p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_setting_up_vim_mode"></a>Setting up vim-mode</h4></div></div></div>
+<p>Now, where would we be if we didn’t have a favourite text editors key settings
+available in irssi.</p>
+<p>That’d be heaven right, we’ll it’s pretty damn easy to get this going and to
+add your own mappings, which is wicked, though it’d be even better if we could
+just pull in our mappings from vim itself but that’s for another day.</p>
+<p>For now we’ll just setup vim-mode for irssi, which is easy as hell, and get it
+setup so that we can take advantage of some of the key bindings I’ve gotten
+used to.</p>
+<p>We’ll get that from
+<a class="ulink" href="http://raw.github.com/shabble/irssi-scripts/master/vim-mode/vim_mode.pl" target="_top">here</a>.
+We’ll also grab uberprompt which vim-mode depends on for some extra
+<a class="ulink" href="http://raw.github.com/shabble/irssi-scripts/master/prompt_info/uberprompt.pl" target="_top">vim
+like</a> functionality.</p>
+<p>Once downloaded and added to your autorun directory we’re pretty much good to
+go. Run the following:</p>
+<pre class="literallayout">/run vim_mode</pre>
+<p>Then we should be good to go :)</p>
+<p>The source file has heaps of information, much of which I’ve not had the chance
+to read through properly yet, on how to get started and set things up just how
+like. So take look at that and determine what is the best for you :)</p>
+<p>For the lazy, like me, here’s what I’ve done so far to get started.</p>
+<pre class="literallayout">/statusbar window add vim_mode
+/statusbar window add vim_windows</pre>
+<p>We’ll want to save these changes</p>
+<pre class="literallayout">/layout save
+/save</pre>
+<p>This will help you to know when you are in Insert or Command mode.</p>
+<p>There’s heaps of documentation on vim-mode via the source file, so delve in and
+start hacking. Admittedly I’d love it if it took my vim settings but hell, it’s
+not too much hassle to setup mapping for the most important things :)</p>
+<p>At present these are the mappings that I’ve setup to get started with</p>
+<pre class="literallayout">map &lt;C-H&gt; &lt;BS&gt;
+map &lt;Leader&gt; ,
+map &lt;Leader&gt;p :bprev
+map &lt;Leader&gt;n :bnext</pre>
+<p>I remapped the leader key to the <code class="literal">'</code> as this is what I have setup in my vim. I
+also setup <code class="literal">:bprev `and `:bnext</code> so that I can easily move around to the next
+and previous windwos within irssi.</p>
+<p>It would be nice to create a binding for specifying a window to navigate to
+but I’ll leave this for another time.</p>
+<p>I could also setup bindings for navigating between split windows by adding the
+below mappings to  <code class="literal">vim_moderc</code></p>
+<pre class="literallayout">map &lt;C-h&gt; &lt;C-w&gt;h
+map &lt;C-j&gt; &lt;C-w&gt;j
+map &lt;C-k&gt; &lt;C-w&gt;k
+map &lt;C-l&gt; &lt;C-w&gt;l</pre>
+<p>We’ll also want to add bingins for navigating. Irssi uses &lt;ESC&gt; # to navigate
+to a given window, as we have vim-mode setup &lt;ESC&gt; is used to change vim modes
+so we’ll need to remap these so that they would with the new setup.</p>
+<pre class="literallayout">MAPPING TO BE ADDED LATER</pre>
+<p>Making <code class="literal">&lt;esc&gt;</code> has been remapped we should be able to easily move around
+windows without having to rely on our newly created <code class="literal">&lt;leader&gt;p</code> and <code class="literal">&lt;leader&gt;n</code>
+keys.</p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_4"></a>Day 4</h3></div></div></div>
+<p>So I’ve done quite a bit to get irssi setup and working as I want it.
+The last things I want to do is lose my settings or messing something
+up, as I have done a number of times already.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_keeping_my_settings_under_version_control"></a>Keeping my settings under version control</h4></div></div></div>
+<p>So the easy fix for this is to create a repository and pull the config
+in as dotirssi.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+There`s not much to this really.
+</li>
+<li>
+I copy the .irssi directory to dotirssi.
+</li>
+<li>
+I then initialised git for version control.
+</li>
+<li>
+Created a new repository on github
+</li>
+<li>
+ignored files with the pattern <code class="literal">scripts/twirssi.*</code>
+</li>
+<li>
+Commited all the files
+</li>
+<li>
+pushed the changes
+</li>
+<li>
+added the project to my dotfiles using braid
+</li>
+<li>
+This will change some point in this process
+</li>
+<li>
+Copy my twirssi auth files to <code class="literal">~/dotirssi/scripts</code>
+</li>
+</ul></div>
+<p>Once the above was done I was able to have my irssi settings up version
+control :)</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_opening_links_irssi_with_lynx"></a>Opening links irssi with lynx</h4></div></div></div>
+<p>Yet another day of tweaking my irssi rig, today I want to get Lynx to open in a
+new tmux window when I select a link. I’ll use tmux to do this as it’s what
+it’s good at and I’ll get bjurl to call tmux when ever I select a link for
+viewing.</p>
+<p>Again the goal here is to move more of my work flow into my terminal which will
+allow me to deal with content when I choose.</p>
+<p>First off we need to actually be able to easily see links and open them,
+we’ll use <a class="ulink" href="http://github.com/sukima/bjurl/blob/master/bjurl.pl" target="_top">bjurl</a> for this.</p>
+<p>As with most plugins this is as simple as downloading the script and
+adding it to your irssi script directory.</p>
+<p>If your already running irssi run <code class="literal">/run bjurl</code>.</p>
+<p>As I’m using a mac, I needed to to set the <code class="literal">browse_command</code> settings to
+open links just how I want it to.</p>
+<p>First we need a new tmux window to start lynx in.</p>
+<pre class="literallayout">tmux new-window -t workbench -s interwepts</pre>
+<p>We’ll need tell bjurl to behave as we want:</p>
+<pre class="literallayout">/set browse_command tmux send-keys -t interwepts 'lynx $1' C-m</pre>
+<p>And that’s pretty much it for now, we can now load links within our current session :)</p>
+<p>It would be cool if we had a separate session strictly for browsing, that
+way we don’t have to clutter the current session.</p>
+<p>This and a few other things will be the next step for improving this work flow
+but lets take small steps and see where this path leads up :)</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_todo"></a>TODO</h5></div></div></div>
+<p>It would be cool if we could name our window accordingly and not have to deal
+with the many windows issue I have with chrome and many other browser at
+present. This only leads to a sluggish computer and "Tab overload"</p>
+<p>I also need bjurl to be a bit smarter in identifying links, it’s hard to track
+links once 20 have been displayed, at present it’s quite useless.</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_5"></a>Day 5</h3></div></div></div>
+<p>So we’ve got Lynx setup to work with irssi, after doing so I found out
+that w3m can deal with tabs and images. Admittedly I’m not particularly
+a fan of tabs, mainly as I tend to build up quite a collection of these
+and never really go back to them, but I’ll give it a whirl and see what
+the pros and cons of it as opposed to lynx.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_playing_with_w3m"></a>Playing with w3m</h4></div></div></div>
+<p>As always I used brew <code class="literal">brew install w3m</code> to get things rolling.</p>
+<p>So this is what w3m looks like out of the box.</p>
+<p><span class="inlinemediaobject"><img src="images/w3m-default.png" width="500" alt="default setup"></span></p>
+<p>Off the bat the colours are all wrong, trying to red blue text is near
+impossible when using a black background, so that had to be changed.</p>
+<p>The other issue was that though I still had my vim keys I could not use
+<code class="literal">&lt;C-B&gt;</code> and <code class="literal">&lt;C-F&gt;</code> to move around, which is annoying, that’ll have to be
+changed too.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>how do i change the binding?</p>
+</div>
+<p><a class="ulink" href="http://w3m.sourceforge.net/MANUAL" target="_top">manual</a></p>
+<p>I also couldn’t see URL’s at all.</p>
+<p>I guess the first step is to work out how to customise w3m so that we
+can get those colours sorted and give it some vim love.</p>
+<p>Ok, so changing the settings is quite easy to get to, simply press <code class="literal">o</code>
+whilst having w3m open and the settings page will be displayed. We
+simple need to scroll down to <span class="emphasis"><em>Colour Settings</em></span> and specify the colours we desire.</p>
+<p>Viewing links it’s just as easy as interacting with any other link so
+that’s cool :)</p>
+<p>The only things that niggles me is not being able to set up leader key</p>
+<p>The most important once for the moment are to page up and down quickly
+as the default mappings are quite a stretch.</p>
+<p>Add the below to the keymap file within <code class="literal">~/.w3m</code> gives me the ability to
+do exactly this.</p>
+<pre class="literallayout">keymap  F     NEXT_PAGE
+keymap  B     PREV_PAGE</pre>
+<p>Now that w3m is setup a for navigating a little easier, I’ll swap out
+lynx for w3m.</p>
+<pre class="literallayout">/set browse_command tmux send-keys -t interwepts 'w3m $1' C-m</pre>
+<p>We’ll run with this for the moment as see how it fairs.</p>
+<p><span class="inlinemediaobject"><img src="images/w3m-current.png" width="500" alt="new setup"></span></p>
+<p>Before we commit this to version control, we’ll make some tweaks to the
+config file to make it less specific to a Mac.</p>
+<p>Below is a snippet from my config that I should change, when on a different
+box, I probably won’t have brew installed and I prefer to have all my settings
+controlled locally so we wont need the references to the skeleton configs.</p>
+<pre class="programlisting">    urimethodmap ~/.w3m/urimethodmap, /usr/local/Cellar/w3m/0.5.3/etc/w3m/urimethodmap
+    mailcap ~/.w3m/mailcap, /usr/local/Cellar/w3m/0.5.3/etc/w3m/mailcap
+    mime_types ~/.mime.types, /usr/local/Cellar/w3m/0.5.3/etc/mime.types</pre>
+<p>It now looks like this:</p>
+<pre class="screen">    urimethodmap ~/.w3m/urimethodmap
+    mailcap ~/.w3m/mailcap
+    mime_types ~/.mime.types</pre>
+<p>So now we’re pretty much ready to play around with it for a while and take
+notes of things that I’d like to change.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_todo_2"></a>TODO</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+How to send a link of what I’ve read to Twitter
+</li>
+<li>
+How to share a link with Google+
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_resources_3"></a>Resources</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<a class="ulink" href="http://w3m.sourceforge.net/" target="_top">w3m</a>
+</li>
+<li>
+<a class="ulink" href="http://fts.ifac.cnr.it/cgi-bin/dwww/usr/share/doc/w3m/examples/keymap.default" target="_top">keymaping example</a>
+</li>
+</ul></div>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_taming_the_mutt"></a>Taming the mutt</h4></div></div></div>
+<p>I’d like to use mutt for dealing with my email, AppleMail is cool but
+it’s way too much for my liking and I’d prefer it if I could organise my
+emails without having to fiddle with sub folders manually.</p>
+<p>I my old config this was done by using procmail to create/send emails to
+folders dependant on the source of the email.</p>
+<p>This was pretty configurable so I’d like to get some of this back into
+my current setup so that I don’t get email overload :)</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_setting_things_up"></a>Setting things up</h5></div></div></div>
+<p>I had a better setup a while back but after rummaging around for ancient backups I decided to start from scratch.</p>
+<p>Again, I’ll be using brew to get mutt installed <code class="literal">brew install mutt</code></p>
+<p>You’ll need to run the following commands:</p>
+<pre class="literallayout">mkdir -p ~/.mutt/cache/headers
+mkdir ~/.mutt/cache/bodies
+touch ~/.mutt/certificates</pre>
+<p>Next I needed to create a <code class="literal">.muttrc</code> file, to setup my GMail account. I
+used this example
+<a class="ulink" href="http://github.com/baphled/dotmutt/raw/master/muttrc" target="_top">here</a> to get things
+started.</p>
+<p>I had to make a few tweaks to get things just right. Firstly the order
+of the emails were newest at the bottom which is kind of annoying, I’d
+like to see my newest emails first, so this needs to be sorted.</p>
+<p>We’ll hold out on that for the moment and customise the look of mutts, I
+stumbled upon
+<a class="ulink" href="https://raw.github.com/l0stman/muttrc/master/mutt-colors-solarized-dark-256.muttrc" target="_top">this</a>
+theme that works pretty well for the moment so I’ll go with that for now.</p>
+<p>Now back to the matter at hand, how to get the sort order setup so that
+my newest emails are displayed first.</p>
+<p>So I had to go into my muttrc file and make this changes</p>
+<pre class="literallayout">set sort_aux = 'reverse-date'</pre>
+<p>And make sure I also had the following in my config too:</p>
+<pre class="literallayout">set sort = 'threads'</pre>
+<p>Mutt is now setup, well enough to start playing around, I’ll work on
+integrating this into my workflow as time goes on.</p>
+<p>The final things is to move this into it’s own repository for now, as I
+will be restarting my dotfiles from scratch once I have all these pieces
+setup.</p>
+<p>I did what I usually do, created a git repo and moved my <code class="literal">.muttrc</code> file
+to <code class="literal">~/.mutt/muttrc</code> and then renamed the directory to dotmutt.</p>
+<p>Once this was done I went through the motion of pushing the setting to a
+new repository.</p>
+<p>I then used braid</p>
+<pre class="literallayout">braid add git://github.com/baphled/muttfiles.git dotmutt
+ln -s dotmutt .mutt
+ln -s .mutt/muttrc .muttrc</pre>
+<p>Then everything was setup as it where :)</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_todo_3"></a>TODO</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+Improve the way I’m handling my email credentials
+</li>
+<li>
+Setup email alerts via the terminal
+</li>
+<li>
+Create screengrabs as I did with irssi
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_resources_4"></a>Resources</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<a class="ulink" href="http://mutt.blackfish.org.uk/" target="_top">My first mutt</a>
+</li>
+<li>
+<a class="ulink" href="http://www.mutt.org/doc/manual/manual-2.html" target="_top">mutt manual</a>
+</li>
+<li>
+<a class="ulink" href="http://lifehacker.com/5574557/how-to-use-the-fast-and-powerful-mutt-email-client-with-gmail" target="_top">GMail example for UK users</a>
+</li>
+</ul></div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_6"></a>Day 6</h3></div></div></div>
+<p>I’ve been writing quite a bit recently and have wanted to play around with
+git-scribe for authoring my diary and possibly writing projects in the future.</p>
+<p>Today I’ll be setting up git-scribe and updating my diary so that I can
+generate content in various formats. Initially I’ll only publish this content
+as HTML but then move on to PDF and epub later once I’ve ironed out the kinks.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_setting_up_git_scribe"></a>Setting up git-scribe</h4></div></div></div>
+<p>It’s not directly related but I love to write and I’d like my setup to
+allow me to easily write new material and publish them in various formats.</p>
+<p>I’ve been watching git-scribe for some time and thought this would be a
+perfect time to bring it into my current workflow.</p>
+<p>I’ll setup git-scribe as it allows me to write my entries in AsciiDoc
+format and compile it into a number of formats (html, pdf, mobi, etc).</p>
+<p>As this is the case we’ll have a play with this setup and possibly use
+it for publishing other material.</p>
+<p>There’s not much to this really the project has great
+<a class="ulink" href="https://github.com/spf13/asciidoc-vim" target="_top">documentation</a></p>
+<p>Once installed I started initialised the new book.</p>
+<pre class="literallayout">git scribe init</pre>
+<p>Once this was done I had the basic setup needed to move my diary. git-scribe
+uses AsciiDoc to format content so I needed to convert the old markdown. That
+wasn’t so much trouble as there isn’t much different in the markup. I created a
+couple of vim macros and went through the pages and updated them accordingly.
+The main changes needed were related to the titles of each entry.</p>
+<p>Once the files where moved into the <span class="emphasis"><em>book</em></span> directory and the format of the
+content was setup it was easy to generate the site with one command <code class="literal">git scribe
+gen site</code>. In the <span class="emphasis"><em>output</em></span> directory was the generated diary nicely formatted
+and indexed.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_todo_4"></a>TODO</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+It would be nice to automatically resize images so that they are not too
+    large or too small.
+</li>
+<li>
+create a script that generates my diary into HTML
+</li>
+<li>
+the output will be another repository
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_resources_5"></a>Resources</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<a class="ulink" href="http://powerman.name/doc/asciidoc" target="_top">asciidoc cheatsheet</a>
+</li>
+<li>
+<a class="ulink" href="https://github.com/spf13/asciidoc-vim" target="_top">ascii-vim</a>
+</li>
+</ul></div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_7"></a>Day 7</h3></div></div></div>
+<p>So I have a decent setup for browsing, communicating and writing.</p>
+<p>Now I want to be able to fire off all of my tools in separate windows so that I
+can easily manage them and keep my work flow contained.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_setting_up_tmux"></a>Setting up tmux</h4></div></div></div>
+<p>I already have tmux installed at present, though there will be a point when I
+start my dotfiles anew and will properly document the process.</p>
+<p>For now I want to focus on how to automatically spawn a tmux session along with
+the default windows I use on a day to day basic.</p>
+<p>I’m using tmux along with tmuxinator to help manage my setting.</p>
+<p>Installing tmux is done simply by call <code class="literal">brew install tmux</code> once this has
+been installed we are ready to play with tmux. As I mentioned I’m using
+tmuxinator which is a ruby gem so we’ll add that to our Gemfile:</p>
+<pre class="literallayout">gem 'tmuxinator'</pre>
+<p>Running <code class="literal">bundle install</code> will install tmuxinator and then we are good to go.</p>
+<p>Tmuxinator stores it’s configuration settings in the <code class="literal">~/.tmuxinator</code> directory
+but we can create a new setup my running <code class="literal">mux create workbench</code>. I’ve already
+done this so I just ran <code class="literal">mux open workbench</code> to open the file in vim.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_the_layout"></a>The layout</h5></div></div></div>
+<p>What I want here is a single session that setups up my perfect setup, allowing
+me to make the most of my terminal.</p>
+<p>For this I’d like the following windows:</p>
+<div class="itemizedlist"><ul type="disc"><li>
+Workbench
+</li></ul></div>
+<p>I’m often scawling notes of some kind so having a window to allow me to work
+with vim. So I want a window (Workbench) where I can interact with files via
+vim and have access to the console. This is where most of my actually work is
+done.</p>
+<div class="itemizedlist"><ul type="disc"><li>
+IRC
+</li></ul></div>
+<p>I still want to be able to communicate with others and get topical information
+so I will want to use the irssi setup I’ve setup to allow me to keep my
+communications centralised.</p>
+<div class="itemizedlist"><ul type="disc"><li>
+Spyhole
+</li></ul></div>
+<p>Tmux allows you to capture terminal output, I’d like to have a window that
+tails the log file and display any captured content. With tmux’s copy and paste
+functionality will can easily pull out captured content and use it in other
+places.</p>
+<div class="itemizedlist"><ul type="disc"><li>
+Email
+</li></ul></div>
+<p>I still need my emails so having a window for that that I can quickly jump to
+when I feel to would be idea, Mutt is pretty lightweight and I’m sure I can set
+it up so automatically check for new emails, though procmail.</p>
+<div class="itemizedlist"><ul type="disc"><li>
+Control Centre
+</li></ul></div>
+<p>I like to know if there are any changes that to my dotfiles master branch,
+ideally this should be a panel in a window, for now this is be another stand
+alone window that periodically calls <code class="literal">git wtf</code> to check for changes.</p>
+<div class="itemizedlist"><ul type="disc"><li>
+Toybox
+</li></ul></div>
+<p>I like o have a ruby repl that I can play around with and test out ideas. I’ve
+been playing around with pry a bit recently so I’d like to have a window open
+that allows me to test out ideas before I hack away at a solution.</p>
+<div class="itemizedlist"><ul type="disc"><li>
+Interwepts
+</li></ul></div>
+<p>As we have irssi setup to open a browser, we setup this window so that irssi
+can open w3m for us.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_the_setup_2"></a>The setup</h5></div></div></div>
+<p>Now I know what I want in regards of session setup, lets open up my workbench
+config file and make this set up, all we need to do is update of config and
+fire up the new session.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_my_config"></a>My config</h5></div></div></div>
+<pre class="screen">  project_name: workbench
+  project_root: ~/
+  rvm: 1.9.2-head@workbench
+  pre: cd ~/ &amp;&amp; bundle
+  tabs:
+    - Workbench:
+        layout: b147,208x73,0,0[208x62,0,0,208x10,0,63{104x10,0,63,103x10,105,63}]
+        panes:
+          - vim
+          - #empty, will just run plain zsh
+    - Interwepts: w3m http://google.com
+    - IRC: irssi
+    - Email: mutt
+    - Spyhole: tail -f ~/workbench.log
+    - "Dotfile Diaries": vi ~/Documents/Diary
+    - 'Control centre': git wft
+    - Toybox: pry</pre>
+<p>Now with this setup, we can simple run <code class="literal">mux workbench</code> and tmuxinator will
+handle the rest, creating and setting up each of my desired windows along with their separate tasks :)</p>
+<p>I won’t go into detail about my mappings and my config, as it can be
+<a class="ulink" href="https://github.com/baphled/dotfiles/blob/master/.tmux.conf" target="_top">here</a>, and I’d like
+to leave a broader explaination when I starting tinkering with <code class="literal">~/tmux.conf</code>.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_todo_5"></a>TODO</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+Make sure that my workbench gemset is created
+</li>
+<li>
+Open w3m with a better default
+</li>
+</ul></div>
+<p></p>
+</div>
+</div>
+</div>
 </div>
     </div>
 
@@ -98,8 +793,8 @@ notes:
         
       </td><td width="33%" align="right">
         
-          <a href="day_1.html">Next</a><br/>
-          Day 1
+          <a href="refine_my_workflow.html">Next</a><br/>
+          Refine my workflow
         
       </td></tr>
     </table>

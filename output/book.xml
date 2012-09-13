@@ -48,7 +48,6 @@ notes:
   * Setup tmux and tmuxinator</literallayout>
 </sidebar>
 <simpara><?asciidoc-pagebreak?></simpara>
-</section>
 <section id="_day_1">
 <title>Day 1</title>
 <simpara>So this is the first day of an on going process devised by myself to help
@@ -74,14 +73,14 @@ see is in a room.</simpara>
 ideal IRC client looks something like this:</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
-  <imagedata fileref="https://github.com/baphled/dotfile-diaries/raw/master/screenshots/irssi-current.png"/>
+  <imagedata fileref="images/irssi-current.png" contentwidth="500"/>
   </imageobject>
   <textobject><phrase>preferred setup</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>Unconfigured, irssi looks like this:</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
-  <imagedata fileref="https://github.com/baphled/dotfile-diaries/raw/master/screenshots/irssi-default.png"/>
+  <imagedata fileref="images/irssi-default.png" contentwidth="500"/>
   </imageobject>
   <textobject><phrase>default setup</phrase></textobject>
 </inlinemediaobject></simpara>
@@ -190,6 +189,7 @@ the usual place (<literal>~/.irssi/scripts/autorun</literal>) we can than run th
 have a nicely highlighted URL&#8217;s :D</simpara>
 <simpara>To open files we&#8217;ll need to do some more configuration, as I&#8217;m on a mac, I&#8217;ll
 download Lynx and get it to open in a new tmux window. We&#8217;ll setup our browser as lynx as it&#8217;s a command line browser.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_adding_our_im_to_irssi">
 <title>Adding our IM to irssi</title>
@@ -255,6 +255,7 @@ use twitter via irssi :)</simpara>
 <simpara>Now you settings are saved we can happily close irssi knowing that our setup
 will still persist :D</simpara>
 <simpara>For further customisation, checkout <ulink url="http://twirssi.com/?using">twirssi&#8217;s user guide</ulink></simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_setting_up_vim_mode">
@@ -378,6 +379,7 @@ Copy my twirssi auth files to <literal>~/dotirssi/scripts</literal>
 </itemizedlist>
 <simpara>Once the above was done I was able to have my irssi settings up version
 control :)</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_opening_links_irssi_with_lynx">
 <title>Opening links irssi with lynx</title>
@@ -427,7 +429,7 @@ the pros and cons of it as opposed to lynx.</simpara>
 <simpara>So this is what w3m looks like out of the box.</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
-  <imagedata fileref="https://github.com/baphled/dotfile-diaries/raw/master/screenshots/w3m-default.png"/>
+  <imagedata fileref="images/w3m-default.png" contentwidth="500"/>
   </imageobject>
   <textobject><phrase>default setup</phrase></textobject>
 </inlinemediaobject></simpara>
@@ -459,7 +461,7 @@ lynx for w3m.</simpara>
 <simpara>We&#8217;ll run with this for the moment as see how it fairs.</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
-  <imagedata fileref="https://github.com/baphled/dotfile-diaries/raw/master/screenshots/w3m-current.png"/>
+  <imagedata fileref="images/w3m-current.png" contentwidth="500"/>
   </imageobject>
   <textobject><phrase>new setup</phrase></textobject>
 </inlinemediaobject></simpara>
@@ -468,13 +470,13 @@ config file to make it less specific to a Mac.</simpara>
 <simpara>Below is a snippet from my config that I should change, when on a different
 box, I probably won&#8217;t have brew installed and I prefer to have all my settings
 controlled locally so we wont need the references to the skeleton configs.</simpara>
-<literallayout class="monospaced">urimethodmap ~/.w3m/urimethodmap, /usr/local/Cellar/w3m/0.5.3/etc/w3m/urimethodmap
-mailcap ~/.w3m/mailcap, /usr/local/Cellar/w3m/0.5.3/etc/w3m/mailcap
-mime_types ~/.mime.types, /usr/local/Cellar/w3m/0.5.3/etc/mime.types</literallayout>
+<programlisting language="sh" linenumbering="unnumbered">    urimethodmap ~/.w3m/urimethodmap, /usr/local/Cellar/w3m/0.5.3/etc/w3m/urimethodmap
+    mailcap ~/.w3m/mailcap, /usr/local/Cellar/w3m/0.5.3/etc/w3m/mailcap
+    mime_types ~/.mime.types, /usr/local/Cellar/w3m/0.5.3/etc/mime.types</programlisting>
 <simpara>It now looks like this:</simpara>
-<literallayout class="monospaced">urimethodmap ~/.w3m/urimethodmap
-mailcap ~/.w3m/mailcap
-mime_types ~/.mime.types</literallayout>
+<screen>    urimethodmap ~/.w3m/urimethodmap
+    mailcap ~/.w3m/mailcap
+    mime_types ~/.mime.types</screen>
 <simpara>So now we&#8217;re pretty much ready to play around with it for a while and take
 notes of things that I&#8217;d like to change.</simpara>
 <section id="_todo_2">
@@ -506,6 +508,7 @@ How to share a link with Google+
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_taming_the_mutt">
@@ -815,6 +818,7 @@ Open w3m with a better default
 </section>
 </section>
 </section>
+</section>
 <section id="_refine_my_workflow">
 <title>Refine my workflow</title>
 <simpara>I already have my dotfiles under version control but I would like to clean
@@ -832,7 +836,6 @@ notes:
   * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</literallayout>
 </sidebar>
 <simpara><?asciidoc-pagebreak?></simpara>
-</section>
 <section id="_day_8">
 <title>Day 8</title>
 <simpara>Today I&#8217;d like to start sketching out how my dotfiles should be setup and
@@ -988,6 +991,7 @@ recieved a bunch of errors relating to RVM not being found. This was
 because my zsh settings rely on RVM for prompt information.</simpara>
 <simpara>So the first thing I want to do is change into bash and get RVM back up
 and running.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_installing_rvm">
 <title>Installing RVM</title>
@@ -1011,6 +1015,7 @@ bundle to make sure that everything is in place.</simpara>
 <section id="_resources_7">
 <title>Resources</title>
 <simpara><ulink url="https://rvm.io/rvm/install">RVM</ulink></simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_removing_braid">
@@ -1513,6 +1518,7 @@ HTML based emails can be a pain in mutt so I&#8217;d be cool if I can view
 <section id="_resources_9">
 <title>Resources</title>
 <simpara><ulink url="http://pm-doc.sourceforge.net/doc/#what_is_dry_run_testing">dry run testing</ulink></simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_rebasing_my_master_branch">
@@ -1598,6 +1604,7 @@ and adds them to a list and finally appends <emphasis>=</emphasis> to each inbox
 I don&#8217;t have to worry about new inboxes being created and having to keep
 track of them. I sinply have to create a new procmail recipe and let
 mutt work out where the new inboxes are stored :)</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 <simpara>Now that I have a semi decent mutt setup I&#8217;d like to setup multiple SMTP
 servers. It&#8217;d be cool if mutt could be configured so that I could send a reply
 and the correct SMTP server is used, along with the right response header.</simpara>
@@ -1699,6 +1706,7 @@ Only display unread blogs articles
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_adding_a_newsreader_my_workbench">
@@ -1852,6 +1860,7 @@ were installed via braid.</simpara>
 plugins using <literal>git submodule</literal>.</simpara>
 <simpara>Once this was done all I had to do is comit my changes and pull them in and I
 have no more need for braid anymore.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_reinstalling_my_dotvim_plugins">
 <title>Reinstalling my dotvim plugins</title>
@@ -1933,6 +1942,7 @@ we&#8217;re away. Podcast management from the command line :).</simpara>
 and only requires a reference to my <literal>~/tmuxinator/workbench.yml</literal> file. I simply
 add a new <emphasis>Podcast</emphasis> window next to my <emphasis>Newsfeed</emphasis> window. Keeping all my
 communications close together.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_splitting_my_workbench">
@@ -1979,21 +1989,26 @@ This could be moved to <literal>.profile</literal> if needed but for the moment 
 too much about that as I tend to use zsh more than anything else.</simpara>
 <simpara>Once this is done I make sure that I only start iTerm with a default session
 and let <literal>.zlogin</literal> do the rest of the work.</simpara>
-</section>
-</section>
-<section id="_housekeeping_tools">
-<title>Housekeeping tools</title>
-<sidebar>
-<literallayout class="monospaced">duration: 4 weeks
-notes:
-  * manage personal credentials
-  * notifications and alerts via tmux
-  * define local files to hide
-  * create script to check for my dotfile dependancies
-    * Should download them if they are not found</literallayout>
-</sidebar>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
+</section>
+</section>
+<section id="_learn_my_tools">
+<title>Learn my tools</title>
+<note><simpara>Write introduction</simpara></note>
+<simpara>Will need to decide on plugins to learn</simpara>
+<sidebar>
+<literallayout class="monospaced">duration: 1 week per plugin
+start:    week 15
+plugin list:
+  * surround
+  * text objects
+  * macros
+  * gundo
+notes:
+  * this could be done after the intial 6 weeks</literallayout>
+</sidebar>
+<simpara><?asciidoc-pagebreak?></simpara>
 <section id="_day_16">
 <title>Day 16</title>
 <simpara>The first thing I&#8217;m going to need to do is delete my old repository and create
@@ -2102,6 +2117,7 @@ Talk about my development workflow
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
 <section id="_tweaking_my_vim_fu">
@@ -2182,6 +2198,7 @@ iM  - inner class
 it also includes omni completion and syntax recognition. I&#8217;ll deal with
 omni-completion another day but I would like to get syntax recognition
 setup and ready for playing around with.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_giving_my_syntax_some_sugar">
 <title>Giving my syntax some sugar</title>
@@ -2255,7 +2272,7 @@ later stage.</simpara>
 </listitem>
 </itemizedlist>
 <simpara>I&#8217;ll spend the next few weeks commiting these to my muscle memory.
-==== Resources</simpara>
+===== Resources</simpara>
 <itemizedlist>
 <listitem>
 <simpara>
@@ -2263,6 +2280,7 @@ later stage.</simpara>
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_adding_ctags">
 <title>Adding ctags</title>
@@ -2273,7 +2291,7 @@ to get file locations easily. I found the following snip from
 <ulink url="http://andrewradev.com/2011/06/08/vim-and-ctags/">here</ulink> so I&#8217;ll copy and paste
 the following snippet into my ~/bin/generate-rails-gem-tags</simpara>
 <note><simpara>I&#8217;d prefer the script to be stored within my dotvim but I&#8217;ll deal with that later.</simpara></note>
-<screen>  #! /usr/bin/env ruby
+<programlisting language="ruby" linenumbering="unnumbered">  #! /usr/bin/env ruby
 
   # Generate all tags for all gems included by bundler in gems.tags
   #
@@ -2284,7 +2302,7 @@ the following snippet into my ~/bin/generate-rails-gem-tags</simpara>
 
   paths = Bundler.load.specs.map(&amp;:full_gem_path)
 
-  system("ctags -R -f gems.tags #{paths.join(' ')}")</screen>
+  system("ctags -R -f gems.tags #{paths.join(' ')}")</programlisting>
 <simpara>I have to make sure that this is executable.</simpara>
 <literallayout class="monospaced">chmod u+x ~/bin/generate-rails-gem-tags</literallayout>
 <simpara>This will index all the gems I&#8217;ve installed via bundle. I&#8217;ll also need to add
@@ -2364,6 +2382,7 @@ binding so that it is easy to call.</simpara>
 <literallayout class="monospaced">let g:ctrlp_map = '&lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;'</literallayout>
 <simpara>As Ctrl-P uses &lt;C-p&gt; as a default mapping I just change this so that it it uses
 double &lt;leader&gt; leaving Nerdtree to freely use &lt;C-p&gt;.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_being_unimpaired">
 <title>Being unimpaired</title>
@@ -2428,6 +2447,7 @@ doesn&#8217;t come out of the box but it does tell you how to do it.</simpara>
 augroup vimrcEx</literallayout>
 <simpara>Now when I close a file and open it again the cursor will be positioned where
 it was when I closed it.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_removing_some_pain">
 <title>Removing some pain</title>
@@ -2504,23 +2524,6 @@ manage the buffers easier with a few shortcut keys.</simpara>
 </itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-</section>
-<section id="_learn_my_tools">
-<title>Learn my tools</title>
-<note><simpara>Write introduction</simpara></note>
-<simpara>Will need to decide on plugins to learn</simpara>
-<sidebar>
-<literallayout class="monospaced">duration: 1 week per plugin
-start:    week 15
-plugin list:
-  * surround
-  * text objects
-  * macros
-  * gundo
-notes:
-  * this could be done after the intial 6 weeks</literallayout>
-</sidebar>
-<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_21">
 <title>Day 21</title>
@@ -2603,6 +2606,7 @@ into the order in which I&#8217;ll gradually learn them.</simpara>
 <simpara>The progression will be tracked for the next few weeks until I have a
 decent understanding of them each and have at least burnt the basics of
 each into muscle memory.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_plugins_to_learn">
 <title>Plugins to learn</title>
@@ -3002,6 +3006,7 @@ the various options:</simpara>
 </itemizedlist>
 <simpara>I could map a few of these commands but I&#8217;ll hold off on that for the moment
 and just get accustomed to calling it manually.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_reviewing_vim_pastie">
 <title>Reviewing vim-pastie</title>
@@ -3030,6 +3035,16 @@ and the 2 below it. Finally we save the changes and quit the file.</simpara>
 related plugins that I use when working in Vim. I&#8217;ll also be looking at my
 documentation plugins which include the following plugings:</simpara>
 <itemizedlist>
+<listitem>
+<simpara>
+autotag
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+syntastic
+</simpara>
+</listitem>
 <listitem>
 <simpara>
 nerdcommenter
@@ -3064,6 +3079,7 @@ have to sift through a load of useless results.</simpara>
 in my <emphasis>Vim</emphasis>. Thankfully if my Vim doesn&#8217;t support <emphasis>Python</emphasis> then it doesn&#8217;t not
 fail horribly. These saves me from having to clear my tags manually and just
 focus on the task at hand, writing code.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_syntastic">
 <title>Syntastic</title>
@@ -3179,6 +3195,91 @@ are ever needed.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
+<section id="_nerdcommenter">
+<title>NerdCommenter</title>
+<sidebar>
+<literallayout class="monospaced">plugin: nerdcommenter
+home:   http://github.com/scrooloose/nerdcommenter
+source: git://github.com/scrooloose/nerdcommenter.git</literallayout>
+</sidebar>
+<simpara>I&#8217;ve had this plugin for a while plugin for a while but I&#8217;ve only just
+scratched the surface of what I can actually do with it.</simpara>
+<simpara>I typically only use the commenting part of this plugin and at that the
+very basic.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>&lt;leader&gt;/</literal> - comments out a line
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>I tend to use Visual mode to select the lines I want to comment out and
+use the above to get the job done. There is however a better way of
+doing this.</simpara>
+<literallayout class="monospaced">X&lt;leader&gt;c</literallayout>
+<simpara>Where <literal>X</literal> is the number of lines you want to comment out.</simpara>
+<simpara>I&#8217;ve noticed that <literal>&lt;leader&gt;cy</literal> is a pretty cool too as it comments out a
+line but yanks its content first so that you can past is elsewhere. This
+is typically useful if you need to modify a line but also want to keep
+the orginal commented out but want to past the line or a modified
+version of it somewhere else. As with <literal>&lt;leader&gt;c</literal> <literal>&lt;leader&gt;cy</literal> can be
+prefixed with a number allowing you to yank and then copy as many
+consecutive lines as you please.</simpara>
+<simpara>There is also <literal>&lt;leader&gt;cA</literal> which also comments out a line but also
+enters you into Insert mode at the end of a line ready to make a change.
+This is also accompanied by <literal>&lt;leader&gt;c$</literal> which does the same but puts
+you at the start of the line.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_asciidoc_vim">
+<title>asciidoc-vim</title>
+<sidebar>
+<literallayout class="monospaced">plugin: asciidoc-vim
+home:   http://github.com/spf13/asciidoc-vim
+source: git://github.com/spf13/asciidoc-vim.git</literallayout>
+</sidebar>
+<simpara>I&#8217;ve been using asciidoc to write this diary.</simpara>
+<simpara>As I use vim for my editor of choice I wanted a plugin that would
+highlight the asciidoc syntax for me asciidoc-vim allows gives me just
+that, making it easier to view asciidoc based content with nice syntax
+highlighting.</simpara>
+<simpara>It doesn&#8217;t come with any snippets which would be cool but I guess that&#8217;s
+not much of a problem as I can always create my own. For the moment it&#8217;s
+enough just having syntax highlighting so I&#8217;ll leave the creating custom
+snippets for another time.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_vimwiki">
+<title>vimwiki</title>
+<sidebar>
+<literallayout class="monospaced">plugin: vimwiki
+home:   http://github.com/vim-scripts/vimwiki
+source: git://github.com/vim-scripts/vimwiki.git</literallayout>
+</sidebar>
+<simpara>As with asciidoc I spend sometime adding content to wiki&#8217;s. The is cool
+and all but again I tend to use vim and rather not deal with web
+interfaces if I can help it.</simpara>
+<simpara>Like <emphasis>asciidoc-vim</emphasis>, <emphasis>vimwiki</emphasis> handling syntax highlighting but it also
+comes with a few key bindings to make easy to pull down wiki pages and
+upload them when necessary.</simpara>
+<literallayout class="monospaced">normal mode:
+&lt;Leader&gt;ww -- Open default wiki index file.
+&lt;Leader&gt;ws -- Select and open wiki index file.
+&lt;Leader&gt;wd -- Delete wiki file you are in.
+&lt;Leader&gt;wr -- Rename wiki file you are in.
+&lt;Enter&gt; -- Folow/Create wiki link
+&lt;Shift-Enter&gt; -- Split and folow/create wiki link
+&lt;Ctrl-Enter&gt; -- Vertical split and folow/create wiki link
+&lt;Backspace&gt; -- Go back to parent(previous) wiki link
+&lt;Tab&gt; -- Find next wiki link
+&lt;Shift-Tab&gt; -- Find previous wiki link</literallayout>
+<simpara>I don&#8217;t usually have the need to pull down wiki pages and and make
+changes to them persay so I won&#8217;t spend much time on playing around with
+these mappings and could possible turn them off if they end up
+conflicting with other key bindings.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
 <section id="_dressing_down_vim">
 <title>Dressing down Vim</title>
 <sidebar>
@@ -3195,7 +3296,6 @@ notes:
 plugins I&#8217;ll be using and write a basic explanation as to why they are useful and
 why I can&#8217;t live without them.</simpara></note>
 <simpara><?asciidoc-pagebreak?></simpara>
-</section>
 <section id="_day_25">
 <title>Day 25</title>
 <simpara>As it stands at present I&#8217;ve forked my version from
@@ -3272,98 +3372,27 @@ How do I view conversations
 </itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-<appendix id="appendix">
-<title>Appendix</title>
-<section id="_the_journey">
-<title>The journey</title>
 </section>
-<section id="_enhancing_my_workflow_2">
-<title>Enhancing my workflow</title>
-<simpara>This will be a delve into moving my internet use workflows back into the
-console. I find it cumbersome to keep tabbing back and forth and trying to keep
-a mental note of how many times I need to tab to get where I want. In the
-terminal this can be manage alot easier and at least allow me to set things up
-more like how I prefer things to be.</simpara>
-<sidebar>
-<literallayout class="monospaced">duration: 2 weeks
-start:    day 0
-notes:
-  * Setting up irssi
-  * Customise irssi to my liking
-  * Get the basic of mutt setup
-  * Find and customise a command line browser</literallayout>
-</sidebar>
-</section>
-<section id="_refine_my_workflow_2">
-<title>Refine my workflow</title>
-<simpara>I already have my dotfiles under version control but I would like to clean
-these up and find a way to make them a little bit more maintainable. Primarily
-I want to move away from using braid and my forked version of my dotfiles.</simpara>
-<simpara>This will lead me towards improving my vim settings and skills.</simpara>
-<simpara>For this I will setup my dotfiles from scratch and show the pros and cons of my
-setup and how I like to have things laid out.</simpara>
-<sidebar>
-<literallayout class="monospaced">duration: 8 days
-start:    1 week
-notes:
-  * start my dotfiles from scratch
-  * define local files to hide
-  * setup tmux and tmuxinator
-  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</literallayout>
-</sidebar>
-</section>
-<section id="_housekeeping_tools_2">
+<section id="_housekeeping_tools">
 <title>Housekeeping tools</title>
-<simpara>This will focus on building tools to help me maintain and keep my toolsets up
-to date.</simpara>
 <sidebar>
 <literallayout class="monospaced">duration: 4 weeks
-start:    week 3
 notes:
   * manage personal credentials
   * notifications and alerts via tmux
+  * define local files to hide
   * create script to check for my dotfile dependancies
     * Should download them if they are not found</literallayout>
 </sidebar>
-</section>
-<section id="_dressing_down_vim_2">
-<title>Dressing down Vim</title>
-<sidebar>
-<literallayout class="monospaced">duration: 6 weeks
-start:    week 7
-location: everywhere
-notes:
-  * pain experienced
-  * what was missed
-  * what did I learn (daily log)
-  * use `:map` in Vim to learn new mappings
-  * use vimtutor</literallayout>
-</sidebar>
-</section>
-<section id="_learn_my_tools_2">
-<title>Learn my tools</title>
-<simpara>Will need to decide on plugins to learn</simpara>
-<sidebar>
-<literallayout class="monospaced">duration: 1 week per plugin
-start:    week 15
-plugin list:
-  * surround
-  * text objects
-  * macros
-  * gundo
-notes:
-  * this could be done after the intial 6 weeks</literallayout>
-</sidebar>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-<section id="_garbled_notes">
-<title>Garbled notes</title>
+<appendix id="appendix">
+<title>Appendix</title>
 <simpara>This is a dumping ground for various notes I&#8217;ve taken in regards to improving
 my workflow.</simpara>
 <simpara>There&#8217;s no real structure to these and they are used purely to help me to
 remember things that I&#8217;d like to address at some point or content that I have
 not found a home for yet.</simpara>
-</section>
 <section id="_development_changes">
 <title>Development changes</title>
 <simpara>Would be nice if we could be automagically told when we need to run
@@ -3377,7 +3406,8 @@ This could be a dick, would be an idea to allow for this to be relaxed or easily
 </simpara>
 </listitem>
 </itemizedlist>
-<simpara>Convert TODO/FIXME into a backlog</simpara>
+<section id="_convert_todo_fixme_into_a_backlog">
+<title>Convert TODO/FIXME into a backlog</title>
 <itemizedlist>
 <listitem>
 <simpara>
@@ -3396,6 +3426,7 @@ Tmux alert when new commits have been made
 </listitem>
 </itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
+</section>
 </section>
 <section id="_dotfiles">
 <title>Dotfiles</title>
@@ -4138,7 +4169,7 @@ to remap these keys so that I don&#8217;t stress may fingers unnecessarily.</sim
 <simpara>Firstly I need to select <emphasis>Keyboard</emphasis> from <emphasis>System Preferences</emphasis>.</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
-  <imagedata fileref="image/mac-default_key_mapping.png"/>
+  <imagedata fileref="images/mac-default_key_mapping.png" contentwidth="500"/>
   </imageobject>
   <textobject><phrase>default key bindings</phrase></textobject>
 </inlinemediaobject></simpara>
@@ -4147,9 +4178,9 @@ and click on <emphasis>Modifier keys</emphasis></simpara>
 <simpara>I needed to change my modifier keys as follows.</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
-  <imagedata fileref="image/mac-keys_remapped.png"/>
+  <imagedata fileref="images/mac-keys_remapped.png" contentwidth="500"/>
   </imageobject>
-  <textobject><phrase>default key bindings</phrase></textobject>
+  <textobject><phrase>remapped key bindings</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>Once I save the change, my CAPLOCK and Control keys are remapped.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>

@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Refine my workflow</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="apa.html" title="A. Appendix"/><link rel="prev" href="apas02.html" title="Enhancing my workflow"/><link rel="next" href="apas04.html" title="Housekeeping tools"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Refine my workflow</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas02.html">Prev</a> </td><th width="60%" align="center">A. Appendix</th><td width="20%" align="right"> <a accesskey="n" href="apas04.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_refine_my_workflow_2"/>Refine my workflow</h3></div></div></div><p>I already have my dotfiles under version control but I would like to clean
-these up and find a way to make them a little bit more maintainable. Primarily
-I want to move away from using braid and my forked version of my dotfiles.</p><p>This will lead me towards improving my vim settings and skills.</p><p>For this I will setup my dotfiles from scratch and show the pros and cons of my
-setup and how I like to have things laid out.</p><div class="sidebar"><p class="title"><b/></p><pre class="literallayout">duration: 8 days
-start:    1 week
-notes:
-  * start my dotfiles from scratch
-  * define local files to hide
-  * setup tmux and tmuxinator
-  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</pre></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas02.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="apa.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="apas04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Enhancing my workflow </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Housekeeping tools</td></tr></table></div></body></html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Irssi</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="apa.html" title="A. Appendix"/><link rel="prev" href="apas02.html" title="Dotfiles"/><link rel="next" href="apas04.html" title="Twirssi"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Irssi</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas02.html">Prev</a> </td><th width="60%" align="center">A. Appendix</th><td width="20%" align="right"> <a accesskey="n" href="apas04.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_irssi"/>Irssi</h3></div></div></div><p>Getting irssi to open up links in w3m as a new tab is pretty easy. Especially
+with the aid of tmux. We’ll need to add the following snippet to irssi:
+    /set browse_command "tmux send-keys -t Interwepts <span class="emphasis"><em>T U %u</em></span> C-m &amp;"</p><div class="itemizedlist"><ul type="disc"><li>
+Make navigating to a window easier
+</li><li><p>
+Comment on how to automatically send commands to a IRC channel
+</p><div class="itemizedlist"><ul type="circle"><li>
+This is done for the bitlbee window to automatically login
+</li></ul></div></li><li><p>
+Mappings
+</p><div class="itemizedlist"><ul type="circle"><li><p>
+Open url in new tab
+</p><div class="itemizedlist"><ul type="square"><li>
+This will be used im irssi by bjurl
+</li></ul></div></li><li>
+Automatically sign into twitter
+</li><li>
+Automatically sign in to bitlbee
+</li></ul></div></li></ul></div><p/></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas02.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="apa.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="apas04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Dotfiles </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Twirssi</td></tr></table></div></body></html>

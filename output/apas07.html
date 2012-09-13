@@ -1,7 +1,85 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Garbled notes</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="apa.html" title="A. Appendix"/><link rel="prev" href="apas06.html" title="Learn my tools"/><link rel="next" href="apas08.html" title="Development changes"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Garbled notes</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas06.html">Prev</a> </td><th width="60%" align="center">A. Appendix</th><td width="20%" align="right"> <a accesskey="n" href="apas08.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_garbled_notes"/>Garbled notes</h3></div></div></div><p>This is a dumping ground for various notes I’ve taken in regards to improving
-my workflow.</p><p>There’s no real structure to these and they are used purely to help me to
-remember things that I’d like to address at some point or content that I have
-not found a home for yet.</p></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas06.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="apa.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="apas08.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Learn my tools </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Development changes</td></tr></table></div></body></html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Vim</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="apa.html" title="A. Appendix"/><link rel="prev" href="apas06.html" title="Tmux"/><link rel="next" href="apas08.html" title="Plugin list"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Vim</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas06.html">Prev</a> </td><th width="60%" align="center">A. Appendix</th><td width="20%" align="right"> <a accesskey="n" href="apas08.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_vim"/>Vim</h3></div></div></div><p>I’ve used Vim for a while but I’ve also been getting way to used to having a
+heap of bundles. I want to start out with a stripped down version of vim and
+document my journey from working with an out of the box setup to finding the
+learning some of the element I have neglected to learn up until now.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_customisations"/>Customisations</h4></div></div></div><p>use Vundle for package management
+Separate bindings into different files dependant on their function</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_common_commands"/>Common commands</h4></div></div></div><p>These are a few vi commands I use quie a lot, as in "I should alias"</p><pre class="literallayout">:Git ci --amend         # I'm forever amending commits</pre><pre class="literallayout">:Git rebase --continue  # Normally used after I merge conflicts</pre><pre class="literallayout">:bd                     # To destroy a buffer</pre><pre class="literallayout">&lt;C-W&gt; n +               # Increase my window height</pre><pre class="literallayout">&lt;C-W&gt; n -               # Decrease my window height</pre><pre class="literallayout">:git scribe gen site    # Generate my diary</pre><pre class="literallayout">:git scribe gen all     # Generate my diary in all versions</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_macros"/>Macros</h4></div></div></div><p>Set current line to soft tabs</p><pre class="literallayout"># Reset tabs to soft tabs
+:set et
+V =</pre><p>Convert n number of lines into a list</p><pre class="literallayout"># Turn a number of sentences into bullet points
+V: normal I  *</pre><p>Search and replace over multiple files</p><pre class="literallayout">:argdo %s/2007/2008/g</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo_13"/>TODO</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+create workflow vim scripts
+</li><li>
+Work out how to stop surround from padding special chars ({,( and friends) with spaces
+</li><li>
+Make sure the shell is setup for zsh
+</li><li>
+Tweak settings to make writing markdown a little nicer
+</li><li>
+Able to open links and preview markdown via w3m
+</li><li>
+Add filetype <code class="literal">*.md</code> as <code class="literal">*.markdown</code>
+</li><li><p>
+Find a plugin for making markup with markdown more productive
+</p><div class="itemizedlist"><ul type="circle"><li>
+Creating titles can be cumbersome
+</li><li>
+Building lists can be painful
+</li></ul></div></li><li>
+mapping for toggling line numbers
+</li><li>
+Jump to last last line I was on when I open a file
+</li><li><p>
+script to clean out vim history
+</p><div class="itemizedlist"><ul type="circle"><li>
+start with duplicates
+</li></ul></div></li><li>
+toggle line numbering
+</li><li><p>
+Format tables easily
+</p><div class="itemizedlist"><ul type="circle"><li>
+Using Align
+</li></ul></div></li><li><p>
+Limit word wrap dependant on mime type
+</p><div class="itemizedlist"><ul type="circle"><li>
+I tend to prefer different limits dependant on what I am working on
+</li></ul></div></li><li><p>
+Save files when I changed tmux pain or window
+</p><div class="itemizedlist"><ul type="circle"><li>
+Would be cool if I could do this with iTerm also so that vim saves when I tab to another application.
+</li></ul></div></li><li><p>
+Restart previous session
+</p><div class="itemizedlist"><ul type="circle"><li>
+Will help me to jump back into where I jumped off without having to manually remember what was open and where
+</li></ul></div></li><li>
+Set wordwrap dependant on the filetype
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_things_to_map"/>Things to map</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+gup
+</li><li>
+git wtf
+</li><li>
+git-scribe gen
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_things_to_learn"/>Things to learn</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+Explore plugin, how do I use this better
+</li><li>
+motions <code class="literal">:help motion.txt</code>
+</li><li>
+autocmd
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_tips_2"/>Tips</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+<code class="literal">dvf char</code> - delete up to char
+</li><li>
+<code class="literal">df char</code> - delete up to and including the char
+</li><li>
+<code class="literal">:windo e</code> - Refresh all window
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_customisations_2"/>Customisations</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+<code class="literal">:hi Search ctermbg=red</code> - Change the colour of search highlights
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_resources_16"/>Resources</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="http://robots.thoughtbot.com/post/159806050/thoughtbot-is-filled-with-vim-and-vigor" target="_top">thoughtbot vim and vigor</a>
+</li><li>
+<a class="ulink" href="http://ilker.de/specific-vim-settings-per-project.html" target="_top">vim setting per project</a>
+</li><li>
+<a class="ulink" href="http://dailyvim.tumblr.com/" target="_top">Daily vim</a>
+</li><li>
+<a class="ulink" href="http://nvie.com/posts/how-i-boosted-my-vim/" target="_top">how I boosted my vim</a>
+</li></ul></div><p/></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas06.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="apa.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="apas08.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Tmux </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Plugin list</td></tr></table></div></body></html>

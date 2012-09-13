@@ -11,8 +11,8 @@
     <table width="100%">
       <tr><td width="33%" align="left">
         
-         <a href="day_20.html">Prev</a><br/>
-         Day 20
+         <a href="refine_my_workflow.html">Prev</a><br/>
+         Refine my workflow
         
       </td><td width="33%" align="center">
         
@@ -21,8 +21,8 @@
         
       </td><td width="33%" align="right">
         
-          <a href="day_21.html">Next</a><br/>
-          Day 21
+          <a href="dressing_down_vim.html">Next</a><br/>
+          Dressing down Vim
         
       </td></tr>
     </table>
@@ -52,6 +52,1107 @@ notes:
   * this could be done after the intial 6 weeks</pre>
 </div>
 <p></p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_16"></a>Day 16</h3></div></div></div>
+<p>The first thing I’m going to need to do is delete my old repository and create
+a new one with the same name. This will bork my <code class="literal">dotfile</code> repository submodule
+but I can easily fix that by either updating the reference manually or removing
+and reinstall the plugin via the command line.</p>
+<p>Before I do this I want to move some of my settings around so that they can be
+easily added or left out if I desire. My aim here is to make it easier to
+choose the vim setup I prefer.</p>
+<p>My initial setup will be a bare bones version of Vim with little to none
+plugins added. As I gain more proficiency I will gradually add plugins to my
+workflow to help enhance the keystokes I have already learnt. The first of
+these will focus on text objects and then I will focus on movements and making
+project wide changes.</p>
+<p>I will stick with plugins that enhance the mime types available to me and help
+with some basic formatting. Once I have this under my belt I will start to
+delve into VIML and creating my own plugins and tweaks.</p>
+<p>Whilst doing all this I will be picking up a Practical Vim tip a day to help me
+productivity. These will generally be separate entries and will go over what
+I’ve learnt and how the new skill could be used to improve how I work.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_cleaning_up_my_vim_settings"></a>Cleaning up my vim settings</h4></div></div></div>
+<p>So I’ve customised my vim settings quite a bit based on
+<a class="ulink" href="https://github.com/astrails/dotvim" target="_top">astrails dotvim</a> repository. My changes have
+diverged quite abit and I’d rather break them from the branch and start a
+fresh. This will lead the way for me stripping down my settings and finding
+ways to easily get used to using vim without all the bells and whistles.</p>
+<p>The first thing I need to do is detach from the origination repository and make
+sure that my changes are kept in place. Once this is done I can then create a
+config setting to not use and plugins and use a base set of configuration
+settings so that I can start to improve my basic Vim skills.</p>
+<p>I had to go to github and delete the repository. Once deleted I created a new
+repository with the same name and push the repository</p>
+<pre class="literallayout">git push</pre>
+<p>I now have a repository that is not forked to astrails. I still need to let my
+dotfiles know that the repository is update and has changed so I need to do the
+following</p>
+<pre class="literallayout">gup</pre>
+<p>This detached the head of the repository, which is easy enough to fix, as long
+as there are no local changes.</p>
+<pre class="literallayout">g co master</pre>
+<p>Now that the repository is up to date all I need to do is update my <code class="literal">dotfiles</code>
+to reflect the changes to the detached repository.</p>
+<pre class="literallayout">cd ~
+ga dotvim
+g ci -m 'Update my dotvim files'</pre>
+<p>Now the repository is up to date and my dotfiles know of the change I’ve just
+made.</p>
+<p>Finally I push the change to my dotfiles and everything is all set.</p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_17"></a>Day 17</h3></div></div></div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_tweaking_my_test_function"></a>Tweaking my test function</h4></div></div></div>
+<p>So I have a few custom bindings to run work out what kind of test I am
+running and run it with the right tool.</p>
+<p>This has proved quite useful in the past allowing me to run <code class="literal">&lt;leader&gt;t</code>
+to run the current or last run test file. The other binding is set to
+<code class="literal">&lt;leader&gt;T</code> which runs the closest test to the current line number.</p>
+<p>These have served me well up to today when I had some performance
+testing to do and testunit was the only tool setup for the project I was
+working on.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Find link to Gary’s dotfiles.</p>
+</div>
+<p>My bindings were originally stolen from "Gary Bernhardt’s dotfiles" and
+was tweaked by myself to include cucumber. Now it’s time to fix the
+issue with testunit.</p>
+<p>To run my unit tests I will need the following command:</p>
+<pre class="literallayout">exec ":!bundle exec ruby -I\"lib:test\" " . a:filename "</pre>
+<p>This runs my unit test in the correct environemnt. There is one issue
+with this. The firstly the other tool we can simple run the test we are
+interested with by appending <span class="emphasis"><em>:1</em></span> where <span class="emphasis"><em>1</em></span> is the line number. The
+issue with doing this with my unittests is that it is not the expected
+command and will error out.</p>
+<pre class="literallayout">:!bundle exec ruby -I"lib:test" test/performance/browsing_test.rb:9
+ruby: No such file or directory -- test/performance/browsing_test.rb:9
+(LoadError)</pre>
+<pre class="literallayout">shell returned 1</pre>
+<pre class="literallayout">Press ENTER or type command to continue</pre>
+<p>this isn’t what I want in this case and it would be cool o actually get
+this to work properly as it is a large part of my typical development
+workflow.</p>
+<p>To do this I will need to be able to capture the method name relating to
+the unit test file. To do this I will need to capture the number and get
+the contents of the first and last 5 lines on either side of the line
+number received. What ever the closest method name is we’ll use to run a
+single unit test.</p>
+<p>I’ll focus on this another day once I have improve my VIML.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_todo_10"></a>TODO</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc"><li>
+Talk about my development workflow
+</li></ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_resources_12"></a>Resources</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="http://flavio.castelli.name/2010/05/28/rails_execute_single_test/" target="_top">executing test unit rails</a>
+</li></ul></div>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_tweaking_my_vim_fu"></a>Tweaking my vim-fu</h4></div></div></div>
+<p>I’ve been playing around with text objects for a few days whilst
+tweaking my settings and would like to extend this functionality with a
+couple of plugins. Firstly I want <span class="emphasis"><em>matchit</em></span> so that I can extend the
+matching capabilities of vim.</p>
+<pre class="literallayout">git submodule add git://github.com/tmhedberg/matchit.git bundle/matchit</pre>
+<p>Now I have the plugin I need to set it up to work in my vim.</p>
+<pre class="literallayout">:let loaded_matchit = 1</pre>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Write about the basic motions</p>
+</div>
+<p>Now it’s loaded I have a few nice little motions to move around blocks,
+this is all cool but I use Ruby quite a bit and that isn’t supported
+out of the box. So I will need to add <span class="emphasis"><em>vim-ruby</em></span> to introduce the same
+functionality to ruby.</p>
+<pre class="literallayout">git submodule add git://github.com/vim-ruby/vim-ruby.git bundle/vim-ruby</pre>
+<p>This give me a few more motions, this time focusing on moving around
+ruby code.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+]m - start of next method definition
+</li>
+<li>
+[m - start of previous definition
+</li>
+<li>
+]] - start of next module or class
+</li>
+<li>
+][ - end of next module or class
+</li>
+<li>
+[[ - end of module or class
+</li>
+<li>
+[] - end of module or class
+</li>
+</ul></div>
+<p>There are a few more motions that are added to my vim setting but those
+are well documented in <code class="literal">:help vim-ruby</code></p>
+<p>The following text blocks are also added to the toolset.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+am - a method
+</li>
+<li>
+im - inner method
+</li>
+<li>
+aM - a class
+</li>
+<li>
+iM  - inner class
+</li>
+</ul></div>
+<p><span class="emphasis"><em>vim-ruby</em></span> doesn’t just provide a few more text objects and motions but
+it also includes omni completion and syntax recognition. I’ll deal with
+omni-completion another day but I would like to get syntax recognition
+setup and ready for playing around with.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_giving_my_syntax_some_sugar"></a>Giving my syntax some sugar</h4></div></div></div>
+<p>Now I want to get tweak my ruby syntax recognition some more so this
+seems like the idea time to do so.</p>
+<p>Enable highlighted operators</p>
+<pre class="literallayout">:let ruby_operators = 1</pre>
+<p>I want to be alerted when there are space errors, these don’t actually
+cause errors but it would be nice to be able to easily see them.</p>
+<pre class="literallayout">:let ruby_space_errors = 1</pre>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Write about motions and text objects</p>
+</div>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_18"></a>Day 18</h3></div></div></div>
+<p>I’ve used netrw for a while but I tend to use it quite sloppily, I’d like to
+spend some time tweaking it so that it works better for my needs.
+Today I’d like to play around with vim-ractoring. I’d also like to have my
+ctags back so that I can look up methods and objects easily.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_setting_up_vim_refactoring"></a>Setting up vim-refactoring</h4></div></div></div>
+<p>So I’ve seens some of the mapping for vim-refactoring and it seems like
+something I’d like to play around with.</p>
+<p>Firstly I’ll start by adding <span class="emphasis"><em>vim-refactoring</em></span> to dotfiles.</p>
+<pre class="literallayout">git submodule add git://github.com/ecomba/vim-ruby-refactoring.git bundle/vim-ruby-refactoring</pre>
+<p>With this installed I was ready to use it. There are a few mappings I want to
+focus on and then I’ll make a note of those mappings I’d like ot learn at a
+later stage.</p>
+<p><span class="emphasis"><em>vim-refactoring</em></span> has some lengthly mapping but they turn out to be quite useful too.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<code class="literal">&lt;leader&gt;rit</code> - Replaces a temporary variable with a direct method or call
+</li>
+<li>
+<code class="literal">&lt;leader&gt;rcpc</code> - Refactor Convert Post Conditional
+</li>
+<li>
+<code class="literal">&lt;leader&gt;rec</code> - Refactor Extract Constant
+</li>
+<li>
+<code class="literal">&lt;leader&gt;rel</code> - Refactor Extract Let
+</li>
+<li>
+<code class="literal">&lt;leader&gt;relv</code> - Refactor Extract Local Variable
+</li>
+<li>
+<code class="literal">&lt;leader&gt;rrlv</code> - Refactor Rename Local Variable
+</li>
+<li>
+<code class="literal">&lt;leader&gt;rriv</code> - Refactor Rename Instance Variable
+</li>
+<li>
+<code class="literal">&lt;leader&gt;rem</code> - Refactor Extract Method
+</li>
+</ul></div>
+<p>I’ll spend the next few weeks commiting these to my muscle memory.
+===== Resources</p>
+<div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="http://justinram.wordpress.com/2010/12/30/vim-ruby-refactoring-series/" target="_top">vim-ruby-refactoring blog</a>
+</li></ul></div>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_adding_ctags"></a>Adding ctags</h4></div></div></div>
+<p>First off i’ll need to install ctags.</p>
+<pre class="literallayout">brew install ctags</pre>
+<p>Now ctags needs to know where the methods and classes live so i’ll need a way
+to get file locations easily. I found the following snip from
+<a class="ulink" href="http://andrewradev.com/2011/06/08/vim-and-ctags/" target="_top">here</a> so I’ll copy and paste
+the following snippet into my ~/bin/generate-rails-gem-tags</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>I’d prefer the script to be stored within my dotvim but I’ll deal with that later.</p>
+</div>
+<pre class="programlisting">  <i class="hl-comment" style="color: silver">#! /usr/bin/env ruby</i>
+
+  <i class="hl-comment" style="color: silver"># Generate all tags for all gems included by bundler in gems.tags</i>
+  <i class="hl-comment" style="color: silver">#</i>
+  <i class="hl-comment" style="color: silver"># Basically does the same as "bundle show gemname", except for all gems.</i>
+  <i class="hl-comment" style="color: silver"># Interestingly enough, "bundle show" without any arguments falls back to</i>
+  <i class="hl-comment" style="color: silver"># "bundle list", otherwise the whole thing could have been a bash one-liner.</i>
+  require <b class="hl-string"><i style="color:red">'bundler'</i></b>
+
+  paths = Bundler.load.specs.map(&amp;:full_gem_path)
+
+  system(<b class="hl-string"><i style="color:red">"ctags -R -f gems.tags #{paths.join(' ')}"</i></b>)</pre>
+<p>I have to make sure that this is executable.</p>
+<pre class="literallayout">chmod u+x ~/bin/generate-rails-gem-tags</pre>
+<p>This will index all the gems I’ve installed via bundle. I’ll also need to add
+the projects files to the index.</p>
+<pre class="literallayout">ctags -R .</pre>
+<p>It would be nice if this was done automatically when I cd into a project
+directory or could be handled with tmux when I start a new project session. For
+the moment I’ll just bind this command to a mapping something like:</p>
+<pre class="literallayout">noremap &lt;leader&gt;ct :!ctags -R .&lt;CR&gt;</pre>
+<p>To keep my tags up to date I’ll se <span class="emphasis"><em>autotag</em></span> which depends on python but allows
+me to keep my tags up to date and removes tags that are no longer needed.</p>
+<pre class="literallayout">git submodule add git://github.com/vim-scripts/AutoTag.git bundle/auto-tag</pre>
+<p>So now I have the basics setup I need to work out how to navigate through the
+tags easily without looking where I originally was.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<code class="literal">&lt;C-]&gt;</code> - Go to the first found definition
+</li>
+<li>
+<code class="literal">&lt;C-t&gt;</code> - Jump back to where you started
+</li>
+<li>
+<code class="literal">:tselect</code> - List all the found definitions
+</li>
+</ul></div>
+<p>Trying to move around tags can be quite a strain so I’ll add some custom
+mappings to navigate through them easily.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<code class="literal">]t</code> - next tag
+</li>
+<li>
+<p>
+<code class="literal">[t</code> - previous tag
+</p>
+<pre class="literallayout">noremap ]t :tnext&lt;CR&gt;
+noremap [t :tprev&lt;CR&gt;</pre>
+</li>
+</ul></div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_resources_13"></a>Resources</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="http://andrewradev.com/2011/06/08/vim-and-ctags/" target="_top">vim and ctags</a>
+</li></ul></div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_19"></a>Day 19</h3></div></div></div>
+<p>Today I’m going to work on my navigation and manipulation of files and content.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_tweaking_nerdtree"></a>Tweaking Nerdtree</h4></div></div></div>
+<p>So I’ve played with Nerdtree in the past but dropped it to make sure of
+Netrw. I’ve done this for a number of weeks but I still prefer Nerdtree
+so I’ll be reinstalling it and updating my settings.</p>
+<pre class="literallayout">git submodule add git://github.com/scrooloose/nerdtree.git bundle/nerdtree</pre>
+<p>I also add the following so that NERDTree is loaded automatically if no
+files are opened when starting vim.</p>
+<pre class="literallayout">autocmd vimenter * if !argc() | NERDTree | endif</pre>
+<p>That’s it, it couldn’t be easier. All that is left is to map NERDTree to a
+binding so that it is easy to call.</p>
+<pre class="literallayout">:noremap &lt;C-p&gt; :NERDTreeToggle&lt;CR&gt;</pre>
+<p>I’ll also need to cancel out <span class="emphasis"><em>Ctrl-P</em></span> default binding so that they don’t clash.</p>
+<pre class="literallayout">let g:ctrlp_map = '&lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;'</pre>
+<p>As Ctrl-P uses &lt;C-p&gt; as a default mapping I just change this so that it it uses
+double &lt;leader&gt; leaving Nerdtree to freely use &lt;C-p&gt;.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_being_unimpaired"></a>Being unimpaired</h4></div></div></div>
+<p>Now I have my ctags setup and I’m nearly complete with setting up my essentials
+for my day to day work, I will finially install <span class="emphasis"><em>unimpaired</em></span>.</p>
+<pre class="literallayout">git submodule add git://github.com/tpope/vim-unimpaired.git bundle/vim-unimpaired</pre>
+<p>I forgot to add this when I removed bundle and a couple of my custom bindings
+relay on the plugin to help move lines around.</p>
+<p>Now I have to do some tweaking to custom bindings so that they work without my
+cursor keys as those have been disabled in Insert and Visual model.</p>
+<p>Originally I had the following mappings for moving files up and down. This
+functionality emulated textmates line mnaipulation functionality and allowed me
+to easily move selections of lines around easily without poluting my paste
+buffer.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<code class="literal">&lt;C-Up&gt;</code> - Move a line up
+</li>
+<li>
+<code class="literal">&lt;C-Down&gt;</code> - Move a line down
+</li>
+</ul></div>
+<p>These are set for both Normal and Visual mode so that I can move single and
+multiple lines easily.</p>
+<p>I still don’t want to encourage the use of my cursor keys so I will remap these
+to the following:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<code class="literal">&lt;C-K&gt;</code> - Move a line up
+</li>
+<li>
+<code class="literal">&lt;C-J&gt;</code> - Move a line down
+</li>
+</ul></div>
+<p>Now instead of having to use &lt;Up&gt; and &lt;Down&gt; I can use J and K as I do with
+most of my other vim motions.</p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_20"></a>Day 20</h3></div></div></div>
+<p>Today I’ll carry on from where I left off yesterday.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_carry_on_where_i_left_off"></a>Carry on where I left off</h4></div></div></div>
+<p>It’s been annoying me for a while but I have dealt with the pain up until now.
+When I close a buffer and revisit it I’d like to have the cursor placed exactly
+where I left it when I closed the file. For some reason this functionality
+doesn’t come out of the box but it does tell you how to do it.</p>
+<pre class="literallayout">augroup vimrcEx
+  autocmd BufReadPost *
+    \ if line("'\"") &gt; 0 &amp;&amp; line("'\"") &lt;= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+augroup vimrcEx</pre>
+<p>Now when I close a file and open it again the cursor will be positioned where
+it was when I closed it.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_removing_some_pain"></a>Removing some pain</h4></div></div></div>
+<p>I’ve been missing my snippets for a while now, I have snipmate installed
+but I have limited snippets installed and setup.</p>
+<p>To resolve this I’ll install <span class="emphasis"><em>snipmate-snippets</em></span> to start with. Once I
+have had a play with those I will later create my own for snippets that
+I feel is missing.</p>
+<p>I’m actually going to fork this project so that I can keep my custom
+snippets all in one place. That and I don’t want/need all the other
+snippets that come with the original version.</p>
+<p>The version I chose was relatively new and included snippets for
+jasmine and a range of ruby snippets, which was a plus.</p>
+<pre class="literallayout">http://github.com/honza/snipmate-snippets</pre>
+<p>Once forked I added my custom fork.</p>
+<pre class="literallayout">git submodule add git://github.com/baphled/snipmate-snippets.git bundle snipmate-snippets</pre>
+<p>I will need to remove <span class="emphasis"><em>vim-snipmate-ruby-snippets</em></span></p>
+<p>I need to remove the instance from <span class="emphasis"><em>.gitmodules</em></span></p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Add lines I had to remove in my .gitmodules file</p>
+</div>
+<pre class="literallayout">rm -rf ../.git/modules/dotvim/modules/bundle/vim-snipmate-ruby-snippets</pre>
+<pre class="literallayout">g ci -m 'update snippets'</pre>
+<p>Updates my dotvims and includes the new snippets plugin.</p>
+<p>I’d like to build up on these and strip them down for my own needs. This will
+more than likely include writing my own where there are missing shortcuts I’d
+like.</p>
+<p>I also need to learn the snippets that are present. The only way to actually do
+this is to actually use them. The best type of snippet are the ones that just
+rolls off of your fingers. So I expect there to be snippets for <span class="emphasis"><em>def</em></span>, <span class="emphasis"><em>class</em></span>,
+<span class="emphasis"><em>desc</em></span>, etc. As I also do quite a bit of writing in Vim I’d like to make sure I
+know that AsciiDoc and Markdown snippets.</p>
+<p>At the moment my forked version doesn’t have any snippets for AsciiDoc so I
+will have to search for some and merge them into my version and updated my
+submodules.</p>
+<p>It seems that I am getting warnings about snippets already being defined. I
+need to look into this to see how I can supress the messages and stop them from
+happening all together.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_tweaking_snipmate"></a>Tweaking snipmate</h4></div></div></div>
+<p>So the current version of snipmate I already contains some snippets which are
+causing me to see warnings. This can be resolved by changing the repository
+I pull from with a version of snipmate that doesn’t include any snippets.</p>
+<p>I’ll omit removing the actual module as it has been documented already and jump
+straight into adding the new repository.</p>
+<pre class="literallayout">git submodule add git://github.com/garbas/vim-snipmate.git bundle/vim-snipmate</pre>
+<pre class="literallayout">git submodule add git://github.com/MarcWeber/vim-addon-mw-utils.git bundle/vim-addon-mw-utils</pre>
+<p>Now we have no warnings and we have a nice base to start adding custom snippets
+the only issue is when I &lt;TAB&gt; I get an error stating I need tlib to be
+installed. That’s a bit of of red herring as we actually need tlib-vim.</p>
+<pre class="literallayout">git submodule add git://github.com/tomtom/tlib_vim.git bundle/tlib-vim</pre>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Add some of the shortcuts here.</p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_improving_buffer_navigation"></a>Improving buffer navigation</h4></div></div></div>
+<p>So I’d like to be able to navigatie and maintain my buffers in a cleaner
+manner, I’ve seen bufexplorer but never had a chance to play around with it.
+This is the time to get it setup and working to see how it fairs with my
+current setup.</p>
+<pre class="literallayout">git submodule add git://github.com/c9s/bufexplorer.git bundle/bufexplorer</pre>
+<p>Finally I just need to map BufExplorer to a custom mapping to make things a
+little easier.</p>
+<pre class="literallayout">noremap &lt;leader&gt;. :BufExplorer&lt;CR&gt;</pre>
+<p>And that’s all there is to it. I can now view my buffers using <code class="literal">&lt;leader&gt;.</code> and
+manage the buffers easier with a few shortcut keys.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_resources_14"></a>Resources</h4></div></div></div>
+<div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="http://cisight.com/solving-snipmate-vim-error-snippet-c-is-already-defined/" target="_top">vim error snippet c is already defined</a>
+</li></ul></div>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_21"></a>Day 21</h3></div></div></div>
+<p>I use Vim for a number of my editing needs. Ranging from writing this diary to
+formatting documentation and coding. I’d like to organise these work flows into
+different settings allowing me to easily switch between the various work flows
+with relative ease.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_getting_an_itinerary"></a>Getting an itinerary</h4></div></div></div>
+<p>So I’ve spent some time gathering some plugins to help tweak my workflow. Now
+is the time I take stock of what I have and determine what can stay, what
+should go and what do I need to learn more.</p>
+<p>There won’t be any technical stuff done here, well not really, as the main
+focus is to get an idea of what I really need and what do I need to learn to
+improve my vimfu.</p>
+<p>I’ve hacked together a basic little script that will output names of submodules
+within a git repository, in this case my vim plugins, and will use this as a
+basis to review each plugin one by one.</p>
+<pre class="screen">#! /bin/bash
+#
+# Basic script to list all submodules with a project.
+#
+# This is useful when need to work out what dependancies a project has
+#
+# Usage: module_list project/path
+
+PROJECT_ROOT_DIRECTORY="$1"
+if [[ $# == 0 ]]; then
+  # set the default value
+  MODULE_DIRECTORY=".gitmodules"
+else
+  MODULE_DIRECTORY="${PROJECT_ROOT_DIRECTORY}/.gitmodules"
+fi
+
+function strip_postfix {
+  sed 's/\.git//g'
+}
+
+# Get the module name from the url string
+#
+# Github URL have a consistent structure, for now, so we'll use that.
+#
+# git://github.com/username/project
+#
+function module_name {
+  string=$1
+  echo $string | sed 's/[a-z]*:\/\/github.com\/[a-zA-Z0-9-]*\///' | strip_postfix
+}
+
+function repository_path {
+  string=$1
+  echo $string | sed 's/git:/http:/' | strip_postfix
+}
+
+function repositories {
+  cat ${MODULE_DIRECTORY}| grep 'url' | sed 's/url = //g'
+}
+
+function output_module_info {
+  repository=$1
+  module_name ${repository};
+  repository_path ${repository};
+  echo ${repository};
+}
+
+function read_modules {
+  for repo in `repositories`; do
+    echo `output_module_info ${repo}`
+  done
+}
+
+function main {
+  read_modules;
+}
+
+main;</pre>
+<p>I now have a nice list of plugins that I have stored locally.</p>
+<p>Now I have the list of plugins I’m using I can starting organising them
+into the order in which I’ll gradually learn them.</p>
+<p>The progression will be tracked for the next few weeks until I have a
+decent understanding of them each and have at least burnt the basics of
+each into muscle memory.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_plugins_to_learn"></a>Plugins to learn</h4></div></div></div>
+<p>So after the little bit of hacking to get a list of plugins, I know have a
+organised list of plugins that I’d like to investigate further.</p>
+<p>I’ll go through each of them individually and then document the basic
+functionality I’d like to adopt.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_package_management"></a>Package management</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc"><li>
+vim-pathogen <a class="ulink" href="http://github.com/tpope/vim-pathogen" target="_top">http://github.com/tpope/vim-pathogen</a> git://github.com/tpope/vim-pathogen.git
+</li></ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_note_taking"></a>Note taking</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+gist-vim <a class="ulink" href="http://github.com/mattn/gist-vim" target="_top">http://github.com/mattn/gist-vim</a> git://github.com/mattn/gist-vim.git
+</li>
+<li>
+vim-pastie <a class="ulink" href="http://github.com/tpope/vim-pastie" target="_top">http://github.com/tpope/vim-pastie</a> git://github.com/tpope/vim-pastie.git
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_programming_related"></a>Programming related</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+AutoTag <a class="ulink" href="http://github.com/vim-scripts/AutoTag" target="_top">http://github.com/vim-scripts/AutoTag</a> git://github.com/vim-scripts/AutoTag.git
+</li>
+<li>
+syntastic <a class="ulink" href="http://github.com/scrooloose/syntastic" target="_top">http://github.com/scrooloose/syntastic</a> git://github.com/scrooloose/syntastic.git
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_documentation"></a>Documentation</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+nerdcommenter <a class="ulink" href="http://github.com/scrooloose/nerdcommenter" target="_top">http://github.com/scrooloose/nerdcommenter</a> git://github.com/scrooloose/nerdcommenter.git
+</li>
+<li>
+asciidoc-vim <a class="ulink" href="http://github.com/spf13/asciidoc-vim" target="_top">http://github.com/spf13/asciidoc-vim</a> git://github.com/spf13/asciidoc-vim.git
+</li>
+<li>
+vimwiki <a class="ulink" href="http://github.com/vim-scripts/vimwiki" target="_top">http://github.com/vim-scripts/vimwiki</a> git://github.com/vim-scripts/vimwiki.git
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_frontend"></a>Frontend</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+jasmine.vim <a class="ulink" href="http://github.com/claco/jasmine.vim" target="_top">http://github.com/claco/jasmine.vim</a> git://github.com/claco/jasmine.vim.git
+</li>
+<li>
+vim-coffee-script <a class="ulink" href="http://github.com/kchmck/vim-coffee-script" target="_top">http://github.com/kchmck/vim-coffee-script</a> git://github.com/kchmck/vim-coffee-script.git
+</li>
+<li>
+vim-json <a class="ulink" href="http://github.com/leshill/vim-json" target="_top">http://github.com/leshill/vim-json</a> git://github.com/leshill/vim-json.git
+</li>
+<li>
+jasmine.vim <a class="ulink" href="http://github.com/claco/jasmine.vim" target="_top">http://github.com/claco/jasmine.vim</a> git://github.com/claco/jasmine.vim.git
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_ruby"></a>Ruby</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+vim-ruby-sinatra <a class="ulink" href="http://github.com/hallison/vim-ruby-sinatra" target="_top">http://github.com/hallison/vim-ruby-sinatra</a> git://github.com/hallison/vim-ruby-sinatra
+</li>
+<li>
+vim-ruby-refactoring <a class="ulink" href="http://github.com/ecomba/vim-ruby-refactoring" target="_top">http://github.com/ecomba/vim-ruby-refactoring</a> git://github.com/ecomba/vim-ruby-refactoring.git
+</li>
+<li>
+vim-rake <a class="ulink" href="http://github.com/tpope/vim-rake" target="_top">http://github.com/tpope/vim-rake</a> git://github.com/tpope/vim-rake
+</li>
+<li>
+vim-rails <a class="ulink" href="http://github.com/tpope/vim-rails" target="_top">http://github.com/tpope/vim-rails</a> git://github.com/tpope/vim-rails.git
+</li>
+<li>
+vim-ruby <a class="ulink" href="http://github.com/vim-ruby/vim-ruby" target="_top">http://github.com/vim-ruby/vim-ruby</a> git://github.com/vim-ruby/vim-ruby.git
+</li>
+<li>
+vim-bundler <a class="ulink" href="http://github.com/tpope/vim-bundler" target="_top">http://github.com/tpope/vim-bundler</a> git://github.com/tpope/vim-bundler.git
+</li>
+<li>
+vim-endwise <a class="ulink" href="http://github.com/tpope/vim-endwise" target="_top">http://github.com/tpope/vim-endwise</a> git://github.com/tpope/vim-endwise.git
+</li>
+<li>
+delimitMate <a class="ulink" href="http://github.com/Raimondi/delimitMate" target="_top">http://github.com/Raimondi/delimitMate</a> git://github.com/Raimondi/delimitMate.git
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_erlang"></a>Erlang</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc"><li>
+vimerl <a class="ulink" href="http://github.com/jimenezrick/vimerl" target="_top">http://github.com/jimenezrick/vimerl</a> git://github.com/jimenezrick/vimerl.git
+</li></ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_database"></a>Database</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc"><li>
+csv.vim <a class="ulink" href="http://github.com/chrisbra/csv.vim" target="_top">http://github.com/chrisbra/csv.vim</a> git://github.com/chrisbra/csv.vim.git
+</li></ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_integration"></a>Integration</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc"><li>
+vim-cucumber <a class="ulink" href="http://github.com/tpope/vim-cucumber" target="_top">http://github.com/tpope/vim-cucumber</a> git://github.com/tpope/vim-cucumber.git
+</li></ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_devops"></a>Devops</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+vim-puppet <a class="ulink" href="http://github.com/rodjek/vim-puppet" target="_top">http://github.com/rodjek/vim-puppet</a> git://github.com/rodjek/vim-puppet.git
+</li>
+<li>
+vim-fugitive <a class="ulink" href="http://github.com/tpope/vim-fugitive" target="_top">http://github.com/tpope/vim-fugitive</a> git://github.com/tpope/vim-fugitive.git
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_text_objects"></a>Text objects</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+vim-textobj-user <a class="ulink" href="http://github.com/kana/vim-textobj-user" target="_top">http://github.com/kana/vim-textobj-user</a> git://github.com/kana/vim-textobj-user
+</li>
+<li>
+vim-ruby-block-conv <a class="ulink" href="http://github.com/bronson/vim-ruby-block-conv" target="_top">http://github.com/bronson/vim-ruby-block-conv</a> git://github.com/bronson/vim-ruby-block-conv.git
+</li>
+<li>
+vim-textobj-rubyblock <a class="ulink" href="http://github.com/nelstrom/vim-textobj-rubyblock" target="_top">http://github.com/nelstrom/vim-textobj-rubyblock</a> git://github.com/nelstrom/vim-textobj-rubyblock
+</li>
+<li>
+vim-indentobject <a class="ulink" href="http://github.com/austintaylor/vim-indentobject" target="_top">http://github.com/austintaylor/vim-indentobject</a> git://github.com/austintaylor/vim-indentobject
+</li>
+<li>
+vim-ragtag <a class="ulink" href="http://github.com/tpope/vim-ragtag" target="_top">http://github.com/tpope/vim-ragtag</a> git://github.com/tpope/vim-ragtag
+</li>
+<li>
+vim-abolish <a class="ulink" href="http://github.com/tpope/vim-abolish" target="_top">http://github.com/tpope/vim-abolish</a> git://github.com/tpope/vim-abolish
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_motions"></a>Motions</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+vim-unimpaired <a class="ulink" href="http://github.com/tpope/vim-unimpaired" target="_top">http://github.com/tpope/vim-unimpaired</a> git://github.com/tpope/vim-unimpaired.git
+</li>
+<li>
+matchit <a class="ulink" href="http://github.com/tmhedberg/matchit" target="_top">http://github.com/tmhedberg/matchit</a> git://github.com/tmhedberg/matchit.git
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_text_manipulation"></a>Text manipulation</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+vim-surround <a class="ulink" href="http://github.com/tpope/vim-surround" target="_top">http://github.com/tpope/vim-surround</a> git://github.com/tpope/vim-surround.git
+</li>
+<li>
+ack.vim <a class="ulink" href="http://github.com/mileszs/ack.vim" target="_top">http://github.com/mileszs/ack.vim</a> git://github.com/mileszs/ack.vim.git
+</li>
+<li>
+Align <a class="ulink" href="http://github.com/alanstevens/Align" target="_top">http://github.com/alanstevens/Align</a> git://github.com/alanstevens/Align.git
+</li>
+<li>
+vim-snipmate <a class="ulink" href="http://github.com/garbas/vim-snipmate" target="_top">http://github.com/garbas/vim-snipmate</a> git://github.com/garbas/vim-snipmate.git
+</li>
+<li>
+snipmate-snippets <a class="ulink" href="http://github.com/baphled/snipmate-snippets" target="_top">http://github.com/baphled/snipmate-snippets</a> git://github.com/baphled/snipmate-snippets.git
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_visual_enhancements"></a>Visual enhancements</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+vim-powerline <a class="ulink" href="http://github.com/Lokaltog/vim-powerline" target="_top">http://github.com/Lokaltog/vim-powerline</a> git://github.com/Lokaltog/vim-powerline.git
+</li>
+<li>
+vim-vividchalk <a class="ulink" href="http://github.com/tpope/vim-vividchalk" target="_top">http://github.com/tpope/vim-vividchalk</a> git://github.com/tpope/vim-vividchalk.git
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_file_management"></a>File management</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+ctrlp.vim <a class="ulink" href="http://github.com/kien/ctrlp.vim" target="_top">http://github.com/kien/ctrlp.vim</a> git://github.com/kien/ctrlp.vim.git
+</li>
+<li>
+nerdtree <a class="ulink" href="http://github.com/scrooloose/nerdtree" target="_top">http://github.com/scrooloose/nerdtree</a> git://github.com/scrooloose/nerdtree.git
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_general_enhancements"></a>General enhancements</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+bufexplorer <a class="ulink" href="http://github.com/c9s/bufexplorer" target="_top">http://github.com/c9s/bufexplorer</a> git://github.com/c9s/bufexplorer.git
+</li>
+<li>
+vim-repeat <a class="ulink" href="http://github.com/tpope/vim-repeat" target="_top">http://github.com/tpope/vim-repeat</a> git://github.com/tpope/vim-repeat.git
+</li>
+<li>
+AutoComplPop <a class="ulink" href="http://github.com/ayang/AutoComplPop" target="_top">http://github.com/ayang/AutoComplPop</a> git://github.com/ayang/AutoComplPop.git
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_dependancies"></a>Dependancies</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+webapi-vim <a class="ulink" href="http://github.com/mattn/webapi-vim" target="_top">http://github.com/mattn/webapi-vim</a> git://github.com/mattn/webapi-vim.git
+</li>
+<li>
+vim-addon-mw-utils <a class="ulink" href="http://github.com/MarcWeber/vim-addon-mw-utils" target="_top">http://github.com/MarcWeber/vim-addon-mw-utils</a> git://github.com/MarcWeber/vim-addon-mw-utils.git
+</li>
+<li>
+tlib_vim <a class="ulink" href="http://github.com/tomtom/tlib_vim" target="_top">http://github.com/tomtom/tlib_vim</a> git://github.com/tomtom/tlib_vim.git
+</li>
+</ul></div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_22"></a>Day 22</h3></div></div></div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_install_gist_vim"></a>Install gist-vim</h4></div></div></div>
+<p>As I don’t have this installed for some reason and I’m due to starting
+reviewing my vim packages, I thought I’d start with gist-vim. I tend to need to
+post gists quickly and I usually end up using vim to write these notes and
+snippets.</p>
+<p>The only problem with this is that I have to go find the file and then copy and
+paste the contents via the website. That’s kinda slow and annoying. I’ve used
+gist-vim in the past so it’s time to get that setup and running so that I can
+send my gists easier.</p>
+<p>Same as usual I start by install the plugin:</p>
+<pre class="literallayout">git submodule add git://github.com/mattn/gist-vim.git bundle/gist-vim</pre>
+<p>I also need <code class="literal">webapi-vim</code> which deal with the API calls to github. As I don’t
+need to install it, as it’s already installed I’ll gloss over how it was
+installed as it is just a case of adding the plugin and forgetting about it.</p>
+<p>My <code class="literal">plugin.vim</code> doesn’t have any settings for <code class="literal">gist-vim</code> so I’ll add them now
+and then go over the basic commands I’ll need to play around with gist via vim.</p>
+<p>I want to be able to copy snippets from a gist:
+  let g:gist_clip_command = <span class="emphasis"><em>pbcopy</em></span></p>
+<p>I also want to try to detect the file type gists should be when uploading them:
+  let g:gist_detect_filetype = 1</p>
+<p>The default command is <code class="literal">:Gist</code> and <code class="literal">:'&lt;,'&gt;Gist</code> with the following flags for
+the various options:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<code class="literal">-p</code> - a private gist
+</li>
+<li>
+<code class="literal">-P</code> - a public gist
+</li>
+<li>
+<code class="literal">-m</code> - save a gist with all the buffers
+</li>
+<li>
+<code class="literal">-e</code> - edit the gist in the current buffer
+</li>
+<li>
+<code class="literal">-d</code> - delete a gist
+</li>
+<li>
+<code class="literal">-l</code> - list my gists
+</li>
+<li>
+<code class="literal">-l username</code> - list a users gists
+</li>
+</ul></div>
+<p>I could map a few of these commands but I’ll hold off on that for the moment
+and just get accustomed to calling it manually.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_reviewing_vim_pastie"></a>Reviewing vim-pastie</h4></div></div></div>
+<pre class="literallayout">Name:   gist-vim
+Source: http://github.com/mattn/gist-vim
+Repo:   git://github.com/mattn/gist-vim.git</pre>
+<p>I’ve had this installed pretty much from day one and never really used it. I
+guess I typically store my notes in gists or evernotes. The latter I have not
+got a plugin for, this will go on the <span class="emphasis"><em>to get</em></span> list.</p>
+<p>Pastie basically does the same as gist-vim put post the content of a buffer(s)
+to pastie. As I don’t have any need for this functionality I’ll remove it from
+my dotvim.</p>
+<pre class="literallayout">vi .gitmodules
+/ pastie&lt;CR&gt;
+d2j
+:wq</pre>
+<p>This will open <code class="literal">.gitmodules</code> in vim find the word <span class="emphasis"><em>pastie</em></span> and delete that line
+and the 2 below it. Finally we save the changes and quit the file.</p>
+<p>Next I needed to remove the plugin manually with <code class="literal">git rm bundle/vim-pastie</code></p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_23"></a>Day 23</h3></div></div></div>
+<p>So today I’ll be looking at <span class="emphasis"><em>Autotag</em></span> and <span class="emphasis"><em>syntastic</em></span> which are the programming
+related plugins that I use when working in Vim. I’ll also be looking at my
+documentation plugins which include the following plugings:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+autotag
+</li>
+<li>
+syntastic
+</li>
+<li>
+nerdcommenter
+</li>
+<li>
+asciidoc-vim
+</li>
+<li>
+vimwiki
+</li>
+</ul></div>
+<p></p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_what_is_autotag"></a>What is Autotag</h4></div></div></div>
+<p>This has been breifly touch on when adding my
+<a class="ulink" href="day_18.html#_adding_ctags" target="_top">ctags</a> though I haven’t really spoken about
+what it actually does and what it’s benefits are.</p>
+<p>Firstly, the first issue with updating ctags is that when running <code class="literal">ctags -a</code>
+you’d only update the current tags list whilst not removing tags that are no
+longer needed.</p>
+<p>Autotag updates the ctags for a project everytime a file is saved. This is
+needed so that my ctags don’t become stale and include definitions that are no
+longer present in the project I am currently working on. Meaning that when
+pressing <code class="literal">&lt;C-]&gt;</code> I only get results that are relevent to the project and don’t
+have to sift through a load of useless results.</p>
+<p>Autotag requires <span class="emphasis"><em>Python</em></span> support so it is important to have support for this
+in my <span class="emphasis"><em>Vim</em></span>. Thankfully if my Vim doesn’t support <span class="emphasis"><em>Python</em></span> then it doesn’t not
+fail horribly. These saves me from having to clear my tags manually and just
+focus on the task at hand, writing code.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_syntastic"></a>Syntastic</h4></div></div></div>
+<p>I use this to help me find syntax errors easily, it doesn’t do this on the fly
+but I save often enough for that not to be a problem. All that is needed is for
+a file to be saved and if any errors are found the quickbox buffer will open up
+allowing for me to go over each change and deal with them appropriately.
+Syntastic comes with a host of syntax checker and the basic to allow for me to
+easily add more checkers dependent on the filetype I am dealing with.</p>
+<p>It uses the built in Vim commands for navigation or errors <code class="literal">:lnext</code> and
+<code class="literal">:lprev</code>. As I’m using unimpaired I have alternative mappings for these as follows:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<code class="literal">[l</code> - <code class="literal">:lnext</code>
+</li>
+<li>
+<code class="literal">l]</code> - <code class="literal">:lprevious</code>
+</li>
+</ul></div>
+<p>Other mime type related plugins also add their own checkers so I have pretty
+much all the checkers I need for the moment. The following languages are
+included out of the box. The following is just a few that are maintained that I am interest in:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+yaml
+</li>
+<li>
+jslint
+</li>
+<li>
+jshint (gillesruppert)
+</li>
+<li>
+sass
+</li>
+<li>
+html (darcyparker)
+</li>
+<li>
+coffee (darcyparker)
+</li>
+<li>
+xml
+</li>
+<li>
+xslt
+</li>
+<li>
+less (irrationalfab)
+</li>
+<li>
+puppet (frimik)
+</li>
+<li>
+ruby
+</li>
+<li>
+scss
+</li>
+<li>
+json
+</li>
+<li>
+cucumber
+</li>
+<li>
+css
+</li>
+<li>
+erlang
+</li>
+</ul></div>
+<p>There is a range of other checkers that can be found
+<a class="ulink" href="https://github.com/scrooloose/syntastic/tree/master/syntax_checkers" target="_top">here</a>.</p>
+<p>I tend not to use a host of these but at least I know they are there if they
+are ever needed.</p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_nerdcommenter"></a>NerdCommenter</h3></div></div></div>
+<div class="sidebar">
+<p class="title"><b></b></p>
+<pre class="literallayout">plugin: nerdcommenter
+home:   http://github.com/scrooloose/nerdcommenter
+source: git://github.com/scrooloose/nerdcommenter.git</pre>
+</div>
+<p>I’ve had this plugin for a while plugin for a while but I’ve only just
+scratched the surface of what I can actually do with it.</p>
+<p>I typically only use the commenting part of this plugin and at that the
+very basic.</p>
+<div class="itemizedlist"><ul type="disc"><li>
+<code class="literal">&lt;leader&gt;/</code> - comments out a line
+</li></ul></div>
+<p>I tend to use Visual mode to select the lines I want to comment out and
+use the above to get the job done. There is however a better way of
+doing this.</p>
+<pre class="literallayout">X&lt;leader&gt;c</pre>
+<p>Where <code class="literal">X</code> is the number of lines you want to comment out.</p>
+<p>I’ve noticed that <code class="literal">&lt;leader&gt;cy</code> is a pretty cool too as it comments out a
+line but yanks its content first so that you can past is elsewhere. This
+is typically useful if you need to modify a line but also want to keep
+the orginal commented out but want to past the line or a modified
+version of it somewhere else. As with <code class="literal">&lt;leader&gt;c</code> <code class="literal">&lt;leader&gt;cy</code> can be
+prefixed with a number allowing you to yank and then copy as many
+consecutive lines as you please.</p>
+<p>There is also <code class="literal">&lt;leader&gt;cA</code> which also comments out a line but also
+enters you into Insert mode at the end of a line ready to make a change.
+This is also accompanied by <code class="literal">&lt;leader&gt;c$</code> which does the same but puts
+you at the start of the line.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_asciidoc_vim"></a>asciidoc-vim</h3></div></div></div>
+<div class="sidebar">
+<p class="title"><b></b></p>
+<pre class="literallayout">plugin: asciidoc-vim
+home:   http://github.com/spf13/asciidoc-vim
+source: git://github.com/spf13/asciidoc-vim.git</pre>
+</div>
+<p>I’ve been using asciidoc to write this diary.</p>
+<p>As I use vim for my editor of choice I wanted a plugin that would
+highlight the asciidoc syntax for me asciidoc-vim allows gives me just
+that, making it easier to view asciidoc based content with nice syntax
+highlighting.</p>
+<p>It doesn’t come with any snippets which would be cool but I guess that’s
+not much of a problem as I can always create my own. For the moment it’s
+enough just having syntax highlighting so I’ll leave the creating custom
+snippets for another time.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_vimwiki"></a>vimwiki</h3></div></div></div>
+<div class="sidebar">
+<p class="title"><b></b></p>
+<pre class="literallayout">plugin: vimwiki
+home:   http://github.com/vim-scripts/vimwiki
+source: git://github.com/vim-scripts/vimwiki.git</pre>
+</div>
+<p>As with asciidoc I spend sometime adding content to wiki’s. The is cool
+and all but again I tend to use vim and rather not deal with web
+interfaces if I can help it.</p>
+<p>Like <span class="emphasis"><em>asciidoc-vim</em></span>, <span class="emphasis"><em>vimwiki</em></span> handling syntax highlighting but it also
+comes with a few key bindings to make easy to pull down wiki pages and
+upload them when necessary.</p>
+<pre class="literallayout">normal mode:
+&lt;Leader&gt;ww -- Open default wiki index file.
+&lt;Leader&gt;ws -- Select and open wiki index file.
+&lt;Leader&gt;wd -- Delete wiki file you are in.
+&lt;Leader&gt;wr -- Rename wiki file you are in.
+&lt;Enter&gt; -- Folow/Create wiki link
+&lt;Shift-Enter&gt; -- Split and folow/create wiki link
+&lt;Ctrl-Enter&gt; -- Vertical split and folow/create wiki link
+&lt;Backspace&gt; -- Go back to parent(previous) wiki link
+&lt;Tab&gt; -- Find next wiki link
+&lt;Shift-Tab&gt; -- Find previous wiki link</pre>
+<p>I don’t usually have the need to pull down wiki pages and and make
+changes to them persay so I won’t spend much time on playing around with
+these mappings and could possible turn them off if they end up
+conflicting with other key bindings.</p>
+<p></p>
+</div>
 </div>
 
     </div>
@@ -62,8 +1163,8 @@ notes:
     <table width="100%">
       <tr><td width="33%" align="left">
         
-         <a href="day_20.html">Prev</a><br/>
-         Day 20
+         <a href="refine_my_workflow.html">Prev</a><br/>
+         Refine my workflow
         
       </td><td width="33%" align="center">
         
@@ -72,8 +1173,8 @@ notes:
         
       </td><td width="33%" align="right">
         
-          <a href="day_21.html">Next</a><br/>
-          Day 21
+          <a href="dressing_down_vim.html">Next</a><br/>
+          Dressing down Vim
         
       </td></tr>
     </table>
