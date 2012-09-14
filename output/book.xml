@@ -2674,117 +2674,22 @@ vimwiki <ulink url="http://github.com/vim-scripts/vimwiki">http://github.com/vim
 </listitem>
 </itemizedlist>
 </section>
-<section id="_frontend">
-<title>Frontend</title>
+<section id="_general_enhancements">
+<title>General enhancements</title>
 <itemizedlist>
 <listitem>
 <simpara>
-jasmine.vim <ulink url="http://github.com/claco/jasmine.vim">http://github.com/claco/jasmine.vim</ulink> git://github.com/claco/jasmine.vim.git
+bufexplorer <ulink url="http://github.com/c9s/bufexplorer">http://github.com/c9s/bufexplorer</ulink> git://github.com/c9s/bufexplorer.git
 </simpara>
 </listitem>
 <listitem>
 <simpara>
-vim-coffee-script <ulink url="http://github.com/kchmck/vim-coffee-script">http://github.com/kchmck/vim-coffee-script</ulink> git://github.com/kchmck/vim-coffee-script.git
+vim-repeat <ulink url="http://github.com/tpope/vim-repeat">http://github.com/tpope/vim-repeat</ulink> git://github.com/tpope/vim-repeat.git
 </simpara>
 </listitem>
 <listitem>
 <simpara>
-vim-json <ulink url="http://github.com/leshill/vim-json">http://github.com/leshill/vim-json</ulink> git://github.com/leshill/vim-json.git
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-jasmine.vim <ulink url="http://github.com/claco/jasmine.vim">http://github.com/claco/jasmine.vim</ulink> git://github.com/claco/jasmine.vim.git
-</simpara>
-</listitem>
-</itemizedlist>
-</section>
-<section id="_ruby">
-<title>Ruby</title>
-<itemizedlist>
-<listitem>
-<simpara>
-vim-ruby-sinatra <ulink url="http://github.com/hallison/vim-ruby-sinatra">http://github.com/hallison/vim-ruby-sinatra</ulink> git://github.com/hallison/vim-ruby-sinatra
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-vim-ruby-refactoring <ulink url="http://github.com/ecomba/vim-ruby-refactoring">http://github.com/ecomba/vim-ruby-refactoring</ulink> git://github.com/ecomba/vim-ruby-refactoring.git
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-vim-rake <ulink url="http://github.com/tpope/vim-rake">http://github.com/tpope/vim-rake</ulink> git://github.com/tpope/vim-rake
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-vim-rails <ulink url="http://github.com/tpope/vim-rails">http://github.com/tpope/vim-rails</ulink> git://github.com/tpope/vim-rails.git
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-vim-ruby <ulink url="http://github.com/vim-ruby/vim-ruby">http://github.com/vim-ruby/vim-ruby</ulink> git://github.com/vim-ruby/vim-ruby.git
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-vim-bundler <ulink url="http://github.com/tpope/vim-bundler">http://github.com/tpope/vim-bundler</ulink> git://github.com/tpope/vim-bundler.git
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-vim-endwise <ulink url="http://github.com/tpope/vim-endwise">http://github.com/tpope/vim-endwise</ulink> git://github.com/tpope/vim-endwise.git
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-delimitMate <ulink url="http://github.com/Raimondi/delimitMate">http://github.com/Raimondi/delimitMate</ulink> git://github.com/Raimondi/delimitMate.git
-</simpara>
-</listitem>
-</itemizedlist>
-</section>
-<section id="_erlang">
-<title>Erlang</title>
-<itemizedlist>
-<listitem>
-<simpara>
-vimerl <ulink url="http://github.com/jimenezrick/vimerl">http://github.com/jimenezrick/vimerl</ulink> git://github.com/jimenezrick/vimerl.git
-</simpara>
-</listitem>
-</itemizedlist>
-</section>
-<section id="_database">
-<title>Database</title>
-<itemizedlist>
-<listitem>
-<simpara>
-csv.vim <ulink url="http://github.com/chrisbra/csv.vim">http://github.com/chrisbra/csv.vim</ulink> git://github.com/chrisbra/csv.vim.git
-</simpara>
-</listitem>
-</itemizedlist>
-</section>
-<section id="_integration">
-<title>Integration</title>
-<itemizedlist>
-<listitem>
-<simpara>
-vim-cucumber <ulink url="http://github.com/tpope/vim-cucumber">http://github.com/tpope/vim-cucumber</ulink> git://github.com/tpope/vim-cucumber.git
-</simpara>
-</listitem>
-</itemizedlist>
-</section>
-<section id="_devops">
-<title>Devops</title>
-<itemizedlist>
-<listitem>
-<simpara>
-vim-puppet <ulink url="http://github.com/rodjek/vim-puppet">http://github.com/rodjek/vim-puppet</ulink> git://github.com/rodjek/vim-puppet.git
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-vim-fugitive <ulink url="http://github.com/tpope/vim-fugitive">http://github.com/tpope/vim-fugitive</ulink> git://github.com/tpope/vim-fugitive.git
+AutoComplPop <ulink url="http://github.com/ayang/AutoComplPop">http://github.com/ayang/AutoComplPop</ulink> git://github.com/ayang/AutoComplPop.git
 </simpara>
 </listitem>
 </itemizedlist>
@@ -2899,22 +2804,117 @@ nerdtree <ulink url="http://github.com/scrooloose/nerdtree">http://github.com/sc
 </listitem>
 </itemizedlist>
 </section>
-<section id="_general_enhancements">
-<title>General enhancements</title>
+<section id="_frontend">
+<title>Frontend</title>
 <itemizedlist>
 <listitem>
 <simpara>
-bufexplorer <ulink url="http://github.com/c9s/bufexplorer">http://github.com/c9s/bufexplorer</ulink> git://github.com/c9s/bufexplorer.git
+jasmine.vim <ulink url="http://github.com/claco/jasmine.vim">http://github.com/claco/jasmine.vim</ulink> git://github.com/claco/jasmine.vim.git
 </simpara>
 </listitem>
 <listitem>
 <simpara>
-vim-repeat <ulink url="http://github.com/tpope/vim-repeat">http://github.com/tpope/vim-repeat</ulink> git://github.com/tpope/vim-repeat.git
+vim-coffee-script <ulink url="http://github.com/kchmck/vim-coffee-script">http://github.com/kchmck/vim-coffee-script</ulink> git://github.com/kchmck/vim-coffee-script.git
 </simpara>
 </listitem>
 <listitem>
 <simpara>
-AutoComplPop <ulink url="http://github.com/ayang/AutoComplPop">http://github.com/ayang/AutoComplPop</ulink> git://github.com/ayang/AutoComplPop.git
+vim-json <ulink url="http://github.com/leshill/vim-json">http://github.com/leshill/vim-json</ulink> git://github.com/leshill/vim-json.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+jasmine.vim <ulink url="http://github.com/claco/jasmine.vim">http://github.com/claco/jasmine.vim</ulink> git://github.com/claco/jasmine.vim.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_ruby">
+<title>Ruby</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-ruby-sinatra <ulink url="http://github.com/hallison/vim-ruby-sinatra">http://github.com/hallison/vim-ruby-sinatra</ulink> git://github.com/hallison/vim-ruby-sinatra
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ruby-refactoring <ulink url="http://github.com/ecomba/vim-ruby-refactoring">http://github.com/ecomba/vim-ruby-refactoring</ulink> git://github.com/ecomba/vim-ruby-refactoring.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-rake <ulink url="http://github.com/tpope/vim-rake">http://github.com/tpope/vim-rake</ulink> git://github.com/tpope/vim-rake
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-rails <ulink url="http://github.com/tpope/vim-rails">http://github.com/tpope/vim-rails</ulink> git://github.com/tpope/vim-rails.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ruby <ulink url="http://github.com/vim-ruby/vim-ruby">http://github.com/vim-ruby/vim-ruby</ulink> git://github.com/vim-ruby/vim-ruby.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-bundler <ulink url="http://github.com/tpope/vim-bundler">http://github.com/tpope/vim-bundler</ulink> git://github.com/tpope/vim-bundler.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-endwise <ulink url="http://github.com/tpope/vim-endwise">http://github.com/tpope/vim-endwise</ulink> git://github.com/tpope/vim-endwise.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+delimitMate <ulink url="http://github.com/Raimondi/delimitMate">http://github.com/Raimondi/delimitMate</ulink> git://github.com/Raimondi/delimitMate.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_erlang">
+<title>Erlang</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vimerl <ulink url="http://github.com/jimenezrick/vimerl">http://github.com/jimenezrick/vimerl</ulink> git://github.com/jimenezrick/vimerl.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_database">
+<title>Database</title>
+<itemizedlist>
+<listitem>
+<simpara>
+csv.vim <ulink url="http://github.com/chrisbra/csv.vim">http://github.com/chrisbra/csv.vim</ulink> git://github.com/chrisbra/csv.vim.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_integration">
+<title>Integration</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-cucumber <ulink url="http://github.com/tpope/vim-cucumber">http://github.com/tpope/vim-cucumber</ulink> git://github.com/tpope/vim-cucumber.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_devops">
+<title>Devops</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-puppet <ulink url="http://github.com/rodjek/vim-puppet">http://github.com/rodjek/vim-puppet</ulink> git://github.com/rodjek/vim-puppet.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-fugitive <ulink url="http://github.com/tpope/vim-fugitive">http://github.com/tpope/vim-fugitive</ulink> git://github.com/tpope/vim-fugitive.git
 </simpara>
 </listitem>
 </itemizedlist>
@@ -3194,7 +3194,6 @@ erlang
 are ever needed.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-</section>
 <section id="_nerdcommenter">
 <title>NerdCommenter</title>
 <sidebar>
@@ -3280,6 +3279,68 @@ conflicting with other key bindings.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
+<section id="_day_24">
+<title>Day 24</title>
+<simpara>Today I&#8217;ll be looking at the plugins that generally enhance my productivity
+whilst working in Vim. These plugins tend to enhance Vim&#8217;s out of the box
+functionality and add a few nice features to allow me to work more efficiently.</simpara>
+<section id="_bufexplorer">
+<title>bufexplorer</title>
+<sidebar>
+<literallayout class="monospaced">plugin: bufexplorer
+home:   http://github.com/c9s/bufexplorer
+source: git://github.com/c9s/bufexplorer.git</literallayout>
+</sidebar>
+<simpara>So dealing with buffers can be somewhat frustrating at times, especially if you
+keep a session running for a number of days, as I do, the one thing missing
+from Vim is a way to easily navigation open buffers and manage them as needed.</simpara>
+<simpara>I came across bufexplorer a few weeks ago whilst watching another developer
+coding and flipping buffers. After looking at their vim files I noticed that
+they had been using bufexplorer to do this and quickly added it to my
+toolchain. It&#8217;s easy to configure and adds the nice feature of being able to
+list buffers and select and delete them quite easily.</simpara>
+<simpara>The first things I did was to remap its default (<literal>&lt;leader&gt;be</literal>) to <literal>&lt;leader&gt;,.</literal>
+mainly as the former feels more natural. There are a few more mappings that it
+uses that I haven&#8217;t gotten around to making use of yet and it will be these
+that I&#8217;ll be playing around with from now on. They are as follows:</simpara>
+<literallayout class="monospaced">&lt;leader&gt;bs
+&lt;leader&gt;bv</literallayout>
+<simpara>As you may or may not of figured out this opens bufexplorer in a horizontal and
+vertical split respectively.</simpara>
+<simpara>The most common command I use at present is deleting buffers (<literal>d</literal>) and jumping
+to a given buffer. The former still feels a little clumsy, probably as I&#8217;m not
+making the use of the out of the box commands and defaulting to using search to
+find a buffer and press <literal>&lt;Enter&gt;</literal> when I&#8217;ve found the buffer I am interested in.</simpara>
+<simpara>Below is a snippet of the docs which lists some of the internal commands
+bufexplorer supports:</simpara>
+<literallayout class="monospaced">R             Toggles relative path/absolute path.
+D            |:wipeout|the buffer under the cursor from the list.  When a
+              buffers is wiped, it will not be shown when unlisted buffer are
+              displayed.
+f             Toggles whether you are taken to the active window when
+              selecting a buffer or not.
+o             Opens the buffer that is under the cursor into the current
+              window.
+p             Toggles the showing of a split filename/pathname.
+q             Quit exploring.
+r             Reverses the order the buffers are listed in.
+s             Selects the order the buffers are listed in. Either by buffer
+              number, file name, file extension, most recently used (MRU), or
+              full path.
+u             Toggles the showing of "unlisted" buffers.</literallayout>
+<simpara>I don&#8217;t use tabs, in fact I&#8217;d rather stay away from them as much as possible so
+that commands relating to those have been omitted.</simpara>
+<simpara>I&#8217;m going to have a play around with the other settings to see how useful they
+are and go from there.</simpara>
+<simpara>The biggest plus for me is the ability to easily delete buffers without having
+to remember the buffers number. This alone is a good enough reason to keep it
+in my toolchain.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+</section>
 <section id="_dressing_down_vim">
 <title>Dressing down Vim</title>
 <sidebar>
@@ -3287,6 +3348,8 @@ conflicting with other key bindings.</simpara>
 location: everywhere
 notes:
   * pain experienced
+  * learn more about text objects
+  * improve my knowledge of motions
   * what was missed
   * what did I learn (daily log)
   * use `:map` in Vim to learn new mappings
@@ -3890,6 +3953,23 @@ autocmd
 <simpara>
 <literal>:hi Search ctermbg=red</literal> - Change the colour of search highlights
 </simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_snippets">
+<title>Snippets</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Cucumber
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+I&#8217;m forever having to type <literal>save_and_open_page</literal> for debugging
+</simpara>
+</listitem>
+</itemizedlist>
 </listitem>
 </itemizedlist>
 </section>
