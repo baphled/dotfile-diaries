@@ -1,8 +1,0 @@
-== Dotfile Diaries
-
-A day by day diary of my meanderings with my dotfiles.
-
-The idea here is to document the changes I make to my dotfiles on a
-daily basis to help me tweak my productivity whilst working in the
-terminal.
-
