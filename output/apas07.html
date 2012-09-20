@@ -8,10 +8,8 @@ learning some of the element I have neglected to learn up until now.</p><div cla
 Separate bindings into different files dependant on their function</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_common_commands"/>Common commands</h4></div></div></div><p>These are a few vi commands I use quie a lot, as in "I should alias"</p><pre class="literallayout">:Git ci --amend         # I'm forever amending commits</pre><pre class="literallayout">:Git rebase --continue  # Normally used after I merge conflicts</pre><pre class="literallayout">:bd                     # To destroy a buffer</pre><pre class="literallayout">&lt;C-W&gt; n +               # Increase my window height</pre><pre class="literallayout">&lt;C-W&gt; n -               # Decrease my window height</pre><pre class="literallayout">:git scribe gen site    # Generate my diary</pre><pre class="literallayout">:git scribe gen all     # Generate my diary in all versions</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_macros"/>Macros</h4></div></div></div><p>Set current line to soft tabs</p><pre class="literallayout"># Reset tabs to soft tabs
 :set et
 V =</pre><p>Convert n number of lines into a list</p><pre class="literallayout"># Turn a number of sentences into bullet points
-V: normal I  *</pre><p>Search and replace over multiple files</p><pre class="literallayout">:argdo %s/2007/2008/g</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo_13"/>TODO</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
-create workflow vim scripts
-</li><li>
-Work out how to stop surround from padding special chars ({,( and friends) with spaces
+V: normal I  *</pre><p>Search and replace over multiple files</p><pre class="literallayout">:argdo %s/2007/2008/g</pre><div class="itemizedlist"><ul type="disc"><li>
+create vim scripts based on my workflows
 </li><li>
 Make sure the shell is setup for zsh
 </li><li>
@@ -21,12 +19,14 @@ Able to open links and preview markdown via w3m
 </li><li>
 Add filetype <code class="literal">*.md</code> as <code class="literal">*.markdown</code>
 </li><li><p>
-Find a plugin for making markup with markdown more productive
+Find a plugin for making markup with markdown more productively
 </p><div class="itemizedlist"><ul type="circle"><li>
 Creating titles can be cumbersome
 </li><li>
 Building lists can be painful
 </li></ul></div></li><li>
+The same as of above applies to <code class="literal">*.asc</code> and <code class="literal">*asciidoc</code>
+</li><li>
 mapping for toggling line numbers
 </li><li>
 Jump to last last line I was on when I open a file
@@ -44,6 +44,8 @@ Using Align
 Limit word wrap dependant on mime type
 </p><div class="itemizedlist"><ul type="circle"><li>
 I tend to prefer different limits dependant on what I am working on
+</li><li>
+Display line limit
 </li></ul></div></li><li><p>
 Save files when I changed tmux pain or window
 </p><div class="itemizedlist"><ul type="circle"><li>
@@ -54,6 +56,10 @@ Restart previous session
 Will help me to jump back into where I jumped off without having to manually remember what was open and where
 </li></ul></div></li><li>
 Set wordwrap dependant on the filetype
+</li><li>
+Stop syntastic’s from displaying me errors when writing step definitions.
+</li><li>
+fix issues with vim slowing down when using AutoComplPop
 </li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_things_to_map"/>Things to map</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
 gup
 </li><li>
@@ -65,6 +71,8 @@ Explore plugin, how do I use this better
 </li><li>
 motions <code class="literal">:help motion.txt</code>
 </li><li>
+text objects
+</li><li>
 autocmd
 </li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_tips_2"/>Tips</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
 <code class="literal">dvf char</code> - delete up to char
@@ -72,12 +80,24 @@ autocmd
 <code class="literal">df char</code> - delete up to and including the char
 </li><li>
 <code class="literal">:windo e</code> - Refresh all window
+</li><li>
+<code class="literal">gggqG</code> - Reformat all lines in the file
 </li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_customisations_2"/>Customisations</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
 <code class="literal">:hi Search ctermbg=red</code> - Change the colour of search highlights
+</li><li>
+<code class="literal">set colorcolumn=140</code> - set the column limit to 140
+</li><li>
+<code class="literal">set textwidth=140</code> - set the text width to 140 characters
 </li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_snippets"/>Snippets</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>
 Cucumber
 </p><div class="itemizedlist"><ul type="circle"><li>
 I’m forever having to type <code class="literal">save_and_open_page</code> for debugging
+</li></ul></div></li><li><p>
+ruby
+</p><div class="itemizedlist"><ul type="circle"><li>
+<code class="literal">source :rubygems</code>
+</li><li>
+<code class="literal">gem 'foo'</code>
 </li></ul></div></li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_resources_16"/>Resources</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
 <a class="ulink" href="http://robots.thoughtbot.com/post/159806050/thoughtbot-is-filled-with-vim-and-vigor" target="_top">thoughtbot vim and vigor</a>
 </li><li>

@@ -390,36 +390,37 @@ asciidoc.install();
 <div style="page-break-after:always"></div>
 <div class="paragraph"><p>(c) 2012 Yomi Colledge</p></div>
 <div class="paragraph"><p>All rights reseved</p></div>
-<div class="paragraph"><p>No part of this publication may be reproduced, stored in a retrieval
-system, or transmitted, in any form, or by any means, electronic,
-mechanical, photocopying, recording, or otherwise, without the prior
-consent of the publisher.</p></div>
+<div class="paragraph"><p>No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in any form, or by any
+means, electronic, mechanical, photocopying, recording, or otherwise, without the prior consent of the publisher.</p></div>
 <div style="page-break-after:always"></div>
-<div class="paragraph"><p>The goal of this diary is to track the journey of improving my unix-fu and
-work flow.</p></div>
-<div class="paragraph"><p>I&#8217;ve come to love my current setup (tmux, oh-my-zsh, Vim, RVM and bundle).
-Setting up my environment may well get more complex so I&#8217;ll setup a script that
-will check whether these tools are available and install them if they are not.</p></div>
-<div class="paragraph"><p>Vim and oh-my-zsh are easy, I already have separate repositories for these. I&#8217;m
-going to be opinionated for the moment an focus on installing the other tools
-via brew and apt. I&#8217;ll check the OS and use the correct install recipe
+<div class="paragraph"><p>The goal of this diary is to track the journey of improving my unix-fu and work flow.</p></div>
+<div class="paragraph"><p>This will be an on going process and will help me keep track of the things I have learnt and as well as how I have
+improved my console fu over the course of time.</p></div>
+<div class="paragraph"><p>There is no end to this diary, there is no real end to this diary so the size of it may well become quite substantial.
+I&#8217;m not sure what I&#8217;ll do in that regard and will shelve that decision for when I have gone over 90 days or so.</p></div>
+<div class="paragraph"><p>This diary, although written in that way, will not actually be a daily account of what I have done but based on the
+collective days I have spent focusing on tweaking my workflow.</p></div>
+<div class="paragraph"><p>The notes in the appendix will gradually be rewritten as entries or moved into the specific entry when neccessary. So
+over time the entries may well be tweak for readability and clarity sake.  I&#8217;ll start off with a very basic workbench
+and build it up to the point where it it optimal for my personal use and configurable enough for others to do the same
+too.</p></div>
+<div style="page-break-after:always"></div>
+<div class="paragraph"><p>I&#8217;ve come to love my current setup (tmux, oh-my-zsh, Vim, RVM and bundle).  Setting up my environment may well get more
+complex so I&#8217;ll setup a script that will check whether these tools are available and install them if they are not.</p></div>
+<div class="paragraph"><p>Vim and oh-my-zsh are easy, I already have separate repositories for these. I&#8217;m going to be opinionated for the moment
+an focus on installing the other tools via brew and apt. I&#8217;ll check the OS and use the correct install recipe
 accordingly.</p></div>
-<div class="paragraph"><p>I&#8217;ll start off with a very basic workbench and build it up to the point where
-it it optimal for my personal use and configurable enough for others to do the
-same too.</p></div>
-<div style="page-break-after:always"></div>
-<div class="paragraph"><p>TO BE WRITTEN</p></div>
+<div class="paragraph"><p>The idea here is to document the changes I make to my dotfiles on a daily basis to help me tweak my productivity whilst
+working in the terminal.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_enhancing_my_workflow">Enhancing my workflow</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>This will be a delve into move the my internet related information back into
-the console. I find it cumbersome to keep tabbing back and forth and trying to
-keep a mental note of how many times I need to tab to get where I want. In the
-terminal this can be manage a lot easier and at least allow me to set things up
-more like how I prefer things to be.</p></div>
+<div class="paragraph"><p>This will be a delve into move the my internet related information back into the console. I find it cumbersome to keep
+tabbing back and forth and trying to keep a mental note of how many times I need to tab to get where I want. In the
+terminal this can be manage a lot easier and at least allow me to set things up more like how I prefer things to be.</p></div>
 <div class="sidebarblock">
 <div class="content">
 <div class="literalblock">
@@ -437,19 +438,14 @@ notes:
 <div style="page-break-after:always"></div>
 <div class="sect2">
 <h3 id="_day_1">Day 1</h3>
-<div class="paragraph"><p>So this is the first day of an on going process devised by myself to help
-improve and tweak my existing work flow.</p></div>
-<div class="paragraph"><p>For years I&#8217;ve been used to living in the console and staying away from GUI
-type tools to do my day to day work</p></div>
-<div class="paragraph"><p>So the idea is to move back to my console and improve my work flow by tweaking
-and getting to know my console tools better.</p></div>
-<div class="paragraph"><p>In this blog I&#8217;ll start with something simple, as the days progress I create a
-blog describing what I&#8217;ve learnt today and how it improves my day to day
-work flow.</p></div>
-<div class="paragraph"><p>Today is an easy day, I&#8217;ll start with setting up irssi, a command line
-interface for IRC.</p></div>
-<div class="paragraph"><p>What I want here is my old setup tweaked to make it easy to change channels and
-see is in a room.</p></div>
+<div class="paragraph"><p>So this is the first day of an on going process devised by myself to help improve and tweak my existing work flow.</p></div>
+<div class="paragraph"><p>For years I&#8217;ve been used to living in the console and staying away from GUI type tools to do my day to day work</p></div>
+<div class="paragraph"><p>So the idea is to move back to my console and improve my work flow by tweaking and getting to know my console tools
+better.</p></div>
+<div class="paragraph"><p>In this blog I&#8217;ll start with something simple, as the days progress I create a blog describing what I&#8217;ve learnt today
+and how it improves my day to day work flow.</p></div>
+<div class="paragraph"><p>Today is an easy day, I&#8217;ll start with setting up irssi, a command line interface for IRC.</p></div>
+<div class="paragraph"><p>What I want here is my old setup tweaked to make it easy to change channels and see is in a room.</p></div>
 <div class="sect3">
 <h4 id="_setting_up_irssi">Setting up irssi</h4>
 <div class="paragraph"><p>I&#8217;m using a Mac and use brew. So it is as easy as running <tt>brew install irssi</tt>.</p></div>
@@ -558,13 +554,11 @@ regardless of changing channel windows.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_day_2">Day 2</h3>
-<div class="paragraph"><p>So I&#8217;ve in the previous posts I&#8217;ve setup irssi and setup twirssi so that I can
-keep up to date with my tweets without having to deal with a GUI.</p></div>
-<div class="paragraph"><p>Now I want to tweak my settings so that I can open links easily and have a few
-more channels setup in hidden windows.</p></div>
+<div class="paragraph"><p>So I&#8217;ve in the previous posts I&#8217;ve setup irssi and setup twirssi so that I can keep up to date with my tweets without
+having to deal with a GUI.</p></div>
+<div class="paragraph"><p>Now I want to tweak my settings so that I can open links easily and have a few more channels setup in hidden windows.</p></div>
 <div class="paragraph"><p>I&#8217;d also like to setup vim-mode for irssi</p></div>
-<div class="paragraph"><p>Today I&#8217;ll be tweaking Irssi so that I can interact with my Instant
-Messager and twitter accounts.</p></div>
+<div class="paragraph"><p>Today I&#8217;ll be tweaking Irssi so that I can interact with my Instant Messager and twitter accounts.</p></div>
 <div class="sect3">
 <h4 id="_grabbing_links">Grabbing links</h4>
 <div class="paragraph"><p>I want to a way to handle links, their everywhere and their useful, to do this
@@ -628,9 +622,8 @@ you&#8217;ll be able to setup your account and send messages :)</p></div>
 </div>
 <div class="sect2">
 <h3 id="_day_3">Day 3</h3>
-<div class="paragraph"><p>So for today, I&#8217;d like to stop using twitter and move it my console. I love
-Twitter but GUI&#8217;s are exceptionally slow and I&#8217;d like a lot more control over
-what I can see when and how it&#8217;s displayed.</p></div>
+<div class="paragraph"><p>So for today, I&#8217;d like to stop using twitter and move it my console. I love Twitter but GUI&#8217;s are exceptionally slow and
+I&#8217;d like a lot more control over what I can see when and how it&#8217;s displayed.</p></div>
 <div class="sect3">
 <h4 id="_setting_up_twitter_in_my_console">Setting up twitter in my console</h4>
 <div class="paragraph"><p>For this we&#8217;ll use <a href="http://github.com/zigdon/twirssi/issues">twirssi</a>,
@@ -747,9 +740,8 @@ keys.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_day_4">Day 4</h3>
-<div class="paragraph"><p>So I&#8217;ve done quite a bit to get irssi setup and working as I want it.
-The last things I want to do is lose my settings or messing something
-up, as I have done a number of times already.</p></div>
+<div class="paragraph"><p>So I&#8217;ve done quite a bit to get irssi setup and working as I want it.  The last things I want to do is lose my settings
+or messing something up, as I have done a number of times already.</p></div>
 <div class="sect3">
 <h4 id="_keeping_my_settings_under_version_control">Keeping my settings under version control</h4>
 <div class="paragraph"><p>So the easy fix for this is to create a repository and pull the config
@@ -853,11 +845,9 @@ links once 20 have been displayed, at present it&#8217;s quite useless.</p></div
 </div>
 <div class="sect2">
 <h3 id="_day_5">Day 5</h3>
-<div class="paragraph"><p>So we&#8217;ve got Lynx setup to work with irssi, after doing so I found out
-that w3m can deal with tabs and images. Admittedly I&#8217;m not particularly
-a fan of tabs, mainly as I tend to build up quite a collection of these
-and never really go back to them, but I&#8217;ll give it a whirl and see what
-the pros and cons of it as opposed to lynx.</p></div>
+<div class="paragraph"><p>So we&#8217;ve got Lynx setup to work with irssi, after doing so I found out that w3m can deal with tabs and images.
+Admittedly I&#8217;m not particularly a fan of tabs, mainly as I tend to build up quite a collection of these and never really
+go back to them, but I&#8217;ll give it a whirl and see what the pros and cons of it as opposed to lynx.</p></div>
 <div class="sect3">
 <h4 id="_playing_with_w3m">Playing with w3m</h4>
 <div class="paragraph"><p>As always I used brew <tt>brew install w3m</tt> to get things rolling.</p></div>
@@ -1067,11 +1057,10 @@ Create screengrabs as I did with irssi
 </div>
 <div class="sect2">
 <h3 id="_day_6">Day 6</h3>
-<div class="paragraph"><p>I&#8217;ve been writing quite a bit recently and have wanted to play around with
-git-scribe for authoring my diary and possibly writing projects in the future.</p></div>
-<div class="paragraph"><p>Today I&#8217;ll be setting up git-scribe and updating my diary so that I can
-generate content in various formats. Initially I&#8217;ll only publish this content
-as HTML but then move on to PDF and epub later once I&#8217;ve ironed out the kinks.</p></div>
+<div class="paragraph"><p>I&#8217;ve been writing quite a bit recently and have wanted to play around with git-scribe for authoring my diary and
+possibly writing projects in the future.</p></div>
+<div class="paragraph"><p>Today I&#8217;ll be setting up git-scribe and updating my diary so that I can generate content in various formats. Initially
+I&#8217;ll only publish this content as HTML but then move on to PDF and epub later once I&#8217;ve ironed out the kinks.</p></div>
 <div class="sect3">
 <h4 id="_setting_up_git_scribe">Setting up git-scribe</h4>
 <div class="paragraph"><p>It&#8217;s not directly related but I love to write and I&#8217;d like my setup to
@@ -1140,8 +1129,8 @@ the output will be another repository
 <div class="sect2">
 <h3 id="_day_7">Day 7</h3>
 <div class="paragraph"><p>So I have a decent setup for browsing, communicating and writing.</p></div>
-<div class="paragraph"><p>Now I want to be able to fire off all of my tools in separate windows so that I
-can easily manage them and keep my work flow contained.</p></div>
+<div class="paragraph"><p>Now I want to be able to fire off all of my tools in separate windows so that I can easily manage them and keep my work
+flow contained.</p></div>
 <div class="sect3">
 <h4 id="_setting_up_tmux">Setting up tmux</h4>
 <div class="paragraph"><p>I already have tmux installed at present, though there will be a point when I
@@ -1294,12 +1283,11 @@ Open w3m with a better default
 <div class="sect1">
 <h2 id="_refine_my_workflow">Refine my workflow</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>I already have my dotfiles under version control but I would like to clean
-these up and find a way to make them a little bit more maintainable. Primarily
-I want to move away from using braid and my forked version of my dotfiles.</p></div>
+<div class="paragraph"><p>I already have my dotfiles under version control but I would like to clean these up and find a way to make them a little
+bit more maintainable. Primarily I want to move away from using braid and my forked version of my dotfiles.</p></div>
 <div class="paragraph"><p>This will lead me towards improving my vim settings and skills.</p></div>
-<div class="paragraph"><p>For this I will setup my dotfiles from scratch and show the pros and cons of my
-setup and how I like to have things laid out.</p></div>
+<div class="paragraph"><p>For this I will setup my dotfiles from scratch and show the pros and cons of my setup and how I like to have things laid
+out.</p></div>
 <div class="sidebarblock">
 <div class="content">
 <div class="literalblock">
@@ -1315,13 +1303,11 @@ notes:
 <div style="page-break-after:always"></div>
 <div class="sect2">
 <h3 id="_day_8">Day 8</h3>
-<div class="paragraph"><p>Today I&#8217;d like to start sketching out how my dotfiles should be setup and
-maintained. I&#8217;ll also come up with some ideas as to what my dotfiles will
-include and how to maintain the core dependencies of them.</p></div>
-<div class="paragraph"><p>As some of the setup may change from box to box I shouldn&#8217;t have to throw
-everything into once basket, my dotfiles, I&#8217;d like to build some scripts that
-handle the dependencies of the setup and makes it easy for me to continue to
-tweak it whilst allowing it to be setup on any box with ease.</p></div>
+<div class="paragraph"><p>Today I&#8217;d like to start sketching out how my dotfiles should be setup and maintained. I&#8217;ll also come up with some ideas
+as to what my dotfiles will include and how to maintain the core dependencies of them.</p></div>
+<div class="paragraph"><p>As some of the setup may change from box to box I shouldn&#8217;t have to throw everything into once basket, my dotfiles, I&#8217;d
+like to build some scripts that handle the dependencies of the setup and makes it easy for me to continue to tweak it
+whilst allowing it to be setup on any box with ease.</p></div>
 <div class="sect3">
 <h4 id="_dotfile_blueprints">Dotfile blueprints</h4>
 <div class="paragraph"><p>So this is where the plan starts to come together.</p></div>
@@ -1445,8 +1431,8 @@ is a pain and error prone.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_day_9">Day 9</h3>
-<div class="paragraph"><p>Today I&#8217;ll be looking at what I have at the moment, in terms of my dotfiles
-setup, and what I need to deal to improve it and make it easier to maintain.</p></div>
+<div class="paragraph"><p>Today I&#8217;ll be looking at what I have at the moment, in terms of my dotfiles setup, and what I need to deal to improve it
+and make it easier to maintain.</p></div>
 <div class="sect3">
 <h4 id="_starting_a_new">Starting a new</h4>
 <div class="paragraph"><p>So the first thing I&#8217;ll need to do is stripped down my repository so that
@@ -1593,13 +1579,10 @@ my dotfiles with changes that are not directly related to them.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_day_10">Day 10</h3>
-<div class="paragraph"><p>In my old muttrc file I had procmail getting my mails and storing them in
-separate folders so that I can work out what was what and how important it was.
-I&#8217;ve long since had this setup and I&#8217;ve pretty much forgotten how it was all
-setup.</p></div>
-<div class="paragraph"><p>Today is the day I start getting this setup back, this only be the start I want
-to be able to view all my email account via mutt and drop the UI all together.
-I look into email filtering and gradually improve my mutt as I go along.</p></div>
+<div class="paragraph"><p>In my old muttrc file I had procmail getting my mails and storing them in separate folders so that I can work out what
+was what and how important it was.  I&#8217;ve long since had this setup and I&#8217;ve pretty much forgotten how it was all setup.</p></div>
+<div class="paragraph"><p>Today is the day I start getting this setup back, this only be the start I want to be able to view all my email account
+via mutt and drop the UI all together.  I look into email filtering and gradually improve my mutt as I go along.</p></div>
 <div class="sect3">
 <h4 id="_improving_mutt">Improving mutt</h4>
 <div class="paragraph"><p>So I have my GMail account setup but that&#8217;s not enough. I want to include all
@@ -1800,9 +1783,8 @@ Each account should have its own default directory
 </div>
 <div class="sect2">
 <h3 id="_day_11">Day 11</h3>
-<div class="paragraph"><p>So my email is being retrieve, manually, so now I&#8217;d like to focus on getting
-this setup to be retrieved automatically and work out some procmail recipes so
-that I my email is nicely organised for me.</p></div>
+<div class="paragraph"><p>So my email is being retrieve, manually, so now I&#8217;d like to focus on getting this setup to be retrieved automatically
+and work out some procmail recipes so that I my email is nicely organised for me.</p></div>
 <div class="sect3">
 <h4 id="_organising_my_email">Organising my email</h4>
 <div class="paragraph"><p>So like most I get quite a lot of email, varying in importance and
@@ -2192,11 +2174,9 @@ Master branch after change GH#e92354e
 </div>
 <div class="sect2">
 <h3 id="_day_12">Day 12</h3>
-<div class="paragraph"><p>There are a couple of small things that need to be adressed before I introduce
-my other email accounts. As it stands I have filtered mail but there is no easy
-way of getting to my filtered inbox without some hassle. I need to setup a way
-to let mutt automatically know which mailboxes I have without having to
-constantly update my muttrc file.</p></div>
+<div class="paragraph"><p>There are a couple of small things that need to be adressed before I introduce my other email accounts. As it stands I
+have filtered mail but there is no easy way of getting to my filtered inbox without some hassle. I need to setup a way
+to let mutt automatically know which mailboxes I have without having to constantly update my muttrc file.</p></div>
 <div class="sect3">
 <h4 id="_update_mailbox_list">Update mailbox list</h4>
 <div class="paragraph"><p>I had problems trying to get mutt to list all my mail boxes internally
@@ -2243,9 +2223,8 @@ I don&#8217;t have to worry about new inboxes being created and having to keep
 track of them. I sinply have to create a new procmail recipe and let
 mutt work out where the new inboxes are stored :)</p></div>
 <div style="page-break-after:always"></div>
-<div class="paragraph"><p>Now that I have a semi decent mutt setup I&#8217;d like to setup multiple SMTP
-servers. It&#8217;d be cool if mutt could be configured so that I could send a reply
-and the correct SMTP server is used, along with the right response header.</p></div>
+<div class="paragraph"><p>Now that I have a semi decent mutt setup I&#8217;d like to setup multiple SMTP servers. It&#8217;d be cool if mutt could be
+configured so that I could send a reply and the correct SMTP server is used, along with the right response header.</p></div>
 </div>
 </div>
 <div class="sect3">
@@ -2270,9 +2249,8 @@ so that I can focus on getting the rest of my setup functional.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_day_13">Day 13</h3>
-<div class="paragraph"><p>I&#8217;d like to organise my RSS feeds into mutt or an alternative news reader so
-that I can easily keep up with current tech. Today I&#8217;ll dedicate some time into
-getting this setup.</p></div>
+<div class="paragraph"><p>I&#8217;d like to organise my RSS feeds into mutt or an alternative news reader so that I can easily keep up with current
+tech. Today I&#8217;ll dedicate some time into getting this setup.</p></div>
 <div class="sect3">
 <h4 id="_getting_a_feed_reader">Getting a feed reader</h4>
 <div class="paragraph"><p>So the next step along this journey is to setup a news reader. I&#8217;ve looked at a
@@ -2446,9 +2424,8 @@ Talk more about my config
 </div>
 <div class="sect2">
 <h3 id="_day_14">Day 14</h3>
-<div class="paragraph"><p>Braid is causing me hassle and as part of cleaning up my dotvim files I want to
-replace braid with git submodule. This will be part of the cleanup needed for
-dotvim files in preparation of me improving my vim skills.</p></div>
+<div class="paragraph"><p>Braid is causing me hassle and as part of cleaning up my dotvim files I want to replace braid with git submodule. This
+will be part of the cleanup needed for dotvim files in preparation of me improving my vim skills.</p></div>
 <div class="sect3">
 <h4 id="_removing_vims_braid">Removing VIMs braid</h4>
 <div class="paragraph"><p>So I&#8217;ve been using braid to manage my vim plugins but I&#8217;d prefer if I used git
@@ -2612,9 +2589,8 @@ them using git submodule and deal with stripping them down later.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_day_15">Day 15</h3>
-<div class="paragraph"><p>So I now have a news reader so the only thing left to setup are my podcasts.
-I&#8217;ve been using itunes of late and would like to move away from that and see
-what newsbeuter has to offer in the way of helping me to keep up with podcasts.</p></div>
+<div class="paragraph"><p>So I now have a news reader so the only thing left to setup are my podcasts.  I&#8217;ve been using itunes of late and would
+like to move away from that and see what newsbeuter has to offer in the way of helping me to keep up with podcasts.</p></div>
 <div class="sect3">
 <h4 id="_managing_my_podcasts">Managing my podcasts</h4>
 <div class="paragraph"><p>Now is the time that I move my podcasts from iTunes back to the console, where
@@ -2733,24 +2709,18 @@ notes:
 <div style="page-break-after:always"></div>
 <div class="sect2">
 <h3 id="_day_16">Day 16</h3>
-<div class="paragraph"><p>The first thing I&#8217;m going to need to do is delete my old repository and create
-a new one with the same name. This will bork my <tt>dotfile</tt> repository submodule
-but I can easily fix that by either updating the reference manually or removing
+<div class="paragraph"><p>The first thing I&#8217;m going to need to do is delete my old repository and create a new one with the same name. This will
+bork my <tt>dotfile</tt> repository submodule but I can easily fix that by either updating the reference manually or removing
 and reinstall the plugin via the command line.</p></div>
-<div class="paragraph"><p>Before I do this I want to move some of my settings around so that they can be
-easily added or left out if I desire. My aim here is to make it easier to
-choose the vim setup I prefer.</p></div>
-<div class="paragraph"><p>My initial setup will be a bare bones version of Vim with little to none
-plugins added. As I gain more proficiency I will gradually add plugins to my
-workflow to help enhance the keystokes I have already learnt. The first of
-these will focus on text objects and then I will focus on movements and making
-project wide changes.</p></div>
-<div class="paragraph"><p>I will stick with plugins that enhance the mime types available to me and help
-with some basic formatting. Once I have this under my belt I will start to
-delve into VIML and creating my own plugins and tweaks.</p></div>
-<div class="paragraph"><p>Whilst doing all this I will be picking up a Practical Vim tip a day to help me
-productivity. These will generally be separate entries and will go over what
-I&#8217;ve learnt and how the new skill could be used to improve how I work.</p></div>
+<div class="paragraph"><p>Before I do this I want to move some of my settings around so that they can be easily added or left out if I desire. My
+aim here is to make it easier to choose the vim setup I prefer.</p></div>
+<div class="paragraph"><p>My initial setup will be a bare bones version of Vim with little to none plugins added. As I gain more proficiency I
+will gradually add plugins to my workflow to help enhance the keystokes I have already learnt. The first of these will
+focus on text objects and then I will focus on movements and making project wide changes.</p></div>
+<div class="paragraph"><p>I will stick with plugins that enhance the mime types available to me and help with some basic formatting. Once I have
+this under my belt I will start to delve into VIML and creating my own plugins and tweaks.</p></div>
+<div class="paragraph"><p>Whilst doing all this I will be picking up a Practical Vim tip a day to help me productivity. These will generally be
+separate entries and will go over what I&#8217;ve learnt and how the new skill could be used to improve how I work.</p></div>
 <div class="sect3">
 <h4 id="_cleaning_up_my_vim_settings">Cleaning up my vim settings</h4>
 <div class="paragraph"><p>So I&#8217;ve customised my vim settings quite a bit based on
@@ -2997,10 +2967,9 @@ cause errors but it would be nice to be able to easily see them.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_day_18">Day 18</h3>
-<div class="paragraph"><p>I&#8217;ve used netrw for a while but I tend to use it quite sloppily, I&#8217;d like to
-spend some time tweaking it so that it works better for my needs.
-Today I&#8217;d like to play around with vim-ractoring. I&#8217;d also like to have my
-ctags back so that I can look up methods and objects easily.</p></div>
+<div class="paragraph"><p>I&#8217;ve used netrw for a while but I tend to use it quite sloppily, I&#8217;d like to spend some time tweaking it so that it
+works better for my needs.  Today I&#8217;d like to play around with vim-ractoring. I&#8217;d also like to have my ctags back so
+that I can look up methods and objects easily.</p></div>
 <div class="sect3">
 <h4 id="_setting_up_vim_refactoring">Setting up vim-refactoring</h4>
 <div class="paragraph"><p>So I&#8217;ve seens some of the mapping for vim-refactoring and it seems like
@@ -3401,9 +3370,8 @@ manage the buffers easier with a few shortcut keys.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_day_21">Day 21</h3>
-<div class="paragraph"><p>I use Vim for a number of my editing needs. Ranging from writing this diary to
-formatting documentation and coding. I&#8217;d like to organise these work flows into
-different settings allowing me to easily switch between the various work flows
+<div class="paragraph"><p>I use Vim for a number of my editing needs. Ranging from writing this diary to formatting documentation and coding. I&#8217;d
+like to organise these work flows into different settings allowing me to easily switch between the various work flows
 with relative ease.</p></div>
 <div class="sect3">
 <h4 id="_getting_an_itinerary">Getting an itinerary</h4>
@@ -3569,45 +3537,15 @@ vim-repeat <a href="http://github.com/tpope/vim-repeat">http://github.com/tpope/
 AutoComplPop <a href="http://github.com/ayang/AutoComplPop">http://github.com/ayang/AutoComplPop</a> git://github.com/ayang/AutoComplPop.git
 </p>
 </li>
-</ul></div>
-</div>
-<div class="sect4">
-<h5 id="_text_objects">Text objects</h5>
-<div class="ulist"><ul>
 <li>
 <p>
-vim-textobj-user <a href="http://github.com/kana/vim-textobj-user">http://github.com/kana/vim-textobj-user</a> git://github.com/kana/vim-textobj-user
-</p>
-</li>
-<li>
-<p>
-vim-ruby-block-conv <a href="http://github.com/bronson/vim-ruby-block-conv">http://github.com/bronson/vim-ruby-block-conv</a> git://github.com/bronson/vim-ruby-block-conv.git
-</p>
-</li>
-<li>
-<p>
-vim-textobj-rubyblock <a href="http://github.com/nelstrom/vim-textobj-rubyblock">http://github.com/nelstrom/vim-textobj-rubyblock</a> git://github.com/nelstrom/vim-textobj-rubyblock
-</p>
-</li>
-<li>
-<p>
-vim-indentobject <a href="http://github.com/austintaylor/vim-indentobject">http://github.com/austintaylor/vim-indentobject</a> git://github.com/austintaylor/vim-indentobject
-</p>
-</li>
-<li>
-<p>
-vim-ragtag <a href="http://github.com/tpope/vim-ragtag">http://github.com/tpope/vim-ragtag</a> git://github.com/tpope/vim-ragtag
-</p>
-</li>
-<li>
-<p>
-vim-abolish <a href="http://github.com/tpope/vim-abolish">http://github.com/tpope/vim-abolish</a> git://github.com/tpope/vim-abolish
+supertab <a href="http://github.com/ervandew/supertab">http://github.com/ervandew/supertab</a> git://github.com/ervandew/supertab.git
 </p>
 </li>
 </ul></div>
 </div>
 <div class="sect4">
-<h5 id="_motions">Motions</h5>
+<h5 id="_motion_enhancements">Motion enhancements</h5>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -3617,6 +3555,36 @@ vim-unimpaired <a href="http://github.com/tpope/vim-unimpaired">http://github.co
 <li>
 <p>
 matchit <a href="http://github.com/tmhedberg/matchit">http://github.com/tmhedberg/matchit</a> git://github.com/tmhedberg/matchit.git
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect4">
+<h5 id="_file_management">File management</h5>
+<div class="ulist"><ul>
+<li>
+<p>
+ctrlp.vim <a href="http://github.com/kien/ctrlp.vim">http://github.com/kien/ctrlp.vim</a> git://github.com/kien/ctrlp.vim.git
+</p>
+</li>
+<li>
+<p>
+nerdtree <a href="http://github.com/scrooloose/nerdtree">http://github.com/scrooloose/nerdtree</a> git://github.com/scrooloose/nerdtree.git
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect4">
+<h5 id="_visual_enhancements">Visual enhancements</h5>
+<div class="ulist"><ul>
+<li>
+<p>
+vim-powerline <a href="http://github.com/Lokaltog/vim-powerline">http://github.com/Lokaltog/vim-powerline</a> git://github.com/Lokaltog/vim-powerline.git
+</p>
+</li>
+<li>
+<p>
+vim-vividchalk <a href="http://github.com/tpope/vim-vividchalk">http://github.com/tpope/vim-vividchalk</a> git://github.com/tpope/vim-vividchalk.git
 </p>
 </li>
 </ul></div>
@@ -3641,6 +3609,16 @@ Align <a href="http://github.com/alanstevens/Align">http://github.com/alansteven
 </li>
 <li>
 <p>
+vim-abolish <a href="http://github.com/tpope/vim-abolish">http://github.com/tpope/vim-abolish</a> git://github.com/tpope/vim-abolish
+</p>
+</li>
+<li>
+<p>
+vim-ragtag <a href="http://github.com/tpope/vim-ragtag">http://github.com/tpope/vim-ragtag</a> git://github.com/tpope/vim-ragtag
+</p>
+</li>
+<li>
+<p>
 vim-snipmate <a href="http://github.com/garbas/vim-snipmate">http://github.com/garbas/vim-snipmate</a> git://github.com/garbas/vim-snipmate.git
 </p>
 </li>
@@ -3652,31 +3630,21 @@ snipmate-snippets <a href="http://github.com/baphled/snipmate-snippets">http://g
 </ul></div>
 </div>
 <div class="sect4">
-<h5 id="_visual_enhancements">Visual enhancements</h5>
+<h5 id="_text_objects">Text objects</h5>
 <div class="ulist"><ul>
 <li>
 <p>
-vim-powerline <a href="http://github.com/Lokaltog/vim-powerline">http://github.com/Lokaltog/vim-powerline</a> git://github.com/Lokaltog/vim-powerline.git
+vim-textobj-rubyblock <a href="http://github.com/nelstrom/vim-textobj-rubyblock">http://github.com/nelstrom/vim-textobj-rubyblock</a> git://github.com/nelstrom/vim-textobj-rubyblock
 </p>
 </li>
 <li>
 <p>
-vim-vividchalk <a href="http://github.com/tpope/vim-vividchalk">http://github.com/tpope/vim-vividchalk</a> git://github.com/tpope/vim-vividchalk.git
-</p>
-</li>
-</ul></div>
-</div>
-<div class="sect4">
-<h5 id="_file_management">File management</h5>
-<div class="ulist"><ul>
-<li>
-<p>
-ctrlp.vim <a href="http://github.com/kien/ctrlp.vim">http://github.com/kien/ctrlp.vim</a> git://github.com/kien/ctrlp.vim.git
+vim-indentobject <a href="http://github.com/austintaylor/vim-indentobject">http://github.com/austintaylor/vim-indentobject</a> git://github.com/austintaylor/vim-indentobject
 </p>
 </li>
 <li>
 <p>
-nerdtree <a href="http://github.com/scrooloose/nerdtree">http://github.com/scrooloose/nerdtree</a> git://github.com/scrooloose/nerdtree.git
+vim-textobj-user <a href="http://github.com/kana/vim-textobj-user">http://github.com/kana/vim-textobj-user</a> git://github.com/kana/vim-textobj-user
 </p>
 </li>
 </ul></div>
@@ -3711,7 +3679,7 @@ jasmine.vim <a href="http://github.com/claco/jasmine.vim">http://github.com/clac
 <div class="ulist"><ul>
 <li>
 <p>
-vim-ruby-sinatra <a href="http://github.com/hallison/vim-ruby-sinatra">http://github.com/hallison/vim-ruby-sinatra</a> git://github.com/hallison/vim-ruby-sinatra
+vim-ruby-block-conv <a href="http://github.com/bronson/vim-ruby-block-conv">http://github.com/bronson/vim-ruby-block-conv</a> git://github.com/bronson/vim-ruby-block-conv.git
 </p>
 </li>
 <li>
@@ -3726,12 +3694,17 @@ vim-rake <a href="http://github.com/tpope/vim-rake">http://github.com/tpope/vim-
 </li>
 <li>
 <p>
-vim-rails <a href="http://github.com/tpope/vim-rails">http://github.com/tpope/vim-rails</a> git://github.com/tpope/vim-rails.git
+vim-ruby <a href="http://github.com/vim-ruby/vim-ruby">http://github.com/vim-ruby/vim-ruby</a> git://github.com/vim-ruby/vim-ruby.git
 </p>
 </li>
 <li>
 <p>
-vim-ruby <a href="http://github.com/vim-ruby/vim-ruby">http://github.com/vim-ruby/vim-ruby</a> git://github.com/vim-ruby/vim-ruby.git
+vim-ruby-sinatra <a href="http://github.com/hallison/vim-ruby-sinatra">http://github.com/hallison/vim-ruby-sinatra</a> git://github.com/hallison/vim-ruby-sinatra
+</p>
+</li>
+<li>
+<p>
+vim-rails <a href="http://github.com/tpope/vim-rails">http://github.com/tpope/vim-rails</a> git://github.com/tpope/vim-rails.git
 </p>
 </li>
 <li>
@@ -3920,9 +3893,8 @@ and the 2 below it. Finally we save the changes and quit the file.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_day_23">Day 23</h3>
-<div class="paragraph"><p>So today I&#8217;ll be looking at <em>Autotag</em> and <em>syntastic</em> which are the programming
-related plugins that I use when working in Vim. I&#8217;ll also be looking at my
-documentation plugins which include the following plugings:</p></div>
+<div class="paragraph"><p>So today I&#8217;ll be looking at <em>Autotag</em> and <em>syntastic</em> which are the programming related plugins that I use when working
+in Vim. I&#8217;ll also be looking at my documentation plugins which include the following plugings:</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -4188,9 +4160,9 @@ conflicting with other key bindings.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_day_24">Day 24</h3>
-<div class="paragraph"><p>Today I&#8217;ll be looking at the plugins that generally enhance my productivity
-whilst working in Vim. These plugins tend to enhance Vim&#8217;s out of the box
-functionality and add a few nice features to allow me to work more efficiently.</p></div>
+<div class="paragraph"><p>Today I&#8217;ll be looking at the plugins that generally enhance my productivity whilst working in Vim. These plugins tend to
+enhance Vim&#8217;s out of the box functionality and add a few nice features to allow me to work more efficiently.</p></div>
+<div style="page-break-after:always"></div>
 <div class="sect3">
 <h4 id="_bufexplorer">bufexplorer</h4>
 <div class="sidebarblock">
@@ -4253,7 +4225,322 @@ are and go from there.</p></div>
 to remember the buffers number. This alone is a good enough reason to keep it
 in my toolchain.</p></div>
 <div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_vim_repeat">vim-repeat</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin: vim-repeat
+home:   http://github.com/tpope/vim-repeat
+source: git://github.com/tpope/vim-repeat.git</tt></pre>
+</div></div>
+</div></div>
+<div class="paragraph"><p>Essentially this plugins is an enhancer and allows me to to repeat
+<em>commands</em> that I&#8217;ve previously executed.</p></div>
+<div class="paragraph"><p>Here&#8217;s a list of plugins I use that will be enhanced by adding this plugin:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+surround.vim
+</p>
+</li>
+<li>
+<p>
+abolish.vim
+</p>
+</li>
+<li>
+<p>
+unimpaired.vim
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>These plugins are also enhanced though I do not currently use them.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+speeddating.vim
+</p>
+</li>
+<li>
+<p>
+commentary.vim
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>It also allows me to add this functionality to oher plugins by adding
+the following code snippet to the my custom bindings.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>silent! call repeat#set("\&lt;Plug&gt;MyWonderfulMap", v:count)</tt></pre>
+</div></div>
+<div class="paragraph"><p>Where MyWonderfulMap is the name of the command I&#8217;d like to add repeat
+functionality to. It&#8217;s that simple.</p></div>
+<div class="paragraph"><p>Later once I have completed this section I&#8217;ll take a step back and have
+more of a play with this plugin and determine commands that would
+benefit from such functionality.</p></div>
 <div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_autocomplpop">AutoComplPop</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin: AutoComplPop
+home:   http://github.com/ayang/AutoComplPop
+source: git://github.com/ayang/AutoComplPop.git</tt></pre>
+</div></div>
+</div></div>
+<div class="paragraph"><p>This plugin is yet another enhancement, it helps by displaying a popup
+for text completions. This is nice as it helps be to quickly type words
+that are already with my buffer with little effort.</p></div>
+<div class="paragraph"><p>There is one issue I currently have with this plugin and that is being
+able to press <tt>&lt;Tab&gt;</tt> and <tt>&lt;Shift&gt;+&lt;Tab&gt;</tt> to loop through possible
+options. As it stand the defaults are <tt>&lt;Ctrl-N</tt> and <tt>&lt;Ctrl-P&gt;</tt>.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>:set completeopt=longest,menu</tt></pre>
+</div></div>
+<div class="paragraph"><p>I could possibly remap the defaults to <tt>&lt;Tab&gt;</tt> and <tt>&lt;Shift&gt;+&lt;Tab&gt;</tt>
+respectively but I&#8217;d like to give <tt>supertab</tt> a try. I&#8217;ll document that
+in my next entry.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_supertab">Supertab</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin: supertab
+home:   http://github.com/ervandew/supertab
+source: git://github.com/ervandew/supertab.git</tt></pre>
+</div></div>
+</div></div>
+<div class="paragraph"><p>So this plugin will help enhance my autocompletion functionality. As stated in
+my previous entry I&#8217;d like to be able to use tabs to loop through my completion
+list when it comes up. Supertab does this for me so I&#8217;ll have a play with that
+and see how it pans out.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>git submodule add git://github.com/ervandew/supertab.git bundle/vim-supertab</tt></pre>
+</div></div>
+<div class="paragraph"><p>Once this was completed I just had to restart my vim session.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>let g:SuperTabCrMapping=0</tt></pre>
+</div></div>
+<div class="paragraph"><p>As I&#8217;m using <em>delimitMate</em> I need the above setting so that <em>supertab</em> does not
+conflict with it.</p></div>
+<div class="paragraph"><p>Now everything is setup I can use tabs as I I&#8217;d like to.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_day_25">Day 25</h3>
+<div class="paragraph"><p>To I look at the plugins that enhances the motions I have available.</p></div>
+<div style="page-break-after:always"></div>
+<div class="sect3">
+<h4 id="_vim_unimpaired">vim-unimpaired</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin: vim-unimpaired
+home:   http://github.com/tpope/vim-unimpaired
+source: git://github.com/tpope/vim-unimpaired.git</tt></pre>
+</div></div>
+</div></div>
+<div class="paragraph"><p>This plugin was covered on <a href="/day-19-being-unimpaired">day 19</a>. I only
+touched on the customisations that I wanted and not what <em>unimpaired</em>
+actually offers.</p></div>
+<div class="paragraph"><p>Here&#8217;s a list of some of the nmemoics it has to offer:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>[a</tt> |:previous|
+</p>
+</li>
+<li>
+<p>
+<tt>]a</tt> |:next|
+</p>
+</li>
+<li>
+<p>
+<tt>[A</tt> |:first|
+</p>
+</li>
+<li>
+<p>
+<tt>]A</tt> |:last|
+</p>
+</li>
+<li>
+<p>
+<tt>[b</tt> |:bprevious|
+</p>
+</li>
+<li>
+<p>
+<tt>]b</tt> |:bnext|
+</p>
+</li>
+<li>
+<p>
+<tt>[B</tt> |:bfirst|
+</p>
+</li>
+<li>
+<p>
+<tt>]B</tt> |:blast|
+</p>
+</li>
+<li>
+<p>
+<tt>[l</tt> |:lprevious|
+</p>
+</li>
+<li>
+<p>
+<tt>]l</tt> |:lnext|
+</p>
+</li>
+<li>
+<p>
+<tt>[L</tt> |:lfirst|
+</p>
+</li>
+<li>
+<p>
+<tt>]L</tt> |:llast|
+</p>
+</li>
+<li>
+<p>
+<tt>[q</tt> |:cprevious|
+</p>
+</li>
+<li>
+<p>
+<tt>]q</tt> |:cnext|
+</p>
+</li>
+<li>
+<p>
+<tt>[Q</tt> |:cfirst|
+</p>
+</li>
+<li>
+<p>
+<tt>]Q</tt> |:clast|
+</p>
+</li>
+<li>
+<p>
+<tt>[t</tt> |:tprevious|
+</p>
+</li>
+<li>
+<p>
+<tt>]t</tt> |:tnext|
+</p>
+</li>
+<li>
+<p>
+<tt>[T</tt> |:tfirst|
+</p>
+</li>
+<li>
+<p>
+<tt>]T</tt> |:tlast|
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>I already have custom mapping for <tt>:cnext</tt> and <tt>cprevious</tt> as <tt>&lt;leader&gt;j</tt> and
+<tt>&lt;leader&gt;k</tt> respectively. I won&#8217;t be needing those anymore as I now have <tt>[q</tt>
+and  <tt>q]</tt> to do this for me.</p></div>
+<div class="paragraph"><p>So I remove the following from my <em>binding.vim</em>:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>nmap &lt;leader&gt;j :cn&lt;CR&gt;
+nmap &lt;leader&gt;k :cp&lt;CR&gt;</tt></pre>
+</div></div>
+<div class="paragraph"><p>I can also remove the custom mappings I added on
+<a href="day-18-adding-ctags">day 18 - Adding ctags</a> as these are already setup
+with unimpaired.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>noremap ]t :tnext&lt;CR&gt;
+noremap [t :tprev&lt;CR&gt;</tt></pre>
+</div></div>
+<div class="paragraph"><p>One of the most useful motions will be moving to the next and previous conflict
+in a file. This has always been somewhat tedious and having an simple mapping
+for it will help no end.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>[n</tt> - Go to the next SCM conflict
+</p>
+</li>
+<li>
+<p>
+<tt>n]</tt> - Go to the previous SCM conflict
+</p>
+</li>
+</ul></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_matchit">matchit</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin: matchit
+home:   http://github.com/tmhedberg/matchit
+source: git://github.com/tmhedberg/matchit.git</tt></pre>
+</div></div>
+</div></div>
+<div class="paragraph"><p>Matchit pretty much does what it says on the tin. It matches the begining and
+the end of blocks of texts/code and allows you to use mappings to easily move
+from either side. This can be quite useful whilst programming and wanting to
+move from the begining of a condition or element to the end.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>%</tt> - Cycle forward through matching groups
+</p>
+</li>
+<li>
+<p>
+<tt>g%</tt>- Cycle backwards through matching groups
+</p>
+</li>
+<li>
+<p>
+<tt>[%</tt>- Go to [count] previous unmatched group
+</p>
+</li>
+<li>
+<p>
+<tt>]%</tt>- Go to [count] next unmatched group
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>This plugin is also used by a few of my other plugins also so I&#8217;ll be keeping
+this for the time being and getting to grips with these key bindings.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Add list of plugins that rely on matchit.</td>
+</tr></table>
+</div>
 <div style="page-break-after:always"></div>
 </div>
 </div>
@@ -4278,30 +4565,23 @@ notes:
   * use vimtutor</tt></pre>
 </div></div>
 </div></div>
-<div class="openblock">
-<div class="content">
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
-<td class="content">I can use my current Vim setup to workout which typographically based
-plugins I&#8217;ll be using and write a basic explanation as to why they are useful and
-why I can&#8217;t live without them.</td>
+<td class="content">I can use my current Vim setup to workout which typographically based plugins I&#8217;ll be using and write a basic
+explanation as to why they are useful and why I can&#8217;t live without them.</td>
 </tr></table>
 </div>
-</div></div>
 <div style="page-break-after:always"></div>
 <div class="sect2">
-<h3 id="_day_25">Day 25</h3>
-<div class="paragraph"><p>As it stands at present I&#8217;ve forked my version from
-<a href="https://github.com/astrails/dotvim">here</a>.</p></div>
-<div class="paragraph"><p>Which was cool to start off with but I&#8217;ve had to make a heap of changes and to
-be honest I&#8217;d rather start from scratch and setup my own Vim rig. I&#8217;d like the
-coming next 6 weeks to focus on storing the grass roots functionality of Vim
-into muscle memory. I&#8217;ll be referring to
-<a href="http://pragprog.com/book/dnvim/practical-vim">Practical Vim</a> a lot which has been
-a great source of knowledge for me in the past year.</p></div>
+<h3 id="_day_25_2">Day 25</h3>
+<div class="paragraph"><p>As it stands at present I&#8217;ve forked my version from <a href="https://github.com/astrails/dotvim">here</a>.</p></div>
+<div class="paragraph"><p>Which was cool to start off with but I&#8217;ve had to make a heap of changes and to be honest I&#8217;d rather start from scratch
+and setup my own Vim rig. I&#8217;d like the coming next 6 weeks to focus on storing the grass roots functionality of Vim into
+muscle memory. I&#8217;ll be referring to <a href="http://pragprog.com/book/dnvim/practical-vim">Practical Vim</a> a lot which has been a
+great source of knowledge for me in the past year.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
@@ -4314,46 +4594,36 @@ a great source of knowledge for me in the past year.</p></div>
 <td class="content">Turn this section into a workflow based entry</td>
 </tr></table>
 </div>
-<div class="paragraph"><p>I used to keep up to date with my daily TV shows via bittorrent of late is has
-become something of a challenge as I have had less and less time to actually
-take the time to keep up to date and track what is currently out.</p></div>
-<div class="paragraph"><p>I&#8217;d like to find a usable bit torrent client that will help me do this and help
-me to be notified of new TV episodes coming out.</p></div>
+<div class="paragraph"><p>I used to keep up to date with my daily TV shows via bittorrent of late is has become something of a challenge as I have
+had less and less time to actually take the time to keep up to date and track what is currently out.</p></div>
+<div class="paragraph"><p>I&#8217;d like to find a usable bit torrent client that will help me do this and help me to be notified of new TV episodes
+coming out.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
 <h3 id="_day_35">Day 35</h3>
-<div class="paragraph"><p>I&#8217;ve setup w3m but I haven&#8217;t really had time to experiment with it. I know it
-can open images and it can apparently open tabs but I have never played with
-the former. It would be cool to work out how this happens so I can tell tmux to
-open a new tab with a link when ever I feel. This way if I have a link copied
-and can quickly trigger a tmux mapping and get it open a new tab in the
-<em>Interwepts</em> window :)</p></div>
-<div class="paragraph"><p>I have IRC setup but I still need to tweak it somewhat so that I can use it
-more as I used to. One of the primary uses of IRC for me is using XDCC. On my
-old windows machine I used to have a script that allowed me to gather a list of
-interesting files to download and queue them up accordingly. It allowed me to
-only download a certain amount of files at a time and move them to a completed
-directory once each one had finished downloading. I&#8217;d like to replicate this in
-irssi so that I don&#8217;t have to spend time finding content of interest and simply
-choose what I want and forget about it.</p></div>
-<div class="paragraph"><p>I&#8217;ve been using bjurl and twirssi for a little bit now but I still don&#8217;t know
-how to use it as productively as I know my GUI tools. Today and tomorrow will
-be focused on getting to know these tool better and spending some time getting
-the to work just as I would like to use them.</p></div>
-<div class="paragraph"><p>bjurl should be easy to tweak, I want to be able to keep track of as many URL&#8217;s
-as possible without having to reset it or be quick enough to select a link to
-view. I should simply be able to select one from what I see and not have to
-deal with anything else.</p></div>
+<div class="paragraph"><p>I&#8217;ve setup w3m but I haven&#8217;t really had time to experiment with it. I know it can open images and it can apparently open
+tabs but I have never played with the former. It would be cool to work out how this happens so I can tell tmux to open a
+new tab with a link when ever I feel. This way if I have a link copied and can quickly trigger a tmux mapping and get it
+open a new tab in the <em>Interwepts</em> window :)</p></div>
+<div class="paragraph"><p>I have IRC setup but I still need to tweak it somewhat so that I can use it more as I used to. One of the primary uses
+of IRC for me is using XDCC. On my old windows machine I used to have a script that allowed me to gather a list of
+interesting files to download and queue them up accordingly. It allowed me to only download a certain amount of files at
+a time and move them to a completed directory once each one had finished downloading. I&#8217;d like to replicate this in
+irssi so that I don&#8217;t have to spend time finding content of interest and simply choose what I want and forget about it.</p></div>
+<div class="paragraph"><p>I&#8217;ve been using bjurl and twirssi for a little bit now but I still don&#8217;t know how to use it as productively as I know my
+GUI tools. Today and tomorrow will be focused on getting to know these tool better and spending some time getting the to
+work just as I would like to use them.</p></div>
+<div class="paragraph"><p>bjurl should be easy to tweak, I want to be able to keep track of as many URL&#8217;s as possible without having to reset it
+or be quick enough to select a link to view. I should simply be able to select one from what I see and not have to deal
+with anything else.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
 <h3 id="_day_36">Day 36</h3>
-<div class="paragraph"><p>Today is that day I start hacking on some scripts and start to get used to some
-of the tools I&#8217;ve neglected to use over the years. My main focus will be to
-improve he way I use sed and awk and improve my bash script so that I can
-quickly hack some workflow scripts together to help tweak my productivity
-further.</p></div>
+<div class="paragraph"><p>Today is that day I start hacking on some scripts and start to get used to some of the tools I&#8217;ve neglected to use over
+the years. My main focus will be to improve he way I use sed and awk and improve my bash script so that I can quickly
+hack some workflow scripts together to help tweak my productivity further.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
@@ -4362,10 +4632,9 @@ further.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_day_38">Day 38</h3>
-<div class="paragraph"><p>Today I&#8217;ll work on getting to know twirssi a little bit more. These are the
-most important things I want to get to know so that I can become more
-productive with the tool and be able to track conversations I&#8217;ve had and what
-other people are saying to each other.</p></div>
+<div class="paragraph"><p>Today I&#8217;ll work on getting to know twirssi a little bit more. These are the most important things I want to get to know
+so that I can become more productive with the tool and be able to track conversations I&#8217;ve had and what other people are
+saying to each other.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -4399,11 +4668,10 @@ notes:
 <div class="sect1">
 <h2 id="appendix">Appendix A: Appendix</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>This is a dumping ground for various notes I&#8217;ve taken in regards to improving
-my workflow.</p></div>
-<div class="paragraph"><p>There&#8217;s no real structure to these and they are used purely to help me to
-remember things that I&#8217;d like to address at some point or content that I have
-not found a home for yet.</p></div>
+<div class="paragraph"><p>This is a dumping ground for various notes I&#8217;ve taken in regards to improving my workflow.</p></div>
+<div class="paragraph"><p>There&#8217;s no real structure to these and they are used purely to help me to remember things that I&#8217;d like to address at
+some point or content that I have not found a home for yet.</p></div>
+<div style="page-break-after:always"></div>
 <div class="sect2">
 <h3 id="_development_changes">Development changes</h3>
 <div class="paragraph"><p>Would be nice if we could be automagically told when we need to run
@@ -4667,6 +4935,11 @@ This is becoming a bit of a pain
 New panels/windows should automatically cd into the project directory
 </p>
 </li>
+<li>
+<p>
+create a binding to allow me to open up links easily.
+</p>
+</li>
 </ul></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -4734,18 +5007,10 @@ V: normal I  *</tt></pre>
 <div class="content">
 <pre><tt>:argdo %s/2007/2008/g</tt></pre>
 </div></div>
-</div>
-<div class="sect3">
-<h4 id="_todo_13">TODO</h4>
-<div class="ulist"><ul>
+<div class="ulist TODO"><ul>
 <li>
 <p>
-create workflow vim scripts
-</p>
-</li>
-<li>
-<p>
-Work out how to stop surround from padding special chars ({,( and friends) with spaces
+create vim scripts based on my workflows
 </p>
 </li>
 <li>
@@ -4770,7 +5035,7 @@ Add filetype <tt>*.md</tt> as <tt>*.markdown</tt>
 </li>
 <li>
 <p>
-Find a plugin for making markup with markdown more productive
+Find a plugin for making markup with markdown more productively
 </p>
 <div class="ulist"><ul>
 <li>
@@ -4784,6 +5049,11 @@ Building lists can be painful
 </p>
 </li>
 </ul></div>
+</li>
+<li>
+<p>
+The same as of above applies to <tt>*.asc</tt> and <tt>*asciidoc</tt>
+</p>
 </li>
 <li>
 <p>
@@ -4834,6 +5104,11 @@ Limit word wrap dependant on mime type
 I tend to prefer different limits dependant on what I am working on
 </p>
 </li>
+<li>
+<p>
+Display line limit
+</p>
+</li>
 </ul></div>
 </li>
 <li>
@@ -4863,6 +5138,16 @@ Will help me to jump back into where I jumped off without having to manually rem
 <li>
 <p>
 Set wordwrap dependant on the filetype
+</p>
+</li>
+<li>
+<p>
+Stop syntastic&#8217;s from displaying me errors when writing step definitions.
+</p>
+</li>
+<li>
+<p>
+fix issues with vim slowing down when using AutoComplPop
 </p>
 </li>
 </ul></div>
@@ -4902,6 +5187,11 @@ motions <tt>:help motion.txt</tt>
 </li>
 <li>
 <p>
+text objects
+</p>
+</li>
+<li>
+<p>
 autocmd
 </p>
 </li>
@@ -4925,6 +5215,11 @@ autocmd
 <tt>:windo e</tt> - Refresh all window
 </p>
 </li>
+<li>
+<p>
+<tt>gggqG</tt> - Reformat all lines in the file
+</p>
+</li>
 </ul></div>
 </div>
 <div class="sect3">
@@ -4933,6 +5228,16 @@ autocmd
 <li>
 <p>
 <tt>:hi Search ctermbg=red</tt> - Change the colour of search highlights
+</p>
+</li>
+<li>
+<p>
+<tt>set colorcolumn=140</tt> - set the column limit to 140
+</p>
+</li>
+<li>
+<p>
+<tt>set textwidth=140</tt> - set the text width to 140 characters
 </p>
 </li>
 </ul></div>
@@ -4948,6 +5253,23 @@ Cucumber
 <li>
 <p>
 I&#8217;m forever having to type <tt>save_and_open_page</tt> for debugging
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+ruby
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>source :rubygems</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>gem 'foo'</tt>
 </p>
 </li>
 </ul></div>
@@ -5389,8 +5711,7 @@ bag of notes and gradually split off to different sections.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_work_flows">Work flows</h3>
-<div class="paragraph"><p>I have a number of work flows I&#8217;d like to tweak and improve on. Here I&#8217;ll take
-notes and track my thoughts and ideas.</p></div>
+<div class="paragraph"><p>I have a number of work flows I&#8217;d like to tweak and improve on. Here I&#8217;ll take notes and track my thoughts and ideas.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
@@ -5543,7 +5864,7 @@ projects config. I&#8217;ll look into this as a side issue and create a new issu
 address the changes.</p></div>
 <div class="paragraph"><p>Next, I&#8217;ll do the same for rails projects.</p></div>
 <div class="sect3">
-<h4 id="_todo_14">TODO</h4>
+<h4 id="_todo_13">TODO</h4>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -5583,6 +5904,42 @@ handle all my workflow needs.</p></div>
 </div>
 </div>
 <div class="sect2">
+<h3 id="_updating_my_old_machine_with_my_new_dotfiles">Updating my old machine with my new dotfiles</h3>
+<div class="paragraph"><p>So today is a little bit of a detour but I wanted to get this down for getting
+my other machines to make use of my new settings.</p></div>
+<div class="paragraph"><p>Firstly I tried to do a simple update but because of the change from <em>braid</em> to
+<em>git submodule</em> that wasn&#8217;t possible. So the alternative was to remove my old
+settings and <tt>.git/config</tt>.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>rm -rf .git dotvim oh-my-zsh .gitconfig .gitignore</tt></pre>
+</div></div>
+<div class="paragraph"><p>That removed all the files that related to my custom setings and allowed me to
+start a fresh pretty quickly. As there is no way to clone my dotfiles directly.
+I had to take the follwoing steps.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>git init
+git add remote origin git@github.com/baphled/dotfiles.git
+git pull origin master</tt></pre>
+</div></div>
+<div class="paragraph"><p>Once this was complete I still had to get the submodules updated so that everything was nicely setup.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>git submodule update --init</tt></pre>
+</div></div>
+<div class="paragraph"><p>Now I&#8217;m sure that there is a better way of doing this but as my dotvim
+repository also has submodules I need to run the same command as above within
+that directory to make sure that everything was up to date.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>cd ~/dotvim
+git submodule update --init</tt></pre>
+</div></div>
+<div class="paragraph"><p>This took some time so it&#8217;s a perfect time to take a break.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect2">
 <h3 id="_tools_of_the_trade">Tools of the trade</h3>
 <div class="paragraph"><p>A list of tools that are needed for the my ideal workbench</p></div>
 <div class="ulist"><ul>
@@ -5619,6 +5976,16 @@ rvm
 <li>
 <p>
 ruby
+</p>
+</li>
+<li>
+<p>
+bundle
+</p>
+</li>
+<li>
+<p>
+tmuxinator
 </p>
 </li>
 <li>
@@ -5733,13 +6100,24 @@ with my day to day work.</p></div>
 </ul></div>
 <div style="page-break-after:always"></div>
 </div>
+<div class="sect3">
+<h4 id="_vim_tips">Vim tips</h4>
+<div class="paragraph"><p>problem: Get spaces between surrouding characters ({,( and friends)</p></div>
+<div class="paragraph"><p>solution: Make sure you use the closing tag, this way there will not be a space between the special characters and the
+inner text.</p></div>
+<div class="openblock">
+<div class="content">
+<div class="paragraph"><p>problem: Display line width solution: Add the following to your vimrc:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>set colorcolumn=140
+set tw=140</tt></pre>
+</div></div>
+<div class="paragraph"><p>This sets the linecount to 140 and displays a vertical line where the line limit is.</p></div>
+<div style="page-break-after:always"></div>
+<div class="sect1 normal">
+<div class="sectionbody">Cool stuff I&#8217;ve picked up on my search</div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="resources">Resources</h2>
-<div class="sectionbody">
-<div class="paragraph"><p>Cool stuff I&#8217;ve picked up on my search</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -5762,13 +6140,16 @@ with my day to day work.</p></div>
 </p>
 </li>
 </ul></div>
+</div></div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2012-09-14 16:15:02 BST
+Last updated 2012-09-20 20:33:03 BST
 </div>
 </div>
 </body>

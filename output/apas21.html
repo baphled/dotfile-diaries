@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Tools of the trade</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="apa.html" title="A. Appendix"/><link rel="prev" href="apas20.html" title="Ruby projects"/><link rel="next" href="apas22.html" title="Wiish list"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Tools of the trade</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas20.html">Prev</a> </td><th width="60%" align="center">A. Appendix</th><td width="20%" align="right"> <a accesskey="n" href="apas22.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_tools_of_the_trade"/>Tools of the trade</h3></div></div></div><p>A list of tools that are needed for the my ideal workbench</p><div class="itemizedlist"><ul type="disc"><li>
-zsh
-</li><li>
-irssi
-</li><li>
-perl
-</li><li>
-mutt
-</li><li>
-w3m
-</li><li>
-rvm
-</li><li>
-ruby
-</li><li>
-git
-</li><li>
-git-scribe
-</li><li>
-vim
-</li><li>
-ack
-</li><li>
-newsbeuter
-</li></ul></div><p/><p>Some things I’d like to help tweak my productivity</p></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas20.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="apa.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="apas22.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Ruby projects </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Wiish list</td></tr></table></div></body></html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Updating my old machine with my new dotfiles</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="apa.html" title="A. Appendix"/><link rel="prev" href="apas20.html" title="Ruby projects"/><link rel="next" href="apas22.html" title="Tools of the trade"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Updating my old machine with my new dotfiles</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas20.html">Prev</a> </td><th width="60%" align="center">A. Appendix</th><td width="20%" align="right"> <a accesskey="n" href="apas22.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_updating_my_old_machine_with_my_new_dotfiles"/>Updating my old machine with my new dotfiles</h3></div></div></div><p>So today is a little bit of a detour but I wanted to get this down for getting
+my other machines to make use of my new settings.</p><p>Firstly I tried to do a simple update but because of the change from <span class="emphasis"><em>braid</em></span> to
+<span class="emphasis"><em>git submodule</em></span> that wasn’t possible. So the alternative was to remove my old
+settings and <code class="literal">.git/config</code>.</p><pre class="literallayout">rm -rf .git dotvim oh-my-zsh .gitconfig .gitignore</pre><p>That removed all the files that related to my custom setings and allowed me to
+start a fresh pretty quickly. As there is no way to clone my dotfiles directly.
+I had to take the follwoing steps.</p><pre class="literallayout">git init
+git add remote origin git@github.com/baphled/dotfiles.git
+git pull origin master</pre><p>Once this was complete I still had to get the submodules updated so that everything was nicely setup.</p><pre class="literallayout">git submodule update --init</pre><p>Now I’m sure that there is a better way of doing this but as my dotvim
+repository also has submodules I need to run the same command as above within
+that directory to make sure that everything was up to date.</p><pre class="literallayout">cd ~/dotvim
+git submodule update --init</pre><p>This took some time so it’s a perfect time to take a break.</p><p/></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas20.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="apa.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="apas22.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Ruby projects </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Tools of the trade</td></tr></table></div></body></html>

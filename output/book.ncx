@@ -41,8 +41,4 @@
 <navLabel><text>Appendix A: Appendix</text></navLabel>
 <content src="book.html#appendix"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_7" playOrder="8">
-<navLabel><text>Resources</text></navLabel>
-<content src="book.html#resources"/>
-</navPoint>
 </navMap></ncx>

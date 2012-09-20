@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Scripting</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="apa.html" title="A. Appendix"/><link rel="prev" href="apas24.html" title="Tips and tricks"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Scripting</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas24.html">Prev</a> </td><th width="60%" align="center">A. Appendix</th><td width="20%" align="right"> </td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_scripting"/>Scripting</h3></div></div></div><p>Here’s a bunch of tips and tricks I’ve picked up over time to help me
+with my day to day work.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_tips_3"/>Tips</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+<code class="literal">ps aux | grep a-process | awk '{print $2}' | xargs kill -9</code> - Find a list of processes and kill them
+</li><li>
+<code class="literal">find . |grep '01_'|xargs rm</code> - find all files beginning with 01_ and delete them
+</li></ul></div><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_vim_tips"/>Vim tips</h4></div></div></div><p>problem: Get spaces between surrouding characters ({,( and friends)</p><p>solution: Make sure you use the closing tag, this way there will not be a space between the special characters and the
+inner text.</p><p>problem: Display line width solution: Add the following to your vimrc:</p><pre class="literallayout">set colorcolumn=140
+set tw=140</pre><p>This sets the linecount to 140 and displays a vertical line where the line limit is.</p><p/><div class="bibliography"><div class="titlepage"><div><div><h4 class="title"><a id="resources"/>Bibliography</h4></div></div></div>Cool stuff I’ve picked up on my search</div><div class="itemizedlist"><ul type="disc"><li>
+<a class="ulink" href="http://box.matto.nl/hjkl.html" target="_top">Use the hidden powers of the w3m textmode webbrowser</a>
+</li><li>
+<a class="ulink" href="https://raw.github.com/schacon/gs-manual/master/book/book.asc" target="_top">git-scribe workflows</a>
+</li><li>
+<a class="ulink" href="http://technology.mattrude.com/2010/10/git-creating-an-unattached-branch-with-no-history/" target="_top">git: unattached branch</a>
+</li><li>
+<a class="ulink" href="https://github.com/linsong/dailyconfig" target="_top">dotfile repository with a few nice settings</a>
+</li></ul></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas24.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="apa.html">Up</a></td><td width="40%" align="right"> </td></tr><tr><td width="40%" align="left" valign="top">Tips and tricks </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div></body></html>

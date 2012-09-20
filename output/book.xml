@@ -10,33 +10,34 @@
 <simpara><?asciidoc-pagebreak?></simpara>
 <simpara>(c) 2012 Yomi Colledge</simpara>
 <simpara>All rights reseved</simpara>
-<simpara>No part of this publication may be reproduced, stored in a retrieval
-system, or transmitted, in any form, or by any means, electronic,
-mechanical, photocopying, recording, or otherwise, without the prior
-consent of the publisher.</simpara>
+<simpara>No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in any form, or by any
+means, electronic, mechanical, photocopying, recording, or otherwise, without the prior consent of the publisher.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
-<simpara>The goal of this diary is to track the journey of improving my unix-fu and
-work flow.</simpara>
-<simpara>I&#8217;ve come to love my current setup (tmux, oh-my-zsh, Vim, RVM and bundle).
-Setting up my environment may well get more complex so I&#8217;ll setup a script that
-will check whether these tools are available and install them if they are not.</simpara>
-<simpara>Vim and oh-my-zsh are easy, I already have separate repositories for these. I&#8217;m
-going to be opinionated for the moment an focus on installing the other tools
-via brew and apt. I&#8217;ll check the OS and use the correct install recipe
+<simpara>The goal of this diary is to track the journey of improving my unix-fu and work flow.</simpara>
+<simpara>This will be an on going process and will help me keep track of the things I have learnt and as well as how I have
+improved my console fu over the course of time.</simpara>
+<simpara>There is no end to this diary, there is no real end to this diary so the size of it may well become quite substantial.
+I&#8217;m not sure what I&#8217;ll do in that regard and will shelve that decision for when I have gone over 90 days or so.</simpara>
+<simpara>This diary, although written in that way, will not actually be a daily account of what I have done but based on the
+collective days I have spent focusing on tweaking my workflow.</simpara>
+<simpara>The notes in the appendix will gradually be rewritten as entries or moved into the specific entry when neccessary. So
+over time the entries may well be tweak for readability and clarity sake.  I&#8217;ll start off with a very basic workbench
+and build it up to the point where it it optimal for my personal use and configurable enough for others to do the same
+too.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+<simpara>I&#8217;ve come to love my current setup (tmux, oh-my-zsh, Vim, RVM and bundle).  Setting up my environment may well get more
+complex so I&#8217;ll setup a script that will check whether these tools are available and install them if they are not.</simpara>
+<simpara>Vim and oh-my-zsh are easy, I already have separate repositories for these. I&#8217;m going to be opinionated for the moment
+an focus on installing the other tools via brew and apt. I&#8217;ll check the OS and use the correct install recipe
 accordingly.</simpara>
-<simpara>I&#8217;ll start off with a very basic workbench and build it up to the point where
-it it optimal for my personal use and configurable enough for others to do the
-same too.</simpara>
-<simpara><?asciidoc-pagebreak?></simpara>
-<simpara>TO BE WRITTEN</simpara>
+<simpara>The idea here is to document the changes I make to my dotfiles on a daily basis to help me tweak my productivity whilst
+working in the terminal.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 <section id="_enhancing_my_workflow">
 <title>Enhancing my workflow</title>
-<simpara>This will be a delve into move the my internet related information back into
-the console. I find it cumbersome to keep tabbing back and forth and trying to
-keep a mental note of how many times I need to tab to get where I want. In the
-terminal this can be manage a lot easier and at least allow me to set things up
-more like how I prefer things to be.</simpara>
+<simpara>This will be a delve into move the my internet related information back into the console. I find it cumbersome to keep
+tabbing back and forth and trying to keep a mental note of how many times I need to tab to get where I want. In the
+terminal this can be manage a lot easier and at least allow me to set things up more like how I prefer things to be.</simpara>
 <sidebar>
 <literallayout class="monospaced">duration: 2 weeks
 notes:
@@ -50,19 +51,14 @@ notes:
 <simpara><?asciidoc-pagebreak?></simpara>
 <section id="_day_1">
 <title>Day 1</title>
-<simpara>So this is the first day of an on going process devised by myself to help
-improve and tweak my existing work flow.</simpara>
-<simpara>For years I&#8217;ve been used to living in the console and staying away from GUI
-type tools to do my day to day work</simpara>
-<simpara>So the idea is to move back to my console and improve my work flow by tweaking
-and getting to know my console tools better.</simpara>
-<simpara>In this blog I&#8217;ll start with something simple, as the days progress I create a
-blog describing what I&#8217;ve learnt today and how it improves my day to day
-work flow.</simpara>
-<simpara>Today is an easy day, I&#8217;ll start with setting up irssi, a command line
-interface for IRC.</simpara>
-<simpara>What I want here is my old setup tweaked to make it easy to change channels and
-see is in a room.</simpara>
+<simpara>So this is the first day of an on going process devised by myself to help improve and tweak my existing work flow.</simpara>
+<simpara>For years I&#8217;ve been used to living in the console and staying away from GUI type tools to do my day to day work</simpara>
+<simpara>So the idea is to move back to my console and improve my work flow by tweaking and getting to know my console tools
+better.</simpara>
+<simpara>In this blog I&#8217;ll start with something simple, as the days progress I create a blog describing what I&#8217;ve learnt today
+and how it improves my day to day work flow.</simpara>
+<simpara>Today is an easy day, I&#8217;ll start with setting up irssi, a command line interface for IRC.</simpara>
+<simpara>What I want here is my old setup tweaked to make it easy to change channels and see is in a room.</simpara>
 <section id="_setting_up_irssi">
 <title>Setting up irssi</title>
 <simpara>I&#8217;m using a Mac and use brew. So it is as easy as running <literal>brew install irssi</literal>.</simpara>
@@ -171,13 +167,11 @@ regardless of changing channel windows.</simpara>
 </section>
 <section id="_day_2">
 <title>Day 2</title>
-<simpara>So I&#8217;ve in the previous posts I&#8217;ve setup irssi and setup twirssi so that I can
-keep up to date with my tweets without having to deal with a GUI.</simpara>
-<simpara>Now I want to tweak my settings so that I can open links easily and have a few
-more channels setup in hidden windows.</simpara>
+<simpara>So I&#8217;ve in the previous posts I&#8217;ve setup irssi and setup twirssi so that I can keep up to date with my tweets without
+having to deal with a GUI.</simpara>
+<simpara>Now I want to tweak my settings so that I can open links easily and have a few more channels setup in hidden windows.</simpara>
 <simpara>I&#8217;d also like to setup vim-mode for irssi</simpara>
-<simpara>Today I&#8217;ll be tweaking Irssi so that I can interact with my Instant
-Messager and twitter accounts.</simpara>
+<simpara>Today I&#8217;ll be tweaking Irssi so that I can interact with my Instant Messager and twitter accounts.</simpara>
 <section id="_grabbing_links">
 <title>Grabbing links</title>
 <simpara>I want to a way to handle links, their everywhere and their useful, to do this
@@ -226,9 +220,8 @@ you&#8217;ll be able to setup your account and send messages :)</simpara>
 </section>
 <section id="_day_3">
 <title>Day 3</title>
-<simpara>So for today, I&#8217;d like to stop using twitter and move it my console. I love
-Twitter but GUI&#8217;s are exceptionally slow and I&#8217;d like a lot more control over
-what I can see when and how it&#8217;s displayed.</simpara>
+<simpara>So for today, I&#8217;d like to stop using twitter and move it my console. I love Twitter but GUI&#8217;s are exceptionally slow and
+I&#8217;d like a lot more control over what I can see when and how it&#8217;s displayed.</simpara>
 <section id="_setting_up_twitter_in_my_console">
 <title>Setting up twitter in my console</title>
 <simpara>For this we&#8217;ll use <ulink url="http://github.com/zigdon/twirssi/issues">twirssi</ulink>,
@@ -318,9 +311,8 @@ keys.</simpara>
 </section>
 <section id="_day_4">
 <title>Day 4</title>
-<simpara>So I&#8217;ve done quite a bit to get irssi setup and working as I want it.
-The last things I want to do is lose my settings or messing something
-up, as I have done a number of times already.</simpara>
+<simpara>So I&#8217;ve done quite a bit to get irssi setup and working as I want it.  The last things I want to do is lose my settings
+or messing something up, as I have done a number of times already.</simpara>
 <section id="_keeping_my_settings_under_version_control">
 <title>Keeping my settings under version control</title>
 <simpara>So the easy fix for this is to create a repository and pull the config
@@ -418,11 +410,9 @@ links once 20 have been displayed, at present it&#8217;s quite useless.</simpara
 </section>
 <section id="_day_5">
 <title>Day 5</title>
-<simpara>So we&#8217;ve got Lynx setup to work with irssi, after doing so I found out
-that w3m can deal with tabs and images. Admittedly I&#8217;m not particularly
-a fan of tabs, mainly as I tend to build up quite a collection of these
-and never really go back to them, but I&#8217;ll give it a whirl and see what
-the pros and cons of it as opposed to lynx.</simpara>
+<simpara>So we&#8217;ve got Lynx setup to work with irssi, after doing so I found out that w3m can deal with tabs and images.
+Admittedly I&#8217;m not particularly a fan of tabs, mainly as I tend to build up quite a collection of these and never really
+go back to them, but I&#8217;ll give it a whirl and see what the pros and cons of it as opposed to lynx.</simpara>
 <section id="_playing_with_w3m">
 <title>Playing with w3m</title>
 <simpara>As always I used brew <literal>brew install w3m</literal> to get things rolling.</simpara>
@@ -605,11 +595,10 @@ Create screengrabs as I did with irssi
 </section>
 <section id="_day_6">
 <title>Day 6</title>
-<simpara>I&#8217;ve been writing quite a bit recently and have wanted to play around with
-git-scribe for authoring my diary and possibly writing projects in the future.</simpara>
-<simpara>Today I&#8217;ll be setting up git-scribe and updating my diary so that I can
-generate content in various formats. Initially I&#8217;ll only publish this content
-as HTML but then move on to PDF and epub later once I&#8217;ve ironed out the kinks.</simpara>
+<simpara>I&#8217;ve been writing quite a bit recently and have wanted to play around with git-scribe for authoring my diary and
+possibly writing projects in the future.</simpara>
+<simpara>Today I&#8217;ll be setting up git-scribe and updating my diary so that I can generate content in various formats. Initially
+I&#8217;ll only publish this content as HTML but then move on to PDF and epub later once I&#8217;ve ironed out the kinks.</simpara>
 <section id="_setting_up_git_scribe">
 <title>Setting up git-scribe</title>
 <simpara>It&#8217;s not directly related but I love to write and I&#8217;d like my setup to
@@ -675,8 +664,8 @@ the output will be another repository
 <section id="_day_7">
 <title>Day 7</title>
 <simpara>So I have a decent setup for browsing, communicating and writing.</simpara>
-<simpara>Now I want to be able to fire off all of my tools in separate windows so that I
-can easily manage them and keep my work flow contained.</simpara>
+<simpara>Now I want to be able to fire off all of my tools in separate windows so that I can easily manage them and keep my work
+flow contained.</simpara>
 <section id="_setting_up_tmux">
 <title>Setting up tmux</title>
 <simpara>I already have tmux installed at present, though there will be a point when I
@@ -821,12 +810,11 @@ Open w3m with a better default
 </section>
 <section id="_refine_my_workflow">
 <title>Refine my workflow</title>
-<simpara>I already have my dotfiles under version control but I would like to clean
-these up and find a way to make them a little bit more maintainable. Primarily
-I want to move away from using braid and my forked version of my dotfiles.</simpara>
+<simpara>I already have my dotfiles under version control but I would like to clean these up and find a way to make them a little
+bit more maintainable. Primarily I want to move away from using braid and my forked version of my dotfiles.</simpara>
 <simpara>This will lead me towards improving my vim settings and skills.</simpara>
-<simpara>For this I will setup my dotfiles from scratch and show the pros and cons of my
-setup and how I like to have things laid out.</simpara>
+<simpara>For this I will setup my dotfiles from scratch and show the pros and cons of my setup and how I like to have things laid
+out.</simpara>
 <sidebar>
 <literallayout class="monospaced">duration: 8 days
 notes:
@@ -838,13 +826,11 @@ notes:
 <simpara><?asciidoc-pagebreak?></simpara>
 <section id="_day_8">
 <title>Day 8</title>
-<simpara>Today I&#8217;d like to start sketching out how my dotfiles should be setup and
-maintained. I&#8217;ll also come up with some ideas as to what my dotfiles will
-include and how to maintain the core dependencies of them.</simpara>
-<simpara>As some of the setup may change from box to box I shouldn&#8217;t have to throw
-everything into once basket, my dotfiles, I&#8217;d like to build some scripts that
-handle the dependencies of the setup and makes it easy for me to continue to
-tweak it whilst allowing it to be setup on any box with ease.</simpara>
+<simpara>Today I&#8217;d like to start sketching out how my dotfiles should be setup and maintained. I&#8217;ll also come up with some ideas
+as to what my dotfiles will include and how to maintain the core dependencies of them.</simpara>
+<simpara>As some of the setup may change from box to box I shouldn&#8217;t have to throw everything into once basket, my dotfiles, I&#8217;d
+like to build some scripts that handle the dependencies of the setup and makes it easy for me to continue to tweak it
+whilst allowing it to be setup on any box with ease.</simpara>
 <section id="_dotfile_blueprints">
 <title>Dotfile blueprints</title>
 <simpara>So this is where the plan starts to come together.</simpara>
@@ -968,8 +954,8 @@ is a pain and error prone.</simpara>
 </section>
 <section id="_day_9">
 <title>Day 9</title>
-<simpara>Today I&#8217;ll be looking at what I have at the moment, in terms of my dotfiles
-setup, and what I need to deal to improve it and make it easier to maintain.</simpara>
+<simpara>Today I&#8217;ll be looking at what I have at the moment, in terms of my dotfiles setup, and what I need to deal to improve it
+and make it easier to maintain.</simpara>
 <section id="_starting_a_new">
 <title>Starting a new</title>
 <simpara>So the first thing I&#8217;ll need to do is stripped down my repository so that
@@ -1072,13 +1058,10 @@ my dotfiles with changes that are not directly related to them.</simpara>
 </section>
 <section id="_day_10">
 <title>Day 10</title>
-<simpara>In my old muttrc file I had procmail getting my mails and storing them in
-separate folders so that I can work out what was what and how important it was.
-I&#8217;ve long since had this setup and I&#8217;ve pretty much forgotten how it was all
-setup.</simpara>
-<simpara>Today is the day I start getting this setup back, this only be the start I want
-to be able to view all my email account via mutt and drop the UI all together.
-I look into email filtering and gradually improve my mutt as I go along.</simpara>
+<simpara>In my old muttrc file I had procmail getting my mails and storing them in separate folders so that I can work out what
+was what and how important it was.  I&#8217;ve long since had this setup and I&#8217;ve pretty much forgotten how it was all setup.</simpara>
+<simpara>Today is the day I start getting this setup back, this only be the start I want to be able to view all my email account
+via mutt and drop the UI all together.  I look into email filtering and gradually improve my mutt as I go along.</simpara>
 <section id="_improving_mutt">
 <title>Improving mutt</title>
 <simpara>So I have my GMail account setup but that&#8217;s not enough. I want to include all
@@ -1233,9 +1216,8 @@ Each account should have its own default directory
 </section>
 <section id="_day_11">
 <title>Day 11</title>
-<simpara>So my email is being retrieve, manually, so now I&#8217;d like to focus on getting
-this setup to be retrieved automatically and work out some procmail recipes so
-that I my email is nicely organised for me.</simpara>
+<simpara>So my email is being retrieve, manually, so now I&#8217;d like to focus on getting this setup to be retrieved automatically
+and work out some procmail recipes so that I my email is nicely organised for me.</simpara>
 <section id="_organising_my_email">
 <title>Organising my email</title>
 <simpara>So like most I get quite a lot of email, varying in importance and
@@ -1560,11 +1542,9 @@ Master branch after change GH#e92354e
 </section>
 <section id="_day_12">
 <title>Day 12</title>
-<simpara>There are a couple of small things that need to be adressed before I introduce
-my other email accounts. As it stands I have filtered mail but there is no easy
-way of getting to my filtered inbox without some hassle. I need to setup a way
-to let mutt automatically know which mailboxes I have without having to
-constantly update my muttrc file.</simpara>
+<simpara>There are a couple of small things that need to be adressed before I introduce my other email accounts. As it stands I
+have filtered mail but there is no easy way of getting to my filtered inbox without some hassle. I need to setup a way
+to let mutt automatically know which mailboxes I have without having to constantly update my muttrc file.</simpara>
 <section id="_update_mailbox_list">
 <title>Update mailbox list</title>
 <simpara>I had problems trying to get mutt to list all my mail boxes internally
@@ -1605,9 +1585,8 @@ I don&#8217;t have to worry about new inboxes being created and having to keep
 track of them. I sinply have to create a new procmail recipe and let
 mutt work out where the new inboxes are stored :)</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
-<simpara>Now that I have a semi decent mutt setup I&#8217;d like to setup multiple SMTP
-servers. It&#8217;d be cool if mutt could be configured so that I could send a reply
-and the correct SMTP server is used, along with the right response header.</simpara>
+<simpara>Now that I have a semi decent mutt setup I&#8217;d like to setup multiple SMTP servers. It&#8217;d be cool if mutt could be
+configured so that I could send a reply and the correct SMTP server is used, along with the right response header.</simpara>
 </section>
 </section>
 <section id="_adding_multiple_smtp_accounts">
@@ -1632,9 +1611,8 @@ so that I can focus on getting the rest of my setup functional.</simpara>
 </section>
 <section id="_day_13">
 <title>Day 13</title>
-<simpara>I&#8217;d like to organise my RSS feeds into mutt or an alternative news reader so
-that I can easily keep up with current tech. Today I&#8217;ll dedicate some time into
-getting this setup.</simpara>
+<simpara>I&#8217;d like to organise my RSS feeds into mutt or an alternative news reader so that I can easily keep up with current
+tech. Today I&#8217;ll dedicate some time into getting this setup.</simpara>
 <section id="_getting_a_feed_reader">
 <title>Getting a feed reader</title>
 <simpara>So the next step along this journey is to setup a news reader. I&#8217;ve looked at a
@@ -1776,9 +1754,8 @@ Talk more about my config
 </section>
 <section id="_day_14">
 <title>Day 14</title>
-<simpara>Braid is causing me hassle and as part of cleaning up my dotvim files I want to
-replace braid with git submodule. This will be part of the cleanup needed for
-dotvim files in preparation of me improving my vim skills.</simpara>
+<simpara>Braid is causing me hassle and as part of cleaning up my dotvim files I want to replace braid with git submodule. This
+will be part of the cleanup needed for dotvim files in preparation of me improving my vim skills.</simpara>
 <section id="_removing_vims_braid">
 <title>Removing VIMs braid</title>
 <simpara>So I&#8217;ve been using braid to manage my vim plugins but I&#8217;d prefer if I used git
@@ -1915,9 +1892,8 @@ them using git submodule and deal with stripping them down later.</simpara>
 </section>
 <section id="_day_15">
 <title>Day 15</title>
-<simpara>So I now have a news reader so the only thing left to setup are my podcasts.
-I&#8217;ve been using itunes of late and would like to move away from that and see
-what newsbeuter has to offer in the way of helping me to keep up with podcasts.</simpara>
+<simpara>So I now have a news reader so the only thing left to setup are my podcasts.  I&#8217;ve been using itunes of late and would
+like to move away from that and see what newsbeuter has to offer in the way of helping me to keep up with podcasts.</simpara>
 <section id="_managing_my_podcasts">
 <title>Managing my podcasts</title>
 <simpara>Now is the time that I move my podcasts from iTunes back to the console, where
@@ -2011,24 +1987,18 @@ notes:
 <simpara><?asciidoc-pagebreak?></simpara>
 <section id="_day_16">
 <title>Day 16</title>
-<simpara>The first thing I&#8217;m going to need to do is delete my old repository and create
-a new one with the same name. This will bork my <literal>dotfile</literal> repository submodule
-but I can easily fix that by either updating the reference manually or removing
+<simpara>The first thing I&#8217;m going to need to do is delete my old repository and create a new one with the same name. This will
+bork my <literal>dotfile</literal> repository submodule but I can easily fix that by either updating the reference manually or removing
 and reinstall the plugin via the command line.</simpara>
-<simpara>Before I do this I want to move some of my settings around so that they can be
-easily added or left out if I desire. My aim here is to make it easier to
-choose the vim setup I prefer.</simpara>
-<simpara>My initial setup will be a bare bones version of Vim with little to none
-plugins added. As I gain more proficiency I will gradually add plugins to my
-workflow to help enhance the keystokes I have already learnt. The first of
-these will focus on text objects and then I will focus on movements and making
-project wide changes.</simpara>
-<simpara>I will stick with plugins that enhance the mime types available to me and help
-with some basic formatting. Once I have this under my belt I will start to
-delve into VIML and creating my own plugins and tweaks.</simpara>
-<simpara>Whilst doing all this I will be picking up a Practical Vim tip a day to help me
-productivity. These will generally be separate entries and will go over what
-I&#8217;ve learnt and how the new skill could be used to improve how I work.</simpara>
+<simpara>Before I do this I want to move some of my settings around so that they can be easily added or left out if I desire. My
+aim here is to make it easier to choose the vim setup I prefer.</simpara>
+<simpara>My initial setup will be a bare bones version of Vim with little to none plugins added. As I gain more proficiency I
+will gradually add plugins to my workflow to help enhance the keystokes I have already learnt. The first of these will
+focus on text objects and then I will focus on movements and making project wide changes.</simpara>
+<simpara>I will stick with plugins that enhance the mime types available to me and help with some basic formatting. Once I have
+this under my belt I will start to delve into VIML and creating my own plugins and tweaks.</simpara>
+<simpara>Whilst doing all this I will be picking up a Practical Vim tip a day to help me productivity. These will generally be
+separate entries and will go over what I&#8217;ve learnt and how the new skill could be used to improve how I work.</simpara>
 <section id="_cleaning_up_my_vim_settings">
 <title>Cleaning up my vim settings</title>
 <simpara>So I&#8217;ve customised my vim settings quite a bit based on
@@ -2215,10 +2185,9 @@ cause errors but it would be nice to be able to easily see them.</simpara>
 </section>
 <section id="_day_18">
 <title>Day 18</title>
-<simpara>I&#8217;ve used netrw for a while but I tend to use it quite sloppily, I&#8217;d like to
-spend some time tweaking it so that it works better for my needs.
-Today I&#8217;d like to play around with vim-ractoring. I&#8217;d also like to have my
-ctags back so that I can look up methods and objects easily.</simpara>
+<simpara>I&#8217;ve used netrw for a while but I tend to use it quite sloppily, I&#8217;d like to spend some time tweaking it so that it
+works better for my needs.  Today I&#8217;d like to play around with vim-ractoring. I&#8217;d also like to have my ctags back so
+that I can look up methods and objects easily.</simpara>
 <section id="_setting_up_vim_refactoring">
 <title>Setting up vim-refactoring</title>
 <simpara>So I&#8217;ve seens some of the mapping for vim-refactoring and it seems like
@@ -2527,9 +2496,8 @@ manage the buffers easier with a few shortcut keys.</simpara>
 </section>
 <section id="_day_21">
 <title>Day 21</title>
-<simpara>I use Vim for a number of my editing needs. Ranging from writing this diary to
-formatting documentation and coding. I&#8217;d like to organise these work flows into
-different settings allowing me to easily switch between the various work flows
+<simpara>I use Vim for a number of my editing needs. Ranging from writing this diary to formatting documentation and coding. I&#8217;d
+like to organise these work flows into different settings allowing me to easily switch between the various work flows
 with relative ease.</simpara>
 <section id="_getting_an_itinerary">
 <title>Getting an itinerary</title>
@@ -2692,45 +2660,15 @@ vim-repeat <ulink url="http://github.com/tpope/vim-repeat">http://github.com/tpo
 AutoComplPop <ulink url="http://github.com/ayang/AutoComplPop">http://github.com/ayang/AutoComplPop</ulink> git://github.com/ayang/AutoComplPop.git
 </simpara>
 </listitem>
-</itemizedlist>
-</section>
-<section id="_text_objects">
-<title>Text objects</title>
-<itemizedlist>
 <listitem>
 <simpara>
-vim-textobj-user <ulink url="http://github.com/kana/vim-textobj-user">http://github.com/kana/vim-textobj-user</ulink> git://github.com/kana/vim-textobj-user
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-vim-ruby-block-conv <ulink url="http://github.com/bronson/vim-ruby-block-conv">http://github.com/bronson/vim-ruby-block-conv</ulink> git://github.com/bronson/vim-ruby-block-conv.git
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-vim-textobj-rubyblock <ulink url="http://github.com/nelstrom/vim-textobj-rubyblock">http://github.com/nelstrom/vim-textobj-rubyblock</ulink> git://github.com/nelstrom/vim-textobj-rubyblock
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-vim-indentobject <ulink url="http://github.com/austintaylor/vim-indentobject">http://github.com/austintaylor/vim-indentobject</ulink> git://github.com/austintaylor/vim-indentobject
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-vim-ragtag <ulink url="http://github.com/tpope/vim-ragtag">http://github.com/tpope/vim-ragtag</ulink> git://github.com/tpope/vim-ragtag
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-vim-abolish <ulink url="http://github.com/tpope/vim-abolish">http://github.com/tpope/vim-abolish</ulink> git://github.com/tpope/vim-abolish
+supertab <ulink url="http://github.com/ervandew/supertab">http://github.com/ervandew/supertab</ulink> git://github.com/ervandew/supertab.git
 </simpara>
 </listitem>
 </itemizedlist>
 </section>
-<section id="_motions">
-<title>Motions</title>
+<section id="_motion_enhancements">
+<title>Motion enhancements</title>
 <itemizedlist>
 <listitem>
 <simpara>
@@ -2740,6 +2678,36 @@ vim-unimpaired <ulink url="http://github.com/tpope/vim-unimpaired">http://github
 <listitem>
 <simpara>
 matchit <ulink url="http://github.com/tmhedberg/matchit">http://github.com/tmhedberg/matchit</ulink> git://github.com/tmhedberg/matchit.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_file_management">
+<title>File management</title>
+<itemizedlist>
+<listitem>
+<simpara>
+ctrlp.vim <ulink url="http://github.com/kien/ctrlp.vim">http://github.com/kien/ctrlp.vim</ulink> git://github.com/kien/ctrlp.vim.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+nerdtree <ulink url="http://github.com/scrooloose/nerdtree">http://github.com/scrooloose/nerdtree</ulink> git://github.com/scrooloose/nerdtree.git
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_visual_enhancements">
+<title>Visual enhancements</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-powerline <ulink url="http://github.com/Lokaltog/vim-powerline">http://github.com/Lokaltog/vim-powerline</ulink> git://github.com/Lokaltog/vim-powerline.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-vividchalk <ulink url="http://github.com/tpope/vim-vividchalk">http://github.com/tpope/vim-vividchalk</ulink> git://github.com/tpope/vim-vividchalk.git
 </simpara>
 </listitem>
 </itemizedlist>
@@ -2764,6 +2732,16 @@ Align <ulink url="http://github.com/alanstevens/Align">http://github.com/alanste
 </listitem>
 <listitem>
 <simpara>
+vim-abolish <ulink url="http://github.com/tpope/vim-abolish">http://github.com/tpope/vim-abolish</ulink> git://github.com/tpope/vim-abolish
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ragtag <ulink url="http://github.com/tpope/vim-ragtag">http://github.com/tpope/vim-ragtag</ulink> git://github.com/tpope/vim-ragtag
+</simpara>
+</listitem>
+<listitem>
+<simpara>
 vim-snipmate <ulink url="http://github.com/garbas/vim-snipmate">http://github.com/garbas/vim-snipmate</ulink> git://github.com/garbas/vim-snipmate.git
 </simpara>
 </listitem>
@@ -2774,32 +2752,22 @@ snipmate-snippets <ulink url="http://github.com/baphled/snipmate-snippets">http:
 </listitem>
 </itemizedlist>
 </section>
-<section id="_visual_enhancements">
-<title>Visual enhancements</title>
+<section id="_text_objects">
+<title>Text objects</title>
 <itemizedlist>
 <listitem>
 <simpara>
-vim-powerline <ulink url="http://github.com/Lokaltog/vim-powerline">http://github.com/Lokaltog/vim-powerline</ulink> git://github.com/Lokaltog/vim-powerline.git
+vim-textobj-rubyblock <ulink url="http://github.com/nelstrom/vim-textobj-rubyblock">http://github.com/nelstrom/vim-textobj-rubyblock</ulink> git://github.com/nelstrom/vim-textobj-rubyblock
 </simpara>
 </listitem>
 <listitem>
 <simpara>
-vim-vividchalk <ulink url="http://github.com/tpope/vim-vividchalk">http://github.com/tpope/vim-vividchalk</ulink> git://github.com/tpope/vim-vividchalk.git
-</simpara>
-</listitem>
-</itemizedlist>
-</section>
-<section id="_file_management">
-<title>File management</title>
-<itemizedlist>
-<listitem>
-<simpara>
-ctrlp.vim <ulink url="http://github.com/kien/ctrlp.vim">http://github.com/kien/ctrlp.vim</ulink> git://github.com/kien/ctrlp.vim.git
+vim-indentobject <ulink url="http://github.com/austintaylor/vim-indentobject">http://github.com/austintaylor/vim-indentobject</ulink> git://github.com/austintaylor/vim-indentobject
 </simpara>
 </listitem>
 <listitem>
 <simpara>
-nerdtree <ulink url="http://github.com/scrooloose/nerdtree">http://github.com/scrooloose/nerdtree</ulink> git://github.com/scrooloose/nerdtree.git
+vim-textobj-user <ulink url="http://github.com/kana/vim-textobj-user">http://github.com/kana/vim-textobj-user</ulink> git://github.com/kana/vim-textobj-user
 </simpara>
 </listitem>
 </itemizedlist>
@@ -2834,7 +2802,7 @@ jasmine.vim <ulink url="http://github.com/claco/jasmine.vim">http://github.com/c
 <itemizedlist>
 <listitem>
 <simpara>
-vim-ruby-sinatra <ulink url="http://github.com/hallison/vim-ruby-sinatra">http://github.com/hallison/vim-ruby-sinatra</ulink> git://github.com/hallison/vim-ruby-sinatra
+vim-ruby-block-conv <ulink url="http://github.com/bronson/vim-ruby-block-conv">http://github.com/bronson/vim-ruby-block-conv</ulink> git://github.com/bronson/vim-ruby-block-conv.git
 </simpara>
 </listitem>
 <listitem>
@@ -2849,12 +2817,17 @@ vim-rake <ulink url="http://github.com/tpope/vim-rake">http://github.com/tpope/v
 </listitem>
 <listitem>
 <simpara>
-vim-rails <ulink url="http://github.com/tpope/vim-rails">http://github.com/tpope/vim-rails</ulink> git://github.com/tpope/vim-rails.git
+vim-ruby <ulink url="http://github.com/vim-ruby/vim-ruby">http://github.com/vim-ruby/vim-ruby</ulink> git://github.com/vim-ruby/vim-ruby.git
 </simpara>
 </listitem>
 <listitem>
 <simpara>
-vim-ruby <ulink url="http://github.com/vim-ruby/vim-ruby">http://github.com/vim-ruby/vim-ruby</ulink> git://github.com/vim-ruby/vim-ruby.git
+vim-ruby-sinatra <ulink url="http://github.com/hallison/vim-ruby-sinatra">http://github.com/hallison/vim-ruby-sinatra</ulink> git://github.com/hallison/vim-ruby-sinatra
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-rails <ulink url="http://github.com/tpope/vim-rails">http://github.com/tpope/vim-rails</ulink> git://github.com/tpope/vim-rails.git
 </simpara>
 </listitem>
 <listitem>
@@ -3031,9 +3004,8 @@ and the 2 below it. Finally we save the changes and quit the file.</simpara>
 </section>
 <section id="_day_23">
 <title>Day 23</title>
-<simpara>So today I&#8217;ll be looking at <emphasis>Autotag</emphasis> and <emphasis>syntastic</emphasis> which are the programming
-related plugins that I use when working in Vim. I&#8217;ll also be looking at my
-documentation plugins which include the following plugings:</simpara>
+<simpara>So today I&#8217;ll be looking at <emphasis>Autotag</emphasis> and <emphasis>syntastic</emphasis> which are the programming related plugins that I use when working
+in Vim. I&#8217;ll also be looking at my documentation plugins which include the following plugings:</simpara>
 <itemizedlist>
 <listitem>
 <simpara>
@@ -3281,9 +3253,9 @@ conflicting with other key bindings.</simpara>
 </section>
 <section id="_day_24">
 <title>Day 24</title>
-<simpara>Today I&#8217;ll be looking at the plugins that generally enhance my productivity
-whilst working in Vim. These plugins tend to enhance Vim&#8217;s out of the box
-functionality and add a few nice features to allow me to work more efficiently.</simpara>
+<simpara>Today I&#8217;ll be looking at the plugins that generally enhance my productivity whilst working in Vim. These plugins tend to
+enhance Vim&#8217;s out of the box functionality and add a few nice features to allow me to work more efficiently.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 <section id="_bufexplorer">
 <title>bufexplorer</title>
 <sidebar>
@@ -3336,7 +3308,277 @@ are and go from there.</simpara>
 to remember the buffers number. This alone is a good enough reason to keep it
 in my toolchain.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_vim_repeat">
+<title>vim-repeat</title>
+<sidebar>
+<literallayout class="monospaced">plugin: vim-repeat
+home:   http://github.com/tpope/vim-repeat
+source: git://github.com/tpope/vim-repeat.git</literallayout>
+</sidebar>
+<simpara>Essentially this plugins is an enhancer and allows me to to repeat
+<emphasis>commands</emphasis> that I&#8217;ve previously executed.</simpara>
+<simpara>Here&#8217;s a list of plugins I use that will be enhanced by adding this plugin:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+surround.vim
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+abolish.vim
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+unimpaired.vim
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>These plugins are also enhanced though I do not currently use them.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+speeddating.vim
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+commentary.vim
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>It also allows me to add this functionality to oher plugins by adding
+the following code snippet to the my custom bindings.</simpara>
+<literallayout class="monospaced">silent! call repeat#set("\&lt;Plug&gt;MyWonderfulMap", v:count)</literallayout>
+<simpara>Where MyWonderfulMap is the name of the command I&#8217;d like to add repeat
+functionality to. It&#8217;s that simple.</simpara>
+<simpara>Later once I have completed this section I&#8217;ll take a step back and have
+more of a play with this plugin and determine commands that would
+benefit from such functionality.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_autocomplpop">
+<title>AutoComplPop</title>
+<sidebar>
+<literallayout class="monospaced">plugin: AutoComplPop
+home:   http://github.com/ayang/AutoComplPop
+source: git://github.com/ayang/AutoComplPop.git</literallayout>
+</sidebar>
+<simpara>This plugin is yet another enhancement, it helps by displaying a popup
+for text completions. This is nice as it helps be to quickly type words
+that are already with my buffer with little effort.</simpara>
+<simpara>There is one issue I currently have with this plugin and that is being
+able to press <literal>&lt;Tab&gt;</literal> and <literal>&lt;Shift&gt;+&lt;Tab&gt;</literal> to loop through possible
+options. As it stand the defaults are <literal>&lt;Ctrl-N</literal> and <literal>&lt;Ctrl-P&gt;</literal>.</simpara>
+<literallayout class="monospaced">:set completeopt=longest,menu</literallayout>
+<simpara>I could possibly remap the defaults to <literal>&lt;Tab&gt;</literal> and <literal>&lt;Shift&gt;+&lt;Tab&gt;</literal>
+respectively but I&#8217;d like to give <literal>supertab</literal> a try. I&#8217;ll document that
+in my next entry.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_supertab">
+<title>Supertab</title>
+<sidebar>
+<literallayout class="monospaced">plugin: supertab
+home:   http://github.com/ervandew/supertab
+source: git://github.com/ervandew/supertab.git</literallayout>
+</sidebar>
+<simpara>So this plugin will help enhance my autocompletion functionality. As stated in
+my previous entry I&#8217;d like to be able to use tabs to loop through my completion
+list when it comes up. Supertab does this for me so I&#8217;ll have a play with that
+and see how it pans out.</simpara>
+<literallayout class="monospaced">git submodule add git://github.com/ervandew/supertab.git bundle/vim-supertab</literallayout>
+<simpara>Once this was completed I just had to restart my vim session.</simpara>
+<literallayout class="monospaced">let g:SuperTabCrMapping=0</literallayout>
+<simpara>As I&#8217;m using <emphasis>delimitMate</emphasis> I need the above setting so that <emphasis>supertab</emphasis> does not
+conflict with it.</simpara>
+<simpara>Now everything is setup I can use tabs as I I&#8217;d like to.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+<section id="_day_25">
+<title>Day 25</title>
+<simpara>To I look at the plugins that enhances the motions I have available.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+<section id="_vim_unimpaired">
+<title>vim-unimpaired</title>
+<sidebar>
+<literallayout class="monospaced">plugin: vim-unimpaired
+home:   http://github.com/tpope/vim-unimpaired
+source: git://github.com/tpope/vim-unimpaired.git</literallayout>
+</sidebar>
+<simpara>This plugin was covered on <ulink url="/day-19-being-unimpaired">day 19</ulink>. I only
+touched on the customisations that I wanted and not what <emphasis>unimpaired</emphasis>
+actually offers.</simpara>
+<simpara>Here&#8217;s a list of some of the nmemoics it has to offer:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>[a</literal> |:previous|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>]a</literal> |:next|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>[A</literal> |:first|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>]A</literal> |:last|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>[b</literal> |:bprevious|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>]b</literal> |:bnext|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>[B</literal> |:bfirst|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>]B</literal> |:blast|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>[l</literal> |:lprevious|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>]l</literal> |:lnext|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>[L</literal> |:lfirst|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>]L</literal> |:llast|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>[q</literal> |:cprevious|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>]q</literal> |:cnext|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>[Q</literal> |:cfirst|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>]Q</literal> |:clast|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>[t</literal> |:tprevious|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>]t</literal> |:tnext|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>[T</literal> |:tfirst|
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>]T</literal> |:tlast|
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>I already have custom mapping for <literal>:cnext</literal> and <literal>cprevious</literal> as <literal>&lt;leader&gt;j</literal> and
+<literal>&lt;leader&gt;k</literal> respectively. I won&#8217;t be needing those anymore as I now have <literal>[q</literal>
+and  <literal>q]</literal> to do this for me.</simpara>
+<simpara>So I remove the following from my <emphasis>binding.vim</emphasis>:</simpara>
+<literallayout class="monospaced">nmap &lt;leader&gt;j :cn&lt;CR&gt;
+nmap &lt;leader&gt;k :cp&lt;CR&gt;</literallayout>
+<simpara>I can also remove the custom mappings I added on
+<ulink url="day-18-adding-ctags">day 18 - Adding ctags</ulink> as these are already setup
+with unimpaired.</simpara>
+<literallayout class="monospaced">noremap ]t :tnext&lt;CR&gt;
+noremap [t :tprev&lt;CR&gt;</literallayout>
+<simpara>One of the most useful motions will be moving to the next and previous conflict
+in a file. This has always been somewhat tedious and having an simple mapping
+for it will help no end.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>[n</literal> - Go to the next SCM conflict
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>n]</literal> - Go to the previous SCM conflict
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_matchit">
+<title>matchit</title>
+<sidebar>
+<literallayout class="monospaced">plugin: matchit
+home:   http://github.com/tmhedberg/matchit
+source: git://github.com/tmhedberg/matchit.git</literallayout>
+</sidebar>
+<simpara>Matchit pretty much does what it says on the tin. It matches the begining and
+the end of blocks of texts/code and allows you to use mappings to easily move
+from either side. This can be quite useful whilst programming and wanting to
+move from the begining of a condition or element to the end.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>%</literal> - Cycle forward through matching groups
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>g%</literal>- Cycle backwards through matching groups
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>[%</literal>- Go to [count] previous unmatched group
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>]%</literal>- Go to [count] next unmatched group
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>This plugin is also used by a few of my other plugins also so I&#8217;ll be keeping
+this for the time being and getting to grips with these key bindings.</simpara>
+<note><simpara>Add list of plugins that rely on matchit.</simpara></note>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
@@ -3355,65 +3597,51 @@ notes:
   * use `:map` in Vim to learn new mappings
   * use vimtutor</literallayout>
 </sidebar>
-<note><simpara>I can use my current Vim setup to workout which typographically based
-plugins I&#8217;ll be using and write a basic explanation as to why they are useful and
-why I can&#8217;t live without them.</simpara></note>
+<note><simpara>I can use my current Vim setup to workout which typographically based plugins I&#8217;ll be using and write a basic
+explanation as to why they are useful and why I can&#8217;t live without them.</simpara></note>
 <simpara><?asciidoc-pagebreak?></simpara>
-<section id="_day_25">
+<section id="_day_25_2">
 <title>Day 25</title>
-<simpara>As it stands at present I&#8217;ve forked my version from
-<ulink url="https://github.com/astrails/dotvim">here</ulink>.</simpara>
-<simpara>Which was cool to start off with but I&#8217;ve had to make a heap of changes and to
-be honest I&#8217;d rather start from scratch and setup my own Vim rig. I&#8217;d like the
-coming next 6 weeks to focus on storing the grass roots functionality of Vim
-into muscle memory. I&#8217;ll be referring to
-<ulink url="http://pragprog.com/book/dnvim/practical-vim">Practical Vim</ulink> a lot which has been
-a great source of knowledge for me in the past year.</simpara>
+<simpara>As it stands at present I&#8217;ve forked my version from <ulink url="https://github.com/astrails/dotvim">here</ulink>.</simpara>
+<simpara>Which was cool to start off with but I&#8217;ve had to make a heap of changes and to be honest I&#8217;d rather start from scratch
+and setup my own Vim rig. I&#8217;d like the coming next 6 weeks to focus on storing the grass roots functionality of Vim into
+muscle memory. I&#8217;ll be referring to <ulink url="http://pragprog.com/book/dnvim/practical-vim">Practical Vim</ulink> a lot which has been a
+great source of knowledge for me in the past year.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_34">
 <title>Day 34</title>
 <note><simpara>Turn this section into a workflow based entry</simpara></note>
-<simpara>I used to keep up to date with my daily TV shows via bittorrent of late is has
-become something of a challenge as I have had less and less time to actually
-take the time to keep up to date and track what is currently out.</simpara>
-<simpara>I&#8217;d like to find a usable bit torrent client that will help me do this and help
-me to be notified of new TV episodes coming out.</simpara>
+<simpara>I used to keep up to date with my daily TV shows via bittorrent of late is has become something of a challenge as I have
+had less and less time to actually take the time to keep up to date and track what is currently out.</simpara>
+<simpara>I&#8217;d like to find a usable bit torrent client that will help me do this and help me to be notified of new TV episodes
+coming out.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_35">
 <title>Day 35</title>
-<simpara>I&#8217;ve setup w3m but I haven&#8217;t really had time to experiment with it. I know it
-can open images and it can apparently open tabs but I have never played with
-the former. It would be cool to work out how this happens so I can tell tmux to
-open a new tab with a link when ever I feel. This way if I have a link copied
-and can quickly trigger a tmux mapping and get it open a new tab in the
-<emphasis>Interwepts</emphasis> window :)</simpara>
-<simpara>I have IRC setup but I still need to tweak it somewhat so that I can use it
-more as I used to. One of the primary uses of IRC for me is using XDCC. On my
-old windows machine I used to have a script that allowed me to gather a list of
-interesting files to download and queue them up accordingly. It allowed me to
-only download a certain amount of files at a time and move them to a completed
-directory once each one had finished downloading. I&#8217;d like to replicate this in
-irssi so that I don&#8217;t have to spend time finding content of interest and simply
-choose what I want and forget about it.</simpara>
-<simpara>I&#8217;ve been using bjurl and twirssi for a little bit now but I still don&#8217;t know
-how to use it as productively as I know my GUI tools. Today and tomorrow will
-be focused on getting to know these tool better and spending some time getting
-the to work just as I would like to use them.</simpara>
-<simpara>bjurl should be easy to tweak, I want to be able to keep track of as many URL&#8217;s
-as possible without having to reset it or be quick enough to select a link to
-view. I should simply be able to select one from what I see and not have to
-deal with anything else.</simpara>
+<simpara>I&#8217;ve setup w3m but I haven&#8217;t really had time to experiment with it. I know it can open images and it can apparently open
+tabs but I have never played with the former. It would be cool to work out how this happens so I can tell tmux to open a
+new tab with a link when ever I feel. This way if I have a link copied and can quickly trigger a tmux mapping and get it
+open a new tab in the <emphasis>Interwepts</emphasis> window :)</simpara>
+<simpara>I have IRC setup but I still need to tweak it somewhat so that I can use it more as I used to. One of the primary uses
+of IRC for me is using XDCC. On my old windows machine I used to have a script that allowed me to gather a list of
+interesting files to download and queue them up accordingly. It allowed me to only download a certain amount of files at
+a time and move them to a completed directory once each one had finished downloading. I&#8217;d like to replicate this in
+irssi so that I don&#8217;t have to spend time finding content of interest and simply choose what I want and forget about it.</simpara>
+<simpara>I&#8217;ve been using bjurl and twirssi for a little bit now but I still don&#8217;t know how to use it as productively as I know my
+GUI tools. Today and tomorrow will be focused on getting to know these tool better and spending some time getting the to
+work just as I would like to use them.</simpara>
+<simpara>bjurl should be easy to tweak, I want to be able to keep track of as many URL&#8217;s as possible without having to reset it
+or be quick enough to select a link to view. I should simply be able to select one from what I see and not have to deal
+with anything else.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_36">
 <title>Day 36</title>
-<simpara>Today is that day I start hacking on some scripts and start to get used to some
-of the tools I&#8217;ve neglected to use over the years. My main focus will be to
-improve he way I use sed and awk and improve my bash script so that I can
-quickly hack some workflow scripts together to help tweak my productivity
-further.</simpara>
+<simpara>Today is that day I start hacking on some scripts and start to get used to some of the tools I&#8217;ve neglected to use over
+the years. My main focus will be to improve he way I use sed and awk and improve my bash script so that I can quickly
+hack some workflow scripts together to help tweak my productivity further.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_day_37">
@@ -3422,10 +3650,9 @@ further.</simpara>
 </section>
 <section id="_day_38">
 <title>Day 38</title>
-<simpara>Today I&#8217;ll work on getting to know twirssi a little bit more. These are the
-most important things I want to get to know so that I can become more
-productive with the tool and be able to track conversations I&#8217;ve had and what
-other people are saying to each other.</simpara>
+<simpara>Today I&#8217;ll work on getting to know twirssi a little bit more. These are the most important things I want to get to know
+so that I can become more productive with the tool and be able to track conversations I&#8217;ve had and what other people are
+saying to each other.</simpara>
 <itemizedlist>
 <listitem>
 <simpara>
@@ -3451,11 +3678,10 @@ notes:
 </section>
 <appendix id="appendix">
 <title>Appendix</title>
-<simpara>This is a dumping ground for various notes I&#8217;ve taken in regards to improving
-my workflow.</simpara>
-<simpara>There&#8217;s no real structure to these and they are used purely to help me to
-remember things that I&#8217;d like to address at some point or content that I have
-not found a home for yet.</simpara>
+<simpara>This is a dumping ground for various notes I&#8217;ve taken in regards to improving my workflow.</simpara>
+<simpara>There&#8217;s no real structure to these and they are used purely to help me to remember things that I&#8217;d like to address at
+some point or content that I have not found a home for yet.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 <section id="_development_changes">
 <title>Development changes</title>
 <simpara>Would be nice if we could be automagically told when we need to run
@@ -3716,6 +3942,11 @@ This is becoming a bit of a pain
 New panels/windows should automatically cd into the project directory
 </simpara>
 </listitem>
+<listitem>
+<simpara>
+create a binding to allow me to open up links easily.
+</simpara>
+</listitem>
 </itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
@@ -3753,18 +3984,10 @@ V =</literallayout>
 V: normal I  *</literallayout>
 <simpara>Search and replace over multiple files</simpara>
 <literallayout class="monospaced">:argdo %s/2007/2008/g</literallayout>
-</section>
-<section id="_todo_13">
-<title>TODO</title>
 <itemizedlist>
 <listitem>
 <simpara>
-create workflow vim scripts
-</simpara>
-</listitem>
-<listitem>
-<simpara>
-Work out how to stop surround from padding special chars ({,( and friends) with spaces
+create vim scripts based on my workflows
 </simpara>
 </listitem>
 <listitem>
@@ -3789,7 +4012,7 @@ Add filetype <literal>*.md</literal> as <literal>*.markdown</literal>
 </listitem>
 <listitem>
 <simpara>
-Find a plugin for making markup with markdown more productive
+Find a plugin for making markup with markdown more productively
 </simpara>
 <itemizedlist>
 <listitem>
@@ -3803,6 +4026,11 @@ Building lists can be painful
 </simpara>
 </listitem>
 </itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+The same as of above applies to <literal>*.asc</literal> and <literal>*asciidoc</literal>
+</simpara>
 </listitem>
 <listitem>
 <simpara>
@@ -3853,6 +4081,11 @@ Limit word wrap dependant on mime type
 I tend to prefer different limits dependant on what I am working on
 </simpara>
 </listitem>
+<listitem>
+<simpara>
+Display line limit
+</simpara>
+</listitem>
 </itemizedlist>
 </listitem>
 <listitem>
@@ -3882,6 +4115,16 @@ Will help me to jump back into where I jumped off without having to manually rem
 <listitem>
 <simpara>
 Set wordwrap dependant on the filetype
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Stop syntastic&#8217;s from displaying me errors when writing step definitions.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fix issues with vim slowing down when using AutoComplPop
 </simpara>
 </listitem>
 </itemizedlist>
@@ -3921,6 +4164,11 @@ motions <literal>:help motion.txt</literal>
 </listitem>
 <listitem>
 <simpara>
+text objects
+</simpara>
+</listitem>
+<listitem>
+<simpara>
 autocmd
 </simpara>
 </listitem>
@@ -3944,6 +4192,11 @@ autocmd
 <literal>:windo e</literal> - Refresh all window
 </simpara>
 </listitem>
+<listitem>
+<simpara>
+<literal>gggqG</literal> - Reformat all lines in the file
+</simpara>
+</listitem>
 </itemizedlist>
 </section>
 <section id="_customisations_2">
@@ -3952,6 +4205,16 @@ autocmd
 <listitem>
 <simpara>
 <literal>:hi Search ctermbg=red</literal> - Change the colour of search highlights
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>set colorcolumn=140</literal> - set the column limit to 140
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>set textwidth=140</literal> - set the text width to 140 characters
 </simpara>
 </listitem>
 </itemizedlist>
@@ -3967,6 +4230,23 @@ Cucumber
 <listitem>
 <simpara>
 I&#8217;m forever having to type <literal>save_and_open_page</literal> for debugging
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+ruby
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>source :rubygems</literal>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>gem 'foo'</literal>
 </simpara>
 </listitem>
 </itemizedlist>
@@ -4390,8 +4670,7 @@ bag of notes and gradually split off to different sections.</simpara>
 </section>
 <section id="_work_flows">
 <title>Work flows</title>
-<simpara>I have a number of work flows I&#8217;d like to tweak and improve on. Here I&#8217;ll take
-notes and track my thoughts and ideas.</simpara>
+<simpara>I have a number of work flows I&#8217;d like to tweak and improve on. Here I&#8217;ll take notes and track my thoughts and ideas.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_information_desk">
@@ -4533,7 +4812,7 @@ and will be the basis of the other workflows that I decide to focus on.</simpara
 projects config. I&#8217;ll look into this as a side issue and create a new issue to
 address the changes.</simpara>
 <simpara>Next, I&#8217;ll do the same for rails projects.</simpara>
-<section id="_todo_14">
+<section id="_todo_13">
 <title>TODO</title>
 <itemizedlist>
 <listitem>
@@ -4565,6 +4844,30 @@ it is working for the basic workflows I&#8217;ll gradually improve the script to
 handle all my workflow needs.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
+</section>
+<section id="_updating_my_old_machine_with_my_new_dotfiles">
+<title>Updating my old machine with my new dotfiles</title>
+<simpara>So today is a little bit of a detour but I wanted to get this down for getting
+my other machines to make use of my new settings.</simpara>
+<simpara>Firstly I tried to do a simple update but because of the change from <emphasis>braid</emphasis> to
+<emphasis>git submodule</emphasis> that wasn&#8217;t possible. So the alternative was to remove my old
+settings and <literal>.git/config</literal>.</simpara>
+<literallayout class="monospaced">rm -rf .git dotvim oh-my-zsh .gitconfig .gitignore</literallayout>
+<simpara>That removed all the files that related to my custom setings and allowed me to
+start a fresh pretty quickly. As there is no way to clone my dotfiles directly.
+I had to take the follwoing steps.</simpara>
+<literallayout class="monospaced">git init
+git add remote origin git@github.com/baphled/dotfiles.git
+git pull origin master</literallayout>
+<simpara>Once this was complete I still had to get the submodules updated so that everything was nicely setup.</simpara>
+<literallayout class="monospaced">git submodule update --init</literallayout>
+<simpara>Now I&#8217;m sure that there is a better way of doing this but as my dotvim
+repository also has submodules I need to run the same command as above within
+that directory to make sure that everything was up to date.</simpara>
+<literallayout class="monospaced">cd ~/dotvim
+git submodule update --init</literallayout>
+<simpara>This took some time so it&#8217;s a perfect time to take a break.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_tools_of_the_trade">
 <title>Tools of the trade</title>
@@ -4603,6 +4906,16 @@ rvm
 <listitem>
 <simpara>
 ruby
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bundle
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+tmuxinator
 </simpara>
 </listitem>
 <listitem>
@@ -4717,11 +5030,17 @@ with my day to day work.</simpara>
 </itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-</section>
-</appendix>
-<bibliography id="resources">
-<title>Resources</title>
-<simpara>Cool stuff I&#8217;ve picked up on my search</simpara>
+<section id="_vim_tips">
+<title>Vim tips</title>
+<simpara>problem: Get spaces between surrouding characters ({,( and friends)</simpara>
+<simpara>solution: Make sure you use the closing tag, this way there will not be a space between the special characters and the
+inner text.</simpara>
+<simpara>problem: Display line width solution: Add the following to your vimrc:</simpara>
+<literallayout class="monospaced">set colorcolumn=140
+set tw=140</literallayout>
+<simpara>This sets the linecount to 140 and displays a vertical line where the line limit is.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+<bibliography id="resources">Cool stuff I&#8217;ve picked up on my search</bibliography>
 <itemizedlist>
 <listitem>
 <simpara>
@@ -4744,5 +5063,7 @@ with my day to day work.</simpara>
 </simpara>
 </listitem>
 </itemizedlist>
-</bibliography>
+</section>
+</section>
+</appendix>
 </article>

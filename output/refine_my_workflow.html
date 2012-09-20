@@ -34,12 +34,11 @@
       <div class="section" lang="en">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
 <a id="_refine_my_workflow"></a>Refine my workflow</h2></div></div></div>
-<p>I already have my dotfiles under version control but I would like to clean
-these up and find a way to make them a little bit more maintainable. Primarily
-I want to move away from using braid and my forked version of my dotfiles.</p>
+<p>I already have my dotfiles under version control but I would like to clean these up and find a way to make them a little
+bit more maintainable. Primarily I want to move away from using braid and my forked version of my dotfiles.</p>
 <p>This will lead me towards improving my vim settings and skills.</p>
-<p>For this I will setup my dotfiles from scratch and show the pros and cons of my
-setup and how I like to have things laid out.</p>
+<p>For this I will setup my dotfiles from scratch and show the pros and cons of my setup and how I like to have things laid
+out.</p>
 <div class="sidebar">
 <p class="title"><b></b></p>
 <pre class="literallayout">duration: 8 days
@@ -53,13 +52,11 @@ notes:
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h3 class="title">
 <a id="_day_8"></a>Day 8</h3></div></div></div>
-<p>Today I’d like to start sketching out how my dotfiles should be setup and
-maintained. I’ll also come up with some ideas as to what my dotfiles will
-include and how to maintain the core dependencies of them.</p>
-<p>As some of the setup may change from box to box I shouldn’t have to throw
-everything into once basket, my dotfiles, I’d like to build some scripts that
-handle the dependencies of the setup and makes it easy for me to continue to
-tweak it whilst allowing it to be setup on any box with ease.</p>
+<p>Today I’d like to start sketching out how my dotfiles should be setup and maintained. I’ll also come up with some ideas
+as to what my dotfiles will include and how to maintain the core dependencies of them.</p>
+<p>As some of the setup may change from box to box I shouldn’t have to throw everything into once basket, my dotfiles, I’d
+like to build some scripts that handle the dependencies of the setup and makes it easy for me to continue to tweak it
+whilst allowing it to be setup on any box with ease.</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a id="_dotfile_blueprints"></a>Dotfile blueprints</h4></div></div></div>
@@ -159,8 +156,8 @@ is a pain and error prone.</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h3 class="title">
 <a id="_day_9"></a>Day 9</h3></div></div></div>
-<p>Today I’ll be looking at what I have at the moment, in terms of my dotfiles
-setup, and what I need to deal to improve it and make it easier to maintain.</p>
+<p>Today I’ll be looking at what I have at the moment, in terms of my dotfiles setup, and what I need to deal to improve it
+and make it easier to maintain.</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a id="_starting_a_new"></a>Starting a new</h4></div></div></div>
@@ -274,13 +271,10 @@ my dotfiles with changes that are not directly related to them.</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h3 class="title">
 <a id="_day_10"></a>Day 10</h3></div></div></div>
-<p>In my old muttrc file I had procmail getting my mails and storing them in
-separate folders so that I can work out what was what and how important it was.
-I’ve long since had this setup and I’ve pretty much forgotten how it was all
-setup.</p>
-<p>Today is the day I start getting this setup back, this only be the start I want
-to be able to view all my email account via mutt and drop the UI all together.
-I look into email filtering and gradually improve my mutt as I go along.</p>
+<p>In my old muttrc file I had procmail getting my mails and storing them in separate folders so that I can work out what
+was what and how important it was.  I’ve long since had this setup and I’ve pretty much forgotten how it was all setup.</p>
+<p>Today is the day I start getting this setup back, this only be the start I want to be able to view all my email account
+via mutt and drop the UI all together.  I look into email filtering and gradually improve my mutt as I go along.</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a id="_improving_mutt"></a>Improving mutt</h4></div></div></div>
@@ -422,9 +416,8 @@ Each account should have its own default directory
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h3 class="title">
 <a id="_day_11"></a>Day 11</h3></div></div></div>
-<p>So my email is being retrieve, manually, so now I’d like to focus on getting
-this setup to be retrieved automatically and work out some procmail recipes so
-that I my email is nicely organised for me.</p>
+<p>So my email is being retrieve, manually, so now I’d like to focus on getting this setup to be retrieved automatically
+and work out some procmail recipes so that I my email is nicely organised for me.</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a id="_organising_my_email"></a>Organising my email</h4></div></div></div>
@@ -720,11 +713,9 @@ Master branch after change GH#e92354e
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h3 class="title">
 <a id="_day_12"></a>Day 12</h3></div></div></div>
-<p>There are a couple of small things that need to be adressed before I introduce
-my other email accounts. As it stands I have filtered mail but there is no easy
-way of getting to my filtered inbox without some hassle. I need to setup a way
-to let mutt automatically know which mailboxes I have without having to
-constantly update my muttrc file.</p>
+<p>There are a couple of small things that need to be adressed before I introduce my other email accounts. As it stands I
+have filtered mail but there is no easy way of getting to my filtered inbox without some hassle. I need to setup a way
+to let mutt automatically know which mailboxes I have without having to constantly update my muttrc file.</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a id="_update_mailbox_list"></a>Update mailbox list</h4></div></div></div>
@@ -768,9 +759,8 @@ I don’t have to worry about new inboxes being created and having to keep
 track of them. I sinply have to create a new procmail recipe and let
 mutt work out where the new inboxes are stored :)</p>
 <p></p>
-<p>Now that I have a semi decent mutt setup I’d like to setup multiple SMTP
-servers. It’d be cool if mutt could be configured so that I could send a reply
-and the correct SMTP server is used, along with the right response header.</p>
+<p>Now that I have a semi decent mutt setup I’d like to setup multiple SMTP servers. It’d be cool if mutt could be
+configured so that I could send a reply and the correct SMTP server is used, along with the right response header.</p>
 </div>
 </div>
 <div class="section" lang="en">
@@ -797,9 +787,8 @@ so that I can focus on getting the rest of my setup functional.</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h3 class="title">
 <a id="_day_13"></a>Day 13</h3></div></div></div>
-<p>I’d like to organise my RSS feeds into mutt or an alternative news reader so
-that I can easily keep up with current tech. Today I’ll dedicate some time into
-getting this setup.</p>
+<p>I’d like to organise my RSS feeds into mutt or an alternative news reader so that I can easily keep up with current
+tech. Today I’ll dedicate some time into getting this setup.</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a id="_getting_a_feed_reader"></a>Getting a feed reader</h4></div></div></div>
@@ -928,9 +917,8 @@ Talk more about my config
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h3 class="title">
 <a id="_day_14"></a>Day 14</h3></div></div></div>
-<p>Braid is causing me hassle and as part of cleaning up my dotvim files I want to
-replace braid with git submodule. This will be part of the cleanup needed for
-dotvim files in preparation of me improving my vim skills.</p>
+<p>Braid is causing me hassle and as part of cleaning up my dotvim files I want to replace braid with git submodule. This
+will be part of the cleanup needed for dotvim files in preparation of me improving my vim skills.</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a id="_removing_vims_braid"></a>Removing VIMs braid</h4></div></div></div>
@@ -1070,9 +1058,8 @@ them using git submodule and deal with stripping them down later.</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h3 class="title">
 <a id="_day_15"></a>Day 15</h3></div></div></div>
-<p>So I now have a news reader so the only thing left to setup are my podcasts.
-I’ve been using itunes of late and would like to move away from that and see
-what newsbeuter has to offer in the way of helping me to keep up with podcasts.</p>
+<p>So I now have a news reader so the only thing left to setup are my podcasts.  I’ve been using itunes of late and would
+like to move away from that and see what newsbeuter has to offer in the way of helping me to keep up with podcasts.</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a id="_managing_my_podcasts"></a>Managing my podcasts</h4></div></div></div>

@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Refine my workflow</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="index.html" title="Dotfile Diaries"/><link rel="next" href="ar01s03.html" title="Learn my tools"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Refine my workflow</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="index.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s03.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_refine_my_workflow"/>Refine my workflow</h2></div></div></div><p>I already have my dotfiles under version control but I would like to clean
-these up and find a way to make them a little bit more maintainable. Primarily
-I want to move away from using braid and my forked version of my dotfiles.</p><p>This will lead me towards improving my vim settings and skills.</p><p>For this I will setup my dotfiles from scratch and show the pros and cons of my
-setup and how I like to have things laid out.</p><div class="sidebar"><p class="title"><b/></p><pre class="literallayout">duration: 8 days
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Refine my workflow</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="index.html" title="Dotfile Diaries"/><link rel="next" href="ar01s03.html" title="Learn my tools"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Refine my workflow</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="index.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s03.html">Next</a></td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_refine_my_workflow"/>Refine my workflow</h2></div></div></div><p>I already have my dotfiles under version control but I would like to clean these up and find a way to make them a little
+bit more maintainable. Primarily I want to move away from using braid and my forked version of my dotfiles.</p><p>This will lead me towards improving my vim settings and skills.</p><p>For this I will setup my dotfiles from scratch and show the pros and cons of my setup and how I like to have things laid
+out.</p><div class="sidebar"><p class="title"><b/></p><pre class="literallayout">duration: 8 days
 notes:
   * start my dotfiles from scratch
   * define local files to hide
   * setup tmux and tmuxinator
-  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</pre></div><p/><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_8"/>Day 8</h3></div></div></div><p>Today I’d like to start sketching out how my dotfiles should be setup and
-maintained. I’ll also come up with some ideas as to what my dotfiles will
-include and how to maintain the core dependencies of them.</p><p>As some of the setup may change from box to box I shouldn’t have to throw
-everything into once basket, my dotfiles, I’d like to build some scripts that
-handle the dependencies of the setup and makes it easy for me to continue to
-tweak it whilst allowing it to be setup on any box with ease.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_dotfile_blueprints"/>Dotfile blueprints</h4></div></div></div><p>So this is where the plan starts to come together.</p><p>My dotfiles should be a collection of settings and utilities that help me with
+  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</pre></div><p/><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_8"/>Day 8</h3></div></div></div><p>Today I’d like to start sketching out how my dotfiles should be setup and maintained. I’ll also come up with some ideas
+as to what my dotfiles will include and how to maintain the core dependencies of them.</p><p>As some of the setup may change from box to box I shouldn’t have to throw everything into once basket, my dotfiles, I’d
+like to build some scripts that handle the dependencies of the setup and makes it easy for me to continue to tweak it
+whilst allowing it to be setup on any box with ease.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_dotfile_blueprints"/>Dotfile blueprints</h4></div></div></div><p>So this is where the plan starts to come together.</p><p>My dotfiles should be a collection of settings and utilities that help me with
 my day to day work. As time has gone on I’ve learnt what I like and what I
 don’t and have always like the idea of having one group setting that can go
 anywhere. Back in the day my setup was stored on my personal CVS repository,
@@ -64,8 +61,8 @@ commands or changes for the at matter from the get go and have to spend a
 little time tinkering on my local setup before I can commit to anything. So
 having to keep track of these changes and copy them to the specific repository
 is a pain and error prone.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a id="_resources_6"/>Resources</h5></div></div></div><p><a class="ulink" href="http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating" target="_top">git submodules</a>
-<a class="ulink" href="http://stackoverflow.com/questions/8372625/git-how-to-push-submodule-to-a-remote-repository" target="_top">git how to push to a remote repository</a></p><p/></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_9"/>Day 9</h3></div></div></div><p>Today I’ll be looking at what I have at the moment, in terms of my dotfiles
-setup, and what I need to deal to improve it and make it easier to maintain.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_starting_a_new"/>Starting a new</h4></div></div></div><p>So the first thing I’ll need to do is stripped down my repository so that
+<a class="ulink" href="http://stackoverflow.com/questions/8372625/git-how-to-push-submodule-to-a-remote-repository" target="_top">git how to push to a remote repository</a></p><p/></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_9"/>Day 9</h3></div></div></div><p>Today I’ll be looking at what I have at the moment, in terms of my dotfiles setup, and what I need to deal to improve it
+and make it easier to maintain.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_starting_a_new"/>Starting a new</h4></div></div></div><p>So the first thing I’ll need to do is stripped down my repository so that
 I can start a new.</p><p>WARNING:
 This can be somewhat hazardious if you rely on having all of your
 downloads in your home directory as the following command will remove
@@ -110,12 +107,9 @@ longer needed directly by the repository. That is as easy as removing the line
 <code class="literal">gem "braid"</code> and running <code class="literal">bundle</code> again.</p><p>Now we have a cleaner repository and less worry in regards to how my other
 repositories are updated and managed.</p><p>So now that I am using git’s submodules to manage my external repositories I
 can now make local changes and update the correct repository without polutting
-my dotfiles with changes that are not directly related to them.</p><p/></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_10"/>Day 10</h3></div></div></div><p>In my old muttrc file I had procmail getting my mails and storing them in
-separate folders so that I can work out what was what and how important it was.
-I’ve long since had this setup and I’ve pretty much forgotten how it was all
-setup.</p><p>Today is the day I start getting this setup back, this only be the start I want
-to be able to view all my email account via mutt and drop the UI all together.
-I look into email filtering and gradually improve my mutt as I go along.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_improving_mutt"/>Improving mutt</h4></div></div></div><p>So I have my GMail account setup but that’s not enough. I want to include all
+my dotfiles with changes that are not directly related to them.</p><p/></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_10"/>Day 10</h3></div></div></div><p>In my old muttrc file I had procmail getting my mails and storing them in separate folders so that I can work out what
+was what and how important it was.  I’ve long since had this setup and I’ve pretty much forgotten how it was all setup.</p><p>Today is the day I start getting this setup back, this only be the start I want to be able to view all my email account
+via mutt and drop the UI all together.  I look into email filtering and gradually improve my mutt as I go along.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_improving_mutt"/>Improving mutt</h4></div></div></div><p>So I have my GMail account setup but that’s not enough. I want to include all
 my personal email accounts and maintain them.</p><p>This will include processing my mail and sending/creating subdirectories based
 on a single emails content.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a id="_ingredients"/>Ingredients</h5></div></div></div><div class="itemizedlist"><ul type="disc"><li>
 procmail
@@ -167,9 +161,8 @@ Each account should have its own default directory
 <a class="ulink" href="http://easierbuntu.blogspot.co.uk/2011/09/managing-your-email-with-fetchmail.html" target="_top">manage your email with fetchmail</a>
 </li><li>
 <a class="ulink" href="http://www.elho.net/mutt/maildir/" target="_top">Setup mail directories</a>
-</li></ul></div><p/></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_11"/>Day 11</h3></div></div></div><p>So my email is being retrieve, manually, so now I’d like to focus on getting
-this setup to be retrieved automatically and work out some procmail recipes so
-that I my email is nicely organised for me.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_organising_my_email"/>Organising my email</h4></div></div></div><p>So like most I get quite a lot of email, varying in importance and
+</li></ul></div><p/></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_11"/>Day 11</h3></div></div></div><p>So my email is being retrieve, manually, so now I’d like to focus on getting this setup to be retrieved automatically
+and work out some procmail recipes so that I my email is nicely organised for me.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_organising_my_email"/>Organising my email</h4></div></div></div><p>So like most I get quite a lot of email, varying in importance and
 relevance dependant on time. I’d like to get my old setup back in place
 with a few tweaks. Things are pretty much configured so that my email
 will be sent to the correct file but I need to improve on these recipes
@@ -310,11 +303,9 @@ comeplete the master branch was happily merged.</p><div class="section" lang="en
 Master brach before change GH#0e15429
 </li><li>
 Master branch after change GH#e92354e
-</li></ul></div><p/></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_12"/>Day 12</h3></div></div></div><p>There are a couple of small things that need to be adressed before I introduce
-my other email accounts. As it stands I have filtered mail but there is no easy
-way of getting to my filtered inbox without some hassle. I need to setup a way
-to let mutt automatically know which mailboxes I have without having to
-constantly update my muttrc file.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_update_mailbox_list"/>Update mailbox list</h4></div></div></div><p>I had problems trying to get mutt to list all my mail boxes internally
+</li></ul></div><p/></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_12"/>Day 12</h3></div></div></div><p>There are a couple of small things that need to be adressed before I introduce my other email accounts. As it stands I
+have filtered mail but there is no easy way of getting to my filtered inbox without some hassle. I need to setup a way
+to let mutt automatically know which mailboxes I have without having to constantly update my muttrc file.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_update_mailbox_list"/>Update mailbox list</h4></div></div></div><p>I had problems trying to get mutt to list all my mail boxes internally
 due to my bash noobishness but I did find a way to do it
 semi-automatically. I’d like to improve on this process so that I can
 make it a lot easier to be able to keep my inbox list up to date whilst
@@ -337,9 +328,8 @@ be the first work back.</p><p>The above comand basically lists all the files in 
 and adds them to a list and finally appends <span class="emphasis"><em>=</em></span> to each inbox. This way
 I don’t have to worry about new inboxes being created and having to keep
 track of them. I sinply have to create a new procmail recipe and let
-mutt work out where the new inboxes are stored :)</p><p/><p>Now that I have a semi decent mutt setup I’d like to setup multiple SMTP
-servers. It’d be cool if mutt could be configured so that I could send a reply
-and the correct SMTP server is used, along with the right response header.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_adding_multiple_smtp_accounts"/>Adding multiple SMTP accounts</h4></div></div></div><p>So I have my personal email accounts setup, so now I can read all my emails and
+mutt work out where the new inboxes are stored :)</p><p/><p>Now that I have a semi decent mutt setup I’d like to setup multiple SMTP servers. It’d be cool if mutt could be
+configured so that I could send a reply and the correct SMTP server is used, along with the right response header.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_adding_multiple_smtp_accounts"/>Adding multiple SMTP accounts</h4></div></div></div><p>So I have my personal email accounts setup, so now I can read all my emails and
 filter them pretty easily. The only thing missing here is being able to respond
 to emails with the correct email address.</p><p>So the problem at the moment is that all emails I send are set to my username
 and machines hostname (<a class="ulink" href="mailto:my.username@my.machines.name.com" target="_top">my.username@my.machines.name.com</a>), which is obviously
@@ -349,9 +339,8 @@ and work out what I actually need to do to all me to choose which account to
 send emails.</p><p>The first thing I’ll need to do is make sure that the <span class="emphasis"><em>From</em></span> field in my email
 responses are not that of the local machine. This should actually be the email
 address that the email was sent to.</p><p>I’m not quite sure how to do this yet so I’ll put a fork in it for the moment
-so that I can focus on getting the rest of my setup functional.</p><p/></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_13"/>Day 13</h3></div></div></div><p>I’d like to organise my RSS feeds into mutt or an alternative news reader so
-that I can easily keep up with current tech. Today I’ll dedicate some time into
-getting this setup.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_getting_a_feed_reader"/>Getting a feed reader</h4></div></div></div><p>So the next step along this journey is to setup a news reader. I’ve looked at a
+so that I can focus on getting the rest of my setup functional.</p><p/></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_13"/>Day 13</h3></div></div></div><p>I’d like to organise my RSS feeds into mutt or an alternative news reader so that I can easily keep up with current
+tech. Today I’ll dedicate some time into getting this setup.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_getting_a_feed_reader"/>Getting a feed reader</h4></div></div></div><p>So the next step along this journey is to setup a news reader. I’ve looked at a
 few that I used to use in the past.</p><p>I stumbled on <a class="ulink" href="https://github.com/posativ/homebrew-newsbeuter" target="_top">newsbeuter</a> which
 is a cli with a mutt feel. Ideal for me as I’m an avid mutt user.</p><p>Unfortunately brew can’t find newsbeuter by it’s self so I needed to tell it
 where it is and then install it on my system.</p><pre class="literallayout">brew tap posativ/homebrew-newsbeuter</pre><p>This installs the brew formula needed to install newsbeuter. Once this was complete all I had to do is run:</p><pre class="literallayout">brew install newsbeuter</pre><p>Again I had to wait, this time for newsbeuter to install, and then I was ready
@@ -397,9 +386,8 @@ Talk more about my config
 <a class="ulink" href="http://writtenandread.net/newsbeuter/" target="_top">newsbeuter and podcasts</a>
 </li><li>
 <a class="ulink" href="http://writtenandread.net/files/newsbeuter/config" target="_top">newsbeuter config</a>
-</li></ul></div><p/></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_14"/>Day 14</h3></div></div></div><p>Braid is causing me hassle and as part of cleaning up my dotvim files I want to
-replace braid with git submodule. This will be part of the cleanup needed for
-dotvim files in preparation of me improving my vim skills.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_removing_vims_braid"/>Removing VIMs braid</h4></div></div></div><p>So I’ve been using braid to manage my vim plugins but I’d prefer if I used git
+</li></ul></div><p/></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_14"/>Day 14</h3></div></div></div><p>Braid is causing me hassle and as part of cleaning up my dotvim files I want to replace braid with git submodule. This
+will be part of the cleanup needed for dotvim files in preparation of me improving my vim skills.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_removing_vims_braid"/>Removing VIMs braid</h4></div></div></div><p>So I’ve been using braid to manage my vim plugins but I’d prefer if I used git
 directly as I am with my dotfiles. The first thing to do is keep a list of all
 of the plugins that I have, I’ll need this so that I can keep the plugins I am
 currently using.</p><p>I’ll be using the following command to add each plugin as a git module:</p><pre class="literallayout">git submodule add git://github.com/username/project.git plugin/path</pre><p>All but one of the plugins live in the <code class="literal">bundle</code> direction the only exception is
@@ -499,9 +487,8 @@ vividchalk
 webapi-vim
 vim-pathogen</pre><p>Later on I will focus on these plugins and learn and use them better. Ideally I should
 have a clean slate to improve my vi foo. For the moment though I will just add
-them using git submodule and deal with stripping them down later.</p><p/></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_15"/>Day 15</h3></div></div></div><p>So I now have a news reader so the only thing left to setup are my podcasts.
-I’ve been using itunes of late and would like to move away from that and see
-what newsbeuter has to offer in the way of helping me to keep up with podcasts.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_managing_my_podcasts"/>Managing my podcasts</h4></div></div></div><p>Now is the time that I move my podcasts from iTunes back to the console, where
+them using git submodule and deal with stripping them down later.</p><p/></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_15"/>Day 15</h3></div></div></div><p>So I now have a news reader so the only thing left to setup are my podcasts.  I’ve been using itunes of late and would
+like to move away from that and see what newsbeuter has to offer in the way of helping me to keep up with podcasts.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_managing_my_podcasts"/>Managing my podcasts</h4></div></div></div><p>Now is the time that I move my podcasts from iTunes back to the console, where
 they belong. I’ve already installed newsbeuter so I can use that to track the
 podcasts I listen to and handling queuing and downloading them.</p><p>This is pretty simple really, first off I needed to add a podcasts to my feed
 list. I then checkout any new items via newsbeuter which picked up the podcast
