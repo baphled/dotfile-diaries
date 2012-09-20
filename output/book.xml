@@ -3583,6 +3583,24 @@ this for the time being and getting to grips with these key bindings.</simpara>
 </section>
 </section>
 </section>
+<section id="_removing_supertab">
+<title>Removing supertab</title>
+<simpara>So I&#8217;ve discovered some issues with using <emphasis>supertab</emphasis> conflicting with <emphasis>snipmate</emphasis> and to be quite honest though I used to
+use tabs for autocompletion but I my vim muscle memory is used to using <literal>&lt;C-n&gt;</literal> and <literal>&lt;C-p&gt;</literal> to loop through possible
+selections. There is also the factor that I <emphasis>am</emphasis> used to using tabs for completing snippets.</simpara>
+<simpara>The other consideration is that I still want to try to keep my underlining settings as similar to vanilla vim as
+possible whilst tweaking it another for extra productivity.</simpara>
+<simpara>So removing <emphasis>supertab</emphasis> seems like a good idea. So with that said I&#8217;m going to remove supertab.</simpara>
+<literallayout class="monospaced">rm -rf ~/.git/modules/dotvim/modules/bundle/vim-supertab/
+rm -rf ~/dotvim/bundle/vim-supertab/</literallayout>
+<simpara>Finally I need to remove the submodule from <literal>~/dotvim/.gitmodules</literal></simpara>
+<literallayout class="monospaced">vi ~/dotvim/.gitmodules</literallayout>
+<literallayout class="monospaced">/supertab
+d2j
+:wq</literallayout>
+<note><simpara>Make sure that the above instructions are added as a separate workflow.</simpara></note>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
 <section id="_dressing_down_vim">
 <title>Dressing down Vim</title>
 <sidebar>
@@ -4866,7 +4884,7 @@ repository also has submodules I need to run the same command as above within
 that directory to make sure that everything was up to date.</simpara>
 <literallayout class="monospaced">cd ~/dotvim
 git submodule update --init</literallayout>
-<simpara>This took some time so it&#8217;s a perfect time to take a break.</simpara>
+<simpara>Once that was updated everything was ready to use.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_tools_of_the_trade">

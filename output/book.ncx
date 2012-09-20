@@ -30,14 +30,18 @@
 <content src="book.html#_learn_my_tools"/>
 </navPoint>
 <navPoint class="chapter" id="chapter_4" playOrder="5">
+<navLabel><text>Removing supertab</text></navLabel>
+<content src="book.html#_removing_supertab"/>
+</navPoint>
+<navPoint class="chapter" id="chapter_5" playOrder="6">
 <navLabel><text>Dressing down Vim</text></navLabel>
 <content src="book.html#_dressing_down_vim"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_5" playOrder="6">
+<navPoint class="chapter" id="chapter_6" playOrder="7">
 <navLabel><text>Housekeeping tools</text></navLabel>
 <content src="book.html#_housekeeping_tools"/>
 </navPoint>
-<navPoint class="chapter" id="chapter_6" playOrder="7">
+<navPoint class="chapter" id="chapter_7" playOrder="8">
 <navLabel><text>Appendix A: Appendix</text></navLabel>
 <content src="book.html#appendix"/>
 </navPoint>

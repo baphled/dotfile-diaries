@@ -4547,6 +4547,42 @@ this for the time being and getting to grips with these key bindings.</p></div>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_removing_supertab">Removing supertab</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>So I&#8217;ve discovered some issues with using <em>supertab</em> conflicting with <em>snipmate</em> and to be quite honest though I used to
+use tabs for autocompletion but I my vim muscle memory is used to using <tt>&lt;C-n&gt;</tt> and <tt>&lt;C-p&gt;</tt> to loop through possible
+selections. There is also the factor that I <em>am</em> used to using tabs for completing snippets.</p></div>
+<div class="paragraph"><p>The other consideration is that I still want to try to keep my underlining settings as similar to vanilla vim as
+possible whilst tweaking it another for extra productivity.</p></div>
+<div class="paragraph"><p>So removing <em>supertab</em> seems like a good idea. So with that said I&#8217;m going to remove supertab.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>rm -rf ~/.git/modules/dotvim/modules/bundle/vim-supertab/
+rm -rf ~/dotvim/bundle/vim-supertab/</tt></pre>
+</div></div>
+<div class="paragraph"><p>Finally I need to remove the submodule from <tt>~/dotvim/.gitmodules</tt></p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>vi ~/dotvim/.gitmodules</tt></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>/supertab
+d2j
+:wq</tt></pre>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Make sure that the above instructions are added as a separate workflow.</td>
+</tr></table>
+</div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_dressing_down_vim">Dressing down Vim</h2>
 <div class="sectionbody">
 <div class="sidebarblock">
@@ -5936,7 +5972,7 @@ that directory to make sure that everything was up to date.</p></div>
 <pre><tt>cd ~/dotvim
 git submodule update --init</tt></pre>
 </div></div>
-<div class="paragraph"><p>This took some time so it&#8217;s a perfect time to take a break.</p></div>
+<div class="paragraph"><p>Once that was updated everything was ready to use.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
@@ -6149,7 +6185,7 @@ set tw=140</tt></pre>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2012-09-20 20:33:03 BST
+Last updated 2012-09-20 22:06:42 BST
 </div>
 </div>
 </body>
