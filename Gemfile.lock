@@ -1,17 +1,11 @@
-GIT
-  remote: git://github.com/eee-c/git-scribe.git
-  revision: 06d9c24847bc59ed931ff121ba5cbf1f34c2ff24
-  branch: pygments
-  specs:
-    git-scribe (0.1.1)
-      liquid
-      nokogiri
-
 GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.3.2)
     excon (0.16.2)
+    git-scribe (0.1.1)
+      liquid
+      nokogiri
     heroku (2.30.5)
       heroku-api (~> 0.3.4)
       launchy (>= 0.3.2)
@@ -36,7 +30,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  git-scribe!
+  git-scribe
   heroku
   rack
   rack-rewrite
