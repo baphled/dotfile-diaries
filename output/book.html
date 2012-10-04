@@ -2682,26 +2682,16 @@ and let <tt>.zlogin</tt> do the rest of the work.</p></div>
 <div class="sect1">
 <h2 id="_learn_my_tools">Learn my tools</h2>
 <div class="sectionbody">
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">Write introduction</td>
-</tr></table>
-</div>
-<div class="paragraph"><p>Will need to decide on plugins to learn</p></div>
+<div class="paragraph"><p>This time I&#8217;m going to focus on the tools I use the most and tweak those over a period of time.</p></div>
+<div class="paragraph"><p>I&#8217;ll go into depth on the vim plugins I use and why I use them and document some of the pain I&#8217;ve experienced and what I
+did to alleviate these hassles. As I use Vim quite a bit this will be my first port of call. I will then move over to
+tmux and zsh.</p></div>
 <div class="sidebarblock">
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>duration: 1 week per plugin
-start:    week 15
-plugin list:
-  * surround
-  * text objects
-  * macros
-  * gundo
+<pre><tt>duration: 4 weeks
+start:    week 2
 notes:
   * this could be done after the intial 6 weeks</tt></pre>
 </div></div>
@@ -3524,11 +3514,6 @@ vimwiki <a href="http://github.com/vim-scripts/vimwiki">http://github.com/vim-sc
 <div class="ulist"><ul>
 <li>
 <p>
-bufexplorer <a href="http://github.com/c9s/bufexplorer">http://github.com/c9s/bufexplorer</a> git://github.com/c9s/bufexplorer.git
-</p>
-</li>
-<li>
-<p>
 vim-repeat <a href="http://github.com/tpope/vim-repeat">http://github.com/tpope/vim-repeat</a> git://github.com/tpope/vim-repeat.git
 </p>
 </li>
@@ -3562,6 +3547,11 @@ matchit <a href="http://github.com/tmhedberg/matchit">http://github.com/tmhedber
 <div class="sect4">
 <h5 id="_file_management">File management</h5>
 <div class="ulist"><ul>
+<li>
+<p>
+bufexplorer <a href="http://github.com/c9s/bufexplorer">http://github.com/c9s/bufexplorer</a> git://github.com/c9s/bufexplorer.git
+</p>
+</li>
 <li>
 <p>
 ctrlp.vim <a href="http://github.com/kien/ctrlp.vim">http://github.com/kien/ctrlp.vim</a> git://github.com/kien/ctrlp.vim.git
@@ -3604,17 +3594,17 @@ ack.vim <a href="http://github.com/mileszs/ack.vim">http://github.com/mileszs/ac
 </li>
 <li>
 <p>
-Align <a href="http://github.com/alanstevens/Align">http://github.com/alanstevens/Align</a> git://github.com/alanstevens/Align.git
-</p>
-</li>
-<li>
-<p>
 vim-abolish <a href="http://github.com/tpope/vim-abolish">http://github.com/tpope/vim-abolish</a> git://github.com/tpope/vim-abolish
 </p>
 </li>
 <li>
 <p>
 vim-ragtag <a href="http://github.com/tpope/vim-ragtag">http://github.com/tpope/vim-ragtag</a> git://github.com/tpope/vim-ragtag
+</p>
+</li>
+<li>
+<p>
+Align <a href="http://github.com/alanstevens/Align">http://github.com/alanstevens/Align</a> git://github.com/alanstevens/Align.git
 </p>
 </li>
 <li>
@@ -4164,69 +4154,6 @@ conflicting with other key bindings.</p></div>
 enhance Vim&#8217;s out of the box functionality and add a few nice features to allow me to work more efficiently.</p></div>
 <div style="page-break-after:always"></div>
 <div class="sect3">
-<h4 id="_bufexplorer">bufexplorer</h4>
-<div class="sidebarblock">
-<div class="content">
-<div class="literalblock">
-<div class="content">
-<pre><tt>plugin: bufexplorer
-home:   http://github.com/c9s/bufexplorer
-source: git://github.com/c9s/bufexplorer.git</tt></pre>
-</div></div>
-</div></div>
-<div class="paragraph"><p>So dealing with buffers can be somewhat frustrating at times, especially if you
-keep a session running for a number of days, as I do, the one thing missing
-from Vim is a way to easily navigation open buffers and manage them as needed.</p></div>
-<div class="paragraph"><p>I came across bufexplorer a few weeks ago whilst watching another developer
-coding and flipping buffers. After looking at their vim files I noticed that
-they had been using bufexplorer to do this and quickly added it to my
-toolchain. It&#8217;s easy to configure and adds the nice feature of being able to
-list buffers and select and delete them quite easily.</p></div>
-<div class="paragraph"><p>The first things I did was to remap its default (<tt>&lt;leader&gt;be</tt>) to <tt>&lt;leader&gt;,.</tt>
-mainly as the former feels more natural. There are a few more mappings that it
-uses that I haven&#8217;t gotten around to making use of yet and it will be these
-that I&#8217;ll be playing around with from now on. They are as follows:</p></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>&lt;leader&gt;bs
-&lt;leader&gt;bv</tt></pre>
-</div></div>
-<div class="paragraph"><p>As you may or may not of figured out this opens bufexplorer in a horizontal and
-vertical split respectively.</p></div>
-<div class="paragraph"><p>The most common command I use at present is deleting buffers (<tt>d</tt>) and jumping
-to a given buffer. The former still feels a little clumsy, probably as I&#8217;m not
-making the use of the out of the box commands and defaulting to using search to
-find a buffer and press <tt>&lt;Enter&gt;</tt> when I&#8217;ve found the buffer I am interested in.</p></div>
-<div class="paragraph"><p>Below is a snippet of the docs which lists some of the internal commands
-bufexplorer supports:</p></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>R             Toggles relative path/absolute path.
-D            |:wipeout|the buffer under the cursor from the list.  When a
-              buffers is wiped, it will not be shown when unlisted buffer are
-              displayed.
-f             Toggles whether you are taken to the active window when
-              selecting a buffer or not.
-o             Opens the buffer that is under the cursor into the current
-              window.
-p             Toggles the showing of a split filename/pathname.
-q             Quit exploring.
-r             Reverses the order the buffers are listed in.
-s             Selects the order the buffers are listed in. Either by buffer
-              number, file name, file extension, most recently used (MRU), or
-              full path.
-u             Toggles the showing of "unlisted" buffers.</tt></pre>
-</div></div>
-<div class="paragraph"><p>I don&#8217;t use tabs, in fact I&#8217;d rather stay away from them as much as possible so
-that commands relating to those have been omitted.</p></div>
-<div class="paragraph"><p>I&#8217;m going to have a play around with the other settings to see how useful they
-are and go from there.</p></div>
-<div class="paragraph"><p>The biggest plus for me is the ability to easily delete buffers without having
-to remember the buffers number. This alone is a good enough reason to keep it
-in my toolchain.</p></div>
-<div style="page-break-after:always"></div>
-</div>
-<div class="sect3">
 <h4 id="_vim_repeat">vim-repeat</h4>
 <div class="sidebarblock">
 <div class="content">
@@ -4544,11 +4471,14 @@ this for the time being and getting to grips with these key bindings.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_removing_supertab">Removing supertab</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_day_26">Day 26</h3>
+<div class="paragraph"><p>Today I&#8217;ll be reviewing my recent changes and resolving a conflict with using <tt>&lt;TAB&gt;</tt>.</p></div>
+<div class="paragraph"><p>I&#8217;ve noticed a few issues with the recent changes I&#8217;ve made and would like to resolve these issues before checking out
+the other plugins. I&#8217;ll focus on the main issue and make a few notes on the issues I&#8217;m experiencing with omnicomplete.</p></div>
+<div style="page-break-after:always"></div>
+<div class="sect3">
+<h4 id="_removing_supertab">Removing supertab</h4>
 <div class="paragraph"><p>So I&#8217;ve discovered some issues with using <em>supertab</em> conflicting with <em>snipmate</em> and to be quite honest though I used to
 use tabs for autocompletion but I my vim muscle memory is used to using <tt>&lt;C-n&gt;</tt> and <tt>&lt;C-p&gt;</tt> to loop through possible
 selections. There is also the factor that I <em>am</em> used to using tabs for completing snippets.</p></div>
@@ -4581,6 +4511,371 @@ d2j
 </div>
 <div style="page-break-after:always"></div>
 </div>
+<div class="sect3">
+<h4 id="_reviewing_omnicomplete">Reviewing omnicomplete</h4>
+<div class="paragraph"><p>Since I tweaked omnicomplete I&#8217;ve noticed that it can be quite slow, especially when one of my open buffers has long
+strings in the content. I&#8217;d like to tweak this so that I don&#8217;t have to wait for omnicomplete to parse these long string
+which is one of the pains I am not fond of at all.</p></div>
+<div class="paragraph"><p>I&#8217;ll have a look at <tt>neocomplecache</tt> which cache words in my buffer and uses that to populate my omnicomplete lists.
+This though may well use more memory that the previous solutions I&#8217;ve used but I won&#8217;t really know how much so until I
+actually start using it. Though this seems like a relatively sane idea for improving the speed in which omnicomplete
+finds long strings.</p></div>
+<div class="paragraph"><p>There is one thing that I need to look out for and that is that noecomplcache caches content so the long strings I&#8217;m
+currently having issues with maywell cause my machines to slow down as noecomplcache attempts to retrieve data from the
+cache.</p></div>
+<div class="paragraph"><p>As there are a few unknowns I need to checkout I&#8217;ll hold out on setting neocomplecache right now and leave it for
+another day once I have gone through the rest of the currently installed plugins.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_day_27">Day 27</h3>
+<div class="paragraph"><p>Today i&#8217;ll be looking at the plugins that help tweak my file navigation functionality. These help me to find and manage
+files quickly and help me to manage the buffers I have open.</p></div>
+<div style="page-break-after:always"></div>
+<div class="sect3">
+<h4 id="_bufexplorer">bufexplorer</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin: bufexplorer
+home:   http://github.com/c9s/bufexplorer
+source: git://github.com/c9s/bufexplorer.git</tt></pre>
+</div></div>
+</div></div>
+<div class="paragraph"><p>So dealing with buffers can be somewhat frustrating at times, especially if you
+keep a session running for a number of days, as I do, the one thing missing
+from Vim is a way to easily navigation open buffers and manage them as needed.</p></div>
+<div class="paragraph"><p>I came across bufexplorer a few weeks ago whilst watching another developer
+coding and flipping buffers. After looking at their vim files I noticed that
+they had been using bufexplorer to do this and quickly added it to my
+toolchain. It&#8217;s easy to configure and adds the nice feature of being able to
+list buffers and select and delete them quite easily.</p></div>
+<div class="paragraph"><p>The first things I did was to remap its default (<tt>&lt;leader&gt;be</tt>) to <tt>&lt;leader&gt;,.</tt>
+mainly as the former feels more natural. There are a few more mappings that it
+uses that I haven&#8217;t gotten around to making use of yet and it will be these
+that I&#8217;ll be playing around with from now on. They are as follows:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>&lt;leader&gt;bs
+&lt;leader&gt;bv</tt></pre>
+</div></div>
+<div class="paragraph"><p>As you may or may not of figured out this opens bufexplorer in a horizontal and
+vertical split respectively.</p></div>
+<div class="paragraph"><p>The most common command I use at present is deleting buffers (<tt>d</tt>) and jumping
+to a given buffer. The former still feels a little clumsy, probably as I&#8217;m not
+making the use of the out of the box commands and defaulting to using search to
+find a buffer and press <tt>&lt;Enter&gt;</tt> when I&#8217;ve found the buffer I am interested in.</p></div>
+<div class="paragraph"><p>Below is a snippet of the docs which lists some of the internal commands
+bufexplorer supports:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>R             Toggles relative path/absolute path.
+D            |:wipeout|the buffer under the cursor from the list.  When a
+              buffers is wiped, it will not be shown when unlisted buffer are
+              displayed.
+f             Toggles whether you are taken to the active window when
+              selecting a buffer or not.
+o             Opens the buffer that is under the cursor into the current
+              window.
+p             Toggles the showing of a split filename/pathname.
+q             Quit exploring.
+r             Reverses the order the buffers are listed in.
+s             Selects the order the buffers are listed in. Either by buffer
+              number, file name, file extension, most recently used (MRU), or
+              full path.
+u             Toggles the showing of "unlisted" buffers.</tt></pre>
+</div></div>
+<div class="paragraph"><p>I don&#8217;t use tabs, in fact I&#8217;d rather stay away from them as much as possible so
+that commands relating to those have been omitted.</p></div>
+<div class="paragraph"><p>I&#8217;m going to have a play around with the other settings to see how useful they
+are and go from there.</p></div>
+<div class="paragraph"><p>The biggest plus for me is the ability to easily delete buffers without having
+to remember the buffers number. This alone is a good enough reason to keep it
+in my toolchain.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_nerdtree">Nerdtree</h4>
+<div class="paragraph"><p>I&#8217;ve touched on Nerdtree in a previous entry, mainly to setup the basics to get me going but I&#8217;ll go over some of the
+fundermentals of Nerdtree and why I have decided to go back to using it.</p></div>
+<div class="paragraph"><p>Though <em>netrw</em> is quite useful I still needed ways of managing files (create, delete, name). This wasn&#8217;t possible with
+<em>netrw</em> and though I could map <tt>!rm %</tt> and the other Unix commands, this grows old quick and needs at least 3 mappings
+per command. Nerdtree allowed me to do this quite nicely and although I still have <tt>Ctrl-P</tt> to find files I is still
+useful to have a file draw to visually display your projects file structure.</p></div>
+<div class="paragraph"><p>One of the first things I am currently missing is an easy way to open Nerdtree with the current file selected. This
+comes in handy when I need to rename or remove a file.</p></div>
+<div class="paragraph"><p>So to get Nerdtree to open with the current file selected isn&#8217;t hard at all I need to do is bind <tt>:NerdtreeFind</tt> to a
+key and I have what I want:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>norenmap &lt;leader&gt;p :NERDTreeFind&lt;CR&gt;</tt></pre>
+</div></div>
+<div class="paragraph"><p>I already have a binding on <tt>&lt;leader&gt;p</tt> so I needed to remove that so that they both don&#8217;t collide.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>":map &lt;leader&gt;p :PromoteToLet&lt;cr&gt;</tt></pre>
+</div></div>
+<div class="paragraph"><p>I mentioned in <a href=":day-19-tweaking-nerdtree.asc">Tweaking Nerdtree</a> <tt>&lt;C-p&gt;</tt> is used to toggle Nerdtrees view. Nerdtree
+has a host of commands that you can play with, they are easily viewed by pressing <tt>?</tt> within the Nerdtree buffer. I&#8217;ll
+simply go over the ones I use the most below:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>p</tt> - jump to the parent directory
+</p>
+</li>
+<li>
+<p>
+<tt>P</tt> - go to the root directory
+</p>
+</li>
+<li>
+<p>
+<tt>o</tt> - open and close a directory
+</p>
+</li>
+<li>
+<p>
+<tt>x</tt> - close and close a directory
+</p>
+</li>
+<li>
+<p>
+<tt>X</tt> - recursively close and close a directory
+</p>
+</li>
+<li>
+<p>
+<tt>C</tt> - Make the current directory to the tree root
+</p>
+</li>
+<li>
+<p>
+<tt>I</tt> - Display hidden files
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>These commands I tend to use the most especially when I need to create and/or manage files:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>m</tt> - show menu
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>m</tt> - rename node
+</p>
+</li>
+<li>
+<p>
+<tt>c</tt> - copy node
+</p>
+</li>
+<li>
+<p>
+<tt>a</tt> - add node
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+<div class="paragraph"><p>A node is basically a file or directory, to specify a directory you simply need to add a forward slash (<em>/</em>).</p></div>
+<div class="paragraph"><p>Nerdtree support a few other features that I don&#8217;t really use at present, bookmarking directories could be quite useful
+but opening files in different tabs isn&#8217;t something I&#8217;m fond off.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">I&#8217;m aware that there are commands to CRUD files using <em>netrw</em> but I still am not a fan of the way <tt>:Explore</tt> opens and
+keeping track of where it will open can be a pain.</td>
+</tr></table>
+</div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_ctrlp">CtrlP</h4>
+<div class="paragraph"><p>CtrlP is my "go to" plugin when it comes to being able to open a file quickly without having to type the whole thing
+out. I used to use <em>Control-T</em> in the past but that had the extra dependency of needing vim compiled with Ruby support,
+though this is not particularly a big deal, <em>Control-T</em> is somewhat slow at time and remembering to compile its binaries
+can be a pain. This is where <em>CtrlP</em> takes the lead.</p></div>
+<div class="paragraph"><p>I&#8217;ve never really spent much time seeing what other features <em>CtrlP</em> has that I am not aware of. The main thing I never
+really took advantage of or bothered really to look more into is the ability to search by buffer or MRU (most recently
+used) files. I could also bind <tt>::CtrlPBuffer</tt> and <tt>:CtrlPMRU</tt> for when I want to be more specific. For the moment I
+will hold out on this and make use of <tt>&lt;C-f&gt;</tt> and <tt>&lt;C-b&gt;</tt> to navigate back and forth between search modes.</p></div>
+<div class="paragraph"><p>There is a regexp feature that I have never used (<tt>&lt;C-r&gt;</tt>) I should experiement with this a little to find out what it
+is actually capable of for the moment it is enough to make use of searching dependent of search type.</p></div>
+<div class="paragraph"><p>There is also a nice navigation command to allow me to move up a directory <tt>..&lt;CR&gt;</tt>.</p></div>
+<div class="paragraph"><p>I like to have <em>CtrlP</em> search for files in my current project, in which case the setting below does just that. Well that
+a bit of a lie, it starts searchs from the directory that contains SCM content. In my case as all my project use git or
+another SCM so I know what the root directory is.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>let g:ctrlp_working_path_mode = r                               "Set to a directory that contains .git</tt></pre>
+</div></div>
+<div class="paragraph"><p>I also have <em>CtrlP</em> default overiden so that I can use <tt>&lt;C-P&gt;</tt> for something else. In this case I changed it to the
+following:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>let g:ctrlp_map = '&lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;'</tt></pre>
+</div></div>
+<div class="paragraph"><p>Finally to clear <em>CtrlP</em> cache I use the following mapping:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>nnoremap &lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;&lt;Leader&gt; :CtrlPClearAllCaches&lt;CR&gt;:CtrlP&lt;CR&gt;"</tt></pre>
+</div></div>
+<div class="paragraph"><p>With that I have my file navigation settings pretty much covered for now.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_day_28">Day 28</h3>
+<div class="paragraph"><p>Today I&#8217;ll go over my color shcemes and the plugins I use to improve the way Vim looks in general.</p></div>
+<div class="sect3">
+<h4 id="_vim_powerline">vim-powerline</h4>
+<div class="paragraph"><p>Powerline is a nice little plugin that tweakings the styling of your status bar, which also helps in pinning down which
+buffer is active when you have multiple buffers open.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Add screenshot of plugin.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>To display the glyphs used by the plugin I&#8217;ll need to add a patchd font. I&#8217;ll need to install <em>fontforge</em> to install the
+patched font so <em>brew</em> to the rescue.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">This may take some time.</td>
+</tr></table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>brew install fontforge</tt></pre>
+</div></div>
+<div class="paragraph"><p>Once fontforge was installed I tried to install the patched font.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>fontforge -script ~/dotvim/bundle/powerline/fontpatcher/fontpatcher Anonymous\ Pro.ttf</tt></pre>
+</div></div>
+<div class="paragraph"><p>Everything seemed to of installed find and I had setup the correct setting but I still couldn&#8217;t view the glyphs. So for
+now I&#8217;ll put a fork in this tweak and move on.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_vim_vividchalk">vim-vividchalk</h4>
+<div class="paragraph"><p>I&#8217;ve spent quite alot of time looking for a colour scheme that suits my needs. This is so far my favourite having said
+that I&#8217;d like to be able to dynamically switch colour schemes dependant on what I am doing.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Add a screenshot of the colour scheme</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>I&#8217;d also like to have some kind of colour scheme management tool to make it easier to separate colorschemes and maintaim
+them. What would be cool would be if there was a plugin that allowed me to sample a range of colorschemes and settle on
+a given range, similar to the way colour schemes are managed in oh-my-zsh.</p></div>
+<div class="paragraph"><p>This will be something that I deal with once I have gone over the plugins I currently have.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_day_29">Day 29</h3>
+<div class="sect3">
+<h4 id="_vim_surround">vim-surround</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin: vim-surround
+homepage: http://github.com/tpope/vim-surround
+source: git://github.com/tpope/vim-surround.git</tt></pre>
+</div></div>
+</div></div>
+<div class="paragraph"><p>This is plugin is probably one of the most used by myself when writing. It basically allow use to add and remove a tag
+text. This is especially useful when working with (X|HT)ML as it requires us to wrap content with in elements, which can
+become tedious at the best of times.</p></div>
+<div class="paragraph"><p>The mappings for manipulating content comes in the following prefixes:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+cs - Change Surrounding tag
+</p>
+</li>
+<li>
+<p>
+ds - Delete Surrounding tag
+</p>
+</li>
+<li>
+<p>
+ys - Your Surrounding tag
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+takes a tag and replacing tag
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+<div class="paragraph"><p>I tend to use the first two the most but I&#8217;d like to learn more about what the other really have to offer instead of
+sticking to what I already know. This plugin is quite extensive so I&#8217;ll spend more time on getting to grips with the
+mappings that I have not used often.</p></div>
+<div class="paragraph"><p>There are a couple of cool things I can do with these mappings one of the main ones is being able to add tags to
+multiple lines at once. One prime example of where this comes in handy is when we want to create a list of HTML
+elements. First we&#8217;d get a list of something.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>&lt;ul&gt;
+  &lt;li&gt;Rice&lt;/li&gt;
+  &lt;li&gt;Beans&lt;/li&gt;
+  &lt;li&gt;Chocolate&lt;/li&gt;
+&lt;/ul&gt;</tt></pre>
+</div></div>
+<div class="paragraph"><p>Then we&#8217;d type the following:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>ggVG
+'&lt;,'&gt;normal yss&lt;li&gt;
+ggVGS&lt;ul&gt;</tt></pre>
+</div></div>
+<div class="paragraph"><p>Which gives us the output below:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>&lt;ul&gt;
+  &lt;li&gt;Rice&lt;/li&gt;
+  &lt;li&gt;Beans&lt;/li&gt;
+  &lt;li&gt;Chocolate&lt;/li&gt;
+&lt;/ul&gt;</tt></pre>
+</div></div>
+<div class="paragraph"><p>So what if I want to have the original list back, the standard way of doing this would be to type u a few times. That&#8217;s
+boring, surround can help us here to with a couple of commands:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>ggVG
+'&lt;,'&gt;normal dst</tt></pre>
+</div></div>
+<div class="paragraph"><p>We end up with the content pretty much back to normal:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>Rice
+Beans
+Chocolate</tt></pre>
+</div></div>
+</div>
+</div>
+</div>
 </div>
 <div class="sect1">
 <h2 id="_dressing_down_vim">Dressing down Vim</h2>
@@ -4610,7 +4905,15 @@ notes:
 explanation as to why they are useful and why I can&#8217;t live without them.</td>
 </tr></table>
 </div>
-<div style="page-break-after:always"></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">One of the things I&#8217;d like to focus on here is text manipulation without the use of "Visual mode"
+&lt;&lt;&lt;</td>
+</tr></table>
+</div>
 <div class="sect2">
 <h3 id="_day_25_2">Day 25</h3>
 <div class="paragraph"><p>As it stands at present I&#8217;ve forked my version from <a href="https://github.com/astrails/dotvim">here</a>.</p></div>
@@ -4702,7 +5005,7 @@ notes:
 </div>
 </div>
 <div class="sect1">
-<h2 id="appendix">Appendix A: Appendix</h2>
+<h2 id="appendix">Appendix</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>This is a dumping ground for various notes I&#8217;ve taken in regards to improving my workflow.</p></div>
 <div class="paragraph"><p>There&#8217;s no real structure to these and they are used purely to help me to remember things that I&#8217;d like to address at
@@ -5599,7 +5902,7 @@ and click on <em>Modifier keys</em></p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
-<h3 id="_upgrading_wet_ware">Upgrading wet ware</h3>
+<h3 id="_upgrading_wetware">Upgrading wetware</h3>
 <div class="paragraph"><p>Various notes and goals on what I want to achieve whilst writing this diary.</p></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -5613,9 +5916,6 @@ improve the way we solve and look at problems.</p></div>
 <div class="paragraph"><p>For us, we&#8217;ll learn a new Vim trick and learn more about the linux tools that
 we have available to us and which can help improve the way we do our work day
 to day.</p></div>
-</div>
-<div class="sect3">
-<h4 id="_what_we_do">What we do?</h4>
 </div>
 <div class="sect3">
 <h4 id="_read_a_man_page_a_day">Read a man page a day</h4>
@@ -5659,59 +5959,6 @@ terminal and alert me when information (emails, tweets, etc) is coming in</p></d
 </div>
 </div>
 <div class="sect2">
-<h3 id="_procmail_recipe_workflow">Procmail recipe workflow</h3>
-<div class="paragraph"><p>Getting recipes just right can be interesting and in the past I
-literally had to play it by ear. On this time round I wanted to be a bit
-more smarter about it. I had a little search online and came up with
-<a href="http://pm-doc.sourceforge.net/doc/#what_is_dry_run_testing">this</a> which
-helped quite a lot. It gave my inspiration to refine this into a
-workflow so that I could easily test recipes whilst not having to wait
-for an email to actually come through.</p></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">Add link to <tt>~/bin/procmail_recipe_test</tt>. Located at GH#e452d09</td>
-</tr></table>
-</div>
-<div class="paragraph"><p>I wrapped the Procmail dryrun command as shown above to easily run the
-script.</p></div>
-<div class="paragraph"><p>Procmail logs are located at <tt>~/logs/procmail-dryrun.log</tt> so I ran <tt>tail
--f ~/logs/procmail.log</tt> in a split pane so that I could see what was
-coming in.</p></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">Ideally this should be part of the script that I just built.</td>
-</tr></table>
-</div>
-<div class="paragraph"><p>Doing this gave me that ability to see how a the sample email was being
-filter, if at all.</p></div>
-<div class="paragraph"><p>Now the last peice of the puzzle was to easily create test emails
-without having to do them by hand. This again was pretty simple as mutt
-was already setup to use vim as its editor.</p></div>
-<div class="paragraph"><p>Pressing <tt>e</tt> in mutt opened an email in vim which meant that in Normal
-mode I was apply to give the following command to save the sample email:</p></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>:w ~/emailtest.txt</tt></pre>
-</div></div>
-<div class="paragraph"><p>Now that the sample email was save I am free to run
-<tt>~/bin/procmail_recipe_test</tt> and see how the email is processed.</p></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">Add screenshot of the split panes to demostrate the workflow</td>
-</tr></table>
-</div>
-<div style="page-break-after:always"></div>
-</div>
-<div class="sect2">
 <h3 id="_remapping_my_fingers">Remapping my fingers</h3>
 <div class="paragraph"><p>One of the most interesting things I have picked up whilst getting back to a
 console centric workflow is that a lot depends on where my fingers sit on the
@@ -5746,7 +5993,7 @@ bag of notes and gradually split off to different sections.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
-<h3 id="_work_flows">Work flows</h3>
+<h3 id="_workflows">Workflows</h3>
 <div class="paragraph"><p>I have a number of work flows I&#8217;d like to tweak and improve on. Here I&#8217;ll take notes and track my thoughts and ideas.</p></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -5801,14 +6048,74 @@ Get a list of files and append them to a give file as includes
 </li>
 </ul></div>
 <div style="page-break-after:always"></div>
+<div class="sect3">
+<h4 id="_procmail_recipe_workflow">Procmail recipe workflow</h4>
+<div class="paragraph"><p>Getting recipes just right can be interesting and in the past I
+literally had to play it by ear. On this time round I wanted to be a bit
+more smarter about it. I had a little search online and came up with
+<a href="http://pm-doc.sourceforge.net/doc/#what_is_dry_run_testing">this</a> which
+helped quite a lot. It gave my inspiration to refine this into a
+workflow so that I could easily test recipes whilst not having to wait
+for an email to actually come through.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Add link to <tt>~/bin/procmail_recipe_test</tt>. Located at GH#e452d09</td>
+</tr></table>
 </div>
-<div class="sect2">
-<h3 id="_existing_projects">Existing projects</h3>
+<div class="paragraph"><p>I wrapped the Procmail dryrun command as shown above to easily run the
+script.</p></div>
+<div class="paragraph"><p>Procmail logs are located at <tt>~/logs/procmail-dryrun.log</tt> so I ran <tt>tail
+-f ~/logs/procmail.log</tt> in a split pane so that I could see what was
+coming in.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Ideally this should be part of the script that I just built.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Doing this gave me that ability to see how a the sample email was being
+filter, if at all.</p></div>
+<div class="paragraph"><p>Now the last peice of the puzzle was to easily create test emails
+without having to do them by hand. This again was pretty simple as mutt
+was already setup to use vim as its editor.</p></div>
+<div class="paragraph"><p>Pressing <tt>e</tt> in mutt opened an email in vim which meant that in Normal
+mode I was apply to give the following command to save the sample email:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>:w ~/emailtest.txt</tt></pre>
+</div></div>
+<div class="paragraph"><p>Now that the sample email was save I am free to run
+<tt>~/bin/procmail_recipe_test</tt> and see how the email is processed.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Add screenshot of the split panes to demostrate the workflow</td>
+</tr></table>
+</div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_vim_navigation_workflow">VIM navigation workflow</h4>
+<div class="paragraph"><p>I&#8217;d like to take this opportunity to take note of my current navigation workflow in VIM. I use both NerdTree and CtrlP
+to navigate files in a project. As there are times when I know exactly what a file is called and/or how to get to it
+there is <em>CtrlP</em> quick and easy to open a file without having to really think about it. Then there are the time when I
+just want to get a lay of the land or a file is not where I expect it to be, this typically happens when a files naming
+convention breaks some of my vim plugins.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_existing_projects">Existing projects</h4>
 <div class="paragraph"><p>I&#8217;m often cloning a range of projects and have a few recipes that I use to set
 these up. To help me improve this workflow and finally automate I will outline
 the process and get it automated.</p></div>
-<div class="paragraph"><p>I typically have a number of windows open that I use to get my work done. First
-and foremost I always have <em>vim</em> open and typically set to the first window. I
+<div class="paragraph"><p>I typically have a number of windows open that I use to get my work done. First and foremost I always have <em>vim</em> open and typically set to the first window. I
 then have a browser open to the given languages API, this is usually via a
 browser.</p></div>
 <div class="paragraph"><p>If the given language has a REPL then I&#8217;ll have this open in another window for
@@ -5819,8 +6126,8 @@ allows me to clone a project and then copy the config to the correct place and
 finally start the session by call tmuxinator.</p></div>
 <div style="page-break-after:always"></div>
 </div>
-<div class="sect2">
-<h3 id="_ruby_projects">Ruby projects</h3>
+<div class="sect3">
+<h4 id="_ruby_projects">Ruby projects</h4>
 <div class="paragraph"><p>So the first project workflow i&#8217;ll capture is ruby projects there are a couple
 of ingredients to this recipe which go as follows:</p></div>
 <div class="ulist"><ul>
@@ -5899,6 +6206,7 @@ and will be the basis of the other workflows that I decide to focus on.</p></div
 projects config. I&#8217;ll look into this as a side issue and create a new issue to
 address the changes.</p></div>
 <div class="paragraph"><p>Next, I&#8217;ll do the same for rails projects.</p></div>
+</div>
 <div class="sect3">
 <h4 id="_todo_13">TODO</h4>
 <div class="ulist"><ul>
@@ -6115,6 +6423,7 @@ Look into outputting this to a shared window?
 </div>
 <div class="sect2">
 <h3 id="_tips_and_tricks">Tips and tricks</h3>
+<div class="paragraph"><p>Various tips and tricks I&#8217;ve stumbled across.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_scripting">Scripting</h3>
@@ -6136,13 +6445,12 @@ with my day to day work.</p></div>
 </ul></div>
 <div style="page-break-after:always"></div>
 </div>
-<div class="sect3">
-<h4 id="_vim_tips">Vim tips</h4>
+</div>
+<div class="sect2">
+<h3 id="_vim_tips">Vim tips</h3>
 <div class="paragraph"><p>problem: Get spaces between surrouding characters ({,( and friends)</p></div>
 <div class="paragraph"><p>solution: Make sure you use the closing tag, this way there will not be a space between the special characters and the
 inner text.</p></div>
-<div class="openblock">
-<div class="content">
 <div class="paragraph"><p>problem: Display line width solution: Add the following to your vimrc:</p></div>
 <div class="literalblock">
 <div class="content">
@@ -6151,10 +6459,7 @@ set tw=140</tt></pre>
 </div></div>
 <div class="paragraph"><p>This sets the linecount to 140 and displays a vertical line where the line limit is.</p></div>
 <div style="page-break-after:always"></div>
-<div class="sect1 normal">
-<div class="sectionbody">Cool stuff I&#8217;ve picked up on my search</div>
-</div>
-<div class="ulist"><ul>
+<div class="ulist bibliography"><ul>
 <li>
 <p>
 <a href="http://box.matto.nl/hjkl.html">Use the hidden powers of the w3m textmode webbrowser</a>
@@ -6176,8 +6481,6 @@ set tw=140</tt></pre>
 </p>
 </li>
 </ul></div>
-</div></div>
-</div>
 </div>
 </div>
 </div>
@@ -6185,7 +6488,7 @@ set tw=140</tt></pre>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2012-09-20 22:06:42 BST
+Last updated 2012-10-04 19:10:35 BST
 </div>
 </div>
 </body>

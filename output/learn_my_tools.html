@@ -21,8 +21,8 @@
         
       </td><td width="33%" align="right">
         
-          <a href="removing_supertab.html">Next</a><br/>
-          Removing supertab
+          <a href="dressing_down_vim.html">Next</a><br/>
+          Dressing down Vim
         
       </td></tr>
     </table>
@@ -34,20 +34,14 @@
       <div class="section" lang="en">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
 <a id="_learn_my_tools"></a>Learn my tools</h2></div></div></div>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
-<p>Write introduction</p>
-</div>
-<p>Will need to decide on plugins to learn</p>
+<p>This time I’m going to focus on the tools I use the most and tweak those over a period of time.</p>
+<p>I’ll go into depth on the vim plugins I use and why I use them and document some of the pain I’ve experienced and what I
+did to alleviate these hassles. As I use Vim quite a bit this will be my first port of call. I will then move over to
+tmux and zsh.</p>
 <div class="sidebar">
 <p class="title"><b></b></p>
-<pre class="literallayout">duration: 1 week per plugin
-start:    week 15
-plugin list:
-  * surround
-  * text objects
-  * macros
-  * gundo
+<pre class="literallayout">duration: 4 weeks
+start:    week 2
 notes:
   * this could be done after the intial 6 weeks</pre>
 </div>
@@ -670,9 +664,6 @@ vimwiki <a class="ulink" href="http://github.com/vim-scripts/vimwiki" target="_t
 <a id="_general_enhancements"></a>General enhancements</h5></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
-bufexplorer <a class="ulink" href="http://github.com/c9s/bufexplorer" target="_top">http://github.com/c9s/bufexplorer</a> git://github.com/c9s/bufexplorer.git
-</li>
-<li>
 vim-repeat <a class="ulink" href="http://github.com/tpope/vim-repeat" target="_top">http://github.com/tpope/vim-repeat</a> git://github.com/tpope/vim-repeat.git
 </li>
 <li>
@@ -699,6 +690,9 @@ matchit <a class="ulink" href="http://github.com/tmhedberg/matchit" target="_top
 <div class="titlepage"><div><div><h5 class="title">
 <a id="_file_management"></a>File management</h5></div></div></div>
 <div class="itemizedlist"><ul type="disc">
+<li>
+bufexplorer <a class="ulink" href="http://github.com/c9s/bufexplorer" target="_top">http://github.com/c9s/bufexplorer</a> git://github.com/c9s/bufexplorer.git
+</li>
 <li>
 ctrlp.vim <a class="ulink" href="http://github.com/kien/ctrlp.vim" target="_top">http://github.com/kien/ctrlp.vim</a> git://github.com/kien/ctrlp.vim.git
 </li>
@@ -730,13 +724,13 @@ vim-surround <a class="ulink" href="http://github.com/tpope/vim-surround" target
 ack.vim <a class="ulink" href="http://github.com/mileszs/ack.vim" target="_top">http://github.com/mileszs/ack.vim</a> git://github.com/mileszs/ack.vim.git
 </li>
 <li>
-Align <a class="ulink" href="http://github.com/alanstevens/Align" target="_top">http://github.com/alanstevens/Align</a> git://github.com/alanstevens/Align.git
-</li>
-<li>
 vim-abolish <a class="ulink" href="http://github.com/tpope/vim-abolish" target="_top">http://github.com/tpope/vim-abolish</a> git://github.com/tpope/vim-abolish
 </li>
 <li>
 vim-ragtag <a class="ulink" href="http://github.com/tpope/vim-ragtag" target="_top">http://github.com/tpope/vim-ragtag</a> git://github.com/tpope/vim-ragtag
+</li>
+<li>
+Align <a class="ulink" href="http://github.com/alanstevens/Align" target="_top">http://github.com/alanstevens/Align</a> git://github.com/alanstevens/Align.git
 </li>
 <li>
 vim-snipmate <a class="ulink" href="http://github.com/garbas/vim-snipmate" target="_top">http://github.com/garbas/vim-snipmate</a> git://github.com/garbas/vim-snipmate.git
@@ -1155,61 +1149,6 @@ enhance Vim’s out of the box functionality and add a few nice features to allo
 <p></p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
-<a id="_bufexplorer"></a>bufexplorer</h4></div></div></div>
-<div class="sidebar">
-<p class="title"><b></b></p>
-<pre class="literallayout">plugin: bufexplorer
-home:   http://github.com/c9s/bufexplorer
-source: git://github.com/c9s/bufexplorer.git</pre>
-</div>
-<p>So dealing with buffers can be somewhat frustrating at times, especially if you
-keep a session running for a number of days, as I do, the one thing missing
-from Vim is a way to easily navigation open buffers and manage them as needed.</p>
-<p>I came across bufexplorer a few weeks ago whilst watching another developer
-coding and flipping buffers. After looking at their vim files I noticed that
-they had been using bufexplorer to do this and quickly added it to my
-toolchain. It’s easy to configure and adds the nice feature of being able to
-list buffers and select and delete them quite easily.</p>
-<p>The first things I did was to remap its default (<code class="literal">&lt;leader&gt;be</code>) to <code class="literal">&lt;leader&gt;,.</code>
-mainly as the former feels more natural. There are a few more mappings that it
-uses that I haven’t gotten around to making use of yet and it will be these
-that I’ll be playing around with from now on. They are as follows:</p>
-<pre class="literallayout">&lt;leader&gt;bs
-&lt;leader&gt;bv</pre>
-<p>As you may or may not of figured out this opens bufexplorer in a horizontal and
-vertical split respectively.</p>
-<p>The most common command I use at present is deleting buffers (<code class="literal">d</code>) and jumping
-to a given buffer. The former still feels a little clumsy, probably as I’m not
-making the use of the out of the box commands and defaulting to using search to
-find a buffer and press <code class="literal">&lt;Enter&gt;</code> when I’ve found the buffer I am interested in.</p>
-<p>Below is a snippet of the docs which lists some of the internal commands
-bufexplorer supports:</p>
-<pre class="literallayout">R             Toggles relative path/absolute path.
-D            |:wipeout|the buffer under the cursor from the list.  When a
-              buffers is wiped, it will not be shown when unlisted buffer are
-              displayed.
-f             Toggles whether you are taken to the active window when
-              selecting a buffer or not.
-o             Opens the buffer that is under the cursor into the current
-              window.
-p             Toggles the showing of a split filename/pathname.
-q             Quit exploring.
-r             Reverses the order the buffers are listed in.
-s             Selects the order the buffers are listed in. Either by buffer
-              number, file name, file extension, most recently used (MRU), or
-              full path.
-u             Toggles the showing of "unlisted" buffers.</pre>
-<p>I don’t use tabs, in fact I’d rather stay away from them as much as possible so
-that commands relating to those have been omitted.</p>
-<p>I’m going to have a play around with the other settings to see how useful they
-are and go from there.</p>
-<p>The biggest plus for me is the ability to easily delete buffers without having
-to remember the buffers number. This alone is a good enough reason to keep it
-in my toolchain.</p>
-<p></p>
-</div>
-<div class="section" lang="en">
-<div class="titlepage"><div><div><h4 class="title">
 <a id="_vim_repeat"></a>vim-repeat</h4></div></div></div>
 <div class="sidebar">
 <p class="title"><b></b></p>
@@ -1433,6 +1372,315 @@ this for the time being and getting to grips with these key bindings.</p>
 <p></p>
 </div>
 </div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_26"></a>Day 26</h3></div></div></div>
+<p>Today I’ll be reviewing my recent changes and resolving a conflict with using <code class="literal">&lt;TAB&gt;</code>.</p>
+<p>I’ve noticed a few issues with the recent changes I’ve made and would like to resolve these issues before checking out
+the other plugins. I’ll focus on the main issue and make a few notes on the issues I’m experiencing with omnicomplete.</p>
+<p></p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_removing_supertab"></a>Removing supertab</h4></div></div></div>
+<p>So I’ve discovered some issues with using <span class="emphasis"><em>supertab</em></span> conflicting with <span class="emphasis"><em>snipmate</em></span> and to be quite honest though I used to
+use tabs for autocompletion but I my vim muscle memory is used to using <code class="literal">&lt;C-n&gt;</code> and <code class="literal">&lt;C-p&gt;</code> to loop through possible
+selections. There is also the factor that I <span class="emphasis"><em>am</em></span> used to using tabs for completing snippets.</p>
+<p>The other consideration is that I still want to try to keep my underlining settings as similar to vanilla vim as
+possible whilst tweaking it another for extra productivity.</p>
+<p>So removing <span class="emphasis"><em>supertab</em></span> seems like a good idea. So with that said I’m going to remove supertab.</p>
+<pre class="literallayout">rm -rf ~/.git/modules/dotvim/modules/bundle/vim-supertab/
+rm -rf ~/dotvim/bundle/vim-supertab/</pre>
+<p>Finally I need to remove the submodule from <code class="literal">~/dotvim/.gitmodules</code></p>
+<pre class="literallayout">vi ~/dotvim/.gitmodules</pre>
+<pre class="literallayout">/supertab
+d2j
+:wq</pre>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Make sure that the above instructions are added as a separate workflow.</p>
+</div>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_reviewing_omnicomplete"></a>Reviewing omnicomplete</h4></div></div></div>
+<p>Since I tweaked omnicomplete I’ve noticed that it can be quite slow, especially when one of my open buffers has long
+strings in the content. I’d like to tweak this so that I don’t have to wait for omnicomplete to parse these long string
+which is one of the pains I am not fond of at all.</p>
+<p>I’ll have a look at <code class="literal">neocomplecache</code> which cache words in my buffer and uses that to populate my omnicomplete lists.
+This though may well use more memory that the previous solutions I’ve used but I won’t really know how much so until I
+actually start using it. Though this seems like a relatively sane idea for improving the speed in which omnicomplete
+finds long strings.</p>
+<p>There is one thing that I need to look out for and that is that noecomplcache caches content so the long strings I’m
+currently having issues with maywell cause my machines to slow down as noecomplcache attempts to retrieve data from the
+cache.</p>
+<p>As there are a few unknowns I need to checkout I’ll hold out on setting neocomplecache right now and leave it for
+another day once I have gone through the rest of the currently installed plugins.</p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_27"></a>Day 27</h3></div></div></div>
+<p>Today i’ll be looking at the plugins that help tweak my file navigation functionality. These help me to find and manage
+files quickly and help me to manage the buffers I have open.</p>
+<p></p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_bufexplorer"></a>bufexplorer</h4></div></div></div>
+<div class="sidebar">
+<p class="title"><b></b></p>
+<pre class="literallayout">plugin: bufexplorer
+home:   http://github.com/c9s/bufexplorer
+source: git://github.com/c9s/bufexplorer.git</pre>
+</div>
+<p>So dealing with buffers can be somewhat frustrating at times, especially if you
+keep a session running for a number of days, as I do, the one thing missing
+from Vim is a way to easily navigation open buffers and manage them as needed.</p>
+<p>I came across bufexplorer a few weeks ago whilst watching another developer
+coding and flipping buffers. After looking at their vim files I noticed that
+they had been using bufexplorer to do this and quickly added it to my
+toolchain. It’s easy to configure and adds the nice feature of being able to
+list buffers and select and delete them quite easily.</p>
+<p>The first things I did was to remap its default (<code class="literal">&lt;leader&gt;be</code>) to <code class="literal">&lt;leader&gt;,.</code>
+mainly as the former feels more natural. There are a few more mappings that it
+uses that I haven’t gotten around to making use of yet and it will be these
+that I’ll be playing around with from now on. They are as follows:</p>
+<pre class="literallayout">&lt;leader&gt;bs
+&lt;leader&gt;bv</pre>
+<p>As you may or may not of figured out this opens bufexplorer in a horizontal and
+vertical split respectively.</p>
+<p>The most common command I use at present is deleting buffers (<code class="literal">d</code>) and jumping
+to a given buffer. The former still feels a little clumsy, probably as I’m not
+making the use of the out of the box commands and defaulting to using search to
+find a buffer and press <code class="literal">&lt;Enter&gt;</code> when I’ve found the buffer I am interested in.</p>
+<p>Below is a snippet of the docs which lists some of the internal commands
+bufexplorer supports:</p>
+<pre class="literallayout">R             Toggles relative path/absolute path.
+D            |:wipeout|the buffer under the cursor from the list.  When a
+              buffers is wiped, it will not be shown when unlisted buffer are
+              displayed.
+f             Toggles whether you are taken to the active window when
+              selecting a buffer or not.
+o             Opens the buffer that is under the cursor into the current
+              window.
+p             Toggles the showing of a split filename/pathname.
+q             Quit exploring.
+r             Reverses the order the buffers are listed in.
+s             Selects the order the buffers are listed in. Either by buffer
+              number, file name, file extension, most recently used (MRU), or
+              full path.
+u             Toggles the showing of "unlisted" buffers.</pre>
+<p>I don’t use tabs, in fact I’d rather stay away from them as much as possible so
+that commands relating to those have been omitted.</p>
+<p>I’m going to have a play around with the other settings to see how useful they
+are and go from there.</p>
+<p>The biggest plus for me is the ability to easily delete buffers without having
+to remember the buffers number. This alone is a good enough reason to keep it
+in my toolchain.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_nerdtree"></a>Nerdtree</h4></div></div></div>
+<p>I’ve touched on Nerdtree in a previous entry, mainly to setup the basics to get me going but I’ll go over some of the
+fundermentals of Nerdtree and why I have decided to go back to using it.</p>
+<p>Though <span class="emphasis"><em>netrw</em></span> is quite useful I still needed ways of managing files (create, delete, name). This wasn’t possible with
+<span class="emphasis"><em>netrw</em></span> and though I could map <code class="literal">!rm %</code> and the other Unix commands, this grows old quick and needs at least 3 mappings
+per command. Nerdtree allowed me to do this quite nicely and although I still have <code class="literal">Ctrl-P</code> to find files I is still
+useful to have a file draw to visually display your projects file structure.</p>
+<p>One of the first things I am currently missing is an easy way to open Nerdtree with the current file selected. This
+comes in handy when I need to rename or remove a file.</p>
+<p>So to get Nerdtree to open with the current file selected isn’t hard at all I need to do is bind <code class="literal">:NerdtreeFind</code> to a
+key and I have what I want:</p>
+<pre class="literallayout">norenmap &lt;leader&gt;p :NERDTreeFind&lt;CR&gt;</pre>
+<p>I already have a binding on <code class="literal">&lt;leader&gt;p</code> so I needed to remove that so that they both don’t collide.</p>
+<pre class="literallayout">":map &lt;leader&gt;p :PromoteToLet&lt;cr&gt;</pre>
+<p>I mentioned in <a class="ulink" href=":day-19-tweaking-nerdtree.asc" target="_top">Tweaking Nerdtree</a> <code class="literal">&lt;C-p&gt;</code> is used to toggle Nerdtrees view. Nerdtree
+has a host of commands that you can play with, they are easily viewed by pressing <code class="literal">?</code> within the Nerdtree buffer. I’ll
+simply go over the ones I use the most below:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<code class="literal">p</code> - jump to the parent directory
+</li>
+<li>
+<code class="literal">P</code> - go to the root directory
+</li>
+<li>
+<code class="literal">o</code> - open and close a directory
+</li>
+<li>
+<code class="literal">x</code> - close and close a directory
+</li>
+<li>
+<code class="literal">X</code> - recursively close and close a directory
+</li>
+<li>
+<code class="literal">C</code> - Make the current directory to the tree root
+</li>
+<li>
+<code class="literal">I</code> - Display hidden files
+</li>
+</ul></div>
+<p>These commands I tend to use the most especially when I need to create and/or manage files:</p>
+<div class="itemizedlist"><ul type="disc"><li>
+<p>
+<code class="literal">m</code> - show menu
+</p>
+<div class="itemizedlist"><ul type="circle">
+<li>
+<code class="literal">m</code> - rename node
+</li>
+<li>
+<code class="literal">c</code> - copy node
+</li>
+<li>
+<code class="literal">a</code> - add node
+</li>
+</ul></div>
+</li></ul></div>
+<p>A node is basically a file or directory, to specify a directory you simply need to add a forward slash (<span class="emphasis"><em>/</em></span>).</p>
+<p>Nerdtree support a few other features that I don’t really use at present, bookmarking directories could be quite useful
+but opening files in different tabs isn’t something I’m fond off.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>I’m aware that there are commands to CRUD files using <span class="emphasis"><em>netrw</em></span> but I still am not a fan of the way <code class="literal">:Explore</code> opens and
+keeping track of where it will open can be a pain.</p>
+</div>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_ctrlp"></a>CtrlP</h4></div></div></div>
+<p>CtrlP is my "go to" plugin when it comes to being able to open a file quickly without having to type the whole thing
+out. I used to use <span class="emphasis"><em>Control-T</em></span> in the past but that had the extra dependency of needing vim compiled with Ruby support,
+though this is not particularly a big deal, <span class="emphasis"><em>Control-T</em></span> is somewhat slow at time and remembering to compile its binaries
+can be a pain. This is where <span class="emphasis"><em>CtrlP</em></span> takes the lead.</p>
+<p>I’ve never really spent much time seeing what other features <span class="emphasis"><em>CtrlP</em></span> has that I am not aware of. The main thing I never
+really took advantage of or bothered really to look more into is the ability to search by buffer or MRU (most recently
+used) files. I could also bind <code class="literal">::CtrlPBuffer</code> and <code class="literal">:CtrlPMRU</code> for when I want to be more specific. For the moment I
+will hold out on this and make use of <code class="literal">&lt;C-f&gt;</code> and <code class="literal">&lt;C-b&gt;</code> to navigate back and forth between search modes.</p>
+<p>There is a regexp feature that I have never used (<code class="literal">&lt;C-r&gt;</code>) I should experiement with this a little to find out what it
+is actually capable of for the moment it is enough to make use of searching dependent of search type.</p>
+<p>There is also a nice navigation command to allow me to move up a directory <code class="literal">..&lt;CR&gt;</code>.</p>
+<p>I like to have <span class="emphasis"><em>CtrlP</em></span> search for files in my current project, in which case the setting below does just that. Well that
+a bit of a lie, it starts searchs from the directory that contains SCM content. In my case as all my project use git or
+another SCM so I know what the root directory is.</p>
+<pre class="literallayout">let g:ctrlp_working_path_mode = r                               "Set to a directory that contains .git</pre>
+<p>I also have <span class="emphasis"><em>CtrlP</em></span> default overiden so that I can use <code class="literal">&lt;C-P&gt;</code> for something else. In this case I changed it to the
+following:</p>
+<pre class="literallayout">let g:ctrlp_map = '&lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;'</pre>
+<p>Finally to clear <span class="emphasis"><em>CtrlP</em></span> cache I use the following mapping:</p>
+<pre class="literallayout">nnoremap &lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;&lt;Leader&gt; :CtrlPClearAllCaches&lt;CR&gt;:CtrlP&lt;CR&gt;"</pre>
+<p>With that I have my file navigation settings pretty much covered for now.</p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_28"></a>Day 28</h3></div></div></div>
+<p>Today I’ll go over my color shcemes and the plugins I use to improve the way Vim looks in general.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_vim_powerline"></a>vim-powerline</h4></div></div></div>
+<p>Powerline is a nice little plugin that tweakings the styling of your status bar, which also helps in pinning down which
+buffer is active when you have multiple buffers open.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Add screenshot of plugin.</p>
+</div>
+<p>To display the glyphs used by the plugin I’ll need to add a patchd font. I’ll need to install <span class="emphasis"><em>fontforge</em></span> to install the
+patched font so <span class="emphasis"><em>brew</em></span> to the rescue.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>This may take some time.</p>
+</div>
+<pre class="literallayout">brew install fontforge</pre>
+<p>Once fontforge was installed I tried to install the patched font.</p>
+<pre class="literallayout">fontforge -script ~/dotvim/bundle/powerline/fontpatcher/fontpatcher Anonymous\ Pro.ttf</pre>
+<p>Everything seemed to of installed find and I had setup the correct setting but I still couldn’t view the glyphs. So for
+now I’ll put a fork in this tweak and move on.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_vim_vividchalk"></a>vim-vividchalk</h4></div></div></div>
+<p>I’ve spent quite alot of time looking for a colour scheme that suits my needs. This is so far my favourite having said
+that I’d like to be able to dynamically switch colour schemes dependant on what I am doing.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Add a screenshot of the colour scheme</p>
+</div>
+<p>I’d also like to have some kind of colour scheme management tool to make it easier to separate colorschemes and maintaim
+them. What would be cool would be if there was a plugin that allowed me to sample a range of colorschemes and settle on
+a given range, similar to the way colour schemes are managed in oh-my-zsh.</p>
+<p>This will be something that I deal with once I have gone over the plugins I currently have.</p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_29"></a>Day 29</h3></div></div></div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_vim_surround"></a>vim-surround</h4></div></div></div>
+<div class="sidebar">
+<p class="title"><b></b></p>
+<pre class="literallayout">plugin: vim-surround
+homepage: http://github.com/tpope/vim-surround
+source: git://github.com/tpope/vim-surround.git</pre>
+</div>
+<p>This is plugin is probably one of the most used by myself when writing. It basically allow use to add and remove a tag
+text. This is especially useful when working with (X|HT)ML as it requires us to wrap content with in elements, which can
+become tedious at the best of times.</p>
+<p>The mappings for manipulating content comes in the following prefixes:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+cs - Change Surrounding tag
+</li>
+<li>
+ds - Delete Surrounding tag
+</li>
+<li>
+<p>
+ys - Your Surrounding tag
+</p>
+<div class="itemizedlist"><ul type="circle"><li>
+takes a tag and replacing tag
+</li></ul></div>
+</li>
+</ul></div>
+<p>I tend to use the first two the most but I’d like to learn more about what the other really have to offer instead of
+sticking to what I already know. This plugin is quite extensive so I’ll spend more time on getting to grips with the
+mappings that I have not used often.</p>
+<p>There are a couple of cool things I can do with these mappings one of the main ones is being able to add tags to
+multiple lines at once. One prime example of where this comes in handy is when we want to create a list of HTML
+elements. First we’d get a list of something.</p>
+<pre class="literallayout">&lt;ul&gt;
+  &lt;li&gt;Rice&lt;/li&gt;
+  &lt;li&gt;Beans&lt;/li&gt;
+  &lt;li&gt;Chocolate&lt;/li&gt;
+&lt;/ul&gt;</pre>
+<p>Then we’d type the following:</p>
+<pre class="literallayout">ggVG
+'&lt;,'&gt;normal yss&lt;li&gt;
+ggVGS&lt;ul&gt;</pre>
+<p>Which gives us the output below:</p>
+<pre class="literallayout">&lt;ul&gt;
+  &lt;li&gt;Rice&lt;/li&gt;
+  &lt;li&gt;Beans&lt;/li&gt;
+  &lt;li&gt;Chocolate&lt;/li&gt;
+&lt;/ul&gt;</pre>
+<p>So what if I want to have the original list back, the standard way of doing this would be to type u a few times. That’s
+boring, surround can help us here to with a couple of commands:</p>
+<pre class="literallayout">ggVG
+'&lt;,'&gt;normal dst</pre>
+<p>We end up with the content pretty much back to normal:</p>
+<pre class="literallayout">Rice
+Beans
+Chocolate</pre>
+</div>
+</div>
 </div>
 
     </div>
@@ -1453,8 +1701,8 @@ this for the time being and getting to grips with these key bindings.</p>
         
       </td><td width="33%" align="right">
         
-          <a href="removing_supertab.html">Next</a><br/>
-          Removing supertab
+          <a href="dressing_down_vim.html">Next</a><br/>
+          Dressing down Vim
         
       </td></tr>
     </table>
