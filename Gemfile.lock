@@ -1,22 +1,11 @@
-GIT
-  remote: git://github.com/djanowski/pygmentize.git
-  revision: e01c1a789b2e60e2bdb17fd869be01c19d3b67c1
-  specs:
-    pygmentize (0.0.3)
-
-GIT
-  remote: git://github.com/eee-c/git-scribe.git
-  revision: 06d9c24847bc59ed931ff121ba5cbf1f34c2ff24
-  specs:
-    git-scribe (0.1.1)
-      liquid
-      nokogiri
-
 GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.3.2)
     excon (0.16.2)
+    git-scribe (0.1.1)
+      liquid
+      nokogiri
     heroku (2.30.5)
       heroku-api (~> 0.3.4)
       launchy (>= 0.3.2)
@@ -41,8 +30,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  git-scribe!
+  git-scribe
   heroku
-  pygmentize!
   rack
   rack-rewrite
