@@ -318,12 +318,10 @@ vim-ragtag <a class="ulink" href="http://github.com/tpope/vim-ragtag" target="_t
 Align <a class="ulink" href="http://github.com/alanstevens/Align" target="_top">http://github.com/alanstevens/Align</a> git://github.com/alanstevens/Align.git
 </li><li>
 vim-snipmate <a class="ulink" href="http://github.com/garbas/vim-snipmate" target="_top">http://github.com/garbas/vim-snipmate</a> git://github.com/garbas/vim-snipmate.git
-</li><li>
-snipmate-snippets <a class="ulink" href="http://github.com/baphled/snipmate-snippets" target="_top">http://github.com/baphled/snipmate-snippets</a> git://github.com/baphled/snipmate-snippets.git
 </li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a id="_text_objects"/>Text objects</h5></div></div></div><div class="itemizedlist"><ul type="disc"><li>
 vim-textobj-rubyblock <a class="ulink" href="http://github.com/nelstrom/vim-textobj-rubyblock" target="_top">http://github.com/nelstrom/vim-textobj-rubyblock</a> git://github.com/nelstrom/vim-textobj-rubyblock
 </li><li>
-vim-indentobject <a class="ulink" href="http://github.com/austintaylor/vim-indentobject" target="_top">http://github.com/austintaylor/vim-indentobject</a> git://github.com/austintaylor/vim-indentobject
+vim-indent-object <a class="ulink" href="http://github.com/michaeljsmith/vim-indent-object" target="_top">http://github.com/michaeljsmith/vim-indent-object</a> git://github.com/michaeljsmith/vim-indent-object.git
 </li><li>
 vim-textobj-user <a class="ulink" href="http://github.com/kana/vim-textobj-user" target="_top">http://github.com/kana/vim-textobj-user</a> git://github.com/kana/vim-textobj-user
 </li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a id="_frontend"/>Frontend</h5></div></div></div><div class="itemizedlist"><ul type="disc"><li>
@@ -332,8 +330,6 @@ jasmine.vim <a class="ulink" href="http://github.com/claco/jasmine.vim" target="
 vim-coffee-script <a class="ulink" href="http://github.com/kchmck/vim-coffee-script" target="_top">http://github.com/kchmck/vim-coffee-script</a> git://github.com/kchmck/vim-coffee-script.git
 </li><li>
 vim-json <a class="ulink" href="http://github.com/leshill/vim-json" target="_top">http://github.com/leshill/vim-json</a> git://github.com/leshill/vim-json.git
-</li><li>
-jasmine.vim <a class="ulink" href="http://github.com/claco/jasmine.vim" target="_top">http://github.com/claco/jasmine.vim</a> git://github.com/claco/jasmine.vim.git
 </li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a id="_ruby"/>Ruby</h5></div></div></div><div class="itemizedlist"><ul type="disc"><li>
 vim-ruby-block-conv <a class="ulink" href="http://github.com/bronson/vim-ruby-block-conv" target="_top">http://github.com/bronson/vim-ruby-block-conv</a> git://github.com/bronson/vim-ruby-block-conv.git
 </li><li>
@@ -748,4 +744,101 @@ ggVGS&lt;ul&gt;</pre><p>Which gives us the output below:</p><pre class="literall
 boring, surround can help us here to with a couple of commands:</p><pre class="literallayout">ggVG
 '&lt;,'&gt;normal dst</pre><p>We end up with the content pretty much back to normal:</p><pre class="literallayout">Rice
 Beans
-Chocolate</pre></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s02.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Refine my workflow </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Dressing down Vim</td></tr></table></div></body></html>
+Chocolate</pre><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_ack"/>Ack</h4></div></div></div><pre class="literallayout">plugin:   ack.vim
+homepage: http://github.com/mileszs/ack.vim
+source:   git://github.com/mileszs/ack.vim.git</pre><p>Ack is probably one of my most used linux commands so it goes without
+saying that I’d like the same functionality for finding string within
+Vim the same way.</p><p>It depends on <span class="emphasis"><em>ack</em></span> so that needed to be installed so that I could take
+advantage of the plugin. Thankfully I had that already installed but for
+reference this is how I installed it on my box</p><pre class="literallayout">brew install ack</pre><p>To run <span class="emphasis"><em>ack</em></span> I just need to type the following:</p><pre class="literallayout">:Ack --type=ruby 'content to find' path/to/find/content/</pre><p>This will search for <span class="emphasis"><em>content to find</em></span> within any <span class="emphasis"><em>ruby</em></span> file within the
+<span class="emphasis"><em>path/to/find/content</em></span> directory. There is an extensive list of file
+types <span class="emphasis"><em>ack</em></span> supports which can be found at <span class="emphasis"><em>ack --help-types</em></span>. It is
+also possible to omit file types also as follows:</p><pre class="literallayout">:Ack --notype=ruby 'content to find' path/to/find/content/</pre><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_vim_abolish"/>vim-abolish</h4></div></div></div><pre class="literallayout">plugin:   vim-abolish
+homwpage: http://github.com/tpope/vim-abolish
+source:   git://github.com/tpope/vim-abolish</pre><p>Abolish is an interesting plugin created by Time Pope, it is essentially 3 plugins wrapped up into 1 (abbreviation,
+substitution, coercion).</p><p>We all have problems with our fingers not listening to our brains.  Abbreviation helps us map our common typing mistakes
+with what we actually wanted to type. For example I recently had problems type <span class="emphasis"><em>editions</em></span> and ended up typing <span class="emphasis"><em>edtions</em></span>
+instead.</p><p>Stolen from the plugins homepage, the syntax to invoke abbreviation is as follows:</p><pre class="literallayout">Abolish {despa,sepe}rat{e,es,ed,ing,ely,ion,ions,or}       {despe,sepa}rat{}</pre><p>The documentation suggests that I add my abbreviations to <span class="emphasis"><em>~/.vim/after/plugin/abolish.vim</em></span></p><p>Appending a <span class="emphasis"><em>!</em></span> to the command and the abbreviation will be added to <span class="emphasis"><em>~/.vim/after/plugin/abolish.vim</em></span>.</p><pre class="literallayout">Abolish! edtion{,s} edition</pre><p>Abbreviations can also be removed by adding the <span class="emphasis"><em>--delete</em></span> flag as follows:</p><pre class="literallayout">Abolish -delete edtion{,s}</pre><p>We can also search for variants as well as accomplishing complete, this is means we can find a string regardless of its
+case and variant which can be quite helpful.</p><pre class="literallayout">:Abolish -search edit{s,ion}
+:S edit{s,ion}</pre><p>Which searches for:
+  edit
+  edition
+  editions</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>This didn’t work for me at the time of writing this. Should find out why.</p></div><p>The next part of the plugin is substitution. There are occasions when we need to search and replace a variant of a word
+whilst still keeping its case and variation. This could be done via a bundle of substitution commands but this can be
+error prone and lead to missed changes which can be tedious.</p><pre class="literallayout">:%S/edit{ion,s}/edit/g</pre><p>Which will change both <span class="emphasis"><em>edits</em></span> and <span class="emphasis"><em>edition</em></span> to <span class="emphasis"><em>edit</em></span>.</p><p>Finally there is the CoeRse command. The command is very useful when it comes to coding and when you want to change a
+variable names format from one to another. For example when you have the variable <span class="emphasis"><em>FilePath</em></span> which you want to change to
+<span class="emphasis"><em>file_path</em></span>. You simply type <code class="literal">crs</code> and the variable is now converted to snakecase.</p><p>To coerce a variable into another format you simply start off with the <span class="emphasis"><em>cr</em></span> and append one of the below keys to change
+the variables case.</p><pre class="literallayout">c: camelCase
+m: MixedCase
+_: snake_case
+s: snake_case
+u: SNAKE_UPPERCASE
+-: dash-case (not reversible)</pre><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_ragtag"/>Ragtag</h4></div></div></div><pre class="literallayout">plugin:   vim-ragtag
+homwpage: http://github.com/tpope/vim-ragtag
+source:   git://github.com/tpope/vim-ragtag</pre><p>Ragtag is a plugin that assists XML/XHTML based content. there isn’t much to it really, position the cursor at the end
+of the string you want to wrap and press <code class="literal">&lt;C-X&gt;</code> and the action key.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>^ represents where the cursor will be positioned.</p></div><pre class="literallayout">=        foo&lt;%= ^ %&gt;
++        &lt;%= foo^ %&gt;
+-        foo&lt;% ^ %&gt;
+_        &lt;% foo^ %&gt;
+&lt;Space&gt;  &lt;foo&gt;^&lt;/foo&gt;
+&lt;CR&gt;     &lt;foo&gt;\n^\n&lt;/foo&gt;
+/        Last HTML tag closed
+!        &lt;!DOCTYPE...&gt;/&lt;?xml ...?&gt; (menu)
+@        &lt;link rel="stylesheet" ...&gt;
+#        &lt;meta http-equiv="Content-Type" ... /&gt;
+$        &lt;script src="/javascripts/^.js"&gt;&lt;/script&gt;</pre><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_snipmate_and_snippets"/>snipmate and snippets</h4></div></div></div><pre class="literallayout">plugin:     snipmate-snippets
+homepage:   http://github.com/baphled/snipmate-snippets
+source:     git://github.com/baphled/snipmate-snippets.git</pre><p>So I like to have shortcuts for commonly typed words and command, especially when I am coding, for this omnicomplete is
+cool to an extent but it doesn’t quite cover exactly what I am looking for. This is where <span class="emphasis"><em>snipmate</em></span> comes into play. It
+allows you to create and use custom keys accompanied by <code class="literal">&lt;TAB&gt;</code> to quickly type a string. In the past snipmate came with
+a host of snippets as part of the plugin but as time has gone on it has dropped them as the list of snippets is quite
+exhaustive. They now belong as part of <span class="emphasis"><em>snipmate-snippets</em></span>. I’m also not a fan of having bloated customisations and have
+decided to fork <span class="emphasis"><em>snipmate-snippets</em></span> so that I can tweak it to my needs. For the time being it is enough to be aware of
+this and once I stripped down my config, I will put a little time aside for stripping down customising my snippets.</p><p/></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_30"/>Day 30</h3></div></div></div><p>Today I’ll be having a look at some text object orientated plugins. As I’ve mentioned before I quite enjoy text objects
+and feel I need to play around with these more.</p><p/><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_vim_textobj_rubyblock"/>vim-textobj-rubyblock</h4></div></div></div><pre class="literallayout">plugin:   vim-textobj-rubyblock
+homepage: http://github.com/nelstrom/vim-textobj-rubyblock
+source:   git://github.com/nelstrom/vim-textobj-rubyblock</pre><p>So if you didn’t know before, I’m quite a fan of text objects and this is one of those plugins that I have been meaning
+to wrap my muscle memory around for a long while.</p><p>So the ideal of text objects is that you are able to select a grouping of text easily whilst doing something with it.
+The atypical thing to do is the following:</p><p>The first puts me in visual mode and highlights everything inside the block
+  vir</p><p>This does similar to the above but highlights all of the block
+  var</p><p>It doesn’t stop there anything that you can do with a single character, you can do with this and other text objects.
+Want to delete everything within a block <code class="literal">dir</code> deletes the inner ruby block.</p><p>The goal for me over the next few days is to play around with these combinations and see what I learn.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Once I’ve gone over my plugin list I’ll write more about text objects and what they can do.</p></div><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_vim_indent_object"/>vim-indent-object</h4></div></div></div><pre class="literallayout">plugin:   vim-indent-object
+homepage: http://github.com/michaeljsmith/vim-indent-object
+source:   git://github.com/michaeljsmith/vim-indent-object</pre><p>This plugins add a few more text objects to my tool chain. This one is more general than the last and deals with
+indentation blocks of text.</p><pre class="literallayout">ai - an indentation level and line above
+ii - inner indentation
+aI - an indentation level lines below and above</pre><p>As noted in the documentation <code class="literal">iI</code> is also available but it is essentially added for completeness. As with other text
+objects I’m able to do something with a indent block.</p><p>So to delete a everthing within a indentation text object is done as follows:
+  dai</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The following will only work with my custom surround bindings.</p></div><p>Selecting an indentation text object and move it up three times.</p><pre class="literallayout">vai&lt;C-k&gt;&lt;C-k&gt;&lt;C-k&gt;</pre><p>and moving it down can be do as so:</p><pre class="literallayout">vai&lt;C-j&gt;&lt;C-j&gt;&lt;C-j&gt;</pre></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_31"/>Day 31</h3></div></div></div><p>Next on the plugin escavation is my JS related plugins:</p><div class="itemizedlist"><ul type="disc"><li>
+jasmine
+</li><li>
+vim-coffeescript
+</li><li>
+vim-json
+</li></ul></div><p/><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_jasmine_vim"/>jasmine.vim</h4></div></div></div><pre class="literallayout">plugin:     jasmine.vim
+homepage:   http://github.com/claco/jasmine.vim
+source:     git://gitHub.com/claco/jasmine.vim.git</pre><p>I like to test what I’m coding and javascript is no exception, the best unit test tool I’ve used so far is <span class="emphasis"><em>Jasmine</em></span>. I
+prefer this as it is not that far removed from <span class="emphasis"><em>rspec</em></span> and it allows me to cleanly write tests whilst driving out
+implementation code. I’ve been using jasmine.vim to help tweak vim to support the framework and provide me with some
+useful snippets so that I don’t have to type too much. It also has the added feature of allowing you to run specs from
+within vim, which I am used to doiing for my specs and scenarios. Another benefit of this plugin is it provides
+boilerplates for generating new jasmine files, which again saves me from having to repeat myself constantly.</p><p>There are a couple of things I’d like to do to keep things centralised. Firstly move the snippets into my custom
+snippets repository. Keeping all my snippets in one place is going to save me hunting them down later which I’d rather
+not do. I’d also like to move the templates into a centralised place so that I can build up some boilerplates for other
+bits that I work on (rspec, controllers, models, etc).</p><p>The plugin also support syntax highlighting which is always quite useful. For the time being I’ll gloss over the
+snippets bundled in this plugin and go over them once I have them centralised.</p><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_vim_coffee_script"/>vim-coffee-script</h4></div></div></div><p>This is another plugin centered around my frontend activities and bring coffeescript support into my <span class="emphasis"><em>vim</em></span>. The added
+bonus of this plugin is that not only does it have syntax highlighting but it also allows you to compile coffeescript
+into Javascript straight from <span class="emphasis"><em>vim</em></span>.</p><p>To compile coffeescript you run the following command:
+  :CoffeeMake</p><p>Output can also be hidden using the following alternative:
+  :silent CoffeeMake</p><p>I can also set coffeescript files to compile automatically with the following setting in my vimrc:
+  au BufWritePost *.coffee silent CoffeeMake!</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>When compiling coffeescript I’ll need to set the path to coffee so that the plugin knows where to find it.</p></div><p>I’ll refrain from doing this at the moment as I tend to use coffeescript with Rails, which deals with compiling
+coffeescript within the asset pipeline, but it is a useful thing to note down and I’m sure once I get to the point of
+defining different vim workflows I’ll be able to conditionally set this for pure JS projects that I work on in the
+future.</p><p>The is also the ability to compile sections of coffeescript which seems interesting. Similarly to specifying a range in
+other command you simply prefix the range you want to specify with the compile command:</p><pre class="literallayout">3,5 CoffeeCompile</pre><p>There is also the ability to run coffeelint on a file to sanity check it, which is also very nice. The one thing I hate
+is watching everything compile and pass yet to find that lint doesn’t like what I’ve done.</p><pre class="literallayout">:CoffeeLint</pre><p>I’ll need to add coffeelint to my toolchain and tell the plugin where to find it by supplying the following command in
+my vimrc:
+  let coffee_linter = <span class="emphasis"><em>/usr/bin/coffeelint</em></span></p><p>Finally I can run coffeescript directly within vim with the following:
+  :CoffeeRun</p><p>This will open up another buffer with the scripts output in it.</p><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_vim_json"/>vim-json</h4></div></div></div><p>This plugin is basically adds syntax highlighting and file type detection so that the JSON format is recognisable by
+vim. There really isn’t thing else to it.</p><p>As I use JSON quite a bit for my day to day work, this functionality is indespensible and saves me trying to add it to
+my vimrc file which is the last thing I want to do.</p><p/></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s02.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Refine my workflow </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Dressing down Vim</td></tr></table></div></body></html>

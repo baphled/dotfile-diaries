@@ -3612,11 +3612,6 @@ Align <a href="http://github.com/alanstevens/Align">http://github.com/alansteven
 vim-snipmate <a href="http://github.com/garbas/vim-snipmate">http://github.com/garbas/vim-snipmate</a> git://github.com/garbas/vim-snipmate.git
 </p>
 </li>
-<li>
-<p>
-snipmate-snippets <a href="http://github.com/baphled/snipmate-snippets">http://github.com/baphled/snipmate-snippets</a> git://github.com/baphled/snipmate-snippets.git
-</p>
-</li>
 </ul></div>
 </div>
 <div class="sect4">
@@ -3629,7 +3624,7 @@ vim-textobj-rubyblock <a href="http://github.com/nelstrom/vim-textobj-rubyblock"
 </li>
 <li>
 <p>
-vim-indentobject <a href="http://github.com/austintaylor/vim-indentobject">http://github.com/austintaylor/vim-indentobject</a> git://github.com/austintaylor/vim-indentobject
+vim-indent-object <a href="http://github.com/michaeljsmith/vim-indent-object">http://github.com/michaeljsmith/vim-indent-object</a> git://github.com/michaeljsmith/vim-indent-object.git
 </p>
 </li>
 <li>
@@ -3655,11 +3650,6 @@ vim-coffee-script <a href="http://github.com/kchmck/vim-coffee-script">http://gi
 <li>
 <p>
 vim-json <a href="http://github.com/leshill/vim-json">http://github.com/leshill/vim-json</a> git://github.com/leshill/vim-json.git
-</p>
-</li>
-<li>
-<p>
-jasmine.vim <a href="http://github.com/claco/jasmine.vim">http://github.com/claco/jasmine.vim</a> git://github.com/claco/jasmine.vim.git
 </p>
 </li>
 </ul></div>
@@ -4873,6 +4863,332 @@ boring, surround can help us here to with a couple of commands:</p></div>
 Beans
 Chocolate</tt></pre>
 </div></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_ack">Ack</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin:   ack.vim
+homepage: http://github.com/mileszs/ack.vim
+source:   git://github.com/mileszs/ack.vim.git</tt></pre>
+</div></div>
+<div class="paragraph"><p>Ack is probably one of my most used linux commands so it goes without
+saying that I&#8217;d like the same functionality for finding string within
+Vim the same way.</p></div>
+<div class="paragraph"><p>It depends on <em>ack</em> so that needed to be installed so that I could take
+advantage of the plugin. Thankfully I had that already installed but for
+reference this is how I installed it on my box</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>brew install ack</tt></pre>
+</div></div>
+<div class="paragraph"><p>To run <em>ack</em> I just need to type the following:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>:Ack --type=ruby 'content to find' path/to/find/content/</tt></pre>
+</div></div>
+<div class="paragraph"><p>This will search for <em>content to find</em> within any <em>ruby</em> file within the
+<em>path/to/find/content</em> directory. There is an extensive list of file
+types <em>ack</em> supports which can be found at <em>ack --help-types</em>. It is
+also possible to omit file types also as follows:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>:Ack --notype=ruby 'content to find' path/to/find/content/</tt></pre>
+</div></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_vim_abolish">vim-abolish</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin:   vim-abolish
+homwpage: http://github.com/tpope/vim-abolish
+source:   git://github.com/tpope/vim-abolish</tt></pre>
+</div></div>
+<div class="paragraph"><p>Abolish is an interesting plugin created by Time Pope, it is essentially 3 plugins wrapped up into 1 (abbreviation,
+substitution, coercion).</p></div>
+<div class="paragraph"><p>We all have problems with our fingers not listening to our brains.  Abbreviation helps us map our common typing mistakes
+with what we actually wanted to type. For example I recently had problems type <em>editions</em> and ended up typing <em>edtions</em>
+instead.</p></div>
+<div class="paragraph"><p>Stolen from the plugins homepage, the syntax to invoke abbreviation is as follows:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>Abolish {despa,sepe}rat{e,es,ed,ing,ely,ion,ions,or}       {despe,sepa}rat{}</tt></pre>
+</div></div>
+<div class="paragraph"><p>The documentation suggests that I add my abbreviations to <em>~/.vim/after/plugin/abolish.vim</em></p></div>
+<div class="paragraph"><p>Appending a <em>!</em> to the command and the abbreviation will be added to <em>~/.vim/after/plugin/abolish.vim</em>.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>Abolish! edtion{,s} edition</tt></pre>
+</div></div>
+<div class="paragraph"><p>Abbreviations can also be removed by adding the <em>--delete</em> flag as follows:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>Abolish -delete edtion{,s}</tt></pre>
+</div></div>
+<div class="paragraph"><p>We can also search for variants as well as accomplishing complete, this is means we can find a string regardless of its
+case and variant which can be quite helpful.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>:Abolish -search edit{s,ion}
+:S edit{s,ion}</tt></pre>
+</div></div>
+<div class="paragraph"><p>Which searches for:
+  edit
+  edition
+  editions</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">This didn&#8217;t work for me at the time of writing this. Should find out why.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>The next part of the plugin is substitution. There are occasions when we need to search and replace a variant of a word
+whilst still keeping its case and variation. This could be done via a bundle of substitution commands but this can be
+error prone and lead to missed changes which can be tedious.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>:%S/edit{ion,s}/edit/g</tt></pre>
+</div></div>
+<div class="paragraph"><p>Which will change both <em>edits</em> and <em>edition</em> to <em>edit</em>.</p></div>
+<div class="paragraph"><p>Finally there is the CoeRse command. The command is very useful when it comes to coding and when you want to change a
+variable names format from one to another. For example when you have the variable <em>FilePath</em> which you want to change to
+<em>file_path</em>. You simply type <tt>crs</tt> and the variable is now converted to snakecase.</p></div>
+<div class="paragraph"><p>To coerce a variable into another format you simply start off with the <em>cr</em> and append one of the below keys to change
+the variables case.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>c: camelCase
+m: MixedCase
+_: snake_case
+s: snake_case
+u: SNAKE_UPPERCASE
+-: dash-case (not reversible)</tt></pre>
+</div></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_ragtag">Ragtag</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin:   vim-ragtag
+homwpage: http://github.com/tpope/vim-ragtag
+source:   git://github.com/tpope/vim-ragtag</tt></pre>
+</div></div>
+<div class="paragraph"><p>Ragtag is a plugin that assists XML/XHTML based content. there isn&#8217;t much to it really, position the cursor at the end
+of the string you want to wrap and press <tt>&lt;C-X&gt;</tt> and the action key.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">^ represents where the cursor will be positioned.</td>
+</tr></table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>=        foo&lt;%= ^ %&gt;
++        &lt;%= foo^ %&gt;
+-        foo&lt;% ^ %&gt;
+_        &lt;% foo^ %&gt;
+&lt;Space&gt;  &lt;foo&gt;^&lt;/foo&gt;
+&lt;CR&gt;     &lt;foo&gt;\n^\n&lt;/foo&gt;
+/        Last HTML tag closed
+!        &lt;!DOCTYPE...&gt;/&lt;?xml ...?&gt; (menu)
+@        &lt;link rel="stylesheet" ...&gt;
+#        &lt;meta http-equiv="Content-Type" ... /&gt;
+$        &lt;script src="/javascripts/^.js"&gt;&lt;/script&gt;</tt></pre>
+</div></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_snipmate_and_snippets">snipmate and snippets</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin:     snipmate-snippets
+homepage:   http://github.com/baphled/snipmate-snippets
+source:     git://github.com/baphled/snipmate-snippets.git</tt></pre>
+</div></div>
+<div class="paragraph"><p>So I like to have shortcuts for commonly typed words and command, especially when I am coding, for this omnicomplete is
+cool to an extent but it doesn&#8217;t quite cover exactly what I am looking for. This is where <em>snipmate</em> comes into play. It
+allows you to create and use custom keys accompanied by <tt>&lt;TAB&gt;</tt> to quickly type a string. In the past snipmate came with
+a host of snippets as part of the plugin but as time has gone on it has dropped them as the list of snippets is quite
+exhaustive. They now belong as part of <em>snipmate-snippets</em>. I&#8217;m also not a fan of having bloated customisations and have
+decided to fork <em>snipmate-snippets</em> so that I can tweak it to my needs. For the time being it is enough to be aware of
+this and once I stripped down my config, I will put a little time aside for stripping down customising my snippets.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_day_30">Day 30</h3>
+<div class="paragraph"><p>Today I&#8217;ll be having a look at some text object orientated plugins. As I&#8217;ve mentioned before I quite enjoy text objects
+and feel I need to play around with these more.</p></div>
+<div style="page-break-after:always"></div>
+<div class="sect3">
+<h4 id="_vim_textobj_rubyblock">vim-textobj-rubyblock</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin:   vim-textobj-rubyblock
+homepage: http://github.com/nelstrom/vim-textobj-rubyblock
+source:   git://github.com/nelstrom/vim-textobj-rubyblock</tt></pre>
+</div></div>
+<div class="paragraph"><p>So if you didn&#8217;t know before, I&#8217;m quite a fan of text objects and this is one of those plugins that I have been meaning
+to wrap my muscle memory around for a long while.</p></div>
+<div class="paragraph"><p>So the ideal of text objects is that you are able to select a grouping of text easily whilst doing something with it.
+The atypical thing to do is the following:</p></div>
+<div class="paragraph"><p>The first puts me in visual mode and highlights everything inside the block
+  vir</p></div>
+<div class="paragraph"><p>This does similar to the above but highlights all of the block
+  var</p></div>
+<div class="paragraph"><p>It doesn&#8217;t stop there anything that you can do with a single character, you can do with this and other text objects.
+Want to delete everything within a block <tt>dir</tt> deletes the inner ruby block.</p></div>
+<div class="paragraph"><p>The goal for me over the next few days is to play around with these combinations and see what I learn.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Once I&#8217;ve gone over my plugin list I&#8217;ll write more about text objects and what they can do.</td>
+</tr></table>
+</div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_vim_indent_object">vim-indent-object</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin:   vim-indent-object
+homepage: http://github.com/michaeljsmith/vim-indent-object
+source:   git://github.com/michaeljsmith/vim-indent-object</tt></pre>
+</div></div>
+<div class="paragraph"><p>This plugins add a few more text objects to my tool chain. This one is more general than the last and deals with
+indentation blocks of text.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>ai - an indentation level and line above
+ii - inner indentation
+aI - an indentation level lines below and above</tt></pre>
+</div></div>
+<div class="paragraph"><p>As noted in the documentation <tt>iI</tt> is also available but it is essentially added for completeness. As with other text
+objects I&#8217;m able to do something with a indent block.</p></div>
+<div class="paragraph"><p>So to delete a everthing within a indentation text object is done as follows:
+  dai</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">The following will only work with my custom surround bindings.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Selecting an indentation text object and move it up three times.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>vai&lt;C-k&gt;&lt;C-k&gt;&lt;C-k&gt;</tt></pre>
+</div></div>
+<div class="paragraph"><p>and moving it down can be do as so:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>vai&lt;C-j&gt;&lt;C-j&gt;&lt;C-j&gt;</tt></pre>
+</div></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_day_31">Day 31</h3>
+<div class="paragraph"><p>Next on the plugin escavation is my JS related plugins:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+jasmine
+</p>
+</li>
+<li>
+<p>
+vim-coffeescript
+</p>
+</li>
+<li>
+<p>
+vim-json
+</p>
+</li>
+</ul></div>
+<div style="page-break-after:always"></div>
+<div class="sect3">
+<h4 id="_jasmine_vim">jasmine.vim</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin:     jasmine.vim
+homepage:   http://github.com/claco/jasmine.vim
+source:     git://gitHub.com/claco/jasmine.vim.git</tt></pre>
+</div></div>
+<div class="paragraph"><p>I like to test what I&#8217;m coding and javascript is no exception, the best unit test tool I&#8217;ve used so far is <em>Jasmine</em>. I
+prefer this as it is not that far removed from <em>rspec</em> and it allows me to cleanly write tests whilst driving out
+implementation code. I&#8217;ve been using jasmine.vim to help tweak vim to support the framework and provide me with some
+useful snippets so that I don&#8217;t have to type too much. It also has the added feature of allowing you to run specs from
+within vim, which I am used to doiing for my specs and scenarios. Another benefit of this plugin is it provides
+boilerplates for generating new jasmine files, which again saves me from having to repeat myself constantly.</p></div>
+<div class="paragraph"><p>There are a couple of things I&#8217;d like to do to keep things centralised. Firstly move the snippets into my custom
+snippets repository. Keeping all my snippets in one place is going to save me hunting them down later which I&#8217;d rather
+not do. I&#8217;d also like to move the templates into a centralised place so that I can build up some boilerplates for other
+bits that I work on (rspec, controllers, models, etc).</p></div>
+<div class="paragraph"><p>The plugin also support syntax highlighting which is always quite useful. For the time being I&#8217;ll gloss over the
+snippets bundled in this plugin and go over them once I have them centralised.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_vim_coffee_script">vim-coffee-script</h4>
+<div class="paragraph"><p>This is another plugin centered around my frontend activities and bring coffeescript support into my <em>vim</em>. The added
+bonus of this plugin is that not only does it have syntax highlighting but it also allows you to compile coffeescript
+into Javascript straight from <em>vim</em>.</p></div>
+<div class="paragraph"><p>To compile coffeescript you run the following command:
+  :CoffeeMake</p></div>
+<div class="paragraph"><p>Output can also be hidden using the following alternative:
+  :silent CoffeeMake</p></div>
+<div class="paragraph"><p>I can also set coffeescript files to compile automatically with the following setting in my vimrc:
+  au BufWritePost *.coffee silent CoffeeMake!</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">When compiling coffeescript I&#8217;ll need to set the path to coffee so that the plugin knows where to find it.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>I&#8217;ll refrain from doing this at the moment as I tend to use coffeescript with Rails, which deals with compiling
+coffeescript within the asset pipeline, but it is a useful thing to note down and I&#8217;m sure once I get to the point of
+defining different vim workflows I&#8217;ll be able to conditionally set this for pure JS projects that I work on in the
+future.</p></div>
+<div class="paragraph"><p>The is also the ability to compile sections of coffeescript which seems interesting. Similarly to specifying a range in
+other command you simply prefix the range you want to specify with the compile command:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>3,5 CoffeeCompile</tt></pre>
+</div></div>
+<div class="paragraph"><p>There is also the ability to run coffeelint on a file to sanity check it, which is also very nice. The one thing I hate
+is watching everything compile and pass yet to find that lint doesn&#8217;t like what I&#8217;ve done.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>:CoffeeLint</tt></pre>
+</div></div>
+<div class="paragraph"><p>I&#8217;ll need to add coffeelint to my toolchain and tell the plugin where to find it by supplying the following command in
+my vimrc:
+  let coffee_linter = <em>/usr/bin/coffeelint</em></p></div>
+<div class="paragraph"><p>Finally I can run coffeescript directly within vim with the following:
+  :CoffeeRun</p></div>
+<div class="paragraph"><p>This will open up another buffer with the scripts output in it.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_vim_json">vim-json</h4>
+<div class="paragraph"><p>This plugin is basically adds syntax highlighting and file type detection so that the JSON format is recognisable by
+vim. There really isn&#8217;t thing else to it.</p></div>
+<div class="paragraph"><p>As I use JSON quite a bit for my day to day work, this functionality is indespensible and saves me trying to add it to
+my vimrc file which is the last thing I want to do.</p></div>
+<div style="page-break-after:always"></div>
 </div>
 </div>
 </div>
@@ -4880,6 +5196,14 @@ Chocolate</tt></pre>
 <div class="sect1">
 <h2 id="_dressing_down_vim">Dressing down Vim</h2>
 <div class="sectionbody">
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Incomplete</td>
+</tr></table>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="literalblock">
@@ -6459,7 +6783,10 @@ set tw=140</tt></pre>
 </div></div>
 <div class="paragraph"><p>This sets the linecount to 140 and displays a vertical line where the line limit is.</p></div>
 <div style="page-break-after:always"></div>
-<div class="ulist bibliography"><ul>
+</div>
+<div class="sect2">
+<h3 id="bibliographyinfo">Resources</h3>
+<div class="ulist"><ul>
 <li>
 <p>
 <a href="http://box.matto.nl/hjkl.html">Use the hidden powers of the w3m textmode webbrowser</a>
@@ -6488,7 +6815,7 @@ set tw=140</tt></pre>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2012-10-04 19:10:35 BST
+Last updated 2012-10-11 16:47:15 BST
 </div>
 </div>
 </body>
