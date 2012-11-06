@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Appendix</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s05.html" title="Housekeeping tools"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s05.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> </td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="appendix"/>Appendix</h2></div></div></div><p>This is a dumping ground for various notes I’ve taken in regards to improving my workflow.</p><p>There’s no real structure to these and they are used purely to help me to remember things that I’d like to address at
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Appendix</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.1"/><link rel="home" href="index.html" title="Dotfile Diaries"/><link rel="up" href="index.html" title="Dotfile Diaries"/><link rel="prev" href="ar01s06.html" title="Housekeeping tools"/></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s06.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> </td></tr></table><hr/></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="appendix"/>Appendix</h2></div></div></div><p>This is a dumping ground for various notes I’ve taken in regards to improving my workflow.</p><p>There’s no real structure to these and they are used purely to help me to remember things that I’d like to address at
 some point or content that I have not found a home for yet.</p><p/><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_development_changes"/>Development changes</h3></div></div></div><p>Would be nice if we could be automagically told when we need to run
 bundle or something critical to the system has changed. Could use hash
 tags for this.</p><p>Should not be able to push unless the tests are passing</p><div class="itemizedlist"><ul type="disc"><li>
@@ -51,15 +51,9 @@ appears to be as easy as adding <code class="literal">set -o vi</code> in your <
 but doing this alone gives up the basics, which we can build upon as we
 tweak our setup.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_todo_11"/>TODO</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
 look into pulling in my vi key bindings into zsh for general use
-</li><li><p>
+</li><li>
 Make searching my history nicer
-</p><div class="itemizedlist"><ul type="circle"><li>
-Seems to be stalling at the moment
-</li></ul></div></li><li><p>
-Customise prompt so rvm is not required
-</p><div class="itemizedlist"><ul type="circle"><li>
-Should still be able to tell which version of Ruby I am using
-</li></ul></div></li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_tips"/>Tips</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>
+</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_tips"/>Tips</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>
 Renaming multiple files
 </p><div class="itemizedlist"><ul type="circle"><li><p>
 Add the following to your .zshrc file:
@@ -355,8 +349,8 @@ there is <span class="emphasis"><em>CtrlP</em></span> quick and easy to open a f
 just want to get a lay of the land or a file is not where I expect it to be, this typically happens when a files naming
 convention breaks some of my vim plugins.</p><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_existing_projects"/>Existing projects</h4></div></div></div><p>I’m often cloning a range of projects and have a few recipes that I use to set
 these up. To help me improve this workflow and finally automate I will outline
-the process and get it automated.</p><p>I typically have a number of windows open that I use to get my work done. First and foremost I always have <span class="emphasis"><em>vim</em></span> open
-and typically set to the first window. I then have a browser open to the given languages API, this is usually via a
+the process and get it automated.</p><p>I typically have a number of windows open that I use to get my work done. First and foremost I always have <span class="emphasis"><em>vim</em></span> open and typically set to the first window. I
+then have a browser open to the given languages API, this is usually via a
 browser.</p><p>If the given language has a REPL then I’ll have this open in another window for
 me to easily play around with concepts whilst ironing out a solution.</p><p>I’ll start off with the most used, which would be rails and ruby projects. I’ll
 create base configs for theses workflows and then create a wrapper script that
@@ -406,13 +400,7 @@ make sure pry is available regardless of the gemset and ruby version
 </li></ul></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Move the next 2 paragraphs to the workflows section</p></div><p>This script will be very basic to start of with and I will build it up as I
 work through my various workflows.</p><p>Initially I only want it to make a few changes, as outlined earlier, then once
 it is working for the basic workflows I’ll gradually improve the script to
-handle all my workflow needs.</p><p/></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_git"/>Git</h3></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_to_learn"/>To learn</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
-push up to a specific commit
-</li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_resources_19"/>Resources</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
-<a class="ulink" href="https://help.github.com/articles/ignoring-files" target="_top">ignore files in project</a>
-</li></ul></div><p/></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_rubny_dev"/>Rubny Dev</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li>
-start pry with an gems environment
-</li></ul></div><p/></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_updating_my_old_machine_with_my_new_dotfiles"/>Updating my old machine with my new dotfiles</h3></div></div></div><p>So today is a little bit of a detour but I wanted to get this down for getting
+handle all my workflow needs.</p><p/></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_updating_my_old_machine_with_my_new_dotfiles"/>Updating my old machine with my new dotfiles</h3></div></div></div><p>So today is a little bit of a detour but I wanted to get this down for getting
 my other machines to make use of my new settings.</p><p>Firstly I tried to do a simple update but because of the change from <span class="emphasis"><em>braid</em></span> to
 <span class="emphasis"><em>git submodule</em></span> that wasn’t possible. So the alternative was to remove my old
 settings and <code class="literal">.git/config</code>.</p><pre class="literallayout">rm -rf .git dotvim oh-my-zsh .gitconfig .gitignore</pre><p>That removed all the files that related to my custom setings and allowed me to
@@ -450,7 +438,7 @@ vim
 ack
 </li><li>
 newsbeuter
-</li></ul></div><p/><p/><p>Some things I’d like to help tweak my productivity</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_wiish_list"/>Wiish list</h3></div></div></div><div class="itemizedlist"><ul type="disc"><li>
+</li></ul></div><p/><p>Some things I’d like to help tweak my productivity</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_wiish_list"/>Wiish list</h3></div></div></div><div class="itemizedlist"><ul type="disc"><li>
 vim mappings for zsh or the terminal in general
 </li><li>
 Make copy and pasting via tmux nicer
@@ -485,4 +473,4 @@ set tw=140</pre><p>This sets the linecount to 140 and displays a vertical line w
 <a class="ulink" href="http://technology.mattrude.com/2010/10/git-creating-an-unattached-branch-with-no-history/" target="_top">git: unattached branch</a>
 </li><li>
 <a class="ulink" href="https://github.com/linsong/dailyconfig" target="_top">dotfile repository with a few nice settings</a>
-</li></ul></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s05.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> </td></tr><tr><td width="40%" align="left" valign="top">Housekeeping tools </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div></body></html>
+</li></ul></div></div></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s06.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> </td></tr><tr><td width="40%" align="left" valign="top">Housekeeping tools </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div></body></html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="master.css" type="text/css" />
+    <title>Day 32</title>
+  </head>
+
+  <body>
+    <div class="nav" id="navheader">
+    <table width="100%">
+      <tr><td width="33%" align="left">
+        
+         <a href="learn_my_tools.html">Prev</a><br/>
+         Learn my tools
+        
+      </td><td width="33%" align="center">
+        
+         <a href="index.html">Home</a><br/>
+         <strong>Dotfile Diaries</strong>
+        
+      </td><td width="33%" align="right">
+        
+          <a href="dressing_down_vim.html">Next</a><br/>
+          Dressing down Vim
+        
+      </td></tr>
+    </table>
+    </div>
+
+    <hr/>
+
+    <div class="content">
+      <div class="section" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a id="_day_32"></a>Day 32</h2></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+vim-ruby-block-conv
+</li>
+<li>
+vim-ruby-refactoring
+</li>
+<li>
+vim-rake
+</li>
+<li>
+vim-ruby
+</li>
+<li>
+vim-ruby-sinatra
+</li>
+<li>
+vim-rails
+</li>
+</ul></div>
+<p></p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_vim_ruby_block_conv"></a>vim-ruby-block-conv</h3></div></div></div>
+<pre class="literallayout">plugin:   vim-ruby-block-conv
+homepage: http://github.com/bronson/vim-ruby-block-conv
+source:   git://github.com/bronson/vim-ruby-block-conv.git</pre>
+<p>This plugin is pretty straight forward, it basically allows you to convert do/end blocks into {} and vice version.
+That’s all there is to it really.</p>
+<p>I tend to use this when a block is more than 1 line or when it ends up being more than a 1 liner. I also use it when in
+OCD mode and find a block that could be converted for consistency.</p>
+<p>It adds two mapping <code class="literal">:B</code> and <code class="literal">&lt;leader&gt;B</code> to convert blocks and is smart enough to work out what needs to be done. There
+is nothing else to it.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_vim_ruby_refactoring"></a>vim-ruby-refactoring</h3></div></div></div>
+<pre class="literallayout">plugin:   vim-ruby-refactoring
+homepage: http://github.com/ecomba/vim-ruby-refactoring
+source:   git://github.com/ecomba/vim-ruby-refactoring.git</pre>
+<p>I’ve already gone over this plugin quite exstensively on Day 18 so I won’t spend time rehashing what has already been
+added to my diary. For the curious you can find the entry here.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Provide link to Day 18 (Setting up vim-refactoring)</p>
+</div>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_vim_ruby"></a>vim-ruby</h3></div></div></div>
+<pre class="literallayout">plugin:   vim-ruby
+homepage: http://github.com/vim-ruby/vim-ruby
+source:   git://github.com/vim-ruby/vim-ruby.git</pre>
+<p>This plugin adds quite a bit of Ruby related functionality to vim to make it more pleasant to work with the language and
+make it easier to move around a file.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_completion"></a>completion</h4></div></div></div>
+<p>This relies on vim being compiled with ruby. I haven’t tested it without ruby compiled but I’d like to think that this
+functionality will silently fail if vim is not installed with it enabled.</p>
+<p>When it is enabled it adds extra functionality to omnicomplete so that I am able to search for content that relates
+particularly to Ruby. This would include the following:</p>
+<p>Classes, constants and global - When not inside a class definition
+Methods, constants defined in the given class - When inside a class definition
+Methods relating to the object being deferenced - After <span class="emphasis"><em>.</em></span>, <span class="emphasis"><em>::</em></span> or <span class="emphasis"><em>:</em></span>
+Symbol names - After <span class="emphasis"><em>:</em></span> or <span class="emphasis"><em>:foo</em></span></p>
+<p>It should also be noted that this functionality may slow things down as code may have to be run to disclose class,
+method and variable names from inside a ruby file.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>There a side cases that should be documented (<a class="ulink" href="http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt" target="_top">http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt</a>)</p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_syntax"></a>syntax</h4></div></div></div>
+<p>Just like the other syntax files vim uses, this mainly deals with syntax highlighting and helping to visualise code when
+an rb file is opened. It also helps towards displaying syntax errors that may have been missed. This functionality is
+only triggered when a file is saved but I save enough for this not to be an issue.</p>
+<p>There is also the ability to display extra spaces and tabs, of which I have a pet peave, this can be easily set within
+my vimrc and will display the spaces or tabs with a background of red. This like other parts of vim can be customised
+but I’ll leave that task for another day.</p>
+</div>
+<div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title">
+<a id="_motions"></a>motions</h4></div></div></div></div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_text_objects_2"></a>text objects</h4></div></div></div>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>I’m sure I’ve gone over these before, will check before delving into these.</p>
+</div>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_vim_ruby_2"></a>vim-ruby</h3></div></div></div>
+<pre class="literallayout">plugin:   vim-ruby
+homepage: http://github.com/vim-ruby/vim-ruby
+source:   git://github.com/vim-ruby/vim-ruby.git</pre>
+<p>This plugin adds quite a bit of Ruby related functionality to vim to make it more pleasant to work with the language and
+make it easier to move around a file.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_completion_2"></a>completion</h4></div></div></div>
+<p>This relies on vim being compiled with ruby. I haven’t tested it without ruby compiled but I’d like to think that this
+functionality will silently fail if vim is not installed with it enabled.</p>
+<p>When it is enabled it adds extra functionality to omnicomplete so that I am able to search for content that relates
+particularly to Ruby. This would include the following:</p>
+<p>Classes, constants and global - When not inside a class definition
+Methods, constants defined in the given class - When inside a class definition
+Methods relating to the object being deferenced - After <span class="emphasis"><em>.</em></span>, <span class="emphasis"><em>::</em></span> or <span class="emphasis"><em>:</em></span>
+Symbol names - After <span class="emphasis"><em>:</em></span> or <span class="emphasis"><em>:foo</em></span></p>
+<p>It should also be noted that this functionality may slow things down as code may have to be run to disclose class,
+method and variable names from inside a ruby file.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>There a side cases that should be documented (<a class="ulink" href="http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt" target="_top">http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt</a>)</p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_syntax_2"></a>syntax</h4></div></div></div>
+<p>Just like the other syntax files vim uses, this mainly deals with syntax highlighting and helping to visualise code when
+an rb file is opened. It also helps towards displaying syntax errors that may have been missed. This functionality is
+only triggered when a file is saved but I save enough for this not to be an issue.</p>
+<p>There is also the ability to display extra spaces and tabs, of which I have a pet peave, this can be easily set within
+my vimrc and will display the spaces or tabs with a background of red. This like other parts of vim can be customised
+but I’ll leave that task for another day.</p>
+</div>
+<div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title">
+<a id="_motions_2"></a>motions</h4></div></div></div></div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_text_objects_3"></a>text objects</h4></div></div></div>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>I’m sure I’ve gone over these before, will check before delving into these.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+
+    </div>
+
+    <hr/>
+
+    <div class="nav" id="navfooter">
+    <table width="100%">
+      <tr><td width="33%" align="left">
+        
+         <a href="learn_my_tools.html">Prev</a><br/>
+         Learn my tools
+        
+      </td><td width="33%" align="center">
+        
+         <a href="index.html">Home</a><br/>
+         Dotfile Diaries
+        
+      </td><td width="33%" align="right">
+        
+          <a href="dressing_down_vim.html">Next</a><br/>
+          Dressing down Vim
+        
+      </td></tr>
+    </table>
+    </div>
+  </body>
+</html>

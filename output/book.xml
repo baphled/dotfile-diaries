@@ -2237,8 +2237,9 @@ later stage.</simpara>
 </simpara>
 </listitem>
 </itemizedlist>
-<simpara>I&#8217;ll spend the next few weeks commiting these to my muscle memory.
-===== Resources</simpara>
+<simpara>I&#8217;ll spend the next few weeks commiting these to my muscle memory.</simpara>
+<section id="_resources_13">
+<title>Resources</title>
 <itemizedlist>
 <listitem>
 <simpara>
@@ -2247,6 +2248,7 @@ later stage.</simpara>
 </listitem>
 </itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
+</section>
 </section>
 <section id="_adding_ctags">
 <title>Adding ctags</title>
@@ -2316,7 +2318,7 @@ mappings to navigate through them easily.</simpara>
 noremap [t :tprev&lt;CR&gt;</literallayout>
 </listitem>
 </itemizedlist>
-<section id="_resources_13">
+<section id="_resources_14">
 <title>Resources</title>
 <itemizedlist>
 <listitem>
@@ -2479,7 +2481,7 @@ little easier.</simpara>
 <simpara>And that&#8217;s all there is to it. I can now view my buffers using <literal>&lt;leader&gt;.</literal> and
 manage the buffers easier with a few shortcut keys.</simpara>
 </section>
-<section id="_resources_14">
+<section id="_resources_15">
 <title>Resources</title>
 <itemizedlist>
 <listitem>
@@ -2799,11 +2801,6 @@ vim-ruby-refactoring <ulink url="http://github.com/ecomba/vim-ruby-refactoring">
 </listitem>
 <listitem>
 <simpara>
-vim-rake <ulink url="http://github.com/tpope/vim-rake">http://github.com/tpope/vim-rake</ulink> git://github.com/tpope/vim-rake
-</simpara>
-</listitem>
-<listitem>
-<simpara>
 vim-ruby <ulink url="http://github.com/vim-ruby/vim-ruby">http://github.com/vim-ruby/vim-ruby</ulink> git://github.com/vim-ruby/vim-ruby.git
 </simpara>
 </listitem>
@@ -2817,11 +2814,11 @@ vim-ruby-sinatra <ulink url="http://github.com/hallison/vim-ruby-sinatra">http:/
 vim-rails <ulink url="http://github.com/tpope/vim-rails">http://github.com/tpope/vim-rails</ulink> git://github.com/tpope/vim-rails.git
 </simpara>
 </listitem>
-<listitem>
-<simpara>
-vim-bundler <ulink url="http://github.com/tpope/vim-bundler">http://github.com/tpope/vim-bundler</ulink> git://github.com/tpope/vim-bundler.git
-</simpara>
-</listitem>
+</itemizedlist>
+</section>
+<section id="_text_manipulation_continued">
+<title>Text manipulation continued</title>
+<itemizedlist>
 <listitem>
 <simpara>
 vim-endwise <ulink url="http://github.com/tpope/vim-endwise">http://github.com/tpope/vim-endwise</ulink> git://github.com/tpope/vim-endwise.git
@@ -2869,7 +2866,17 @@ vim-cucumber <ulink url="http://github.com/tpope/vim-cucumber">http://github.com
 <itemizedlist>
 <listitem>
 <simpara>
+vim-rake <ulink url="http://github.com/tpope/vim-rake">http://github.com/tpope/vim-rake</ulink> git://github.com/tpope/vim-rake
+</simpara>
+</listitem>
+<listitem>
+<simpara>
 vim-puppet <ulink url="http://github.com/rodjek/vim-puppet">http://github.com/rodjek/vim-puppet</ulink> git://github.com/rodjek/vim-puppet.git
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-bundler <ulink url="http://github.com/tpope/vim-bundler">http://github.com/tpope/vim-bundler</ulink> git://github.com/tpope/vim-bundler.git
 </simpara>
 </listitem>
 <listitem>
@@ -3742,8 +3749,12 @@ patched font so <emphasis>brew</emphasis> to the rescue.</simpara>
 <literallayout class="monospaced">brew install fontforge</literallayout>
 <simpara>Once fontforge was installed I tried to install the patched font.</simpara>
 <literallayout class="monospaced">fontforge -script ~/dotvim/bundle/powerline/fontpatcher/fontpatcher Anonymous\ Pro.ttf</literallayout>
-<simpara>Everything seemed to of installed find and I had setup the correct setting but I still couldn&#8217;t view the glyphs. So for
-now I&#8217;ll put a fork in this tweak and move on.</simpara>
+<simpara>Everything seemed to of installed fine: and I had setup the correct setting. So for now I&#8217;ll put a fork in this tweak and
+move on.</simpara>
+<literallayout class="monospaced">sudo fc-cache -vf</literallayout>
+<simpara>This clears fontpatcher&#8217;s cache</simpara>
+<literallayout class="monospaced">let g:Powerline_symbols = 'fancy'</literallayout>
+<simpara>Finally we set powerlines symbols</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_vim_vividchalk">
@@ -3828,9 +3839,11 @@ Chocolate</literallayout>
 </section>
 <section id="_ack">
 <title>Ack</title>
+<sidebar>
 <literallayout class="monospaced">plugin:   ack.vim
 homepage: http://github.com/mileszs/ack.vim
 source:   git://github.com/mileszs/ack.vim.git</literallayout>
+</sidebar>
 <simpara>Ack is probably one of my most used linux commands so it goes without
 saying that I&#8217;d like the same functionality for finding string within
 Vim the same way.</simpara>
@@ -3849,9 +3862,11 @@ also possible to omit file types also as follows:</simpara>
 </section>
 <section id="_vim_abolish">
 <title>vim-abolish</title>
+<sidebar>
 <literallayout class="monospaced">plugin:   vim-abolish
 homwpage: http://github.com/tpope/vim-abolish
 source:   git://github.com/tpope/vim-abolish</literallayout>
+</sidebar>
 <simpara>Abolish is an interesting plugin created by Time Pope, it is essentially 3 plugins wrapped up into 1 (abbreviation,
 substitution, coercion).</simpara>
 <simpara>We all have problems with our fingers not listening to our brains.  Abbreviation helps us map our common typing mistakes
@@ -3893,9 +3908,11 @@ u: SNAKE_UPPERCASE
 </section>
 <section id="_ragtag">
 <title>Ragtag</title>
+<sidebar>
 <literallayout class="monospaced">plugin:   vim-ragtag
 homwpage: http://github.com/tpope/vim-ragtag
 source:   git://github.com/tpope/vim-ragtag</literallayout>
+</sidebar>
 <simpara>Ragtag is a plugin that assists XML/XHTML based content. there isn&#8217;t much to it really, position the cursor at the end
 of the string you want to wrap and press <literal>&lt;C-X&gt;</literal> and the action key.</simpara>
 <note><simpara>^ represents where the cursor will be positioned.</simpara></note>
@@ -3914,16 +3931,19 @@ $        &lt;script src="/javascripts/^.js"&gt;&lt;/script&gt;</literallayout>
 </section>
 <section id="_snipmate_and_snippets">
 <title>snipmate and snippets</title>
+<sidebar>
 <literallayout class="monospaced">plugin:     snipmate-snippets
 homepage:   http://github.com/baphled/snipmate-snippets
 source:     git://github.com/baphled/snipmate-snippets.git</literallayout>
+</sidebar>
 <simpara>So I like to have shortcuts for commonly typed words and command, especially when I am coding, for this omnicomplete is
 cool to an extent but it doesn&#8217;t quite cover exactly what I am looking for. This is where <emphasis>snipmate</emphasis> comes into play. It
 allows you to create and use custom keys accompanied by <literal>&lt;TAB&gt;</literal> to quickly type a string. In the past snipmate came with
 a host of snippets as part of the plugin but as time has gone on it has dropped them as the list of snippets is quite
-exhaustive. They now belong as part of <emphasis>snipmate-snippets</emphasis>. I&#8217;m also not a fan of having bloated customisations and have
-decided to fork <emphasis>snipmate-snippets</emphasis> so that I can tweak it to my needs. For the time being it is enough to be aware of
-this and once I stripped down my config, I will put a little time aside for stripping down customising my snippets.</simpara>
+exhaustive. They now belong as part of <emphasis>snipmate-snippets</emphasis>.</simpara>
+<simpara>I&#8217;m also not a fan of having bloated customisations and have decided to fork <emphasis>snipmate-snippets</emphasis> so that I can tweak it
+to my needs. For the time being it is enough to be aware of this and once I stripped down my config, I will put a little
+time aside for stripping down customising my snippets.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
@@ -4035,10 +4055,10 @@ other command you simply prefix the range you want to specify with the compile c
 is watching everything compile and pass yet to find that lint doesn&#8217;t like what I&#8217;ve done.</simpara>
 <literallayout class="monospaced">:CoffeeLint</literallayout>
 <simpara>I&#8217;ll need to add coffeelint to my toolchain and tell the plugin where to find it by supplying the following command in
-my vimrc:
-  let coffee_linter = <emphasis>/usr/bin/coffeelint</emphasis></simpara>
-<simpara>Finally I can run coffeescript directly within vim with the following:
-  :CoffeeRun</simpara>
+my vimrc:</simpara>
+<literallayout class="monospaced">let coffee_linter = '/usr/bin/coffeelint'</literallayout>
+<simpara>Finally I can run coffeescript directly within vim with the following:</simpara>
+<literallayout class="monospaced">:CoffeeRun</literallayout>
 <simpara>This will open up another buffer with the scripts output in it.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
@@ -4051,10 +4071,630 @@ my vimrc file which is the last thing I want to do.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
+<section id="_day_32">
+<title>Day 32</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-ruby-block-conv
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ruby-refactoring
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-rake
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ruby
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-ruby-sinatra
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-rails
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+<section id="_vim_ruby_block_conv">
+<title>vim-ruby-block-conv</title>
+<literallayout class="monospaced">plugin:   vim-ruby-block-conv
+homepage: http://github.com/bronson/vim-ruby-block-conv
+source:   git://github.com/bronson/vim-ruby-block-conv.git</literallayout>
+<simpara>This plugin is pretty straight forward, it basically allows you to convert do/end blocks into {} and vice version.
+That&#8217;s all there is to it really.</simpara>
+<simpara>I tend to use this when a block is more than 1 line or when it ends up being more than a 1 liner. I also use it when in
+OCD mode and find a block that could be converted for consistency.</simpara>
+<simpara>It adds two mapping <literal>:B</literal> and <literal>&lt;leader&gt;B</literal> to convert blocks and is smart enough to work out what needs to be done. There
+is nothing else to it.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_vim_ruby_refactoring">
+<title>vim-ruby-refactoring</title>
+<literallayout class="monospaced">plugin:   vim-ruby-refactoring
+homepage: http://github.com/ecomba/vim-ruby-refactoring
+source:   git://github.com/ecomba/vim-ruby-refactoring.git</literallayout>
+<simpara>I&#8217;ve already gone over this plugin quite exstensively on Day 18 so I won&#8217;t spend time rehashing what has already been
+added to my diary. For the curious you can find the entry here.</simpara>
+<note><simpara>Provide link to Day 18 (Setting up vim-refactoring)</simpara></note>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_vim_ruby">
+<title>vim-ruby</title>
+<sidebar>
+<literallayout class="monospaced">plugin:   vim-ruby
+homepage: http://github.com/vim-ruby/vim-ruby
+source:   git://github.com/vim-ruby/vim-ruby.git</literallayout>
+</sidebar>
+<simpara>This plugin adds quite a bit of Ruby related functionality to vim to make it more pleasant to work with the language and
+make it easier to move around a file.</simpara>
+<section id="_completion">
+<title>completion</title>
+<simpara>This relies on vim being compiled with ruby. I haven&#8217;t tested it without ruby compiled but I&#8217;d like to think that this
+functionality will silently fail if vim is not installed with it enabled.</simpara>
+<simpara>When it is enabled it adds extra functionality to omnicomplete so that I am able to search for content that relates
+particularly to Ruby. This would include the following:</simpara>
+<simpara>Classes, constants and global - When not inside a class definition
+Methods, constants defined in the given class - When inside a class definition
+Methods relating to the object being deferenced - After <emphasis>.</emphasis>, <emphasis>::</emphasis> or <emphasis>:</emphasis>
+Symbol names - After <emphasis>:</emphasis> or <emphasis>:foo</emphasis></simpara>
+<simpara>It should also be noted that this functionality may slow things down as code may have to be run to disclose class,
+method and variable names from inside a ruby file.</simpara>
+<note><simpara>There a side cases that should be documented (<ulink url="http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt">http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt</ulink>)</simpara></note>
+</section>
+<section id="_syntax">
+<title>syntax</title>
+<simpara>Just like the other syntax files vim uses, this mainly deals with syntax highlighting and helping to visualise code when
+an rb file is opened. It also helps towards displaying syntax errors that may have been missed. This functionality is
+only triggered when a file is saved but I save enough for this not to be an issue.</simpara>
+<simpara>There is also the ability to display extra spaces and tabs, of which I have a pet peave, this can be easily set within
+my vimrc and will display the spaces or tabs with a background of red. This like other parts of vim can be customised
+but I&#8217;ll leave that task for another day.</simpara>
+</section>
+<section id="_motions">
+<title>motions</title>
+<itemizedlist>
+<listitem>
+<simpara>
+]m -  Start of next method definition.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+]M -  End of next method definition.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+[m -  Start of previous method definition.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+[M -  End of previous method definition.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+]] -  Start of next module or class definition.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+][ -  End of next module or class definition.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+[[ -  Start of previous module or class definition.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+[] -  End of previous module or class definition.
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_text_objects_2">
+<title>text objects</title>
+<itemizedlist>
+<listitem>
+<simpara>
+am - "a method", select from "def" until matching "end" keyword.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+im - "inner method", select contents of "def"/"end" block, excluding the "def" and "end" themselves.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+aM - "a class", select from "class" until matching "end" keyword.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+iM - "inner class", select contents of "class"/"end" block, excluding the "class" and "end" themselves.
+</simpara>
+</listitem>
+</itemizedlist>
+<note><simpara>I&#8217;m sure I&#8217;ve gone over these before, will check before delving into these.</simpara></note>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+<section id="_vim_ruby_sinatra">
+<title>vim-ruby-sinatra</title>
+<literallayout class="monospaced">plugin:   vim-ruby-sinatra
+homepage: http://github.com/hallison/vim-ruby-sinatra
+source:   git://github.com/hallison/vim-ruby-sinatra</literallayout>
+<simpara>This plugin adds the ability to recognise sinatra based files as well as adding syntax highlighting and snippets to help
+reduce the amount of keys I press. I&#8217;d rather the snippets were in my custom snipmate-snippets project but for now this
+will do.</simpara>
+<simpara>As there isn&#8217;t much to this plugin and I&#8217;d like to centralise the snippets I won&#8217;t spend time going over them just now
+and leave that for when I deal with centralising my snippets.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_vim_ruby_2">
+<title>vim-ruby</title>
+<sidebar>
+<literallayout class="monospaced">plugin:   vim-ruby
+homepage: http://github.com/vim-ruby/vim-ruby
+source:   git://github.com/vim-ruby/vim-ruby.git</literallayout>
+</sidebar>
+<simpara>This plugin adds quite a bit of Ruby related functionality to vim to make it more pleasant to work with the language and
+make it easier to move around a file.</simpara>
+<section id="_completion_2">
+<title>completion</title>
+<simpara>This relies on vim being compiled with ruby. I haven&#8217;t tested it without ruby compiled but I&#8217;d like to think that this
+functionality will silently fail if vim is not installed with it enabled.</simpara>
+<simpara>When it is enabled it adds extra functionality to omnicomplete so that I am able to search for content that relates
+particularly to Ruby. This would include the following:</simpara>
+<simpara>Classes, constants and global - When not inside a class definition
+Methods, constants defined in the given class - When inside a class definition
+Methods relating to the object being deferenced - After <emphasis>.</emphasis>, <emphasis>::</emphasis> or <emphasis>:</emphasis>
+Symbol names - After <emphasis>:</emphasis> or <emphasis>:foo</emphasis></simpara>
+<simpara>It should also be noted that this functionality may slow things down as code may have to be run to disclose class,
+method and variable names from inside a ruby file.</simpara>
+<note><simpara>There a side cases that should be documented (<ulink url="http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt">http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt</ulink>)</simpara></note>
+</section>
+<section id="_syntax_2">
+<title>syntax</title>
+<simpara>Just like the other syntax files vim uses, this mainly deals with syntax highlighting and helping to visualise code when
+an rb file is opened. It also helps towards displaying syntax errors that may have been missed. This functionality is
+only triggered when a file is saved but I save enough for this not to be an issue.</simpara>
+<simpara>There is also the ability to display extra spaces and tabs, of which I have a pet peave, this can be easily set within
+my vimrc and will display the spaces or tabs with a background of red. This like other parts of vim can be customised
+but I&#8217;ll leave that task for another day.</simpara>
+</section>
+<section id="_motions_2">
+<title>motions</title>
+<itemizedlist>
+<listitem>
+<simpara>
+]m -  Start of next method definition.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+]M -  End of next method definition.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+[m -  Start of previous method definition.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+[M -  End of previous method definition.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+]] -  Start of next module or class definition.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+][ -  End of next module or class definition.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+[[ -  Start of previous module or class definition.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+[] -  End of previous module or class definition.
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_text_objects_3">
+<title>text objects</title>
+<itemizedlist>
+<listitem>
+<simpara>
+am - "a method", select from "def" until matching "end" keyword.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+im - "inner method", select contents of "def"/"end" block, excluding the "def" and "end" themselves.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+aM - "a class", select from "class" until matching "end" keyword.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+iM - "inner class", select contents of "class"/"end" block, excluding the "class" and "end" themselves.
+</simpara>
+</listitem>
+</itemizedlist>
+<note><simpara>I&#8217;m sure I&#8217;ve gone over these before, will check before delving into these.</simpara></note>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+</section>
+<section id="_day_33">
+<title>Day 33</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vimerl
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+csv.vim
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-cucumber
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+<section id="_vimerl">
+<title>vimerl</title>
+<sidebar>
+<literallayout class="monospaced">plugin:   vimerl
+homepage: http://github.com/jimenezrick/vimerl
+source:   git://github.com/jimenezrick/vimerl.git</literallayout>
+</sidebar>
+<simpara>Whenever I&#8217;ve written Erlang in the past I have used emacs. As I&#8217;m using vim at the moment I have installed this plugin
+so that I can can focus on using one text editor.</simpara>
+<simpara>As with the other programming language plugin that come with vim vimerl also has:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Syntax highlighting
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Code indenting
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Code folding
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Code completion
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Syntax checking
+</simpara>
+</listitem>
+</itemizedlist>
+<section id="_syntax_checking">
+<title>syntax checking</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Enables syntax checking - <literal>:ErlangEnableShowErrors</literal>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Disables syntax checking and hides current errors - <literal>:ErlangDisableShowErrors</literal>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_skeletons">
+<title>skeletons</title>
+<simpara>Writing boiler plates can be quite borrowing, not to mention error prone, so I like to be able to wipe up a skeleton
+structure without having to really do anything.</simpara>
+<simpara>As I&#8217;m quite lazy and I don&#8217;t like punishing my fingers I&#8217;ve mapped the skeleton commands to make it even easier to
+generate a skeleton.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Loads an OTP application skeleton
+</simpara>
+<literallayout class="monospaced">nmap &lt;leader&gt;ea :ErlangApplication&lt;CR&gt;</literallayout>
+</listitem>
+<listitem>
+<simpara>
+Loads an OTP supervisor skeleton
+</simpara>
+<literallayout class="monospaced">nmap &lt;leader&gt;es :ErlangSupervisor&lt;CR&gt;</literallayout>
+</listitem>
+<listitem>
+<simpara>
+Loads an OTP gen_server skeleton
+</simpara>
+<literallayout class="monospaced">nmap &lt;leader&gt;eg :ErlangGenServer&lt;CR&gt;</literallayout>
+</listitem>
+<listitem>
+<simpara>
+Loads an OTP gen_fsm skeleton
+</simpara>
+<literallayout class="monospaced">nmap &lt;leader&gt;ef :ErlangGenFsm&lt;CR&gt;</literallayout>
+</listitem>
+<listitem>
+<simpara>
+Loads an OTP gen_event skeleton
+</simpara>
+<literallayout class="monospaced">nmap &lt;leader&gt;ege :ErlangGenEvent&lt;CR&gt;</literallayout>
+</listitem>
+</itemizedlist>
+<simpara>When a skeleton command it executed a header is created with my credentials, in the past I&#8217;ve put this in with my plugin
+settings.</simpara>
+<literallayout class="monospaced">let erlang_skel_header = {"author": "Yomi Colledge", "owner" : "Yomi Colledge"}</literallayout>
+<simpara>For the moment I&#8217;ll create a <literal>~/.vim_local</literal> file and put my personal settings there.</simpara>
+<note><simpara>Once I have gone through my plugins I&#8217;ll hack together a script that will allow me to create my personal files so that
+other don&#8217;t have to fork my plugin just to change their personal details. instead the script will ask you a series of
+questions and generate the files when they are not found.</simpara></note>
+<literallayout class="monospaced">let erlang_folding = 0</literallayout>
+<literallayout class="monospaced">let erlang_highlight_bif = 1</literallayout>
+<literallayout class="monospaced">let erlang_skel_replace = 1</literallayout>
+<simpara><?asciidoc-pagebreak?></simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+<section id="_vim_cucumber">
+<title>vim-cucumber</title>
+<sidebar>
+<literallayout class="monospaced">plugin:   vim-cucumber
+homepage: http://github.com/tpope/vim-cucumber
+source:   git://github.com/tpope/vim-cucumber.git</literallayout>
+</sidebar>
+<simpara>As with all the other content related plugins <literal>vim-cucumber</literal> adds syntax highlighting, mappings and file recognition. It
+also lets you know whether their are syntax errors or a step has not been defined. The former is quite useful as it
+keeps you focused and allows you to easily work out which steps need to be implemented and which ones have already been
+added. As soon as a feature file is saved compilation is started and shortly after, if there are any errors, you will be
+alerted via the quick tip buffer.</simpara>
+<section id="_mappings">
+<title>Mappings</title>
+<simpara>There are a few mappings that <literal>vim-cucumber</literal> includes, though they are not actually documented anywhere.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>&lt;Ctrl-]&gt;</literal> - Go to the step under the cursor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;Ctrl-W&gt;]</literal> - Open the step under the cursor in a new split buffer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;Ctrl-W&gt;&lt;Ctrl-]&gt;</literal> - Same as above
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;Ctrl-W&gt;}</literal> - Open associated buffer in a new split buffer
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+</section>
+<section id="_day_34">
+<title>Day 34</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-rake
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-puppet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-bundler
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-fugitive
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+<section id="_vim_rake">
+<title>vim-rake</title>
+<simpara>This provides all the niceness of <literal>vim-rails</literal> without actually needing to work on a rails project. So commands like
+<literal>:Rake</literal> are provided here.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>:A</literal> - Open the alternate file
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>:AV</literal> - Open the alternate file in a new vertical split
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>:AS</literal> - Open the alternate file in a new split
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+this is useful when open Gemfile.lock or opening a test file.
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+<literal>:Rlib</literal> - Edit a file under the lib/ directory
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>:Rtags</literal> - Run ctags for the project
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_vim_puppet">
+<title>vim-puppet</title>
+<simpara>Another file type plugin that I use for managing puppet files.</simpara>
+<simpara>It comes with all the basic stuff the other file type plugins come with:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+syntax highlighting
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+automatic alignment
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+This uses Align to help with alignment
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+snippets
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+A list of snippets can be found [here](<ulink url="https://github.com/rodjek/vim-puppet/blob/master/snippets/puppet.snippets">https://github.com/rodjek/vim-puppet/blob/master/snippets/puppet.snippets</ulink>)
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+<simpara>There aren&#8217;t any mappings added for this plugin but that is fine for the moment, if/when I discover I need such a thing
+I&#8217;ll create my own.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_vim_bundler">
+<title>vim-bundler</title>
+<simpara>Yet another indespensible plugin. I use bundle quite a bit and rather not have to shell out to run <literal>bundle</literal> by itself.</simpara>
+<simpara>The main use for bundle is to actually call <literal>bundle</literal> to keep my gems up to date and this is done by the following
+mapping <literal>:Bundle</literal>.</simpara>
+<simpara>There is also the functionality to open a gem via <literal>:Bopen</literal> or <literal>:Bsplit</literal> the former will open the gem in the current
+buffer where the latter will open it in a new split.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_vim_fugitive">
+<title>vim-fugitive</title>
+<simpara>This is my go to Git vim plugin.</simpara>
+<section id="_mappings_2">
+<title>Mappings</title>
+<simpara>These are the mappings I tend to use the most:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>:Gstatus</literal> - View git status
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>-</literal> - stage a change
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;Ctrl-V&gt;(j|k)</literal> - Select a group of files to (un)stage
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>p</literal> - Incrementally patch (un)stage changes
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+<literal>&lt;Shift-C&gt;</literal> - Commit changes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>:Gcommit</literal> - Commit changes
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+<literal>:Gblame</literal> - Display git blame in a side buffer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>:Gread</literal> - A variant of <literal>git checkout -- filename</literal>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>:Ggrep</literal> - Search the work tree
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+</section>
 </section>
 <section id="_dressing_down_vim">
 <title>Dressing down Vim</title>
-<note><simpara>Incomplete</simpara></note>
+<warning><simpara>This section is incomplete</simpara></warning>
 <sidebar>
 <literallayout class="monospaced">duration: 6 weeks
 location: everywhere
@@ -4069,8 +4709,8 @@ notes:
 </sidebar>
 <note><simpara>I can use my current Vim setup to workout which typographically based plugins I&#8217;ll be using and write a basic
 explanation as to why they are useful and why I can&#8217;t live without them.</simpara></note>
-<note><simpara>One of the things I&#8217;d like to focus on here is text manipulation without the use of "Visual mode"
-&lt;&lt;&lt;</simpara></note>
+<note><simpara>One of the things I&#8217;d like to focus on here is text manipulation without the use of "Visual mode"</simpara></note>
+<simpara><?asciidoc-pagebreak?></simpara>
 <section id="_day_25_2">
 <title>Day 25</title>
 <simpara>As it stands at present I&#8217;ve forked my version from <ulink url="https://github.com/astrails/dotvim">here</ulink>.</simpara>
@@ -4080,7 +4720,7 @@ muscle memory. I&#8217;ll be referring to <ulink url="http://pragprog.com/book/d
 great source of knowledge for me in the past year.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-<section id="_day_34">
+<section id="_day_34_2">
 <title>Day 34</title>
 <note><simpara>Turn this section into a workflow based entry</simpara></note>
 <simpara>I used to keep up to date with my daily TV shows via bittorrent of late is has become something of a challenge as I have
@@ -4320,6 +4960,25 @@ look into pulling in my vi key bindings into zsh for general use
 <simpara>
 Make searching my history nicer
 </simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Seems to be stalling at the moment
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Customise prompt so rvm is not required
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Should still be able to tell which version of Ruby I am using
+</simpara>
+</listitem>
+</itemizedlist>
 </listitem>
 </itemizedlist>
 </section>
@@ -4352,7 +5011,7 @@ Tell me whether I&#8217;m in INSERT mode or not via my status bar
 </listitem>
 </itemizedlist>
 </section>
-<section id="_resources_15">
+<section id="_resources_16">
 <title>Resources</title>
 <itemizedlist>
 <listitem>
@@ -4724,7 +5383,7 @@ ruby
 </listitem>
 </itemizedlist>
 </section>
-<section id="_resources_16">
+<section id="_resources_17">
 <title>Resources</title>
 <itemizedlist>
 <listitem>
@@ -5206,8 +5865,8 @@ convention breaks some of my vim plugins.</simpara>
 <simpara>I&#8217;m often cloning a range of projects and have a few recipes that I use to set
 these up. To help me improve this workflow and finally automate I will outline
 the process and get it automated.</simpara>
-<simpara>I typically have a number of windows open that I use to get my work done. First and foremost I always have <emphasis>vim</emphasis> open and typically set to the first window. I
-then have a browser open to the given languages API, this is usually via a
+<simpara>I typically have a number of windows open that I use to get my work done. First and foremost I always have <emphasis>vim</emphasis> open
+and typically set to the first window. I then have a browser open to the given languages API, this is usually via a
 browser.</simpara>
 <simpara>If the given language has a REPL then I&#8217;ll have this open in another window for
 me to easily play around with concepts whilst ironing out a solution.</simpara>
@@ -5303,7 +5962,7 @@ make sure pry is available regardless of the gemset and ruby version
 </listitem>
 </itemizedlist>
 </section>
-<section id="_resources_17">
+<section id="_resources_18">
 <title>Resources</title>
 <itemizedlist>
 <listitem>
@@ -5318,6 +5977,41 @@ work through my various workflows.</simpara>
 <simpara>Initially I only want it to make a few changes, as outlined earlier, then once
 it is working for the basic workflows I&#8217;ll gradually improve the script to
 handle all my workflow needs.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+<section id="_git">
+<title>Git</title>
+<section id="_to_learn">
+<title>To learn</title>
+<itemizedlist>
+<listitem>
+<simpara>
+push up to a specific commit
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_resources_19">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="https://help.github.com/articles/ignoring-files">ignore files in project</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_rubny_dev">
+<title>Rubny Dev</title>
+<itemizedlist>
+<listitem>
+<simpara>
+start pry with an gems environment
+</simpara>
+</listitem>
+</itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
@@ -5420,6 +6114,7 @@ newsbeuter
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 <simpara>Some things I&#8217;d like to help tweak my productivity</simpara>
 </section>

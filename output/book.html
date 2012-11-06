@@ -3015,8 +3015,9 @@ later stage.</p></div>
 </p>
 </li>
 </ul></div>
-<div class="paragraph"><p>I&#8217;ll spend the next few weeks commiting these to my muscle memory.
-===== Resources</p></div>
+<div class="paragraph"><p>I&#8217;ll spend the next few weeks commiting these to my muscle memory.</p></div>
+<div class="sect4">
+<h5 id="_resources_13">Resources</h5>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -3025,6 +3026,7 @@ later stage.</p></div>
 </li>
 </ul></div>
 <div style="page-break-after:always"></div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_adding_ctags">Adding ctags</h4>
@@ -3125,7 +3127,7 @@ noremap [t :tprev&lt;CR&gt;</tt></pre>
 </li>
 </ul></div>
 <div class="sect4">
-<h5 id="_resources_13">Resources</h5>
+<h5 id="_resources_14">Resources</h5>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -3347,7 +3349,7 @@ little easier.</p></div>
 manage the buffers easier with a few shortcut keys.</p></div>
 </div>
 <div class="sect3">
-<h4 id="_resources_14">Resources</h4>
+<h4 id="_resources_15">Resources</h4>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -3669,11 +3671,6 @@ vim-ruby-refactoring <a href="http://github.com/ecomba/vim-ruby-refactoring">htt
 </li>
 <li>
 <p>
-vim-rake <a href="http://github.com/tpope/vim-rake">http://github.com/tpope/vim-rake</a> git://github.com/tpope/vim-rake
-</p>
-</li>
-<li>
-<p>
 vim-ruby <a href="http://github.com/vim-ruby/vim-ruby">http://github.com/vim-ruby/vim-ruby</a> git://github.com/vim-ruby/vim-ruby.git
 </p>
 </li>
@@ -3687,11 +3684,11 @@ vim-ruby-sinatra <a href="http://github.com/hallison/vim-ruby-sinatra">http://gi
 vim-rails <a href="http://github.com/tpope/vim-rails">http://github.com/tpope/vim-rails</a> git://github.com/tpope/vim-rails.git
 </p>
 </li>
-<li>
-<p>
-vim-bundler <a href="http://github.com/tpope/vim-bundler">http://github.com/tpope/vim-bundler</a> git://github.com/tpope/vim-bundler.git
-</p>
-</li>
+</ul></div>
+</div>
+<div class="sect4">
+<h5 id="_text_manipulation_continued">Text manipulation continued</h5>
+<div class="ulist"><ul>
 <li>
 <p>
 vim-endwise <a href="http://github.com/tpope/vim-endwise">http://github.com/tpope/vim-endwise</a> git://github.com/tpope/vim-endwise.git
@@ -3739,7 +3736,17 @@ vim-cucumber <a href="http://github.com/tpope/vim-cucumber">http://github.com/tp
 <div class="ulist"><ul>
 <li>
 <p>
+vim-rake <a href="http://github.com/tpope/vim-rake">http://github.com/tpope/vim-rake</a> git://github.com/tpope/vim-rake
+</p>
+</li>
+<li>
+<p>
 vim-puppet <a href="http://github.com/rodjek/vim-puppet">http://github.com/rodjek/vim-puppet</a> git://github.com/rodjek/vim-puppet.git
+</p>
+</li>
+<li>
+<p>
+vim-bundler <a href="http://github.com/tpope/vim-bundler">http://github.com/tpope/vim-bundler</a> git://github.com/tpope/vim-bundler.git
 </p>
 </li>
 <li>
@@ -4755,8 +4762,18 @@ patched font so <em>brew</em> to the rescue.</p></div>
 <div class="content">
 <pre><tt>fontforge -script ~/dotvim/bundle/powerline/fontpatcher/fontpatcher Anonymous\ Pro.ttf</tt></pre>
 </div></div>
-<div class="paragraph"><p>Everything seemed to of installed find and I had setup the correct setting but I still couldn&#8217;t view the glyphs. So for
-now I&#8217;ll put a fork in this tweak and move on.</p></div>
+<div class="paragraph"><p>Everything seemed to of installed fine: and I had setup the correct setting. So for now I&#8217;ll put a fork in this tweak and
+move on.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>sudo fc-cache -vf</tt></pre>
+</div></div>
+<div class="paragraph"><p>This clears fontpatcher&#8217;s cache</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>let g:Powerline_symbols = 'fancy'</tt></pre>
+</div></div>
+<div class="paragraph"><p>Finally we set powerlines symbols</p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect3">
@@ -4867,11 +4884,14 @@ Chocolate</tt></pre>
 </div>
 <div class="sect3">
 <h4 id="_ack">Ack</h4>
+<div class="sidebarblock">
+<div class="content">
 <div class="literalblock">
 <div class="content">
 <pre><tt>plugin:   ack.vim
 homepage: http://github.com/mileszs/ack.vim
 source:   git://github.com/mileszs/ack.vim.git</tt></pre>
+</div></div>
 </div></div>
 <div class="paragraph"><p>Ack is probably one of my most used linux commands so it goes without
 saying that I&#8217;d like the same functionality for finding string within
@@ -4900,11 +4920,14 @@ also possible to omit file types also as follows:</p></div>
 </div>
 <div class="sect3">
 <h4 id="_vim_abolish">vim-abolish</h4>
+<div class="sidebarblock">
+<div class="content">
 <div class="literalblock">
 <div class="content">
 <pre><tt>plugin:   vim-abolish
 homwpage: http://github.com/tpope/vim-abolish
 source:   git://github.com/tpope/vim-abolish</tt></pre>
+</div></div>
 </div></div>
 <div class="paragraph"><p>Abolish is an interesting plugin created by Time Pope, it is essentially 3 plugins wrapped up into 1 (abbreviation,
 substitution, coercion).</p></div>
@@ -4972,11 +4995,14 @@ u: SNAKE_UPPERCASE
 </div>
 <div class="sect3">
 <h4 id="_ragtag">Ragtag</h4>
+<div class="sidebarblock">
+<div class="content">
 <div class="literalblock">
 <div class="content">
 <pre><tt>plugin:   vim-ragtag
 homwpage: http://github.com/tpope/vim-ragtag
 source:   git://github.com/tpope/vim-ragtag</tt></pre>
+</div></div>
 </div></div>
 <div class="paragraph"><p>Ragtag is a plugin that assists XML/XHTML based content. there isn&#8217;t much to it really, position the cursor at the end
 of the string you want to wrap and press <tt>&lt;C-X&gt;</tt> and the action key.</p></div>
@@ -5006,19 +5032,23 @@ $        &lt;script src="/javascripts/^.js"&gt;&lt;/script&gt;</tt></pre>
 </div>
 <div class="sect3">
 <h4 id="_snipmate_and_snippets">snipmate and snippets</h4>
+<div class="sidebarblock">
+<div class="content">
 <div class="literalblock">
 <div class="content">
 <pre><tt>plugin:     snipmate-snippets
 homepage:   http://github.com/baphled/snipmate-snippets
 source:     git://github.com/baphled/snipmate-snippets.git</tt></pre>
 </div></div>
+</div></div>
 <div class="paragraph"><p>So I like to have shortcuts for commonly typed words and command, especially when I am coding, for this omnicomplete is
 cool to an extent but it doesn&#8217;t quite cover exactly what I am looking for. This is where <em>snipmate</em> comes into play. It
 allows you to create and use custom keys accompanied by <tt>&lt;TAB&gt;</tt> to quickly type a string. In the past snipmate came with
 a host of snippets as part of the plugin but as time has gone on it has dropped them as the list of snippets is quite
-exhaustive. They now belong as part of <em>snipmate-snippets</em>. I&#8217;m also not a fan of having bloated customisations and have
-decided to fork <em>snipmate-snippets</em> so that I can tweak it to my needs. For the time being it is enough to be aware of
-this and once I stripped down my config, I will put a little time aside for stripping down customising my snippets.</p></div>
+exhaustive. They now belong as part of <em>snipmate-snippets</em>.</p></div>
+<div class="paragraph"><p>I&#8217;m also not a fan of having bloated customisations and have decided to fork <em>snipmate-snippets</em> so that I can tweak it
+to my needs. For the time being it is enough to be aware of this and once I stripped down my config, I will put a little
+time aside for stripping down customising my snippets.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 </div>
@@ -5175,10 +5205,16 @@ is watching everything compile and pass yet to find that lint doesn&#8217;t like
 <pre><tt>:CoffeeLint</tt></pre>
 </div></div>
 <div class="paragraph"><p>I&#8217;ll need to add coffeelint to my toolchain and tell the plugin where to find it by supplying the following command in
-my vimrc:
-  let coffee_linter = <em>/usr/bin/coffeelint</em></p></div>
-<div class="paragraph"><p>Finally I can run coffeescript directly within vim with the following:
-  :CoffeeRun</p></div>
+my vimrc:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>let coffee_linter = '/usr/bin/coffeelint'</tt></pre>
+</div></div>
+<div class="paragraph"><p>Finally I can run coffeescript directly within vim with the following:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>:CoffeeRun</tt></pre>
+</div></div>
 <div class="paragraph"><p>This will open up another buffer with the scripts output in it.</p></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -5191,6 +5227,720 @@ my vimrc file which is the last thing I want to do.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_day_32">Day 32</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+vim-ruby-block-conv
+</p>
+</li>
+<li>
+<p>
+vim-ruby-refactoring
+</p>
+</li>
+<li>
+<p>
+vim-rake
+</p>
+</li>
+<li>
+<p>
+vim-ruby
+</p>
+</li>
+<li>
+<p>
+vim-ruby-sinatra
+</p>
+</li>
+<li>
+<p>
+vim-rails
+</p>
+</li>
+</ul></div>
+<div style="page-break-after:always"></div>
+<div class="sect3">
+<h4 id="_vim_ruby_block_conv">vim-ruby-block-conv</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin:   vim-ruby-block-conv
+homepage: http://github.com/bronson/vim-ruby-block-conv
+source:   git://github.com/bronson/vim-ruby-block-conv.git</tt></pre>
+</div></div>
+<div class="paragraph"><p>This plugin is pretty straight forward, it basically allows you to convert do/end blocks into {} and vice version.
+That&#8217;s all there is to it really.</p></div>
+<div class="paragraph"><p>I tend to use this when a block is more than 1 line or when it ends up being more than a 1 liner. I also use it when in
+OCD mode and find a block that could be converted for consistency.</p></div>
+<div class="paragraph"><p>It adds two mapping <tt>:B</tt> and <tt>&lt;leader&gt;B</tt> to convert blocks and is smart enough to work out what needs to be done. There
+is nothing else to it.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_vim_ruby_refactoring">vim-ruby-refactoring</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin:   vim-ruby-refactoring
+homepage: http://github.com/ecomba/vim-ruby-refactoring
+source:   git://github.com/ecomba/vim-ruby-refactoring.git</tt></pre>
+</div></div>
+<div class="paragraph"><p>I&#8217;ve already gone over this plugin quite exstensively on Day 18 so I won&#8217;t spend time rehashing what has already been
+added to my diary. For the curious you can find the entry here.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Provide link to Day 18 (Setting up vim-refactoring)</td>
+</tr></table>
+</div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_vim_ruby">vim-ruby</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin:   vim-ruby
+homepage: http://github.com/vim-ruby/vim-ruby
+source:   git://github.com/vim-ruby/vim-ruby.git</tt></pre>
+</div></div>
+</div></div>
+<div class="paragraph"><p>This plugin adds quite a bit of Ruby related functionality to vim to make it more pleasant to work with the language and
+make it easier to move around a file.</p></div>
+<div class="sect4">
+<h5 id="_completion">completion</h5>
+<div class="paragraph"><p>This relies on vim being compiled with ruby. I haven&#8217;t tested it without ruby compiled but I&#8217;d like to think that this
+functionality will silently fail if vim is not installed with it enabled.</p></div>
+<div class="paragraph"><p>When it is enabled it adds extra functionality to omnicomplete so that I am able to search for content that relates
+particularly to Ruby. This would include the following:</p></div>
+<div class="paragraph"><p>Classes, constants and global - When not inside a class definition
+Methods, constants defined in the given class - When inside a class definition
+Methods relating to the object being deferenced - After <em>.</em>, <em>::</em> or <em>:</em>
+Symbol names - After <em>:</em> or <em>:foo</em></p></div>
+<div class="paragraph"><p>It should also be noted that this functionality may slow things down as code may have to be run to disclose class,
+method and variable names from inside a ruby file.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">There a side cases that should be documented (<a href="http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt">http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt</a>)</td>
+</tr></table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_syntax">syntax</h5>
+<div class="paragraph"><p>Just like the other syntax files vim uses, this mainly deals with syntax highlighting and helping to visualise code when
+an rb file is opened. It also helps towards displaying syntax errors that may have been missed. This functionality is
+only triggered when a file is saved but I save enough for this not to be an issue.</p></div>
+<div class="paragraph"><p>There is also the ability to display extra spaces and tabs, of which I have a pet peave, this can be easily set within
+my vimrc and will display the spaces or tabs with a background of red. This like other parts of vim can be customised
+but I&#8217;ll leave that task for another day.</p></div>
+</div>
+<div class="sect4">
+<h5 id="_motions">motions</h5>
+<div class="ulist"><ul>
+<li>
+<p>
+]m -  Start of next method definition.
+</p>
+</li>
+<li>
+<p>
+]M -  End of next method definition.
+</p>
+</li>
+<li>
+<p>
+[m -  Start of previous method definition.
+</p>
+</li>
+<li>
+<p>
+[M -  End of previous method definition.
+</p>
+</li>
+<li>
+<p>
+]] -  Start of next module or class definition.
+</p>
+</li>
+<li>
+<p>
+][ -  End of next module or class definition.
+</p>
+</li>
+<li>
+<p>
+[[ -  Start of previous module or class definition.
+</p>
+</li>
+<li>
+<p>
+[] -  End of previous module or class definition.
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect4">
+<h5 id="_text_objects_2">text objects</h5>
+<div class="ulist"><ul>
+<li>
+<p>
+am - "a method", select from "def" until matching "end" keyword.
+</p>
+</li>
+<li>
+<p>
+im - "inner method", select contents of "def"/"end" block, excluding the "def" and "end" themselves.
+</p>
+</li>
+<li>
+<p>
+aM - "a class", select from "class" until matching "end" keyword.
+</p>
+</li>
+<li>
+<p>
+iM - "inner class", select contents of "class"/"end" block, excluding the "class" and "end" themselves.
+</p>
+</li>
+</ul></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">I&#8217;m sure I&#8217;ve gone over these before, will check before delving into these.</td>
+</tr></table>
+</div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_vim_ruby_sinatra">vim-ruby-sinatra</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin:   vim-ruby-sinatra
+homepage: http://github.com/hallison/vim-ruby-sinatra
+source:   git://github.com/hallison/vim-ruby-sinatra</tt></pre>
+</div></div>
+<div class="paragraph"><p>This plugin adds the ability to recognise sinatra based files as well as adding syntax highlighting and snippets to help
+reduce the amount of keys I press. I&#8217;d rather the snippets were in my custom snipmate-snippets project but for now this
+will do.</p></div>
+<div class="paragraph"><p>As there isn&#8217;t much to this plugin and I&#8217;d like to centralise the snippets I won&#8217;t spend time going over them just now
+and leave that for when I deal with centralising my snippets.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_vim_ruby_2">vim-ruby</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin:   vim-ruby
+homepage: http://github.com/vim-ruby/vim-ruby
+source:   git://github.com/vim-ruby/vim-ruby.git</tt></pre>
+</div></div>
+</div></div>
+<div class="paragraph"><p>This plugin adds quite a bit of Ruby related functionality to vim to make it more pleasant to work with the language and
+make it easier to move around a file.</p></div>
+<div class="sect4">
+<h5 id="_completion_2">completion</h5>
+<div class="paragraph"><p>This relies on vim being compiled with ruby. I haven&#8217;t tested it without ruby compiled but I&#8217;d like to think that this
+functionality will silently fail if vim is not installed with it enabled.</p></div>
+<div class="paragraph"><p>When it is enabled it adds extra functionality to omnicomplete so that I am able to search for content that relates
+particularly to Ruby. This would include the following:</p></div>
+<div class="paragraph"><p>Classes, constants and global - When not inside a class definition
+Methods, constants defined in the given class - When inside a class definition
+Methods relating to the object being deferenced - After <em>.</em>, <em>::</em> or <em>:</em>
+Symbol names - After <em>:</em> or <em>:foo</em></p></div>
+<div class="paragraph"><p>It should also be noted that this functionality may slow things down as code may have to be run to disclose class,
+method and variable names from inside a ruby file.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">There a side cases that should be documented (<a href="http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt">http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt</a>)</td>
+</tr></table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_syntax_2">syntax</h5>
+<div class="paragraph"><p>Just like the other syntax files vim uses, this mainly deals with syntax highlighting and helping to visualise code when
+an rb file is opened. It also helps towards displaying syntax errors that may have been missed. This functionality is
+only triggered when a file is saved but I save enough for this not to be an issue.</p></div>
+<div class="paragraph"><p>There is also the ability to display extra spaces and tabs, of which I have a pet peave, this can be easily set within
+my vimrc and will display the spaces or tabs with a background of red. This like other parts of vim can be customised
+but I&#8217;ll leave that task for another day.</p></div>
+</div>
+<div class="sect4">
+<h5 id="_motions_2">motions</h5>
+<div class="ulist"><ul>
+<li>
+<p>
+]m -  Start of next method definition.
+</p>
+</li>
+<li>
+<p>
+]M -  End of next method definition.
+</p>
+</li>
+<li>
+<p>
+[m -  Start of previous method definition.
+</p>
+</li>
+<li>
+<p>
+[M -  End of previous method definition.
+</p>
+</li>
+<li>
+<p>
+]] -  Start of next module or class definition.
+</p>
+</li>
+<li>
+<p>
+][ -  End of next module or class definition.
+</p>
+</li>
+<li>
+<p>
+[[ -  Start of previous module or class definition.
+</p>
+</li>
+<li>
+<p>
+[] -  End of previous module or class definition.
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect4">
+<h5 id="_text_objects_3">text objects</h5>
+<div class="ulist"><ul>
+<li>
+<p>
+am - "a method", select from "def" until matching "end" keyword.
+</p>
+</li>
+<li>
+<p>
+im - "inner method", select contents of "def"/"end" block, excluding the "def" and "end" themselves.
+</p>
+</li>
+<li>
+<p>
+aM - "a class", select from "class" until matching "end" keyword.
+</p>
+</li>
+<li>
+<p>
+iM - "inner class", select contents of "class"/"end" block, excluding the "class" and "end" themselves.
+</p>
+</li>
+</ul></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">I&#8217;m sure I&#8217;ve gone over these before, will check before delving into these.</td>
+</tr></table>
+</div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_day_33">Day 33</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+vimerl
+</p>
+</li>
+<li>
+<p>
+csv.vim
+</p>
+</li>
+<li>
+<p>
+vim-cucumber
+</p>
+</li>
+</ul></div>
+<div style="page-break-after:always"></div>
+<div class="sect3">
+<h4 id="_vimerl">vimerl</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin:   vimerl
+homepage: http://github.com/jimenezrick/vimerl
+source:   git://github.com/jimenezrick/vimerl.git</tt></pre>
+</div></div>
+</div></div>
+<div class="paragraph"><p>Whenever I&#8217;ve written Erlang in the past I have used emacs. As I&#8217;m using vim at the moment I have installed this plugin
+so that I can can focus on using one text editor.</p></div>
+<div class="paragraph"><p>As with the other programming language plugin that come with vim vimerl also has:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Syntax highlighting
+</p>
+</li>
+<li>
+<p>
+Code indenting
+</p>
+</li>
+<li>
+<p>
+Code folding
+</p>
+</li>
+<li>
+<p>
+Code completion
+</p>
+</li>
+<li>
+<p>
+Syntax checking
+</p>
+</li>
+</ul></div>
+<div class="sect4">
+<h5 id="_syntax_checking">syntax checking</h5>
+<div class="ulist"><ul>
+<li>
+<p>
+Enables syntax checking - <tt>:ErlangEnableShowErrors</tt>
+</p>
+</li>
+<li>
+<p>
+Disables syntax checking and hides current errors - <tt>:ErlangDisableShowErrors</tt>
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect4">
+<h5 id="_skeletons">skeletons</h5>
+<div class="paragraph"><p>Writing boiler plates can be quite borrowing, not to mention error prone, so I like to be able to wipe up a skeleton
+structure without having to really do anything.</p></div>
+<div class="paragraph"><p>As I&#8217;m quite lazy and I don&#8217;t like punishing my fingers I&#8217;ve mapped the skeleton commands to make it even easier to
+generate a skeleton.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Loads an OTP application skeleton
+</p>
+<div class="literalblock">
+<div class="content">
+<pre><tt>nmap &lt;leader&gt;ea :ErlangApplication&lt;CR&gt;</tt></pre>
+</div></div>
+</li>
+<li>
+<p>
+Loads an OTP supervisor skeleton
+</p>
+<div class="literalblock">
+<div class="content">
+<pre><tt>nmap &lt;leader&gt;es :ErlangSupervisor&lt;CR&gt;</tt></pre>
+</div></div>
+</li>
+<li>
+<p>
+Loads an OTP gen_server skeleton
+</p>
+<div class="literalblock">
+<div class="content">
+<pre><tt>nmap &lt;leader&gt;eg :ErlangGenServer&lt;CR&gt;</tt></pre>
+</div></div>
+</li>
+<li>
+<p>
+Loads an OTP gen_fsm skeleton
+</p>
+<div class="literalblock">
+<div class="content">
+<pre><tt>nmap &lt;leader&gt;ef :ErlangGenFsm&lt;CR&gt;</tt></pre>
+</div></div>
+</li>
+<li>
+<p>
+Loads an OTP gen_event skeleton
+</p>
+<div class="literalblock">
+<div class="content">
+<pre><tt>nmap &lt;leader&gt;ege :ErlangGenEvent&lt;CR&gt;</tt></pre>
+</div></div>
+</li>
+</ul></div>
+<div class="paragraph"><p>When a skeleton command it executed a header is created with my credentials, in the past I&#8217;ve put this in with my plugin
+settings.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>let erlang_skel_header = {"author": "Yomi Colledge", "owner" : "Yomi Colledge"}</tt></pre>
+</div></div>
+<div class="paragraph"><p>For the moment I&#8217;ll create a <tt>~/.vim_local</tt> file and put my personal settings there.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Once I have gone through my plugins I&#8217;ll hack together a script that will allow me to create my personal files so that
+other don&#8217;t have to fork my plugin just to change their personal details. instead the script will ask you a series of
+questions and generate the files when they are not found.</td>
+</tr></table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>let erlang_folding = 0</tt></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>let erlang_highlight_bif = 1</tt></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>let erlang_skel_replace = 1</tt></pre>
+</div></div>
+<div style="page-break-after:always"></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_vim_cucumber">vim-cucumber</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>plugin:   vim-cucumber
+homepage: http://github.com/tpope/vim-cucumber
+source:   git://github.com/tpope/vim-cucumber.git</tt></pre>
+</div></div>
+</div></div>
+<div class="paragraph"><p>As with all the other content related plugins <tt>vim-cucumber</tt> adds syntax highlighting, mappings and file recognition. It
+also lets you know whether their are syntax errors or a step has not been defined. The former is quite useful as it
+keeps you focused and allows you to easily work out which steps need to be implemented and which ones have already been
+added. As soon as a feature file is saved compilation is started and shortly after, if there are any errors, you will be
+alerted via the quick tip buffer.</p></div>
+<div class="sect4">
+<h5 id="_mappings">Mappings</h5>
+<div class="paragraph"><p>There are a few mappings that <tt>vim-cucumber</tt> includes, though they are not actually documented anywhere.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>&lt;Ctrl-]&gt;</tt> - Go to the step under the cursor
+</p>
+</li>
+<li>
+<p>
+<tt>&lt;Ctrl-W&gt;]</tt> - Open the step under the cursor in a new split buffer
+</p>
+</li>
+<li>
+<p>
+<tt>&lt;Ctrl-W&gt;&lt;Ctrl-]&gt;</tt> - Same as above
+</p>
+</li>
+<li>
+<p>
+<tt>&lt;Ctrl-W&gt;}</tt> - Open associated buffer in a new split buffer
+</p>
+</li>
+</ul></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_day_34">Day 34</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+vim-rake
+</p>
+</li>
+<li>
+<p>
+vim-puppet
+</p>
+</li>
+<li>
+<p>
+vim-bundler
+</p>
+</li>
+<li>
+<p>
+vim-fugitive
+</p>
+</li>
+</ul></div>
+<div style="page-break-after:always"></div>
+<div class="sect3">
+<h4 id="_vim_rake">vim-rake</h4>
+<div class="paragraph"><p>This provides all the niceness of <tt>vim-rails</tt> without actually needing to work on a rails project. So commands like
+<tt>:Rake</tt> are provided here.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>:A</tt> - Open the alternate file
+</p>
+</li>
+<li>
+<p>
+<tt>:AV</tt> - Open the alternate file in a new vertical split
+</p>
+</li>
+<li>
+<p>
+<tt>:AS</tt> - Open the alternate file in a new split
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+this is useful when open Gemfile.lock or opening a test file.
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+<tt>:Rlib</tt> - Edit a file under the lib/ directory
+</p>
+</li>
+<li>
+<p>
+<tt>:Rtags</tt> - Run ctags for the project
+</p>
+</li>
+</ul></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_vim_puppet">vim-puppet</h4>
+<div class="paragraph"><p>Another file type plugin that I use for managing puppet files.</p></div>
+<div class="paragraph"><p>It comes with all the basic stuff the other file type plugins come with:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+syntax highlighting
+</p>
+</li>
+<li>
+<p>
+automatic alignment
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+This uses Align to help with alignment
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+snippets
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+A list of snippets can be found [here](<a href="https://github.com/rodjek/vim-puppet/blob/master/snippets/puppet.snippets">https://github.com/rodjek/vim-puppet/blob/master/snippets/puppet.snippets</a>)
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+<div class="paragraph"><p>There aren&#8217;t any mappings added for this plugin but that is fine for the moment, if/when I discover I need such a thing
+I&#8217;ll create my own.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_vim_bundler">vim-bundler</h4>
+<div class="paragraph"><p>Yet another indespensible plugin. I use bundle quite a bit and rather not have to shell out to run <tt>bundle</tt> by itself.</p></div>
+<div class="paragraph"><p>The main use for bundle is to actually call <tt>bundle</tt> to keep my gems up to date and this is done by the following
+mapping <tt>:Bundle</tt>.</p></div>
+<div class="paragraph"><p>There is also the functionality to open a gem via <tt>:Bopen</tt> or <tt>:Bsplit</tt> the former will open the gem in the current
+buffer where the latter will open it in a new split.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_vim_fugitive">vim-fugitive</h4>
+<div class="paragraph"><p>This is my go to Git vim plugin.</p></div>
+<div class="sect4">
+<h5 id="_mappings_2">Mappings</h5>
+<div class="paragraph"><p>These are the mappings I tend to use the most:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>:Gstatus</tt> - View git status
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>-</tt> - stage a change
+</p>
+</li>
+<li>
+<p>
+<tt>&lt;Ctrl-V&gt;(j|k)</tt> - Select a group of files to (un)stage
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>p</tt> - Incrementally patch (un)stage changes
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+<tt>&lt;Shift-C&gt;</tt> - Commit changes
+</p>
+</li>
+<li>
+<p>
+<tt>:Gcommit</tt> - Commit changes
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+<tt>:Gblame</tt> - Display git blame in a side buffer
+</p>
+</li>
+<li>
+<p>
+<tt>:Gread</tt> - A variant of <tt>git checkout -- filename</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>:Ggrep</tt> - Search the work tree
+</p>
+</li>
+</ul></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -5199,9 +5949,9 @@ my vimrc file which is the last thing I want to do.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<div class="title">Note</div>
+<div class="title">Warning</div>
 </td>
-<td class="content">Incomplete</td>
+<td class="content">This section is incomplete</td>
 </tr></table>
 </div>
 <div class="sidebarblock">
@@ -5234,10 +5984,10 @@ explanation as to why they are useful and why I can&#8217;t live without them.</
 <td class="icon">
 <div class="title">Note</div>
 </td>
-<td class="content">One of the things I&#8217;d like to focus on here is text manipulation without the use of "Visual mode"
-&lt;&lt;&lt;</td>
+<td class="content">One of the things I&#8217;d like to focus on here is text manipulation without the use of "Visual mode"</td>
 </tr></table>
 </div>
+<div style="page-break-after:always"></div>
 <div class="sect2">
 <h3 id="_day_25_2">Day 25</h3>
 <div class="paragraph"><p>As it stands at present I&#8217;ve forked my version from <a href="https://github.com/astrails/dotvim">here</a>.</p></div>
@@ -5248,7 +5998,7 @@ great source of knowledge for me in the past year.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
-<h3 id="_day_34">Day 34</h3>
+<h3 id="_day_34_2">Day 34</h3>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -5502,6 +6252,25 @@ look into pulling in my vi key bindings into zsh for general use
 <p>
 Make searching my history nicer
 </p>
+<div class="ulist"><ul>
+<li>
+<p>
+Seems to be stalling at the moment
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Customise prompt so rvm is not required
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Should still be able to tell which version of Ruby I am using
+</p>
+</li>
+</ul></div>
 </li>
 </ul></div>
 </div>
@@ -5538,7 +6307,7 @@ Tell me whether I&#8217;m in INSERT mode or not via my status bar
 </ul></div>
 </div>
 <div class="sect3">
-<h4 id="_resources_15">Resources</h4>
+<h4 id="_resources_16">Resources</h4>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -5940,7 +6709,7 @@ ruby
 </ul></div>
 </div>
 <div class="sect3">
-<h4 id="_resources_16">Resources</h4>
+<h4 id="_resources_17">Resources</h4>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -6439,8 +7208,8 @@ convention breaks some of my vim plugins.</p></div>
 <div class="paragraph"><p>I&#8217;m often cloning a range of projects and have a few recipes that I use to set
 these up. To help me improve this workflow and finally automate I will outline
 the process and get it automated.</p></div>
-<div class="paragraph"><p>I typically have a number of windows open that I use to get my work done. First and foremost I always have <em>vim</em> open and typically set to the first window. I
-then have a browser open to the given languages API, this is usually via a
+<div class="paragraph"><p>I typically have a number of windows open that I use to get my work done. First and foremost I always have <em>vim</em> open
+and typically set to the first window. I then have a browser open to the given languages API, this is usually via a
 browser.</p></div>
 <div class="paragraph"><p>If the given language has a REPL then I&#8217;ll have this open in another window for
 me to easily play around with concepts whilst ironing out a solution.</p></div>
@@ -6547,7 +7316,7 @@ make sure pry is available regardless of the gemset and ruby version
 </ul></div>
 </div>
 <div class="sect3">
-<h4 id="_resources_17">Resources</h4>
+<h4 id="_resources_18">Resources</h4>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -6568,6 +7337,41 @@ work through my various workflows.</p></div>
 <div class="paragraph"><p>Initially I only want it to make a few changes, as outlined earlier, then once
 it is working for the basic workflows I&#8217;ll gradually improve the script to
 handle all my workflow needs.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git">Git</h3>
+<div class="sect3">
+<h4 id="_to_learn">To learn</h4>
+<div class="ulist"><ul>
+<li>
+<p>
+push up to a specific commit
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect3">
+<h4 id="_resources_19">Resources</h4>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="https://help.github.com/articles/ignoring-files">ignore files in project</a>
+</p>
+</li>
+</ul></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_rubny_dev">Rubny Dev</h4>
+<div class="ulist"><ul>
+<li>
+<p>
+start pry with an gems environment
+</p>
+</li>
+</ul></div>
 <div style="page-break-after:always"></div>
 </div>
 </div>
@@ -6682,6 +7486,7 @@ newsbeuter
 </p>
 </li>
 </ul></div>
+<div style="page-break-after:always"></div>
 <div style="page-break-after:always"></div>
 <div class="paragraph"><p>Some things I&#8217;d like to help tweak my productivity</p></div>
 </div>
@@ -6815,7 +7620,7 @@ set tw=140</tt></pre>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2012-10-11 16:47:15 BST
+Last updated 2012-11-06 15:23:20 GMT
 </div>
 </div>
 </body>

@@ -276,12 +276,15 @@ later stage.</p>
 <code class="literal">&lt;leader&gt;rem</code> - Refactor Extract Method
 </li>
 </ul></div>
-<p>I’ll spend the next few weeks commiting these to my muscle memory.
-===== Resources</p>
+<p>I’ll spend the next few weeks commiting these to my muscle memory.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_resources_13"></a>Resources</h5></div></div></div>
 <div class="itemizedlist"><ul type="disc"><li>
 <a class="ulink" href="http://justinram.wordpress.com/2010/12/30/vim-ruby-refactoring-series/" target="_top">vim-ruby-refactoring blog</a>
 </li></ul></div>
 <p></p>
+</div>
 </div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
@@ -349,7 +352,7 @@ noremap [t :tprev&lt;CR&gt;</pre>
 </ul></div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h5 class="title">
-<a id="_resources_13"></a>Resources</h5></div></div></div>
+<a id="_resources_14"></a>Resources</h5></div></div></div>
 <div class="itemizedlist"><ul type="disc"><li>
 <a class="ulink" href="http://andrewradev.com/2011/06/08/vim-and-ctags/" target="_top">vim and ctags</a>
 </li></ul></div>
@@ -515,7 +518,7 @@ manage the buffers easier with a few shortcut keys.</p>
 </div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
-<a id="_resources_14"></a>Resources</h4></div></div></div>
+<a id="_resources_15"></a>Resources</h4></div></div></div>
 <div class="itemizedlist"><ul type="disc"><li>
 <a class="ulink" href="http://cisight.com/solving-snipmate-vim-error-snippet-c-is-already-defined/" target="_top">vim error snippet c is already defined</a>
 </li></ul></div>
@@ -778,9 +781,6 @@ vim-ruby-block-conv <a class="ulink" href="http://github.com/bronson/vim-ruby-bl
 vim-ruby-refactoring <a class="ulink" href="http://github.com/ecomba/vim-ruby-refactoring" target="_top">http://github.com/ecomba/vim-ruby-refactoring</a> git://github.com/ecomba/vim-ruby-refactoring.git
 </li>
 <li>
-vim-rake <a class="ulink" href="http://github.com/tpope/vim-rake" target="_top">http://github.com/tpope/vim-rake</a> git://github.com/tpope/vim-rake
-</li>
-<li>
 vim-ruby <a class="ulink" href="http://github.com/vim-ruby/vim-ruby" target="_top">http://github.com/vim-ruby/vim-ruby</a> git://github.com/vim-ruby/vim-ruby.git
 </li>
 <li>
@@ -789,9 +789,12 @@ vim-ruby-sinatra <a class="ulink" href="http://github.com/hallison/vim-ruby-sina
 <li>
 vim-rails <a class="ulink" href="http://github.com/tpope/vim-rails" target="_top">http://github.com/tpope/vim-rails</a> git://github.com/tpope/vim-rails.git
 </li>
-<li>
-vim-bundler <a class="ulink" href="http://github.com/tpope/vim-bundler" target="_top">http://github.com/tpope/vim-bundler</a> git://github.com/tpope/vim-bundler.git
-</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_text_manipulation_continued"></a>Text manipulation continued</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
 <li>
 vim-endwise <a class="ulink" href="http://github.com/tpope/vim-endwise" target="_top">http://github.com/tpope/vim-endwise</a> git://github.com/tpope/vim-endwise.git
 </li>
@@ -826,7 +829,13 @@ vim-cucumber <a class="ulink" href="http://github.com/tpope/vim-cucumber" target
 <a id="_devops"></a>Devops</h5></div></div></div>
 <div class="itemizedlist"><ul type="disc">
 <li>
+vim-rake <a class="ulink" href="http://github.com/tpope/vim-rake" target="_top">http://github.com/tpope/vim-rake</a> git://github.com/tpope/vim-rake
+</li>
+<li>
 vim-puppet <a class="ulink" href="http://github.com/rodjek/vim-puppet" target="_top">http://github.com/rodjek/vim-puppet</a> git://github.com/rodjek/vim-puppet.git
+</li>
+<li>
+vim-bundler <a class="ulink" href="http://github.com/tpope/vim-bundler" target="_top">http://github.com/tpope/vim-bundler</a> git://github.com/tpope/vim-bundler.git
 </li>
 <li>
 vim-fugitive <a class="ulink" href="http://github.com/tpope/vim-fugitive" target="_top">http://github.com/tpope/vim-fugitive</a> git://github.com/tpope/vim-fugitive.git
@@ -1592,8 +1601,12 @@ patched font so <span class="emphasis"><em>brew</em></span> to the rescue.</p>
 <pre class="literallayout">brew install fontforge</pre>
 <p>Once fontforge was installed I tried to install the patched font.</p>
 <pre class="literallayout">fontforge -script ~/dotvim/bundle/powerline/fontpatcher/fontpatcher Anonymous\ Pro.ttf</pre>
-<p>Everything seemed to of installed find and I had setup the correct setting but I still couldn’t view the glyphs. So for
-now I’ll put a fork in this tweak and move on.</p>
+<p>Everything seemed to of installed fine: and I had setup the correct setting. So for now I’ll put a fork in this tweak and
+move on.</p>
+<pre class="literallayout">sudo fc-cache -vf</pre>
+<p>This clears fontpatcher’s cache</p>
+<pre class="literallayout">let g:Powerline_symbols = 'fancy'</pre>
+<p>Finally we set powerlines symbols</p>
 <p></p>
 </div>
 <div class="section" lang="en">
@@ -1678,9 +1691,12 @@ Chocolate</pre>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a id="_ack"></a>Ack</h4></div></div></div>
+<div class="sidebar">
+<p class="title"><b></b></p>
 <pre class="literallayout">plugin:   ack.vim
 homepage: http://github.com/mileszs/ack.vim
 source:   git://github.com/mileszs/ack.vim.git</pre>
+</div>
 <p>Ack is probably one of my most used linux commands so it goes without
 saying that I’d like the same functionality for finding string within
 Vim the same way.</p>
@@ -1700,9 +1716,12 @@ also possible to omit file types also as follows:</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a id="_vim_abolish"></a>vim-abolish</h4></div></div></div>
+<div class="sidebar">
+<p class="title"><b></b></p>
 <pre class="literallayout">plugin:   vim-abolish
 homwpage: http://github.com/tpope/vim-abolish
 source:   git://github.com/tpope/vim-abolish</pre>
+</div>
 <p>Abolish is an interesting plugin created by Time Pope, it is essentially 3 plugins wrapped up into 1 (abbreviation,
 substitution, coercion).</p>
 <p>We all have problems with our fingers not listening to our brains.  Abbreviation helps us map our common typing mistakes
@@ -1748,9 +1767,12 @@ u: SNAKE_UPPERCASE
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a id="_ragtag"></a>Ragtag</h4></div></div></div>
+<div class="sidebar">
+<p class="title"><b></b></p>
 <pre class="literallayout">plugin:   vim-ragtag
 homwpage: http://github.com/tpope/vim-ragtag
 source:   git://github.com/tpope/vim-ragtag</pre>
+</div>
 <p>Ragtag is a plugin that assists XML/XHTML based content. there isn’t much to it really, position the cursor at the end
 of the string you want to wrap and press <code class="literal">&lt;C-X&gt;</code> and the action key.</p>
 <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
@@ -1773,16 +1795,20 @@ $        &lt;script src="/javascripts/^.js"&gt;&lt;/script&gt;</pre>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a id="_snipmate_and_snippets"></a>snipmate and snippets</h4></div></div></div>
+<div class="sidebar">
+<p class="title"><b></b></p>
 <pre class="literallayout">plugin:     snipmate-snippets
 homepage:   http://github.com/baphled/snipmate-snippets
 source:     git://github.com/baphled/snipmate-snippets.git</pre>
+</div>
 <p>So I like to have shortcuts for commonly typed words and command, especially when I am coding, for this omnicomplete is
 cool to an extent but it doesn’t quite cover exactly what I am looking for. This is where <span class="emphasis"><em>snipmate</em></span> comes into play. It
 allows you to create and use custom keys accompanied by <code class="literal">&lt;TAB&gt;</code> to quickly type a string. In the past snipmate came with
 a host of snippets as part of the plugin but as time has gone on it has dropped them as the list of snippets is quite
-exhaustive. They now belong as part of <span class="emphasis"><em>snipmate-snippets</em></span>. I’m also not a fan of having bloated customisations and have
-decided to fork <span class="emphasis"><em>snipmate-snippets</em></span> so that I can tweak it to my needs. For the time being it is enough to be aware of
-this and once I stripped down my config, I will put a little time aside for stripping down customising my snippets.</p>
+exhaustive. They now belong as part of <span class="emphasis"><em>snipmate-snippets</em></span>.</p>
+<p>I’m also not a fan of having bloated customisations and have decided to fork <span class="emphasis"><em>snipmate-snippets</em></span> so that I can tweak it
+to my needs. For the time being it is enough to be aware of this and once I stripped down my config, I will put a little
+time aside for stripping down customising my snippets.</p>
 <p></p>
 </div>
 </div>
@@ -1903,10 +1929,10 @@ other command you simply prefix the range you want to specify with the compile c
 is watching everything compile and pass yet to find that lint doesn’t like what I’ve done.</p>
 <pre class="literallayout">:CoffeeLint</pre>
 <p>I’ll need to add coffeelint to my toolchain and tell the plugin where to find it by supplying the following command in
-my vimrc:
-  let coffee_linter = <span class="emphasis"><em>/usr/bin/coffeelint</em></span></p>
-<p>Finally I can run coffeescript directly within vim with the following:
-  :CoffeeRun</p>
+my vimrc:</p>
+<pre class="literallayout">let coffee_linter = '/usr/bin/coffeelint'</pre>
+<p>Finally I can run coffeescript directly within vim with the following:</p>
+<pre class="literallayout">:CoffeeRun</pre>
 <p>This will open up another buffer with the scripts output in it.</p>
 <p></p>
 </div>
@@ -1918,6 +1944,540 @@ vim. There really isn’t thing else to it.</p>
 <p>As I use JSON quite a bit for my day to day work, this functionality is indespensible and saves me trying to add it to
 my vimrc file which is the last thing I want to do.</p>
 <p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_32"></a>Day 32</h3></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+vim-ruby-block-conv
+</li>
+<li>
+vim-ruby-refactoring
+</li>
+<li>
+vim-rake
+</li>
+<li>
+vim-ruby
+</li>
+<li>
+vim-ruby-sinatra
+</li>
+<li>
+vim-rails
+</li>
+</ul></div>
+<p></p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_vim_ruby_block_conv"></a>vim-ruby-block-conv</h4></div></div></div>
+<pre class="literallayout">plugin:   vim-ruby-block-conv
+homepage: http://github.com/bronson/vim-ruby-block-conv
+source:   git://github.com/bronson/vim-ruby-block-conv.git</pre>
+<p>This plugin is pretty straight forward, it basically allows you to convert do/end blocks into {} and vice version.
+That’s all there is to it really.</p>
+<p>I tend to use this when a block is more than 1 line or when it ends up being more than a 1 liner. I also use it when in
+OCD mode and find a block that could be converted for consistency.</p>
+<p>It adds two mapping <code class="literal">:B</code> and <code class="literal">&lt;leader&gt;B</code> to convert blocks and is smart enough to work out what needs to be done. There
+is nothing else to it.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_vim_ruby_refactoring"></a>vim-ruby-refactoring</h4></div></div></div>
+<pre class="literallayout">plugin:   vim-ruby-refactoring
+homepage: http://github.com/ecomba/vim-ruby-refactoring
+source:   git://github.com/ecomba/vim-ruby-refactoring.git</pre>
+<p>I’ve already gone over this plugin quite exstensively on Day 18 so I won’t spend time rehashing what has already been
+added to my diary. For the curious you can find the entry here.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Provide link to Day 18 (Setting up vim-refactoring)</p>
+</div>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_vim_ruby"></a>vim-ruby</h4></div></div></div>
+<div class="sidebar">
+<p class="title"><b></b></p>
+<pre class="literallayout">plugin:   vim-ruby
+homepage: http://github.com/vim-ruby/vim-ruby
+source:   git://github.com/vim-ruby/vim-ruby.git</pre>
+</div>
+<p>This plugin adds quite a bit of Ruby related functionality to vim to make it more pleasant to work with the language and
+make it easier to move around a file.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_completion"></a>completion</h5></div></div></div>
+<p>This relies on vim being compiled with ruby. I haven’t tested it without ruby compiled but I’d like to think that this
+functionality will silently fail if vim is not installed with it enabled.</p>
+<p>When it is enabled it adds extra functionality to omnicomplete so that I am able to search for content that relates
+particularly to Ruby. This would include the following:</p>
+<p>Classes, constants and global - When not inside a class definition
+Methods, constants defined in the given class - When inside a class definition
+Methods relating to the object being deferenced - After <span class="emphasis"><em>.</em></span>, <span class="emphasis"><em>::</em></span> or <span class="emphasis"><em>:</em></span>
+Symbol names - After <span class="emphasis"><em>:</em></span> or <span class="emphasis"><em>:foo</em></span></p>
+<p>It should also be noted that this functionality may slow things down as code may have to be run to disclose class,
+method and variable names from inside a ruby file.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>There a side cases that should be documented (<a class="ulink" href="http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt" target="_top">http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt</a>)</p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_syntax"></a>syntax</h5></div></div></div>
+<p>Just like the other syntax files vim uses, this mainly deals with syntax highlighting and helping to visualise code when
+an rb file is opened. It also helps towards displaying syntax errors that may have been missed. This functionality is
+only triggered when a file is saved but I save enough for this not to be an issue.</p>
+<p>There is also the ability to display extra spaces and tabs, of which I have a pet peave, this can be easily set within
+my vimrc and will display the spaces or tabs with a background of red. This like other parts of vim can be customised
+but I’ll leave that task for another day.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_motions"></a>motions</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+]m -  Start of next method definition.
+</li>
+<li>
+]M -  End of next method definition.
+</li>
+<li>
+[m -  Start of previous method definition.
+</li>
+<li>
+[M -  End of previous method definition.
+</li>
+<li>
+]] -  Start of next module or class definition.
+</li>
+<li>
+][ -  End of next module or class definition.
+</li>
+<li>
+[[ -  Start of previous module or class definition.
+</li>
+<li>
+[] -  End of previous module or class definition.
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_text_objects_2"></a>text objects</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+am - "a method", select from "def" until matching "end" keyword.
+</li>
+<li>
+im - "inner method", select contents of "def"/"end" block, excluding the "def" and "end" themselves.
+</li>
+<li>
+aM - "a class", select from "class" until matching "end" keyword.
+</li>
+<li>
+iM - "inner class", select contents of "class"/"end" block, excluding the "class" and "end" themselves.
+</li>
+</ul></div>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>I’m sure I’ve gone over these before, will check before delving into these.</p>
+</div>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_vim_ruby_sinatra"></a>vim-ruby-sinatra</h4></div></div></div>
+<pre class="literallayout">plugin:   vim-ruby-sinatra
+homepage: http://github.com/hallison/vim-ruby-sinatra
+source:   git://github.com/hallison/vim-ruby-sinatra</pre>
+<p>This plugin adds the ability to recognise sinatra based files as well as adding syntax highlighting and snippets to help
+reduce the amount of keys I press. I’d rather the snippets were in my custom snipmate-snippets project but for now this
+will do.</p>
+<p>As there isn’t much to this plugin and I’d like to centralise the snippets I won’t spend time going over them just now
+and leave that for when I deal with centralising my snippets.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_vim_ruby_2"></a>vim-ruby</h4></div></div></div>
+<div class="sidebar">
+<p class="title"><b></b></p>
+<pre class="literallayout">plugin:   vim-ruby
+homepage: http://github.com/vim-ruby/vim-ruby
+source:   git://github.com/vim-ruby/vim-ruby.git</pre>
+</div>
+<p>This plugin adds quite a bit of Ruby related functionality to vim to make it more pleasant to work with the language and
+make it easier to move around a file.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_completion_2"></a>completion</h5></div></div></div>
+<p>This relies on vim being compiled with ruby. I haven’t tested it without ruby compiled but I’d like to think that this
+functionality will silently fail if vim is not installed with it enabled.</p>
+<p>When it is enabled it adds extra functionality to omnicomplete so that I am able to search for content that relates
+particularly to Ruby. This would include the following:</p>
+<p>Classes, constants and global - When not inside a class definition
+Methods, constants defined in the given class - When inside a class definition
+Methods relating to the object being deferenced - After <span class="emphasis"><em>.</em></span>, <span class="emphasis"><em>::</em></span> or <span class="emphasis"><em>:</em></span>
+Symbol names - After <span class="emphasis"><em>:</em></span> or <span class="emphasis"><em>:foo</em></span></p>
+<p>It should also be noted that this functionality may slow things down as code may have to be run to disclose class,
+method and variable names from inside a ruby file.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>There a side cases that should be documented (<a class="ulink" href="http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt" target="_top">http://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt</a>)</p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_syntax_2"></a>syntax</h5></div></div></div>
+<p>Just like the other syntax files vim uses, this mainly deals with syntax highlighting and helping to visualise code when
+an rb file is opened. It also helps towards displaying syntax errors that may have been missed. This functionality is
+only triggered when a file is saved but I save enough for this not to be an issue.</p>
+<p>There is also the ability to display extra spaces and tabs, of which I have a pet peave, this can be easily set within
+my vimrc and will display the spaces or tabs with a background of red. This like other parts of vim can be customised
+but I’ll leave that task for another day.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_motions_2"></a>motions</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+]m -  Start of next method definition.
+</li>
+<li>
+]M -  End of next method definition.
+</li>
+<li>
+[m -  Start of previous method definition.
+</li>
+<li>
+[M -  End of previous method definition.
+</li>
+<li>
+]] -  Start of next module or class definition.
+</li>
+<li>
+][ -  End of next module or class definition.
+</li>
+<li>
+[[ -  Start of previous module or class definition.
+</li>
+<li>
+[] -  End of previous module or class definition.
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_text_objects_3"></a>text objects</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+am - "a method", select from "def" until matching "end" keyword.
+</li>
+<li>
+im - "inner method", select contents of "def"/"end" block, excluding the "def" and "end" themselves.
+</li>
+<li>
+aM - "a class", select from "class" until matching "end" keyword.
+</li>
+<li>
+iM - "inner class", select contents of "class"/"end" block, excluding the "class" and "end" themselves.
+</li>
+</ul></div>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>I’m sure I’ve gone over these before, will check before delving into these.</p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_33"></a>Day 33</h3></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+vimerl
+</li>
+<li>
+csv.vim
+</li>
+<li>
+vim-cucumber
+</li>
+</ul></div>
+<p></p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_vimerl"></a>vimerl</h4></div></div></div>
+<div class="sidebar">
+<p class="title"><b></b></p>
+<pre class="literallayout">plugin:   vimerl
+homepage: http://github.com/jimenezrick/vimerl
+source:   git://github.com/jimenezrick/vimerl.git</pre>
+</div>
+<p>Whenever I’ve written Erlang in the past I have used emacs. As I’m using vim at the moment I have installed this plugin
+so that I can can focus on using one text editor.</p>
+<p>As with the other programming language plugin that come with vim vimerl also has:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+Syntax highlighting
+</li>
+<li>
+Code indenting
+</li>
+<li>
+Code folding
+</li>
+<li>
+Code completion
+</li>
+<li>
+Syntax checking
+</li>
+</ul></div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_syntax_checking"></a>syntax checking</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+Enables syntax checking - <code class="literal">:ErlangEnableShowErrors</code>
+</li>
+<li>
+Disables syntax checking and hides current errors - <code class="literal">:ErlangDisableShowErrors</code>
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_skeletons"></a>skeletons</h5></div></div></div>
+<p>Writing boiler plates can be quite borrowing, not to mention error prone, so I like to be able to wipe up a skeleton
+structure without having to really do anything.</p>
+<p>As I’m quite lazy and I don’t like punishing my fingers I’ve mapped the skeleton commands to make it even easier to
+generate a skeleton.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<p>
+Loads an OTP application skeleton
+</p>
+<pre class="literallayout">nmap &lt;leader&gt;ea :ErlangApplication&lt;CR&gt;</pre>
+</li>
+<li>
+<p>
+Loads an OTP supervisor skeleton
+</p>
+<pre class="literallayout">nmap &lt;leader&gt;es :ErlangSupervisor&lt;CR&gt;</pre>
+</li>
+<li>
+<p>
+Loads an OTP gen_server skeleton
+</p>
+<pre class="literallayout">nmap &lt;leader&gt;eg :ErlangGenServer&lt;CR&gt;</pre>
+</li>
+<li>
+<p>
+Loads an OTP gen_fsm skeleton
+</p>
+<pre class="literallayout">nmap &lt;leader&gt;ef :ErlangGenFsm&lt;CR&gt;</pre>
+</li>
+<li>
+<p>
+Loads an OTP gen_event skeleton
+</p>
+<pre class="literallayout">nmap &lt;leader&gt;ege :ErlangGenEvent&lt;CR&gt;</pre>
+</li>
+</ul></div>
+<p>When a skeleton command it executed a header is created with my credentials, in the past I’ve put this in with my plugin
+settings.</p>
+<pre class="literallayout">let erlang_skel_header = {"author": "Yomi Colledge", "owner" : "Yomi Colledge"}</pre>
+<p>For the moment I’ll create a <code class="literal">~/.vim_local</code> file and put my personal settings there.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Once I have gone through my plugins I’ll hack together a script that will allow me to create my personal files so that
+other don’t have to fork my plugin just to change their personal details. instead the script will ask you a series of
+questions and generate the files when they are not found.</p>
+</div>
+<pre class="literallayout">let erlang_folding = 0</pre>
+<pre class="literallayout">let erlang_highlight_bif = 1</pre>
+<pre class="literallayout">let erlang_skel_replace = 1</pre>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_vim_cucumber"></a>vim-cucumber</h4></div></div></div>
+<div class="sidebar">
+<p class="title"><b></b></p>
+<pre class="literallayout">plugin:   vim-cucumber
+homepage: http://github.com/tpope/vim-cucumber
+source:   git://github.com/tpope/vim-cucumber.git</pre>
+</div>
+<p>As with all the other content related plugins <code class="literal">vim-cucumber</code> adds syntax highlighting, mappings and file recognition. It
+also lets you know whether their are syntax errors or a step has not been defined. The former is quite useful as it
+keeps you focused and allows you to easily work out which steps need to be implemented and which ones have already been
+added. As soon as a feature file is saved compilation is started and shortly after, if there are any errors, you will be
+alerted via the quick tip buffer.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_mappings"></a>Mappings</h5></div></div></div>
+<p>There are a few mappings that <code class="literal">vim-cucumber</code> includes, though they are not actually documented anywhere.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<code class="literal">&lt;Ctrl-]&gt;</code> - Go to the step under the cursor
+</li>
+<li>
+<code class="literal">&lt;Ctrl-W&gt;]</code> - Open the step under the cursor in a new split buffer
+</li>
+<li>
+<code class="literal">&lt;Ctrl-W&gt;&lt;Ctrl-]&gt;</code> - Same as above
+</li>
+<li>
+<code class="literal">&lt;Ctrl-W&gt;}</code> - Open associated buffer in a new split buffer
+</li>
+</ul></div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_34"></a>Day 34</h3></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+vim-rake
+</li>
+<li>
+vim-puppet
+</li>
+<li>
+vim-bundler
+</li>
+<li>
+vim-fugitive
+</li>
+</ul></div>
+<p></p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_vim_rake"></a>vim-rake</h4></div></div></div>
+<p>This provides all the niceness of <code class="literal">vim-rails</code> without actually needing to work on a rails project. So commands like
+<code class="literal">:Rake</code> are provided here.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<code class="literal">:A</code> - Open the alternate file
+</li>
+<li>
+<code class="literal">:AV</code> - Open the alternate file in a new vertical split
+</li>
+<li>
+<p>
+<code class="literal">:AS</code> - Open the alternate file in a new split
+</p>
+<div class="itemizedlist"><ul type="circle"><li>
+this is useful when open Gemfile.lock or opening a test file.
+</li></ul></div>
+</li>
+<li>
+<code class="literal">:Rlib</code> - Edit a file under the lib/ directory
+</li>
+<li>
+<code class="literal">:Rtags</code> - Run ctags for the project
+</li>
+</ul></div>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_vim_puppet"></a>vim-puppet</h4></div></div></div>
+<p>Another file type plugin that I use for managing puppet files.</p>
+<p>It comes with all the basic stuff the other file type plugins come with:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+syntax highlighting
+</li>
+<li>
+<p>
+automatic alignment
+</p>
+<div class="itemizedlist"><ul type="circle"><li>
+This uses Align to help with alignment
+</li></ul></div>
+</li>
+<li>
+<p>
+snippets
+</p>
+<div class="itemizedlist"><ul type="circle"><li>
+A list of snippets can be found [here](<a class="ulink" href="https://github.com/rodjek/vim-puppet/blob/master/snippets/puppet.snippets" target="_top">https://github.com/rodjek/vim-puppet/blob/master/snippets/puppet.snippets</a>)
+</li></ul></div>
+</li>
+</ul></div>
+<p>There aren’t any mappings added for this plugin but that is fine for the moment, if/when I discover I need such a thing
+I’ll create my own.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_vim_bundler"></a>vim-bundler</h4></div></div></div>
+<p>Yet another indespensible plugin. I use bundle quite a bit and rather not have to shell out to run <code class="literal">bundle</code> by itself.</p>
+<p>The main use for bundle is to actually call <code class="literal">bundle</code> to keep my gems up to date and this is done by the following
+mapping <code class="literal">:Bundle</code>.</p>
+<p>There is also the functionality to open a gem via <code class="literal">:Bopen</code> or <code class="literal">:Bsplit</code> the former will open the gem in the current
+buffer where the latter will open it in a new split.</p>
+<p></p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_vim_fugitive"></a>vim-fugitive</h4></div></div></div>
+<p>This is my go to Git vim plugin.</p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_mappings_2"></a>Mappings</h5></div></div></div>
+<p>These are the mappings I tend to use the most:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<p>
+<code class="literal">:Gstatus</code> - View git status
+</p>
+<div class="itemizedlist"><ul type="circle">
+<li>
+<code class="literal">-</code> - stage a change
+</li>
+<li>
+<p>
+<code class="literal">&lt;Ctrl-V&gt;(j|k)</code> - Select a group of files to (un)stage
+</p>
+<div class="itemizedlist"><ul type="square"><li>
+<code class="literal">p</code> - Incrementally patch (un)stage changes
+</li></ul></div>
+</li>
+<li>
+<code class="literal">&lt;Shift-C&gt;</code> - Commit changes
+</li>
+<li>
+<code class="literal">:Gcommit</code> - Commit changes
+</li>
+</ul></div>
+</li>
+<li>
+<code class="literal">:Gblame</code> - Display git blame in a side buffer
+</li>
+<li>
+<code class="literal">:Gread</code> - A variant of <code class="literal">git checkout -- filename</code>
+</li>
+<li>
+<code class="literal">:Ggrep</code> - Search the work tree
+</li>
+</ul></div>
+<p></p>
+</div>
 </div>
 </div>
 </div>
