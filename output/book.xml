@@ -4519,6 +4519,7 @@ alerted via the quick tip buffer.</simpara>
 </section>
 <section id="_day_34">
 <title>Day 34</title>
+<simpara>Today I&#8217;ll go over my DevOp based plugins and cover how I actually use them.</simpara>
 <itemizedlist>
 <listitem>
 <simpara>
@@ -4691,6 +4692,58 @@ buffer where the latter will open it in a new split.</simpara>
 </section>
 </section>
 </section>
+<section id="_day_35">
+<title>Day 35</title>
+<simpara>Today is the last day I focus on my vim plugins and address the plugins that my other plugins rely on.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+webapi
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vim-addon-mw-utils
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+tlib_vim
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+<section id="_vim_addon_mw_utils">
+<title>vim-addon-mw-utils</title>
+<simpara>This is another plugin that is required for <literal>snipmate</literal> to work functionally.
+===== Dependancies</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-snipmate
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_tlib_vim">
+<title>tlib_vim</title>
+<simpara>This is required by <literal>snipmate</literal> to add some sugar for the plugin to work nicely. I haven&#8217;t delved too deep into this
+plugin apart from taking note of what else actually uses it and why it is so important.</simpara>
+<section id="_dependancies_2">
+<title>Dependancies</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-snipmate
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+</section>
 </section>
 <section id="_dressing_down_vim">
 <title>Dressing down Vim</title>
@@ -4729,7 +4782,7 @@ had less and less time to actually take the time to keep up to date and track wh
 coming out.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-<section id="_day_35">
+<section id="_day_35_2">
 <title>Day 35</title>
 <simpara>I&#8217;ve setup w3m but I haven&#8217;t really had time to experiment with it. I know it can open images and it can apparently open
 tabs but I have never played with the former. It would be cool to work out how this happens so I can tell tmux to open a
