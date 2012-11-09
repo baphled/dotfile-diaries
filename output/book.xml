@@ -4862,7 +4862,14 @@ notes:
 <simpara><?asciidoc-pagebreak?></simpara>
 <section id="_day_36">
 <title>Day 36</title>
-<simpara>I&#8217;ve recently discovered tmux-powerline so today I&#8217;ll be customising my zsh with tmux-powerline.</simpara>
+<simpara>I&#8217;ve recently discovered tmux-powerline so today I&#8217;ll be customising my zsh with tmux-powerline. Prior to this discovery
+my status bar looked pretty much like the vanilla version that comes with Tmux.</simpara>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="images/tmux_vanilla.png" contentwidth="500"/>
+  </imageobject>
+  <textobject><phrase>Vanilla tmux</phrase></textobject>
+</inlinemediaobject></simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 <section id="_installing_tmux_powerline">
 <title>Installing tmux-powerline</title>
