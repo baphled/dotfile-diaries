@@ -4768,12 +4768,16 @@ move on.</p></div>
 <div class="content">
 <pre><tt>sudo fc-cache -vf</tt></pre>
 </div></div>
-<div class="paragraph"><p>This clears fontpatcher&#8217;s cache</p></div>
+<div class="paragraph"><p>This clears fontpatcher&#8217;s cache, once that is done we just have to add the following snippet to my <tt>.vimrc</tt></p></div>
 <div class="literalblock">
 <div class="content">
 <pre><tt>let g:Powerline_symbols = 'fancy'</tt></pre>
 </div></div>
-<div class="paragraph"><p>Finally we set powerlines symbols</p></div>
+<div class="paragraph"><p><span class="image">
+<a class="image" href="/images/vim-powerline.png">
+<img src="images/vim-powerline.png" alt="Current vim-powerline setup" width="500" />
+</a>
+</span></p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect3">
@@ -4844,11 +4848,9 @@ multiple lines at once. One prime example of where this comes in handy is when w
 elements. First we&#8217;d get a list of something.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>&lt;ul&gt;
-  &lt;li&gt;Rice&lt;/li&gt;
-  &lt;li&gt;Beans&lt;/li&gt;
-  &lt;li&gt;Chocolate&lt;/li&gt;
-&lt;/ul&gt;</tt></pre>
+<pre><tt>Rice
+Beans
+Chocolate</tt></pre>
 </div></div>
 <div class="paragraph"><p>Then we&#8217;d type the following:</p></div>
 <div class="literalblock">
@@ -5719,6 +5721,77 @@ questions and generate the files when they are not found.</td>
 <pre><tt>let erlang_skel_replace = 1</tt></pre>
 </div></div>
 <div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_csv_vim">csv.vim</h4>
+<div class="paragraph"><p>plugin:   csv.vim
+homepage: <a href="http://github.com/chrisbra/csv.vim">http://github.com/chrisbra/csv.vim</a>
+source:   git://github.com/chrisbra/csv.vim.git</p></div>
+<div class="paragraph"><p>This plugin has quite a bit of functionality including the basics that are provided by most of the filetype plugins I
+have already installed. Along with this basic functionality it also provides ways of interacting with CSV alot nicer.</p></div>
+<div class="paragraph"><p>Below is a breakdown of the added commands that are provided by <tt>csv.vim</tt>:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>WhatColumn
+NrColumns
+SearchInColumn
+HiColumn
+ArrangeColumn
+UnArrangeColumn
+DeleteColumn
+InitCSV
+Header
+Sort
+Column
+MoveColumn
+SumCol
+NewRecord
+NewDelimiter
+Duplicate</tt></pre>
+</div></div>
+<div class="sect4">
+<h5 id="_text_objects_4">Text objects</h5>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>if</tt> - select inner field
+</p>
+</li>
+<li>
+<p>
+<tt>af</tt> - select outter field
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect4">
+<h5 id="_converting_a_csv">Converting a CSV</h5>
+<div class="literalblock">
+<div class="content">
+<pre><tt>ConverData</tt></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>ConverData!</tt></pre>
+</div></div>
+<div class="paragraph"><p>When using this command Vim will ask you for some input, similar to below:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>Pre convert text:</tt></pre>
+</div></div>
+<div class="paragraph"><p>This allows you to input the text you want at the start of the selection</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>Post convert text:</tt></pre>
+</div></div>
+<div class="paragraph"><p>This allows you to input the text you want at the end of the selection</p></div>
+<div class="paragraph"><p>Both of these can be predefined with the use of <tt>g:csv_post_convert</tt> and <tt>g:csv_pre_convert</tt>.</p></div>
+<div class="paragraph"><p>The final prompt will be as follows, this will tell Vim how to format the actual CSV data:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>Converted text, use %s for column input:</tt></pre>
+</div></div>
 <div style="page-break-after:always"></div>
 </div>
 </div>
@@ -5963,7 +6036,53 @@ tlib_vim
 </li>
 </ul></div>
 <div style="page-break-after:always"></div>
+<div class="sect3">
+<h4 id="_webapi_vim">webapi-vim</h4>
+<div class="paragraph"><p>This plugin adds web api functionality to Vim to help you develop API based plugins in Vim.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Basic HTTP
+</p>
+</li>
+<li>
+<p>
+OAuth
+</p>
+</li>
+<li>
+<p>
+Atompub
+</p>
+</li>
+<li>
+<p>
+SOAP (in progress)
+</p>
+</li>
+<li>
+<p>
+XMLRPC
+</p>
+</li>
+<li>
+<p>
+MetaWeblog API
+</p>
+</li>
+</ul></div>
+<div class="sect4">
+<h5 id="_dependancies_2">Dependancies</h5>
+<div class="ulist"><ul>
+<li>
+<p>
+vim-gist
+</p>
+</li>
+</ul></div>
 <div style="page-break-after:always"></div>
+</div>
+</div>
 <div class="sect3">
 <h4 id="_vim_addon_mw_utils">vim-addon-mw-utils</h4>
 <div class="paragraph"><p>This is another plugin that is required for <tt>snipmate</tt> to work functionally.
@@ -5982,7 +6101,7 @@ vim-snipmate
 <div class="paragraph"><p>This is required by <tt>snipmate</tt> to add some sugar for the plugin to work nicely. I haven&#8217;t delved too deep into this
 plugin apart from taking note of what else actually uses it and why it is so important.</p></div>
 <div class="sect4">
-<h5 id="_dependancies_2">Dependancies</h5>
+<h5 id="_dependancies_3">Dependancies</h5>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -5990,6 +6109,154 @@ vim-snipmate
 </p>
 </li>
 </ul></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_housekeeping_tools">Housekeeping tools</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>duration: 4 weeks
+notes:
+  * manage personal credentials
+  * notifications and alerts via tmux
+  * define local files to hide
+  * create script to check for my dotfile dependancies
+    * Should download them if they are not found</tt></pre>
+</div></div>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">This section is incomplete</td>
+</tr></table>
+</div>
+<div style="page-break-after:always"></div>
+<div class="sect2">
+<h3 id="_day_36">Day 36</h3>
+<div class="paragraph"><p>I&#8217;ve recently discovered tmux-powerline so today I&#8217;ll be customising my zsh with tmux-powerline.</p></div>
+<div style="page-break-after:always"></div>
+<div class="sect3">
+<h4 id="_installing_tmux_powerline">Installing tmux-powerline</h4>
+<div class="paragraph"><p>homepage: <a href="http://github.com/erikw/tmux-powerline">http://github.com/erikw/tmux-powerline</a></p></div>
+<div class="paragraph"><p>Today I want to put some time aside to customise my terminal a little bit more. The one thing that has come to my
+attension recently is <tt>tmux-powerline</tt>.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Display image of my status bar before setting up <tt>tmux-powerline</tt></td>
+</tr></table>
+</div>
+<div class="paragraph"><p>The generic tmux status bar is ok but I prefer a little bit more control and flexibility as to what is shown there and
+how. This is where <tt>tmux-powerline</tt> is cool. I&#8217;d like to have quite a bit of information accessible to me at a glance so
+the ideal setup for me will tell me the following things:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+The machine I am currently working from
+</p>
+</li>
+<li>
+<p>
+My IP addresses
+</p>
+</li>
+<li>
+<p>
+What tmux pain and session I am currently in
+</p>
+</li>
+<li>
+<p>
+Emails I have unopen
+</p>
+</li>
+<li>
+<p>
+Battery status
+</p>
+</li>
+<li>
+<p>
+Git
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Branch I am currently on
+</p>
+</li>
+<li>
+<p>
+Need to pull
+</p>
+</li>
+<li>
+<p>
+Need to push
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+List of sessions
+</p>
+</li>
+</ul></div>
+<div class="sect4">
+<h5 id="_installing">Installing</h5>
+<div class="paragraph"><p>Initially I just threw everything together and dumped tmux-powerline and the solarized theme into my home directory. I
+don&#8217;t particularly like this and create a tmux repository.</p></div>
+<div class="paragraph"><p>So firstly I&#8217;ve had to fork my own version of <tt>tmux-powerline</tt> mainly so that I could quickly customise my own status
+bar but also to that I can add some extra functionality to the tool later on down the road when I get some playtime.</p></div>
+<div class="paragraph"><p>I&#8217;ll be creating a new directory called <tt>tmux</tt> which will store all my tmux customisations. That include the tmux
+solarized theme and my tmux configuration file. I&#8217;ll then symlink <tt>.tmux.conf</tt> to my new repository.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>git init
+git submodule add git@github.com:baphled/tmux-powerline.git powerline
+mv ~/.tmux.conf tmux.conf
+ln -s tmux.conf ~/.tmux.conf</tt></pre>
+</div></div>
+</div>
+<div class="sect4">
+<h5 id="_customisation">Customisation</h5>
+<div class="paragraph"><p>The main changes needed where to disable the right status bar fully so my panel list can live there and to include and
+customise the left bar, where I&#8217;d like most of my information to be stored.</p></div>
+<div class="paragraph"><p>I made a quite a few tweaks to my tmux conf file which you can see
+<a href="http://github.com/baphled/tmuxfiles/blob/c933919bb3c2cc4eb904c7d101524cacdeff2ee7/tmux.conf">here</a>.</p></div>
+<div class="paragraph"><p>I don&#8217;t really want to use the right side status bar at the moment, though this may change at some point down the road.
+So I want to make sure that the right side status bar doesn&#8217;t display, I do this by making the status empty.</p></div>
+<div class="paragraph"><p>The one things that annoys me about the current state of <tt>tmux-powerline</tt> is that the status bars generally need to be
+customised but there is no real way of doing this at the moment without having to fork the project and make it my own.
+This is cool and everything but keeping things up to date can become a pain.</p></div>
+<div class="paragraph"><p>So in this case I&#8217;m going create my own status file, basically copying my current left statusbar and move it to my
+repository.</p></div>
+</div>
+<div class="sect4">
+<h5 id="_the_final_step">The final step</h5>
+<div class="paragraph"><p>The first two parts of my customised status bar are actually done by hand, though it was a cool things to work out at
+the time I should create what <tt>tmux-powerline</tt> calls segments. There is already one to display the session name and pane
+number but I want to customise it to look like how I currently have it.</p></div>
+<div class="paragraph"><p>As I already have a forked version of the repository it is easy enough to make this change and remove prerolled version.
+Before I do that though I should add a segment for displaying my current username.</p></div>
+<div class="paragraph"><p>Now I have powerline setup for both tmux and vim :)</p></div>
+<div class="paragraph"><p><span class="image">
+<a class="image" href="/images/tmux_and_vim_powerline.png">
+<img src="images/tmux_and_vim_powerline.png" alt="preferred setup" width="500" />
+</a>
+</span></p></div>
 <div style="page-break-after:always"></div>
 </div>
 </div>
@@ -6086,7 +6353,7 @@ with anything else.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
-<h3 id="_day_36">Day 36</h3>
+<h3 id="_day_36_2">Day 36</h3>
 <div class="paragraph"><p>Today is that day I start hacking on some scripts and start to get used to some of the tools I&#8217;ve neglected to use over
 the years. My main focus will be to improve he way I use sed and awk and improve my bash script so that I can quickly
 hack some workflow scripts together to help tweak my productivity further.</p></div>
@@ -6110,25 +6377,6 @@ How do I view conversations
 </ul></div>
 <div style="page-break-after:always"></div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_housekeeping_tools">Housekeeping tools</h2>
-<div class="sectionbody">
-<div class="sidebarblock">
-<div class="content">
-<div class="literalblock">
-<div class="content">
-<pre><tt>duration: 4 weeks
-notes:
-  * manage personal credentials
-  * notifications and alerts via tmux
-  * define local files to hide
-  * create script to check for my dotfile dependancies
-    * Should download them if they are not found</tt></pre>
-</div></div>
-</div></div>
-<div style="page-break-after:always"></div>
 </div>
 </div>
 <div class="sect1">
@@ -7540,8 +7788,50 @@ newsbeuter
 </li>
 </ul></div>
 <div style="page-break-after:always"></div>
+<div class="sect3">
+<h4 id="_dotfiles_with_some_raspbian_pi">Dotfiles with some Raspbian Pi</h4>
+<div class="paragraph"><p>Today I had to install my dotfiles on a new system. These are the steps I needed to take.</p></div>
+<div class="paragraph"><p>Firstly I had to remove <tt>.bashrc</tt> as I already have a copy in my dotfiles. I did this with the following command.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>rm .bashrc</tt></pre>
+</div></div>
+<div class="paragraph"><p>Once that was complete I had to run the following commands to pull down my dotfiles and get the updated locally.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>git init
+git add remote origin git://github.com/baphled/dotfiles.git
+git pull &amp;&amp; git submodule init &amp;&amp; git submodule update &amp;&amp; git submodule status
+git submodule foreach --recursive git submodule update --init</tt></pre>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">I&#8217;m sure there is a cleaner way to do this but it seems to do the trick for now.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>As Raspbian doesn&#8217;t have zsh install by default I had to install it my self.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>sudo apt-get install zsh</tt></pre>
+</div></div>
+<div class="paragraph"><p>As my dotfiles require <tt>rvm</tt> to display the gemset I am currently working in.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>curl -L https://get.rvm.io | bash -s stable --ruby</tt></pre>
+</div></div>
+<div class="paragraph"><p>Once the installation process completed rvm was install and I was free to set zsh as my default shell.</p></div>
+<div class="paragraph"><p>The final step is to update my shell to zsh instead of bash.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>chsh -s /bin/zsh</tt></pre>
+</div></div>
+<div class="paragraph"><p>This will prompt for a password and once authorised the change will become perminent.</p></div>
 <div style="page-break-after:always"></div>
 <div class="paragraph"><p>Some things I&#8217;d like to help tweak my productivity</p></div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_wiish_list">Wiish list</h3>
@@ -7673,7 +7963,7 @@ set tw=140</tt></pre>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2012-11-07 10:41:13 GMT
+Last updated 2012-11-09 15:04:04 GMT
 </div>
 </div>
 </body>

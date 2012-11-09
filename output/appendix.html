@@ -11,8 +11,8 @@
     <table width="100%">
       <tr><td width="33%" align="left">
         
-         <a href="housekeeping_tools.html">Prev</a><br/>
-         Housekeeping tools
+         <a href="dressing_down_vim.html">Prev</a><br/>
+         Dressing down Vim
         
       </td><td width="33%" align="center">
         
@@ -1067,8 +1067,32 @@ newsbeuter
 </li>
 </ul></div>
 <p></p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_dotfiles_with_some_raspbian_pi"></a>Dotfiles with some Raspbian Pi</h4></div></div></div>
+<p>Today I had to install my dotfiles on a new system. These are the steps I needed to take.</p>
+<p>Firstly I had to remove <code class="literal">.bashrc</code> as I already have a copy in my dotfiles. I did this with the following command.</p>
+<pre class="literallayout">rm .bashrc</pre>
+<p>Once that was complete I had to run the following commands to pull down my dotfiles and get the updated locally.</p>
+<pre class="literallayout">git init
+git add remote origin git://github.com/baphled/dotfiles.git
+git pull &amp;&amp; git submodule init &amp;&amp; git submodule update &amp;&amp; git submodule status
+git submodule foreach --recursive git submodule update --init</pre>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>I’m sure there is a cleaner way to do this but it seems to do the trick for now.</p>
+</div>
+<p>As Raspbian doesn’t have zsh install by default I had to install it my self.</p>
+<pre class="literallayout">sudo apt-get install zsh</pre>
+<p>As my dotfiles require <code class="literal">rvm</code> to display the gemset I am currently working in.</p>
+<pre class="literallayout">curl -L https://get.rvm.io | bash -s stable --ruby</pre>
+<p>Once the installation process completed rvm was install and I was free to set zsh as my default shell.</p>
+<p>The final step is to update my shell to zsh instead of bash.</p>
+<pre class="literallayout">chsh -s /bin/zsh</pre>
+<p>This will prompt for a password and once authorised the change will become perminent.</p>
 <p></p>
 <p>Some things I’d like to help tweak my productivity</p>
+</div>
 </div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h3 class="title">
@@ -1177,8 +1201,8 @@ set tw=140</pre>
     <table width="100%">
       <tr><td width="33%" align="left">
         
-         <a href="housekeeping_tools.html">Prev</a><br/>
-         Housekeeping tools
+         <a href="dressing_down_vim.html">Prev</a><br/>
+         Dressing down Vim
         
       </td><td width="33%" align="center">
         

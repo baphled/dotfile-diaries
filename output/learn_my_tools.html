@@ -21,8 +21,8 @@
         
       </td><td width="33%" align="right">
         
-          <a href="dressing_down_vim.html">Next</a><br/>
-          Dressing down Vim
+          <a href="housekeeping_tools.html">Next</a><br/>
+          Housekeeping tools
         
       </td></tr>
     </table>
@@ -1604,9 +1604,9 @@ patched font so <span class="emphasis"><em>brew</em></span> to the rescue.</p>
 <p>Everything seemed to of installed fine: and I had setup the correct setting. So for now I’ll put a fork in this tweak and
 move on.</p>
 <pre class="literallayout">sudo fc-cache -vf</pre>
-<p>This clears fontpatcher’s cache</p>
+<p>This clears fontpatcher’s cache, once that is done we just have to add the following snippet to my <code class="literal">.vimrc</code></p>
 <pre class="literallayout">let g:Powerline_symbols = 'fancy'</pre>
-<p>Finally we set powerlines symbols</p>
+<p><span class="inlinemediaobject"><img src="images/vim-powerline.png" width="500" alt="Current vim-powerline setup"></span></p>
 <p></p>
 </div>
 <div class="section" lang="en">
@@ -1663,11 +1663,9 @@ mappings that I have not used often.</p>
 <p>There are a couple of cool things I can do with these mappings one of the main ones is being able to add tags to
 multiple lines at once. One prime example of where this comes in handy is when we want to create a list of HTML
 elements. First we’d get a list of something.</p>
-<pre class="literallayout">&lt;ul&gt;
-  &lt;li&gt;Rice&lt;/li&gt;
-  &lt;li&gt;Beans&lt;/li&gt;
-  &lt;li&gt;Chocolate&lt;/li&gt;
-&lt;/ul&gt;</pre>
+<pre class="literallayout">Rice
+Beans
+Chocolate</pre>
 <p>Then we’d type the following:</p>
 <pre class="literallayout">ggVG
 '&lt;,'&gt;normal yss&lt;li&gt;
@@ -2307,6 +2305,58 @@ questions and generate the files when they are not found.</p>
 <pre class="literallayout">let erlang_highlight_bif = 1</pre>
 <pre class="literallayout">let erlang_skel_replace = 1</pre>
 <p></p>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_csv_vim"></a>csv.vim</h4></div></div></div>
+<p>plugin:   csv.vim
+homepage: <a class="ulink" href="http://github.com/chrisbra/csv.vim" target="_top">http://github.com/chrisbra/csv.vim</a>
+source:   git://github.com/chrisbra/csv.vim.git</p>
+<p>This plugin has quite a bit of functionality including the basics that are provided by most of the filetype plugins I
+have already installed. Along with this basic functionality it also provides ways of interacting with CSV alot nicer.</p>
+<p>Below is a breakdown of the added commands that are provided by <code class="literal">csv.vim</code>:</p>
+<pre class="literallayout">WhatColumn
+NrColumns
+SearchInColumn
+HiColumn
+ArrangeColumn
+UnArrangeColumn
+DeleteColumn
+InitCSV
+Header
+Sort
+Column
+MoveColumn
+SumCol
+NewRecord
+NewDelimiter
+Duplicate</pre>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_text_objects_4"></a>Text objects</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<code class="literal">if</code> - select inner field
+</li>
+<li>
+<code class="literal">af</code> - select outter field
+</li>
+</ul></div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_converting_a_csv"></a>Converting a CSV</h5></div></div></div>
+<pre class="literallayout">ConverData</pre>
+<pre class="literallayout">ConverData!</pre>
+<p>When using this command Vim will ask you for some input, similar to below:</p>
+<pre class="literallayout">Pre convert text:</pre>
+<p>This allows you to input the text you want at the start of the selection</p>
+<pre class="literallayout">Post convert text:</pre>
+<p>This allows you to input the text you want at the end of the selection</p>
+<p>Both of these can be predefined with the use of <code class="literal">g:csv_post_convert</code> and <code class="literal">g:csv_pre_convert</code>.</p>
+<p>The final prompt will be as follows, this will tell Vim how to format the actual CSV data:</p>
+<pre class="literallayout">Converted text, use %s for column input:</pre>
 <p></p>
 </div>
 </div>
@@ -2497,7 +2547,39 @@ tlib_vim
 </li>
 </ul></div>
 <p></p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_webapi_vim"></a>webapi-vim</h4></div></div></div>
+<p>This plugin adds web api functionality to Vim to help you develop API based plugins in Vim.</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+Basic HTTP
+</li>
+<li>
+OAuth
+</li>
+<li>
+Atompub
+</li>
+<li>
+SOAP (in progress)
+</li>
+<li>
+XMLRPC
+</li>
+<li>
+MetaWeblog API
+</li>
+</ul></div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_dependancies_2"></a>Dependancies</h5></div></div></div>
+<div class="itemizedlist"><ul type="disc"><li>
+vim-gist
+</li></ul></div>
 <p></p>
+</div>
+</div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a id="_vim_addon_mw_utils"></a>vim-addon-mw-utils</h4></div></div></div>
@@ -2515,7 +2597,7 @@ vim-snipmate
 plugin apart from taking note of what else actually uses it and why it is so important.</p>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h5 class="title">
-<a id="_dependancies_2"></a>Dependancies</h5></div></div></div>
+<a id="_dependancies_3"></a>Dependancies</h5></div></div></div>
 <div class="itemizedlist"><ul type="disc"><li>
 vim-snipmate
 </li></ul></div>
@@ -2543,8 +2625,8 @@ vim-snipmate
         
       </td><td width="33%" align="right">
         
-          <a href="dressing_down_vim.html">Next</a><br/>
-          Dressing down Vim
+          <a href="housekeeping_tools.html">Next</a><br/>
+          Housekeeping tools
         
       </td></tr>
     </table>

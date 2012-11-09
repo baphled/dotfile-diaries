@@ -3752,9 +3752,14 @@ patched font so <emphasis>brew</emphasis> to the rescue.</simpara>
 <simpara>Everything seemed to of installed fine: and I had setup the correct setting. So for now I&#8217;ll put a fork in this tweak and
 move on.</simpara>
 <literallayout class="monospaced">sudo fc-cache -vf</literallayout>
-<simpara>This clears fontpatcher&#8217;s cache</simpara>
+<simpara>This clears fontpatcher&#8217;s cache, once that is done we just have to add the following snippet to my <literal>.vimrc</literal></simpara>
 <literallayout class="monospaced">let g:Powerline_symbols = 'fancy'</literallayout>
-<simpara>Finally we set powerlines symbols</simpara>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="images/vim-powerline.png" contentwidth="500"/>
+  </imageobject>
+  <textobject><phrase>Current vim-powerline setup</phrase></textobject>
+</inlinemediaobject></simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_vim_vividchalk">
@@ -3812,11 +3817,9 @@ mappings that I have not used often.</simpara>
 <simpara>There are a couple of cool things I can do with these mappings one of the main ones is being able to add tags to
 multiple lines at once. One prime example of where this comes in handy is when we want to create a list of HTML
 elements. First we&#8217;d get a list of something.</simpara>
-<literallayout class="monospaced">&lt;ul&gt;
-  &lt;li&gt;Rice&lt;/li&gt;
-  &lt;li&gt;Beans&lt;/li&gt;
-  &lt;li&gt;Chocolate&lt;/li&gt;
-&lt;/ul&gt;</literallayout>
+<literallayout class="monospaced">Rice
+Beans
+Chocolate</literallayout>
 <simpara>Then we&#8217;d type the following:</simpara>
 <literallayout class="monospaced">ggVG
 '&lt;,'&gt;normal yss&lt;li&gt;
@@ -4473,6 +4476,59 @@ questions and generate the files when they are not found.</simpara></note>
 <literallayout class="monospaced">let erlang_highlight_bif = 1</literallayout>
 <literallayout class="monospaced">let erlang_skel_replace = 1</literallayout>
 <simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+<section id="_csv_vim">
+<title>csv.vim</title>
+<simpara>plugin:   csv.vim
+homepage: <ulink url="http://github.com/chrisbra/csv.vim">http://github.com/chrisbra/csv.vim</ulink>
+source:   git://github.com/chrisbra/csv.vim.git</simpara>
+<simpara>This plugin has quite a bit of functionality including the basics that are provided by most of the filetype plugins I
+have already installed. Along with this basic functionality it also provides ways of interacting with CSV alot nicer.</simpara>
+<simpara>Below is a breakdown of the added commands that are provided by <literal>csv.vim</literal>:</simpara>
+<literallayout class="monospaced">WhatColumn
+NrColumns
+SearchInColumn
+HiColumn
+ArrangeColumn
+UnArrangeColumn
+DeleteColumn
+InitCSV
+Header
+Sort
+Column
+MoveColumn
+SumCol
+NewRecord
+NewDelimiter
+Duplicate</literallayout>
+<section id="_text_objects_4">
+<title>Text objects</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<literal>if</literal> - select inner field
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<literal>af</literal> - select outter field
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_converting_a_csv">
+<title>Converting a CSV</title>
+<literallayout class="monospaced">ConverData</literallayout>
+<literallayout class="monospaced">ConverData!</literallayout>
+<simpara>When using this command Vim will ask you for some input, similar to below:</simpara>
+<literallayout class="monospaced">Pre convert text:</literallayout>
+<simpara>This allows you to input the text you want at the start of the selection</simpara>
+<literallayout class="monospaced">Post convert text:</literallayout>
+<simpara>This allows you to input the text you want at the end of the selection</simpara>
+<simpara>Both of these can be predefined with the use of <literal>g:csv_post_convert</literal> and <literal>g:csv_pre_convert</literal>.</simpara>
+<simpara>The final prompt will be as follows, this will tell Vim how to format the actual CSV data:</simpara>
+<literallayout class="monospaced">Converted text, use %s for column input:</literallayout>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
@@ -4713,7 +4769,53 @@ tlib_vim
 </listitem>
 </itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
+<section id="_webapi_vim">
+<title>webapi-vim</title>
+<simpara>This plugin adds web api functionality to Vim to help you develop API based plugins in Vim.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Basic HTTP
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+OAuth
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Atompub
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+SOAP (in progress)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+XMLRPC
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+MetaWeblog API
+</simpara>
+</listitem>
+</itemizedlist>
+<section id="_dependancies_2">
+<title>Dependancies</title>
+<itemizedlist>
+<listitem>
+<simpara>
+vim-gist
+</simpara>
+</listitem>
+</itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
 <section id="_vim_addon_mw_utils">
 <title>vim-addon-mw-utils</title>
 <simpara>This is another plugin that is required for <literal>snipmate</literal> to work functionally.
@@ -4731,7 +4833,7 @@ vim-snipmate
 <title>tlib_vim</title>
 <simpara>This is required by <literal>snipmate</literal> to add some sugar for the plugin to work nicely. I haven&#8217;t delved too deep into this
 plugin apart from taking note of what else actually uses it and why it is so important.</simpara>
-<section id="_dependancies_2">
+<section id="_dependancies_3">
 <title>Dependancies</title>
 <itemizedlist>
 <listitem>
@@ -4740,6 +4842,132 @@ vim-snipmate
 </simpara>
 </listitem>
 </itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+</section>
+</section>
+<section id="_housekeeping_tools">
+<title>Housekeeping tools</title>
+<sidebar>
+<literallayout class="monospaced">duration: 4 weeks
+notes:
+  * manage personal credentials
+  * notifications and alerts via tmux
+  * define local files to hide
+  * create script to check for my dotfile dependancies
+    * Should download them if they are not found</literallayout>
+</sidebar>
+<warning><simpara>This section is incomplete</simpara></warning>
+<simpara><?asciidoc-pagebreak?></simpara>
+<section id="_day_36">
+<title>Day 36</title>
+<simpara>I&#8217;ve recently discovered tmux-powerline so today I&#8217;ll be customising my zsh with tmux-powerline.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+<section id="_installing_tmux_powerline">
+<title>Installing tmux-powerline</title>
+<simpara>homepage: <ulink url="http://github.com/erikw/tmux-powerline">http://github.com/erikw/tmux-powerline</ulink></simpara>
+<simpara>Today I want to put some time aside to customise my terminal a little bit more. The one thing that has come to my
+attension recently is <literal>tmux-powerline</literal>.</simpara>
+<note><simpara>Display image of my status bar before setting up <literal>tmux-powerline</literal></simpara></note>
+<simpara>The generic tmux status bar is ok but I prefer a little bit more control and flexibility as to what is shown there and
+how. This is where <literal>tmux-powerline</literal> is cool. I&#8217;d like to have quite a bit of information accessible to me at a glance so
+the ideal setup for me will tell me the following things:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+The machine I am currently working from
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+My IP addresses
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+What tmux pain and session I am currently in
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Emails I have unopen
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Battery status
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Git
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Branch I am currently on
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Need to pull
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Need to push
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+List of sessions
+</simpara>
+</listitem>
+</itemizedlist>
+<section id="_installing">
+<title>Installing</title>
+<simpara>Initially I just threw everything together and dumped tmux-powerline and the solarized theme into my home directory. I
+don&#8217;t particularly like this and create a tmux repository.</simpara>
+<simpara>So firstly I&#8217;ve had to fork my own version of <literal>tmux-powerline</literal> mainly so that I could quickly customise my own status
+bar but also to that I can add some extra functionality to the tool later on down the road when I get some playtime.</simpara>
+<simpara>I&#8217;ll be creating a new directory called <literal>tmux</literal> which will store all my tmux customisations. That include the tmux
+solarized theme and my tmux configuration file. I&#8217;ll then symlink <literal>.tmux.conf</literal> to my new repository.</simpara>
+<literallayout class="monospaced">git init
+git submodule add git@github.com:baphled/tmux-powerline.git powerline
+mv ~/.tmux.conf tmux.conf
+ln -s tmux.conf ~/.tmux.conf</literallayout>
+</section>
+<section id="_customisation">
+<title>Customisation</title>
+<simpara>The main changes needed where to disable the right status bar fully so my panel list can live there and to include and
+customise the left bar, where I&#8217;d like most of my information to be stored.</simpara>
+<simpara>I made a quite a few tweaks to my tmux conf file which you can see
+<ulink url="http://github.com/baphled/tmuxfiles/blob/c933919bb3c2cc4eb904c7d101524cacdeff2ee7/tmux.conf">here</ulink>.</simpara>
+<simpara>I don&#8217;t really want to use the right side status bar at the moment, though this may change at some point down the road.
+So I want to make sure that the right side status bar doesn&#8217;t display, I do this by making the status empty.</simpara>
+<simpara>The one things that annoys me about the current state of <literal>tmux-powerline</literal> is that the status bars generally need to be
+customised but there is no real way of doing this at the moment without having to fork the project and make it my own.
+This is cool and everything but keeping things up to date can become a pain.</simpara>
+<simpara>So in this case I&#8217;m going create my own status file, basically copying my current left statusbar and move it to my
+repository.</simpara>
+</section>
+<section id="_the_final_step">
+<title>The final step</title>
+<simpara>The first two parts of my customised status bar are actually done by hand, though it was a cool things to work out at
+the time I should create what <literal>tmux-powerline</literal> calls segments. There is already one to display the session name and pane
+number but I want to customise it to look like how I currently have it.</simpara>
+<simpara>As I already have a forked version of the repository it is easy enough to make this change and remove prerolled version.
+Before I do that though I should add a segment for displaying my current username.</simpara>
+<simpara>Now I have powerline setup for both tmux and vim :)</simpara>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="images/tmux_and_vim_powerline.png" contentwidth="500"/>
+  </imageobject>
+  <textobject><phrase>preferred setup</phrase></textobject>
+</inlinemediaobject></simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
 </section>
@@ -4801,7 +5029,7 @@ or be quick enough to select a link to view. I should simply be able to select o
 with anything else.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-<section id="_day_36">
+<section id="_day_36_2">
 <title>Day 36</title>
 <simpara>Today is that day I start hacking on some scripts and start to get used to some of the tools I&#8217;ve neglected to use over
 the years. My main focus will be to improve he way I use sed and awk and improve my bash script so that I can quickly
@@ -4826,19 +5054,6 @@ How do I view conversations
 </itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-</section>
-<section id="_housekeeping_tools">
-<title>Housekeeping tools</title>
-<sidebar>
-<literallayout class="monospaced">duration: 4 weeks
-notes:
-  * manage personal credentials
-  * notifications and alerts via tmux
-  * define local files to hide
-  * create script to check for my dotfile dependancies
-    * Should download them if they are not found</literallayout>
-</sidebar>
-<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="appendix">
 <title>Appendix</title>
@@ -6168,8 +6383,28 @@ newsbeuter
 </listitem>
 </itemizedlist>
 <simpara><?asciidoc-pagebreak?></simpara>
+<section id="_dotfiles_with_some_raspbian_pi">
+<title>Dotfiles with some Raspbian Pi</title>
+<simpara>Today I had to install my dotfiles on a new system. These are the steps I needed to take.</simpara>
+<simpara>Firstly I had to remove <literal>.bashrc</literal> as I already have a copy in my dotfiles. I did this with the following command.</simpara>
+<literallayout class="monospaced">rm .bashrc</literallayout>
+<simpara>Once that was complete I had to run the following commands to pull down my dotfiles and get the updated locally.</simpara>
+<literallayout class="monospaced">git init
+git add remote origin git://github.com/baphled/dotfiles.git
+git pull &amp;&amp; git submodule init &amp;&amp; git submodule update &amp;&amp; git submodule status
+git submodule foreach --recursive git submodule update --init</literallayout>
+<note><simpara>I&#8217;m sure there is a cleaner way to do this but it seems to do the trick for now.</simpara></note>
+<simpara>As Raspbian doesn&#8217;t have zsh install by default I had to install it my self.</simpara>
+<literallayout class="monospaced">sudo apt-get install zsh</literallayout>
+<simpara>As my dotfiles require <literal>rvm</literal> to display the gemset I am currently working in.</simpara>
+<literallayout class="monospaced">curl -L https://get.rvm.io | bash -s stable --ruby</literallayout>
+<simpara>Once the installation process completed rvm was install and I was free to set zsh as my default shell.</simpara>
+<simpara>The final step is to update my shell to zsh instead of bash.</simpara>
+<literallayout class="monospaced">chsh -s /bin/zsh</literallayout>
+<simpara>This will prompt for a password and once authorised the change will become perminent.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 <simpara>Some things I&#8217;d like to help tweak my productivity</simpara>
+</section>
 </section>
 <section id="_wiish_list">
 <title>Wiish list</title>
