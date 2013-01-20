@@ -1,2 +1,3 @@
 output/*.asc
 tags
+.DS_Store
