@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="master.css" type="text/css" />
+    <title>Tweak workflow</title>
+  </head>
+
+  <body>
+    <div class="nav" id="navheader">
+    <table width="100%">
+      <tr><td width="33%" align="left">
+        
+         <a href="learn_my_tools.html">Prev</a><br/>
+         Learn my tools
+        
+      </td><td width="33%" align="center">
+        
+         <a href="index.html">Home</a><br/>
+         <strong>Dotfile Diaries</strong>
+        
+      </td><td width="33%" align="right">
+        
+          <a href="housekeeping_tools.html">Next</a><br/>
+          Housekeeping tools
+        
+      </td></tr>
+    </table>
+    </div>
+
+    <hr/>
+
+    <div class="content">
+      <div class="section" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a id="_tweak_workflow"></a>Tweak workflow</h2></div></div></div>
+<div class="sidebar">
+<p class="title"><b></b></p>
+<pre class="literallayout">duration: 2 week
+notes:
+  * install tmux powerline
+  * learn some zsh tricks
+  * add aliases for commonly used commands and task
+  * study git flow
+  * vi mode for all
+  * play with task manager
+  * autojump</pre>
+</div>
+<p>Over the next couple of weeks I’ll be focusing on my terminal setting and improving my knowledge of zsh and git. I’d
+like to tweak my tmux status bar so that it isn’t so vanilla as well as displaying more information. Once that is done
+I’d like to improve my terminal so that I can use my vi binding within irb, pry, and other REPLs.</p>
+<p></p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_36"></a>Day 36</h3></div></div></div>
+<p>I’ve recently discovered tmux-powerline so today I’ll be customising my zsh with tmux-powerline. Prior to this discovery
+my status bar looked pretty much like the vanilla version that comes with Tmux.</p>
+<p><span class="inlinemediaobject"><img src="images/tmux_vanilla.png" width="500" alt="Vanilla tmux"></span></p>
+<p></p>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a id="_installing_tmux_powerline"></a>Installing tmux-powerline</h4></div></div></div>
+<p>homepage: <a class="ulink" href="http://github.com/erikw/tmux-powerline" target="_top">http://github.com/erikw/tmux-powerline</a></p>
+<p>Today I want to put some time aside to customise my terminal a little bit more. The one thing that has come to my
+attension recently is <code class="literal">tmux-powerline</code>.</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>Display image of my status bar before setting up <code class="literal">tmux-powerline</code></p>
+</div>
+<p>The generic tmux status bar is ok but I prefer a little bit more control and flexibility as to what is shown there and
+how. This is where <code class="literal">tmux-powerline</code> is cool. I’d like to have quite a bit of information accessible to me at a glance so
+the ideal setup for me will tell me the following things:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+The machine I am currently working from
+</li>
+<li>
+My IP addresses
+</li>
+<li>
+What tmux pain and session I am currently in
+</li>
+<li>
+Emails I have unopen
+</li>
+<li>
+Battery status
+</li>
+<li>
+<p>
+Git
+</p>
+<div class="itemizedlist"><ul type="circle">
+<li>
+Branch I am currently on
+</li>
+<li>
+Need to pull
+</li>
+<li>
+Need to push
+</li>
+</ul></div>
+</li>
+<li>
+List of sessions
+</li>
+</ul></div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_installing"></a>Installing</h5></div></div></div>
+<p>Initially I just threw everything together and dumped tmux-powerline and the solarized theme into my home directory. I
+don’t particularly like this and create a tmux repository.</p>
+<p>So firstly I’ve had to fork my own version of <code class="literal">tmux-powerline</code> mainly so that I could quickly customise my own status
+bar but also to that I can add some extra functionality to the tool later on down the road when I get some playtime.</p>
+<p>I’ll be creating a new directory called <code class="literal">tmux</code> which will store all my tmux customisations. That include the tmux
+solarized theme and my tmux configuration file. I’ll then symlink <code class="literal">.tmux.conf</code> to my new repository.</p>
+<pre class="literallayout">git init
+git submodule add git@github.com:baphled/tmux-powerline.git powerline
+mv ~/.tmux.conf tmux.conf
+ln -s tmux.conf ~/.tmux.conf</pre>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_customisation"></a>Customisation</h5></div></div></div>
+<p>The main changes needed where to disable the right status bar fully so my panel list can live there and to include and
+customise the left bar, where I’d like most of my information to be stored.</p>
+<p>I made a quite a few tweaks to my tmux conf file which you can see
+<a class="ulink" href="http://github.com/baphled/tmuxfiles/blob/c933919bb3c2cc4eb904c7d101524cacdeff2ee7/tmux.conf" target="_top">here</a>.</p>
+<p>I don’t really want to use the right side status bar at the moment, though this may change at some point down the road.
+So I want to make sure that the right side status bar doesn’t display, I do this by making the status empty.</p>
+<p>The one things that annoys me about the current state of <code class="literal">tmux-powerline</code> is that the status bars generally need to be
+customised but there is no real way of doing this at the moment without having to fork the project and make it my own.
+This is cool and everything but keeping things up to date can become a pain.</p>
+<p>So in this case I’m going create my own status file, basically copying my current left statusbar and move it to my
+repository.</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h5 class="title">
+<a id="_the_final_step"></a>The final step</h5></div></div></div>
+<p>The first two parts of my customised status bar are actually done by hand, though it was a cool things to work out at
+the time I should create what <code class="literal">tmux-powerline</code> calls segments. There is already one to display the session name and pane
+number but I want to customise it to look like how I currently have it.</p>
+<p>As I already have a forked version of the repository it is easy enough to make this change and remove prerolled version.
+Before I do that though I should add a segment for displaying my current username.</p>
+<p>Now I have powerline setup for both tmux and vim :)</p>
+<p><span class="inlinemediaobject"><img src="images/tmux_and_vim_powerline.png" width="500" alt="preferred setup"></span></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="section" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a id="_day_37"></a>Day 37</h3></div></div></div>
+<p>I’ve been having issues with installing my dotfiles on new machines, mainly as there are quite a few dependancies and
+git submodules. I can get around this by creating rake tasks that allow me to install these dependancies and keep my
+submodules up to date.</p>
+<p>The first task I want to capture is installing my dotfiles. To do this I need to take the following steps:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+Make sure I don’t have the files already installed
+</li>
+<li>
+Install brew (if running OSX)
+</li>
+<li>
+Install rvm with ruby
+</li>
+<li>
+Clone dotfile repository
+</li>
+<li>
+Recursively initialise and update all dotfiles
+</li>
+<li>
+Install gems
+</li>
+</ul></div>
+<p></p>
+</div>
+</div>
+
+    </div>
+
+    <hr/>
+
+    <div class="nav" id="navfooter">
+    <table width="100%">
+      <tr><td width="33%" align="left">
+        
+         <a href="learn_my_tools.html">Prev</a><br/>
+         Learn my tools
+        
+      </td><td width="33%" align="center">
+        
+         <a href="index.html">Home</a><br/>
+         Dotfile Diaries
+        
+      </td><td width="33%" align="right">
+        
+          <a href="housekeeping_tools.html">Next</a><br/>
+          Housekeeping tools
+        
+      </td></tr>
+    </table>
+    </div>
+  </body>
+</html>

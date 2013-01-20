@@ -21,8 +21,8 @@
         
       </td><td width="33%" align="right">
         
-          <a href="housekeeping_tools.html">Next</a><br/>
-          Housekeeping tools
+          <a href="tweak_console.html">Next</a><br/>
+          Tweak console
         
       </td></tr>
     </table>
@@ -1596,11 +1596,18 @@ buffer is active when you have multiple buffers open.</p>
 patched font so <span class="emphasis"><em>brew</em></span> to the rescue.</p>
 <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
 <h3 class="title">Note</h3>
+<p>Add link to patched font</p>
+</div>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
 <p>This may take some time.</p>
 </div>
 <pre class="literallayout">brew install fontforge</pre>
+<p>I also needed to add a new directory</p>
+<pre class="literallayout">mkdir ~/.fonts</pre>
 <p>Once fontforge was installed I tried to install the patched font.</p>
-<pre class="literallayout">fontforge -script ~/dotvim/bundle/powerline/fontpatcher/fontpatcher Anonymous\ Pro.ttf</pre>
+<pre class="literallayout">fontforge -script ~/dotvim/bundle/powerline/fontpatcher/fontpatcher Anonymous\ Pro.ttf
+mv anonymous+Pro-Powerline-Powerline.ttf ~/.fonts/</pre>
 <p>Everything seemed to of installed fine: and I had setup the correct setting. So for now I’ll put a fork in this tweak and
 move on.</p>
 <pre class="literallayout">sudo fc-cache -vf</pre>
@@ -2625,8 +2632,8 @@ vim-snipmate
         
       </td><td width="33%" align="right">
         
-          <a href="housekeeping_tools.html">Next</a><br/>
-          Housekeeping tools
+          <a href="tweak_console.html">Next</a><br/>
+          Tweak console
         
       </td></tr>
     </table>

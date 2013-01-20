@@ -3,187 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="generator" content="AsciiDoc 8.6.7" />
+<meta name="generator" content="AsciiDoc 8.6.8" />
 <title>Dotfile Diaries</title>
 <style type="text/css">
-/* ---------------------------------------------------------------------------
-   Bare AsciiDoc styles
-   Ryan Tomayko <r@tomayko.com>
---------------------------------------------------------------------------- */
 
-body {
-  font-family:verdana,helvetica,arial,sans-serif;
-  font-size:81.25%;   /* 13px */
-  line-height:1.538;  /* 20px */
-  margin:40px auto 50px auto;
-  max-width:53.8461538462em; /* 790px */
-  color:#333;
-}
 
-em {
-  font-style:italic;
-}
-
-strong {
-  font-weight:bold;
-  color:#000;
-}
-
-tt {
-  font-family:consolas, 'lucida console', 'bitstream vera sans mono',
-             'courier new', monospace;
-  color:#000;
-  font-size: 8px;
-}
-
-p, ul, ol, dl {
-  margin:10px 0
-}
-
-dl {
-  margin-left:40px
-}
-
-dt {
-  font-weight:normal;
-  color:#000;
-}
-
-h1, h2, h3, h4, h5 {
-  font-family:'lucida grande',georgia,verdana,helvetica,arial,sans-serif;
-  font-weight:normal;
-  color:#000;
-}
-
-h1 {
-  font-size:40px;
-  line-height:1.428;
-  margin:20px 0;
-}
-
-h2 {
-  font-size:30px;
-  line-height:1.36363636; /* repeating, of course */
-  margin:60px 0 20px 0;
-}
-
-h2 + .sectionbody {}
-
-h3 {
-  font-size:24px;
-  line-height:1.1;
-  margin:30px 0 10px 0;
-}
-
-h4 {
-  font-size:18px;
-  line-height:1.1;
-  margin:20px 0 5px 0;
-}
-
-h5 {
-  font-size:13px;
-  font-style:italic;
-  line-height:1.1;
-}
-
-#header {
-  text-align:center;
-  margin-bottom:30px;
-}
-
-#header h1 { margin-bottom:0 }
-
-.title, .sidebar-title {
-  font-weight:normal;
-  color:#000;
-  margin-bottom:0;
-}
-
-.admonitionblock .title {
-  font-weight:bold;
-}
-
-.admonitionblock {
-  margin:30px 0px;
-  color:#555;
-}
-
-.admonitionblock td.icon {
-  width:30px;
-  padding-right:20px;
-  padding-left:20px;
-  text-transform:uppercase;
-  font-weight:bold;
-  color:#888;
-}
-
-.listingblock {
-  margin: 13px 0;
-}
-
-.listingblock .content {
-  border:1px solid silver;
-  background:#eee;
-  padding:5px;
-}
-
-.listingblock .content pre {
-  margin:0;
-}
-
-.literalblock .content {
-  margin-left:40px;
-}
-
-.verseblock .content {
-  white-space:pre
-}
-
-.sidebarblock .sidebar-content {
-  border:1px solid silver;
-  background:#FFFFEE;
-  padding:0 10px;
-  color:#222;
-  font-size:smaller;
-  line-height:1.5;
-}
-
-.sidebar-title {
-  margin:10px 0;
-  font-weight:bold;
-  color:#442;
-}
-
-.quoteblock-content {
-  font-style:italic;
-  color:#444;
-  margin-left:40px;
-}
-
-.quoteblock-content .attribution {
-  font-style:normal;
-  text-align:right;
-  color:#000;
-}
-
-.exampleblock-content *:first-child { margin-top:0 }
-.exampleblock-content {
-  border-left:2px solid silver;
-  padding-left:8px;
-}
-
-#footer {
-  font-size:11px;
-  margin-top:40px;
-  border-top:1px solid silver;
-  color:#555;
-}
-
-#author {
-  color:#000;
-  text-transform:uppercase
-}
 </style>
 <script type="text/javascript">
 /*<![CDATA[*/
@@ -425,14 +249,14 @@ terminal this can be manage a lot easier and at least allow me to set things up 
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>duration: 2 weeks
+<pre><code>duration: 2 weeks
 notes:
   * Setting up irssi
   * Customise irssi to my liking
   * Get the basic of mutt setup
   * Find and customise a command line browser
   * Setup authoring tools
-  * Setup tmux and tmuxinator</tt></pre>
+  * Setup tmux and tmuxinator</code></pre>
 </div></div>
 </div></div>
 <div style="page-break-after:always"></div>
@@ -448,7 +272,7 @@ and how it improves my day to day work flow.</p></div>
 <div class="paragraph"><p>What I want here is my old setup tweaked to make it easy to change channels and see is in a room.</p></div>
 <div class="sect3">
 <h4 id="_setting_up_irssi">Setting up irssi</h4>
-<div class="paragraph"><p>I&#8217;m using a Mac and use brew. So it is as easy as running <tt>brew install irssi</tt>.</p></div>
+<div class="paragraph"><p>I&#8217;m using a Mac and use brew. So it is as easy as running <code>brew install irssi</code>.</p></div>
 <div class="paragraph"><p>Job done!</p></div>
 <div class="sect4">
 <h5 id="_configuring">Configuring</h5>
@@ -476,10 +300,10 @@ create a window every time I join a new channel and remove the window once I
 have left one. To do this we&#8217;ll need aliases.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>/SET autocreate_windows ON`
+<pre><code>/SET autocreate_windows ON`
 /SERVER ADD -auto -network freenode irc.freenode.net
 /save
-/exit</tt></pre>
+/exit</code></pre>
 </div></div>
 <div class="paragraph"><p>This will save us from having to add the FQDN and refer to it as an alias,
 freenode in this case.</p></div>
@@ -501,17 +325,17 @@ tweak this script to get the layout I want.</p></div>
 <div class="paragraph"><p>We will need to create a scripts directory for scripts we want to autoload.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>/WINDOW NEW
+<pre><code>/WINDOW NEW
 /WINDOW NAME hilight
 /WINDOW MOVE up
 /WINDOW SIZE 10
 /WINDOW stick
-/layout save</tt></pre>
+/layout save</code></pre>
 </div></div>
 <div class="paragraph"><p>This will create a new window called <em>hilight</em> which will be displayed at the
 top be sticking 10 lines high, which means that it will stay in position
 regardless of changing channel windows.</p></div>
-<div class="paragraph"><p>Finally we make sure that our nick is highlighted with <tt>/hilight nick</tt></p></div>
+<div class="paragraph"><p>Finally we make sure that our nick is highlighted with <code>/hilight nick</code></p></div>
 <div class="paragraph"><p>We&#8217;ll leave this for now and come back to tweaking our settings later.</p></div>
 </div>
 <div class="sect4">
@@ -566,7 +390,7 @@ I&#8217;ll use bjurl.pl to highlight links and give me the ability to open and c
 them.</p></div>
 <div class="paragraph"><p>I used this version of
 <a href="http://raw.github.com/sukima/bjurl/master/bjurl.pl">bjurl</a>. I&#8217;ll copy it to
-the usual place (<tt>~/.irssi/scripts/autorun</tt>) we can than run the script and we
+the usual place (<code>~/.irssi/scripts/autorun</code>) we can than run the script and we
 have a nicely highlighted URL&#8217;s :D</p></div>
 <div class="paragraph"><p>To open files we&#8217;ll need to do some more configuration, as I&#8217;m on a mac, I&#8217;ll
 download Lynx and get it to open in a new tmux window. We&#8217;ll setup our browser as lynx as it&#8217;s a command line browser.</p></div>
@@ -579,39 +403,39 @@ download Lynx and get it to open in a new tmux window. We&#8217;ll setup our bro
 <div class="paragraph"><p>First, the download:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>brew install bitlbee</tt></pre>
+<pre><code>brew install bitlbee</code></pre>
 </div></div>
 <div class="paragraph"><p>Now we can connect to one of the bitlbee servers and get things setup.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>/win new hidden
+<pre><code>/win new hidden
 /win name bitlbee
-/server im.uk.bitlbee.org 6667</tt></pre>
+/server im.uk.bitlbee.org 6667</code></pre>
 </div></div>
 <div class="paragraph"><p>This should automatically join you to the "&amp;bitlbee" channel, this is where
 you&#8217;ll be able to setup your account and send messages :)</p></div>
 <div class="paragraph"><p>Once connected you&#8217;ll need to register and set a password</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>/register &lt;username&gt;
-/OPER</tt></pre>
+<pre><code>/register &lt;username&gt;
+/OPER</code></pre>
 </div></div>
 <div class="paragraph"><p>Once you have entered these commands you will be prompted to enter your password</p></div>
 <div class="paragraph"><p>All set? good, now we can start adding accounts</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>account add jabber &lt;your gmail email address&gt;
-/OPER</tt></pre>
+<pre><code>account add jabber &lt;your gmail email address&gt;
+/OPER</code></pre>
 </div></div>
 <div class="paragraph"><p>Now you can enter your IM&#8217;s password. Rince and repeat until you have added all your accounts.</p></div>
-<div class="paragraph"><p>Finally call <tt>account on</tt> bitlbee will connect you to all of your accounts :)</p></div>
+<div class="paragraph"><p>Finally call <code>account on</code> bitlbee will connect you to all of your accounts :)</p></div>
 <div class="paragraph"><p>All accounts successfully connected to will be stored so the next time you connect to bitlbee all you need to do is run the following commands</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>/identify &lt;username&gt;
-/OPER</tt></pre>
+<pre><code>/identify &lt;username&gt;
+/OPER</code></pre>
 </div></div>
-<div class="paragraph"><p>Once you enter your password you can then call <tt>account on</tt> and log into all IM&#8217;s</p></div>
+<div class="paragraph"><p>Once you enter your password you can then call <code>account on</code> and log into all IM&#8217;s</p></div>
 <div class="paragraph"><p>Simples :D</p></div>
 <div class="sect4">
 <h5 id="_resources_2">Resources</h5>
@@ -635,17 +459,17 @@ of time chatting on IRC with in my misspent youth.</p></div>
 <div class="paragraph"><p>We&#8217;ll need to add the Net::Twitter from CPAN:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>sudo perl -MCPAN -e 'install Net::Twitter'
-sudo perl -MCPAN -e 'install JSON::Any'</tt></pre>
+<pre><code>sudo perl -MCPAN -e 'install Net::Twitter'
+sudo perl -MCPAN -e 'install JSON::Any'</code></pre>
 </div></div>
 <div class="paragraph"><p>We&#8217;ll also need to run the script and pass our username:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>/win new hidden
+<pre><code>/win new hidden
 /win name twitter
 /script load twirssi.pl
 /twitter_login username
-/twirssi_oauth &lt;username&gt;@Twitter &lt;pin&gt;</tt></pre>
+/twirssi_oauth &lt;username&gt;@Twitter &lt;pin&gt;</code></pre>
 </div></div>
 <div class="paragraph"><p>This will create a new hidden window call it twitter and load the script and
 finally set the username. You will then be asked to authorise the application
@@ -653,8 +477,8 @@ by visiting the displayed link, once this is done, you should then be ready to
 use twitter via irssi :)</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>/layout save
-/save</tt></pre>
+<pre><code>/layout save
+/save</code></pre>
 </div></div>
 <div class="paragraph"><p>Now you settings are saved we can happily close irssi knowing that our setup
 will still persist :D</p></div>
@@ -681,7 +505,7 @@ like</a> functionality.</p></div>
 go. Run the following:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>/run vim_mode</tt></pre>
+<pre><code>/run vim_mode</code></pre>
 </div></div>
 <div class="paragraph"><p>Then we should be good to go :)</p></div>
 <div class="paragraph"><p>The source file has heaps of information, much of which I&#8217;ve not had the chance
@@ -690,14 +514,14 @@ like. So take look at that and determine what is the best for you :)</p></div>
 <div class="paragraph"><p>For the lazy, like me, here&#8217;s what I&#8217;ve done so far to get started.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>/statusbar window add vim_mode
-/statusbar window add vim_windows</tt></pre>
+<pre><code>/statusbar window add vim_mode
+/statusbar window add vim_windows</code></pre>
 </div></div>
 <div class="paragraph"><p>We&#8217;ll want to save these changes</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>/layout save
-/save</tt></pre>
+<pre><code>/layout save
+/save</code></pre>
 </div></div>
 <div class="paragraph"><p>This will help you to know when you are in Insert or Command mode.</p></div>
 <div class="paragraph"><p>There&#8217;s heaps of documentation on vim-mode via the source file, so delve in and
@@ -706,34 +530,34 @@ not too much hassle to setup mapping for the most important things :)</p></div>
 <div class="paragraph"><p>At present these are the mappings that I&#8217;ve setup to get started with</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>map &lt;C-H&gt; &lt;BS&gt;
+<pre><code>map &lt;C-H&gt; &lt;BS&gt;
 map &lt;Leader&gt; ,
 map &lt;Leader&gt;p :bprev
-map &lt;Leader&gt;n :bnext</tt></pre>
+map &lt;Leader&gt;n :bnext</code></pre>
 </div></div>
-<div class="paragraph"><p>I remapped the leader key to the <tt>'</tt> as this is what I have setup in my vim. I
-also setup <tt>:bprev `and `:bnext</tt> so that I can easily move around to the next
+<div class="paragraph"><p>I remapped the leader key to the <code>'</code> as this is what I have setup in my vim. I
+also setup <code>:bprev `and `:bnext</code> so that I can easily move around to the next
 and previous windwos within irssi.</p></div>
 <div class="paragraph"><p>It would be nice to create a binding for specifying a window to navigate to
 but I&#8217;ll leave this for another time.</p></div>
 <div class="paragraph"><p>I could also setup bindings for navigating between split windows by adding the
-below mappings to  <tt>vim_moderc</tt></p></div>
+below mappings to  <code>vim_moderc</code></p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>map &lt;C-h&gt; &lt;C-w&gt;h
+<pre><code>map &lt;C-h&gt; &lt;C-w&gt;h
 map &lt;C-j&gt; &lt;C-w&gt;j
 map &lt;C-k&gt; &lt;C-w&gt;k
-map &lt;C-l&gt; &lt;C-w&gt;l</tt></pre>
+map &lt;C-l&gt; &lt;C-w&gt;l</code></pre>
 </div></div>
 <div class="paragraph"><p>We&#8217;ll also want to add bingins for navigating. Irssi uses &lt;ESC&gt; # to navigate
 to a given window, as we have vim-mode setup &lt;ESC&gt; is used to change vim modes
 so we&#8217;ll need to remap these so that they would with the new setup.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>MAPPING TO BE ADDED LATER</tt></pre>
+<pre><code>MAPPING TO BE ADDED LATER</code></pre>
 </div></div>
-<div class="paragraph"><p>Making <tt>&lt;esc&gt;</tt> has been remapped we should be able to easily move around
-windows without having to rely on our newly created <tt>&lt;leader&gt;p</tt> and <tt>&lt;leader&gt;n</tt>
+<div class="paragraph"><p>Making <code>&lt;esc&gt;</code> has been remapped we should be able to easily move around
+windows without having to rely on our newly created <code>&lt;leader&gt;p</code> and <code>&lt;leader&gt;n</code>
 keys.</p></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -769,7 +593,7 @@ Created a new repository on github
 </li>
 <li>
 <p>
-ignored files with the pattern <tt>scripts/twirssi.*</tt>
+ignored files with the pattern <code>scripts/twirssi.*</code>
 </p>
 </li>
 <li>
@@ -794,7 +618,7 @@ This will change some point in this process
 </li>
 <li>
 <p>
-Copy my twirssi auth files to <tt>~/dotirssi/scripts</tt>
+Copy my twirssi auth files to <code>~/dotirssi/scripts</code>
 </p>
 </li>
 </ul></div>
@@ -814,18 +638,18 @@ allow me to deal with content when I choose.</p></div>
 we&#8217;ll use <a href="http://github.com/sukima/bjurl/blob/master/bjurl.pl">bjurl</a> for this.</p></div>
 <div class="paragraph"><p>As with most plugins this is as simple as downloading the script and
 adding it to your irssi script directory.</p></div>
-<div class="paragraph"><p>If your already running irssi run <tt>/run bjurl</tt>.</p></div>
-<div class="paragraph"><p>As I&#8217;m using a mac, I needed to to set the <tt>browse_command</tt> settings to
+<div class="paragraph"><p>If your already running irssi run <code>/run bjurl</code>.</p></div>
+<div class="paragraph"><p>As I&#8217;m using a mac, I needed to to set the <code>browse_command</code> settings to
 open links just how I want it to.</p></div>
 <div class="paragraph"><p>First we need a new tmux window to start lynx in.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>tmux new-window -t workbench -s interwepts</tt></pre>
+<pre><code>tmux new-window -t workbench -s interwepts</code></pre>
 </div></div>
 <div class="paragraph"><p>We&#8217;ll need tell bjurl to behave as we want:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>/set browse_command tmux send-keys -t interwepts 'lynx $1' C-m</tt></pre>
+<pre><code>/set browse_command tmux send-keys -t interwepts 'lynx $1' C-m</code></pre>
 </div></div>
 <div class="paragraph"><p>And that&#8217;s pretty much it for now, we can now load links within our current session :)</p></div>
 <div class="paragraph"><p>It would be cool if we had a separate session strictly for browsing, that
@@ -850,7 +674,7 @@ Admittedly I&#8217;m not particularly a fan of tabs, mainly as I tend to build u
 go back to them, but I&#8217;ll give it a whirl and see what the pros and cons of it as opposed to lynx.</p></div>
 <div class="sect3">
 <h4 id="_playing_with_w3m">Playing with w3m</h4>
-<div class="paragraph"><p>As always I used brew <tt>brew install w3m</tt> to get things rolling.</p></div>
+<div class="paragraph"><p>As always I used brew <code>brew install w3m</code> to get things rolling.</p></div>
 <div class="paragraph"><p>So this is what w3m looks like out of the box.</p></div>
 <div class="paragraph"><p><span class="image">
 <img src="images/w3m-default.png" alt="default setup" width="500" />
@@ -858,7 +682,7 @@ go back to them, but I&#8217;ll give it a whirl and see what the pros and cons o
 <div class="paragraph"><p>Off the bat the colours are all wrong, trying to red blue text is near
 impossible when using a black background, so that had to be changed.</p></div>
 <div class="paragraph"><p>The other issue was that though I still had my vim keys I could not use
-<tt>&lt;C-B&gt;</tt> and <tt>&lt;C-F&gt;</tt> to move around, which is annoying, that&#8217;ll have to be
+<code>&lt;C-B&gt;</code> and <code>&lt;C-F&gt;</code> to move around, which is annoying, that&#8217;ll have to be
 changed too.</p></div>
 <div class="admonitionblock">
 <table><tr>
@@ -872,7 +696,7 @@ changed too.</p></div>
 <div class="paragraph"><p>I also couldn&#8217;t see URL&#8217;s at all.</p></div>
 <div class="paragraph"><p>I guess the first step is to work out how to customise w3m so that we
 can get those colours sorted and give it some vim love.</p></div>
-<div class="paragraph"><p>Ok, so changing the settings is quite easy to get to, simply press <tt>o</tt>
+<div class="paragraph"><p>Ok, so changing the settings is quite easy to get to, simply press <code>o</code>
 whilst having w3m open and the settings page will be displayed. We
 simple need to scroll down to <em>Colour Settings</em> and specify the colours we desire.</p></div>
 <div class="paragraph"><p>Viewing links it&#8217;s just as easy as interacting with any other link so
@@ -880,18 +704,18 @@ that&#8217;s cool :)</p></div>
 <div class="paragraph"><p>The only things that niggles me is not being able to set up leader key</p></div>
 <div class="paragraph"><p>The most important once for the moment are to page up and down quickly
 as the default mappings are quite a stretch.</p></div>
-<div class="paragraph"><p>Add the below to the keymap file within <tt>~/.w3m</tt> gives me the ability to
+<div class="paragraph"><p>Add the below to the keymap file within <code>~/.w3m</code> gives me the ability to
 do exactly this.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>keymap  F     NEXT_PAGE
-keymap  B     PREV_PAGE</tt></pre>
+<pre><code>keymap  F     NEXT_PAGE
+keymap  B     PREV_PAGE</code></pre>
 </div></div>
 <div class="paragraph"><p>Now that w3m is setup a for navigating a little easier, I&#8217;ll swap out
 lynx for w3m.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>/set browse_command tmux send-keys -t interwepts 'w3m $1' C-m</tt></pre>
+<pre><code>/set browse_command tmux send-keys -t interwepts 'w3m $1' C-m</code></pre>
 </div></div>
 <div class="paragraph"><p>We&#8217;ll run with this for the moment as see how it fairs.</p></div>
 <div class="paragraph"><p><span class="image">
@@ -903,7 +727,7 @@ config file to make it less specific to a Mac.</p></div>
 box, I probably won&#8217;t have brew installed and I prefer to have all my settings
 controlled locally so we wont need the references to the skeleton configs.</p></div>
 <div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+<div class="content"><!-- Generator: GNU source-highlight 3.1.7
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
@@ -913,9 +737,9 @@ http://www.gnu.org/software/src-highlite -->
 <div class="paragraph"><p>It now looks like this:</p></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>    urimethodmap ~/.w3m/urimethodmap
+<pre><code>    urimethodmap ~/.w3m/urimethodmap
     mailcap ~/.w3m/mailcap
-    mime_types ~/.mime.types</tt></pre>
+    mime_types ~/.mime.types</code></pre>
 </div></div>
 <div class="paragraph"><p>So now we&#8217;re pretty much ready to play around with it for a while and take
 notes of things that I&#8217;d like to change.</p></div>
@@ -963,15 +787,15 @@ my current setup so that I don&#8217;t get email overload :)</p></div>
 <div class="sect4">
 <h5 id="_setting_things_up">Setting things up</h5>
 <div class="paragraph"><p>I had a better setup a while back but after rummaging around for ancient backups I decided to start from scratch.</p></div>
-<div class="paragraph"><p>Again, I&#8217;ll be using brew to get mutt installed <tt>brew install mutt</tt></p></div>
+<div class="paragraph"><p>Again, I&#8217;ll be using brew to get mutt installed <code>brew install mutt</code></p></div>
 <div class="paragraph"><p>You&#8217;ll need to run the following commands:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>mkdir -p ~/.mutt/cache/headers
+<pre><code>mkdir -p ~/.mutt/cache/headers
 mkdir ~/.mutt/cache/bodies
-touch ~/.mutt/certificates</tt></pre>
+touch ~/.mutt/certificates</code></pre>
 </div></div>
-<div class="paragraph"><p>Next I needed to create a <tt>.muttrc</tt> file, to setup my GMail account. I
+<div class="paragraph"><p>Next I needed to create a <code>.muttrc</code> file, to setup my GMail account. I
 used this example
 <a href="http://github.com/baphled/dotmutt/raw/master/muttrc">here</a> to get things
 started.</p></div>
@@ -987,28 +811,28 @@ my newest emails are displayed first.</p></div>
 <div class="paragraph"><p>So I had to go into my muttrc file and make this changes</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>set sort_aux = 'reverse-date'</tt></pre>
+<pre><code>set sort_aux = 'reverse-date'</code></pre>
 </div></div>
 <div class="paragraph"><p>And make sure I also had the following in my config too:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>set sort = 'threads'</tt></pre>
+<pre><code>set sort = 'threads'</code></pre>
 </div></div>
 <div class="paragraph"><p>Mutt is now setup, well enough to start playing around, I&#8217;ll work on
 integrating this into my workflow as time goes on.</p></div>
 <div class="paragraph"><p>The final things is to move this into it&#8217;s own repository for now, as I
 will be restarting my dotfiles from scratch once I have all these pieces
 setup.</p></div>
-<div class="paragraph"><p>I did what I usually do, created a git repo and moved my <tt>.muttrc</tt> file
-to <tt>~/.mutt/muttrc</tt> and then renamed the directory to dotmutt.</p></div>
+<div class="paragraph"><p>I did what I usually do, created a git repo and moved my <code>.muttrc</code> file
+to <code>~/.mutt/muttrc</code> and then renamed the directory to dotmutt.</p></div>
 <div class="paragraph"><p>Once this was done I went through the motion of pushing the setting to a
 new repository.</p></div>
 <div class="paragraph"><p>I then used braid</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>braid add git://github.com/baphled/muttfiles.git dotmutt
+<pre><code>braid add git://github.com/baphled/muttfiles.git dotmutt
 ln -s dotmutt .mutt
-ln -s .mutt/muttrc .muttrc</tt></pre>
+ln -s .mutt/muttrc .muttrc</code></pre>
 </div></div>
 <div class="paragraph"><p>Then everything was setup as it where :)</p></div>
 </div>
@@ -1076,7 +900,7 @@ it for publishing other material.</p></div>
 <div class="paragraph"><p>Once installed I started initialised the new book.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git scribe init</tt></pre>
+<pre><code>git scribe init</code></pre>
 </div></div>
 <div class="paragraph"><p>Once this was done I had the basic setup needed to move my diary. git-scribe
 uses AsciiDoc to format content so I needed to convert the old markdown. That
@@ -1084,8 +908,8 @@ wasn&#8217;t so much trouble as there isn&#8217;t much different in the markup. 
 couple of vim macros and went through the pages and updated them accordingly.
 The main changes needed were related to the titles of each entry.</p></div>
 <div class="paragraph"><p>Once the files where moved into the <em>book</em> directory and the format of the
-content was setup it was easy to generate the site with one command <tt>git scribe
-gen site</tt>. In the <em>output</em> directory was the generated diary nicely formatted
+content was setup it was easy to generate the site with one command <code>git scribe
+gen site</code>. In the <em>output</em> directory was the generated diary nicely formatted
 and indexed.</p></div>
 <div class="sect4">
 <h5 id="_todo_4">TODO</h5>
@@ -1138,17 +962,17 @@ start my dotfiles anew and will properly document the process.</p></div>
 <div class="paragraph"><p>For now I want to focus on how to automatically spawn a tmux session along with
 the default windows I use on a day to day basic.</p></div>
 <div class="paragraph"><p>I&#8217;m using tmux along with tmuxinator to help manage my setting.</p></div>
-<div class="paragraph"><p>Installing tmux is done simply by call <tt>brew install tmux</tt> once this has
+<div class="paragraph"><p>Installing tmux is done simply by call <code>brew install tmux</code> once this has
 been installed we are ready to play with tmux. As I mentioned I&#8217;m using
 tmuxinator which is a ruby gem so we&#8217;ll add that to our Gemfile:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>gem 'tmuxinator'</tt></pre>
+<pre><code>gem 'tmuxinator'</code></pre>
 </div></div>
-<div class="paragraph"><p>Running <tt>bundle install</tt> will install tmuxinator and then we are good to go.</p></div>
-<div class="paragraph"><p>Tmuxinator stores it&#8217;s configuration settings in the <tt>~/.tmuxinator</tt> directory
-but we can create a new setup my running <tt>mux create workbench</tt>. I&#8217;ve already
-done this so I just ran <tt>mux open workbench</tt> to open the file in vim.</p></div>
+<div class="paragraph"><p>Running <code>bundle install</code> will install tmuxinator and then we are good to go.</p></div>
+<div class="paragraph"><p>Tmuxinator stores it&#8217;s configuration settings in the <code>~/.tmuxinator</code> directory
+but we can create a new setup my running <code>mux create workbench</code>. I&#8217;ve already
+done this so I just ran <code>mux open workbench</code> to open the file in vim.</p></div>
 <div class="sect4">
 <h5 id="_the_layout">The layout</h5>
 <div class="paragraph"><p>What I want here is a single session that setups up my perfect setup, allowing
@@ -1205,7 +1029,7 @@ Control Centre
 </ul></div>
 <div class="paragraph"><p>I like to know if there are any changes that to my dotfiles master branch,
 ideally this should be a panel in a window, for now this is be another stand
-alone window that periodically calls <tt>git wtf</tt> to check for changes.</p></div>
+alone window that periodically calls <code>git wtf</code> to check for changes.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -1236,7 +1060,7 @@ fire up the new session.</p></div>
 <h5 id="_my_config">My config</h5>
 <div class="listingblock">
 <div class="content">
-<pre><tt>  project_name: workbench
+<pre><code>  project_name: workbench
   project_root: ~/
   rvm: 1.9.2-head@workbench
   pre: cd ~/ &amp;&amp; bundle
@@ -1252,13 +1076,13 @@ fire up the new session.</p></div>
     - Spyhole: tail -f ~/workbench.log
     - "Dotfile Diaries": vi ~/Documents/Diary
     - 'Control centre': git wft
-    - Toybox: pry</tt></pre>
+    - Toybox: pry</code></pre>
 </div></div>
-<div class="paragraph"><p>Now with this setup, we can simple run <tt>mux workbench</tt> and tmuxinator will
+<div class="paragraph"><p>Now with this setup, we can simple run <code>mux workbench</code> and tmuxinator will
 handle the rest, creating and setting up each of my desired windows along with their separate tasks :)</p></div>
 <div class="paragraph"><p>I won&#8217;t go into detail about my mappings and my config, as it can be
 <a href="https://github.com/baphled/dotfiles/blob/master/.tmux.conf">here</a>, and I&#8217;d like
-to leave a broader explaination when I starting tinkering with <tt>~/tmux.conf</tt>.</p></div>
+to leave a broader explaination when I starting tinkering with <code>~/tmux.conf</code>.</p></div>
 </div>
 <div class="sect4">
 <h5 id="_todo_5">TODO</h5>
@@ -1292,12 +1116,12 @@ out.</p></div>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>duration: 8 days
+<pre><code>duration: 8 days
 notes:
   * start my dotfiles from scratch
   * define local files to hide
   * setup tmux and tmuxinator
-  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</tt></pre>
+  * pull in my versioned settings (oh-my-zsh, dotmutt, dotirssi)</code></pre>
 </div></div>
 </div></div>
 <div style="page-break-after:always"></div>
@@ -1404,7 +1228,7 @@ as productive as possible.</p></div>
 <div class="paragraph"><p>I&#8217;ll need to branch my current repository so that I can start a fresh, once
 this is done, the next thing to do will be to add the dependancies. I may look
 into using puppet or chef for this but if that is the case then I will want to
-make sure that my dotfiles knows how to do a <tt>bundle install</tt>.</p></div>
+make sure that my dotfiles knows how to do a <code>bundle install</code>.</p></div>
 <div class="paragraph"><p>So I guess the first thing will be to install rvm and get that setup so I can
 setup ruby.</p></div>
 <div class="paragraph"><p>I should also document this process so that I can turn it into a script which
@@ -1445,9 +1269,9 @@ everything from your repository and working directory</p></div>
 start from scratch whilst keeping my master branch intacted.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git symbolic-ref HEAD refs/heads/stripped
+<pre><code>git symbolic-ref HEAD refs/heads/stripped
 rm .git/index
-git clean -fdx</tt></pre>
+git clean -fdx</code></pre>
 </div></div>
 <div class="paragraph"><p>This took some time and basically removed everything in my home
 directory, which I didn&#8217;t really think about prior to running the
@@ -1467,7 +1291,7 @@ prompt and for the dependancies for my workflow.</p></div>
 new in the latest releases.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>curl -L https://get.rvm.io | bash -s stable --ruby</tt></pre>
+<pre><code>curl -L https://get.rvm.io | bash -s stable --ruby</code></pre>
 </div></div>
 <div class="paragraph"><p>This will install the latest version of RVM and Ruby, so I am well on my
 way to getting Ruby setup on my system.</p></div>
@@ -1478,13 +1302,13 @@ installed in global, so that they are available everywhere.</p></div>
 done by using the following command.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>rvm gemset use global</tt></pre>
+<pre><code>rvm gemset use global</code></pre>
 </div></div>
 <div class="paragraph"><p>Now that I am using the correct gemset, I need to make sure that I run
 bundle to make sure that everything is in place.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>bundle</tt></pre>
+<pre><code>bundle</code></pre>
 </div></div>
 <div class="paragraph"><p>Once this is complete I have all my gems and rvm setup and ready to go.</p></div>
 <div class="sect4">
@@ -1502,20 +1326,20 @@ braid.</p></div>
 <div class="paragraph"><p>I had the following gems installed before I started this process:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>braid
+<pre><code>braid
 git-scribe
 tmuxinator
-pry</tt></pre>
+pry</code></pre>
 </div></div>
 <div class="paragraph"><p>I no longer want to use braid, so I will firstly remove all the external
 repositories</p></div>
 <div class="paragraph"><p>I also have the following external repositories:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>oh-my-zsh
+<pre><code>oh-my-zsh
 dotirssi
 muttfiles
-dotvim</tt></pre>
+dotvim</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -1529,7 +1353,7 @@ dotvim</tt></pre>
 keep my previous setup, I&#8217;ll need to create a new branch</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>gco -b remove_braid</tt></pre>
+<pre><code>gco -b remove_braid</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -1542,33 +1366,33 @@ keep my previous setup, I&#8217;ll need to create a new branch</p></div>
 <div class="paragraph"><p>We&#8217;ll start off by removing these via braid as follows:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>braid remove oh-my-zsh
+<pre><code>braid remove oh-my-zsh
 braid remove dotirssi
 braid remove dotmutt
-braid remove dotvim</tt></pre>
+braid remove dotvim</code></pre>
 </div></div>
 <div class="paragraph"><p>So the most important repository for me is oh-my-zsh it&#8217;s pretty much
 invaluable and it would be an idea to get this setup as soon as possible.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git@github.com:baphled/oh-my-zsh.git oh-my-zsh
+<pre><code>git submodule add git@github.com:baphled/oh-my-zsh.git oh-my-zsh
 git submodule init
-git submodule update</tt></pre>
+git submodule update</code></pre>
 </div></div>
 <div class="paragraph"><p>Now I have my zsh setup as a submodule I can make changes to the repository and
 push them directory to the right repository :)</p></div>
 <div class="paragraph"><p>The next thing is to do the same for my other repositories</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git@github.com:baphled/dotvim.git dotvim
+<pre><code>git submodule add git@github.com:baphled/dotvim.git dotvim
 git submodule add git@github.com:baphled/muttfiles.git dotmutt
-git submodule add git@github.com:baphled/dotirssi.git dotirssi</tt></pre>
+git submodule add git@github.com:baphled/dotirssi.git dotirssi</code></pre>
 </div></div>
 <div class="paragraph"><p>Now any changes made to my external repositories intermally or externally can
 now be easily tracked :)</p></div>
 <div class="paragraph"><p>The last step in the journey is to remove braid from my Gemfile as it is no
 longer needed directly by the repository. That is as easy as removing the line
-<tt>gem "braid"</tt> and running <tt>bundle</tt> again.</p></div>
+<code>gem "braid"</code> and running <code>bundle</code> again.</p></div>
 <div class="paragraph"><p>Now we have a cleaner repository and less worry in regards to how my other
 repositories are updated and managed.</p></div>
 <div class="paragraph"><p>So now that I am using git&#8217;s submodules to manage my external repositories I
@@ -1618,48 +1442,48 @@ step, so I guess the next things is to create some mail recipes.</p></div>
 <div class="paragraph"><p>So I&#8217;ll have to run the following to get the ball rolling:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>brew install msmtp</tt></pre>
+<pre><code>brew install msmtp</code></pre>
 </div></div>
-<div class="paragraph"><p>I then had to add the following to my <tt>.zshrc</tt></p></div>
+<div class="paragraph"><p>I then had to add the following to my <code>.zshrc</code></p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>MAIL=/home/baphled/mail/inbox &amp;&amp; export MAIL</tt></pre>
+<pre><code>MAIL=/home/baphled/mail/inbox &amp;&amp; export MAIL</code></pre>
 </div></div>
 <div class="paragraph"><p>Then  in my home directory I ran:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>touch .fetchmailrc
-chmod 700 .fetchmailrc</tt></pre>
+<pre><code>touch .fetchmailrc
+chmod 700 .fetchmailrc</code></pre>
 </div></div>
 <div class="paragraph"><p>I then needed to poll my main email account
   poll mail.my-email-account.net with proto POP3
     user <em>EMAILADDRESS</em> keep
     mda <em>/usr/bin/procmail -d %T</em></p></div>
-<div class="paragraph"><p>I put my credentials in my <tt>.netrc</tt> file as follows:</p></div>
+<div class="paragraph"><p>I put my credentials in my <code>.netrc</code> file as follows:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>machine mail.my-email-accoun.net
+<pre><code>machine mail.my-email-accoun.net
 login my-username
-password my-password</tt></pre>
+password my-password</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
-<td class="content">Make sure that <tt>.netrc</tt> is added to <tt>.gitignore</tt></td>
+<td class="content">Make sure that <code>.netrc</code> is added to <code>.gitignore</code></td>
 </tr></table>
 </div>
 <div class="paragraph"><p>I had to make sure that I had setup my email details properply and to do this I
 had to do the following:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>fetchmail</tt></pre>
+<pre><code>fetchmail</code></pre>
 </div></div>
 <div class="paragraph"><p>Once everything was setup properly fetchmail did it&#8217;s things and retrieved my
 email. This is the bare minimum I need to make sure that I have procmail
 working so that I can store my email in the right directories.</p></div>
-<div class="paragraph"><p>I need to then create the mail directory <tt>~/Mail</tt> which is where all my mail
+<div class="paragraph"><p>I need to then create the mail directory <code>~/Mail</code> which is where all my mail
 will end up.</p></div>
 </div>
 <div class="sect4">
@@ -1680,9 +1504,9 @@ should.</p></div>
 background process, this is quite easy with the follwoing macro:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>macro generic G \
+<pre><code>macro generic G \
   &lt;shell-escape&gt;'fetchmail'&lt;enter&gt; \
-  'Run fetchmail'</tt></pre>
+  'Run fetchmail'</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -1806,11 +1630,11 @@ and how to get that under some order.</p></div>
 </div>
 <div class="paragraph"><p>As with others I get quite a lot from various services, these can be
 filtered more as time goes on but for now I&#8217;d like a dumping ground
-<tt>social</tt> which will store all the unmatched emails that may slip through
+<code>social</code> which will store all the unmatched emails that may slip through
 procmails net.</p></div>
 <div class="paragraph"><p>I also like to not see email regarding jobs/roles I&#8217;m not interested in.
 Emails that have a given type of subject or come from know offenders
-(crappy recruitment consultants) should be sent to <tt>/dev/null</tt> so that I
+(crappy recruitment consultants) should be sent to <code>/dev/null</code> so that I
 don&#8217;t have to bother with them. This may need some tweaking but I think
 testing my recipes by dry running it against my main email address
 should help to get this refined relatively quickly</p></div>
@@ -1823,19 +1647,19 @@ have to meddle with procmailrc too much and keeps things nice a clean.</p></div>
 <div class="paragraph"><p>First things was to create a dummy email.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>From info@meetup.com  Wed Jul 18 00:00:20 2012
+<pre><code>From info@meetup.com  Wed Jul 18 00:00:20 2012
 From: John Doe &lt;info@meetup.com&gt;
 Sender: foobar-announce@meetup.com
 To: FooBar-announce@meetup.com
 Subject: [FooBar] FB Meetup group closing down
 Mailing-List: list FreelanceFriday-list@meetup.com; contact postmaster@meetup.com
 List-Id: &lt;FooBar-list.meetup.com&gt;
-List-Unsubscribe: &lt;mailto: support@meetup.com&gt;</tt></pre>
+List-Unsubscribe: &lt;mailto: support@meetup.com&gt;</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>BODY OF MESSAGE SEPARATED BY EMPTY LINE
-txt txt txt txt txt txt txt txt txt txt</tt></pre>
+<pre><code>BODY OF MESSAGE SEPARATED BY EMPTY LINE
+txt txt txt txt txt txt txt txt txt txt</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -1848,14 +1672,14 @@ txt txt txt txt txt txt txt txt txt txt</tt></pre>
 <div class="paragraph"><p>To do a dry run on my recipes I used the following command:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>procmail VERBOSE=on DEFAULT=/dev/null   \
+<pre><code>procmail VERBOSE=on DEFAULT=/dev/null   \
   LOGFILE=~/test.log                    \
-    ~/.procmailrc &lt; ~/emailtest.txt</tt></pre>
+    ~/.procmailrc &lt; ~/emailtest.txt</code></pre>
 </div></div>
 <div class="paragraph"><p>So the first thing I need to do is setup my social related email file.</p></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>  :0
+<pre><code>  :0
   * ^((List-Id|X-(Mailing-)?List):(.*[&lt;]\/[^&gt;]*))
   {
       LISTID=$MATCH
@@ -1864,28 +1688,28 @@ txt txt txt txt txt txt txt txt txt txt</tt></pre>
       * LISTID ?? ^\/[^@\.]*
       $MATCH
 
-  }</tt></pre>
+  }</code></pre>
 </div></div>
 <div class="paragraph"><p>From time to time I find myself on a MAJADOMO mail server so I&#8217;ll add
 this in to preempt these occasions.</p></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>  # MAJORDOMO - Automagically handle Majordomo lists
+<pre><code>  # MAJORDOMO - Automagically handle Majordomo lists
   :0
   * ^Sender: owner-[^@]+@[^@\+]+
   * ^Sender: owner-\/[^@\+]+
   {
       :0:
       $MATCH
-  }</tt></pre>
+  }</code></pre>
 </div></div>
 <div class="paragraph"><p>After doing a dry run the following directory was automatically added to
 my Mail directory.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>λ l Mail
+<pre><code>λ l Mail
 total 3187
--rw-------   1 baphled  staff      3187 19 Jul 20:24 FooBar-list</tt></pre>
+-rw-------   1 baphled  staff      3187 19 Jul 20:24 FooBar-list</code></pre>
 </div></div>
 <div class="paragraph"><p>Now the problem here is that mutt does not recognise the directory and I
 will have to still manually add each one as I notice them into my mutt
@@ -1912,14 +1736,14 @@ to work with a little help from the shell.</p></div>
 emailtest.txt file, after a while I came up with the following.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:0: # Change this so that it sorts by the digest group$
+<pre><code>:0: # Change this so that it sorts by the digest group$
 * ^(From):(\/.*).*\&lt;group-digests@linkedin.com\&gt;$
-`echo $MATCH | awk '{$NF=`}1' | sed 's/ //g'`$''`</tt></pre>
+`echo $MATCH | awk '{$NF=`}1' | sed 's/ //g'`$''`</code></pre>
 </div></div>
 <div class="paragraph"><p>The most cryptic is the following line:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>`echo $MATCH | awk '{$NF=`}1' | sed 's/ //g'`$''`</tt></pre>
+<pre><code>`echo $MATCH | awk '{$NF=`}1' | sed 's/ //g'`$''`</code></pre>
 </div></div>
 <div class="paragraph"><p>Basically I echo the matched address out to the shell which then returns
 everything but the last column, in this case it&#8217;s the email address. It
@@ -2132,7 +1956,7 @@ branch because of the changes to the external repositiories. So I had to
 issue the following command:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git co -f master</tt></pre>
+<pre><code>git co -f master</code></pre>
 </div></div>
 <div class="paragraph"><p>This allow me to checkout the master branch and disregard the previous
 warnings.</p></div>
@@ -2147,7 +1971,7 @@ warnings.</p></div>
 <div class="paragraph"><p>I could them do the following to merge my braidless branch into master.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>gup braidless</tt></pre>
+<pre><code>gup braidless</code></pre>
 </div></div>
 <div class="paragraph"><p>After this gladly there were no merge conflicts but all of my external
 repositiories were deleted.</p></div>
@@ -2194,7 +2018,7 @@ a mailbox.</p></div>
 format mutt can recognise.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>mailboxes =inbox =foodie =gaming</tt></pre>
+<pre><code>mailboxes =inbox =foodie =gaming</code></pre>
 </div></div>
 </div>
 <div class="sect4">
@@ -2211,13 +2035,13 @@ these situations. I ended up with the below code snippet which actually
 did what I wanted for the time being.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>mailboxes `ls -r ~/Mail | xargs | sed 's/ / =/g' | sed 's/inbox/=inbox/'`</tt></pre>
+<pre><code>mailboxes `ls -r ~/Mail | xargs | sed 's/ / =/g' | sed 's/inbox/=inbox/'`</code></pre>
 </div></div>
 <div class="paragraph"><div class="title">Hack alert</div><p>[NOTE]:
 I&#8217;m aware that this could be improved, ideally I want to prepend a <em>=</em>
 to the first word instead of relying on the fact the inbox will always
 be the first work back.</p></div>
-<div class="paragraph"><p>The above comand basically lists all the files in the <tt>~/Mail</tt> directory
+<div class="paragraph"><p>The above comand basically lists all the files in the <code>~/Mail</code> directory
 and adds them to a list and finally appends <em>=</em> to each inbox. This way
 I don&#8217;t have to worry about new inboxes being created and having to keep
 track of them. I sinply have to create a new procmail recipe and let
@@ -2261,27 +2085,27 @@ is a cli with a mutt feel. Ideal for me as I&#8217;m an avid mutt user.</p></div
 where it is and then install it on my system.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>brew tap posativ/homebrew-newsbeuter</tt></pre>
+<pre><code>brew tap posativ/homebrew-newsbeuter</code></pre>
 </div></div>
 <div class="paragraph"><p>This installs the brew formula needed to install newsbeuter. Once this was complete all I had to do is run:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>brew install newsbeuter</tt></pre>
+<pre><code>brew install newsbeuter</code></pre>
 </div></div>
 <div class="paragraph"><p>Again I had to wait, this time for newsbeuter to install, and then I was ready
 to play with newsbeuter.</p></div>
 <div class="paragraph"><p>I use GoogleReader for all my RSS feeds so I needed the following in my
-<tt>~/.newsbeuter/config</tt> file.</p></div>
+<code>~/.newsbeuter/config</code> file.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>urls-source "googlereader"
-googlereader-login "your-googlereader-account"</tt></pre>
+<pre><code>urls-source "googlereader"
+googlereader-login "your-googlereader-account"</code></pre>
 </div></div>
 <div class="paragraph"><p>I also wanted to be able to share and star articles so I also added the following mappings</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>googlereader-flag-share "a"
-googlereader-flag-star "b"</tt></pre>
+<pre><code>googlereader-flag-share "a"
+googlereader-flag-star "b"</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -2291,7 +2115,7 @@ googlereader-flag-star "b"</tt></pre>
 <td class="content">Need a way to not have to disclose my google user id.</td>
 </tr></table>
 </div>
-<div class="paragraph"><p>Once I started <tt>newsbeuter</tt> I had an empty list of feeds that I have subscribed
+<div class="paragraph"><p>Once I started <code>newsbeuter</code> I had an empty list of feeds that I have subscribed
 to in the past. The only thing left for me to do was to press <em>R</em> and wait for
 all of my feeds to update :)</p></div>
 <div class="paragraph"><p>Navigating through feeds is similar to vi but I&#8217;d like to actually have the
@@ -2303,10 +2127,10 @@ how easy it is to achieve.</p></div>
 browser of choice as it is already configured and working pretty well.
 newsbeuter also has podcast support :) so I can keep up to date with my
 podcasts without having to rely on itunes.</p></div>
-<div class="paragraph"><p>In my <tt>~/.newsbeuter/config</tt> file I added the following:</p></div>
+<div class="paragraph"><p>In my <code>~/.newsbeuter/config</code> file I added the following:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>browser w3m</tt></pre>
+<pre><code>browser w3m</code></pre>
 </div></div>
 <div class="paragraph"><p>Now that is setup I can easily open links by proving the number associated to
 the link of interest.</p></div>
@@ -2355,7 +2179,7 @@ leisure.</p></div>
 <div class="paragraph"><p>The first thing to do is add a new window to my workbench config</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>"Newsfeed": newsbeuter</tt></pre>
+<pre><code>"Newsfeed": newsbeuter</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -2435,14 +2259,14 @@ currently using.</p></div>
 <div class="paragraph"><p>I&#8217;ll be using the following command to add each plugin as a git module:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/username/project.git plugin/path</tt></pre>
+<pre><code>git submodule add git://github.com/username/project.git plugin/path</code></pre>
 </div></div>
-<div class="paragraph"><p>All but one of the plugins live in the <tt>bundle</tt> direction the only exception is
+<div class="paragraph"><p>All but one of the plugins live in the <code>bundle</code> direction the only exception is
 vim-pathogen with lives in the parent directory of my dotvim repository. So the
 command I need should output the following formats</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git://github.com/mileszs/ack.vim.git ack.vim.git
+<pre><code>git://github.com/mileszs/ack.vim.git ack.vim.git
 git://github.com/spf13/asciidoc-vim.git asciidoc-vim.git
 git://github.com/ayang/AutoComplPop.git AutoComplPop.git
 git://github.com/kien/ctrlp.vim.git ctrlp.vim.git
@@ -2481,26 +2305,26 @@ git://github.com/kana/vim-textobj-user vim-textobj-user
 git://github.com/jimenezrick/vimerl.git vimerl.git
 git://github.com/vitaly/vim-vividchalk.git vim-vividchalk.git
 git://github.com/mattn/webapi-vim.git webapi-vim.git
-git://github.com/tpope/vim-pathogen.git vim-pathogen.git</tt></pre>
+git://github.com/tpope/vim-pathogen.git vim-pathogen.git</code></pre>
 </div></div>
 <div class="paragraph"><p>This is enough to work with for the moment, I can easily do set this up so that
 I don&#8217;t have to manually add each plugin using git submodule. I need the
 following format to successfully add each plugin using git.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/username/project.git plugin/path</tt></pre>
+<pre><code>git submodule add git://github.com/username/project.git plugin/path</code></pre>
 </div></div>
 <div class="paragraph"><p>Running the following command gives me the output I want:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>cat .braids | grep 'url' | sed 's/url://' | awk -F/ '{print $0, $5}' &gt; ~/vim-plugins.txt</tt></pre>
+<pre><code>cat .braids | grep 'url' | sed 's/url://' | awk -F/ '{print $0, $5}' &gt; ~/vim-plugins.txt</code></pre>
 </div></div>
 <div class="paragraph"><p>Now that I have a list of repos that I will want to add as submodules. With a
 little vim trickery I can whip and basic bash script to automatically add my
 plugins.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>vi ~/vim-plugins.txt</tt></pre>
+<pre><code>vi ~/vim-plugins.txt</code></pre>
 </div></div>
 <div class="paragraph"><p>I normal mode I type the following:
   V38j
@@ -2510,25 +2334,25 @@ plugins.</p></div>
 vim-pathogen is saved to the parent directory.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:'&lt;,'&gt;normal I git submodule add</tt></pre>
+<pre><code>:'&lt;,'&gt;normal I git submodule add</code></pre>
 </div></div>
 <div class="paragraph"><p>Now I have the necessary list and location for all my plugins. I&#8217;d like to
 reverse the list to make sure that pathogen gets install first.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>awk '{x[NR] = $0} END { while ( NR &gt; 0 ) print x[NR--] }' vim-plugins.txt &gt; plugins.txt &amp;&amp; vim-plugins.txt</tt></pre>
+<pre><code>awk '{x[NR] = $0} END { while ( NR &gt; 0 ) print x[NR--] }' vim-plugins.txt &gt; plugins.txt &amp;&amp; vim-plugins.txt</code></pre>
 </div></div>
 <div class="paragraph"><p>This will use awk to reverse my plugin list as I wanted. Now it&#8217;s time to
 remove all the plugins via braid. Then I can then add my plugins again using
 git&#8217;s submodules.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>cat .braids | grep ': $' | sed 's/://' &gt; ~/plugins.txt | for plugin in `xargs`; do; rm -rf $plugin; done</tt></pre>
+<pre><code>cat .braids | grep ': $' | sed 's/://' &gt; ~/plugins.txt | for plugin in `xargs`; do; rm -rf $plugin; done</code></pre>
 </div></div>
 <div class="paragraph"><p>The above command creates the output needed to remove all of my plugins that
 were installed via braid.</p></div>
 <div class="paragraph"><p>Finally I just have to execute the script I created that will add all my
-plugins using <tt>git submodule</tt>.</p></div>
+plugins using <code>git submodule</code>.</p></div>
 <div class="paragraph"><p>Once this was done all I had to do is comit my changes and pull them in and I
 have no more need for braid anymore.</p></div>
 <div style="page-break-after:always"></div>
@@ -2540,7 +2364,7 @@ use this list to reinstall my plugins and get my dotfiles up to date.</p></div>
 <div class="paragraph"><p>Here&#8217;s a list of all my plugins that I currently have installed.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>ack.vim
+<pre><code>ack.vim
 asciidoc-vim
 autocomplpop
 ctrlp
@@ -2579,7 +2403,7 @@ vim-textobj-user
 vimerl
 vividchalk
 webapi-vim
-vim-pathogen</tt></pre>
+vim-pathogen</code></pre>
 </div></div>
 <div class="paragraph"><p>Later on I will focus on these plugins and learn and use them better. Ideally I should
 have a clean slate to improve my vi foo. For the moment though I will just add
@@ -2599,23 +2423,23 @@ podcasts I listen to and handling queuing and downloading them.</p></div>
 <div class="paragraph"><p>This is pretty simple really, first off I needed to add a podcasts to my feed
 list. I then checkout any new items via newsbeuter which picked up the podcast
 and listed it as expected. The next step is to queue up the latest podcast and
-listen to it via podbeuter. Pressing <tt>e</tt> enqueues the podcast which will add
-the podcast to the queue for downloading. Opening <tt>podbeuter</tt> showed me the
-podcast in the queue allowing me to press <tt>a</tt> to start the download.</p></div>
+listen to it via podbeuter. Pressing <code>e</code> enqueues the podcast which will add
+the podcast to the queue for downloading. Opening <code>podbeuter</code> showed me the
+podcast in the queue allowing me to press <code>a</code> to start the download.</p></div>
 <div class="paragraph"><p>Here&#8217;s the changes I needed to get podbeuter to download and listen to my
 podcasts.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>download-path       ~/Downloads
+<pre><code>download-path       ~/Downloads
 max-downloads       2
-player              afplay</tt></pre>
+player              afplay</code></pre>
 </div></div>
-<div class="paragraph"><p>Pressing <tt>p</tt> inside podbeuter actually plays the selected audio file and then
+<div class="paragraph"><p>Pressing <code>p</code> inside podbeuter actually plays the selected audio file and then
 we&#8217;re away. Podcast management from the command line :).</p></div>
 <div class="sect4">
 <h5 id="_adding_podbeuter_to_my_workflow">Adding podbeuter to my workflow</h5>
 <div class="paragraph"><p>As this has been described in previous entries this part is straight forward
-and only requires a reference to my <tt>~/tmuxinator/workbench.yml</tt> file. I simply
+and only requires a reference to my <code>~/tmuxinator/workbench.yml</code> file. I simply
 add a new <em>Podcast</em> window next to my <em>Newsfeed</em> window. Keeping all my
 communications close together.</p></div>
 <div style="page-break-after:always"></div>
@@ -2633,7 +2457,7 @@ two sessions will be started.</p></div>
 file as follows:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>project_name: comms
+<pre><code>project_name: comms
 project_root: ~/
 rvm: 1.9.2-head@global
 pre: cd ~/ &amp;&amp; bundle
@@ -2645,12 +2469,12 @@ tabs:
   - Email: mutt
   - Spyhole: tail -f ~/comms.log
   - "Dotfile Diaries": cd ~/Documents/Diary &amp;&amp; vi book/book.asc
-  - Top: top</tt></pre>
+  - Top: top</code></pre>
 </div></div>
 <div class="paragraph"><p>This leaves me with the following <em>workbench</em> setup:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>project_name: workbench
+<pre><code>project_name: workbench
 project_root: ~/
 rvm: 1.9.2-head@global
 pre: cd ~/ &amp;&amp; bundle
@@ -2658,22 +2482,22 @@ tabs:
   - Workbench: vim
   - Spyhole: tail -f ~/workbench.log
   - Toybox: be pry
-  - 'Control centre': git wtf</tt></pre>
+  - 'Control centre': git wtf</code></pre>
 </div></div>
 <div class="paragraph"><p>I now have two separate sessions to deal with my main two workflows further
 helping me to keep my workflows focussed and without switching context too
 much. Now I need to make sure that I can load these two sessions easily whilst
 keeping their session location in guessable positions.</p></div>
-<div class="paragraph"><p>All I need to do is add the following to my <tt>.zlogin</tt> file:</p></div>
+<div class="paragraph"><p>All I need to do is add the following to my <code>.zlogin</code> file:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>mux comms &amp;&amp; mux workbench</tt></pre>
+<pre><code>mux comms &amp;&amp; mux workbench</code></pre>
 </div></div>
 <div class="paragraph"><p>This will automatically start both sessions as soon as I start a zsh session.
-This could be moved to <tt>.profile</tt> if needed but for the moment I won&#8217;t worry
+This could be moved to <code>.profile</code> if needed but for the moment I won&#8217;t worry
 too much about that as I tend to use zsh more than anything else.</p></div>
 <div class="paragraph"><p>Once this is done I make sure that I only start iTerm with a default session
-and let <tt>.zlogin</tt> do the rest of the work.</p></div>
+and let <code>.zlogin</code> do the rest of the work.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 </div>
@@ -2690,17 +2514,17 @@ tmux and zsh.</p></div>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>duration: 4 weeks
+<pre><code>duration: 4 weeks
 start:    week 2
 notes:
-  * this could be done after the intial 6 weeks</tt></pre>
+  * this could be done after the intial 6 weeks</code></pre>
 </div></div>
 </div></div>
 <div style="page-break-after:always"></div>
 <div class="sect2">
 <h3 id="_day_16">Day 16</h3>
 <div class="paragraph"><p>The first thing I&#8217;m going to need to do is delete my old repository and create a new one with the same name. This will
-bork my <tt>dotfile</tt> repository submodule but I can easily fix that by either updating the reference manually or removing
+bork my <code>dotfile</code> repository submodule but I can easily fix that by either updating the reference manually or removing
 and reinstall the plugin via the command line.</p></div>
 <div class="paragraph"><p>Before I do this I want to move some of my settings around so that they can be easily added or left out if I desire. My
 aim here is to make it easier to choose the vim setup I prefer.</p></div>
@@ -2726,28 +2550,28 @@ settings so that I can start to improve my basic Vim skills.</p></div>
 repository with the same name and push the repository</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git push</tt></pre>
+<pre><code>git push</code></pre>
 </div></div>
 <div class="paragraph"><p>I now have a repository that is not forked to astrails. I still need to let my
 dotfiles know that the repository is update and has changed so I need to do the
 following</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>gup</tt></pre>
+<pre><code>gup</code></pre>
 </div></div>
 <div class="paragraph"><p>This detached the head of the repository, which is easy enough to fix, as long
 as there are no local changes.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>g co master</tt></pre>
+<pre><code>g co master</code></pre>
 </div></div>
-<div class="paragraph"><p>Now that the repository is up to date all I need to do is update my <tt>dotfiles</tt>
+<div class="paragraph"><p>Now that the repository is up to date all I need to do is update my <code>dotfiles</code>
 to reflect the changes to the detached repository.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>cd ~
+<pre><code>cd ~
 ga dotvim
-g ci -m 'Update my dotvim files'</tt></pre>
+g ci -m 'Update my dotvim files'</code></pre>
 </div></div>
 <div class="paragraph"><p>Now the repository is up to date and my dotfiles know of the change I&#8217;ve just
 made.</p></div>
@@ -2761,9 +2585,9 @@ made.</p></div>
 <h4 id="_tweaking_my_test_function">Tweaking my test function</h4>
 <div class="paragraph"><p>So I have a few custom bindings to run work out what kind of test I am
 running and run it with the right tool.</p></div>
-<div class="paragraph"><p>This has proved quite useful in the past allowing me to run <tt>&lt;leader&gt;t</tt>
+<div class="paragraph"><p>This has proved quite useful in the past allowing me to run <code>&lt;leader&gt;t</code>
 to run the current or last run test file. The other binding is set to
-<tt>&lt;leader&gt;T</tt> which runs the closest test to the current line number.</p></div>
+<code>&lt;leader&gt;T</code> which runs the closest test to the current line number.</p></div>
 <div class="paragraph"><p>These have served me well up to today when I had some performance
 testing to do and testunit was the only tool setup for the project I was
 working on.</p></div>
@@ -2781,7 +2605,7 @@ issue with testunit.</p></div>
 <div class="paragraph"><p>To run my unit tests I will need the following command:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>exec ":!bundle exec ruby -I\"lib:test\" " . a:filename "</tt></pre>
+<pre><code>exec ":!bundle exec ruby -I\"lib:test\" " . a:filename "</code></pre>
 </div></div>
 <div class="paragraph"><p>This runs my unit test in the correct environemnt. There is one issue
 with this. The firstly the other tool we can simple run the test we are
@@ -2790,17 +2614,17 @@ issue with doing this with my unittests is that it is not the expected
 command and will error out.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:!bundle exec ruby -I"lib:test" test/performance/browsing_test.rb:9
+<pre><code>:!bundle exec ruby -I"lib:test" test/performance/browsing_test.rb:9
 ruby: No such file or directory -- test/performance/browsing_test.rb:9
-(LoadError)</tt></pre>
+(LoadError)</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>shell returned 1</tt></pre>
+<pre><code>shell returned 1</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>Press ENTER or type command to continue</tt></pre>
+<pre><code>Press ENTER or type command to continue</code></pre>
 </div></div>
 <div class="paragraph"><p>this isn&#8217;t what I want in this case and it would be cool o actually get
 this to work properly as it is a large part of my typical development
@@ -2841,12 +2665,12 @@ couple of plugins. Firstly I want <em>matchit</em> so that I can extend the
 matching capabilities of vim.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/tmhedberg/matchit.git bundle/matchit</tt></pre>
+<pre><code>git submodule add git://github.com/tmhedberg/matchit.git bundle/matchit</code></pre>
 </div></div>
 <div class="paragraph"><p>Now I have the plugin I need to set it up to work in my vim.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:let loaded_matchit = 1</tt></pre>
+<pre><code>:let loaded_matchit = 1</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -2862,7 +2686,7 @@ out of the box. So I will need to add <em>vim-ruby</em> to introduce the same
 functionality to ruby.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/vim-ruby/vim-ruby.git bundle/vim-ruby</tt></pre>
+<pre><code>git submodule add git://github.com/vim-ruby/vim-ruby.git bundle/vim-ruby</code></pre>
 </div></div>
 <div class="paragraph"><p>This give me a few more motions, this time focusing on moving around
 ruby code.</p></div>
@@ -2899,7 +2723,7 @@ ruby code.</p></div>
 </li>
 </ul></div>
 <div class="paragraph"><p>There are a few more motions that are added to my vim setting but those
-are well documented in <tt>:help vim-ruby</tt></p></div>
+are well documented in <code>:help vim-ruby</code></p></div>
 <div class="paragraph"><p>The following text blocks are also added to the toolset.</p></div>
 <div class="ulist"><ul>
 <li>
@@ -2936,13 +2760,13 @@ seems like the idea time to do so.</p></div>
 <div class="paragraph"><p>Enable highlighted operators</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:let ruby_operators = 1</tt></pre>
+<pre><code>:let ruby_operators = 1</code></pre>
 </div></div>
 <div class="paragraph"><p>I want to be alerted when there are space errors, these don&#8217;t actually
 cause errors but it would be nice to be able to easily see them.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:let ruby_space_errors = 1</tt></pre>
+<pre><code>:let ruby_space_errors = 1</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -2967,7 +2791,7 @@ something I&#8217;d like to play around with.</p></div>
 <div class="paragraph"><p>Firstly I&#8217;ll start by adding <em>vim-refactoring</em> to dotfiles.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/ecomba/vim-ruby-refactoring.git bundle/vim-ruby-refactoring</tt></pre>
+<pre><code>git submodule add git://github.com/ecomba/vim-ruby-refactoring.git bundle/vim-ruby-refactoring</code></pre>
 </div></div>
 <div class="paragraph"><p>With this installed I was ready to use it. There are a few mappings I want to
 focus on and then I&#8217;ll make a note of those mappings I&#8217;d like ot learn at a
@@ -2976,42 +2800,42 @@ later stage.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>&lt;leader&gt;rit</tt> - Replaces a temporary variable with a direct method or call
+<code>&lt;leader&gt;rit</code> - Replaces a temporary variable with a direct method or call
 </p>
 </li>
 <li>
 <p>
-<tt>&lt;leader&gt;rcpc</tt> - Refactor Convert Post Conditional
+<code>&lt;leader&gt;rcpc</code> - Refactor Convert Post Conditional
 </p>
 </li>
 <li>
 <p>
-<tt>&lt;leader&gt;rec</tt> - Refactor Extract Constant
+<code>&lt;leader&gt;rec</code> - Refactor Extract Constant
 </p>
 </li>
 <li>
 <p>
-<tt>&lt;leader&gt;rel</tt> - Refactor Extract Let
+<code>&lt;leader&gt;rel</code> - Refactor Extract Let
 </p>
 </li>
 <li>
 <p>
-<tt>&lt;leader&gt;relv</tt> - Refactor Extract Local Variable
+<code>&lt;leader&gt;relv</code> - Refactor Extract Local Variable
 </p>
 </li>
 <li>
 <p>
-<tt>&lt;leader&gt;rrlv</tt> - Refactor Rename Local Variable
+<code>&lt;leader&gt;rrlv</code> - Refactor Rename Local Variable
 </p>
 </li>
 <li>
 <p>
-<tt>&lt;leader&gt;rriv</tt> - Refactor Rename Instance Variable
+<code>&lt;leader&gt;rriv</code> - Refactor Rename Instance Variable
 </p>
 </li>
 <li>
 <p>
-<tt>&lt;leader&gt;rem</tt> - Refactor Extract Method
+<code>&lt;leader&gt;rem</code> - Refactor Extract Method
 </p>
 </li>
 </ul></div>
@@ -3033,7 +2857,7 @@ later stage.</p></div>
 <div class="paragraph"><p>First off i&#8217;ll need to install ctags.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>brew install ctags</tt></pre>
+<pre><code>brew install ctags</code></pre>
 </div></div>
 <div class="paragraph"><p>Now ctags needs to know where the methods and classes live so i&#8217;ll need a way
 to get file locations easily. I found the following snip from
@@ -3048,7 +2872,7 @@ the following snippet into my ~/bin/generate-rails-gem-tags</p></div>
 </tr></table>
 </div>
 <div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+<div class="content"><!-- Generator: GNU source-highlight 3.1.7
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
@@ -3067,43 +2891,43 @@ http://www.gnu.org/software/src-highlite -->
 <div class="paragraph"><p>I have to make sure that this is executable.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>chmod u+x ~/bin/generate-rails-gem-tags</tt></pre>
+<pre><code>chmod u+x ~/bin/generate-rails-gem-tags</code></pre>
 </div></div>
 <div class="paragraph"><p>This will index all the gems I&#8217;ve installed via bundle. I&#8217;ll also need to add
 the projects files to the index.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>ctags -R .</tt></pre>
+<pre><code>ctags -R .</code></pre>
 </div></div>
 <div class="paragraph"><p>It would be nice if this was done automatically when I cd into a project
 directory or could be handled with tmux when I start a new project session. For
 the moment I&#8217;ll just bind this command to a mapping something like:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>noremap &lt;leader&gt;ct :!ctags -R .&lt;CR&gt;</tt></pre>
+<pre><code>noremap &lt;leader&gt;ct :!ctags -R .&lt;CR&gt;</code></pre>
 </div></div>
 <div class="paragraph"><p>To keep my tags up to date I&#8217;ll se <em>autotag</em> which depends on python but allows
 me to keep my tags up to date and removes tags that are no longer needed.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/vim-scripts/AutoTag.git bundle/auto-tag</tt></pre>
+<pre><code>git submodule add git://github.com/vim-scripts/AutoTag.git bundle/auto-tag</code></pre>
 </div></div>
 <div class="paragraph"><p>So now I have the basics setup I need to work out how to navigate through the
 tags easily without looking where I originally was.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>&lt;C-]&gt;</tt> - Go to the first found definition
+<code>&lt;C-]&gt;</code> - Go to the first found definition
 </p>
 </li>
 <li>
 <p>
-<tt>&lt;C-t&gt;</tt> - Jump back to where you started
+<code>&lt;C-t&gt;</code> - Jump back to where you started
 </p>
 </li>
 <li>
 <p>
-<tt>:tselect</tt> - List all the found definitions
+<code>:tselect</code> - List all the found definitions
 </p>
 </li>
 </ul></div>
@@ -3112,17 +2936,17 @@ mappings to navigate through them easily.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>]t</tt> - next tag
+<code>]t</code> - next tag
 </p>
 </li>
 <li>
 <p>
-<tt>[t</tt> - previous tag
+<code>[t</code> - previous tag
 </p>
 <div class="literalblock">
 <div class="content">
-<pre><tt>noremap ]t :tnext&lt;CR&gt;
-noremap [t :tprev&lt;CR&gt;</tt></pre>
+<pre><code>noremap ]t :tnext&lt;CR&gt;
+noremap [t :tprev&lt;CR&gt;</code></pre>
 </div></div>
 </li>
 </ul></div>
@@ -3149,24 +2973,24 @@ Netrw. I&#8217;ve done this for a number of weeks but I still prefer Nerdtree
 so I&#8217;ll be reinstalling it and updating my settings.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/scrooloose/nerdtree.git bundle/nerdtree</tt></pre>
+<pre><code>git submodule add git://github.com/scrooloose/nerdtree.git bundle/nerdtree</code></pre>
 </div></div>
 <div class="paragraph"><p>I also add the following so that NERDTree is loaded automatically if no
 files are opened when starting vim.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>autocmd vimenter * if !argc() | NERDTree | endif</tt></pre>
+<pre><code>autocmd vimenter * if !argc() | NERDTree | endif</code></pre>
 </div></div>
 <div class="paragraph"><p>That&#8217;s it, it couldn&#8217;t be easier. All that is left is to map NERDTree to a
 binding so that it is easy to call.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:noremap &lt;C-p&gt; :NERDTreeToggle&lt;CR&gt;</tt></pre>
+<pre><code>:noremap &lt;C-p&gt; :NERDTreeToggle&lt;CR&gt;</code></pre>
 </div></div>
 <div class="paragraph"><p>I&#8217;ll also need to cancel out <em>Ctrl-P</em> default binding so that they don&#8217;t clash.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>let g:ctrlp_map = '&lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;'</tt></pre>
+<pre><code>let g:ctrlp_map = '&lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;'</code></pre>
 </div></div>
 <div class="paragraph"><p>As Ctrl-P uses &lt;C-p&gt; as a default mapping I just change this so that it it uses
 double &lt;leader&gt; leaving Nerdtree to freely use &lt;C-p&gt;.</p></div>
@@ -3178,7 +3002,7 @@ double &lt;leader&gt; leaving Nerdtree to freely use &lt;C-p&gt;.</p></div>
 for my day to day work, I will finially install <em>unimpaired</em>.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/tpope/vim-unimpaired.git bundle/vim-unimpaired</tt></pre>
+<pre><code>git submodule add git://github.com/tpope/vim-unimpaired.git bundle/vim-unimpaired</code></pre>
 </div></div>
 <div class="paragraph"><p>I forgot to add this when I removed bundle and a couple of my custom bindings
 relay on the plugin to help move lines around.</p></div>
@@ -3191,12 +3015,12 @@ buffer.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>&lt;C-Up&gt;</tt> - Move a line up
+<code>&lt;C-Up&gt;</code> - Move a line up
 </p>
 </li>
 <li>
 <p>
-<tt>&lt;C-Down&gt;</tt> - Move a line down
+<code>&lt;C-Down&gt;</code> - Move a line down
 </p>
 </li>
 </ul></div>
@@ -3207,12 +3031,12 @@ to the following:</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>&lt;C-K&gt;</tt> - Move a line up
+<code>&lt;C-K&gt;</code> - Move a line up
 </p>
 </li>
 <li>
 <p>
-<tt>&lt;C-J&gt;</tt> - Move a line down
+<code>&lt;C-J&gt;</code> - Move a line down
 </p>
 </li>
 </ul></div>
@@ -3232,12 +3056,12 @@ where I left it when I closed the file. For some reason this functionality
 doesn&#8217;t come out of the box but it does tell you how to do it.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>augroup vimrcEx
+<pre><code>augroup vimrcEx
   autocmd BufReadPost *
     \ if line("'\"") &gt; 0 &amp;&amp; line("'\"") &lt;= line("$") |
     \   exe "normal g`\"" |
     \ endif
-augroup vimrcEx</tt></pre>
+augroup vimrcEx</code></pre>
 </div></div>
 <div class="paragraph"><p>Now when I close a file and open it again the cursor will be positioned where
 it was when I closed it.</p></div>
@@ -3257,12 +3081,12 @@ snippets that come with the original version.</p></div>
 jasmine and a range of ruby snippets, which was a plus.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>http://github.com/honza/snipmate-snippets</tt></pre>
+<pre><code>http://github.com/honza/snipmate-snippets</code></pre>
 </div></div>
 <div class="paragraph"><p>Once forked I added my custom fork.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/baphled/snipmate-snippets.git bundle snipmate-snippets</tt></pre>
+<pre><code>git submodule add git://github.com/baphled/snipmate-snippets.git bundle snipmate-snippets</code></pre>
 </div></div>
 <div class="paragraph"><p>I will need to remove <em>vim-snipmate-ruby-snippets</em></p></div>
 <div class="paragraph"><p>I need to remove the instance from <em>.gitmodules</em></p></div>
@@ -3276,11 +3100,11 @@ jasmine and a range of ruby snippets, which was a plus.</p></div>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>rm -rf ../.git/modules/dotvim/modules/bundle/vim-snipmate-ruby-snippets</tt></pre>
+<pre><code>rm -rf ../.git/modules/dotvim/modules/bundle/vim-snipmate-ruby-snippets</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>g ci -m 'update snippets'</tt></pre>
+<pre><code>g ci -m 'update snippets'</code></pre>
 </div></div>
 <div class="paragraph"><p>Updates my dotvims and includes the new snippets plugin.</p></div>
 <div class="paragraph"><p>I&#8217;d like to build up on these and strip them down for my own needs. This will
@@ -3307,18 +3131,18 @@ I pull from with a version of snipmate that doesn&#8217;t include any snippets.<
 straight into adding the new repository.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/garbas/vim-snipmate.git bundle/vim-snipmate</tt></pre>
+<pre><code>git submodule add git://github.com/garbas/vim-snipmate.git bundle/vim-snipmate</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/MarcWeber/vim-addon-mw-utils.git bundle/vim-addon-mw-utils</tt></pre>
+<pre><code>git submodule add git://github.com/MarcWeber/vim-addon-mw-utils.git bundle/vim-addon-mw-utils</code></pre>
 </div></div>
 <div class="paragraph"><p>Now we have no warnings and we have a nice base to start adding custom snippets
 the only issue is when I &lt;TAB&gt; I get an error stating I need tlib to be
 installed. That&#8217;s a bit of of red herring as we actually need tlib-vim.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/tomtom/tlib_vim.git bundle/tlib-vim</tt></pre>
+<pre><code>git submodule add git://github.com/tomtom/tlib_vim.git bundle/tlib-vim</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -3337,15 +3161,15 @@ This is the time to get it setup and working to see how it fairs with my
 current setup.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/c9s/bufexplorer.git bundle/bufexplorer</tt></pre>
+<pre><code>git submodule add git://github.com/c9s/bufexplorer.git bundle/bufexplorer</code></pre>
 </div></div>
 <div class="paragraph"><p>Finally I just need to map BufExplorer to a custom mapping to make things a
 little easier.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>noremap &lt;leader&gt;. :BufExplorer&lt;CR&gt;</tt></pre>
+<pre><code>noremap &lt;leader&gt;. :BufExplorer&lt;CR&gt;</code></pre>
 </div></div>
-<div class="paragraph"><p>And that&#8217;s all there is to it. I can now view my buffers using <tt>&lt;leader&gt;.</tt> and
+<div class="paragraph"><p>And that&#8217;s all there is to it. I can now view my buffers using <code>&lt;leader&gt;.</code> and
 manage the buffers easier with a few shortcut keys.</p></div>
 </div>
 <div class="sect3">
@@ -3378,7 +3202,7 @@ within a git repository, in this case my vim plugins, and will use this as a
 basis to review each plugin one by one.</p></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>#! /bin/bash
+<pre><code>#! /bin/bash
 #
 # Basic script to list all submodules with a project.
 #
@@ -3435,7 +3259,7 @@ function main {
   read_modules;
 }
 
-main;</tt></pre>
+main;</code></pre>
 </div></div>
 <div class="paragraph"><p>I now have a nice list of plugins that I have stored locally.</p></div>
 <div class="paragraph"><p>Now I have the list of plugins I&#8217;m using I can starting organising them
@@ -3794,53 +3618,53 @@ send my gists easier.</p></div>
 <div class="paragraph"><p>Same as usual I start by install the plugin:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/mattn/gist-vim.git bundle/gist-vim</tt></pre>
+<pre><code>git submodule add git://github.com/mattn/gist-vim.git bundle/gist-vim</code></pre>
 </div></div>
-<div class="paragraph"><p>I also need <tt>webapi-vim</tt> which deal with the API calls to github. As I don&#8217;t
+<div class="paragraph"><p>I also need <code>webapi-vim</code> which deal with the API calls to github. As I don&#8217;t
 need to install it, as it&#8217;s already installed I&#8217;ll gloss over how it was
 installed as it is just a case of adding the plugin and forgetting about it.</p></div>
-<div class="paragraph"><p>My <tt>plugin.vim</tt> doesn&#8217;t have any settings for <tt>gist-vim</tt> so I&#8217;ll add them now
+<div class="paragraph"><p>My <code>plugin.vim</code> doesn&#8217;t have any settings for <code>gist-vim</code> so I&#8217;ll add them now
 and then go over the basic commands I&#8217;ll need to play around with gist via vim.</p></div>
 <div class="paragraph"><p>I want to be able to copy snippets from a gist:
   let g:gist_clip_command = <em>pbcopy</em></p></div>
 <div class="paragraph"><p>I also want to try to detect the file type gists should be when uploading them:
   let g:gist_detect_filetype = 1</p></div>
-<div class="paragraph"><p>The default command is <tt>:Gist</tt> and <tt>:'&lt;,'&gt;Gist</tt> with the following flags for
+<div class="paragraph"><p>The default command is <code>:Gist</code> and <code>:'&lt;,'&gt;Gist</code> with the following flags for
 the various options:</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>-p</tt> - a private gist
+<code>-p</code> - a private gist
 </p>
 </li>
 <li>
 <p>
-<tt>-P</tt> - a public gist
+<code>-P</code> - a public gist
 </p>
 </li>
 <li>
 <p>
-<tt>-m</tt> - save a gist with all the buffers
+<code>-m</code> - save a gist with all the buffers
 </p>
 </li>
 <li>
 <p>
-<tt>-e</tt> - edit the gist in the current buffer
+<code>-e</code> - edit the gist in the current buffer
 </p>
 </li>
 <li>
 <p>
-<tt>-d</tt> - delete a gist
+<code>-d</code> - delete a gist
 </p>
 </li>
 <li>
 <p>
-<tt>-l</tt> - list my gists
+<code>-l</code> - list my gists
 </p>
 </li>
 <li>
 <p>
-<tt>-l username</tt> - list a users gists
+<code>-l username</code> - list a users gists
 </p>
 </li>
 </ul></div>
@@ -3854,9 +3678,9 @@ and just get accustomed to calling it manually.</p></div>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>Name:   gist-vim
+<pre><code>Name:   gist-vim
 Source: http://github.com/mattn/gist-vim
-Repo:   git://github.com/mattn/gist-vim.git</tt></pre>
+Repo:   git://github.com/mattn/gist-vim.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>I&#8217;ve had this installed pretty much from day one and never really used it. I
@@ -3867,14 +3691,14 @@ to pastie. As I don&#8217;t have any need for this functionality I&#8217;ll remo
 my dotvim.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>vi .gitmodules
+<pre><code>vi .gitmodules
 / pastie&lt;CR&gt;
 d2j
-:wq</tt></pre>
+:wq</code></pre>
 </div></div>
-<div class="paragraph"><p>This will open <tt>.gitmodules</tt> in vim find the word <em>pastie</em> and delete that line
+<div class="paragraph"><p>This will open <code>.gitmodules</code> in vim find the word <em>pastie</em> and delete that line
 and the 2 below it. Finally we save the changes and quit the file.</p></div>
-<div class="paragraph"><p>Next I needed to remove the plugin manually with <tt>git rm bundle/vim-pastie</tt></p></div>
+<div class="paragraph"><p>Next I needed to remove the plugin manually with <code>git rm bundle/vim-pastie</code></p></div>
 <div style="page-break-after:always"></div>
 </div>
 </div>
@@ -3915,13 +3739,13 @@ vimwiki
 <div class="paragraph"><p>This has been breifly touch on when adding my
 <a href="day_18.html#_adding_ctags">ctags</a> though I haven&#8217;t really spoken about
 what it actually does and what it&#8217;s benefits are.</p></div>
-<div class="paragraph"><p>Firstly, the first issue with updating ctags is that when running <tt>ctags -a</tt>
+<div class="paragraph"><p>Firstly, the first issue with updating ctags is that when running <code>ctags -a</code>
 you&#8217;d only update the current tags list whilst not removing tags that are no
 longer needed.</p></div>
 <div class="paragraph"><p>Autotag updates the ctags for a project everytime a file is saved. This is
 needed so that my ctags don&#8217;t become stale and include definitions that are no
 longer present in the project I am currently working on. Meaning that when
-pressing <tt>&lt;C-]&gt;</tt> I only get results that are relevent to the project and don&#8217;t
+pressing <code>&lt;C-]&gt;</code> I only get results that are relevent to the project and don&#8217;t
 have to sift through a load of useless results.</p></div>
 <div class="paragraph"><p>Autotag requires <em>Python</em> support so it is important to have support for this
 in my <em>Vim</em>. Thankfully if my Vim doesn&#8217;t support <em>Python</em> then it doesn&#8217;t not
@@ -3937,17 +3761,17 @@ a file to be saved and if any errors are found the quickbox buffer will open up
 allowing for me to go over each change and deal with them appropriately.
 Syntastic comes with a host of syntax checker and the basic to allow for me to
 easily add more checkers dependent on the filetype I am dealing with.</p></div>
-<div class="paragraph"><p>It uses the built in Vim commands for navigation or errors <tt>:lnext</tt> and
-<tt>:lprev</tt>. As I&#8217;m using unimpaired I have alternative mappings for these as follows:</p></div>
+<div class="paragraph"><p>It uses the built in Vim commands for navigation or errors <code>:lnext</code> and
+<code>:lprev</code>. As I&#8217;m using unimpaired I have alternative mappings for these as follows:</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>[l</tt> - <tt>:lnext</tt>
+<code>[l</code> - <code>:lnext</code>
 </p>
 </li>
 <li>
 <p>
-<tt>l]</tt> - <tt>:lprevious</tt>
+<code>l]</code> - <code>:lprevious</code>
 </p>
 </li>
 </ul></div>
@@ -4048,9 +3872,9 @@ are ever needed.</p></div>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin: nerdcommenter
+<pre><code>plugin: nerdcommenter
 home:   http://github.com/scrooloose/nerdcommenter
-source: git://github.com/scrooloose/nerdcommenter.git</tt></pre>
+source: git://github.com/scrooloose/nerdcommenter.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>I&#8217;ve had this plugin for a while plugin for a while but I&#8217;ve only just
@@ -4060,7 +3884,7 @@ very basic.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>&lt;leader&gt;/</tt> - comments out a line
+<code>&lt;leader&gt;/</code> - comments out a line
 </p>
 </li>
 </ul></div>
@@ -4069,19 +3893,19 @@ use the above to get the job done. There is however a better way of
 doing this.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>X&lt;leader&gt;c</tt></pre>
+<pre><code>X&lt;leader&gt;c</code></pre>
 </div></div>
-<div class="paragraph"><p>Where <tt>X</tt> is the number of lines you want to comment out.</p></div>
-<div class="paragraph"><p>I&#8217;ve noticed that <tt>&lt;leader&gt;cy</tt> is a pretty cool too as it comments out a
+<div class="paragraph"><p>Where <code>X</code> is the number of lines you want to comment out.</p></div>
+<div class="paragraph"><p>I&#8217;ve noticed that <code>&lt;leader&gt;cy</code> is a pretty cool too as it comments out a
 line but yanks its content first so that you can past is elsewhere. This
 is typically useful if you need to modify a line but also want to keep
 the orginal commented out but want to past the line or a modified
-version of it somewhere else. As with <tt>&lt;leader&gt;c</tt> <tt>&lt;leader&gt;cy</tt> can be
+version of it somewhere else. As with <code>&lt;leader&gt;c</code> <code>&lt;leader&gt;cy</code> can be
 prefixed with a number allowing you to yank and then copy as many
 consecutive lines as you please.</p></div>
-<div class="paragraph"><p>There is also <tt>&lt;leader&gt;cA</tt> which also comments out a line but also
+<div class="paragraph"><p>There is also <code>&lt;leader&gt;cA</code> which also comments out a line but also
 enters you into Insert mode at the end of a line ready to make a change.
-This is also accompanied by <tt>&lt;leader&gt;c$</tt> which does the same but puts
+This is also accompanied by <code>&lt;leader&gt;c$</code> which does the same but puts
 you at the start of the line.</p></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -4091,9 +3915,9 @@ you at the start of the line.</p></div>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin: asciidoc-vim
+<pre><code>plugin: asciidoc-vim
 home:   http://github.com/spf13/asciidoc-vim
-source: git://github.com/spf13/asciidoc-vim.git</tt></pre>
+source: git://github.com/spf13/asciidoc-vim.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>I&#8217;ve been using asciidoc to write this diary.</p></div>
@@ -4113,9 +3937,9 @@ snippets for another time.</p></div>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin: vimwiki
+<pre><code>plugin: vimwiki
 home:   http://github.com/vim-scripts/vimwiki
-source: git://github.com/vim-scripts/vimwiki.git</tt></pre>
+source: git://github.com/vim-scripts/vimwiki.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>As with asciidoc I spend sometime adding content to wiki&#8217;s. The is cool
@@ -4126,7 +3950,7 @@ comes with a few key bindings to make easy to pull down wiki pages and
 upload them when necessary.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>normal mode:
+<pre><code>normal mode:
 &lt;Leader&gt;ww -- Open default wiki index file.
 &lt;Leader&gt;ws -- Select and open wiki index file.
 &lt;Leader&gt;wd -- Delete wiki file you are in.
@@ -4136,7 +3960,7 @@ upload them when necessary.</p></div>
 &lt;Ctrl-Enter&gt; -- Vertical split and folow/create wiki link
 &lt;Backspace&gt; -- Go back to parent(previous) wiki link
 &lt;Tab&gt; -- Find next wiki link
-&lt;Shift-Tab&gt; -- Find previous wiki link</tt></pre>
+&lt;Shift-Tab&gt; -- Find previous wiki link</code></pre>
 </div></div>
 <div class="paragraph"><p>I don&#8217;t usually have the need to pull down wiki pages and and make
 changes to them persay so I won&#8217;t spend much time on playing around with
@@ -4156,9 +3980,9 @@ enhance Vim&#8217;s out of the box functionality and add a few nice features to 
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin: vim-repeat
+<pre><code>plugin: vim-repeat
 home:   http://github.com/tpope/vim-repeat
-source: git://github.com/tpope/vim-repeat.git</tt></pre>
+source: git://github.com/tpope/vim-repeat.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>Essentially this plugins is an enhancer and allows me to to repeat
@@ -4198,7 +4022,7 @@ commentary.vim
 the following code snippet to the my custom bindings.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>silent! call repeat#set("\&lt;Plug&gt;MyWonderfulMap", v:count)</tt></pre>
+<pre><code>silent! call repeat#set("\&lt;Plug&gt;MyWonderfulMap", v:count)</code></pre>
 </div></div>
 <div class="paragraph"><p>Where MyWonderfulMap is the name of the command I&#8217;d like to add repeat
 functionality to. It&#8217;s that simple.</p></div>
@@ -4213,23 +4037,23 @@ benefit from such functionality.</p></div>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin: AutoComplPop
+<pre><code>plugin: AutoComplPop
 home:   http://github.com/ayang/AutoComplPop
-source: git://github.com/ayang/AutoComplPop.git</tt></pre>
+source: git://github.com/ayang/AutoComplPop.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>This plugin is yet another enhancement, it helps by displaying a popup
 for text completions. This is nice as it helps be to quickly type words
 that are already with my buffer with little effort.</p></div>
 <div class="paragraph"><p>There is one issue I currently have with this plugin and that is being
-able to press <tt>&lt;Tab&gt;</tt> and <tt>&lt;Shift&gt;+&lt;Tab&gt;</tt> to loop through possible
-options. As it stand the defaults are <tt>&lt;Ctrl-N</tt> and <tt>&lt;Ctrl-P&gt;</tt>.</p></div>
+able to press <code>&lt;Tab&gt;</code> and <code>&lt;Shift&gt;+&lt;Tab&gt;</code> to loop through possible
+options. As it stand the defaults are <code>&lt;Ctrl-N</code> and <code>&lt;Ctrl-P&gt;</code>.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:set completeopt=longest,menu</tt></pre>
+<pre><code>:set completeopt=longest,menu</code></pre>
 </div></div>
-<div class="paragraph"><p>I could possibly remap the defaults to <tt>&lt;Tab&gt;</tt> and <tt>&lt;Shift&gt;+&lt;Tab&gt;</tt>
-respectively but I&#8217;d like to give <tt>supertab</tt> a try. I&#8217;ll document that
+<div class="paragraph"><p>I could possibly remap the defaults to <code>&lt;Tab&gt;</code> and <code>&lt;Shift&gt;+&lt;Tab&gt;</code>
+respectively but I&#8217;d like to give <code>supertab</code> a try. I&#8217;ll document that
 in my next entry.</p></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -4239,9 +4063,9 @@ in my next entry.</p></div>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin: supertab
+<pre><code>plugin: supertab
 home:   http://github.com/ervandew/supertab
-source: git://github.com/ervandew/supertab.git</tt></pre>
+source: git://github.com/ervandew/supertab.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>So this plugin will help enhance my autocompletion functionality. As stated in
@@ -4250,12 +4074,12 @@ list when it comes up. Supertab does this for me so I&#8217;ll have a play with 
 and see how it pans out.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule add git://github.com/ervandew/supertab.git bundle/vim-supertab</tt></pre>
+<pre><code>git submodule add git://github.com/ervandew/supertab.git bundle/vim-supertab</code></pre>
 </div></div>
 <div class="paragraph"><p>Once this was completed I just had to restart my vim session.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>let g:SuperTabCrMapping=0</tt></pre>
+<pre><code>let g:SuperTabCrMapping=0</code></pre>
 </div></div>
 <div class="paragraph"><p>As I&#8217;m using <em>delimitMate</em> I need the above setting so that <em>supertab</em> does not
 conflict with it.</p></div>
@@ -4273,9 +4097,9 @@ conflict with it.</p></div>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin: vim-unimpaired
+<pre><code>plugin: vim-unimpaired
 home:   http://github.com/tpope/vim-unimpaired
-source: git://github.com/tpope/vim-unimpaired.git</tt></pre>
+source: git://github.com/tpope/vim-unimpaired.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>This plugin was covered on <a href="/day-19-being-unimpaired">day 19</a>. I only
@@ -4285,121 +4109,121 @@ actually offers.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>[a</tt> |:previous|
+<code>[a</code> |:previous|
 </p>
 </li>
 <li>
 <p>
-<tt>]a</tt> |:next|
+<code>]a</code> |:next|
 </p>
 </li>
 <li>
 <p>
-<tt>[A</tt> |:first|
+<code>[A</code> |:first|
 </p>
 </li>
 <li>
 <p>
-<tt>]A</tt> |:last|
+<code>]A</code> |:last|
 </p>
 </li>
 <li>
 <p>
-<tt>[b</tt> |:bprevious|
+<code>[b</code> |:bprevious|
 </p>
 </li>
 <li>
 <p>
-<tt>]b</tt> |:bnext|
+<code>]b</code> |:bnext|
 </p>
 </li>
 <li>
 <p>
-<tt>[B</tt> |:bfirst|
+<code>[B</code> |:bfirst|
 </p>
 </li>
 <li>
 <p>
-<tt>]B</tt> |:blast|
+<code>]B</code> |:blast|
 </p>
 </li>
 <li>
 <p>
-<tt>[l</tt> |:lprevious|
+<code>[l</code> |:lprevious|
 </p>
 </li>
 <li>
 <p>
-<tt>]l</tt> |:lnext|
+<code>]l</code> |:lnext|
 </p>
 </li>
 <li>
 <p>
-<tt>[L</tt> |:lfirst|
+<code>[L</code> |:lfirst|
 </p>
 </li>
 <li>
 <p>
-<tt>]L</tt> |:llast|
+<code>]L</code> |:llast|
 </p>
 </li>
 <li>
 <p>
-<tt>[q</tt> |:cprevious|
+<code>[q</code> |:cprevious|
 </p>
 </li>
 <li>
 <p>
-<tt>]q</tt> |:cnext|
+<code>]q</code> |:cnext|
 </p>
 </li>
 <li>
 <p>
-<tt>[Q</tt> |:cfirst|
+<code>[Q</code> |:cfirst|
 </p>
 </li>
 <li>
 <p>
-<tt>]Q</tt> |:clast|
+<code>]Q</code> |:clast|
 </p>
 </li>
 <li>
 <p>
-<tt>[t</tt> |:tprevious|
+<code>[t</code> |:tprevious|
 </p>
 </li>
 <li>
 <p>
-<tt>]t</tt> |:tnext|
+<code>]t</code> |:tnext|
 </p>
 </li>
 <li>
 <p>
-<tt>[T</tt> |:tfirst|
+<code>[T</code> |:tfirst|
 </p>
 </li>
 <li>
 <p>
-<tt>]T</tt> |:tlast|
+<code>]T</code> |:tlast|
 </p>
 </li>
 </ul></div>
-<div class="paragraph"><p>I already have custom mapping for <tt>:cnext</tt> and <tt>cprevious</tt> as <tt>&lt;leader&gt;j</tt> and
-<tt>&lt;leader&gt;k</tt> respectively. I won&#8217;t be needing those anymore as I now have <tt>[q</tt>
-and  <tt>q]</tt> to do this for me.</p></div>
+<div class="paragraph"><p>I already have custom mapping for <code>:cnext</code> and <code>cprevious</code> as <code>&lt;leader&gt;j</code> and
+<code>&lt;leader&gt;k</code> respectively. I won&#8217;t be needing those anymore as I now have <code>[q</code>
+and  <code>q]</code> to do this for me.</p></div>
 <div class="paragraph"><p>So I remove the following from my <em>binding.vim</em>:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>nmap &lt;leader&gt;j :cn&lt;CR&gt;
-nmap &lt;leader&gt;k :cp&lt;CR&gt;</tt></pre>
+<pre><code>nmap &lt;leader&gt;j :cn&lt;CR&gt;
+nmap &lt;leader&gt;k :cp&lt;CR&gt;</code></pre>
 </div></div>
 <div class="paragraph"><p>I can also remove the custom mappings I added on
 <a href="day-18-adding-ctags">day 18 - Adding ctags</a> as these are already setup
 with unimpaired.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>noremap ]t :tnext&lt;CR&gt;
-noremap [t :tprev&lt;CR&gt;</tt></pre>
+<pre><code>noremap ]t :tnext&lt;CR&gt;
+noremap [t :tprev&lt;CR&gt;</code></pre>
 </div></div>
 <div class="paragraph"><p>One of the most useful motions will be moving to the next and previous conflict
 in a file. This has always been somewhat tedious and having an simple mapping
@@ -4407,12 +4231,12 @@ for it will help no end.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>[n</tt> - Go to the next SCM conflict
+<code>[n</code> - Go to the next SCM conflict
 </p>
 </li>
 <li>
 <p>
-<tt>n]</tt> - Go to the previous SCM conflict
+<code>n]</code> - Go to the previous SCM conflict
 </p>
 </li>
 </ul></div>
@@ -4424,9 +4248,9 @@ for it will help no end.</p></div>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin: matchit
+<pre><code>plugin: matchit
 home:   http://github.com/tmhedberg/matchit
-source: git://github.com/tmhedberg/matchit.git</tt></pre>
+source: git://github.com/tmhedberg/matchit.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>Matchit pretty much does what it says on the tin. It matches the begining and
@@ -4436,22 +4260,22 @@ move from the begining of a condition or element to the end.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>%</tt> - Cycle forward through matching groups
+<code>%</code> - Cycle forward through matching groups
 </p>
 </li>
 <li>
 <p>
-<tt>g%</tt>- Cycle backwards through matching groups
+<code>g%</code>- Cycle backwards through matching groups
 </p>
 </li>
 <li>
 <p>
-<tt>[%</tt>- Go to [count] previous unmatched group
+<code>[%</code>- Go to [count] previous unmatched group
 </p>
 </li>
 <li>
 <p>
-<tt>]%</tt>- Go to [count] next unmatched group
+<code>]%</code>- Go to [count] next unmatched group
 </p>
 </li>
 </ul></div>
@@ -4470,33 +4294,33 @@ this for the time being and getting to grips with these key bindings.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_day_26">Day 26</h3>
-<div class="paragraph"><p>Today I&#8217;ll be reviewing my recent changes and resolving a conflict with using <tt>&lt;TAB&gt;</tt>.</p></div>
+<div class="paragraph"><p>Today I&#8217;ll be reviewing my recent changes and resolving a conflict with using <code>&lt;TAB&gt;</code>.</p></div>
 <div class="paragraph"><p>I&#8217;ve noticed a few issues with the recent changes I&#8217;ve made and would like to resolve these issues before checking out
 the other plugins. I&#8217;ll focus on the main issue and make a few notes on the issues I&#8217;m experiencing with omnicomplete.</p></div>
 <div style="page-break-after:always"></div>
 <div class="sect3">
 <h4 id="_removing_supertab">Removing supertab</h4>
 <div class="paragraph"><p>So I&#8217;ve discovered some issues with using <em>supertab</em> conflicting with <em>snipmate</em> and to be quite honest though I used to
-use tabs for autocompletion but I my vim muscle memory is used to using <tt>&lt;C-n&gt;</tt> and <tt>&lt;C-p&gt;</tt> to loop through possible
+use tabs for autocompletion but I my vim muscle memory is used to using <code>&lt;C-n&gt;</code> and <code>&lt;C-p&gt;</code> to loop through possible
 selections. There is also the factor that I <em>am</em> used to using tabs for completing snippets.</p></div>
 <div class="paragraph"><p>The other consideration is that I still want to try to keep my underlining settings as similar to vanilla vim as
 possible whilst tweaking it another for extra productivity.</p></div>
 <div class="paragraph"><p>So removing <em>supertab</em> seems like a good idea. So with that said I&#8217;m going to remove supertab.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>rm -rf ~/.git/modules/dotvim/modules/bundle/vim-supertab/
-rm -rf ~/dotvim/bundle/vim-supertab/</tt></pre>
+<pre><code>rm -rf ~/.git/modules/dotvim/modules/bundle/vim-supertab/
+rm -rf ~/dotvim/bundle/vim-supertab/</code></pre>
 </div></div>
-<div class="paragraph"><p>Finally I need to remove the submodule from <tt>~/dotvim/.gitmodules</tt></p></div>
+<div class="paragraph"><p>Finally I need to remove the submodule from <code>~/dotvim/.gitmodules</code></p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>vi ~/dotvim/.gitmodules</tt></pre>
+<pre><code>vi ~/dotvim/.gitmodules</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>/supertab
+<pre><code>/supertab
 d2j
-:wq</tt></pre>
+:wq</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -4513,7 +4337,7 @@ d2j
 <div class="paragraph"><p>Since I tweaked omnicomplete I&#8217;ve noticed that it can be quite slow, especially when one of my open buffers has long
 strings in the content. I&#8217;d like to tweak this so that I don&#8217;t have to wait for omnicomplete to parse these long string
 which is one of the pains I am not fond of at all.</p></div>
-<div class="paragraph"><p>I&#8217;ll have a look at <tt>neocomplecache</tt> which cache words in my buffer and uses that to populate my omnicomplete lists.
+<div class="paragraph"><p>I&#8217;ll have a look at <code>neocomplecache</code> which cache words in my buffer and uses that to populate my omnicomplete lists.
 This though may well use more memory that the previous solutions I&#8217;ve used but I won&#8217;t really know how much so until I
 actually start using it. Though this seems like a relatively sane idea for improving the speed in which omnicomplete
 finds long strings.</p></div>
@@ -4536,9 +4360,9 @@ files quickly and help me to manage the buffers I have open.</p></div>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin: bufexplorer
+<pre><code>plugin: bufexplorer
 home:   http://github.com/c9s/bufexplorer
-source: git://github.com/c9s/bufexplorer.git</tt></pre>
+source: git://github.com/c9s/bufexplorer.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>So dealing with buffers can be somewhat frustrating at times, especially if you
@@ -4549,26 +4373,26 @@ coding and flipping buffers. After looking at their vim files I noticed that
 they had been using bufexplorer to do this and quickly added it to my
 toolchain. It&#8217;s easy to configure and adds the nice feature of being able to
 list buffers and select and delete them quite easily.</p></div>
-<div class="paragraph"><p>The first things I did was to remap its default (<tt>&lt;leader&gt;be</tt>) to <tt>&lt;leader&gt;,.</tt>
+<div class="paragraph"><p>The first things I did was to remap its default (<code>&lt;leader&gt;be</code>) to <code>&lt;leader&gt;,.</code>
 mainly as the former feels more natural. There are a few more mappings that it
 uses that I haven&#8217;t gotten around to making use of yet and it will be these
 that I&#8217;ll be playing around with from now on. They are as follows:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>&lt;leader&gt;bs
-&lt;leader&gt;bv</tt></pre>
+<pre><code>&lt;leader&gt;bs
+&lt;leader&gt;bv</code></pre>
 </div></div>
 <div class="paragraph"><p>As you may or may not of figured out this opens bufexplorer in a horizontal and
 vertical split respectively.</p></div>
-<div class="paragraph"><p>The most common command I use at present is deleting buffers (<tt>d</tt>) and jumping
+<div class="paragraph"><p>The most common command I use at present is deleting buffers (<code>d</code>) and jumping
 to a given buffer. The former still feels a little clumsy, probably as I&#8217;m not
 making the use of the out of the box commands and defaulting to using search to
-find a buffer and press <tt>&lt;Enter&gt;</tt> when I&#8217;ve found the buffer I am interested in.</p></div>
+find a buffer and press <code>&lt;Enter&gt;</code> when I&#8217;ve found the buffer I am interested in.</p></div>
 <div class="paragraph"><p>Below is a snippet of the docs which lists some of the internal commands
 bufexplorer supports:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>R             Toggles relative path/absolute path.
+<pre><code>R             Toggles relative path/absolute path.
 D            |:wipeout|the buffer under the cursor from the list.  When a
               buffers is wiped, it will not be shown when unlisted buffer are
               displayed.
@@ -4582,7 +4406,7 @@ r             Reverses the order the buffers are listed in.
 s             Selects the order the buffers are listed in. Either by buffer
               number, file name, file extension, most recently used (MRU), or
               full path.
-u             Toggles the showing of "unlisted" buffers.</tt></pre>
+u             Toggles the showing of "unlisted" buffers.</code></pre>
 </div></div>
 <div class="paragraph"><p>I don&#8217;t use tabs, in fact I&#8217;d rather stay away from them as much as possible so
 that commands relating to those have been omitted.</p></div>
@@ -4598,59 +4422,59 @@ in my toolchain.</p></div>
 <div class="paragraph"><p>I&#8217;ve touched on Nerdtree in a previous entry, mainly to setup the basics to get me going but I&#8217;ll go over some of the
 fundermentals of Nerdtree and why I have decided to go back to using it.</p></div>
 <div class="paragraph"><p>Though <em>netrw</em> is quite useful I still needed ways of managing files (create, delete, name). This wasn&#8217;t possible with
-<em>netrw</em> and though I could map <tt>!rm %</tt> and the other Unix commands, this grows old quick and needs at least 3 mappings
-per command. Nerdtree allowed me to do this quite nicely and although I still have <tt>Ctrl-P</tt> to find files I is still
+<em>netrw</em> and though I could map <code>!rm %</code> and the other Unix commands, this grows old quick and needs at least 3 mappings
+per command. Nerdtree allowed me to do this quite nicely and although I still have <code>Ctrl-P</code> to find files I is still
 useful to have a file draw to visually display your projects file structure.</p></div>
 <div class="paragraph"><p>One of the first things I am currently missing is an easy way to open Nerdtree with the current file selected. This
 comes in handy when I need to rename or remove a file.</p></div>
-<div class="paragraph"><p>So to get Nerdtree to open with the current file selected isn&#8217;t hard at all I need to do is bind <tt>:NerdtreeFind</tt> to a
+<div class="paragraph"><p>So to get Nerdtree to open with the current file selected isn&#8217;t hard at all I need to do is bind <code>:NerdtreeFind</code> to a
 key and I have what I want:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>norenmap &lt;leader&gt;p :NERDTreeFind&lt;CR&gt;</tt></pre>
+<pre><code>norenmap &lt;leader&gt;p :NERDTreeFind&lt;CR&gt;</code></pre>
 </div></div>
-<div class="paragraph"><p>I already have a binding on <tt>&lt;leader&gt;p</tt> so I needed to remove that so that they both don&#8217;t collide.</p></div>
+<div class="paragraph"><p>I already have a binding on <code>&lt;leader&gt;p</code> so I needed to remove that so that they both don&#8217;t collide.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>":map &lt;leader&gt;p :PromoteToLet&lt;cr&gt;</tt></pre>
+<pre><code>":map &lt;leader&gt;p :PromoteToLet&lt;cr&gt;</code></pre>
 </div></div>
-<div class="paragraph"><p>I mentioned in <a href=":day-19-tweaking-nerdtree.asc">Tweaking Nerdtree</a> <tt>&lt;C-p&gt;</tt> is used to toggle Nerdtrees view. Nerdtree
-has a host of commands that you can play with, they are easily viewed by pressing <tt>?</tt> within the Nerdtree buffer. I&#8217;ll
+<div class="paragraph"><p>I mentioned in <a href=":day-19-tweaking-nerdtree.asc">Tweaking Nerdtree</a> <code>&lt;C-p&gt;</code> is used to toggle Nerdtrees view. Nerdtree
+has a host of commands that you can play with, they are easily viewed by pressing <code>?</code> within the Nerdtree buffer. I&#8217;ll
 simply go over the ones I use the most below:</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>p</tt> - jump to the parent directory
+<code>p</code> - jump to the parent directory
 </p>
 </li>
 <li>
 <p>
-<tt>P</tt> - go to the root directory
+<code>P</code> - go to the root directory
 </p>
 </li>
 <li>
 <p>
-<tt>o</tt> - open and close a directory
+<code>o</code> - open and close a directory
 </p>
 </li>
 <li>
 <p>
-<tt>x</tt> - close and close a directory
+<code>x</code> - close and close a directory
 </p>
 </li>
 <li>
 <p>
-<tt>X</tt> - recursively close and close a directory
+<code>X</code> - recursively close and close a directory
 </p>
 </li>
 <li>
 <p>
-<tt>C</tt> - Make the current directory to the tree root
+<code>C</code> - Make the current directory to the tree root
 </p>
 </li>
 <li>
 <p>
-<tt>I</tt> - Display hidden files
+<code>I</code> - Display hidden files
 </p>
 </li>
 </ul></div>
@@ -4658,22 +4482,22 @@ simply go over the ones I use the most below:</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>m</tt> - show menu
+<code>m</code> - show menu
 </p>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>m</tt> - rename node
+<code>m</code> - rename node
 </p>
 </li>
 <li>
 <p>
-<tt>c</tt> - copy node
+<code>c</code> - copy node
 </p>
 </li>
 <li>
 <p>
-<tt>a</tt> - add node
+<code>a</code> - add node
 </p>
 </li>
 </ul></div>
@@ -4687,7 +4511,7 @@ but opening files in different tabs isn&#8217;t something I&#8217;m fond off.</p
 <td class="icon">
 <div class="title">Note</div>
 </td>
-<td class="content">I&#8217;m aware that there are commands to CRUD files using <em>netrw</em> but I still am not a fan of the way <tt>:Explore</tt> opens and
+<td class="content">I&#8217;m aware that there are commands to CRUD files using <em>netrw</em> but I still am not a fan of the way <code>:Explore</code> opens and
 keeping track of where it will open can be a pain.</td>
 </tr></table>
 </div>
@@ -4701,28 +4525,28 @@ though this is not particularly a big deal, <em>Control-T</em> is somewhat slow 
 can be a pain. This is where <em>CtrlP</em> takes the lead.</p></div>
 <div class="paragraph"><p>I&#8217;ve never really spent much time seeing what other features <em>CtrlP</em> has that I am not aware of. The main thing I never
 really took advantage of or bothered really to look more into is the ability to search by buffer or MRU (most recently
-used) files. I could also bind <tt>::CtrlPBuffer</tt> and <tt>:CtrlPMRU</tt> for when I want to be more specific. For the moment I
-will hold out on this and make use of <tt>&lt;C-f&gt;</tt> and <tt>&lt;C-b&gt;</tt> to navigate back and forth between search modes.</p></div>
-<div class="paragraph"><p>There is a regexp feature that I have never used (<tt>&lt;C-r&gt;</tt>) I should experiement with this a little to find out what it
+used) files. I could also bind <code>::CtrlPBuffer</code> and <code>:CtrlPMRU</code> for when I want to be more specific. For the moment I
+will hold out on this and make use of <code>&lt;C-f&gt;</code> and <code>&lt;C-b&gt;</code> to navigate back and forth between search modes.</p></div>
+<div class="paragraph"><p>There is a regexp feature that I have never used (<code>&lt;C-r&gt;</code>) I should experiement with this a little to find out what it
 is actually capable of for the moment it is enough to make use of searching dependent of search type.</p></div>
-<div class="paragraph"><p>There is also a nice navigation command to allow me to move up a directory <tt>..&lt;CR&gt;</tt>.</p></div>
+<div class="paragraph"><p>There is also a nice navigation command to allow me to move up a directory <code>..&lt;CR&gt;</code>.</p></div>
 <div class="paragraph"><p>I like to have <em>CtrlP</em> search for files in my current project, in which case the setting below does just that. Well that
 a bit of a lie, it starts searchs from the directory that contains SCM content. In my case as all my project use git or
 another SCM so I know what the root directory is.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>let g:ctrlp_working_path_mode = r                               "Set to a directory that contains .git</tt></pre>
+<pre><code>let g:ctrlp_working_path_mode = r                               "Set to a directory that contains .git</code></pre>
 </div></div>
-<div class="paragraph"><p>I also have <em>CtrlP</em> default overiden so that I can use <tt>&lt;C-P&gt;</tt> for something else. In this case I changed it to the
+<div class="paragraph"><p>I also have <em>CtrlP</em> default overiden so that I can use <code>&lt;C-P&gt;</code> for something else. In this case I changed it to the
 following:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>let g:ctrlp_map = '&lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;'</tt></pre>
+<pre><code>let g:ctrlp_map = '&lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;'</code></pre>
 </div></div>
 <div class="paragraph"><p>Finally to clear <em>CtrlP</em> cache I use the following mapping:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>nnoremap &lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;&lt;Leader&gt; :CtrlPClearAllCaches&lt;CR&gt;:CtrlP&lt;CR&gt;"</tt></pre>
+<pre><code>nnoremap &lt;unique&gt; &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt;&lt;Leader&gt; :CtrlPClearAllCaches&lt;CR&gt;:CtrlP&lt;CR&gt;"</code></pre>
 </div></div>
 <div class="paragraph"><p>With that I have my file navigation settings pretty much covered for now.</p></div>
 <div style="page-break-after:always"></div>
@@ -4750,28 +4574,42 @@ patched font so <em>brew</em> to the rescue.</p></div>
 <td class="icon">
 <div class="title">Note</div>
 </td>
+<td class="content">Add link to patched font</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
 <td class="content">This may take some time.</td>
 </tr></table>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>brew install fontforge</tt></pre>
+<pre><code>brew install fontforge</code></pre>
+</div></div>
+<div class="paragraph"><p>I also needed to add a new directory</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>mkdir ~/.fonts</code></pre>
 </div></div>
 <div class="paragraph"><p>Once fontforge was installed I tried to install the patched font.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>fontforge -script ~/dotvim/bundle/powerline/fontpatcher/fontpatcher Anonymous\ Pro.ttf</tt></pre>
+<pre><code>fontforge -script ~/dotvim/bundle/powerline/fontpatcher/fontpatcher Anonymous\ Pro.ttf
+mv anonymous+Pro-Powerline-Powerline.ttf ~/.fonts/</code></pre>
 </div></div>
 <div class="paragraph"><p>Everything seemed to of installed fine: and I had setup the correct setting. So for now I&#8217;ll put a fork in this tweak and
 move on.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>sudo fc-cache -vf</tt></pre>
+<pre><code>sudo fc-cache -vf</code></pre>
 </div></div>
-<div class="paragraph"><p>This clears fontpatcher&#8217;s cache, once that is done we just have to add the following snippet to my <tt>.vimrc</tt></p></div>
+<div class="paragraph"><p>This clears fontpatcher&#8217;s cache, once that is done we just have to add the following snippet to my <code>.vimrc</code></p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>let g:Powerline_symbols = 'fancy'</tt></pre>
+<pre><code>let g:Powerline_symbols = 'fancy'</code></pre>
 </div></div>
 <div class="paragraph"><p><span class="image">
 <a class="image" href="/images/vim-powerline.png">
@@ -4807,9 +4645,9 @@ a given range, similar to the way colour schemes are managed in oh-my-zsh.</p></
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin: vim-surround
+<pre><code>plugin: vim-surround
 homepage: http://github.com/tpope/vim-surround
-source: git://github.com/tpope/vim-surround.git</tt></pre>
+source: git://github.com/tpope/vim-surround.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>This is plugin is probably one of the most used by myself when writing. It basically allow use to add and remove a tag
@@ -4848,39 +4686,39 @@ multiple lines at once. One prime example of where this comes in handy is when w
 elements. First we&#8217;d get a list of something.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>Rice
+<pre><code>Rice
 Beans
-Chocolate</tt></pre>
+Chocolate</code></pre>
 </div></div>
 <div class="paragraph"><p>Then we&#8217;d type the following:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>ggVG
+<pre><code>ggVG
 '&lt;,'&gt;normal yss&lt;li&gt;
-ggVGS&lt;ul&gt;</tt></pre>
+ggVGS&lt;ul&gt;</code></pre>
 </div></div>
 <div class="paragraph"><p>Which gives us the output below:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>&lt;ul&gt;
+<pre><code>&lt;ul&gt;
   &lt;li&gt;Rice&lt;/li&gt;
   &lt;li&gt;Beans&lt;/li&gt;
   &lt;li&gt;Chocolate&lt;/li&gt;
-&lt;/ul&gt;</tt></pre>
+&lt;/ul&gt;</code></pre>
 </div></div>
 <div class="paragraph"><p>So what if I want to have the original list back, the standard way of doing this would be to type u a few times. That&#8217;s
 boring, surround can help us here to with a couple of commands:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>ggVG
-'&lt;,'&gt;normal dst</tt></pre>
+<pre><code>ggVG
+'&lt;,'&gt;normal dst</code></pre>
 </div></div>
 <div class="paragraph"><p>We end up with the content pretty much back to normal:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>Rice
+<pre><code>Rice
 Beans
-Chocolate</tt></pre>
+Chocolate</code></pre>
 </div></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -4890,9 +4728,9 @@ Chocolate</tt></pre>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin:   ack.vim
+<pre><code>plugin:   ack.vim
 homepage: http://github.com/mileszs/ack.vim
-source:   git://github.com/mileszs/ack.vim.git</tt></pre>
+source:   git://github.com/mileszs/ack.vim.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>Ack is probably one of my most used linux commands so it goes without
@@ -4903,12 +4741,12 @@ advantage of the plugin. Thankfully I had that already installed but for
 reference this is how I installed it on my box</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>brew install ack</tt></pre>
+<pre><code>brew install ack</code></pre>
 </div></div>
 <div class="paragraph"><p>To run <em>ack</em> I just need to type the following:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:Ack --type=ruby 'content to find' path/to/find/content/</tt></pre>
+<pre><code>:Ack --type=ruby 'content to find' path/to/find/content/</code></pre>
 </div></div>
 <div class="paragraph"><p>This will search for <em>content to find</em> within any <em>ruby</em> file within the
 <em>path/to/find/content</em> directory. There is an extensive list of file
@@ -4916,7 +4754,7 @@ types <em>ack</em> supports which can be found at <em>ack --help-types</em>. It 
 also possible to omit file types also as follows:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:Ack --notype=ruby 'content to find' path/to/find/content/</tt></pre>
+<pre><code>:Ack --notype=ruby 'content to find' path/to/find/content/</code></pre>
 </div></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -4926,9 +4764,9 @@ also possible to omit file types also as follows:</p></div>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin:   vim-abolish
+<pre><code>plugin:   vim-abolish
 homwpage: http://github.com/tpope/vim-abolish
-source:   git://github.com/tpope/vim-abolish</tt></pre>
+source:   git://github.com/tpope/vim-abolish</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>Abolish is an interesting plugin created by Time Pope, it is essentially 3 plugins wrapped up into 1 (abbreviation,
@@ -4939,25 +4777,25 @@ instead.</p></div>
 <div class="paragraph"><p>Stolen from the plugins homepage, the syntax to invoke abbreviation is as follows:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>Abolish {despa,sepe}rat{e,es,ed,ing,ely,ion,ions,or}       {despe,sepa}rat{}</tt></pre>
+<pre><code>Abolish {despa,sepe}rat{e,es,ed,ing,ely,ion,ions,or}       {despe,sepa}rat{}</code></pre>
 </div></div>
 <div class="paragraph"><p>The documentation suggests that I add my abbreviations to <em>~/.vim/after/plugin/abolish.vim</em></p></div>
 <div class="paragraph"><p>Appending a <em>!</em> to the command and the abbreviation will be added to <em>~/.vim/after/plugin/abolish.vim</em>.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>Abolish! edtion{,s} edition</tt></pre>
+<pre><code>Abolish! edtion{,s} edition</code></pre>
 </div></div>
 <div class="paragraph"><p>Abbreviations can also be removed by adding the <em>--delete</em> flag as follows:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>Abolish -delete edtion{,s}</tt></pre>
+<pre><code>Abolish -delete edtion{,s}</code></pre>
 </div></div>
 <div class="paragraph"><p>We can also search for variants as well as accomplishing complete, this is means we can find a string regardless of its
 case and variant which can be quite helpful.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:Abolish -search edit{s,ion}
-:S edit{s,ion}</tt></pre>
+<pre><code>:Abolish -search edit{s,ion}
+:S edit{s,ion}</code></pre>
 </div></div>
 <div class="paragraph"><p>Which searches for:
   edit
@@ -4976,22 +4814,22 @@ whilst still keeping its case and variation. This could be done via a bundle of 
 error prone and lead to missed changes which can be tedious.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:%S/edit{ion,s}/edit/g</tt></pre>
+<pre><code>:%S/edit{ion,s}/edit/g</code></pre>
 </div></div>
 <div class="paragraph"><p>Which will change both <em>edits</em> and <em>edition</em> to <em>edit</em>.</p></div>
 <div class="paragraph"><p>Finally there is the CoeRse command. The command is very useful when it comes to coding and when you want to change a
 variable names format from one to another. For example when you have the variable <em>FilePath</em> which you want to change to
-<em>file_path</em>. You simply type <tt>crs</tt> and the variable is now converted to snakecase.</p></div>
+<em>file_path</em>. You simply type <code>crs</code> and the variable is now converted to snakecase.</p></div>
 <div class="paragraph"><p>To coerce a variable into another format you simply start off with the <em>cr</em> and append one of the below keys to change
 the variables case.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>c: camelCase
+<pre><code>c: camelCase
 m: MixedCase
 _: snake_case
 s: snake_case
 u: SNAKE_UPPERCASE
--: dash-case (not reversible)</tt></pre>
+-: dash-case (not reversible)</code></pre>
 </div></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -5001,13 +4839,13 @@ u: SNAKE_UPPERCASE
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin:   vim-ragtag
+<pre><code>plugin:   vim-ragtag
 homwpage: http://github.com/tpope/vim-ragtag
-source:   git://github.com/tpope/vim-ragtag</tt></pre>
+source:   git://github.com/tpope/vim-ragtag</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>Ragtag is a plugin that assists XML/XHTML based content. there isn&#8217;t much to it really, position the cursor at the end
-of the string you want to wrap and press <tt>&lt;C-X&gt;</tt> and the action key.</p></div>
+of the string you want to wrap and press <code>&lt;C-X&gt;</code> and the action key.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -5018,7 +4856,7 @@ of the string you want to wrap and press <tt>&lt;C-X&gt;</tt> and the action key
 </div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>=        foo&lt;%= ^ %&gt;
+<pre><code>=        foo&lt;%= ^ %&gt;
 +        &lt;%= foo^ %&gt;
 -        foo&lt;% ^ %&gt;
 _        &lt;% foo^ %&gt;
@@ -5028,7 +4866,7 @@ _        &lt;% foo^ %&gt;
 !        &lt;!DOCTYPE...&gt;/&lt;?xml ...?&gt; (menu)
 @        &lt;link rel="stylesheet" ...&gt;
 #        &lt;meta http-equiv="Content-Type" ... /&gt;
-$        &lt;script src="/javascripts/^.js"&gt;&lt;/script&gt;</tt></pre>
+$        &lt;script src="/javascripts/^.js"&gt;&lt;/script&gt;</code></pre>
 </div></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -5038,14 +4876,14 @@ $        &lt;script src="/javascripts/^.js"&gt;&lt;/script&gt;</tt></pre>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin:     snipmate-snippets
+<pre><code>plugin:     snipmate-snippets
 homepage:   http://github.com/baphled/snipmate-snippets
-source:     git://github.com/baphled/snipmate-snippets.git</tt></pre>
+source:     git://github.com/baphled/snipmate-snippets.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>So I like to have shortcuts for commonly typed words and command, especially when I am coding, for this omnicomplete is
 cool to an extent but it doesn&#8217;t quite cover exactly what I am looking for. This is where <em>snipmate</em> comes into play. It
-allows you to create and use custom keys accompanied by <tt>&lt;TAB&gt;</tt> to quickly type a string. In the past snipmate came with
+allows you to create and use custom keys accompanied by <code>&lt;TAB&gt;</code> to quickly type a string. In the past snipmate came with
 a host of snippets as part of the plugin but as time has gone on it has dropped them as the list of snippets is quite
 exhaustive. They now belong as part of <em>snipmate-snippets</em>.</p></div>
 <div class="paragraph"><p>I&#8217;m also not a fan of having bloated customisations and have decided to fork <em>snipmate-snippets</em> so that I can tweak it
@@ -5063,9 +4901,9 @@ and feel I need to play around with these more.</p></div>
 <h4 id="_vim_textobj_rubyblock">vim-textobj-rubyblock</h4>
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin:   vim-textobj-rubyblock
+<pre><code>plugin:   vim-textobj-rubyblock
 homepage: http://github.com/nelstrom/vim-textobj-rubyblock
-source:   git://github.com/nelstrom/vim-textobj-rubyblock</tt></pre>
+source:   git://github.com/nelstrom/vim-textobj-rubyblock</code></pre>
 </div></div>
 <div class="paragraph"><p>So if you didn&#8217;t know before, I&#8217;m quite a fan of text objects and this is one of those plugins that I have been meaning
 to wrap my muscle memory around for a long while.</p></div>
@@ -5076,7 +4914,7 @@ The atypical thing to do is the following:</p></div>
 <div class="paragraph"><p>This does similar to the above but highlights all of the block
   var</p></div>
 <div class="paragraph"><p>It doesn&#8217;t stop there anything that you can do with a single character, you can do with this and other text objects.
-Want to delete everything within a block <tt>dir</tt> deletes the inner ruby block.</p></div>
+Want to delete everything within a block <code>dir</code> deletes the inner ruby block.</p></div>
 <div class="paragraph"><p>The goal for me over the next few days is to play around with these combinations and see what I learn.</p></div>
 <div class="admonitionblock">
 <table><tr>
@@ -5092,19 +4930,19 @@ Want to delete everything within a block <tt>dir</tt> deletes the inner ruby blo
 <h4 id="_vim_indent_object">vim-indent-object</h4>
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin:   vim-indent-object
+<pre><code>plugin:   vim-indent-object
 homepage: http://github.com/michaeljsmith/vim-indent-object
-source:   git://github.com/michaeljsmith/vim-indent-object</tt></pre>
+source:   git://github.com/michaeljsmith/vim-indent-object</code></pre>
 </div></div>
 <div class="paragraph"><p>This plugins add a few more text objects to my tool chain. This one is more general than the last and deals with
 indentation blocks of text.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>ai - an indentation level and line above
+<pre><code>ai - an indentation level and line above
 ii - inner indentation
-aI - an indentation level lines below and above</tt></pre>
+aI - an indentation level lines below and above</code></pre>
 </div></div>
-<div class="paragraph"><p>As noted in the documentation <tt>iI</tt> is also available but it is essentially added for completeness. As with other text
+<div class="paragraph"><p>As noted in the documentation <code>iI</code> is also available but it is essentially added for completeness. As with other text
 objects I&#8217;m able to do something with a indent block.</p></div>
 <div class="paragraph"><p>So to delete a everthing within a indentation text object is done as follows:
   dai</p></div>
@@ -5119,12 +4957,12 @@ objects I&#8217;m able to do something with a indent block.</p></div>
 <div class="paragraph"><p>Selecting an indentation text object and move it up three times.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>vai&lt;C-k&gt;&lt;C-k&gt;&lt;C-k&gt;</tt></pre>
+<pre><code>vai&lt;C-k&gt;&lt;C-k&gt;&lt;C-k&gt;</code></pre>
 </div></div>
 <div class="paragraph"><p>and moving it down can be do as so:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>vai&lt;C-j&gt;&lt;C-j&gt;&lt;C-j&gt;</tt></pre>
+<pre><code>vai&lt;C-j&gt;&lt;C-j&gt;&lt;C-j&gt;</code></pre>
 </div></div>
 </div>
 </div>
@@ -5153,9 +4991,9 @@ vim-json
 <h4 id="_jasmine_vim">jasmine.vim</h4>
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin:     jasmine.vim
+<pre><code>plugin:     jasmine.vim
 homepage:   http://github.com/claco/jasmine.vim
-source:     git://gitHub.com/claco/jasmine.vim.git</tt></pre>
+source:     git://gitHub.com/claco/jasmine.vim.git</code></pre>
 </div></div>
 <div class="paragraph"><p>I like to test what I&#8217;m coding and javascript is no exception, the best unit test tool I&#8217;ve used so far is <em>Jasmine</em>. I
 prefer this as it is not that far removed from <em>rspec</em> and it allows me to cleanly write tests whilst driving out
@@ -5198,24 +5036,24 @@ future.</p></div>
 other command you simply prefix the range you want to specify with the compile command:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>3,5 CoffeeCompile</tt></pre>
+<pre><code>3,5 CoffeeCompile</code></pre>
 </div></div>
 <div class="paragraph"><p>There is also the ability to run coffeelint on a file to sanity check it, which is also very nice. The one thing I hate
 is watching everything compile and pass yet to find that lint doesn&#8217;t like what I&#8217;ve done.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:CoffeeLint</tt></pre>
+<pre><code>:CoffeeLint</code></pre>
 </div></div>
 <div class="paragraph"><p>I&#8217;ll need to add coffeelint to my toolchain and tell the plugin where to find it by supplying the following command in
 my vimrc:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>let coffee_linter = '/usr/bin/coffeelint'</tt></pre>
+<pre><code>let coffee_linter = '/usr/bin/coffeelint'</code></pre>
 </div></div>
 <div class="paragraph"><p>Finally I can run coffeescript directly within vim with the following:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:CoffeeRun</tt></pre>
+<pre><code>:CoffeeRun</code></pre>
 </div></div>
 <div class="paragraph"><p>This will open up another buffer with the scripts output in it.</p></div>
 <div style="page-break-after:always"></div>
@@ -5268,15 +5106,15 @@ vim-rails
 <h4 id="_vim_ruby_block_conv">vim-ruby-block-conv</h4>
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin:   vim-ruby-block-conv
+<pre><code>plugin:   vim-ruby-block-conv
 homepage: http://github.com/bronson/vim-ruby-block-conv
-source:   git://github.com/bronson/vim-ruby-block-conv.git</tt></pre>
+source:   git://github.com/bronson/vim-ruby-block-conv.git</code></pre>
 </div></div>
 <div class="paragraph"><p>This plugin is pretty straight forward, it basically allows you to convert do/end blocks into {} and vice version.
 That&#8217;s all there is to it really.</p></div>
 <div class="paragraph"><p>I tend to use this when a block is more than 1 line or when it ends up being more than a 1 liner. I also use it when in
 OCD mode and find a block that could be converted for consistency.</p></div>
-<div class="paragraph"><p>It adds two mapping <tt>:B</tt> and <tt>&lt;leader&gt;B</tt> to convert blocks and is smart enough to work out what needs to be done. There
+<div class="paragraph"><p>It adds two mapping <code>:B</code> and <code>&lt;leader&gt;B</code> to convert blocks and is smart enough to work out what needs to be done. There
 is nothing else to it.</p></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -5284,9 +5122,9 @@ is nothing else to it.</p></div>
 <h4 id="_vim_ruby_refactoring">vim-ruby-refactoring</h4>
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin:   vim-ruby-refactoring
+<pre><code>plugin:   vim-ruby-refactoring
 homepage: http://github.com/ecomba/vim-ruby-refactoring
-source:   git://github.com/ecomba/vim-ruby-refactoring.git</tt></pre>
+source:   git://github.com/ecomba/vim-ruby-refactoring.git</code></pre>
 </div></div>
 <div class="paragraph"><p>I&#8217;ve already gone over this plugin quite exstensively on Day 18 so I won&#8217;t spend time rehashing what has already been
 added to my diary. For the curious you can find the entry here.</p></div>
@@ -5306,9 +5144,9 @@ added to my diary. For the curious you can find the entry here.</p></div>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin:   vim-ruby
+<pre><code>plugin:   vim-ruby
 homepage: http://github.com/vim-ruby/vim-ruby
-source:   git://github.com/vim-ruby/vim-ruby.git</tt></pre>
+source:   git://github.com/vim-ruby/vim-ruby.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>This plugin adds quite a bit of Ruby related functionality to vim to make it more pleasant to work with the language and
@@ -5427,9 +5265,9 @@ iM - "inner class", select contents of "class"/"end" block, excluding the "class
 <h4 id="_vim_ruby_sinatra">vim-ruby-sinatra</h4>
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin:   vim-ruby-sinatra
+<pre><code>plugin:   vim-ruby-sinatra
 homepage: http://github.com/hallison/vim-ruby-sinatra
-source:   git://github.com/hallison/vim-ruby-sinatra</tt></pre>
+source:   git://github.com/hallison/vim-ruby-sinatra</code></pre>
 </div></div>
 <div class="paragraph"><p>This plugin adds the ability to recognise sinatra based files as well as adding syntax highlighting and snippets to help
 reduce the amount of keys I press. I&#8217;d rather the snippets were in my custom snipmate-snippets project but for now this
@@ -5444,9 +5282,9 @@ and leave that for when I deal with centralising my snippets.</p></div>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin:   vim-ruby
+<pre><code>plugin:   vim-ruby
 homepage: http://github.com/vim-ruby/vim-ruby
-source:   git://github.com/vim-ruby/vim-ruby.git</tt></pre>
+source:   git://github.com/vim-ruby/vim-ruby.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>This plugin adds quite a bit of Ruby related functionality to vim to make it more pleasant to work with the language and
@@ -5588,9 +5426,9 @@ vim-cucumber
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin:   vimerl
+<pre><code>plugin:   vimerl
 homepage: http://github.com/jimenezrick/vimerl
-source:   git://github.com/jimenezrick/vimerl.git</tt></pre>
+source:   git://github.com/jimenezrick/vimerl.git</code></pre>
 </div></div>
 </div></div>
 <div class="paragraph"><p>Whenever I&#8217;ve written Erlang in the past I have used emacs. As I&#8217;m using vim at the moment I have installed this plugin
@@ -5628,12 +5466,12 @@ Syntax checking
 <div class="ulist"><ul>
 <li>
 <p>
-Enables syntax checking - <tt>:ErlangEnableShowErrors</tt>
+Enables syntax checking - <code>:ErlangEnableShowErrors</code>
 </p>
 </li>
 <li>
 <p>
-Disables syntax checking and hides current errors - <tt>:ErlangDisableShowErrors</tt>
+Disables syntax checking and hides current errors - <code>:ErlangDisableShowErrors</code>
 </p>
 </li>
 </ul></div>
@@ -5651,7 +5489,7 @@ Loads an OTP application skeleton
 </p>
 <div class="literalblock">
 <div class="content">
-<pre><tt>nmap &lt;leader&gt;ea :ErlangApplication&lt;CR&gt;</tt></pre>
+<pre><code>nmap &lt;leader&gt;ea :ErlangApplication&lt;CR&gt;</code></pre>
 </div></div>
 </li>
 <li>
@@ -5660,7 +5498,7 @@ Loads an OTP supervisor skeleton
 </p>
 <div class="literalblock">
 <div class="content">
-<pre><tt>nmap &lt;leader&gt;es :ErlangSupervisor&lt;CR&gt;</tt></pre>
+<pre><code>nmap &lt;leader&gt;es :ErlangSupervisor&lt;CR&gt;</code></pre>
 </div></div>
 </li>
 <li>
@@ -5669,7 +5507,7 @@ Loads an OTP gen_server skeleton
 </p>
 <div class="literalblock">
 <div class="content">
-<pre><tt>nmap &lt;leader&gt;eg :ErlangGenServer&lt;CR&gt;</tt></pre>
+<pre><code>nmap &lt;leader&gt;eg :ErlangGenServer&lt;CR&gt;</code></pre>
 </div></div>
 </li>
 <li>
@@ -5678,7 +5516,7 @@ Loads an OTP gen_fsm skeleton
 </p>
 <div class="literalblock">
 <div class="content">
-<pre><tt>nmap &lt;leader&gt;ef :ErlangGenFsm&lt;CR&gt;</tt></pre>
+<pre><code>nmap &lt;leader&gt;ef :ErlangGenFsm&lt;CR&gt;</code></pre>
 </div></div>
 </li>
 <li>
@@ -5687,7 +5525,7 @@ Loads an OTP gen_event skeleton
 </p>
 <div class="literalblock">
 <div class="content">
-<pre><tt>nmap &lt;leader&gt;ege :ErlangGenEvent&lt;CR&gt;</tt></pre>
+<pre><code>nmap &lt;leader&gt;ege :ErlangGenEvent&lt;CR&gt;</code></pre>
 </div></div>
 </li>
 </ul></div>
@@ -5695,9 +5533,9 @@ Loads an OTP gen_event skeleton
 settings.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>let erlang_skel_header = {"author": "Yomi Colledge", "owner" : "Yomi Colledge"}</tt></pre>
+<pre><code>let erlang_skel_header = {"author": "Yomi Colledge", "owner" : "Yomi Colledge"}</code></pre>
 </div></div>
-<div class="paragraph"><p>For the moment I&#8217;ll create a <tt>~/.vim_local</tt> file and put my personal settings there.</p></div>
+<div class="paragraph"><p>For the moment I&#8217;ll create a <code>~/.vim_local</code> file and put my personal settings there.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -5710,15 +5548,15 @@ questions and generate the files when they are not found.</td>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>let erlang_folding = 0</tt></pre>
+<pre><code>let erlang_folding = 0</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>let erlang_highlight_bif = 1</tt></pre>
+<pre><code>let erlang_highlight_bif = 1</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>let erlang_skel_replace = 1</tt></pre>
+<pre><code>let erlang_skel_replace = 1</code></pre>
 </div></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -5730,10 +5568,10 @@ homepage: <a href="http://github.com/chrisbra/csv.vim">http://github.com/chrisbr
 source:   git://github.com/chrisbra/csv.vim.git</p></div>
 <div class="paragraph"><p>This plugin has quite a bit of functionality including the basics that are provided by most of the filetype plugins I
 have already installed. Along with this basic functionality it also provides ways of interacting with CSV alot nicer.</p></div>
-<div class="paragraph"><p>Below is a breakdown of the added commands that are provided by <tt>csv.vim</tt>:</p></div>
+<div class="paragraph"><p>Below is a breakdown of the added commands that are provided by <code>csv.vim</code>:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>WhatColumn
+<pre><code>WhatColumn
 NrColumns
 SearchInColumn
 HiColumn
@@ -5748,19 +5586,19 @@ MoveColumn
 SumCol
 NewRecord
 NewDelimiter
-Duplicate</tt></pre>
+Duplicate</code></pre>
 </div></div>
 <div class="sect4">
 <h5 id="_text_objects_4">Text objects</h5>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>if</tt> - select inner field
+<code>if</code> - select inner field
 </p>
 </li>
 <li>
 <p>
-<tt>af</tt> - select outter field
+<code>af</code> - select outter field
 </p>
 </li>
 </ul></div>
@@ -5769,28 +5607,28 @@ Duplicate</tt></pre>
 <h5 id="_converting_a_csv">Converting a CSV</h5>
 <div class="literalblock">
 <div class="content">
-<pre><tt>ConverData</tt></pre>
+<pre><code>ConverData</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>ConverData!</tt></pre>
+<pre><code>ConverData!</code></pre>
 </div></div>
 <div class="paragraph"><p>When using this command Vim will ask you for some input, similar to below:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>Pre convert text:</tt></pre>
+<pre><code>Pre convert text:</code></pre>
 </div></div>
 <div class="paragraph"><p>This allows you to input the text you want at the start of the selection</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>Post convert text:</tt></pre>
+<pre><code>Post convert text:</code></pre>
 </div></div>
 <div class="paragraph"><p>This allows you to input the text you want at the end of the selection</p></div>
-<div class="paragraph"><p>Both of these can be predefined with the use of <tt>g:csv_post_convert</tt> and <tt>g:csv_pre_convert</tt>.</p></div>
+<div class="paragraph"><p>Both of these can be predefined with the use of <code>g:csv_post_convert</code> and <code>g:csv_pre_convert</code>.</p></div>
 <div class="paragraph"><p>The final prompt will be as follows, this will tell Vim how to format the actual CSV data:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>Converted text, use %s for column input:</tt></pre>
+<pre><code>Converted text, use %s for column input:</code></pre>
 </div></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -5801,38 +5639,38 @@ Duplicate</tt></pre>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>plugin:   vim-cucumber
+<pre><code>plugin:   vim-cucumber
 homepage: http://github.com/tpope/vim-cucumber
-source:   git://github.com/tpope/vim-cucumber.git</tt></pre>
+source:   git://github.com/tpope/vim-cucumber.git</code></pre>
 </div></div>
 </div></div>
-<div class="paragraph"><p>As with all the other content related plugins <tt>vim-cucumber</tt> adds syntax highlighting, mappings and file recognition. It
+<div class="paragraph"><p>As with all the other content related plugins <code>vim-cucumber</code> adds syntax highlighting, mappings and file recognition. It
 also lets you know whether their are syntax errors or a step has not been defined. The former is quite useful as it
 keeps you focused and allows you to easily work out which steps need to be implemented and which ones have already been
 added. As soon as a feature file is saved compilation is started and shortly after, if there are any errors, you will be
 alerted via the quick tip buffer.</p></div>
 <div class="sect4">
 <h5 id="_mappings">Mappings</h5>
-<div class="paragraph"><p>There are a few mappings that <tt>vim-cucumber</tt> includes, though they are not actually documented anywhere.</p></div>
+<div class="paragraph"><p>There are a few mappings that <code>vim-cucumber</code> includes, though they are not actually documented anywhere.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>&lt;Ctrl-]&gt;</tt> - Go to the step under the cursor
+<code>&lt;Ctrl-]&gt;</code> - Go to the step under the cursor
 </p>
 </li>
 <li>
 <p>
-<tt>&lt;Ctrl-W&gt;]</tt> - Open the step under the cursor in a new split buffer
+<code>&lt;Ctrl-W&gt;]</code> - Open the step under the cursor in a new split buffer
 </p>
 </li>
 <li>
 <p>
-<tt>&lt;Ctrl-W&gt;&lt;Ctrl-]&gt;</tt> - Same as above
+<code>&lt;Ctrl-W&gt;&lt;Ctrl-]&gt;</code> - Same as above
 </p>
 </li>
 <li>
 <p>
-<tt>&lt;Ctrl-W&gt;}</tt> - Open associated buffer in a new split buffer
+<code>&lt;Ctrl-W&gt;}</code> - Open associated buffer in a new split buffer
 </p>
 </li>
 </ul></div>
@@ -5868,22 +5706,22 @@ vim-fugitive
 <div style="page-break-after:always"></div>
 <div class="sect3">
 <h4 id="_vim_rake">vim-rake</h4>
-<div class="paragraph"><p>This provides all the niceness of <tt>vim-rails</tt> without actually needing to work on a rails project. So commands like
-<tt>:Rake</tt> are provided here.</p></div>
+<div class="paragraph"><p>This provides all the niceness of <code>vim-rails</code> without actually needing to work on a rails project. So commands like
+<code>:Rake</code> are provided here.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>:A</tt> - Open the alternate file
+<code>:A</code> - Open the alternate file
 </p>
 </li>
 <li>
 <p>
-<tt>:AV</tt> - Open the alternate file in a new vertical split
+<code>:AV</code> - Open the alternate file in a new vertical split
 </p>
 </li>
 <li>
 <p>
-<tt>:AS</tt> - Open the alternate file in a new split
+<code>:AS</code> - Open the alternate file in a new split
 </p>
 <div class="ulist"><ul>
 <li>
@@ -5895,12 +5733,12 @@ this is useful when open Gemfile.lock or opening a test file.
 </li>
 <li>
 <p>
-<tt>:Rlib</tt> - Edit a file under the lib/ directory
+<code>:Rlib</code> - Edit a file under the lib/ directory
 </p>
 </li>
 <li>
 <p>
-<tt>:Rtags</tt> - Run ctags for the project
+<code>:Rtags</code> - Run ctags for the project
 </p>
 </li>
 </ul></div>
@@ -5947,10 +5785,10 @@ I&#8217;ll create my own.</p></div>
 </div>
 <div class="sect3">
 <h4 id="_vim_bundler">vim-bundler</h4>
-<div class="paragraph"><p>Yet another indespensible plugin. I use bundle quite a bit and rather not have to shell out to run <tt>bundle</tt> by itself.</p></div>
-<div class="paragraph"><p>The main use for bundle is to actually call <tt>bundle</tt> to keep my gems up to date and this is done by the following
-mapping <tt>:Bundle</tt>.</p></div>
-<div class="paragraph"><p>There is also the functionality to open a gem via <tt>:Bopen</tt> or <tt>:Bsplit</tt> the former will open the gem in the current
+<div class="paragraph"><p>Yet another indespensible plugin. I use bundle quite a bit and rather not have to shell out to run <code>bundle</code> by itself.</p></div>
+<div class="paragraph"><p>The main use for bundle is to actually call <code>bundle</code> to keep my gems up to date and this is done by the following
+mapping <code>:Bundle</code>.</p></div>
+<div class="paragraph"><p>There is also the functionality to open a gem via <code>:Bopen</code> or <code>:Bsplit</code> the former will open the gem in the current
 buffer where the latter will open it in a new split.</p></div>
 <div style="page-break-after:always"></div>
 </div>
@@ -5963,51 +5801,51 @@ buffer where the latter will open it in a new split.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>:Gstatus</tt> - View git status
+<code>:Gstatus</code> - View git status
 </p>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>-</tt> - stage a change
+<code>-</code> - stage a change
 </p>
 </li>
 <li>
 <p>
-<tt>&lt;Ctrl-V&gt;(j|k)</tt> - Select a group of files to (un)stage
+<code>&lt;Ctrl-V&gt;(j|k)</code> - Select a group of files to (un)stage
 </p>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>p</tt> - Incrementally patch (un)stage changes
+<code>p</code> - Incrementally patch (un)stage changes
 </p>
 </li>
 </ul></div>
 </li>
 <li>
 <p>
-<tt>&lt;Shift-C&gt;</tt> - Commit changes
+<code>&lt;Shift-C&gt;</code> - Commit changes
 </p>
 </li>
 <li>
 <p>
-<tt>:Gcommit</tt> - Commit changes
+<code>:Gcommit</code> - Commit changes
 </p>
 </li>
 </ul></div>
 </li>
 <li>
 <p>
-<tt>:Gblame</tt> - Display git blame in a side buffer
+<code>:Gblame</code> - Display git blame in a side buffer
 </p>
 </li>
 <li>
 <p>
-<tt>:Gread</tt> - A variant of <tt>git checkout -- filename</tt>
+<code>:Gread</code> - A variant of <code>git checkout -- filename</code>
 </p>
 </li>
 <li>
 <p>
-<tt>:Ggrep</tt> - Search the work tree
+<code>:Ggrep</code> - Search the work tree
 </p>
 </li>
 </ul></div>
@@ -6085,7 +5923,7 @@ vim-gist
 </div>
 <div class="sect3">
 <h4 id="_vim_addon_mw_utils">vim-addon-mw-utils</h4>
-<div class="paragraph"><p>This is another plugin that is required for <tt>snipmate</tt> to work functionally.
+<div class="paragraph"><p>This is another plugin that is required for <code>snipmate</code> to work functionally.
 ===== Dependancies</p></div>
 <div class="ulist"><ul>
 <li>
@@ -6098,7 +5936,7 @@ vim-snipmate
 </div>
 <div class="sect3">
 <h4 id="_tlib_vim">tlib_vim</h4>
-<div class="paragraph"><p>This is required by <tt>snipmate</tt> to add some sugar for the plugin to work nicely. I haven&#8217;t delved too deep into this
+<div class="paragraph"><p>This is required by <code>snipmate</code> to add some sugar for the plugin to work nicely. I haven&#8217;t delved too deep into this
 plugin apart from taking note of what else actually uses it and why it is so important.</p></div>
 <div class="sect4">
 <h5 id="_dependancies_3">Dependancies</h5>
@@ -6116,29 +5954,28 @@ vim-snipmate
 </div>
 </div>
 <div class="sect1">
-<h2 id="_housekeeping_tools">Housekeeping tools</h2>
+<h2 id="_tweak_console">Tweak console</h2>
 <div class="sectionbody">
 <div class="sidebarblock">
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>duration: 4 weeks
+<pre><code>duration: 2 week
 notes:
-  * manage personal credentials
-  * notifications and alerts via tmux
-  * define local files to hide
-  * create script to check for my dotfile dependancies
-    * Should download them if they are not found</tt></pre>
+  * install tmux powerline
+  * tweak console colours
+  * Tweak setup on *nix boxes
+  * learn some zsh tricks
+  * add aliases for commonly used commands and task
+  * study git flow
+  * vi mode for all
+  * play with task manager
+  * autojump</code></pre>
 </div></div>
 </div></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">This section is incomplete</td>
-</tr></table>
-</div>
+<div class="paragraph"><p>Over the next couple of weeks I&#8217;ll be focusing on my terminal setting and improving my knowledge of zsh and git. I&#8217;d
+like to tweak my tmux status bar so that it isn&#8217;t so vanilla as well as displaying more information. Once that is done
+I&#8217;d like to improve my terminal so that I can use my vi binding within irb, pry, and other REPLs.</p></div>
 <div style="page-break-after:always"></div>
 <div class="sect2">
 <h3 id="_day_36">Day 36</h3>
@@ -6154,17 +5991,17 @@ my status bar looked pretty much like the vanilla version that comes with Tmux.<
 <h4 id="_installing_tmux_powerline">Installing tmux-powerline</h4>
 <div class="paragraph"><p>homepage: <a href="http://github.com/erikw/tmux-powerline">http://github.com/erikw/tmux-powerline</a></p></div>
 <div class="paragraph"><p>Today I want to put some time aside to customise my terminal a little bit more. The one thing that has come to my
-attension recently is <tt>tmux-powerline</tt>.</p></div>
+attension recently is <code>tmux-powerline</code>.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
-<td class="content">Display image of my status bar before setting up <tt>tmux-powerline</tt></td>
+<td class="content">Display image of my status bar before setting up <code>tmux-powerline</code></td>
 </tr></table>
 </div>
 <div class="paragraph"><p>The generic tmux status bar is ok but I prefer a little bit more control and flexibility as to what is shown there and
-how. This is where <tt>tmux-powerline</tt> is cool. I&#8217;d like to have quite a bit of information accessible to me at a glance so
+how. This is where <code>tmux-powerline</code> is cool. I&#8217;d like to have quite a bit of information accessible to me at a glance so
 the ideal setup for me will tell me the following things:</p></div>
 <div class="ulist"><ul>
 <li>
@@ -6224,16 +6061,16 @@ List of sessions
 <h5 id="_installing">Installing</h5>
 <div class="paragraph"><p>Initially I just threw everything together and dumped tmux-powerline and the solarized theme into my home directory. I
 don&#8217;t particularly like this and create a tmux repository.</p></div>
-<div class="paragraph"><p>So firstly I&#8217;ve had to fork my own version of <tt>tmux-powerline</tt> mainly so that I could quickly customise my own status
+<div class="paragraph"><p>So firstly I&#8217;ve had to fork my own version of <code>tmux-powerline</code> mainly so that I could quickly customise my own status
 bar but also to that I can add some extra functionality to the tool later on down the road when I get some playtime.</p></div>
-<div class="paragraph"><p>I&#8217;ll be creating a new directory called <tt>tmux</tt> which will store all my tmux customisations. That include the tmux
-solarized theme and my tmux configuration file. I&#8217;ll then symlink <tt>.tmux.conf</tt> to my new repository.</p></div>
+<div class="paragraph"><p>I&#8217;ll be creating a new directory called <code>tmux</code> which will store all my tmux customisations. That include the tmux
+solarized theme and my tmux configuration file. I&#8217;ll then symlink <code>.tmux.conf</code> to my new repository.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git init
+<pre><code>git init
 git submodule add git@github.com:baphled/tmux-powerline.git powerline
 mv ~/.tmux.conf tmux.conf
-ln -s tmux.conf ~/.tmux.conf</tt></pre>
+ln -s tmux.conf ~/.tmux.conf</code></pre>
 </div></div>
 </div>
 <div class="sect4">
@@ -6244,7 +6081,7 @@ customise the left bar, where I&#8217;d like most of my information to be stored
 <a href="http://github.com/baphled/tmuxfiles/blob/c933919bb3c2cc4eb904c7d101524cacdeff2ee7/tmux.conf">here</a>.</p></div>
 <div class="paragraph"><p>I don&#8217;t really want to use the right side status bar at the moment, though this may change at some point down the road.
 So I want to make sure that the right side status bar doesn&#8217;t display, I do this by making the status empty.</p></div>
-<div class="paragraph"><p>The one things that annoys me about the current state of <tt>tmux-powerline</tt> is that the status bars generally need to be
+<div class="paragraph"><p>The one things that annoys me about the current state of <code>tmux-powerline</code> is that the status bars generally need to be
 customised but there is no real way of doing this at the moment without having to fork the project and make it my own.
 This is cool and everything but keeping things up to date can become a pain.</p></div>
 <div class="paragraph"><p>So in this case I&#8217;m going create my own status file, basically copying my current left statusbar and move it to my
@@ -6253,7 +6090,7 @@ repository.</p></div>
 <div class="sect4">
 <h5 id="_the_final_step">The final step</h5>
 <div class="paragraph"><p>The first two parts of my customised status bar are actually done by hand, though it was a cool things to work out at
-the time I should create what <tt>tmux-powerline</tt> calls segments. There is already one to display the session name and pane
+the time I should create what <code>tmux-powerline</code> calls segments. There is already one to display the session name and pane
 number but I want to customise it to look like how I currently have it.</p></div>
 <div class="paragraph"><p>As I already have a forked version of the repository it is easy enough to make this change and remove prerolled version.
 Before I do that though I should add a segment for displaying my current username.</p></div>
@@ -6267,6 +6104,198 @@ Before I do that though I should add a segment for displaying my current usernam
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_day_37">Day 37</h3>
+<div class="paragraph"><p>I&#8217;ve played around with a few color setting over the past few months but solarized has to be the best so far. Today
+I&#8217;ll be setting it up in iTerm2, tmux and vim.</p></div>
+<div class="sect3">
+<h4 id="_setting_up_solarize_on_my_mac">Setting up Solarize on my Mac</h4>
+<div class="paragraph"><p>So I&#8217;ve been using the same colour scheme for a while and it&#8217;s and and all but Solarized seems to be the best,
+visually, so I&#8217;ve decided to set up Solarized as my main color scheme.</p></div>
+<div class="paragraph"><p>I&#8217;ll start this off will setting up my Mac. The settings may be slightly different for *nix based machines but I&#8217;ll
+tackle that in another entry.</p></div>
+<div class="paragraph"><p>TODO: Add reference to previous image</p></div>
+<div class="paragraph"><p>For now I&#8217;ll start with Iterm2. My colour settings are quite basic as you can see from the previous image.</p></div>
+<div class="paragraph"><p>So first off I needed download the iterm solarized color settings and store them in my dotfiles. I stored the settings
+in <code>~/colors/iterm2/solarized_dark.itermcolors</code></p></div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="/images/iterm2_color_settings.png">
+<img src="images/iterm2_color_settings.png" alt="iTerm2 settings" width="500" />
+</a>
+</div>
+</div>
+<div class="paragraph"><p>I then needed to import this into iTerm2.</p></div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="/images/iterm2_load_solarized_dark.png">
+<img src="images/iterm2_load_solarized_dark.png" alt="iTerm2 settings" width="500" />
+</a>
+</div>
+</div>
+<div class="paragraph"><p>Once this is complete all that was needed was select the new plugin.</p></div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="/images/iterm2_select_solarized.png">
+<img src="images/iterm2_select_solarized.png" alt="Select Solarized Dark" width="500" />
+</a>
+</div>
+</div>
+<div class="paragraph"><p>Finally iTerm2 is now setup with Solarized Dark :)</p></div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="/images/iterm2_console_with_solarized_dark.png">
+<img src="images/iterm2_console_with_solarized_dark.png" alt="Iterm2 with Solarized Dark" width="500" />
+</a>
+</div>
+</div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_settings_up_solarized_dark_for_vim">Settings up Solarized Dark for Vim</h4>
+<div class="paragraph"><p>The next step is get my Vim setup with Solarized also.</p></div>
+<div class="paragraph"><p>This was pretty straight forward. I simply had to add the vim-solarized plugin into my dotvim files (add link to
+change here).</p></div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="/images/vim_solarized_and_vividchalk.png">
+<img src="images/vim_solarized_and_vividchalk.png" alt="Vim with Vividchalk" width="500" />
+</a>
+</div>
+</div>
+<div class="paragraph"><p>I then had to change the colorscheme to solarized and everything was good to go. The next time I started Vim Solarized
+was setup. :)</p></div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="/images/vim_solarized_dark.png">
+<img src="images/vim_solarized_dark.png" alt="Vim with Solarized Dark" width="500" />
+</a>
+</div>
+</div>
+<div class="paragraph"><p>There was one thing was I couldn&#8217;t do without, and that was my column width colour. I found a code snippet that fitted
+the purpose so I add that to my <code>~/.vimrc</code> file.</p></div>
+<div class="paragraph"><p>I could possibly improve this a little bit more but for the time being it&#8217;ll do.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_setting_up_tmux_with_solarized_dark">Setting up Tmux with Solarized Dark</h4>
+<div class="paragraph"><p>Now it&#8217;s time to get tmux setup with Solarized Dark also. I already had a bunch of custom color settings but I&#8217;ve
+decided to do away with those and primarily use Solarized. First off I removed the existing colour settings and
+downloaded the tmux colour scheme from <a href="https://raw.github.com/seebi/tmux-colors-solarized/master/tmuxcolors-dark.conf">https://raw.github.com/seebi/tmux-colors-solarized/master/tmuxcolors-dark.conf</a>.</p></div>
+<div class="paragraph"><p>TODO: Display snippet of the change.</p></div>
+<div class="paragraph"><p>This was then copied to my tmuxfiles repositories and linked to from with my tmux.conf file.</p></div>
+<div class="paragraph"><p>Once that was done I simple ran the following command to update my current session.</p></div>
+<div class="paragraph"><p><code>source ~/.tmux.conf</code></p></div>
+<div class="paragraph"><p>Now that everything is setup. My setup now looks like this:</p></div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="/images/tmux-powerline_and_solarized.png">
+<img src="images/tmux-powerline_and_solarized.png" alt="Tmux-powerline and Solarized" width="500" />
+</a>
+</div>
+</div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect3">
+<h4 id="_setting_up_solarized_dircolours">Setting up Solarized dircolours</h4>
+<div class="paragraph"><p>So I&#8217;m almost complete but I&#8217;m not quite happy about the colouring of the directory names, or shall I say lack of colour.</p></div>
+<div class="imageblock">
+<div class="content">
+<img src="images/default_dircolor.png" alt="Default directory colour settings" />
+</div>
+</div>
+<div class="paragraph"><p>There is a project that helps to change this (<a href="https://github.com/seebi/dircolors-solarized">https://github.com/seebi/dircolors-solarized</a>). I&#8217;d like to keep up to
+date with this project but easily switch out the settings if needed. I&#8217;ll create a colourschemes directory that I will
+keep my colour settings in. I then linked the desired colour scheme for dircolors <code>ln -s
+~/colour_schemes/dircolors.256 ~/.dir_colors</code></p></div>
+<div class="paragraph"><p>I also had to install coreutils to get access to the dircolours command.</p></div>
+<div class="paragraph"><p><code>brew install coreutils --default-names</code></p></div>
+<div class="paragraph"><p>Once this was installed I could then add the following code snippet to <code>~/.zshrc</code>.</p></div>
+<div style="page-break-after:always"></div>
+<div class="paragraph"><p>I&#8217;d like to tweak my colour setting further but I&#8217;ll leave this for now while I get used to the latest changes.</p></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_day_38">Day 38</h3>
+<div class="paragraph"><p>So there has been quite a few changes to <code>tmux-powerline</code> over the past few months. One of the major changes is it is
+now a lot easier to customise your powerline configuration.</p></div>
+<div class="paragraph"><p>I&#8217;d like to spend some time integrating these new setting into my current setup and possibly thinking about other
+segments that I can create once it&#8217;s done.</p></div>
+<div class="sect3">
+<h4 id="_revisiting_tmux_powerline">Revisiting tmux-powerline</h4>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_day_38_2">Day 38</h3>
+<div class="paragraph"><p>I&#8217;ve been having issues with installing my dotfiles on new machines, mainly as there are quite a few dependancies and
+git submodules. I can get around this by creating rake tasks that allow me to install these dependancies and keep my
+submodules up to date.</p></div>
+<div class="paragraph"><p>The first task I want to capture is installing my dotfiles. To do this I need to take the following steps:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Make sure I don&#8217;t have the files already installed
+</p>
+</li>
+<li>
+<p>
+Install brew (if running OSX)
+</p>
+</li>
+<li>
+<p>
+Install rvm with ruby
+</p>
+</li>
+<li>
+<p>
+Clone dotfile repository
+</p>
+</li>
+<li>
+<p>
+Recursively initialise and update all dotfiles
+</p>
+</li>
+<li>
+<p>
+Install gems
+</p>
+</li>
+</ul></div>
+<div style="page-break-after:always"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_housekeeping_tools">Housekeeping tools</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre><code>duration: 4 weeks
+notes:
+  * manage personal credentials
+  * notifications and alerts via tmux
+  * define local files to hide
+  * create script to check for my dotfile dependancies
+    * Should download them if they are not found</code></pre>
+</div></div>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">This section is incomplete</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>I&#8217;ve sent quite a bit of time setting up my dotfiles over the past few weeks but one of the things I haven&#8217;t really done
+is formalise a way to keep my toolset up to date.</p></div>
+<div style="page-break-after:always"></div>
 </div>
 </div>
 <div class="sect1">
@@ -6284,7 +6313,7 @@ Before I do that though I should add a segment for displaying my current usernam
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><tt>duration: 6 weeks
+<pre><code>duration: 6 weeks
 location: everywhere
 notes:
   * pain experienced
@@ -6293,7 +6322,7 @@ notes:
   * what was missed
   * what did I learn (daily log)
   * use `:map` in Vim to learn new mappings
-  * use vimtutor</tt></pre>
+  * use vimtutor</code></pre>
 </div></div>
 </div></div>
 <div class="admonitionblock">
@@ -6315,7 +6344,7 @@ explanation as to why they are useful and why I can&#8217;t live without them.</
 </div>
 <div style="page-break-after:always"></div>
 <div class="sect2">
-<h3 id="_day_25_2">Day 25</h3>
+<h3 id="_day_50">Day 50</h3>
 <div class="paragraph"><p>As it stands at present I&#8217;ve forked my version from <a href="https://github.com/astrails/dotvim">here</a>.</p></div>
 <div class="paragraph"><p>Which was cool to start off with but I&#8217;ve had to make a heap of changes and to be honest I&#8217;d rather start from scratch
 and setup my own Vim rig. I&#8217;d like the coming next 6 weeks to focus on storing the grass roots functionality of Vim into
@@ -6324,7 +6353,7 @@ great source of knowledge for me in the past year.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
-<h3 id="_day_34_2">Day 34</h3>
+<h3 id="_day_51">Day 51</h3>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -6340,7 +6369,7 @@ coming out.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
-<h3 id="_day_35_2">Day 35</h3>
+<h3 id="_day_52">Day 52</h3>
 <div class="paragraph"><p>I&#8217;ve setup w3m but I haven&#8217;t really had time to experiment with it. I know it can open images and it can apparently open
 tabs but I have never played with the former. It would be cool to work out how this happens so I can tell tmux to open a
 new tab with a link when ever I feel. This way if I have a link copied and can quickly trigger a tmux mapping and get it
@@ -6359,18 +6388,18 @@ with anything else.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
-<h3 id="_day_36_2">Day 36</h3>
+<h3 id="_day_53">Day 53</h3>
 <div class="paragraph"><p>Today is that day I start hacking on some scripts and start to get used to some of the tools I&#8217;ve neglected to use over
 the years. My main focus will be to improve he way I use sed and awk and improve my bash script so that I can quickly
 hack some workflow scripts together to help tweak my productivity further.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
-<h3 id="_day_37">Day 37</h3>
+<h3 id="_day_54">Day 54</h3>
 <div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
-<h3 id="_day_38">Day 38</h3>
+<h3 id="_day_55">Day 55</h3>
 <div class="paragraph"><p>Today I&#8217;ll work on getting to know twirssi a little bit more. These are the most important things I want to get to know
 so that I can become more productive with the tool and be able to track conversations I&#8217;ve had and what other people are
 saying to each other.</p></div>
@@ -6465,7 +6494,7 @@ Improve the way I ignore files
 <div class="ulist"><ul>
 <li>
 <p>
-Use <tt>.git/info/exclude</tt> to hide local files
+Use <code>.git/info/exclude</code> to hide local files
 </p>
 </li>
 </ul></div>
@@ -6543,7 +6572,7 @@ How do I read a conversation in twitter
 <div class="sect2">
 <h3 id="_customising_oh_my_zsh">Customising oh-my-zsh</h3>
 <div class="paragraph"><p>Firstly I love VIM, so I want my key bindings whilst using zsh, this
-appears to be as easy as adding <tt>set -o vi</tt> in your <tt>~/.zshrc</tt> file.</p></div>
+appears to be as easy as adding <code>set -o vi</code> in your <code>~/.zshrc</code> file.</p></div>
 <div class="paragraph"><p>I&#8217;m sure there are more things that you can do to get all of vi niceness
 but doing this alone gives up the basics, which we can build upon as we
 tweak our setup.</p></div>
@@ -6595,8 +6624,8 @@ Add the following to your .zshrc file:
 </p>
 <div class="literalblock">
 <div class="content">
-<pre><tt>autoload -U zmv
-alias mmv='noglob zmv -W'</tt></pre>
+<pre><code>autoload -U zmv
+alias mmv='noglob zmv -W'</code></pre>
 </div></div>
 </li>
 </ul></div>
@@ -6699,31 +6728,31 @@ Separate bindings into different files dependant on their function</p></div>
 <div class="paragraph"><p>These are a few vi commands I use quie a lot, as in "I should alias"</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:Git ci --amend         # I'm forever amending commits</tt></pre>
+<pre><code>:Git ci --amend         # I'm forever amending commits</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:Git rebase --continue  # Normally used after I merge conflicts</tt></pre>
+<pre><code>:Git rebase --continue  # Normally used after I merge conflicts</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:bd                     # To destroy a buffer</tt></pre>
+<pre><code>:bd                     # To destroy a buffer</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>&lt;C-W&gt; n +               # Increase my window height</tt></pre>
+<pre><code>&lt;C-W&gt; n +               # Increase my window height</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>&lt;C-W&gt; n -               # Decrease my window height</tt></pre>
+<pre><code>&lt;C-W&gt; n -               # Decrease my window height</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:git scribe gen site    # Generate my diary</tt></pre>
+<pre><code>:git scribe gen site    # Generate my diary</code></pre>
 </div></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:git scribe gen all     # Generate my diary in all versions</tt></pre>
+<pre><code>:git scribe gen all     # Generate my diary in all versions</code></pre>
 </div></div>
 </div>
 <div class="sect3">
@@ -6731,20 +6760,20 @@ Separate bindings into different files dependant on their function</p></div>
 <div class="paragraph"><p>Set current line to soft tabs</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt># Reset tabs to soft tabs
+<pre><code># Reset tabs to soft tabs
 :set et
-V =</tt></pre>
+V =</code></pre>
 </div></div>
 <div class="paragraph"><p>Convert n number of lines into a list</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt># Turn a number of sentences into bullet points
-V: normal I  *</tt></pre>
+<pre><code># Turn a number of sentences into bullet points
+V: normal I  *</code></pre>
 </div></div>
 <div class="paragraph"><p>Search and replace over multiple files</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:argdo %s/2007/2008/g</tt></pre>
+<pre><code>:argdo %s/2007/2008/g</code></pre>
 </div></div>
 <div class="ulist TODO"><ul>
 <li>
@@ -6769,7 +6798,7 @@ Able to open links and preview markdown via w3m
 </li>
 <li>
 <p>
-Add filetype <tt>*.md</tt> as <tt>*.markdown</tt>
+Add filetype <code>*.md</code> as <code>*.markdown</code>
 </p>
 </li>
 <li>
@@ -6791,7 +6820,7 @@ Building lists can be painful
 </li>
 <li>
 <p>
-The same as of above applies to <tt>*.asc</tt> and <tt>*asciidoc</tt>
+The same as of above applies to <code>*.asc</code> and <code>*asciidoc</code>
 </p>
 </li>
 <li>
@@ -6921,7 +6950,7 @@ Explore plugin, how do I use this better
 </li>
 <li>
 <p>
-motions <tt>:help motion.txt</tt>
+motions <code>:help motion.txt</code>
 </p>
 </li>
 <li>
@@ -6941,22 +6970,22 @@ autocmd
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>dvf char</tt> - delete up to char
+<code>dvf char</code> - delete up to char
 </p>
 </li>
 <li>
 <p>
-<tt>df char</tt> - delete up to and including the char
+<code>df char</code> - delete up to and including the char
 </p>
 </li>
 <li>
 <p>
-<tt>:windo e</tt> - Refresh all window
+<code>:windo e</code> - Refresh all window
 </p>
 </li>
 <li>
 <p>
-<tt>gggqG</tt> - Reformat all lines in the file
+<code>gggqG</code> - Reformat all lines in the file
 </p>
 </li>
 </ul></div>
@@ -6966,17 +6995,17 @@ autocmd
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>:hi Search ctermbg=red</tt> - Change the colour of search highlights
+<code>:hi Search ctermbg=red</code> - Change the colour of search highlights
 </p>
 </li>
 <li>
 <p>
-<tt>set colorcolumn=140</tt> - set the column limit to 140
+<code>set colorcolumn=140</code> - set the column limit to 140
 </p>
 </li>
 <li>
 <p>
-<tt>set textwidth=140</tt> - set the text width to 140 characters
+<code>set textwidth=140</code> - set the text width to 140 characters
 </p>
 </li>
 </ul></div>
@@ -6991,7 +7020,7 @@ Cucumber
 <div class="ulist"><ul>
 <li>
 <p>
-I&#8217;m forever having to type <tt>save_and_open_page</tt> for debugging
+I&#8217;m forever having to type <code>save_and_open_page</code> for debugging
 </p>
 </li>
 </ul></div>
@@ -7003,12 +7032,12 @@ ruby
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>source :rubygems</tt>
+<code>source :rubygems</code>
 </p>
 </li>
 <li>
 <p>
-<tt>gem 'foo'</tt>
+<code>gem 'foo'</code>
 </p>
 </li>
 </ul></div>
@@ -7321,7 +7350,7 @@ to day.</p></div>
 <h4 id="_read_a_man_page_a_day">Read a man page a day</h4>
 <div class="paragraph"><p>This can be quite hard to achieve, I&#8217;ve attempted this in the past, we&#8217;ll make
 this interesting. We&#8217;ll create a simple script that will bring up a random man
-page when ever you type <tt>manit</tt>.</p></div>
+page when ever you type <code>manit</code>.</p></div>
 <div class="paragraph"><p>We could also get this automatically by calling the script via a tmuxinator
 config file.</p></div>
 </div>
@@ -7381,12 +7410,12 @@ bag of notes and gradually split off to different sections.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>map -k .</tt> - list all of the man pages on the system
+<code>map -k .</code> - list all of the man pages on the system
 </p>
 </li>
 <li>
 <p>
-<tt>man $(/bin/ls /bin | awk '{ cmd[i++] = $0 } END { srand( ); print cmd[int(rand()*length(cmd))]; }')'</tt> - display a random manpage
+<code>man $(/bin/ls /bin | awk '{ cmd[i++] = $0 } END { srand( ); print cmd[int(rand()*length(cmd))]; }')'</code> - display a random manpage
 </p>
 </li>
 </ul></div>
@@ -7462,13 +7491,13 @@ for an email to actually come through.</p></div>
 <td class="icon">
 <div class="title">Note</div>
 </td>
-<td class="content">Add link to <tt>~/bin/procmail_recipe_test</tt>. Located at GH#e452d09</td>
+<td class="content">Add link to <code>~/bin/procmail_recipe_test</code>. Located at GH#e452d09</td>
 </tr></table>
 </div>
 <div class="paragraph"><p>I wrapped the Procmail dryrun command as shown above to easily run the
 script.</p></div>
-<div class="paragraph"><p>Procmail logs are located at <tt>~/logs/procmail-dryrun.log</tt> so I ran <tt>tail
--f ~/logs/procmail.log</tt> in a split pane so that I could see what was
+<div class="paragraph"><p>Procmail logs are located at <code>~/logs/procmail-dryrun.log</code> so I ran <code>tail
+-f ~/logs/procmail.log</code> in a split pane so that I could see what was
 coming in.</p></div>
 <div class="admonitionblock">
 <table><tr>
@@ -7483,14 +7512,14 @@ filter, if at all.</p></div>
 <div class="paragraph"><p>Now the last peice of the puzzle was to easily create test emails
 without having to do them by hand. This again was pretty simple as mutt
 was already setup to use vim as its editor.</p></div>
-<div class="paragraph"><p>Pressing <tt>e</tt> in mutt opened an email in vim which meant that in Normal
+<div class="paragraph"><p>Pressing <code>e</code> in mutt opened an email in vim which meant that in Normal
 mode I was apply to give the following command to save the sample email:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>:w ~/emailtest.txt</tt></pre>
+<pre><code>:w ~/emailtest.txt</code></pre>
 </div></div>
 <div class="paragraph"><p>Now that the sample email was save I am free to run
-<tt>~/bin/procmail_recipe_test</tt> and see how the email is processed.</p></div>
+<code>~/bin/procmail_recipe_test</code> and see how the email is processed.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -7547,7 +7576,7 @@ the version of ruby
 </p>
 <div class="literalblock">
 <div class="content">
-<pre><tt>project_name: PROJECT_NAME
+<pre><code>project_name: PROJECT_NAME
 project_root: PROJECT_PATH
 rvm: RUBY_VERSION@PROJECT_NAME
 pre: cd PROJECT_PATH &amp;&amp; bundle &amp;&amp; gup
@@ -7561,7 +7590,7 @@ tabs:
   - "Ruby Docs": w3m http://http://www.ruby-doc.org/core-RUBY_VERSION/
   - Spyhole: tail -f ~/workbench.log
   - "Project Summary": g wtf
-  - Toybox: pry</tt></pre>
+  - Toybox: pry</code></pre>
 </div></div>
 </li>
 </ul></div>
@@ -7688,32 +7717,32 @@ start pry with an gems environment
 my other machines to make use of my new settings.</p></div>
 <div class="paragraph"><p>Firstly I tried to do a simple update but because of the change from <em>braid</em> to
 <em>git submodule</em> that wasn&#8217;t possible. So the alternative was to remove my old
-settings and <tt>.git/config</tt>.</p></div>
+settings and <code>.git/config</code>.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>rm -rf .git dotvim oh-my-zsh .gitconfig .gitignore</tt></pre>
+<pre><code>rm -rf .git dotvim oh-my-zsh .gitconfig .gitignore</code></pre>
 </div></div>
 <div class="paragraph"><p>That removed all the files that related to my custom setings and allowed me to
 start a fresh pretty quickly. As there is no way to clone my dotfiles directly.
 I had to take the follwoing steps.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git init
+<pre><code>git init
 git add remote origin git@github.com/baphled/dotfiles.git
-git pull origin master</tt></pre>
+git pull origin master</code></pre>
 </div></div>
 <div class="paragraph"><p>Once this was complete I still had to get the submodules updated so that everything was nicely setup.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git submodule update --init</tt></pre>
+<pre><code>git submodule update --init</code></pre>
 </div></div>
 <div class="paragraph"><p>Now I&#8217;m sure that there is a better way of doing this but as my dotvim
 repository also has submodules I need to run the same command as above within
 that directory to make sure that everything was up to date.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>cd ~/dotvim
-git submodule update --init</tt></pre>
+<pre><code>cd ~/dotvim
+git submodule update --init</code></pre>
 </div></div>
 <div class="paragraph"><p>Once that was updated everything was ready to use.</p></div>
 <div style="page-break-after:always"></div>
@@ -7797,18 +7826,18 @@ newsbeuter
 <div class="sect3">
 <h4 id="_dotfiles_with_some_raspbian_pi">Dotfiles with some Raspbian Pi</h4>
 <div class="paragraph"><p>Today I had to install my dotfiles on a new system. These are the steps I needed to take.</p></div>
-<div class="paragraph"><p>Firstly I had to remove <tt>.bashrc</tt> as I already have a copy in my dotfiles. I did this with the following command.</p></div>
+<div class="paragraph"><p>Firstly I had to remove <code>.bashrc</code> as I already have a copy in my dotfiles. I did this with the following command.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>rm .bashrc</tt></pre>
+<pre><code>rm .bashrc</code></pre>
 </div></div>
 <div class="paragraph"><p>Once that was complete I had to run the following commands to pull down my dotfiles and get the updated locally.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>git init
+<pre><code>git init
 git add remote origin git://github.com/baphled/dotfiles.git
 git pull &amp;&amp; git submodule init &amp;&amp; git submodule update &amp;&amp; git submodule status
-git submodule foreach --recursive git submodule update --init</tt></pre>
+git submodule foreach --recursive git submodule update --init</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -7821,18 +7850,18 @@ git submodule foreach --recursive git submodule update --init</tt></pre>
 <div class="paragraph"><p>As Raspbian doesn&#8217;t have zsh install by default I had to install it my self.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>sudo apt-get install zsh</tt></pre>
+<pre><code>sudo apt-get install zsh</code></pre>
 </div></div>
-<div class="paragraph"><p>As my dotfiles require <tt>rvm</tt> to display the gemset I am currently working in.</p></div>
+<div class="paragraph"><p>As my dotfiles require <code>rvm</code> to display the gemset I am currently working in.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>curl -L https://get.rvm.io | bash -s stable --ruby</tt></pre>
+<pre><code>curl -L https://get.rvm.io | bash -s stable --ruby</code></pre>
 </div></div>
 <div class="paragraph"><p>Once the installation process completed rvm was install and I was free to set zsh as my default shell.</p></div>
 <div class="paragraph"><p>The final step is to update my shell to zsh instead of bash.</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>chsh -s /bin/zsh</tt></pre>
+<pre><code>chsh -s /bin/zsh</code></pre>
 </div></div>
 <div class="paragraph"><p>This will prompt for a password and once authorised the change will become perminent.</p></div>
 <div style="page-break-after:always"></div>
@@ -7912,12 +7941,12 @@ with my day to day work.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>ps aux | grep a-process | awk '{print $2}' | xargs kill -9</tt> - Find a list of processes and kill them
+<code>ps aux | grep a-process | awk '{print $2}' | xargs kill -9</code> - Find a list of processes and kill them
 </p>
 </li>
 <li>
 <p>
-<tt>find . |grep '01_'|xargs rm</tt> - find all files beginning with 01_ and delete them
+<code>find . |grep '01_'|xargs rm</code> - find all files beginning with 01_ and delete them
 </p>
 </li>
 </ul></div>
@@ -7932,8 +7961,8 @@ inner text.</p></div>
 <div class="paragraph"><p>problem: Display line width solution: Add the following to your vimrc:</p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>set colorcolumn=140
-set tw=140</tt></pre>
+<pre><code>set colorcolumn=140
+set tw=140</code></pre>
 </div></div>
 <div class="paragraph"><p>This sets the linecount to 140 and displays a vertical line where the line limit is.</p></div>
 <div style="page-break-after:always"></div>
@@ -7969,7 +7998,7 @@ set tw=140</tt></pre>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2012-11-09 15:43:02 GMT
+Last updated 2013-01-19 23:40:04 GMT
 </div>
 </div>
 </body>

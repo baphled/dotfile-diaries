@@ -3745,10 +3745,14 @@ buffer is active when you have multiple buffers open.</simpara>
 <note><simpara>Add screenshot of plugin.</simpara></note>
 <simpara>To display the glyphs used by the plugin I&#8217;ll need to add a patchd font. I&#8217;ll need to install <emphasis>fontforge</emphasis> to install the
 patched font so <emphasis>brew</emphasis> to the rescue.</simpara>
+<note><simpara>Add link to patched font</simpara></note>
 <note><simpara>This may take some time.</simpara></note>
 <literallayout class="monospaced">brew install fontforge</literallayout>
+<simpara>I also needed to add a new directory</simpara>
+<literallayout class="monospaced">mkdir ~/.fonts</literallayout>
 <simpara>Once fontforge was installed I tried to install the patched font.</simpara>
-<literallayout class="monospaced">fontforge -script ~/dotvim/bundle/powerline/fontpatcher/fontpatcher Anonymous\ Pro.ttf</literallayout>
+<literallayout class="monospaced">fontforge -script ~/dotvim/bundle/powerline/fontpatcher/fontpatcher Anonymous\ Pro.ttf
+mv anonymous+Pro-Powerline-Powerline.ttf ~/.fonts/</literallayout>
 <simpara>Everything seemed to of installed fine: and I had setup the correct setting. So for now I&#8217;ll put a fork in this tweak and
 move on.</simpara>
 <literallayout class="monospaced">sudo fc-cache -vf</literallayout>
@@ -4847,18 +4851,24 @@ vim-snipmate
 </section>
 </section>
 </section>
-<section id="_housekeeping_tools">
-<title>Housekeeping tools</title>
+<section id="_tweak_console">
+<title>Tweak console</title>
 <sidebar>
-<literallayout class="monospaced">duration: 4 weeks
+<literallayout class="monospaced">duration: 2 week
 notes:
-  * manage personal credentials
-  * notifications and alerts via tmux
-  * define local files to hide
-  * create script to check for my dotfile dependancies
-    * Should download them if they are not found</literallayout>
+  * install tmux powerline
+  * tweak console colours
+  * Tweak setup on *nix boxes
+  * learn some zsh tricks
+  * add aliases for commonly used commands and task
+  * study git flow
+  * vi mode for all
+  * play with task manager
+  * autojump</literallayout>
 </sidebar>
-<warning><simpara>This section is incomplete</simpara></warning>
+<simpara>Over the next couple of weeks I&#8217;ll be focusing on my terminal setting and improving my knowledge of zsh and git. I&#8217;d
+like to tweak my tmux status bar so that it isn&#8217;t so vanilla as well as displaying more information. Once that is done
+I&#8217;d like to improve my terminal so that I can use my vi binding within irb, pry, and other REPLs.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 <section id="_day_36">
 <title>Day 36</title>
@@ -4979,6 +4989,195 @@ Before I do that though I should add a segment for displaying my current usernam
 </section>
 </section>
 </section>
+<section id="_day_37">
+<title>Day 37</title>
+<simpara>I&#8217;ve played around with a few color setting over the past few months but solarized has to be the best so far. Today
+I&#8217;ll be setting it up in iTerm2, tmux and vim.</simpara>
+<section id="_setting_up_solarize_on_my_mac">
+<title>Setting up Solarize on my Mac</title>
+<simpara>So I&#8217;ve been using the same colour scheme for a while and it&#8217;s and and all but Solarized seems to be the best,
+visually, so I&#8217;ve decided to set up Solarized as my main color scheme.</simpara>
+<simpara>I&#8217;ll start this off will setting up my Mac. The settings may be slightly different for *nix based machines but I&#8217;ll
+tackle that in another entry.</simpara>
+<simpara>TODO: Add reference to previous image</simpara>
+<simpara>For now I&#8217;ll start with Iterm2. My colour settings are quite basic as you can see from the previous image.</simpara>
+<simpara>So first off I needed download the iterm solarized color settings and store them in my dotfiles. I stored the settings
+in <literal>~/colors/iterm2/solarized_dark.itermcolors</literal></simpara>
+<informalfigure>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="images/iterm2_color_settings.png" contentwidth="500"/>
+  </imageobject>
+  <textobject><phrase>iTerm2 settings</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>I then needed to import this into iTerm2.</simpara>
+<informalfigure>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="images/iterm2_load_solarized_dark.png" contentwidth="500"/>
+  </imageobject>
+  <textobject><phrase>iTerm2 settings</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>Once this is complete all that was needed was select the new plugin.</simpara>
+<informalfigure>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="images/iterm2_select_solarized.png" contentwidth="500"/>
+  </imageobject>
+  <textobject><phrase>Select Solarized Dark</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>Finally iTerm2 is now setup with Solarized Dark :)</simpara>
+<informalfigure>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="images/iterm2_console_with_solarized_dark.png" contentwidth="500"/>
+  </imageobject>
+  <textobject><phrase>Iterm2 with Solarized Dark</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_settings_up_solarized_dark_for_vim">
+<title>Settings up Solarized Dark for Vim</title>
+<simpara>The next step is get my Vim setup with Solarized also.</simpara>
+<simpara>This was pretty straight forward. I simply had to add the vim-solarized plugin into my dotvim files (add link to
+change here).</simpara>
+<informalfigure>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="images/vim_solarized_and_vividchalk.png" contentwidth="500"/>
+  </imageobject>
+  <textobject><phrase>Vim with Vividchalk</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>I then had to change the colorscheme to solarized and everything was good to go. The next time I started Vim Solarized
+was setup. :)</simpara>
+<informalfigure>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="images/vim_solarized_dark.png" contentwidth="500"/>
+  </imageobject>
+  <textobject><phrase>Vim with Solarized Dark</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>There was one thing was I couldn&#8217;t do without, and that was my column width colour. I found a code snippet that fitted
+the purpose so I add that to my <literal>~/.vimrc</literal> file.</simpara>
+<simpara>I could possibly improve this a little bit more but for the time being it&#8217;ll do.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_setting_up_tmux_with_solarized_dark">
+<title>Setting up Tmux with Solarized Dark</title>
+<simpara>Now it&#8217;s time to get tmux setup with Solarized Dark also. I already had a bunch of custom color settings but I&#8217;ve
+decided to do away with those and primarily use Solarized. First off I removed the existing colour settings and
+downloaded the tmux colour scheme from <ulink url="https://raw.github.com/seebi/tmux-colors-solarized/master/tmuxcolors-dark.conf">https://raw.github.com/seebi/tmux-colors-solarized/master/tmuxcolors-dark.conf</ulink>.</simpara>
+<simpara>TODO: Display snippet of the change.</simpara>
+<simpara>This was then copied to my tmuxfiles repositories and linked to from with my tmux.conf file.</simpara>
+<simpara>Once that was done I simple ran the following command to update my current session.</simpara>
+<simpara><literal>source ~/.tmux.conf</literal></simpara>
+<simpara>Now that everything is setup. My setup now looks like this:</simpara>
+<informalfigure>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="images/tmux-powerline_and_solarized.png" contentwidth="500"/>
+  </imageobject>
+  <textobject><phrase>Tmux-powerline and Solarized</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+<section id="_setting_up_solarized_dircolours">
+<title>Setting up Solarized dircolours</title>
+<simpara>So I&#8217;m almost complete but I&#8217;m not quite happy about the colouring of the directory names, or shall I say lack of colour.</simpara>
+<informalfigure>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="images/default_dircolor.png"/>
+  </imageobject>
+  <textobject><phrase>Default directory colour settings</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>There is a project that helps to change this (<ulink url="https://github.com/seebi/dircolors-solarized">https://github.com/seebi/dircolors-solarized</ulink>). I&#8217;d like to keep up to
+date with this project but easily switch out the settings if needed. I&#8217;ll create a colourschemes directory that I will
+keep my colour settings in. I then linked the desired colour scheme for dircolors <literal>ln -s
+~/colour_schemes/dircolors.256 ~/.dir_colors</literal></simpara>
+<simpara>I also had to install coreutils to get access to the dircolours command.</simpara>
+<simpara><literal>brew install coreutils --default-names</literal></simpara>
+<simpara>Once this was installed I could then add the following code snippet to <literal>~/.zshrc</literal>.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+<simpara>I&#8217;d like to tweak my colour setting further but I&#8217;ll leave this for now while I get used to the latest changes.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+<section id="_day_38">
+<title>Day 38</title>
+<simpara>So there has been quite a few changes to <literal>tmux-powerline</literal> over the past few months. One of the major changes is it is
+now a lot easier to customise your powerline configuration.</simpara>
+<simpara>I&#8217;d like to spend some time integrating these new setting into my current setup and possibly thinking about other
+segments that I can create once it&#8217;s done.</simpara>
+<section id="_revisiting_tmux_powerline">
+<title>Revisiting tmux-powerline</title>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+<section id="_day_38_2">
+<title>Day 38</title>
+<simpara>I&#8217;ve been having issues with installing my dotfiles on new machines, mainly as there are quite a few dependancies and
+git submodules. I can get around this by creating rake tasks that allow me to install these dependancies and keep my
+submodules up to date.</simpara>
+<simpara>The first task I want to capture is installing my dotfiles. To do this I need to take the following steps:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Make sure I don&#8217;t have the files already installed
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Install brew (if running OSX)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Install rvm with ruby
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Clone dotfile repository
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Recursively initialise and update all dotfiles
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Install gems
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</section>
+<section id="_housekeeping_tools">
+<title>Housekeeping tools</title>
+<sidebar>
+<literallayout class="monospaced">duration: 4 weeks
+notes:
+  * manage personal credentials
+  * notifications and alerts via tmux
+  * define local files to hide
+  * create script to check for my dotfile dependancies
+    * Should download them if they are not found</literallayout>
+</sidebar>
+<warning><simpara>This section is incomplete</simpara></warning>
+<simpara>I&#8217;ve sent quite a bit of time setting up my dotfiles over the past few weeks but one of the things I haven&#8217;t really done
+is formalise a way to keep my toolset up to date.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
 </section>
 <section id="_dressing_down_vim">
 <title>Dressing down Vim</title>
@@ -4999,8 +5198,8 @@ notes:
 explanation as to why they are useful and why I can&#8217;t live without them.</simpara></note>
 <note><simpara>One of the things I&#8217;d like to focus on here is text manipulation without the use of "Visual mode"</simpara></note>
 <simpara><?asciidoc-pagebreak?></simpara>
-<section id="_day_25_2">
-<title>Day 25</title>
+<section id="_day_50">
+<title>Day 50</title>
 <simpara>As it stands at present I&#8217;ve forked my version from <ulink url="https://github.com/astrails/dotvim">here</ulink>.</simpara>
 <simpara>Which was cool to start off with but I&#8217;ve had to make a heap of changes and to be honest I&#8217;d rather start from scratch
 and setup my own Vim rig. I&#8217;d like the coming next 6 weeks to focus on storing the grass roots functionality of Vim into
@@ -5008,8 +5207,8 @@ muscle memory. I&#8217;ll be referring to <ulink url="http://pragprog.com/book/d
 great source of knowledge for me in the past year.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-<section id="_day_34_2">
-<title>Day 34</title>
+<section id="_day_51">
+<title>Day 51</title>
 <note><simpara>Turn this section into a workflow based entry</simpara></note>
 <simpara>I used to keep up to date with my daily TV shows via bittorrent of late is has become something of a challenge as I have
 had less and less time to actually take the time to keep up to date and track what is currently out.</simpara>
@@ -5017,8 +5216,8 @@ had less and less time to actually take the time to keep up to date and track wh
 coming out.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-<section id="_day_35_2">
-<title>Day 35</title>
+<section id="_day_52">
+<title>Day 52</title>
 <simpara>I&#8217;ve setup w3m but I haven&#8217;t really had time to experiment with it. I know it can open images and it can apparently open
 tabs but I have never played with the former. It would be cool to work out how this happens so I can tell tmux to open a
 new tab with a link when ever I feel. This way if I have a link copied and can quickly trigger a tmux mapping and get it
@@ -5036,19 +5235,19 @@ or be quick enough to select a link to view. I should simply be able to select o
 with anything else.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-<section id="_day_36_2">
-<title>Day 36</title>
+<section id="_day_53">
+<title>Day 53</title>
 <simpara>Today is that day I start hacking on some scripts and start to get used to some of the tools I&#8217;ve neglected to use over
 the years. My main focus will be to improve he way I use sed and awk and improve my bash script so that I can quickly
 hack some workflow scripts together to help tweak my productivity further.</simpara>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-<section id="_day_37">
-<title>Day 37</title>
+<section id="_day_54">
+<title>Day 54</title>
 <simpara><?asciidoc-pagebreak?></simpara>
 </section>
-<section id="_day_38">
-<title>Day 38</title>
+<section id="_day_55">
+<title>Day 55</title>
 <simpara>Today I&#8217;ll work on getting to know twirssi a little bit more. These are the most important things I want to get to know
 so that I can become more productive with the tool and be able to track conversations I&#8217;ve had and what other people are
 saying to each other.</simpara>
