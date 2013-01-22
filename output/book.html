@@ -1437,7 +1437,7 @@ msmtp
 </p>
 </li>
 </ul></div>
-<div class="paragraph"><p>Procmail and fetchmail are installed on Macs by default so that saves me a
+<div class="paragraph"><p>Procmail and fetchmail are installed on Macs by default (is is not true from Mountain Lion) so that saves me a
 step, so I guess the next things is to create some mail recipes.</p></div>
 <div class="paragraph"><p>So I&#8217;ll have to run the following to get the ball rolling:</p></div>
 <div class="literalblock">
@@ -1474,11 +1474,16 @@ password my-password</code></pre>
 <td class="content">Make sure that <code>.netrc</code> is added to <code>.gitignore</code></td>
 </tr></table>
 </div>
-<div class="paragraph"><p>I had to make sure that I had setup my email details properply and to do this I
-had to do the following:</p></div>
+<div class="paragraph"><p>When setting up on Mountain Lion I had to make sure that I had setup my email details properply and to do this I had
+to do the following:</p></div>
 <div class="literalblock">
 <div class="content">
 <pre><code>fetchmail</code></pre>
+</div></div>
+<div class="paragraph"><p>I needed to install fetchmail via brew, this is not part of the default setup so I had to add a new repository.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>brew install https://gist.github.com/raw/4579545/97d8446299dd21d5ff0f053c40b949ab4425706c/fetchmail.rb</code></pre>
 </div></div>
 <div class="paragraph"><p>Once everything was setup properly fetchmail did it&#8217;s things and retrieved my
 email. This is the bare minimum I need to make sure that I have procmail
@@ -6224,6 +6229,38 @@ now a lot easier to customise your powerline configuration.</p></div>
 segments that I can create once it&#8217;s done.</p></div>
 <div class="sect3">
 <h4 id="_revisiting_tmux_powerline">Revisiting tmux-powerline</h4>
+<div class="paragraph"><p>So today is the day that I actually get around to updating tmux-powerline. As mentioned in my previous entry it was a
+bit of a pain to customise tmux-powerline, mainly due to the fact that you had to create a new fork and customise the
+status bars to how you wanted them to be.</p></div>
+<div class="paragraph"><p>This has all changed quite significantly over the past month or so so I need to make sure that I don&#8217;t break anything
+and keep my setup as close to the original as possible.</p></div>
+<div class="paragraph"><p>The first step was to update my fork of the project with the latest changes and get that working as closely as
+possible to my current setup. One of the nice things I like about the latest update is that there is now no need to
+fork the project to customise the feel of it. You simply create generate a new theme, customise it and then move it to
+a separate directory, in my case I&#8217;ve put it under <em>themes</em> within the <em>tmuxfiles</em> project. I also had a custom
+segment that I used to display who I am currently logged in as. I had to remove this from my forked repository, tweak
+it (as the script structure had changed) and put that in a new directory (segments) within the <em>tmuxfiles</em> project.
+These changes were really needed and make the project as a whole a lot nicer to work with.</p></div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="/images/updated_tmux-powerline.png">
+<img src="images/updated_tmux-powerline.png" alt="Updated tmux-powerline" width="500" />
+</a>
+</div>
+</div>
+<div class="paragraph"><p>I then had to tweak my tmux settings to point to the updated forked version of the repository. This way I can test the
+setup locally without having to commit to anything, pun intended. This was as easy as changing where tmux-powerline is
+found and playing around with the settings until it was about right.</p></div>
+<div class="paragraph"><p>As before I still don&#8217;t want a right status bar, mainly as my status list will populate this part of tmux-powerline.
+So effectively I left that pretty much as it was. I spend quite a bit of time getting the colours right and tweaking
+the ordering of segments so that it looked better than before but that didn&#8217;t take that long to do.</p></div>
+<div class="paragraph"><p>As a whole I quite like the recent changes to the project, especially the ability to overide where themes and segments
+are found. This means that there will is no more having to merge my changes with the project and also allows me to be
+more creative without being concerned that things will change dramatically without me noticing.</p></div>
+<div class="paragraph"><p>Though this is setup quite nicely at present, there is talk of moving tmux-powerline to the powerline project, would
+could be interesting. It kind of makes sense having a central powerline repository. But for now I won&#8217;t worry about
+that happening but I am sure there will be yet another entry explaining those changes and how I ended up integrating
+that into my current setup.</p></div>
 <div style="page-break-after:always"></div>
 </div>
 </div>
@@ -7998,7 +8035,7 @@ set tw=140</code></pre>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2013-01-19 23:40:04 GMT
+Last updated 2013-01-22 15:40:51 GMT
 </div>
 </div>
 </body>

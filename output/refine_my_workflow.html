@@ -299,7 +299,7 @@ fetchmail
 msmtp
 </li>
 </ul></div>
-<p>Procmail and fetchmail are installed on Macs by default so that saves me a
+<p>Procmail and fetchmail are installed on Macs by default (is is not true from Mountain Lion) so that saves me a
 step, so I guess the next things is to create some mail recipes.</p>
 <p>So I’ll have to run the following to get the ball rolling:</p>
 <pre class="literallayout">brew install msmtp</pre>
@@ -320,9 +320,11 @@ password my-password</pre>
 <h3 class="title">Note</h3>
 <p>Make sure that <code class="literal">.netrc</code> is added to <code class="literal">.gitignore</code></p>
 </div>
-<p>I had to make sure that I had setup my email details properply and to do this I
-had to do the following:</p>
+<p>When setting up on Mountain Lion I had to make sure that I had setup my email details properply and to do this I had
+to do the following:</p>
 <pre class="literallayout">fetchmail</pre>
+<p>I needed to install fetchmail via brew, this is not part of the default setup so I had to add a new repository.</p>
+<pre class="literallayout">brew install https://gist.github.com/raw/4579545/97d8446299dd21d5ff0f053c40b949ab4425706c/fetchmail.rb</pre>
 <p>Once everything was setup properly fetchmail did it’s things and retrieved my
 email. This is the bare minimum I need to make sure that I have procmail
 working so that I can store my email in the right directories.</p>

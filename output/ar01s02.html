@@ -119,15 +119,15 @@ mutt
 fetchmail
 </li><li>
 msmtp
-</li></ul></div><p>Procmail and fetchmail are installed on Macs by default so that saves me a
+</li></ul></div><p>Procmail and fetchmail are installed on Macs by default (is is not true from Mountain Lion) so that saves me a
 step, so I guess the next things is to create some mail recipes.</p><p>So I’ll have to run the following to get the ball rolling:</p><pre class="literallayout">brew install msmtp</pre><p>I then had to add the following to my <code class="literal">.zshrc</code></p><pre class="literallayout">MAIL=/home/baphled/mail/inbox &amp;&amp; export MAIL</pre><p>Then  in my home directory I ran:</p><pre class="literallayout">touch .fetchmailrc
 chmod 700 .fetchmailrc</pre><p>I then needed to poll my main email account
   poll mail.my-email-account.net with proto POP3
     user <span class="emphasis"><em>EMAILADDRESS</em></span> keep
     mda <span class="emphasis"><em>/usr/bin/procmail -d %T</em></span></p><p>I put my credentials in my <code class="literal">.netrc</code> file as follows:</p><pre class="literallayout">machine mail.my-email-accoun.net
 login my-username
-password my-password</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Make sure that <code class="literal">.netrc</code> is added to <code class="literal">.gitignore</code></p></div><p>I had to make sure that I had setup my email details properply and to do this I
-had to do the following:</p><pre class="literallayout">fetchmail</pre><p>Once everything was setup properly fetchmail did it’s things and retrieved my
+password my-password</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Make sure that <code class="literal">.netrc</code> is added to <code class="literal">.gitignore</code></p></div><p>When setting up on Mountain Lion I had to make sure that I had setup my email details properply and to do this I had
+to do the following:</p><pre class="literallayout">fetchmail</pre><p>I needed to install fetchmail via brew, this is not part of the default setup so I had to add a new repository.</p><pre class="literallayout">brew install https://gist.github.com/raw/4579545/97d8446299dd21d5ff0f053c40b949ab4425706c/fetchmail.rb</pre><p>Once everything was setup properly fetchmail did it’s things and retrieved my
 email. This is the bare minimum I need to make sure that I have procmail
 working so that I can store my email in the right directories.</p><p>I need to then create the mail directory <code class="literal">~/Mail</code> which is where all my mail
 will end up.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a id="_recipes"/>Recipes</h5></div></div></div><p>So now I need to sort my emails into separate files so that I can deal with

@@ -66,7 +66,25 @@ date with this project but easily switch out the settings if needed. I’ll crea
 keep my colour settings in. I then linked the desired colour scheme for dircolors <code class="literal">ln -s
 ~/colour_schemes/dircolors.256 ~/.dir_colors</code></p><p>I also had to install coreutils to get access to the dircolours command.</p><p><code class="literal">brew install coreutils --default-names</code></p><p>Once this was installed I could then add the following code snippet to <code class="literal">~/.zshrc</code>.</p><p/><p>I’d like to tweak my colour setting further but I’ll leave this for now while I get used to the latest changes.</p><p/></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_38"/>Day 38</h3></div></div></div><p>So there has been quite a few changes to <code class="literal">tmux-powerline</code> over the past few months. One of the major changes is it is
 now a lot easier to customise your powerline configuration.</p><p>I’d like to spend some time integrating these new setting into my current setup and possibly thinking about other
-segments that I can create once it’s done.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_revisiting_tmux_powerline"/>Revisiting tmux-powerline</h4></div></div></div><p/></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_38_2"/>Day 38</h3></div></div></div><p>I’ve been having issues with installing my dotfiles on new machines, mainly as there are quite a few dependancies and
+segments that I can create once it’s done.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a id="_revisiting_tmux_powerline"/>Revisiting tmux-powerline</h4></div></div></div><p>So today is the day that I actually get around to updating tmux-powerline. As mentioned in my previous entry it was a
+bit of a pain to customise tmux-powerline, mainly due to the fact that you had to create a new fork and customise the
+status bars to how you wanted them to be.</p><p>This has all changed quite significantly over the past month or so so I need to make sure that I don’t break anything
+and keep my setup as close to the original as possible.</p><p>The first step was to update my fork of the project with the latest changes and get that working as closely as
+possible to my current setup. One of the nice things I like about the latest update is that there is now no need to
+fork the project to customise the feel of it. You simply create generate a new theme, customise it and then move it to
+a separate directory, in my case I’ve put it under <span class="emphasis"><em>themes</em></span> within the <span class="emphasis"><em>tmuxfiles</em></span> project. I also had a custom
+segment that I used to display who I am currently logged in as. I had to remove this from my forked repository, tweak
+it (as the script structure had changed) and put that in a new directory (segments) within the <span class="emphasis"><em>tmuxfiles</em></span> project.
+These changes were really needed and make the project as a whole a lot nicer to work with.</p><div class="informalfigure"><div class="mediaobject"><img src="images/updated_tmux-powerline.png" width="500" alt="Updated tmux-powerline"/></div></div><p>I then had to tweak my tmux settings to point to the updated forked version of the repository. This way I can test the
+setup locally without having to commit to anything, pun intended. This was as easy as changing where tmux-powerline is
+found and playing around with the settings until it was about right.</p><p>As before I still don’t want a right status bar, mainly as my status list will populate this part of tmux-powerline.
+So effectively I left that pretty much as it was. I spend quite a bit of time getting the colours right and tweaking
+the ordering of segments so that it looked better than before but that didn’t take that long to do.</p><p>As a whole I quite like the recent changes to the project, especially the ability to overide where themes and segments
+are found. This means that there will is no more having to merge my changes with the project and also allows me to be
+more creative without being concerned that things will change dramatically without me noticing.</p><p>Though this is setup quite nicely at present, there is talk of moving tmux-powerline to the powerline project, would
+could be interesting. It kind of makes sense having a central powerline repository. But for now I won’t worry about
+that happening but I am sure there will be yet another entry explaining those changes and how I ended up integrating
+that into my current setup.</p><p/></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="_day_38_2"/>Day 38</h3></div></div></div><p>I’ve been having issues with installing my dotfiles on new machines, mainly as there are quite a few dependancies and
 git submodules. I can get around this by creating rake tasks that allow me to install these dependancies and keep my
 submodules up to date.</p><p>The first task I want to capture is installing my dotfiles. To do this I need to take the following steps:</p><div class="itemizedlist"><ul type="disc"><li>
 Make sure I don’t have the files already installed
