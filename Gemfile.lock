@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:schacon/git-scribe.git
+  remote: git://github.com/schacon/git-scribe.git
   revision: c2fcc13643274f38d9dcbdb027efb6dc1ef0a9b3
   specs:
     git-scribe (0.1.1)
