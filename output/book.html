@@ -6216,6 +6216,11 @@ keep my colour settings in. I then linked the desired colour scheme for dircolor
 <div class="paragraph"><p>I also had to install coreutils to get access to the dircolours command.</p></div>
 <div class="paragraph"><p><code>brew install coreutils --default-names</code></p></div>
 <div class="paragraph"><p>Once this was installed I could then add the following code snippet to <code>~/.zshrc</code>.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>eval `dircolors $HOME/colors/dircolors-solarized/dircolors.256dark`</code></pre>
+</div></div>
+<div class="paragraph"><p>This will basically setup the Solarized colour theme for my directories :)</p></div>
 <div style="page-break-after:always"></div>
 <div class="paragraph"><p>I&#8217;d like to tweak my colour setting further but I&#8217;ll leave this for now while I get used to the latest changes.</p></div>
 <div style="page-break-after:always"></div>
@@ -6265,7 +6270,36 @@ that into my current setup.</p></div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_day_38_2">Day 38</h3>
+<h3 id="_day_39">Day 39</h3>
+<div class="paragraph"><p>Today I&#8217;ll be tweaking my setting for use in XFCE. I had been a Debian enthuiast back in the day but after a while of
+not using it and coming back to using it I&#8217;ve found it somewhat bloated. I&#8217;ve used XFCE in the past and decided my
+life would be better going back to using that.</p></div>
+<div class="paragraph"><p>There are a couple of things I&#8217;ll need to do. Firstly I&#8217;ll need to tweak the settings so that my ctrl and CapLock keys
+are swapped over, I&#8217;ve become quite used to this layout so I want to make sure that I have this configured for XFCE.
+The other thing is to get Solarized setup for use with XFCE&#8217;s default terminal emulator.</p></div>
+<div class="paragraph"><p>So let&#8217;s get things started by swapping my ctrl and CapLock keys around. This is pretty straight forward as it turns
+out and only needs the following command to get it working.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>/usr/bin/setxkbmap -option 'ctrl:swapcaps'</code></pre>
+</div></div>
+<div class="paragraph"><p>The next step as mentioned earlier is to get Solarized setup with XFCE&#8217;s terminal emulator.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>cd ~
+git submodule add git@github.com:solarized/xfce4-terminal-colors-solarized.git colors/xfce-terminal</code></pre>
+</div></div>
+<div class="paragraph"><p>This downloaded the colour scheme to my dotfile repository so that I can easily grab it later down the road.</p></div>
+<div class="paragraph"><p>I then had to install the theme in XFCE&#8217;s terminal emulator so that the theme would take effect.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>cp ~/colors/xfce-terminal/dark/terminalrc ~/.config/Terminal/</code></pre>
+</div></div>
+<div class="paragraph"><p>With that done Solarized is now setup for xfce4-terminal :)</p></div>
+<div style="page-break-after:always"></div>
+</div>
+<div class="sect2">
+<h3 id="_day_40">Day 40</h3>
 <div class="paragraph"><p>I&#8217;ve been having issues with installing my dotfiles on new machines, mainly as there are quite a few dependancies and
 git submodules. I can get around this by creating rake tasks that allow me to install these dependancies and keep my
 submodules up to date.</p></div>
@@ -8035,7 +8069,7 @@ set tw=140</code></pre>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2013-01-22 15:40:51 GMT
+Last updated 2013-02-05 16:28:29 GMT
 </div>
 </div>
 </body>
